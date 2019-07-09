@@ -16,7 +16,7 @@
 title: Funky Si's Tech Talk
 email: funkysi1701@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  A mix of articles about Technology, Star Trek and anything else.
+  Contract Software Developer based in the North of England, creator of Pwned Pass a mobile app based on the haveibeenpwned data. More than just another developer.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: funkysi1701
