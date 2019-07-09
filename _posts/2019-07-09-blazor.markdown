@@ -4,12 +4,16 @@ title:  "Blazor"
 date:   2019-07-09 22:06:03 +0000
 categories: jekyll update
 ---
-#What is Blazor?
+# What is Blazor?
 
-Blazor is a way of writing .NET code that runs in the browser, so in theory no need for javascript. Check out [Blazor]: https://dotnet.microsoft.com/apps/aspnet/web-apps/client
+Blazor is a way of writing .NET code that runs in the browser, so in theory no need for javascript. Check out [Blazor][1] and other similar blogs.
 
-#How it works
+[1]: https://dotnet.microsoft.com/apps/aspnet/web-apps/client
+[2]: https://dotnet.microsoft.com/download/dotnet-core/3.0
+
+# How it works
 
 So what do you need to start? 
 
-First thing is you need Visual Studio 2019 Preview and also the .NET core preview [SDK]: https://dotnet.microsoft.com/download/dotnet-core/3.0 (at the time of writing this is preview 6). It is possible to use other versions of VS 2019, however I haven't tried this and there are additional configs steps needed to make this work. 
+First thing is you need Visual Studio 2019 Preview and also the .NET core preview [SDK][2]  (at the time of writing this is preview 6). It is possible to use other versions of Visual Studio 2019, however I haven't tried this and there are additional configs steps needed to make this work. 
+
