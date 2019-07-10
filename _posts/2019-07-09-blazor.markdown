@@ -4,8 +4,6 @@ title:  "Blazor"
 date:   2019-07-09 22:06:03 +0000
 categories: jekyll update
 ---
-# What is Blazor?
-
 Blazor is a way of writing .NET code that runs in the browser, so in theory no need for javascript. Check out [Blazor][1] and other similar blogs.
 
 [1]: https://dotnet.microsoft.com/apps/aspnet/web-apps/client
