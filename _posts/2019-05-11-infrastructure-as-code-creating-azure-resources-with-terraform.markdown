@@ -19,7 +19,7 @@ I am executing my terraform scripts from my release pipeline and as I don’t wa
 
 To start with I am executing a Powershell script to download the terraform binary, this is in the form of a zip file, so i need to download and unzip it.
 
-{% gist 4b08456728e5a4785d1dd814be45bb39 download.ps1 %}
+{% gist 4b08456728e5a4785d1dd814be45bb39 Download.ps1 %}
 
 Now that I have the terraform binaries I can just run Azure Cli and execute the terraform commands above.
 
