@@ -15,7 +15,7 @@ The process of executing a terraform script follows this basic process.
 
 Lets look at how you might execute a terraform script from your build or release pipeline.
 
-I am executing my terraform scripts from my release pipeline and as I don’t want to check binaries into my source code I am going to add a bit of plumbing to get things in the right places. The terraform binary can be obtained from https://www.terraform.io/downloads.html.
+I am executing my terraform scripts from my release pipeline and as I don’t want to check binaries into my source code I am going to add a bit of plumbing to get things in the right places. The terraform binary can be obtained from [https://www.terraform.io/downloads.html][3].
 
 To start with I am executing a Powershell script to download the terraform binary, this is in the form of a zip file, so i need to download and unzip it.
 
@@ -28,7 +28,7 @@ Now it is time to look at the the terraform script. This particular script creat
 <script src="https://gist.github.com/funkysi1701/d73c9a7479968252164cab9a9ca3329b#file-terraform-tf"></script>
 
 There are four guids that you need to fill in from your azure subscription and to find these you need to run a few commands from Azure Cli. Check out
-https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure for more detail on these commands.
+[https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure][4] for more detail on these commands.
 
 Run these either from Azure Cloud Shell or from Powershell command prompt after Azure Cli has been installed.
 
@@ -49,3 +49,5 @@ This just gives you a taste of what you can do with terraform. Looking at the [A
 
 [1]: https://docs.microsoft.com/en-us/azure/terraform/
 [2]: https://github.com/terraform-providers/terraform-provider-azurerm
+[3]: https://www.terraform.io/downloads.html
+[4]: https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure
