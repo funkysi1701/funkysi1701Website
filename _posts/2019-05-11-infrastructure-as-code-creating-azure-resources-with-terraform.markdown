@@ -19,13 +19,13 @@ I am executing my terraform scripts from my release pipeline and as I don’t wa
 
 To start with I am executing a Powershell script to download the terraform binary, this is in the form of a zip file, so i need to download and unzip it.
 
-<script src="https://gist.github.com/funkysi1701/4b08456728e5a4785d1dd814be45bb39#file-download-ps1"></script>
+{% gist 4b08456728e5a4785d1dd814be45bb39#file-download-ps1 %}
 
 Now that I have the terraform binaries I can just run Azure Cli and execute the terraform commands above.
 
 Now it is time to look at the the terraform script. This particular script creates a resource group, an app service plan and a webapp.
 
-<script src="https://gist.github.com/funkysi1701/d73c9a7479968252164cab9a9ca3329b#file-terraform-tf"></script>
+{% gist https://gist.github.com/funkysi1701/d73c9a7479968252164cab9a9ca3329b#file-terraform-tf %}
 
 There are four guids that you need to fill in from your azure subscription and to find these you need to run a few commands from Azure Cli. Check out
 [https://docs.microsoft.com/en-us/azure/virtual-machines/linux/terraform-install-configure][4] for more detail on these commands.
