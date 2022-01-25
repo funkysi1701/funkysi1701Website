@@ -10,6 +10,12 @@ description = "Is it to share my ideas? Is it to learn new technologies and tech
 summary = "Is it to share my ideas? Is it to learn new technologies and techniques? Is it to create a following? Is it to educate others? Is it to build some kind of service? Is it some combination of all of these."
 showFullContent = false
 readingTime = false
+aliases = [
+    "/posts/why-do-i-have-a-website/",
+    "/posts/why-do-i-have-a-website-1m5l",
+    "/posts/2022/01/25/why-do-i-have-a-website-1m5l",
+    "/posts/2022/01/25/why-do-i-have-a-website"
+]
 +++
 
 Is it to share my ideas? Is it to learn new technologies and techniques? Is it to create a following? Is it to educate others? Is it to build some kind of service? Is it some combination of all of these.
