@@ -4,8 +4,8 @@
 <meta charset=utf-8>
 <meta name=generator content="Hugo 0.92.0">
 <meta name=viewport content="width=device-width,initial-scale=1">
-<title>My First Post &#183; Funky Si's Blog</title>
-<meta name=description content>
+<title>Why do I have a website? &#183; Funky Si's Blog</title>
+<meta name=description content="Is it to share my ideas? Is it to learn new technologies and techniques? Is it to create a following? Is it to educate others? Is it to build some kind of service? Is it some combination of all of these.">
 <link type=text/css rel=stylesheet href=https://funkysi1701.github.io/css/print.css media=print>
 <link type=text/css rel=stylesheet href=https://funkysi1701.github.io/css/poole.css>
 <link type=text/css rel=stylesheet href=https://funkysi1701.github.io/css/syntax.css>
@@ -34,8 +34,28 @@ Simon Foster - Software Developer based in the North of England, More than just 
 </aside>
 <main class="content container">
 <div class=post>
-<h1>My First Post</h1>
-<time datetime=2022-01-23T20:45:45Z class=post-date>Sun, Jan 23, 2022</time>
+<h1>Why do I have a website?</h1>
+<time datetime=2022-01-25T20:00:45Z class=post-date>25 January 2022</time>
+<span class=post-tags>
+#<a href=https://funkysi1701.github.io/tags/website/>website</a>&nbsp;
+#<a href=https://funkysi1701.github.io/tags/development/>development</a>&nbsp;
+</span>
+<br><br>
+<p>Is it to share my ideas? Is it to learn new technologies and techniques? Is it to create a following? Is it to educate others? Is it to build some kind of service? Is it some combination of all of these.</p>
+<h2 id=history>History</h2>
+<p>Back when the web was young and I was first learning HTML. I hand crafted web pages, adding photos I had taken with captions. If I needed a new page I just added a new html page and linked to it from another page.</p>
+<p>As time went on I started to learn mysql and php and my website became a hand crafted php nightmare. I also applied what I learned to help my father run the website for his camera club.</p>
+<p>At some point I started playing with WordPress. I have had various WordPress websites or blogs over the years. WordPress is very powerful you can do so many things, install so many plugins. WordPress runs on php and mysql and as my career started to centre around the .net space, I started to want something that was similar, so I could apply things I had learnt to my own website.</p>
+<p>This has led me to the current state of my website. I have a WordPress blog, with most of my oldest content, my newer content lives on dev.to and I have a Blazor webassembly site that uses the dev.to api to run my new website.</p>
+<p>Blazor webassembly is great, however it has some limitations which I am starting to push against. To host this as cheaply as possible I am using Azure static web apps, so no .net backend all the website is front end. I have some Azure Functions that does the backend bits that I need.</p>
+<p>Google and other bots are not able to find any of my pages except index, due to the way Blazor works. I have got round this by pre rendering the content using <a href=https://prerender.io/>https://prerender.io/</a></p>
+<p>My next difficulty is how to generate a sitemap.xml or a rss feed for my blog. This has started to make me question my architecture decisions.</p>
+<p>I could use a hosted solution like <a href=https://ghost.org/>ghost</a> which is popular with a some of my peers. This would solve many of the problems I am currently facing but I wouldn&rsquo;t be able to play with everything as it is hosted and therefore someone else&rsquo;s problem. How important that is I will look at later.</p>
+<p>Another option would be to use github pages, there are quite a few ways to publish a github page, <a href=https://jekyllrb.com/>Jekyll</a> and <a href=https://gohugo.io/>Hugo</a> appear to be the most popular. Both produce static content and both are a new for me to learn. Interestingly I could also publish either to Azure Static Web apps if github pages ends up not being suitable.</p>
+<h2 id=split-in-two>Split in two</h2>
+<p>I think my website needs to be split in two. I need a stable blog platform probably using Hugo and github pages. This is what I want to get indexed by the search engines and be the primary way people find out about what I am doing.</p>
+<p>I then have additional sites, that I use as my playground for learning new tech. I can easily link between them and I can tweak the style so they &ldquo;fit&rdquo; nicely together.</p>
+<p>I am still considering what to do with dev.to. I like that I am using it as the backend for my blog posts, and its API gives me that flexibility to display that content where I want.</p>
 </div>
 <h2>Comments</h2>
 <div id=disqus_thread></div>
