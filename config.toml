@@ -1,4 +1,4 @@
-baseURL = 'https://funkysi1701.github.io'
+baseURL = 'https://funkysi1701.github.io/'
 languageCode = 'en-us'
 title = "Funky Si's Blog by Simon Foster"
 theme = 'hyde'
