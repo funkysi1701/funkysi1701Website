@@ -1,0 +1,19 @@
+baseURL = 'https://funkysi1701.github.io'
+languageCode = 'en-us'
+title = "Funky Si's Blog by Simon Foster"
+theme = 'hyde'
+disqusShortname = "funkysi1701"  
+googleAnalytics = "GTM-PSP3HTF"
+
+[Menus]
+  main = [
+      {Name = "Facebook", URL = "https://facebook.com/funkysi1701/"},
+      {Name = "Twitter", URL = "https://twitter.com/funkysi1701/"},
+      {Name = "Github", URL = "https://github.com/funkysi1701/"},
+      {Name = "DevTo", URL = "https://dev.to/funkysi1701/"},
+      {Name = "LinkedIn", URL = "https://www.linkedin.com/in/funkysi1701/"}
+  ]
+
+[params]
+  description = "Simon Foster - Software Developer based in the North of England, More than just another developer."
+  themeColor = "theme-base-09"
