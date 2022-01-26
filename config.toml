@@ -7,13 +7,12 @@ googleAnalytics = "GTM-PSP3HTF"
 
 [Menus]
   main = [
-      {Name = "Facebook", URL = "https://facebook.com/funkysi1701/"},
-      {Name = "Twitter", URL = "https://twitter.com/funkysi1701/"},
-      {Name = "Github", URL = "https://github.com/funkysi1701/"},
-      {Name = "DevTo", URL = "https://dev.to/funkysi1701/"},
-      {Name = "LinkedIn", URL = "https://www.linkedin.com/in/funkysi1701/"}
+      {Name = "About", URL = "https://www.funkysi1701.co.uk/about"},
+      {Name = "Pwned Pass", URL = "https://www.funkysi1701.co.uk/pwned-pass"},
+      {Name = "Config", URL = "https://www.funkysi1701.co.uk/config"},
+      {Name = "Metrics", URL = "https://www.funkysi1701.co.uk/metrics"}
   ]
 
 [params]
-  description = "Simon Foster - Software Developer based in the North of England, More than just another developer."
+  description = "Simon Foster - Software Developer based in the North of England. More than just another developer."
   themeColor = "theme-base-0d"
