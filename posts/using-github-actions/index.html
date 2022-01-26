@@ -1,0 +1,228 @@
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en-us lang=en-us>
+<head>
+<link href=https://gmpg.org/xfn/11 rel=profile>
+<meta charset=utf-8>
+<meta name=generator content="Hugo 0.92.0">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Using GitHub Actions &#183; Funky Si's Blog</title>
+<meta name=description content="Using a GitHub Actions pipeline to deploy my Azure Static Web App">
+<link type=text/css rel=stylesheet href=https://blog.funkysi1701.com/css/print.css media=print>
+<link type=text/css rel=stylesheet href=https://blog.funkysi1701.com/css/poole.css>
+<link type=text/css rel=stylesheet href=https://blog.funkysi1701.com/css/syntax.css>
+<link type=text/css rel=stylesheet href=https://blog.funkysi1701.com/css/hyde.css>
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.6.1/css/all.css integrity=sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP crossorigin=anonymous>
+<link rel=apple-touch-icon-precomposed sizes=144x144 href=/apple-touch-icon-144-precomposed.png>
+<link rel="shortcut icon" href=/favicon.png>
+</head>
+<body class=theme-base-0d>
+<aside class=sidebar>
+<div class="container sidebar-sticky">
+<div class=sidebar-about>
+<img src=https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg alt="FunkySi1701 aka Simon Foster" class=center>
+<a href=https://blog.funkysi1701.com/><h1>Funky Si's Blog</h1></a>
+<p class=lead>
+Simon Foster - Software Developer based in the North of England. More than just another developer.
+</p>
+</div>
+<ul class=sidebar-nav>
+<li><a href=https://facebook.com/funkysi1701> <span class="fab fa-facebook" aria-hidden=true></span> Facebook</a></li>
+<li><a href=https://twitter.com/funkysi1701> <span class="fab fa-twitter" aria-hidden=true></span> Twitter</a></li>
+<li><a href=https://github.com/funkysi1701> <span class="fab fa-github" aria-hidden=true></span> GitHub</a></li>
+<li><a href=https://dev.to/funkysi1701> <span class="fab fa-dev" aria-hidden=true></span> DevTo</a></li>
+<li><a href=https://www.linkedin.com/in/funkysi1701> <span class="fab fa-linkedin" aria-hidden=true></span> LinkedIn</a></li>
+</ul>
+<nav>
+<ul class=sidebar-nav>
+<li><a href=https://blog.funkysi1701.com/>Home</a> </li>
+<li><a href=https://www.funkysi1701.co.uk/about> About </a></li><li><a href=https://www.funkysi1701.co.uk/config> Config </a></li><li><a href=https://www.funkysi1701.co.uk/metrics> Metrics </a></li><li><a href=https://www.funkysi1701.co.uk/pwned-pass> Pwned Pass </a></li>
+</ul>
+</nav>
+<p>&copy; 2022. All rights reserved. </p>
+</div>
+</aside>
+<main class="content container">
+<div class=post>
+<h1>Using GitHub Actions</h1>
+<time datetime=2022-01-10T20:00:45Z class=post-date>10 January 2022</time>
+<span class=post-tags>
+#<a href=https://blog.funkysi1701.com/tags/github/>github</a>&nbsp;
+#<a href=https://blog.funkysi1701.com/tags/devopspipeline/>DevOpsPipeline</a>&nbsp;
+</span>
+<br><br>
+<p>I&rsquo;ve been running my website on Azure Static Web Apps for a while and it is pretty cool.</p>
+<p>When you create a Static Web App on Azure you get asked for the github repo of your source code and even the branch to use.
+<img src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/off7ur2tgsla4smkrhhi.png alt="GitHub Repo for my Static Web App"></p>
+<p>Once you have selected this, you get asked for the type of code to deploy, mine is Blazor Web Assembly but you can use Angular, React or Vue.</p>
+<p><img src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ruhzjeujgl1yjxx5lng8.png alt="GitHub Actions workflow creation">
+You now have three variables to fill in the location in your code of the Website, the location of your Azure Functions and the output location usually wwwroot. Once you have set these three you can preview the GitHub Actions file that will be created and added to your repository.</p>
+<p>I get something like this</p>
+<pre tabindex=0><code>name: Azure Static Web Apps CI/CD
+
+on:
+  push:
+    branches:
+      - feature/tempbranch
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - feature/tempbranch
+
+jobs:
+  build_and_deploy_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' &amp;&amp; github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_&lt;GENERATED_HOSTNAME&gt; }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          action: &quot;upload&quot;
+          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
+          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+          app_location: &quot;Client&quot; # App source code path
+          api_location: &quot;Api&quot; # Api source code path - optional
+          output_location: &quot;wwwroot&quot; # Built app content directory - optional
+          ###### End of Repository/Build Configurations ######
+
+  close_pull_request_job:
+    if: github.event_name == 'pull_request' &amp;&amp; github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    name: Close Pull Request Job
+    steps:
+      - name: Close Pull Request
+        id: closepullrequest
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_&lt;GENERATED_HOSTNAME&gt; }}
+          action: &quot;close&quot;
+ 
+</code></pre><p>This github action will run when you create a Pull Request to the branch mentioned in the file, or if you push code into the branch. This code get added into the .github/workflows/ folder and is the location that all github action workflows live.</p>
+<p>I haven&rsquo;t done much with github actions, however I have used Azure DevOps quite a bit. Over on the Azure DevOps side I have created a pipeline that deploys to a Dev environment, then a Test environment and finally a production environment.</p>
+<p>Lets have a look at the workflow that I ended up with and with can break down how it all works. Note I am new to Github actions so if there is a better way of doing this do let me know.</p>
+<pre tabindex=0><code>name: Azure Static Web Apps
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - feature/*
+
+jobs:
+  dev:
+    runs-on: ubuntu-latest
+    environment: 
+      name: Dev
+    name: Dev
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ORANGE_POND_09B18B903  }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          action: &quot;upload&quot;
+          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
+          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+          app_location: &quot;Blog&quot; # App source code path
+          api_location: &quot;Blog.Func&quot; # Api source code path - optional
+          output_location: &quot;wwwroot&quot; # Built app content directory - optional
+          ###### End of Repository/Build Configurations ######
+  test:
+    if: github.ref == 'refs/heads/develop'
+    runs-on: ubuntu-latest
+    environment: 
+      name: Test
+    name: Test
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WITTY_DUNE_0A1A77903  }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          action: &quot;upload&quot;
+          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
+          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+          app_location: &quot;Blog&quot; # App source code path
+          api_location: &quot;Blog.Func&quot; # Api source code path - optional
+          output_location: &quot;wwwroot&quot; # Built app content directory - optional
+          ###### End of Repository/Build Configurations ######
+  prod:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: 
+      name: Prod
+    name: Prod
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BRAVE_ROCK_0AAC63D03 }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          action: &quot;upload&quot;
+          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
+          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+          app_location: &quot;Blog&quot; # App source code path
+          api_location: &quot;Blog.Func&quot; # Api source code path - optional
+          output_location: &quot;wwwroot&quot; # Built app content directory - optional
+          ###### End of Repository/Build Configurations ######     
+</code></pre><p>The first thing I did was create three Azure Static Web Apps, I am using the free tier so while this is trippling my costs it is all still free! Doing this created three github action workflow files, I deleted two and edited the third, but before I deleted them I made a note of the AZURE_STATIC_WEB_APPS_API_TOKEN. If you look in your settings -> secrets for your repo you will see secrets have been created, this is the secure token that github uses to update your static web app.</p>
+<p>While we are in settings we might as well look at environments. I created a Prod, Test and Dev environment that I was going to use in my github actions.</p>
+<p>Environments can have various rules setup on them.</p>
+<ul>
+<li>Required reviewers - this is like an approver, a user specified here must aprove for the workflow to be deployed</li>
+<li>Wait time - I didn&rsquo;t use this, but it looks like a certain amount of time can be set to pause the deployment. (I assume to do some kind of manual check)</li>
+<li>Deployment Branch - specify what branch are allowed to be deployed to what environments. I specified develop, main and feature branches could be deployed to the Dev environment, develop and main could go on Test and main could go on Prod</li>
+<li>Environment secrets - I didn&rsquo;t use this as my secrets were already created, however it looks like your secrets can be associated with a specific environment</li>
+</ul>
+<p>Now that we have the static web apps setup and the environments lets look at the github action file.</p>
+<p>First of all I removed the PR stuff and just concentrated on pushes. I wanted my workflow to be.</p>
+<ol>
+<li>Push to feature branch</li>
+<li>Deploys to Dev env</li>
+<li>PR feature branch to develop</li>
+<li>Once merged code gets pushed into develop</li>
+<li>Deploys to Test env</li>
+<li>PR develop to main</li>
+<li>Once merged code gets pushed into main</li>
+<li>Deploys to Prod env (after approval)</li>
+</ol>
+<p>The approval on deploying to production I think is probably overkill, but I still have it setup like that for now.</p>
+<p>My gh action has three jobs defined as dev: test: and prod: they are all the same except they have the azure_static_web_apps_api_token that is correct for their environment.</p>
+<p>They also each have a environment defined eg</p>
+<pre tabindex=0><code>environment:
+  name: Prod
+</code></pre><p>Lastly Test and Prod have an if test setup, if the test is false the job won&rsquo;t run. Importantly it won&rsquo;t fail it just won&rsquo;t run.</p>
+<p>For Prod this needs to only run on main branch so we have</p>
+<p>if: github.ref == &lsquo;refs/heads/main&rsquo;</p>
+<p>For Test this needs to only run on develop so</p>
+<p>if: github.ref == &lsquo;refs/heads/develop&rsquo;</p>
+<p>I could have a test for develop to only run on feature/* but I have allowed it to run everytime.</p>
+<p>There is loads more you can do with github actions, but hopefully this gives you a taste of some of the things you can do. I currently have a mix of Azure DevOps and github actions so I will be working on getting github actions to do more.</p>
+</div>
+<h2>Comments</h2>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//funkysi1701.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+</main>
+</body>
+</html>
