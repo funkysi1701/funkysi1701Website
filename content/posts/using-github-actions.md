@@ -1,10 +1,13 @@
 +++
 title = "Using GitHub Actions"
 date = "2022-01-10T20:00:45Z"
+year = "2022"
+month= "2022-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bj77rx0jetjdf7c24nhk.png"
 tags = ["github", "DevOpsPipeline"]
+category="tech"
 keywords = ["", ""]
 description = "Using a GitHub Actions pipeline to deploy my Azure Static Web App"
 summary = "Using a GitHub Actions pipeline to deploy my Azure Static Web App"

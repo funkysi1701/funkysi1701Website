@@ -1,10 +1,13 @@
 +++
 title = "Why do I have a website?"
 date = "2022-01-25T20:00:45Z"
+year = "2022"
+month= "2022-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = ""
 tags = ["website", "development"]
+category="tech"
 keywords = ["", ""]
 description = "Is it to share my ideas? Is it to learn new technologies and techniques? Is it to create a following? Is it to educate others? Is it to build some kind of service? Is it some combination of all of these."
 summary = "Is it to share my ideas? Is it to learn new technologies and techniques? Is it to create a following? Is it to educate others? Is it to build some kind of service? Is it some combination of all of these."

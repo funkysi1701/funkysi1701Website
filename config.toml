@@ -16,3 +16,13 @@ googleAnalytics = "GTM-PSP3HTF"
 [params]
   description = "Simon Foster - Software Developer based in the North of England. More than just another developer."
   themeColor = "theme-base-0d"
+
+[taxonomies]
+  year = "year"
+  month = "month"
+  tag = "tags"
+  category = "categories"
+
+[permalinks]
+  year = "/:year/"
+  month = "/:year/:month/"  
