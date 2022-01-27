@@ -4,8 +4,8 @@
 <meta charset=utf-8>
 <meta name=generator content="Hugo 0.92.1">
 <meta name=viewport content="width=device-width,initial-scale=1">
-<title>Why do I have a website? &#183; Funky Si's Blog</title>
-<meta name=description content="Is it to share my ideas? Is it to learn new technologies and techniques? Is it to create a following? Is it to educate others? Is it to build some kind of service? Is it some combination of all of these.">
+<title>Back to BASIC &#183; Funky Si's Blog</title>
+<meta name=description content="Writing BASIC for the Lynx">
 <link type=text/css rel=stylesheet href=https://blog.funkysi1701.com/css/print.css media=print>
 <link type=text/css rel=stylesheet href=https://blog.funkysi1701.com/css/poole.css>
 <link type=text/css rel=stylesheet href=https://blog.funkysi1701.com/css/syntax.css>
@@ -43,26 +43,45 @@ Simon Foster - Software Developer based in the North of England. More than just 
 </aside>
 <main class="content container">
 <div class=post>
-<h1>Why do I have a website?</h1>
-<time datetime=2022-01-25T20:00:45Z class=post-date>25 January 2022</time>
+<h1>Back to BASIC</h1>
+<time datetime=2021-12-28T20:00:45Z class=post-date>28 December 2021</time>
 <span class=post-tags>
-#<a href=https://blog.funkysi1701.com/tags/website/>website</a>&nbsp;
-#<a href=https://blog.funkysi1701.com/tags/development/>development</a>&nbsp;
+#<a href=https://blog.funkysi1701.com/tags/basic/>BASIC</a>&nbsp;
+#<a href=https://blog.funkysi1701.com/tags/histroy/>Histroy</a>&nbsp;
+#<a href=https://blog.funkysi1701.com/tags/programming/>Programming</a>&nbsp;
 </span>
 <br><br>
-<p>Is it to share my ideas? Is it to learn new technologies and techniques? Is it to create a following? Is it to educate others? Is it to build some kind of service? Is it some combination of all of these.</p>
-<h2 id=history>History</h2>
-<p>Back when the web was young and I was first learning HTML. I hand crafted web pages, adding photos I had taken with captions. If I needed a new page I just added a new html page and linked to it from another page.</p>
-<p>As time went on I started to learn mysql and php and my website became a hand crafted php nightmare. I also applied what I learned to help my father run the website for his camera club.</p>
-<p>At some point I started playing with WordPress. I have had various WordPress websites or blogs over the years. WordPress is very powerful you can do so many things, install so many plugins. WordPress runs on php and mysql and as my career started to centre around the .net space, I started to want something that was similar, so I could apply things I had learnt to my own website.</p>
-<p>This has led me to the current state of my website. I have a WordPress blog, with most of my oldest content, my newer content lives on dev.to and I have a Blazor webassembly site that uses the dev.to api to run my new website.</p>
-<p>Blazor webassembly is great, however it has some limitations which I am starting to push against. To host this as cheaply as possible I am using Azure static web apps, so no .net backend all the website is front end. I have some Azure Functions that does the backend bits that I need.</p>
-<p>Google and other bots are not able to find any of my pages except index, due to the way Blazor works. I have got round this by pre rendering the content using <a href=https://prerender.io/>https://prerender.io/</a></p>
-<p>My next difficulty is how to generate a sitemap.xml or a rss feed for my blog. This has started to make me question my architecture decisions.</p>
-<p>I could use a hosted solution like <a href=https://ghost.org/>ghost</a> which is popular with a some of my peers. This would solve many of the problems I am currently facing but I wouldn&rsquo;t be able to play with everything as it is hosted and therefore someone else&rsquo;s problem. How important that is I will look at later.</p>
-<p>Another option would be to use github pages, there are quite a few ways to publish a github page, <a href=https://jekyllrb.com/>Jekyll</a> and <a href=https://gohugo.io/>Hugo</a> appear to be the most popular. Both produce static content and both are a new for me to learn. Interestingly I could also publish either to Azure Static Web apps if github pages ends up not being suitable.</p>
-<h2 id=split-in-two>Split in two</h2>
-<p>I think my website needs to be split in two. I need a stable blog platform probably using Hugo and github pages. This is what I want to get indexed by the search engines and be the primary way people find out about what I am doing.</p>
+<blockquote class=twitter-tweet><p lang=en dir=ltr>How exciting my Lynx Computer from my childhood has come home, all 96k of it <a href=https://t.co/aeN38KBiS8>pic.twitter.com/aeN38KBiS8</a></p>&mdash; Simon Foster (@funkysi1701) <a href="https://twitter.com/funkysi1701/status/1475139125154037760?ref_src=twsrc%5Etfw">December 26, 2021</a></blockquote>
+<script async src=https://platform.twitter.com/widgets.js></script>
+<p>I can&rsquo;t remember the syntax for BASIC, luckily I have been able to find the <a href=http://elborg.dk/books.html>Manual</a>.</p>
+<p>All the commands are listed inside so lets see what we can do.</p>
+<p>The Lynx presents you with a command prompt in which you can type text. Back in the 80s we had a tape player to load programs from tape, however I don&rsquo;t have one today so only programs I write can be run.</p>
+<p>PRINT - To write Hello World, you can just type PRINT &ldquo;Hello World&rdquo; and Hello World appears on the screen. To Write a program that displays Hello World, you just write the line number first.</p>
+<pre tabindex=0><code>10 PRINT &quot;Hello World&quot;
+</code></pre><p>To run this you type RUN
+To view the code you type LIST</p>
+<p>To Edit a specific Line you can use Ctrl+E and type the line number, or you can just write the line out again.</p>
+<p>CLS - This command clears the screen</p>
+<p>INPUT N - stores text typed by the user and stores it in the variable N</p>
+<p>GOTO N - Execution of code continues at Line Number N</p>
+<p>The first Program I wrote with a bit of help from my boys.</p>
+<pre tabindex=0><code>10 CLS
+20 PRINT &quot;What is your Age?&quot;
+30 INPUT N
+40 IF N&gt;5 AND N&lt;41 THEN PRINT &quot;a good age&quot; 
+50 ELSE IF N&lt;6 THEN PRINT &quot;a spaceman&quot;
+60 ELSE IF N&gt;40 THEN PRINT &quot;too old&quot;
+</code></pre><p>My 4yo didn&rsquo;t like being &ldquo;too young&rdquo; in the original version, so my 6yo helped me change him to be a &ldquo;spaceman&rdquo;.</p>
+<p>Not bad and it was fun pair programming with a 6yo, all my typos were quickly spotted, and he easily understood the logic of IF/ELSE/THEN statements.</p>
+<p>The Lynx comes from 1983 and has just 96k of memory. I am very lucky it actually still works, however I have been able to find an emulator so I can write Lynx BASIC from the comfort of my laptop. <a href=https://jynxemulator.wordpress.com/>jynxemulator</a>, it is also on <a href=https://github.com/jonathan-markland/Jynx>github</a> but it doesn&rsquo;t include the ROMs so getting from the website is a better option.</p>
+<p>The developer experience today is so much nicer than it must have been in the 1980s, however back then distractions must have been much reduced.</p>
+<ul>
+<li>No internet or google to get answers to your questions</li>
+<li>No Copy/Paste of text</li>
+<li>No Load/Save (unless you have a working disk drive or tape player!)</li>
+<li>No IDE</li>
+<li>No Build or Release process just type RUN</li>
+</ul>
 <p>I then have additional sites, that I use as my playground for learning new tech. I can easily link between them and I can tweak the style so they &ldquo;fit&rdquo; nicely together.</p>
 <p>I am still considering what to do with dev.to. I like that I am using it as the backend for my blog posts, and its API gives me that flexibility to display that content where I want.</p>
 </div>
