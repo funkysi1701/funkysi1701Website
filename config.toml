@@ -1,5 +1,5 @@
 baseURL = 'https://blog.funkysi1701.com/'
-languageCode = 'en-us'
+languageCode = 'en-gb'
 title = "Funky Si's Blog"
 theme = 'hyde'
 disqusShortname = "funkysi1701"  
@@ -7,7 +7,7 @@ googleAnalytics = "GTM-PSP3HTF"
 
 [Menus]
   main = [
-      {Name = "About", URL = "https://www.funkysi1701.co.uk/about"},
+      {Name = "About", URL = "/about"},
       {Name = "Pwned Pass", URL = "https://www.funkysi1701.co.uk/pwned-pass"},
       {Name = "Config", URL = "https://www.funkysi1701.co.uk/config"},
       {Name = "Metrics", URL = "https://www.funkysi1701.co.uk/metrics"}
@@ -26,3 +26,6 @@ googleAnalytics = "GTM-PSP3HTF"
 [permalinks]
   year = "/:year/"
   month = "/:year/:month/"  
+
+[markup.goldmark.renderer]
+  unsafe= true  
