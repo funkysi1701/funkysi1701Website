@@ -14,9 +14,10 @@
   <br /><br />
   {{ .Content }}
 </div>
-
+{{ if .Params.date }}
 {{ if .Site.DisqusShortname -}}
 <h2>Comments</h2>
 {{ template "_internal/disqus.html" . }}
 {{- end }}
+{{ end }}
 {{- end }}
