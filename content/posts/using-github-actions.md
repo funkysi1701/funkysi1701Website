@@ -13,6 +13,7 @@ description = "Using a GitHub Actions pipeline to deploy my Azure Static Web App
 summary = "Using a GitHub Actions pipeline to deploy my Azure Static Web App"
 showFullContent = false
 readingTime = false
+copyright = false
 aliases = [
     "/posts/using-github-actions/",
     "/posts/using-github-actions-3jo1",

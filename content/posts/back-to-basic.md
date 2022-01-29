@@ -13,6 +13,7 @@ description =  "Writing BASIC for the Lynx"
 summary = " Writing BASIC for the Lynx"
 showFullContent = false
 readingTime = false
+copyright = false
 aliases = [
     "/posts/back-to-basic/",
     "/posts/back-to-basic-3c83",

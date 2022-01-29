@@ -5,6 +5,7 @@ year = "2022"
 month= "2022-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
+copyright = false
 cover = ""
 tags = ["goals"]
 category="tech"
