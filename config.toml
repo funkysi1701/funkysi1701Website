@@ -1,7 +1,7 @@
 baseURL = 'https://blog.funkysi1701.com/'
 languageCode = 'en-gb'
 title = "Funky Si's Blog"
-theme = 'hyde'
+theme = 'boot-style'
 disqusShortname = "funkysi1701"  
 googleAnalytics = "GTM-PSP3HTF"
 
@@ -15,6 +15,7 @@ googleAnalytics = "GTM-PSP3HTF"
 [params]
   description = "Simon Foster - Software Developer based in the North of England. More than just another developer."
   themeColor = "theme-base-0d"
+  logo = false
 
 [taxonomies]
   year = "year"
