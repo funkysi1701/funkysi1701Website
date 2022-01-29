@@ -1,7 +1,7 @@
 baseURL = 'https://blog.funkysi1701.com/'
 languageCode = 'en-gb'
 title = "Funky Si's Blog"
-theme = 'boot-style'
+theme = 'hugo-theme-bootstrap'
 disqusShortname = "funkysi1701"  
 googleAnalytics = "GTM-PSP3HTF"
 

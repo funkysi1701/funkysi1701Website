@@ -1,0 +1,36 @@
+{{- $order := default (slice "series" "categories" "tags") $.Site.Params.sidebarTaxonomies -}}
+{{- range $expected := $order -}}
+{{- range $key, $value := $.Site.Taxonomies -}}
+  {{- if eq $key $expected -}}
+  {{- $countPosts := default false $.Site.Params.countTaxonomyPosts -}}
+  {{- $countParams := dict "categories" "categoryCount" "tags" "tagCount" "series" "seriesCount" -}}
+  {{- $param := default "" (index $countParams $key) -}}
+  {{- $taxonomyCount := default 10 ($.Site.Param $param) -}}
+  {{- if $taxonomyCount -}}
+    {{- with $value.ByCount -}}
+    <section class="{{ $key }}-taxonomies row card component">
+      <div class="card-header">
+        <h2 class="card-title">
+          <a href="{{ absLangURL (urlize $key) }}">{{ T $key }}</a>
+        </h2>
+      </div>
+      <div class="card-body">
+        <div class="py-2">
+        {{- range $idx, $taxonomy := . -}}
+          {{- if lt $idx $taxonomyCount -}}
+          <a href="{{ $taxonomy.Page.Permalink }}" class="badge rounded post-taxonomy" title="{{ $taxonomy.Page.Title }}">
+            {{ $taxonomy.Page.Title }}
+            {{- if $countPosts -}}
+              <span class="badge badge-sm text-white bg-accent ms-1">{{ $taxonomy.Count }}</span>
+            {{- end -}}
+          </a>
+          {{- end -}}
+        {{- end -}}
+        </div>
+      </div>
+    </section>
+    {{- end -}}
+  {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- end -}}

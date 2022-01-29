@@ -1,0 +1,8 @@
+.modal {
+  @include elevation(24);
+}
+
+.mode-content {
+  background: variable('surface');
+  color: variable('primary-text-on-surface');
+}
