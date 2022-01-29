@@ -15,7 +15,7 @@
     "mark.js": "^8.11.1",
     "mermaid": "^8.13.8",
     "mustache": "^4.0.1",
-    "node-sass": "^6.0.1",
+    "node-sass": "^7.0.0",
     "popper.js": "^1.16.1",
     "viewerjs": "^1.10.2",
     "workbox-broadcast-update": "^6.4.2",
