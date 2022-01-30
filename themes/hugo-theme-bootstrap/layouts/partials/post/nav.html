@@ -2,14 +2,18 @@
 <div class="post-navs d-flex justify-content-evenly">
   <div class="post-nav post-prev">
   {{- with .Prev -}}
+  {{ if .Params.date }}
     <i class="fas fa-fw fa-chevron-left"></i>
     <a href="{{ .Permalink }}">{{ partial "helpers/title" . }}</a>
+  {{ end }}  
   </div>
   {{- end -}}
   {{- with .Next -}}
   <div class="post-nav post-next">
+    {{ if .Params.date }}
     <a href="{{ .Permalink }}">{{ partial "helpers/title" . }}</a>
     <i class="fas fa-fw fa-chevron-right"></i>
+    {{ end}}
   </div>
   {{- end -}}
 </div>

@@ -14,7 +14,9 @@
     {{- partial "hooks/content-end" . -}}
   </div>
   <div class="card-footer">
+    {{ if .Params.date }}
     {{- partial "post/nav" . -}}
+    {{ end }}
   </div>
 </article>
 {{- partial "post/copyright/index" . -}}
