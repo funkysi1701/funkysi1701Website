@@ -22,8 +22,6 @@ aliases = [
 ]
 +++
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">How exciting my Lynx Computer from my childhood has come home, all 96k of it <a href="https://t.co/aeN38KBiS8">pic.twitter.com/aeN38KBiS8</a></p>&mdash; Simon Foster (@funkysi1701) <a href="https://twitter.com/funkysi1701/status/1475139125154037760?ref_src=twsrc%5Etfw">December 26, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 {{< tweet user="funkysi1701" id="1475139125154037760" >}}
 
 I can't remember the syntax for BASIC, luckily I have been able to find the [Manual](http://elborg.dk/books.html).
