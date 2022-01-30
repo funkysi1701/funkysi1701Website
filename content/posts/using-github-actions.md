@@ -6,6 +6,7 @@ month= "2022-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bj77rx0jetjdf7c24nhk.png"
+images = ['https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bj77rx0jetjdf7c24nhk.png']
 tags = ["github", "DevOpsPipeline"]
 category="tech"
 keywords = ["", ""]
