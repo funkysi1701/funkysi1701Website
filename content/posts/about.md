@@ -6,6 +6,7 @@ cover = ""
 keywords = ["", ""]
 description = "A review of last years goals and setting of new ones for 2022"
 summary = "A review of last years goals and setting of new ones for 2022"
+images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg']
 showFullContent = false
 copyright = false
 readingTime = false
