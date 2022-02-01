@@ -8,7 +8,7 @@ googleAnalytics = "GTM-PSP3HTF"
 [Menus]
   main = [
       {Name = "About", URL = "/about"},
-      {Name = "Pwned Pass", URL = "https://www.funkysi1701.co.uk/pwned-pass"},
+      {Name = "Pwned Pass", URL = "/pwned-pass"},
       {Name = "Metrics", URL = "https://www.funkysi1701.co.uk/metrics"}
   ]
 
