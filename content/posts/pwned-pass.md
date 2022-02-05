@@ -1,5 +1,5 @@
 +++
-title = "Pwned PassPwned Pass"
+title = "Pwned Pass"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = ""
