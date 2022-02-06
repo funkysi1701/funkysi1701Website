@@ -20,7 +20,7 @@ aliases = [
     
 My real name is Simon Foster but my on-line persona is Funky Si a nickname I was given during my university days which has somehow stuck. I am a contract Developer working in the North of England. I have been working in IT departments since 2006 and have a wide range of experiences. More recently in the Software Development space but also SysAdmin, Server Infrastructure, Databases and DevOps.
 
-In my spare time I have created Pwned Pass a Xamarin Forms mobile app that makes use of the Have I Been Pwned? API to allow searching for breached emails and passwords. This is available from the Google Play store.
+In my spare time I have created <a href="/pwned-pass">Pwned Pass</a> a Xamarin Forms mobile app that makes use of the Have I Been Pwned? API to allow searching for breached emails and passwords. This is available from the Google Play store.
 
 ## Certifications
 
