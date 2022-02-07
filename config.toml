@@ -1,4 +1,4 @@
-baseURL = '/'
+baseURL = 'https://www.funkysi1701.com/'
 languageCode = 'en-gb'
 title = "Funky Si's Blog"
 theme = 'hugo-theme-bootstrap'
@@ -9,7 +9,7 @@ googleAnalytics = "G-N1YJNQEHR4"
   main = [
       {Name = "About", URL = "/about"},
       {Name = "Pwned Pass", URL = "/pwned-pass"},
-      {Name = "Metrics", URL = "https://www.funkysi1701.co.uk/metrics"}
+      {Name = "Metrics", URL = "https://metrics.funkysi1701.com/"}
   ]
 
 [params]
