@@ -23,7 +23,7 @@ aliases = [
 ]
 +++
 
-{{< tweet user="funkysi1701" id="1475139125154037760" >}}
+{{< tweet user="funkysi1701" id=1475139125154037760 >}}
 
 I can't remember the syntax for BASIC, luckily I have been able to find the [Manual](http://elborg.dk/books.html).
 
