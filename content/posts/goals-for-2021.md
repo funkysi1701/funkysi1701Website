@@ -26,7 +26,6 @@ I didn't make any goals for 2020, or if I did, I didn't officially announce them
 
 Here are a few ideas for my goals for the year ahead.
 
-
 1. Azure certification
 2. Mentoring
 3. F#
@@ -35,8 +34,6 @@ Here are a few ideas for my goals for the year ahead.
 6. Mandlebrot Generator
 7. Pwned Pass Mobile App
 8. More time for me
-
-## &nbsp;
 
 1) I want to get a certificate to show how much I know. The obvious area for this is Azure. I spend a lot of time playing with Azure, building and deploying to the platform I should be able to get certified in this area. I actually had an exam booked in 2020 but it was an in-person exam so was cancelled when Covid hit. I plan to sit the [foundation](https://docs.microsoft.com/en-us/learn/certifications/exams/az-900) exam in the first quarter of 2021 and I will take it from there.
 
