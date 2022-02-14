@@ -5,8 +5,8 @@ year = "2022"
 month= "2022-02"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://pbs.twimg.com/media/FLjBrnPXwAQE8BN?format=jpg&name=large"
-images = ['https://pbs.twimg.com/media/FLjBrnPXwAQE8BN?format=jpg&name=large']
+cover = "/images/FLjBrnPXwAQE8BN.jfif"
+images = ['/images/FLjBrnPXwAQE8BN.jfif']
 tags = ["DotNet"]
 category="tech"
 description =  "Today Microsoft celebrated 20 years since the first version of dotnet was released with a special live stream event."
