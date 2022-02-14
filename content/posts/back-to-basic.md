@@ -5,8 +5,8 @@ year = "2021"
 month= "2021-12"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://pbs.twimg.com/media/FHi_NyOXEAo9YbG?format=jpg&name=large"
-images = ['https://pbs.twimg.com/media/FHi_NyOXEAo9YbG?format=jpg&name=large']
+cover = "/images/FHi_NyOXEAo9YbG.jfif"
+images = ['/images/FHi_NyOXEAo9YbG.jfif']
 tags = ["BASIC", "History", "Programming"]
 category="tech"
 keywords = ["", ""]
