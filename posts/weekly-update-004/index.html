@@ -158,6 +158,8 @@ Pwned Pass
 <div class=card-body><div class=post-meta>
 <span class=post-date title="created on 2020-12-06 20:00:45 +0000 UTC.">
 Dec 6, 2020
+</span><span class=post-reading-time>
+2 min read
 </span><span class=post-taxonomies><a href=https://www.funkysi1701.com/2020/12/ class="badge post-taxonomy">2020-12</a><a href=https://www.funkysi1701.com/tags/sql/ class="badge post-taxonomy">SQL</a><a href=https://www.funkysi1701.com/2020/ class="badge post-taxonomy">2020</a></span>
 </div>
 <div class="post-content mb-3"><p>I use sp_send_dbmail to send results of sql queries by email to business users. Recently an issue was raised that data was being cut off after 255 characters. To fix this I added @query_no_truncate = 1, however this stopped the column headings from being included. No idea why you can&rsquo;t have all the data and column headings but there you have it.</p>
