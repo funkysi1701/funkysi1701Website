@@ -13,7 +13,7 @@ keywords = ["", ""]
 description = "A review of last years goals and setting of new ones for 2022"
 summary = "A review of last years goals and setting of new ones for 2022"
 showFullContent = false
-readingTime = false
+readingTime = true
 aliases = [
     "/posts/2022-goals/",
     "/posts/2022-goals-24nj",

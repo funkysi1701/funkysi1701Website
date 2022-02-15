@@ -13,7 +13,7 @@ keywords = ["", ""]
 description = "Azure DevOps release pipelines have lots of options to do things how you want. One of my favourites is the option for approval."
 summary = "Azure DevOps release pipelines have lots of options to do things how you want. One of my favourites is the option for approval."
 showFullContent = false
-readingTime = false
+readingTime = true
 copyright = false
 aliases = [
     "/posts/azure-devops-release-pipelines-pre-and-post-approval/",

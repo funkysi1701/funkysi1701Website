@@ -12,7 +12,7 @@ keywords = ["", ""]
 description = "This is my annual lets make some goals for the new year blog post."
 summary = "This is my annual lets make some goals for the new year blog post."
 showFullContent = false
-readingTime = false
+readingTime = true
 copyright = false
 aliases = [
     "/posts/lets-see-what-2019-can-do/",

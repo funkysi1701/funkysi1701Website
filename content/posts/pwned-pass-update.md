@@ -13,7 +13,7 @@ keywords = ["", ""]
 description = "Its been a while since I first released Pwned Pass so lets have a look at where we are"
 summary = "Its been a while since I first released Pwned Pass so lets have a look at where we are"
 showFullContent = false
-readingTime = false
+readingTime = true
 copyright = false
 aliases = [
     "/posts/pwned-pass-update/",

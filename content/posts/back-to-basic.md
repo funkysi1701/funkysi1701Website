@@ -13,7 +13,7 @@ keywords = ["", ""]
 description =  "Writing BASIC for the Lynx"
 summary = " Writing BASIC for the Lynx"
 showFullContent = false
-readingTime = false
+readingTime = true
 copyright = false
 aliases = [
     "/posts/back-to-basic/",

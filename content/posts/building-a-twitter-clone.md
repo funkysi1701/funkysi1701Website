@@ -12,7 +12,7 @@ keywords = ["", ""]
 description = "I saw a tweet about building a twitter clone being harder than you would think. So this of course started me thinking how I would go about building something like that."
 summary = "I saw a tweet about building a twitter clone being harder than you would think. So this of course started me thinking how I would go about building something like that."
 showFullContent = false
-readingTime = false
+readingTime = true
 copyright = false
 aliases = [
     "/posts/building-a-twitter-clone/",

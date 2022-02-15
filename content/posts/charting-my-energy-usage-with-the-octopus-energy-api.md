@@ -13,7 +13,7 @@ keywords = ["", ""]
 description = "Charting my Energy usage with the Octopus Energy API"
 summary = "Charting my Energy usage with the Octopus Energy API"
 showFullContent = false
-readingTime = false
+readingTime = true
 copyright = false
 aliases = [
     "/posts/charting-my-energy-usage-with-the-octopus-energy-api/",

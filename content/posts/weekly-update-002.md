@@ -13,7 +13,7 @@ keywords = ["", ""]
 description = "Time sync in docker containers"
 summary = "Time sync in docker containers"
 showFullContent = false
-readingTime = false
+readingTime = true
 aliases = [
     "/posts/weekly-update-002/",
     "/posts/weekly-update-002-1021",

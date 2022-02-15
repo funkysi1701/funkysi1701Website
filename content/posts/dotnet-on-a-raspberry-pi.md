@@ -13,7 +13,7 @@ keywords = ["", ""]
 description = "DotNet on a Raspberry Pi"
 summary = "DotNet on a Raspberry Pi"
 showFullContent = false
-readingTime = false
+readingTime = true
 copyright = false
 aliases = [
     "/posts/dotnet-on-a-raspberry-pi/",

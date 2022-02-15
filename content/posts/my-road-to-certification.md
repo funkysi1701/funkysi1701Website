@@ -13,7 +13,7 @@ keywords = ["", ""]
 description = "Road to Certification"
 summary = "Road to Certification"
 showFullContent = false
-readingTime = false
+readingTime = true
 copyright = false
 aliases = [
     "/posts/my-road-to-certification/",

@@ -12,7 +12,7 @@ keywords = ["", ""]
 description = "dynamic sql"
 summary = "dynamic sql"
 showFullContent = false
-readingTime = false
+readingTime = true
 copyright = false
 aliases = [
     "/posts/weekly-update-004/",

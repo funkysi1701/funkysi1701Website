@@ -12,7 +12,7 @@ category="tech"
 description =  "Today Microsoft celebrated 20 years since the first version of dotnet was released with a special live stream event."
 summary = "Today Microsoft celebrated 20 years since the first version of dotnet was released with a special live stream event."
 showFullContent = false
-readingTime = false
+readingTime = true
 copyright = false
 aliases = [
     "/posts/dotnet-is-20-years-old/",

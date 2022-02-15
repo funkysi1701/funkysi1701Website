@@ -9,7 +9,7 @@ summary = "Pwned Pass - My HIBP Android App"
 
 showFullContent = false
 copyright = false
-readingTime = false
+readingTime = true
 aliases = [
     "/pwned-pass",
     "/posts/pwned-pass"

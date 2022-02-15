@@ -12,7 +12,7 @@ keywords = ["", ""]
 description = "A while ago I blogged about promoting my blog with Buffer. At the time I made use of the nuget package BufferAPI but lets look at some improvements I can make."
 summary = "A while ago I blogged about promoting my blog with Buffer. At the time I made use of the nuget package BufferAPI but lets look at some improvements I can make."
 showFullContent = false
-readingTime = false
+readingTime = true
 copyright = false
 aliases = [
     "/posts/fiddler-and-apis/",

@@ -13,7 +13,7 @@ keywords = ["", ""]
 description = "My first PR and PHP"
 summary = "My first PR and PHP"
 showFullContent = false
-readingTime = false
+readingTime = true
 aliases = [
     "/posts/weekly-update-003/",
     "/posts/weekly-update-003-3nfl",

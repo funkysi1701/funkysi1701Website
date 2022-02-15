@@ -12,7 +12,7 @@ keywords = ["", ""]
 description = "It has been a bit of a mad week this week."
 summary = "It has been a bit of a mad week this week."
 showFullContent = false
-readingTime = false
+readingTime = true
 copyright = false
 aliases = [
     "/posts/005-twitter-cards/",

@@ -13,7 +13,7 @@ keywords = ["", ""]
 description = "Dotnet 5, dotnetconf and adding devops buildID and hash"
 summary = "Dotnet 5, dotnetconf and adding devops buildID and hash"
 showFullContent = false
-readingTime = false
+readingTime = true
 aliases = [
     "/posts/weekly-update-001/",
     "/posts/weekly-update-001-33d0",
