@@ -1,0 +1,348 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Uploading Files to AWS - Funky Si's Blog</title><link rel=apple-touch-icon href=https://www.funkysi1701.com/images/icons/icon-180x180.png sizes=180x180>
+<link rel=icon href=https://www.funkysi1701.com/images/icons/icon-32x32.png sizes=32x32 type=image/png>
+<link rel=icon href=https://www.funkysi1701.com/images/icons/icon-16x16.png sizes=16x16 type=image/png>
+<link rel=icon href=https://www.funkysi1701.com/images/icons/favicon.png>
+<meta name=keywords content=",">
+<meta name=description content="Uploading Files to AWS"><meta itemprop=name content="Uploading Files to AWS">
+<meta itemprop=description content="Uploading Files to AWS"><meta itemprop=datePublished content="2017-07-03T20:00:45+00:00">
+<meta itemprop=dateModified content="2017-07-03T20:00:45+00:00">
+<meta itemprop=wordCount content="515"><meta itemprop=image content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg">
+<meta itemprop=keywords content="AWS,C-Sharp,Programming,"><meta property="og:title" content="Uploading Files to AWS">
+<meta property="og:description" content="Uploading Files to AWS">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.funkysi1701.com/posts/uploading-files-to-aws/"><meta property="og:image" content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2017-07-03T20:00:45+00:00">
+<meta property="article:modified_time" content="2017-07-03T20:00:45+00:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg">
+<meta name=twitter:title content="Uploading Files to AWS">
+<meta name=twitter:description content="Uploading Files to AWS">
+<link rel=stylesheet href=https://www.funkysi1701.com/css/main.min.b7a6eda8d46e39a549f182cf72a9ff4f4c1d4d82c31ecc3ede0b7f4d5b26f32b.css crossorigin=anonymous><link rel=stylesheet href=https://www.funkysi1701.com/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css integrity="sha256-PSKHlLztu/oEEr64+8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin=anonymous></head>
+<body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+<div class=container>
+<button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
+<i class="fas fa-bars"></i>
+</button><a class="navbar-brand flex-grow-1 flex-lg-grow-0 text-center text-lg-start mx-auto me-lg-3" href=https://www.funkysi1701.com/>Funky Si's Blog
+</a>
+<div class="offcanvas offcanvas-bottom surface" tabindex=-1 id=offcanvasSocialShare aria-labelledby=offcanvasSocialShare>
+<div class=offcanvas-header>
+<h3 class=offcanvas-title>Share</h3>
+<button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
+<i class="fas fa-times"></i>
+</button>
+</div>
+<div class=offcanvas-body>
+<a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button" target=_blank href="https://twitter.com/intent/tweet?title=Uploading%20Files%20to%20AWS&url=https%3a%2f%2fwww.funkysi1701.com%2fposts%2fuploading-files-to-aws%2f">
+<i class="fab fa-fw fa-twitter"></i> Twitter
+</a>
+<a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button" target=_blank href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.funkysi1701.com%2fposts%2fuploading-files-to-aws%2f">
+<i class="fab fa-fw fa-facebook-f"></i> Facebook
+</a>
+</div>
+</div>
+<button class=navbar-settings type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasSettings aria-controls=offcanvasSettings aria-label="Toggle settings">
+<i class="fas fa-ellipsis-v"></i>
+</button>
+<div class="offcanvas offcanvas-end surface h-100" tabindex=-1 id=offcanvasSettings aria-labelledby=offcanvasSettings>
+<div class=offcanvas-header>
+<h3 class=offcanvas-title>Settings</h3>
+<button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
+<i class="fas fa-times"></i>
+</button>
+</div>
+<div class="offcanvas-body d-flex flex-column">
+<section class=setting>
+<form class=row>
+<div class=col-auto>
+<label><i class="fas fa-fw fa-adjust"></i> Mode</label>
+</div>
+<div class="col-auto ms-auto">
+<div class="form-check form-switch">
+<input class=form-check-input type=checkbox id=modeSwitcher>
+</div>
+</div>
+</form>
+</section>
+<section class="setting palettes">
+<form class=row>
+<div class=col-auto>
+<label><i class="fas fa-fw fa-palette"></i> Palette</label>
+</div>
+<div class="col-auto ms-auto">
+<a id=btnPalette class="btn btn-sm btn-outline-primary" role=button aria-label=palettePicker>
+<i class="fas fa-eye-dropper"></i>
+</a>
+</div>
+</form>
+<div class="mt-2 d-flex justify-content-between visually-hidden" id=palettePicker><button type=button id=palette-blue aria-label=Blue class="btn btn-sm w-100 palette" data-palette=blue>
+</button><button type=button id=palette-blue-gray aria-label="Blue Gray" class="btn btn-sm w-100 palette" data-palette=blue-gray>
+</button><button type=button id=palette-brown aria-label=Brown class="btn btn-sm w-100 palette" data-palette=brown>
+</button><button type=button id=palette-cyan aria-label=Cyan class="btn btn-sm w-100 palette" data-palette=cyan>
+</button><button type=button id=palette-green aria-label=Green class="btn btn-sm w-100 palette" data-palette=green>
+</button><button type=button id=palette-indigo aria-label=Indigo class="btn btn-sm w-100 palette" data-palette=indigo>
+</button><button type=button id=palette-orange aria-label=Orange class="btn btn-sm w-100 palette" data-palette=orange>
+</button><button type=button id=palette-pink aria-label=Pink class="btn btn-sm w-100 palette" data-palette=pink>
+</button><button type=button id=palette-purple aria-label=Purple class="btn btn-sm w-100 palette" data-palette=purple>
+</button><button type=button id=palette-red aria-label=Red class="btn btn-sm w-100 palette" data-palette=red>
+</button><button type=button id=palette-teal aria-label=Teal class="btn btn-sm w-100 palette" data-palette=teal>
+</button><button type=button id=palette-yellow aria-label=Yellow class="btn btn-sm w-100 palette" data-palette=yellow>
+</button></div>
+</section>
+<section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
+<a role=button class="action action-go-back" href="javascript: window.history.back();">
+<span class=action-icon><i class="fas fa-2x fa-arrow-left"></i></span> Go back
+</a>
+<a role=button class="action action-reload-page">
+<span class=action-icon><i class="fas fa-2x fa-redo-alt"></i></span> Reload
+</a>
+<a role=button class="action action-copy-url">
+<span class=action-icon><i class="fas fa-2x fa-link"></i></span> Copy URL
+</a><a class="action action-social-share" type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasSocialShare aria-controls=offcanvasSocialShare aria-label="Toggle social share">
+<span class=action-icon><i class="fas fa-2x fa-share-alt"></i></span> Share
+</a></section>
+</div>
+</div>
+<div class="collapse navbar-collapse" tabindex=-1 id=navbarSupportedContent aria-labelledby=navbarSupportedContent>
+<form class="search-bar my-1" action=https://www.funkysi1701.com/search>
+<div class="input-group input-group-sm">
+<span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+<input class="form-control rounded-pill" name=q type=search aria-label=Search>
+</div>
+</form>
+<ul class="navbar-nav ms-auto"><li class=nav-item>
+<a class=nav-link href=https://www.funkysi1701.com/about>
+About
+</a>
+</li><li class=nav-item>
+<a class=nav-link href=https://metrics.funkysi1701.com/ target=_blank rel="noopener noreferrer">
+Metrics
+</a>
+</li><li class=nav-item>
+<a class=nav-link href=https://www.funkysi1701.com/pwned-pass>
+Pwned Pass
+</a>
+</li></ul>
+</div>
+</div>
+</nav>
+</header>
+<main role=main class=container>
+<div class="row content">
+<div class=col-lg-8>
+<div class=container><nav class="row card component" aria-label=breadcrumb>
+<div class=card-body>
+<ol class=breadcrumb><li class=breadcrumb-item><a href=https://www.funkysi1701.com/>Home</a></li><li class=breadcrumb-item><a href=https://www.funkysi1701.com/posts/>Posts</a></li><li class="breadcrumb-item active">Uploading Files to AWS</li></ol>
+</div>
+</nav><div class=post-panel-wrapper>
+<div class="d-flex flex-column component rounded post-panel">
+<a class="action action-panel-toggler" role=button title="Panel toggler">
+<i class="fas fa-fw fa-chevron-circle-down"></i>
+</a>
+<a id=sidebarToggler class="action d-none d-lg-block" role=button title="Sidebar toggler">
+<i class="fas fa-fw fa-expand-alt" data-fa-transform=rotate-45></i>
+</a>
+<a class=action href=#post-comments role=button aria-label=Comments title=Comments>
+<i class="fas fa-fw fa-comments"></i>
+</a>
+</div>
+</div>
+<article class="row card component mb-4 post">
+<div class=card-header>
+<h1 class="card-title post-title">Uploading Files to AWS
+</h1>
+</div>
+<div class=card-body><div class=post-meta>
+<span class=post-date title="created on 2017-07-03 20:00:45 +0000 UTC.">
+Jul 3, 2017
+</span><span class=post-reading-time>
+3 min read
+</span><span class=post-taxonomies><a href=https://www.funkysi1701.com/2017/07/ class="badge post-taxonomy">2017-07</a><a href=https://www.funkysi1701.com/tags/aws/ class="badge post-taxonomy">AWS</a><a href=https://www.funkysi1701.com/tags/c-sharp/ class="badge post-taxonomy">C-Sharp</a><a href=https://www.funkysi1701.com/tags/programming/ class="badge post-taxonomy">Programming</a><a href=https://www.funkysi1701.com/2017/ class="badge post-taxonomy">2017</a></span>
+</div>
+<div class="post-content mb-3"><p>I am a fan of Azure but today I have been looking at AWS. Specifically how to upload and download files.</p>
+<p>AWS S3 stores files in Buckets. I already had an AWS S3 account setup with a Bucket. I am going to assume you have got a bucket setup and concentrate on the code to get files in and out.</p>
+<p>First step is to use nuget to install the AWS packages. In nuget the packages you want are called AWSSDK.Core and AWSSDK.S3.</p>
+<p>The using statements you want to use are called Amazon.S3 and Amazon.S3.Transfer, not sure why this doesn’t match nuget, this difference caught me out a couple of times.</p>
+<p>Now to the code that uploads files</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c# data-lang=c#>AmazonS3Client AWSclient = <span style=color:#66d9ef>new</span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.EUWest1);  
+TransferUtility fileTransferUtility = <span style=color:#66d9ef>new</span> TransferUtility(AWSclient);  
+<span style=color:#66d9ef>using</span> (FileStream streamWriter = <span style=color:#66d9ef>new</span> FileStream(path, FileMode.Open))  
+{  
+  TransferUtilityUploadRequest fileTransferUtilityRequest = <span style=color:#66d9ef>new</span> TransferUtilityUploadRequest  
+  {  
+    BucketName = <span style=color:#e6db74>&#34;flawlessimages&#34;</span>,  
+    InputStream = streamWriter,  
+    Key = fileName  
+  };  
+  fileTransferUtility.Upload(fileTransferUtilityRequest);  
+}
+</code></pre></div><p>Lets break it down and look at what it does.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c# data-lang=c#>AmazonS3Client AWSclient = <span style=color:#66d9ef>new</span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.EUWest1);
+</code></pre></div><p>This creates an instance of AmazonS3Client, we are passing the Access Key and Secret Access Key both of which can be found from your Amazon S3 account My Security Credentials section. Amazon.RegionEndpoint.EUWest1 specifies the amazon data centres that your bucket is located in.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c# data-lang=c#>TransferUtility fileTransferUtility = <span style=color:#66d9ef>new</span> TransferUtility(AWSclient);
+</code></pre></div><p>This creates an instance of TransfterUtility using the AmazonS3Client instance we created in the previous step.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c# data-lang=c#><span style=color:#66d9ef>using</span> (FileStream streamWriter = <span style=color:#66d9ef>new</span> FileStream(path, FileMode.Open))  
+{
+</code></pre></div><p>This opens up a filestream from a files path and specifies that the file should be opened.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c# data-lang=c#>TransferUtilityUploadRequest fileTransferUtilityRequest = <span style=color:#66d9ef>new</span> TransferUtilityUploadRequest  
+{  
+  BucketName = <span style=color:#e6db74>&#34;flawlessimages&#34;</span>,  
+  InputStream = streamWriter,  
+  Key = fileName  
+};  
+fileTransferUtility.Upload(fileTransferUtilityRequest);  
+</code></pre></div><p>This last step specifies which bucket to upload to, what input stream to upload and the Key to use. Key is just AWS way of referring to files, more commonly referred to as the filename.</p>
+<p>This is all you need to do to upload a file to your Bucket. The file will be located at <a href=https://s3-eu-west-1.amazonaws.com/[bucketname]/[filename] target=_blank rel="noopener noreferrer">https://s3-eu-west-1.amazonaws.com/[bucketname]/[filename]</a>
+, however by default it will not be downloadable until you set Read permission to everyone, once you do that anyone who has the link will be able to download your file.</p>
+<p>This is the same permission level as any file you have on your webserver, however AWS has a better way.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c# data-lang=c#><span style=color:#66d9ef>using</span> (s3Client = <span style=color:#66d9ef>new</span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.USEast1))  
+{  
+  GetPreSignedUrlRequest request1 = <span style=color:#66d9ef>new</span> GetPreSignedUrlRequest  
+  {  
+    BucketName = bucketName,  
+    Key = filename,  
+    Expires = DateTime.Now.AddMinutes(<span style=color:#ae81ff>5</span>)  
+  };  
+  urlString = s3Client.GetPreSignedURL(request1);  
+}
+</code></pre></div><p>Here we are generating a url to download the file, but we are specifying that it is only valid for 5 minutes. This means that if you share the url it will only work for 5 minutes, after that AWS will give an access denied message.</p>
+<p>This is much better security than you have on a typical web server, and easy to implement, every time a user clicks on a download link you generate a new presigned url and send the download to the browser, as long as this process doesn’t take longer than 5 minutes the user will never know.</p>
+</div></div>
+<div class=card-footer>
+<div class="post-navs d-flex justify-content-evenly">
+<div class="post-nav post-prev">
+<i class="fas fa-fw fa-chevron-left"></i>
+<a href=https://www.funkysi1701.com/posts/fiddler-and-apis/>Fiddler and APIs
+</a>
+</div><div class="post-nav post-next">
+<a href=https://www.funkysi1701.com/posts/lets-see-what-2019-can-do/>Lets see what 2019 can do!
+</a>
+<i class="fas fa-fw fa-chevron-right"></i>
+</div></div>
+</div>
+</article><section class="related-posts row card component">
+<div class=card-header>
+<h2 class=card-title>Related Posts</h2>
+</div>
+<div class=card-body>
+<ul class=post-list>
+<li>
+<a href=https://www.funkysi1701.com/posts/source-code-for-game-of-life/>Source Code for Game of Life
+</a>
+<span class="float-end post-date">Feb 21, 2015
+</span>
+</li>
+<li>
+<a href=https://www.funkysi1701.com/posts/fiddler-and-apis/>Fiddler and APIs
+</a>
+<span class="float-end post-date">Jun 19, 2017
+</span>
+</li>
+<li>
+<a href=https://www.funkysi1701.com/posts/how-do-i-add-power-bi-data-to-a-webpage/>How do I add Power BI data to a webpage?
+</a>
+<span class="float-end post-date">Jun 12, 2017
+</span>
+</li>
+</ul>
+</div>
+</section><div class="card component row post-comments" id=post-comments>
+<div class=card-header>
+<h2 class=card-title>Comments</h2>
+</div>
+<div class=card-body><div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//funkysi1701.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+<div class="container d-flex flex-column">
+<section class="recent-posts row card component">
+<div class=card-header>
+<h2 class=card-title>Recent Posts</h2>
+</div>
+<div class=card-body>
+<ul class=post-list>
+<li>
+<a href=https://www.funkysi1701.com/posts/dotnet-is-20-years-old/>dotnet is 20 years old
+</a>
+</li>
+<li>
+<a href=https://www.funkysi1701.com/posts/why-do-i-have-a-website/>Why do I have a website?
+</a>
+</li>
+<li>
+<a href=https://www.funkysi1701.com/posts/using-github-actions/>Using GitHub Actions
+</a>
+</li>
+<li>
+<a href=https://www.funkysi1701.com/posts/2022-goals/>2022 Goals
+</a>
+</li>
+<li>
+<a href=https://www.funkysi1701.com/posts/back-to-basic/>Back to BASIC
+</a>
+</li>
+</ul>
+</div>
+</section><section class="tags-taxonomies row card component">
+<div class=card-header>
+<h2 class=card-title>
+<a href=https://www.funkysi1701.com/tags>Tags</a>
+</h2>
+</div>
+<div class=card-body>
+<div class=py-2><a href=https://www.funkysi1701.com/tags/dotnet/ class="badge rounded post-taxonomy" title=DotNet>
+DotNet</a><a href=https://www.funkysi1701.com/tags/goals/ class="badge rounded post-taxonomy" title=Goals>
+Goals</a><a href=https://www.funkysi1701.com/tags/programming/ class="badge rounded post-taxonomy" title=Programming>
+Programming</a><a href=https://www.funkysi1701.com/tags/azure/ class="badge rounded post-taxonomy" title=Azure>
+Azure</a><a href=https://www.funkysi1701.com/tags/devopspipeline/ class="badge rounded post-taxonomy" title=DevOpsPipeline>
+DevOpsPipeline</a><a href=https://www.funkysi1701.com/tags/twitter/ class="badge rounded post-taxonomy" title=Twitter>
+Twitter</a><a href=https://www.funkysi1701.com/tags/android/ class="badge rounded post-taxonomy" title=Android>
+Android</a><a href=https://www.funkysi1701.com/tags/api/ class="badge rounded post-taxonomy" title=API>
+API</a><a href=https://www.funkysi1701.com/tags/architecture/ class="badge rounded post-taxonomy" title=Architecture>
+Architecture</a><a href=https://www.funkysi1701.com/tags/aws/ class="badge rounded post-taxonomy" title=AWS>
+AWS</a><a href=https://www.funkysi1701.com/tags/azuredevops/ class="badge rounded post-taxonomy" title=AzureDevOps>
+AzureDevOps</a><a href=https://www.funkysi1701.com/tags/basic/ class="badge rounded post-taxonomy" title=BASIC>
+BASIC</a><a href=https://www.funkysi1701.com/tags/blazor/ class="badge rounded post-taxonomy" title=Blazor>
+Blazor</a><a href=https://www.funkysi1701.com/tags/blogging/ class="badge rounded post-taxonomy" title=Blogging>
+Blogging</a><a href=https://www.funkysi1701.com/tags/c-sharp/ class="badge rounded post-taxonomy" title=C-Sharp>
+C-Sharp</a><a href=https://www.funkysi1701.com/tags/career/ class="badge rounded post-taxonomy" title=Career>
+Career</a><a href=https://www.funkysi1701.com/tags/certification/ class="badge rounded post-taxonomy" title=Certification>
+Certification</a><a href=https://www.funkysi1701.com/tags/design/ class="badge rounded post-taxonomy" title=Design>
+Design</a><a href=https://www.funkysi1701.com/tags/docker/ class="badge rounded post-taxonomy" title=Docker>
+Docker</a><a href=https://www.funkysi1701.com/tags/festivetechcalendar2021/ class="badge rounded post-taxonomy" title=FestiveTechCalendar2021>
+FestiveTechCalendar2021</a></div>
+</div>
+</section><section class="social row card component">
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.6.1/css/all.css integrity=sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP crossorigin=anonymous>
+<div class=card-header>
+<h2 class=card-title>
+Social Links
+</h2>
+</div>
+<div class=card-body>
+<ul class=post-list>
+<li><span class="fab fa-facebook-f"></span>&nbsp;<a href=https://facebook.com/funkysi1701>Facebook</a></li>
+<li><span class="fab fa-twitter" aria-hidden=true></span>&nbsp;<a href=https://twitter.com/funkysi1701>Twitter</a></li>
+<li><span class="fab fa-brands fa-github" aria-hidden=true></span>&nbsp;<a href=https://github.com/funkysi1701>GitHub</a></li>
+<li><span class="fab fa-linkedin-in" aria-hidden=true></span>&nbsp;<a href=https://www.linkedin.com/in/funkysi1701>LinkedIn</a></li>
+<li><span aria-hidden=true></span>&nbsp;<a href=https://dev.to/funkysi1701>DevTo</a></li>
+</ul>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav justify-content-center mb-2"></nav>
+<div class="copyright mb-2">
+</div>
+</footer>
+<script src=https://www.funkysi1701.com/js/main.b4d13568ea62925adef3e45f80cad4c87607640396981d7e679fff6ab72a3dd4.js integrity="sha256-tNE1aOpiklre8+RfgMrUyHYHZAOWmB1+Z5//arcqPdQ=" crossorigin=anonymous defer></script><script src=https://www.funkysi1701.com/js/icons.min.a35670f2f90c398e5ee5c8e509b428fae75aa2746854cee10b60794633076859.js integrity="sha256-o1Zw8vkMOY5e5cjlCbQo+udaonRoVM7hC2B5RjMHaFk=" crossorigin=anonymous defer></script>
+<script src=https://www.funkysi1701.com/js/viewer.min.4dba52a0a790f909408b7385316651299158381686401d50ff1f04dda6476473.js integrity="sha256-TbpSoKeQ+QlAi3OFMWZRKZFYOBaGQB1Q/x8E3aZHZHM=" crossorigin=anonymous defer></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N1YJNQEHR4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-N1YJNQEHR4')</script></body>
+</html>
