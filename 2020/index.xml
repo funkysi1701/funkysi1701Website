@@ -1,1 +1,304 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2020 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2020/</link><description>Recent content in 2020 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Mon, 28 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2020/index.xml" rel="self" type="application/rss+xml"/><item><title>Goals for 2021</title><link>https://www.funkysi1701.com/posts/goals-for-2021/</link><pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/goals-for-2021/</guid><description>Here are my goals for 2021</description></item><item><title>Building a Twitter Clone</title><link>https://www.funkysi1701.com/posts/building-a-twitter-clone/</link><pubDate>Tue, 22 Dec 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/building-a-twitter-clone/</guid><description>I saw a tweet about building a twitter clone being harder than you would think. So this of course started me thinking how I would go about building something like that.</description></item><item><title>#005: Twitter Cards</title><link>https://www.funkysi1701.com/posts/005-twitter-cards/</link><pubDate>Sat, 12 Dec 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/005-twitter-cards/</guid><description>It has been a bit of a mad week this week.</description></item><item><title>Weekly Update #004</title><link>https://www.funkysi1701.com/posts/weekly-update-004/</link><pubDate>Sun, 06 Dec 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-004/</guid><description>dynamic sql</description></item><item><title>Weekly Update #003</title><link>https://www.funkysi1701.com/posts/weekly-update-003/</link><pubDate>Sat, 28 Nov 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-003/</guid><description>My first PR and PHP</description></item><item><title>Weekly Update #002</title><link>https://www.funkysi1701.com/posts/weekly-update-002/</link><pubDate>Sat, 21 Nov 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-002/</guid><description>Time sync in docker containers</description></item><item><title>Weekly Update #001</title><link>https://www.funkysi1701.com/posts/weekly-update-001/</link><pubDate>Sat, 14 Nov 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-001/</guid><description>Dotnet 5, dotnetconf and adding devops buildID and hash</description></item><item><title>Security Headers</title><link>https://www.funkysi1701.com/posts/security-headers/</link><pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/security-headers/</guid><description>Check the security headers of your site</description></item><item><title>Back to Blogging</title><link>https://www.funkysi1701.com/posts/back-to-blogging/</link><pubDate>Fri, 25 Sep 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/back-to-blogging/</guid><description>Back to Blogging</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2020 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2020/</link><description>Recent content in 2020 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Mon, 28 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2020/index.xml" rel="self" type="application/rss+xml"/><item><title>Goals for 2021</title><link>https://www.funkysi1701.com/posts/goals-for-2021/</link><pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/goals-for-2021/</guid><description>&lt;p>I didn&amp;rsquo;t make any goals for 2020, or if I did, I didn&amp;rsquo;t officially announce them. 2020 has been a hard year for all of us, 2021 is going to be better.&lt;/p>
+&lt;p>Here are a few ideas for my goals for the year ahead.&lt;/p>
+&lt;ol>
+&lt;li>Azure certification&lt;/li>
+&lt;li>Mentoring&lt;/li>
+&lt;li>F#&lt;/li>
+&lt;li>Cosmos db/Mongo db&lt;/li>
+&lt;li>Give a talk&lt;/li>
+&lt;li>Mandlebrot Generator&lt;/li>
+&lt;li>Pwned Pass Mobile App&lt;/li>
+&lt;li>More time for me&lt;/li>
+&lt;/ol>
+&lt;ol>
+&lt;li>
+&lt;p>I want to get a certificate to show how much I know. The obvious area for this is Azure. I spend a lot of time playing with Azure, building and deploying to the platform I should be able to get certified in this area. I actually had an exam booked in 2020 but it was an in-person exam so was cancelled when Covid hit. I plan to sit the &lt;a href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-900" target="_blank" rel="noopener noreferrer">foundation&lt;/a>
+exam in the first quarter of 2021 and I will take it from there.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>I have had a few times recently where I have been reminded that I don&amp;rsquo;t have much experience working with others. Mostly because I work in a one-man development team so there are limited opportunities in the workplace. I have a few ideas to change this, but this is one of my top priorities for 2021.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&amp;amp; 4) My experience is very Microsoft and C# so I want to spend some time exploring and learning tech that is adjacent to this. A functional language like F# sounds like a good compliment to my existing skills and my data skills are also very SQL server so some document database skills would be a good place to spend some time.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Doing a talk has been on my list for years. I am terrified of doing one and with everything online now I don&amp;rsquo;t know if that makes things easier or harder. I don&amp;rsquo;t think 2021 is going to be the year for this but maybe I will take baby steps towards this goal.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Twitter recently reminded me about watching a Mandlebrot generate one pixel at a time in the 1980s. I would love to explore the code used to generate them and how fast they currently are to produce.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>My Google play store Xamarin forms app that uses the HIBP API has less than 100 users and I am considering closing it down, especially as I pay a monthly fee for API keys. I haven&amp;rsquo;t really decided what to do, maybe I will spend some time improving it, maybe I will close it down, maybe I will build something else.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For many people 2020 has been a hard year, I am one of those&lt;/p>
+&lt;/li>
+&lt;/ol></description></item><item><title>Building a Twitter Clone</title><link>https://www.funkysi1701.com/posts/building-a-twitter-clone/</link><pubDate>Tue, 22 Dec 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/building-a-twitter-clone/</guid><description>&lt;p>I saw a tweet about building a twitter clone being harder than you would think. So this of course started me thinking how I would go about building something like that.&lt;/p>
+&lt;p>Ok so where would I start? First a few assumptions.&lt;/p>
+&lt;ol>
+&lt;li>Development by a lone developer ie me&lt;/li>
+&lt;li>Tech stack will be dotnet and other tech I am familiar with&lt;/li>
+&lt;li>Database backend, probably SQL Server but I might use table storage for cost reasons should I try and actually build this. However if I design this well this should be something that could be swapped out as the system grows&lt;/li>
+&lt;li>User accounts on the system will be small as I can&amp;rsquo;t imagine anyone ever signing up. Why sign up to a social media platform with no users?&lt;/li>
+&lt;/ol>
+&lt;h2 id="i-guess-the-next-question-is-what-is-twitter">I guess the next question is what is Twitter?&lt;a class="anchor ms-1" href="#i-guess-the-next-question-is-what-is-twitter">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>A website that allows you to share 280 characters of text with your followers, allows you to follow other users updates and allows other user to follow your updates.&lt;/p>
+&lt;p>It also has an API that allow you to do almost everything that you can with the website.&lt;/p>
+&lt;p>Then there are of course mobile apps to consider but I am going to assume this is out of scope, however assuming a good enough API then this shouldn&amp;rsquo;t be a problem for future development.&lt;/p>
+&lt;h2 id="first-steps">First Steps&lt;a class="anchor ms-1" href="#first-steps">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>To start off with I would concentrate on the API, and then build a web client that makes use of the API.&lt;/p>
+&lt;p>So what would my MVP (minimum viable product) be?&lt;/p>
+&lt;ol>
+&lt;li>User can authenticate with my API to get a token which allows access to other API endpoints&lt;/li>
+&lt;li>User can create a tweet&lt;/li>
+&lt;li>User can view own tweets&lt;/li>
+&lt;li>User can view tweets of another user&lt;/li>
+&lt;li>User can view tweets in their timeline&lt;/li>
+&lt;li>User can follow/unfollow other users&lt;/li>
+&lt;li>User can search for other users&lt;/li>
+&lt;li>User can search for keywords in tweets&lt;/li>
+&lt;/ol>
+&lt;p>I think that is probably sufficient to build my MVP for the API.&lt;/p>
+&lt;p>An interesting side note is that I could use the OAuth Twitter authentication to allow users to login to my twitter clone with the real twitter login details. However this makes no sense to me as we are essentially adding a dependency on the real twitter.&lt;/p>
+&lt;p>So what would I use for the frontend? I would start off with a Client Side Blazor frontend. Once I had a proof of concept that worked, I would think about styling and adding the UI elements that are familiar to twitter users.&lt;/p>
+&lt;p>The beauty of Client Side Blazor is that I can host cheaply in azure storage and distribute around the world via a CDN.&lt;/p>
+&lt;p>Due to the high number of times that follower and following count and other stats are queried I would consider storing these in the database and include a regular job to recalculate them so they don&amp;rsquo;t get out of sync with the data.&lt;/p>
+&lt;p>Having said all of this I am very tempted to fire up Visual Studio and see how far I get, and what problems I encounter along the way.&lt;/p></description></item><item><title>#005: Twitter Cards</title><link>https://www.funkysi1701.com/posts/005-twitter-cards/</link><pubDate>Sat, 12 Dec 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/005-twitter-cards/</guid><description>&lt;p>It has been a bit of a mad week this week. I joined a new team so lots of time learning what&amp;rsquo;s what and also being pulled in two directions as usual demands come through on top of that.&lt;/p>
+&lt;p>My blog runs on Blazor and I have been making use of JavaScript interop to update the html headers and update the page title to match the blog post article. This works great, I load the page and check the headers and they were saying what I wanted.&lt;/p>
+&lt;p>The problem was I wanted to add tags for &lt;a href="https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started" target="_blank" rel="noopener noreferrer">twitter cards&lt;/a>
+This means that when I paste a link to my blog on twitter you get a nice preview and pic of me in the tweet. This was not working at all even though I had the correct headers.&lt;/p>
+&lt;p>I eventually figured out that the problem was the fact I was using JavaScript to update my headers after the page had been initially loaded. Twitter was fetching my page before these headers got added and therefore couldn&amp;rsquo;t see the twitter card headers.&lt;/p>
+&lt;p>My solution was to use invalid html. Not ideal but it works. I added the required html tags in the body of my page using Blazor/C# instead of using JavaScript to add them into the header. Twitter appears to not be fussy in finding them in the wrong place.&lt;/p>
+&lt;p>Twitter provides a validator tool at &lt;a href="https://cards-dev.twitter.com/validator" target="_blank" rel="noopener noreferrer">Twitter Card Validator&lt;/a>
+which my website now passes.&lt;/p>
+&lt;p>Not much else to say this week, apart from I am missing Visual Studio and C#, I have been mostly using VS Code on Linux and looking at php which isn&amp;rsquo;t as much fun as my usual day job.&lt;/p></description></item><item><title>Weekly Update #004</title><link>https://www.funkysi1701.com/posts/weekly-update-004/</link><pubDate>Sun, 06 Dec 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-004/</guid><description>&lt;p>I use sp_send_dbmail to send results of sql queries by email to business users. Recently an issue was raised that data was being cut off after 255 characters. To fix this I added @query_no_truncate = 1, however this stopped the column headings from being included. No idea why you can&amp;rsquo;t have all the data and column headings but there you have it.&lt;/p>
+&lt;p>What I am doing now is running 2 queries, one to get the headings, and one to get the data. In theory you should be able to combine them with a Union however you then have datatype issues for non text columns so I gave up with that idea.&lt;/p>
+&lt;p>My results have 60 something columns (don&amp;rsquo;t ask its for a data import into a third party system!) so I am not typing them all out. I can shove query results into a temporary table and then execute to get a list of columns.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sql" data-lang="sql">&lt;span style="color:#66d9ef">SELECT&lt;/span> name
+&lt;span style="color:#66d9ef">FROM&lt;/span> tempdb.sys.columns
+&lt;span style="color:#66d9ef">WHERE&lt;/span> object_id &lt;span style="color:#f92672">=&lt;/span> object_id(&lt;span style="color:#e6db74">&amp;#39;tempdb..#TempTable&amp;#39;&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>However I need my list to be horizontal so I can use as column headers. I can use dynamic SQL and a pivot to flip them round.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sql" data-lang="sql">&lt;span style="color:#66d9ef">DECLARE&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#66d9ef">AS&lt;/span> NVARCHAR(&lt;span style="color:#66d9ef">MAX&lt;/span>), &lt;span style="color:#f92672">@&lt;/span>query &lt;span style="color:#66d9ef">AS&lt;/span> NVARCHAR(&lt;span style="color:#66d9ef">MAX&lt;/span>)
+&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#f92672">=&lt;/span> STUFF((&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#e6db74">&amp;#39;,&amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> QUOTENAME(name)
+&lt;span style="color:#66d9ef">FROM&lt;/span> tempdb.sys.columns
+&lt;span style="color:#66d9ef">WHERE&lt;/span> object_id &lt;span style="color:#f92672">=&lt;/span> object_id(&lt;span style="color:#e6db74">&amp;#39;tempdb..#TempTable&amp;#39;&lt;/span>)
+&lt;span style="color:#66d9ef">FOR&lt;/span> XML PATH(&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>), &lt;span style="color:#66d9ef">TYPE&lt;/span>).value(&lt;span style="color:#e6db74">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;NVARCHAR(MAX)&amp;#39;&lt;/span>),&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>)
+&lt;span style="color:#66d9ef">SET&lt;/span> &lt;span style="color:#f92672">@&lt;/span>query &lt;span style="color:#f92672">=&lt;/span> N&lt;span style="color:#e6db74">&amp;#39;SELECT &amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#f92672">+&lt;/span> N&lt;span style="color:#e6db74">&amp;#39; FROM
+&lt;/span>&lt;span style="color:#e6db74">(
+&lt;/span>&lt;span style="color:#e6db74"> SELECT name
+&lt;/span>&lt;span style="color:#e6db74"> FROM tempdb.sys.columns
+&lt;/span>&lt;span style="color:#e6db74"> WHERE object_id = object_id(&amp;#39;&amp;#39;tempdb..#TempTable&amp;#39;&amp;#39;)
+&lt;/span>&lt;span style="color:#e6db74">) x
+&lt;/span>&lt;span style="color:#e6db74">PIVOT
+&lt;/span>&lt;span style="color:#e6db74">(
+&lt;/span>&lt;span style="color:#e6db74"> MAX(name)
+&lt;/span>&lt;span style="color:#e6db74"> FOR name IN (&amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#f92672">+&lt;/span> N&lt;span style="color:#e6db74">&amp;#39;)
+&lt;/span>&lt;span style="color:#e6db74">) y&amp;#39;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Weekly Update #003</title><link>https://www.funkysi1701.com/posts/weekly-update-003/</link><pubDate>Sat, 28 Nov 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-003/</guid><description>&lt;p>Been a quiet week, so wasn&amp;rsquo;t expecting to have much to write on here, however a few things happened worth talking about.&lt;/p>
+&lt;h3 id="my-first-pr">My First PR&lt;a class="anchor ms-1" href="#my-first-pr">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>A comment was made to me to do something with the postcodes that are in the system I am developing. Find out what projects have postcodes near each other, and that way work can be grouped together and reduce potential mileage costs of staff that need to visit these projects.&lt;/p>
+&lt;p>A quick google search found &lt;a href="https://postcodes.io/" target="_blank" rel="noopener noreferrer">https://postcodes.io/&lt;/a>
+which has an API that returns nearby postcodes. It also has a C# wrapper &lt;a href="https://github.com/markembling/MarkEmbling.PostcodesIO" target="_blank" rel="noopener noreferrer">https://github.com/markembling/MarkEmbling.PostcodesIO&lt;/a>
+&lt;/p>
+&lt;p>A comparison of what was being returned from the wrapper and what the API said should be returned revealed that the distance between postcodes wasn&amp;rsquo;t being returned.&lt;/p>
+&lt;p>As the code was on GitHub I could easily see how easy or difficult it might be to add the missing bit of information. It was easy! So, I forked the repo and made the change. I published the change to a private NuGet repo in my Azure Dev Ops account. That way I could try my revised package to check it did what I wanted.&lt;/p>
+&lt;p>I left a message on the GitHub project letting the owner know I had a potential fix for an issue. The project hadn&amp;rsquo;t been updated in over a year, so the owner may not be interested, or the project may have been abandoned.&lt;/p>
+&lt;p>I was in luck just 17 hours after I left a message the project owner said to create a Pull Request, which I did and shortly afterwards my code had been merged in and an updated version of the package existed in the public NuGet feed.&lt;/p>
+&lt;p>I have been thinking about contributing to open source for a while. However, I had not seen a project I wanted to contribute to, or a problem that I knew how to fix until now that is.&lt;/p>
+&lt;h3 id="php">PHP&lt;a class="anchor ms-1" href="#php">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>This week I had a call asking me if I knew PHP?&lt;/p>
+&lt;p>I did, over ten years ago, before I got my first IT job, I spent time learning PHP and MySQL. I created a blog, and I also created a website for my Dad&amp;rsquo;s camera club. The code I created back then was awful. No shared code, all the code was associated with the page, or sorts of bugs occurred and as time went by it became increasingly hard to update. The site was well liked but I eventually lost interest and moved on to learn other things.&lt;/p>
+&lt;p>This call led to me talking with the head of IT, and later a couple of the developers who have since granted me access to the codebase of a project.&lt;/p>
+&lt;p>I haven&amp;rsquo;t had time to spend a lot of time looking at the code so far, however this is nothing like the PHP I had built before.&lt;/p>
+&lt;p>The project makes use of the &lt;a href="https://laravel.com/" target="_blank" rel="noopener noreferrer">laravel&lt;/a>
+framework and the first file I opened had methods and classes, so apart from the syntax you could think you were looking at C#.&lt;/p>
+&lt;p>Another thing that interested me was the project used docker containers, it has automated builds as well. Lots of modern programming ideas that I had some ideas about. I am looking forward to learning more about this project and how I might contribute to it.&lt;/p></description></item><item><title>Weekly Update #002</title><link>https://www.funkysi1701.com/posts/weekly-update-002/</link><pubDate>Sat, 21 Nov 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-002/</guid><description>&lt;p>I know Active Directory is fussy about clocks being in sync however not sure how todays issue happened.&lt;/p>
+&lt;p>I run my docker compose file from Visual Studio and I get a weird error.&lt;/p>
+&lt;pre tabindex="0">&lt;code>SecurityTokenNotYetValidException: IDX10222: Lifetime validation failed. The token is not yet valid. ValidFrom: 'System.DateTime', Current time: 'System.DateTime'.
+&lt;/code>&lt;/pre>&lt;p>I deleted my containers, open and close Visual Studio a few times, nothing helps. Eventually I think to find out what the time is on my container. It has yesterday&amp;rsquo;s date. What has happened here? Surely recreating containers would have caused them to have todays date? I reboot and everything is fine again.&lt;/p>
+&lt;p>Turns out that it is a know issue, see &lt;a href="https://thorsten-hans.com/docker-on-windows-fix-time-synchronization-issue" target="_blank" rel="noopener noreferrer">https://thorsten-hans.com/docker-on-windows-fix-time-synchronization-issue&lt;/a>
+I am using WSL2 and I have now changed back to using Hyper-V and the issue hasn&amp;rsquo;t come back.&lt;/p>
+&lt;p>Earlier in the week I spotted my build step was failing.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml"> - &lt;span style="color:#f92672">task&lt;/span>: &lt;span style="color:#ae81ff">NuGetToolInstaller@0&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Swapping to the next version of the step is all I needed to do to fix it.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml"> - &lt;span style="color:#f92672">task&lt;/span>: &lt;span style="color:#ae81ff">NuGetToolInstaller@1&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>My guess is that support was dropped for this earlier version or there is some other incompatability with .Net 5.&lt;/p></description></item><item><title>Weekly Update #001</title><link>https://www.funkysi1701.com/posts/weekly-update-001/</link><pubDate>Sat, 14 Nov 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-001/</guid><description>&lt;p>One of my favourite podcasts is Troy Hunts weekly update. In it he discusses stuff that he has been working on, plus some personal stuff. I am going to attempt to do something similar. It will probably take me a few of these before we get a look and feel that works.&lt;/p>
+&lt;h4 id="monday">Monday&lt;a class="anchor ms-1" href="#monday">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h4>
+&lt;p>A week off work, mainly to use it up before year end, plus want to get a few jobs around the house done.&lt;/p>
+&lt;p>I did ask the following question on Twitter.&lt;/p>
+&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">Hey &lt;a href="https://twitter.com/hashtag/azurefamily?src=hash&amp;amp;ref_src=twsrc%5Etfw">#azurefamily&lt;/a> and &lt;a href="https://twitter.com/hashtag/dotnet?src=hash&amp;amp;ref_src=twsrc%5Etfw">#dotnet&lt;/a> developers how do I get more involved in mentoring?&lt;/p>&amp;mdash; Simon Foster (@funkysi1701) &lt;a href="https://twitter.com/funkysi1701/status/1325742644014829568?ref_src=twsrc%5Etfw">November 9, 2020&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+&lt;p>As a one person dev team, my biggest weakness is working with others so any ideas of how to change that are great.&lt;/p>
+&lt;h4 id="tuesday">Tuesday&lt;a class="anchor ms-1" href="#tuesday">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h4>
+&lt;p>Dotnet 5 is out! The latest version of dotnet is released by Microsoft and to celebrate there is &lt;a href="https://www.dotnetconf.net/" target="_blank" rel="noopener noreferrer">dotnetconf&lt;/a>
+to listen to. Due to time zones and family commitments, I haven&amp;rsquo;t listened to an awful lot of it but I did see the keynote and loved the 3 Scott&amp;rsquo;s chat.&lt;/p>
+&lt;h4 id="wednesday">Wednesday&lt;a class="anchor ms-1" href="#wednesday">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h4>
+&lt;p>My youngest son was 3 today, due to Coronavirus we didn&amp;rsquo;t do much but we celebrated as a family, and he even had a zoom call.&lt;/p>
+&lt;h4 id="thursday">Thursday&lt;a class="anchor ms-1" href="#thursday">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h4>
+&lt;p>Blazor has a new feature &lt;a href="https://docs.microsoft.com/en-us/aspnet/core/blazor/components/virtualization?view=aspnetcore-5.0" target="_blank" rel="noopener noreferrer">Virtualize&lt;/a>
+where a list of items can only load the ones on screen. I have been trying to get this to work on my blog, works great running locally but not working in production yet.&lt;/p>
+&lt;p>Think I know what might be happening. I use Cloudflare to do my SSL, as Custom SSL certs for the cheaper Azure Web Apps is not supported. Something in Cloudflare is caching or interfering.&lt;/p>
+&lt;p>&lt;a href="https://zimmergren.net/solved-asp-net-core-blazor-web-sites-does-not-work-with-cloudflare-html-minification/" target="_blank" rel="noopener noreferrer">https://zimmergren.net/solved-asp-net-core-blazor-web-sites-does-not-work-with-cloudflare-html-minification/&lt;/a>
+&lt;/p>
+&lt;p>Turning off HTML minification fixed my issue!&lt;/p>
+&lt;p>One additional thing I added to my Blog is the &lt;a href="https://www.funkysi1701.com/config">/config&lt;/a>
+page which details some of the config settings. I think this probably came from &lt;a href="https://www.hanselman.com/blog/adding-a-git-commit-hash-and-azure-devops-build-number-and-build-id-to-an-aspnet-website" target="_blank" rel="noopener noreferrer">https://www.hanselman.com/blog/adding-a-git-commit-hash-and-azure-devops-build-number-and-build-id-to-an-aspnet-website&lt;/a>
+but it was a while ago when I first did this on another project.&lt;/p>
+&lt;p>At the moment we have .net Version, Commit and Build links.&lt;/p>
+&lt;p>The .Net Version is obtained from&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">@System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>A few other bits of info can be obtained from System.Runtime.InteropServices.RuntimeInformation which I have included on the page for fun. There are probably security concerns with exposing all this info publicly so something to bear in mind if you try this.&lt;/p>
+&lt;p>Build Info is passed to my code by a build step&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">- &lt;span style="color:#f92672">script&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;(echo $(Build.BuildNumber) &amp;amp;&amp;amp; echo $(Build.BuildId)) &amp;gt; .buildinfo.json&amp;#39;&lt;/span>
+&lt;span style="color:#f92672">displayName&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Emit build number&amp;#34;&lt;/span>
+&lt;span style="color:#f92672">workingDirectory&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;$(Build.SourcesDirectory)/src/WebBlog&amp;#39;&lt;/span>
+&lt;span style="color:#f92672">failOnStderr&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This simply passed the build id and number which are stored as variabled and saves them in a text file.&lt;/p>
+&lt;p>I then have a class that reads them and constructs a link.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Extensions.Hosting;
+&lt;span style="color:#66d9ef">using&lt;/span> System;
+&lt;span style="color:#66d9ef">using&lt;/span> System.IO;
+&lt;span style="color:#66d9ef">using&lt;/span> System.Linq;
+&lt;span style="color:#66d9ef">using&lt;/span> System.Reflection;
+&lt;span style="color:#66d9ef">namespace&lt;/span> WebBlog
+{
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">AppVersionInfo&lt;/span>
+{
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildFileName = &lt;span style="color:#e6db74">&amp;#34;.buildinfo.json&amp;#34;&lt;/span>;
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">readonly&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildFilePath;
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildNumber = &lt;span style="color:#66d9ef">string&lt;/span>.Empty;
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildId = &lt;span style="color:#66d9ef">string&lt;/span>.Empty;
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>gitHash = &lt;span style="color:#66d9ef">string&lt;/span>.Empty;
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>gitShortHash = &lt;span style="color:#66d9ef">string&lt;/span>.Empty;
+&lt;span style="color:#66d9ef">public&lt;/span> AppVersionInfo(IHostEnvironment hostEnvironment)
+{
+&lt;span style="color:#ae81ff">_&lt;/span>buildFilePath = Path.Combine(hostEnvironment.ContentRootPath, &lt;span style="color:#ae81ff">_&lt;/span>buildFileName);
+}
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> BuildNumber
+{
+&lt;span style="color:#66d9ef">get&lt;/span>
+{
+&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>buildNumber))
+{
+&lt;span style="color:#66d9ef">if&lt;/span> (File.Exists(&lt;span style="color:#ae81ff">_&lt;/span>buildFilePath))
+{
+&lt;span style="color:#66d9ef">var&lt;/span> fileContents = File.ReadLines(&lt;span style="color:#ae81ff">_&lt;/span>buildFilePath).ToList();
+&lt;span style="color:#66d9ef">if&lt;/span> (fileContents.Count &amp;gt; &lt;span style="color:#ae81ff">0&lt;/span>)
+{
+&lt;span style="color:#ae81ff">_&lt;/span>buildNumber = fileContents[&lt;span style="color:#ae81ff">0&lt;/span>];
+}
+&lt;span style="color:#66d9ef">if&lt;/span> (fileContents.Count &amp;gt; &lt;span style="color:#ae81ff">1&lt;/span>)
+{
+&lt;span style="color:#ae81ff">_&lt;/span>buildId = fileContents[&lt;span style="color:#ae81ff">1&lt;/span>];
+}
+}
+&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>buildNumber))
+{
+&lt;span style="color:#ae81ff">_&lt;/span>buildNumber = DateTime.UtcNow.ToString(&lt;span style="color:#e6db74">&amp;#34;yyyyMMdd&amp;#34;&lt;/span>) + &lt;span style="color:#e6db74">&amp;#34;.0&amp;#34;&lt;/span>;
+}
+&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>buildId))
+{
+&lt;span style="color:#ae81ff">_&lt;/span>buildId = &lt;span style="color:#e6db74">&amp;#34;123456&amp;#34;&lt;/span>;
+}
+}
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildNumber;
+}
+}
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> BuildId
+{
+&lt;span style="color:#66d9ef">get&lt;/span>
+{
+&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>buildId))
+{
+&lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span> = BuildNumber;
+}
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildId;
+}
+}
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> GitHash
+{
+&lt;span style="color:#66d9ef">get&lt;/span>
+{
+&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>gitHash))
+{
+&lt;span style="color:#66d9ef">var&lt;/span> version = &lt;span style="color:#e6db74">&amp;#34;1.0.0+LOCALBUILD&amp;#34;&lt;/span>;
+&lt;span style="color:#66d9ef">var&lt;/span> appAssembly = &lt;span style="color:#66d9ef">typeof&lt;/span>(AppVersionInfo).Assembly;
+&lt;span style="color:#66d9ef">var&lt;/span> infoVerAttr = (AssemblyInformationalVersionAttribute)appAssembly
+.GetCustomAttributes(&lt;span style="color:#66d9ef">typeof&lt;/span>(AssemblyInformationalVersionAttribute)).FirstOrDefault();
+&lt;span style="color:#66d9ef">if&lt;/span> (infoVerAttr != &lt;span style="color:#66d9ef">null&lt;/span> &amp;amp;&amp;amp; infoVerAttr.InformationalVersion.Length &amp;gt; &lt;span style="color:#ae81ff">6&lt;/span>)
+{
+version = infoVerAttr.InformationalVersion;
+}
+&lt;span style="color:#ae81ff">_&lt;/span>gitHash = version[(version.IndexOf(&lt;span style="color:#e6db74">&amp;#39;+&amp;#39;&lt;/span>) + &lt;span style="color:#ae81ff">1&lt;/span>)..];
+}
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>gitHash;
+}
+}
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> ShortGitHash
+{
+&lt;span style="color:#66d9ef">get&lt;/span>
+{
+&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>gitShortHash))
+{
+&lt;span style="color:#ae81ff">_&lt;/span>gitShortHash = GitHash.Substring(GitHash.Length - &lt;span style="color:#ae81ff">6&lt;/span>, &lt;span style="color:#ae81ff">6&lt;/span>);
+}
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>gitShortHash;
+}
+}
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The BuildId and BuildNumber properties just fetch the details saved into the text file during the build. This can then be passed to build the build link.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">a&lt;/span> &lt;span style="color:#a6e22e">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;https://dev.azure.com/{OrgName}/{RepoName}/_build/results?buildId=@appInfo.BuildId&amp;amp;view=results&amp;#34;&lt;/span>&amp;gt;
+@appInfo.BuildNumber
+&amp;lt;/&lt;span style="color:#f92672">a&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Finally, the GitHash properties need to fetch the hash and shorthash of the commit which is a bit more complex. This is achieved using the following line in your build.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">- &lt;span style="color:#f92672">task&lt;/span>: &lt;span style="color:#ae81ff">DotNetCoreCLI@2&lt;/span>
+&lt;span style="color:#f92672">displayName&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;Publish&amp;#39;&lt;/span>
+&lt;span style="color:#f92672">inputs&lt;/span>:
+&lt;span style="color:#f92672">command&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;publish&amp;#39;&lt;/span>
+&lt;span style="color:#f92672">publishWebProjects&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;span style="color:#f92672">arguments&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;--output $(Build.ArtifactStagingDirectory) /p:SourceRevisionId=$(Build.SourceVersion)&amp;#39;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>/p:SourceRevisionId=$(Build.SourceVersion) add the revision hash to [assembly: AssemblyInformationalVersion] during the build which can then be extracted using the gitHash property above, before being passed into the commit link.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">a&lt;/span> &lt;span style="color:#a6e22e">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;https://github.com/{OrgName}/{RepoName}/commit/@appInfo.GitHash&amp;#34;&lt;/span>&amp;gt;
+@appInfo.ShortGitHash
+&amp;lt;/&lt;span style="color:#f92672">a&lt;/span>&amp;gt;&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Security Headers</title><link>https://www.funkysi1701.com/posts/security-headers/</link><pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/security-headers/</guid><description>&lt;p>Have you wondered what info you are leaking via your response headers?, do you want some kind of guide about what headers to set or remove altogether?&lt;/p>
+&lt;p>Head on over to &lt;a href="https://securityheaders.com/" target="_blank" rel="noopener noreferrer">https://securityheaders.com/&lt;/a>
+This is a site created by security expert &lt;a href="https://scotthelme.co.uk" target="_blank" rel="noopener noreferrer">Scott Helme&lt;/a>
+that rates a URL based on what response headers it can see.&lt;/p>
+&lt;p>I am pleased to say &lt;a href="http://www.funkysi1701.com">www.funkysi1701.com&lt;/a>
+is now getting an A.&lt;img class="img-fluid" alt="Alt Text" src="https://dev-to-uploads.s3.amazonaws.com/i/07rwumi94fz141hwessu.PNG" loading="lazy"
+/>
+&lt;/p>
+&lt;p>So how do you add/remove headers in dotnet core?&lt;/p>
+&lt;p>In my configure method in Startup.cs I have the following code block.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">app.Use(
+next =&amp;gt;
+{
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> context =&amp;gt;
+{
+context.Response.OnStarting(
+() =&amp;gt;
+{
+context.Response.Headers.Add(&lt;span style="color:#e6db74">&amp;#34;Permissions-Policy&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;microphone=()&amp;#34;&lt;/span>);
+context.Response.Headers.Remove(&lt;span style="color:#e6db74">&amp;#34;Server&amp;#34;&lt;/span>);
+context.Response.Headers.Remove(&lt;span style="color:#e6db74">&amp;#34;X-Powered-By&amp;#34;&lt;/span>);
+context.Response.Headers.Remove(&lt;span style="color:#e6db74">&amp;#34;X-AspNet-Version&amp;#34;&lt;/span>);
+&lt;span style="color:#66d9ef">return&lt;/span> Task.CompletedTask;
+});
+&lt;span style="color:#66d9ef">await&lt;/span> next(context);
+};
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>I have only included a few of the headers I am adding as the excellent &lt;a href="https://securityheaders.com/" target="_blank" rel="noopener noreferrer">https://securityheaders.com/&lt;/a>
+can tell you which headers you should add and what options you might want.&lt;/p></description></item><item><title>Back to Blogging</title><link>https://www.funkysi1701.com/posts/back-to-blogging/</link><pubDate>Fri, 25 Sep 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/back-to-blogging/</guid><description>&lt;p>My last blog post was over six months ago.&lt;/p>
+&lt;p>Covid 19 has hit the world, and I will be honest I have found it a challenging time.&lt;/p>
+&lt;p>My Blog had gotten into a bit of a mess. It had become fragmented with different versions of the same thing; I will attempt to explain what has become of my blog.&lt;/p>
+&lt;p>The original WordPress site can currently be found at &lt;a href="https://www.pwnedpass.com/" target="_blank" rel="noopener noreferrer">https://www.pwnedpass.com/&lt;/a>
+I would prefer it to be on a sub-domain of funkysi1701.com but for some reason I haven&amp;rsquo;t been able to get that to work, not sure if it is a limitation of my hosting package. I like WordPress, it is very flexible, easy to get blog posts out there. But I want to write content about development and having a site I can tinker with is important to me.&lt;/p>
+&lt;p>Most of my WordPress blogs have been imported into dev.to and a few extra have been written on this platform. I like dev.to it is a wonderful place to share content and it has one or two extra features I like.&lt;/p>
+&lt;p>dev.to has an integration with Stackbit/Netlify and this became &lt;a href="https://dev.funkysi1701.com" target="_blank" rel="noopener noreferrer">https://dev.funkysi1701.com&lt;/a>
+. I like having a personal site, but having the same content as dev.to. To add content to this site all I need to do is write it on dev.to and some magic will go on behind the scenes and new content will be published.&lt;/p>
+&lt;p>However, as a developer I don&amp;rsquo;t like magic, I want to understand what is going on a fiddle with all the settings and make it do what I want.&lt;/p>
+&lt;p>dev.to has an API, I can build a site in .Net Core and make API calls to fetch the content I want. I understand APIs, I understand .Net and can customise my site exactly how I want it, plus play about with a .net website. This is what &lt;a href="https://www.funkysi1701.com">https://www.funkysi1701.com&lt;/a>
+is now.&lt;/p>
+&lt;p>So what have I built so far. I have a Server Side Blazor site running .Net 5. Why Server Side and not Client Side I hear you ask? Well only because I have more experience with Server Side and know how to quickly create a website with that technology, I may change it as time goes by, but we will see.&lt;/p>
+&lt;p>I have two pages a list of my blog posts and a page that displays the content. Both of these use the dev.to API. I lied, there is a third page I hacked together to do some page redirection from the WordPress URLs. This is something I will change as time goes on.&lt;/p>
+&lt;p>There are lots of improvements I want to do, there are probably also lots of broken images or links as well. Hopefully, this will result in a good platform to blog about as well as on.&lt;/p></description></item></channel></rss>

@@ -1,1 +1,52 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2021-08 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2021/08/</link><description>Recent content in 2021-08 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Tue, 31 Aug 2021 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2021/08/index.xml" rel="self" type="application/rss+xml"/><item><title>More than halfway through 2021</title><link>https://www.funkysi1701.com/posts/more-than-halfway-through-2021/</link><pubDate>Tue, 31 Aug 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/more-than-halfway-through-2021/</guid><description>We are over halfway through 2021, let&amp;rsquo;s have a quick look at some things I have done this year</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2021-08 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2021/08/</link><description>Recent content in 2021-08 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Tue, 31 Aug 2021 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2021/08/index.xml" rel="self" type="application/rss+xml"/><item><title>More than halfway through 2021</title><link>https://www.funkysi1701.com/posts/more-than-halfway-through-2021/</link><pubDate>Tue, 31 Aug 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/more-than-halfway-through-2021/</guid><description>&lt;p>We are over halfway through 2021, let&amp;rsquo;s have a quick look at some things I have done this year:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Deployed a new version of the Pre Qualification questionnaire website for my employers&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Passed Azure Fundamentals Exam&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Mongo DB Atlas - experimented with using it for auditing my application&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>SonarCloud - tried to improve the quality of my code&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Azure DevOps API -&amp;gt; built an application to show builds and releases from my Azure DevOps organisation, code is on github&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Experimented with replacing SQL Agent Jobs with Azure Functions, ended up abandoning this project but was a great learning experience&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Played with MS Graph - displaying profile pic from Azure AD but I am the only one in my org with a photo so abandoned this as well&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Added a captch to a website to reduce spam&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Charted my Gas and Electricity usage using the Octopus Energy API&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Charted various metrics from services I use, eg twitter followers, github commits, blog posts published&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Started learning react, easily connected it with Azure AD&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Integrated my employers project management system with a postcode API and google maps so can see where in the country different projects are located&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Tested dotnet 6 preview and the latest Visual Studio 2022 preview&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>I was made redundant and got a new job&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Wrote my first piece of dotnet code to run on a Raspberry Pi&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Kept cost of Azure down, by removing unused services, refactoring and optimizing existing services.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Wow, I have done loads this year, what is next?&lt;/p></description></item></channel></rss>

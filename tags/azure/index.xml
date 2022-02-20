@@ -1,1 +1,110 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Azure on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/azure/</link><description>Recent content in Azure on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Tue, 11 May 2021 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/azure/index.xml" rel="self" type="application/rss+xml"/><item><title>My road to Certification</title><link>https://www.funkysi1701.com/posts/my-road-to-certification/</link><pubDate>Tue, 11 May 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/my-road-to-certification/</guid><description>Road to Certification</description></item><item><title>Azure DevOps Release Pipelines Pre and Post Approval</title><link>https://www.funkysi1701.com/posts/azure-devops-release-pipelines-pre-and-post-approval/</link><pubDate>Sun, 14 Feb 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/azure-devops-release-pipelines-pre-and-post-approval/</guid><description>Azure DevOps release pipelines have lots of options to do things how you want. One of my favourites is the option for approval.</description></item><item><title>Weekly Update #002</title><link>https://www.funkysi1701.com/posts/weekly-update-002/</link><pubDate>Sat, 21 Nov 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-002/</guid><description>Time sync in docker containers</description></item><item><title>Using Azure WebJobs to Automate Stuff</title><link>https://www.funkysi1701.com/posts/using-azure-webjobs-to-automate-stuff/</link><pubDate>Mon, 26 Jun 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/using-azure-webjobs-to-automate-stuff/</guid><description>Using Azure WebJobs to Automate Stuff</description></item><item><title>Amazon Web Services</title><link>https://www.funkysi1701.com/posts/amazon-web-services/</link><pubDate>Thu, 21 Jul 2016 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/amazon-web-services/</guid><description>Amazon Web Services</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Azure on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/azure/</link><description>Recent content in Azure on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Tue, 11 May 2021 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/azure/index.xml" rel="self" type="application/rss+xml"/><item><title>My road to Certification</title><link>https://www.funkysi1701.com/posts/my-road-to-certification/</link><pubDate>Tue, 11 May 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/my-road-to-certification/</guid><description>&lt;p>So today I sat the Azure Fundamentals Certification Exam and passed!
+&lt;img class="img-fluid" alt="Alt Text" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eytphopn3inx2x77m9n5.png" loading="lazy"
+/>
+&lt;/p>
+&lt;p>Really pleased with myself at achieving this. It was one of my goals for 2021 so I can tick that off.&lt;/p>
+&lt;p>Back in January I booked my first exam, however due to technical problems I didn&amp;rsquo;t get as far as the Exam. In order to be able to sit an exam like this you need a webcam and microphone so you can be monitored remotely to check that you are not cheating. Something in my network was blocking them from seeing my video so it got cancelled before it started.&lt;/p>
+&lt;p>My theory is that either my internet connection was playing up at the time, My Pi Hole was blocking something, or something else on my network was blocking the video feed.&lt;/p>
+&lt;p>This cancellation put me off Certifications, as I wasn&amp;rsquo;t sure how to debug the issue and find out exactly what the problem was.&lt;/p>
+&lt;p>A few months back I won a free Azure Certification for taking part in a skills challenge run by &lt;a href="https://twitter.com/gregor_suttie" target="_blank" rel="noopener noreferrer">Gregor Suttie&lt;/a>
+and &lt;a href="https://twitter.com/Pixel_Robots" target="_blank" rel="noopener noreferrer">Richard Hooper&lt;/a>
+and this was due to expire at the end of this month so I thought why not book a second exam and see if I can get past the technical problems. I didn&amp;rsquo;t do any exam prep as I thought, I wouldn&amp;rsquo;t get that far.&lt;/p>
+&lt;p>This time I connected directly to my router, bypassing most of the network, firewall and other items on my network that could possibly cause an issue.&lt;/p>
+&lt;p>I cleared my desk, took photos of my ID, took pictures of my desk from every orientation, and waited for the technical issues to start.&lt;/p>
+&lt;p>I was in a queue waiting for the exam to start.&lt;/p>
+&lt;p>A connection issue has occurred you have been sent to the back of the queue. Oh here we go again!&lt;/p>
+&lt;p>But no I connected with the invigilator, who asked to confirm my monitors were disconnected and to move my wallet out of reach off my desk.&lt;/p>
+&lt;p>And we are off, I am answering questions from the exam.&lt;/p>
+&lt;p>I won&amp;rsquo;t go into detail about the questions, but I whizzed through them, most made me think, some I guessed at. I wasn&amp;rsquo;t expecting to pass, I thought maybe half marks or just under due to my familiarity with Azure. (I have been using it for years which must count for something!)&lt;/p>
+&lt;p>I was wrong I passed comfortably and now I have my first certification.&lt;/p>
+&lt;p>My advice for you if you have been using Azure for a while is to book this exam and see how you do, you may well pass like me. There are plenty of opportunities to get a free exam, attending conferences like Ignite often qualify you for one, look out for challenges and competitions by #AzureFamily people on twitter as they are very encouraging and helpful in your Certification journey.&lt;/p>
+&lt;p>And yes I am thinking about what Certificate to do next!&lt;/p></description></item><item><title>Azure DevOps Release Pipelines Pre and Post Approval</title><link>https://www.funkysi1701.com/posts/azure-devops-release-pipelines-pre-and-post-approval/</link><pubDate>Sun, 14 Feb 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/azure-devops-release-pipelines-pre-and-post-approval/</guid><description>&lt;p>Azure DevOps release pipelines have lots of options to do things how you want. One of my favourites is the option for approval.&lt;/p>
+&lt;p>There are two ways you can do approvals Pre and Post deployment. Lets look at both.&lt;/p>
+&lt;h2 id="pre-deployment-approval">Pre Deployment Approval&lt;a class="anchor ms-1" href="#pre-deployment-approval">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>&lt;img class="img-fluid" alt="image" src="https://dev-to-uploads.s3.amazonaws.com/i/9k6vo6pfv434u7yq3mt4.png" loading="lazy"
+/>
+&lt;/p>
+&lt;p>Lets imagine you have a simple deployment pipeline that deploys to a test/development environment before deploying to a production environment.&lt;/p>
+&lt;p>Pre Deployment Approval happens immediately before the release so in this example, click in the ellipse before the Prod release step.&lt;/p>
+&lt;p>You will get a screen like the above, you can select what users need to approve it and how long approval waits before timing out, the default is 30 days, but I tend to use a shorter time out of 3 days.&lt;/p>
+&lt;h2 id="post-deployment-approval">Post Deployment Approval&lt;a class="anchor ms-1" href="#post-deployment-approval">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>&lt;img class="img-fluid" alt="image" src="https://dev-to-uploads.s3.amazonaws.com/i/reiulrhinzqyyon6mrqi.png" loading="lazy"
+/>
+&lt;/p>
+&lt;p>Post Deployment Approval happens immediately after the release so in this example, click in the circle after the Test release step.&lt;/p>
+&lt;p>You will get a screen like the above, with the same settings as before.&lt;/p>
+&lt;p>That is pretty much all there is to approvals so either option will prompt you to approve before anything gets deployed to your production environment.&lt;/p>
+&lt;h2 id="deployment-hours">Deployment Hours&lt;a class="anchor ms-1" href="#deployment-hours">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>To complicate matters I make use of the following setting to define deployment hours.
+&lt;img class="img-fluid" alt="image" src="https://dev-to-uploads.s3.amazonaws.com/i/aku2z0dl3m3xkvfvh7wd.png" loading="lazy"
+/>
+&lt;/p>
+&lt;p>This setting will start the Prod deployment at 3am Mon-Fri.&lt;/p>
+&lt;p>If I configure Post Deployment Approval, as soon as my deploy to Test has completed a request for Approval is sent.&lt;/p>
+&lt;p>If I configure Pre Deployment Approval, at 3am Mon-Fri a request for Approval is sent (not ideal if you tend to be asleep at 3am)&lt;/p>
+&lt;p>So it looks like Post Deployment Approval is more useful for my use case. However if you deny approval either in Pre or Post approval this will mark the deployment as failed and show Red in your list of deployments.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="image" src="https://dev-to-uploads.s3.amazonaws.com/i/vichyb1srgc1ln85hj0o.png" loading="lazy"
+/>
+&lt;/p>
+&lt;p>From a casual glance it looks like the deployment to Test is failing, it isn&amp;rsquo;t I am just opting to not continue my deployment to production.&lt;/p>
+&lt;h2 id="my-pipeline">My Pipeline&lt;a class="anchor ms-1" href="#my-pipeline">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>&lt;img class="img-fluid" alt="image" src="https://dev-to-uploads.s3.amazonaws.com/i/9kprp90t59owfmsmqkcp.png" loading="lazy"
+/>
+&lt;/p>
+&lt;p>This is how I have my pipeline setup. Deployment happens on Test and doesn&amp;rsquo;t have a post approval step.&lt;/p>
+&lt;p>After Test an empty stage called Approval runs and that has a post deployment approval, this happens immediately after Test so you get asked straight away for approval.&lt;/p>
+&lt;p>Prod does not start as I have my deployment hours configured. Once it is time for deployment to Prod to start it executes.&lt;/p>
+&lt;p>Now a casual look at my past releases, you can easily see which have been stopped by approval and which have failed due to whatever issue, and which have run all the way through to Prod.&lt;/p>
+&lt;p>And deployments to Prod can only ever run during my defined deployment window.&lt;/p>
+&lt;p>I am interested to hear how you have your deployment pipeline setup. Do you make use of Pre or Post Approvals? Do you ensure deployments always happen at specific times?&lt;/p></description></item><item><title>Weekly Update #002</title><link>https://www.funkysi1701.com/posts/weekly-update-002/</link><pubDate>Sat, 21 Nov 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-002/</guid><description>&lt;p>I know Active Directory is fussy about clocks being in sync however not sure how todays issue happened.&lt;/p>
+&lt;p>I run my docker compose file from Visual Studio and I get a weird error.&lt;/p>
+&lt;pre tabindex="0">&lt;code>SecurityTokenNotYetValidException: IDX10222: Lifetime validation failed. The token is not yet valid. ValidFrom: 'System.DateTime', Current time: 'System.DateTime'.
+&lt;/code>&lt;/pre>&lt;p>I deleted my containers, open and close Visual Studio a few times, nothing helps. Eventually I think to find out what the time is on my container. It has yesterday&amp;rsquo;s date. What has happened here? Surely recreating containers would have caused them to have todays date? I reboot and everything is fine again.&lt;/p>
+&lt;p>Turns out that it is a know issue, see &lt;a href="https://thorsten-hans.com/docker-on-windows-fix-time-synchronization-issue" target="_blank" rel="noopener noreferrer">https://thorsten-hans.com/docker-on-windows-fix-time-synchronization-issue&lt;/a>
+I am using WSL2 and I have now changed back to using Hyper-V and the issue hasn&amp;rsquo;t come back.&lt;/p>
+&lt;p>Earlier in the week I spotted my build step was failing.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml"> - &lt;span style="color:#f92672">task&lt;/span>: &lt;span style="color:#ae81ff">NuGetToolInstaller@0&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Swapping to the next version of the step is all I needed to do to fix it.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml"> - &lt;span style="color:#f92672">task&lt;/span>: &lt;span style="color:#ae81ff">NuGetToolInstaller@1&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>My guess is that support was dropped for this earlier version or there is some other incompatability with .Net 5.&lt;/p></description></item><item><title>Using Azure WebJobs to Automate Stuff</title><link>https://www.funkysi1701.com/posts/using-azure-webjobs-to-automate-stuff/</link><pubDate>Mon, 26 Jun 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/using-azure-webjobs-to-automate-stuff/</guid><description>&lt;p>I keep hearing about Azure WebJobs but I have never used them. Time to change this.&lt;/p>
+&lt;p>WebJobs are a feature of Azure App Service that can run a script at a specific time. In my case I would like to hit a specific url of my website at the same time every day.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="WebJobs" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/06/addkeepalivewebjob.png?resize=313%2C615&amp;amp;ssl=1" loading="lazy"
+/>
+To the right you can see an example of the WebJobs form on the Azure portal that you need to fill in.&lt;/p>
+&lt;p>You need to supply a name for your webjob.&lt;/p>
+&lt;p>You need to upload the script that will run in my case I used a powershell script. My script consisted of which basically just loads the url specified.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">$progressPreference = &lt;span style="color:#e6db74">&amp;#34;silentlyContinue&amp;#34;&lt;/span>;
+$result = Invoke-WebRequest -Uri (&lt;span style="color:#e6db74">&amp;#34;https://www.google.com&amp;#34;&lt;/span>) -Method Get -UseBasicParsing;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Type refers to if your job will be triggered or run continuously, I want it to be triggered.&lt;/p>
+&lt;p>Triggers refers to if you want it to be scheduled or manual, something that you can run on an ad hoc basis. I of course want scheduled.&lt;/p>
+&lt;p>If you are familiar with the linux CRON then the next box will make sense to you for everyone else I will try and make sense of it. The box consists of 6 numbers which can either have a value or a *. The numbers correspond to the following {second} {minute} {hour} {day} {month} {day of the week}.&lt;/p>
+&lt;p>A hourly job would be expressed as 0 0 * * * *, ie every day of week, every month, every day, every hour and only when minute and second equals zero. For more help with this check out the &lt;a href="https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-create-web-jobs#CreateScheduledCRON" target="_blank" rel="noopener noreferrer">MSDN docs&lt;/a>
+about it. I want to use 0 30 21 * * * to run daily at 9.30pm.&lt;/p>
+&lt;p>That’s it everything setup, now time to wait and see if it works.&lt;/p>
+&lt;p>&lt;strong>Oh no!&lt;/strong>&lt;/p>
+&lt;p>It failed to run at the specified time.&lt;/p>
+&lt;p>The reason for this is the scheduler requires the feature Always On to be turned on which is not available in the free App Service. Before you reach for your wallets, I found a solution on this &lt;a href="https://tomssl.com/2016/12/20/how-to-get-azure-webjobs-to-run-indefinitely-for-free/" target="_blank" rel="noopener noreferrer">blog post&lt;/a>
+that allows them to run on the free tier.&lt;/p>
+&lt;p>The thinking behind this solution is you need to keep the website alive throughout the day so Tom has created a script that does this. His script can be found on his blog or on his &lt;a href="https://github.com/TomChantler/Self-KeepAlive" target="_blank" rel="noopener noreferrer">github page&lt;/a>
+.&lt;/p>
+&lt;p>Set this script up to run every 5 minutes (0 */5 * * * *) like the example above.&lt;/p>
+&lt;p>The nextthing you need to do is create a Custom connection string in the Application Settings blade called SecretThing. Tom’s script references this to access the website and keep it alive. The password you need to put in SecretThing can be found in you publish profile (downloaded from the Overview blade in the Azure portal). For more details and a better explanation check out &lt;a href="https://tomssl.com/2016/12/20/how-to-get-azure-webjobs-to-run-indefinitely-for-free/" target="_blank" rel="noopener noreferrer">Tom’s blog&lt;/a>
+.&lt;/p>
+&lt;p>One last thing to mention about WebJobs is that you can see details about when they have run at https://[YourWebAppName].scm.azurewebsites.net/azurejobs/#/jobs and this can be a great place to help debug your scripts.&lt;/p></description></item><item><title>Amazon Web Services</title><link>https://www.funkysi1701.com/posts/amazon-web-services/</link><pubDate>Thu, 21 Jul 2016 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/amazon-web-services/</guid><description>&lt;p>I am a big fan of Azure but I know zero about its biggest rival – Amazon Web Services or AWS.&lt;/p>
+&lt;p>So lets sign up for a free trial and see what it can do. &lt;img class="img-fluid" alt="Amazon Web Services" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/07/aws-300x169.png?resize=300%2C169" loading="lazy"
+/>
+&lt;/p>
+&lt;p>The AWS free trial is available from &lt;a href="https://aws.amazon.com/free/" target="_blank" rel="noopener noreferrer">https://aws.amazon.com/free/&lt;/a>
+and lasts for 12 months. From memory I think the Azure free trial lasted only one month.&lt;/p>
+&lt;p>To start you need to login with your amazon account and create an AWS account. This requires your name and address and your payment info (you will only get billed if use services not covered by your free trial).&lt;/p>
+&lt;p>Interestingly AWS requires you to verify your identity via an automated phone call. (I don’t recall doing anything like this for Azure but please correct me if I am wrong.)&lt;/p>
+&lt;p>Once you are logged in you get a series of links displaying all the different services that are available. First impression is this is a simpler view to Azure’s portal with a similar amount of services. At the top right is an option to select which region you want to use, in Azure I use North Europe and West Europe, AWS has Ireland and Frankfurt.&lt;/p>
+&lt;h2 id="create-a-web-app">Create a Web App&lt;a class="anchor ms-1" href="#create-a-web-app">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>First thing to try is setting up a website. I selected create a web app and I get a page asking me for its basic details (very similar to Azure, however AWS asked what language your code is written in, Azure handles all of these) AWS websites appear to support a host of different options similar to Azure.&lt;/p>
+&lt;p>The actual creation of your website takes a few moments (like on Azure). However the default URL for websites is similar to &lt;a href="http://test.vjbbimyv7w.eu-central-1.elasticbeanstalk.com/" target="_blank" rel="noopener noreferrer">http://test.vjbbimyv7w.eu-central-1.elasticbeanstalk.com/&lt;/a>
+which is not quite as nice as the Azure equivalent &lt;a href="http://test.azurewebsites.net" target="_blank" rel="noopener noreferrer">http://test.azurewebsites.net&lt;/a>
+&lt;/p>
+&lt;p>Azure has a host of command lines available via powershell. AWS has a similar command line interface called AWS CLI, including the option to deploy from git to your website.&lt;/p>
+&lt;p>AWS Toolkit for Visual Studio is an extension that allows for the publishing of websites to AWS. (Just like you can publish to Azure)&lt;/p>
+&lt;p>As I learn more about AWS I will continue to blog about it. &lt;a href="https://www.funkysi1701.com/2016/08/04/amazon-web-services-pt-2/">Amazon Web Services Pt 2&lt;/a>
+&lt;/p></description></item></channel></rss>

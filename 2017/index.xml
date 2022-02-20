@@ -1,1 +1,105 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2017 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2017/</link><description>Recent content in 2017 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Mon, 03 Jul 2017 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2017/index.xml" rel="self" type="application/rss+xml"/><item><title>Uploading Files to AWS</title><link>https://www.funkysi1701.com/posts/uploading-files-to-aws/</link><pubDate>Mon, 03 Jul 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/uploading-files-to-aws/</guid><description>Uploading Files to AWS</description></item><item><title>Using Azure WebJobs to Automate Stuff</title><link>https://www.funkysi1701.com/posts/using-azure-webjobs-to-automate-stuff/</link><pubDate>Mon, 26 Jun 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/using-azure-webjobs-to-automate-stuff/</guid><description>Using Azure WebJobs to Automate Stuff</description></item><item><title>Fiddler and APIs</title><link>https://www.funkysi1701.com/posts/fiddler-and-apis/</link><pubDate>Mon, 19 Jun 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/fiddler-and-apis/</guid><description>A while ago I blogged about promoting my blog with Buffer. At the time I made use of the nuget package BufferAPI but lets look at some improvements I can make.</description></item><item><title>How do I add Power BI data to a webpage?</title><link>https://www.funkysi1701.com/posts/how-do-i-add-power-bi-data-to-a-webpage/</link><pubDate>Mon, 12 Jun 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/how-do-i-add-power-bi-data-to-a-webpage/</guid><description>Last week I talked about Power BI, what it is and some of the different services you can use with it. This week lets add some of that data to a simple web page.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2017 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2017/</link><description>Recent content in 2017 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Mon, 03 Jul 2017 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2017/index.xml" rel="self" type="application/rss+xml"/><item><title>Uploading Files to AWS</title><link>https://www.funkysi1701.com/posts/uploading-files-to-aws/</link><pubDate>Mon, 03 Jul 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/uploading-files-to-aws/</guid><description>&lt;p>I am a fan of Azure but today I have been looking at AWS. Specifically how to upload and download files.&lt;/p>
+&lt;p>AWS S3 stores files in Buckets. I already had an AWS S3 account setup with a Bucket. I am going to assume you have got a bucket setup and concentrate on the code to get files in and out.&lt;/p>
+&lt;p>First step is to use nuget to install the AWS packages. In nuget the packages you want are called AWSSDK.Core and AWSSDK.S3.&lt;/p>
+&lt;p>The using statements you want to use are called Amazon.S3 and Amazon.S3.Transfer, not sure why this doesn’t match nuget, this difference caught me out a couple of times.&lt;/p>
+&lt;p>Now to the code that uploads files&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">AmazonS3Client AWSclient = &lt;span style="color:#66d9ef">new&lt;/span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.EUWest1);
+TransferUtility fileTransferUtility = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtility(AWSclient);
+&lt;span style="color:#66d9ef">using&lt;/span> (FileStream streamWriter = &lt;span style="color:#66d9ef">new&lt;/span> FileStream(path, FileMode.Open))
+{
+TransferUtilityUploadRequest fileTransferUtilityRequest = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtilityUploadRequest
+{
+BucketName = &lt;span style="color:#e6db74">&amp;#34;flawlessimages&amp;#34;&lt;/span>,
+InputStream = streamWriter,
+Key = fileName
+};
+fileTransferUtility.Upload(fileTransferUtilityRequest);
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Lets break it down and look at what it does.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">AmazonS3Client AWSclient = &lt;span style="color:#66d9ef">new&lt;/span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.EUWest1);
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This creates an instance of AmazonS3Client, we are passing the Access Key and Secret Access Key both of which can be found from your Amazon S3 account My Security Credentials section. Amazon.RegionEndpoint.EUWest1 specifies the amazon data centres that your bucket is located in.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">TransferUtility fileTransferUtility = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtility(AWSclient);
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This creates an instance of TransfterUtility using the AmazonS3Client instance we created in the previous step.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">&lt;span style="color:#66d9ef">using&lt;/span> (FileStream streamWriter = &lt;span style="color:#66d9ef">new&lt;/span> FileStream(path, FileMode.Open))
+{
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This opens up a filestream from a files path and specifies that the file should be opened.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">TransferUtilityUploadRequest fileTransferUtilityRequest = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtilityUploadRequest
+{
+BucketName = &lt;span style="color:#e6db74">&amp;#34;flawlessimages&amp;#34;&lt;/span>,
+InputStream = streamWriter,
+Key = fileName
+};
+fileTransferUtility.Upload(fileTransferUtilityRequest);
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This last step specifies which bucket to upload to, what input stream to upload and the Key to use. Key is just AWS way of referring to files, more commonly referred to as the filename.&lt;/p>
+&lt;p>This is all you need to do to upload a file to your Bucket. The file will be located at &lt;a href="https://s3-eu-west-1.amazonaws.com/[bucketname]/[filename]" target="_blank" rel="noopener noreferrer">https://s3-eu-west-1.amazonaws.com/[bucketname]/[filename]&lt;/a>
+, however by default it will not be downloadable until you set Read permission to everyone, once you do that anyone who has the link will be able to download your file.&lt;/p>
+&lt;p>This is the same permission level as any file you have on your webserver, however AWS has a better way.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">&lt;span style="color:#66d9ef">using&lt;/span> (s3Client = &lt;span style="color:#66d9ef">new&lt;/span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.USEast1))
+{
+GetPreSignedUrlRequest request1 = &lt;span style="color:#66d9ef">new&lt;/span> GetPreSignedUrlRequest
+{
+BucketName = bucketName,
+Key = filename,
+Expires = DateTime.Now.AddMinutes(&lt;span style="color:#ae81ff">5&lt;/span>)
+};
+urlString = s3Client.GetPreSignedURL(request1);
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Here we are generating a url to download the file, but we are specifying that it is only valid for 5 minutes. This means that if you share the url it will only work for 5 minutes, after that AWS will give an access denied message.&lt;/p>
+&lt;p>This is much better security than you have on a typical web server, and easy to implement, every time a user clicks on a download link you generate a new presigned url and send the download to the browser, as long as this process doesn’t take longer than 5 minutes the user will never know.&lt;/p></description></item><item><title>Using Azure WebJobs to Automate Stuff</title><link>https://www.funkysi1701.com/posts/using-azure-webjobs-to-automate-stuff/</link><pubDate>Mon, 26 Jun 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/using-azure-webjobs-to-automate-stuff/</guid><description>&lt;p>I keep hearing about Azure WebJobs but I have never used them. Time to change this.&lt;/p>
+&lt;p>WebJobs are a feature of Azure App Service that can run a script at a specific time. In my case I would like to hit a specific url of my website at the same time every day.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="WebJobs" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/06/addkeepalivewebjob.png?resize=313%2C615&amp;amp;ssl=1" loading="lazy"
+/>
+To the right you can see an example of the WebJobs form on the Azure portal that you need to fill in.&lt;/p>
+&lt;p>You need to supply a name for your webjob.&lt;/p>
+&lt;p>You need to upload the script that will run in my case I used a powershell script. My script consisted of which basically just loads the url specified.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">$progressPreference = &lt;span style="color:#e6db74">&amp;#34;silentlyContinue&amp;#34;&lt;/span>;
+$result = Invoke-WebRequest -Uri (&lt;span style="color:#e6db74">&amp;#34;https://www.google.com&amp;#34;&lt;/span>) -Method Get -UseBasicParsing;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Type refers to if your job will be triggered or run continuously, I want it to be triggered.&lt;/p>
+&lt;p>Triggers refers to if you want it to be scheduled or manual, something that you can run on an ad hoc basis. I of course want scheduled.&lt;/p>
+&lt;p>If you are familiar with the linux CRON then the next box will make sense to you for everyone else I will try and make sense of it. The box consists of 6 numbers which can either have a value or a *. The numbers correspond to the following {second} {minute} {hour} {day} {month} {day of the week}.&lt;/p>
+&lt;p>A hourly job would be expressed as 0 0 * * * *, ie every day of week, every month, every day, every hour and only when minute and second equals zero. For more help with this check out the &lt;a href="https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-create-web-jobs#CreateScheduledCRON" target="_blank" rel="noopener noreferrer">MSDN docs&lt;/a>
+about it. I want to use 0 30 21 * * * to run daily at 9.30pm.&lt;/p>
+&lt;p>That’s it everything setup, now time to wait and see if it works.&lt;/p>
+&lt;p>&lt;strong>Oh no!&lt;/strong>&lt;/p>
+&lt;p>It failed to run at the specified time.&lt;/p>
+&lt;p>The reason for this is the scheduler requires the feature Always On to be turned on which is not available in the free App Service. Before you reach for your wallets, I found a solution on this &lt;a href="https://tomssl.com/2016/12/20/how-to-get-azure-webjobs-to-run-indefinitely-for-free/" target="_blank" rel="noopener noreferrer">blog post&lt;/a>
+that allows them to run on the free tier.&lt;/p>
+&lt;p>The thinking behind this solution is you need to keep the website alive throughout the day so Tom has created a script that does this. His script can be found on his blog or on his &lt;a href="https://github.com/TomChantler/Self-KeepAlive" target="_blank" rel="noopener noreferrer">github page&lt;/a>
+.&lt;/p>
+&lt;p>Set this script up to run every 5 minutes (0 */5 * * * *) like the example above.&lt;/p>
+&lt;p>The nextthing you need to do is create a Custom connection string in the Application Settings blade called SecretThing. Tom’s script references this to access the website and keep it alive. The password you need to put in SecretThing can be found in you publish profile (downloaded from the Overview blade in the Azure portal). For more details and a better explanation check out &lt;a href="https://tomssl.com/2016/12/20/how-to-get-azure-webjobs-to-run-indefinitely-for-free/" target="_blank" rel="noopener noreferrer">Tom’s blog&lt;/a>
+.&lt;/p>
+&lt;p>One last thing to mention about WebJobs is that you can see details about when they have run at https://[YourWebAppName].scm.azurewebsites.net/azurejobs/#/jobs and this can be a great place to help debug your scripts.&lt;/p></description></item><item><title>Fiddler and APIs</title><link>https://www.funkysi1701.com/posts/fiddler-and-apis/</link><pubDate>Mon, 19 Jun 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/fiddler-and-apis/</guid><description>&lt;p>A while ago I blogged about &lt;a href="https://www.funkysi1701.com/2017/04/17/automation-promotion/">promoting&lt;/a>
+my blog with Buffer. At the time I made use of the nuget package &lt;a href="https://www.nuget.org/packages/BufferAPI/" target="_blank" rel="noopener noreferrer">BufferAPI&lt;/a>
+but lets look at some improvements I can make.&lt;/p>
+&lt;p>The BufferAPI package worked great from my console app, but when I tried to use it from a Controller in an MVC app I never got it to work. Lets look at the API docs and see if I can rewrite it.&lt;/p>
+&lt;p>There are two main types of API calls GET which gets data from the server and POST which posts data to the server. These come from the types of HTTP requests.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="Alt Text" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6wozrfdoqvtjaoxs7j1v.jpg" loading="lazy"
+/>
+&lt;/p>
+&lt;p>I quickly figured out how to use the GET API call to authenticate using &lt;a href="https://api.bufferapp.com/1/profiles.json?access_token=XXXX" target="_blank" rel="noopener noreferrer">https://api.bufferapp.com/1/profiles.json?access_token=XXXX&lt;/a>
+&lt;/p>
+&lt;p>However POST was defeating me. That was until I remembered &lt;a href="http://www.telerik.com/fiddler" target="_blank" rel="noopener noreferrer">Fiddler&lt;/a>
+.&lt;/p>
+&lt;p>I had heard Troy Hunt (and others) talk of using Fiddler to examine what data is being passed among websites. Troy uses it to do a man in the middle test to see what information can be stolen.&lt;/p>
+&lt;p>It is really easy to setup, install Fiddler, click yes to a few security warnings and you can see what information is being passed from your code to remote APIs.&lt;/p>
+&lt;p>Once I had Fiddler installed I could compare what information is being passed between a successful API call using the BufferAPI nuget package and an unsuccessful API call using my code.&lt;/p>
+&lt;p>Fiddler also showed that passing my authentication token in a POST request is much better. Despite both GET and POST being encrypted when using HTTPS, anything at either end that logs URLs will have a log of your username and password.&lt;/p>
+&lt;p>If you have not tried Fiddler, give it a try especially if you are doing things with API calls.&lt;/p></description></item><item><title>How do I add Power BI data to a webpage?</title><link>https://www.funkysi1701.com/posts/how-do-i-add-power-bi-data-to-a-webpage/</link><pubDate>Mon, 12 Jun 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/how-do-i-add-power-bi-data-to-a-webpage/</guid><description>&lt;p>Last week I talked about &lt;a href="https://www.funkysi1701.com/2017/06/05/businessintelligence/">Power BI&lt;/a>
+, what it is and some of the different services you can use with it. This week lets add some of that data to a simple web page.&lt;/p>
+&lt;p>For this example I am going to add the google analytics data from this website to this page.&lt;/p>
+&lt;p>First login to your Power BI &lt;a href="https://app.powerbi.com/" target="_blank" rel="noopener noreferrer">https://app.powerbi.com/&lt;/a>
+&lt;/p>
+&lt;p>Click the get data link at the bottom left.&lt;/p>
+&lt;p>Click My Organisation to bring up the app search box.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="Alt Text" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/46c1lyxy053xcq66fowf.jpg" loading="lazy"
+/>
+&lt;/p>
+&lt;p>Click the Apps tab and search for “google” in the search box, you should then see Google Analytics, click into this and then click the get it now button.&lt;/p>
+&lt;p>Log into your google account. If you have multiple google accounts I found it worked best to sign out of all of them or run this in an incognito window.&lt;/p>
+&lt;p>Once you are signed in you should see a list of the different google analytics data you have, select the one you want to use and click import.&lt;/p>
+&lt;p>Power BI will then go away and start loading the data.&lt;/p>
+&lt;p>Once loaded go to Reports and select the Google Analytics that has been loaded. If you have more than one, it is a good idea to rename each one eg Corporate Site Google Analytics, Blog Google Analytics so you won’t get mixed up.&lt;/p>
+&lt;p>In the file menu select Publish to web and agree that you are OK for this to be made public.&lt;/p>
+&lt;p>You will then be given a piece of HTML code that starts with &amp;lt;iframe copy this onto your web page. Reload your webpage and you should see something similar to mine below.&lt;/p>
+&lt;p>It should be noted that while you can but the webpage containing the iframe behind a login page, the data could still be accessed if you knew the url contained within the iframe, this is why the link can be emailed and continue to work.&lt;/p></description></item></channel></rss>

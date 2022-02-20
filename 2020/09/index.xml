@@ -1,1 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2020-09 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2020/09/</link><description>Recent content in 2020-09 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Sat, 26 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2020/09/index.xml" rel="self" type="application/rss+xml"/><item><title>Security Headers</title><link>https://www.funkysi1701.com/posts/security-headers/</link><pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/security-headers/</guid><description>Check the security headers of your site</description></item><item><title>Back to Blogging</title><link>https://www.funkysi1701.com/posts/back-to-blogging/</link><pubDate>Fri, 25 Sep 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/back-to-blogging/</guid><description>Back to Blogging</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2020-09 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2020/09/</link><description>Recent content in 2020-09 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Sat, 26 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2020/09/index.xml" rel="self" type="application/rss+xml"/><item><title>Security Headers</title><link>https://www.funkysi1701.com/posts/security-headers/</link><pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/security-headers/</guid><description>&lt;p>Have you wondered what info you are leaking via your response headers?, do you want some kind of guide about what headers to set or remove altogether?&lt;/p>
+&lt;p>Head on over to &lt;a href="https://securityheaders.com/" target="_blank" rel="noopener noreferrer">https://securityheaders.com/&lt;/a>
+This is a site created by security expert &lt;a href="https://scotthelme.co.uk" target="_blank" rel="noopener noreferrer">Scott Helme&lt;/a>
+that rates a URL based on what response headers it can see.&lt;/p>
+&lt;p>I am pleased to say &lt;a href="http://www.funkysi1701.com">www.funkysi1701.com&lt;/a>
+is now getting an A.&lt;img class="img-fluid" alt="Alt Text" src="https://dev-to-uploads.s3.amazonaws.com/i/07rwumi94fz141hwessu.PNG" loading="lazy"
+/>
+&lt;/p>
+&lt;p>So how do you add/remove headers in dotnet core?&lt;/p>
+&lt;p>In my configure method in Startup.cs I have the following code block.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">app.Use(
+next =&amp;gt;
+{
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> context =&amp;gt;
+{
+context.Response.OnStarting(
+() =&amp;gt;
+{
+context.Response.Headers.Add(&lt;span style="color:#e6db74">&amp;#34;Permissions-Policy&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;microphone=()&amp;#34;&lt;/span>);
+context.Response.Headers.Remove(&lt;span style="color:#e6db74">&amp;#34;Server&amp;#34;&lt;/span>);
+context.Response.Headers.Remove(&lt;span style="color:#e6db74">&amp;#34;X-Powered-By&amp;#34;&lt;/span>);
+context.Response.Headers.Remove(&lt;span style="color:#e6db74">&amp;#34;X-AspNet-Version&amp;#34;&lt;/span>);
+&lt;span style="color:#66d9ef">return&lt;/span> Task.CompletedTask;
+});
+&lt;span style="color:#66d9ef">await&lt;/span> next(context);
+};
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>I have only included a few of the headers I am adding as the excellent &lt;a href="https://securityheaders.com/" target="_blank" rel="noopener noreferrer">https://securityheaders.com/&lt;/a>
+can tell you which headers you should add and what options you might want.&lt;/p></description></item><item><title>Back to Blogging</title><link>https://www.funkysi1701.com/posts/back-to-blogging/</link><pubDate>Fri, 25 Sep 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/back-to-blogging/</guid><description>&lt;p>My last blog post was over six months ago.&lt;/p>
+&lt;p>Covid 19 has hit the world, and I will be honest I have found it a challenging time.&lt;/p>
+&lt;p>My Blog had gotten into a bit of a mess. It had become fragmented with different versions of the same thing; I will attempt to explain what has become of my blog.&lt;/p>
+&lt;p>The original WordPress site can currently be found at &lt;a href="https://www.pwnedpass.com/" target="_blank" rel="noopener noreferrer">https://www.pwnedpass.com/&lt;/a>
+I would prefer it to be on a sub-domain of funkysi1701.com but for some reason I haven&amp;rsquo;t been able to get that to work, not sure if it is a limitation of my hosting package. I like WordPress, it is very flexible, easy to get blog posts out there. But I want to write content about development and having a site I can tinker with is important to me.&lt;/p>
+&lt;p>Most of my WordPress blogs have been imported into dev.to and a few extra have been written on this platform. I like dev.to it is a wonderful place to share content and it has one or two extra features I like.&lt;/p>
+&lt;p>dev.to has an integration with Stackbit/Netlify and this became &lt;a href="https://dev.funkysi1701.com" target="_blank" rel="noopener noreferrer">https://dev.funkysi1701.com&lt;/a>
+. I like having a personal site, but having the same content as dev.to. To add content to this site all I need to do is write it on dev.to and some magic will go on behind the scenes and new content will be published.&lt;/p>
+&lt;p>However, as a developer I don&amp;rsquo;t like magic, I want to understand what is going on a fiddle with all the settings and make it do what I want.&lt;/p>
+&lt;p>dev.to has an API, I can build a site in .Net Core and make API calls to fetch the content I want. I understand APIs, I understand .Net and can customise my site exactly how I want it, plus play about with a .net website. This is what &lt;a href="https://www.funkysi1701.com">https://www.funkysi1701.com&lt;/a>
+is now.&lt;/p>
+&lt;p>So what have I built so far. I have a Server Side Blazor site running .Net 5. Why Server Side and not Client Side I hear you ask? Well only because I have more experience with Server Side and know how to quickly create a website with that technology, I may change it as time goes by, but we will see.&lt;/p>
+&lt;p>I have two pages a list of my blog posts and a page that displays the content. Both of these use the dev.to API. I lied, there is a third page I hacked together to do some page redirection from the WordPress URLs. This is something I will change as time goes on.&lt;/p>
+&lt;p>There are lots of improvements I want to do, there are probably also lots of broken images or links as well. Hopefully, this will result in a good platform to blog about as well as on.&lt;/p></description></item></channel></rss>

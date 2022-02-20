@@ -1,1 +1,146 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Goals on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/goals/</link><description>Recent content in Goals on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/goals/index.xml" rel="self" type="application/rss+xml"/><item><title>2022 Goals</title><link>https://www.funkysi1701.com/posts/2022-goals/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022-goals/</guid><description>A review of last years goals and setting of new ones for 2022</description></item><item><title>More than halfway through 2021</title><link>https://www.funkysi1701.com/posts/more-than-halfway-through-2021/</link><pubDate>Tue, 31 Aug 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/more-than-halfway-through-2021/</guid><description>We are over halfway through 2021, let&amp;rsquo;s have a quick look at some things I have done this year</description></item><item><title>Goals for 2021</title><link>https://www.funkysi1701.com/posts/goals-for-2021/</link><pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/goals-for-2021/</guid><description>Here are my goals for 2021</description></item><item><title>Lets see what 2019 can do!</title><link>https://www.funkysi1701.com/posts/lets-see-what-2019-can-do/</link><pubDate>Tue, 01 Jan 2019 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/lets-see-what-2019-can-do/</guid><description>This is my annual lets make some goals for the new year blog post.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Goals on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/goals/</link><description>Recent content in Goals on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/goals/index.xml" rel="self" type="application/rss+xml"/><item><title>2022 Goals</title><link>https://www.funkysi1701.com/posts/2022-goals/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022-goals/</guid><description>&lt;p>Lets have a look at what my goals were for 2021. I had eight of them, lets look at them one by one.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Azure certification&lt;/strong>. In May of this year I sat and passed the Azure Fundamentals exam. I am calling this goal as achieved.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Mentoring&lt;/strong>. I didn&amp;rsquo;t do anything about working with others or mentoring, so not sure I achieved this one. However I do now work in a development team and I have been reviewing others code and having my own reviewed. We have a junior developer and I am enjoying the opportunities I have to work with him and share my wisdom.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>F#&lt;/strong>. I have done zero work with F# in 2021, so this one I didn&amp;rsquo;t achieve.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Cosmos db/Mongo db&lt;/strong>. I have worked with both of these technologies in 2021. I used Cosmos the most with my website, and storing data for it. I used Mongo/Atlas for auditing for a project I did for my previous job. I wouldn&amp;rsquo;t say I was expert in either of these, but I am starting to get a flavour of non SQL Server databases. I should also note that I am using mysql a lot in my latest job, so another non SQL Server technology that I get to use on a daily basis.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Give a talk&lt;/strong>. I said last year that maybe I would make baby steps towards doing this, and I have. In the interview for my new job I gave a short presentation (I thought it was bad, but others didn&amp;rsquo;t!) I also gave a short introduction to Blazor talk which went down well.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Mandlebrot Generator&lt;/strong>. Did nothing on this one as well. I may have googled the code but that is as far as I got.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Pwned Pass Mobile App&lt;/strong>. I got an increase in users in 2021 and hence it it still running and I still pay for the API key. I am still considering what to do with it.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Time for me&lt;/strong>. Achieved this one, had plenty of time for myself.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="not-a-bad-year-but-what-are-my-goals-for-2022">Not a bad year but what are my goals for 2022?&lt;a class="anchor ms-1" href="#not-a-bad-year-but-what-are-my-goals-for-2022">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Video&lt;/strong>. I have just purchased a green screen, so my first goal is to learn how to use OBS, how to light myself properly without getting horrible reflections. I have the content for my first talk, the talk I gave at work about Blazor.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Conference&lt;/strong>. Attend an in person conference. I am booked to attend Scottish Summit, however it has been postponed due to COVID-19.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Blog More&lt;/strong>. I have been neglecting writing blog posts a bit recently, so I want to do more.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Metrics&lt;/strong>. I have been recording various metrics from twitter, github etc and I would like to expand this and make it a service.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Profile Pic&lt;/strong>. My profile pic is getting a bit old, so it would be nice to update the images I use online and improve my personal brand.&lt;/p>
+&lt;/li>
+&lt;/ol></description></item><item><title>More than halfway through 2021</title><link>https://www.funkysi1701.com/posts/more-than-halfway-through-2021/</link><pubDate>Tue, 31 Aug 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/more-than-halfway-through-2021/</guid><description>&lt;p>We are over halfway through 2021, let&amp;rsquo;s have a quick look at some things I have done this year:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Deployed a new version of the Pre Qualification questionnaire website for my employers&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Passed Azure Fundamentals Exam&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Mongo DB Atlas - experimented with using it for auditing my application&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>SonarCloud - tried to improve the quality of my code&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Azure DevOps API -&amp;gt; built an application to show builds and releases from my Azure DevOps organisation, code is on github&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Experimented with replacing SQL Agent Jobs with Azure Functions, ended up abandoning this project but was a great learning experience&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Played with MS Graph - displaying profile pic from Azure AD but I am the only one in my org with a photo so abandoned this as well&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Added a captch to a website to reduce spam&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Charted my Gas and Electricity usage using the Octopus Energy API&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Charted various metrics from services I use, eg twitter followers, github commits, blog posts published&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Started learning react, easily connected it with Azure AD&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Integrated my employers project management system with a postcode API and google maps so can see where in the country different projects are located&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Tested dotnet 6 preview and the latest Visual Studio 2022 preview&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>I was made redundant and got a new job&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Wrote my first piece of dotnet code to run on a Raspberry Pi&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Kept cost of Azure down, by removing unused services, refactoring and optimizing existing services.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Wow, I have done loads this year, what is next?&lt;/p></description></item><item><title>Goals for 2021</title><link>https://www.funkysi1701.com/posts/goals-for-2021/</link><pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/goals-for-2021/</guid><description>&lt;p>I didn&amp;rsquo;t make any goals for 2020, or if I did, I didn&amp;rsquo;t officially announce them. 2020 has been a hard year for all of us, 2021 is going to be better.&lt;/p>
+&lt;p>Here are a few ideas for my goals for the year ahead.&lt;/p>
+&lt;ol>
+&lt;li>Azure certification&lt;/li>
+&lt;li>Mentoring&lt;/li>
+&lt;li>F#&lt;/li>
+&lt;li>Cosmos db/Mongo db&lt;/li>
+&lt;li>Give a talk&lt;/li>
+&lt;li>Mandlebrot Generator&lt;/li>
+&lt;li>Pwned Pass Mobile App&lt;/li>
+&lt;li>More time for me&lt;/li>
+&lt;/ol>
+&lt;ol>
+&lt;li>
+&lt;p>I want to get a certificate to show how much I know. The obvious area for this is Azure. I spend a lot of time playing with Azure, building and deploying to the platform I should be able to get certified in this area. I actually had an exam booked in 2020 but it was an in-person exam so was cancelled when Covid hit. I plan to sit the &lt;a href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-900" target="_blank" rel="noopener noreferrer">foundation&lt;/a>
+exam in the first quarter of 2021 and I will take it from there.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>I have had a few times recently where I have been reminded that I don&amp;rsquo;t have much experience working with others. Mostly because I work in a one-man development team so there are limited opportunities in the workplace. I have a few ideas to change this, but this is one of my top priorities for 2021.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&amp;amp; 4) My experience is very Microsoft and C# so I want to spend some time exploring and learning tech that is adjacent to this. A functional language like F# sounds like a good compliment to my existing skills and my data skills are also very SQL server so some document database skills would be a good place to spend some time.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Doing a talk has been on my list for years. I am terrified of doing one and with everything online now I don&amp;rsquo;t know if that makes things easier or harder. I don&amp;rsquo;t think 2021 is going to be the year for this but maybe I will take baby steps towards this goal.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Twitter recently reminded me about watching a Mandlebrot generate one pixel at a time in the 1980s. I would love to explore the code used to generate them and how fast they currently are to produce.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>My Google play store Xamarin forms app that uses the HIBP API has less than 100 users and I am considering closing it down, especially as I pay a monthly fee for API keys. I haven&amp;rsquo;t really decided what to do, maybe I will spend some time improving it, maybe I will close it down, maybe I will build something else.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For many people 2020 has been a hard year, I am one of those&lt;/p>
+&lt;/li>
+&lt;/ol></description></item><item><title>Lets see what 2019 can do!</title><link>https://www.funkysi1701.com/posts/lets-see-what-2019-can-do/</link><pubDate>Tue, 01 Jan 2019 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/lets-see-what-2019-can-do/</guid><description>&lt;p>This is my annual lets make some goals for the new year blog post. So in no particular order.&lt;/p>
+&lt;h2 id="improve-house">Improve House&lt;a class="anchor ms-1" href="#improve-house">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>I can’t outdo last years goal of buying a house but I can continue to make efforts to improve it. I was going to put something about decorating or doing something to our bedrooms, however today I spotted a hole in the roof so this may well absorb most of my home improvement budget.&lt;/p>
+&lt;h2 id="connect-with-local-area">Connect with local area&lt;a class="anchor ms-1" href="#connect-with-local-area">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>Since we moved in October we haven’t really connected with our local area yet. My only interaction with my neighbours was when my car blocked his drive!&lt;/p>
+&lt;p>I am going to make efforts to change this in 2019. I don’t exactly know how yet, but I have some ideas. My son starts nursery and later school this year so could be one way to meet other parents and teachers. I want to connect with a local church, so far this hasn’t happened so need to make more effort with this. There are other local groups that put on child friendly events which would be good to attend.&lt;/p>
+&lt;h2 id="lightning-talk">Lightning Talk&lt;a class="anchor ms-1" href="#lightning-talk">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>I failed last year to do this so it is back on my list. I know I must have stuff of value to share so going to try again on this.&lt;/p>
+&lt;p>A lightning talk is a very short talk or presentation given at a conference or user group. I am not a natural public speaker so this is a step out of my comfort zone, however I am going to start small and see what happens.&lt;/p>
+&lt;p>##Family Holiday
+As always we Fosters are going to have a holiday in the summer and have some quality family time. I also want to take the boys to London for a weekend.&lt;/p>
+&lt;h2 id="blogging">Blogging&lt;a class="anchor ms-1" href="#blogging">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>This blog has taken a bit of a backseat in 2018 so I want to try and refocus it for 2019. My commitment is for 12 blog posts in 2019, that is one a month. It doesn’t sound like much but I know how easily life can get in the way.&lt;/p>
+&lt;p>Having said that my log has had record views this year. 7159 views. However I believe this number to be incorrect and has been inflated by my app development and some of the automated processes taking place.&lt;/p>
+&lt;h2 id="routine">Routine&lt;a class="anchor ms-1" href="#routine">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>Last goal is to try a get more of a routine going. With two small boys, one of which is starting school in September a routine is going to be essential and will allow all of us all a chance to get more things done.&lt;/p></description></item></channel></rss>

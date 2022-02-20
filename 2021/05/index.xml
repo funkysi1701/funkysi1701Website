@@ -1,1 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2021-05 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2021/05/</link><description>Recent content in 2021-05 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Tue, 11 May 2021 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2021/05/index.xml" rel="self" type="application/rss+xml"/><item><title>My road to Certification</title><link>https://www.funkysi1701.com/posts/my-road-to-certification/</link><pubDate>Tue, 11 May 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/my-road-to-certification/</guid><description>Road to Certification</description></item><item><title>DotNet on a Raspberry Pi</title><link>https://www.funkysi1701.com/posts/dotnet-on-a-raspberry-pi/</link><pubDate>Mon, 10 May 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/dotnet-on-a-raspberry-pi/</guid><description>DotNet on a Raspberry Pi</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2021-05 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2021/05/</link><description>Recent content in 2021-05 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Tue, 11 May 2021 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2021/05/index.xml" rel="self" type="application/rss+xml"/><item><title>My road to Certification</title><link>https://www.funkysi1701.com/posts/my-road-to-certification/</link><pubDate>Tue, 11 May 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/my-road-to-certification/</guid><description>&lt;p>So today I sat the Azure Fundamentals Certification Exam and passed!
+&lt;img class="img-fluid" alt="Alt Text" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eytphopn3inx2x77m9n5.png" loading="lazy"
+/>
+&lt;/p>
+&lt;p>Really pleased with myself at achieving this. It was one of my goals for 2021 so I can tick that off.&lt;/p>
+&lt;p>Back in January I booked my first exam, however due to technical problems I didn&amp;rsquo;t get as far as the Exam. In order to be able to sit an exam like this you need a webcam and microphone so you can be monitored remotely to check that you are not cheating. Something in my network was blocking them from seeing my video so it got cancelled before it started.&lt;/p>
+&lt;p>My theory is that either my internet connection was playing up at the time, My Pi Hole was blocking something, or something else on my network was blocking the video feed.&lt;/p>
+&lt;p>This cancellation put me off Certifications, as I wasn&amp;rsquo;t sure how to debug the issue and find out exactly what the problem was.&lt;/p>
+&lt;p>A few months back I won a free Azure Certification for taking part in a skills challenge run by &lt;a href="https://twitter.com/gregor_suttie" target="_blank" rel="noopener noreferrer">Gregor Suttie&lt;/a>
+and &lt;a href="https://twitter.com/Pixel_Robots" target="_blank" rel="noopener noreferrer">Richard Hooper&lt;/a>
+and this was due to expire at the end of this month so I thought why not book a second exam and see if I can get past the technical problems. I didn&amp;rsquo;t do any exam prep as I thought, I wouldn&amp;rsquo;t get that far.&lt;/p>
+&lt;p>This time I connected directly to my router, bypassing most of the network, firewall and other items on my network that could possibly cause an issue.&lt;/p>
+&lt;p>I cleared my desk, took photos of my ID, took pictures of my desk from every orientation, and waited for the technical issues to start.&lt;/p>
+&lt;p>I was in a queue waiting for the exam to start.&lt;/p>
+&lt;p>A connection issue has occurred you have been sent to the back of the queue. Oh here we go again!&lt;/p>
+&lt;p>But no I connected with the invigilator, who asked to confirm my monitors were disconnected and to move my wallet out of reach off my desk.&lt;/p>
+&lt;p>And we are off, I am answering questions from the exam.&lt;/p>
+&lt;p>I won&amp;rsquo;t go into detail about the questions, but I whizzed through them, most made me think, some I guessed at. I wasn&amp;rsquo;t expecting to pass, I thought maybe half marks or just under due to my familiarity with Azure. (I have been using it for years which must count for something!)&lt;/p>
+&lt;p>I was wrong I passed comfortably and now I have my first certification.&lt;/p>
+&lt;p>My advice for you if you have been using Azure for a while is to book this exam and see how you do, you may well pass like me. There are plenty of opportunities to get a free exam, attending conferences like Ignite often qualify you for one, look out for challenges and competitions by #AzureFamily people on twitter as they are very encouraging and helpful in your Certification journey.&lt;/p>
+&lt;p>And yes I am thinking about what Certificate to do next!&lt;/p></description></item><item><title>DotNet on a Raspberry Pi</title><link>https://www.funkysi1701.com/posts/dotnet-on-a-raspberry-pi/</link><pubDate>Mon, 10 May 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/dotnet-on-a-raspberry-pi/</guid><description>&lt;p>I have had a Raspberry Pi for a few years and recently I connected it up again, I plugged in the camera and everything worked.&lt;/p>
+&lt;p>To start off you can view photos from the camera with the raspistill command. With a bit of clever scripting and the crontab I got the Pi taking pictures every 60 seconds. Even managed to take a nice picture of a robin.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="Alt Text" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/e21z7vbamy6w6akhhiwd.jpg" loading="lazy"
+/>
+&lt;/p>
+&lt;p>However scripting isn&amp;rsquo;t really programming, and I would like to write a bit more code. Dotnet can run everywhere these days and it made sense to see if it would run on a Raspberry Pi.&lt;/p>
+&lt;p>@pete_codes has written a nice guide to getting started with dotnet on a Raspberry Pi &lt;a href="https://www.petecodes.co.uk/install-and-use-microsoft-dot-net-5-with-the-raspberry-pi/" target="_blank" rel="noopener noreferrer">https://www.petecodes.co.uk/install-and-use-microsoft-dot-net-5-with-the-raspberry-pi/&lt;/a>
+This guide and the nuget package &lt;a href="https://www.nuget.org/packages/Unosquare.Raspberry.IO/" target="_blank" rel="noopener noreferrer">https://www.nuget.org/packages/Unosquare.Raspberry.IO/&lt;/a>
+was all I needed to get started taking pictures with my Pi.&lt;/p>
+&lt;p>My initial goal is to take some wildlife pictures, stick my camera to a window and take pictures of what flies/crawls/jumps past the window.&lt;/p>
+&lt;p>The code I have written so far is available on github &lt;a href="https://github.com/funkysi1701/RaspberryPiDotNet" target="_blank" rel="noopener noreferrer">https://github.com/funkysi1701/RaspberryPiDotNet&lt;/a>
+&lt;/p>
+&lt;p>So far the code takes a picture, uploads this file to Azure Blob Storage (so as not to fill up the Pi with too many image files) and deletes the image locally.&lt;/p>
+&lt;p>Run a dotnet publish -c Release and then cron can run dotnet RaspberryPiDotNet.dll (with full paths to the relevant files)&lt;/p>
+&lt;p>I then use crontab to execute the code every 60 seconds.&lt;/p>
+&lt;p>My code has an appsetting.json file which has a couple of settings that need completing for my code to work.&lt;/p>
+&lt;p>Storage: This is the connection string for Azure Blob Storage
+LocalPath: This is the path to where the camera will save its photos to, something like /home/pi/ is all you need but feel free to specify what you need.&lt;/p>
+&lt;p>Once the photos are in blob storage I plan to display them somewhere, add options to delete what I don&amp;rsquo;t want, maybe do something timelapsey.&lt;/p>
+&lt;p>I also don&amp;rsquo;t have a proper release pipeline and this grates on me a bit. I have been doing a mixture of writing code in VS and pushing that to github and then doing git pull on the Pi, and also writing code directly on the Pi. (VS Code can connect via SSH which is pretty cool!)&lt;/p></description></item></channel></rss>

@@ -1,1 +1,48 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>C-Sharp on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/c-sharp/</link><description>Recent content in C-Sharp on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Mon, 03 Jul 2017 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/c-sharp/index.xml" rel="self" type="application/rss+xml"/><item><title>Uploading Files to AWS</title><link>https://www.funkysi1701.com/posts/uploading-files-to-aws/</link><pubDate>Mon, 03 Jul 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/uploading-files-to-aws/</guid><description>Uploading Files to AWS</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>C-Sharp on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/c-sharp/</link><description>Recent content in C-Sharp on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Mon, 03 Jul 2017 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/c-sharp/index.xml" rel="self" type="application/rss+xml"/><item><title>Uploading Files to AWS</title><link>https://www.funkysi1701.com/posts/uploading-files-to-aws/</link><pubDate>Mon, 03 Jul 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/uploading-files-to-aws/</guid><description>&lt;p>I am a fan of Azure but today I have been looking at AWS. Specifically how to upload and download files.&lt;/p>
+&lt;p>AWS S3 stores files in Buckets. I already had an AWS S3 account setup with a Bucket. I am going to assume you have got a bucket setup and concentrate on the code to get files in and out.&lt;/p>
+&lt;p>First step is to use nuget to install the AWS packages. In nuget the packages you want are called AWSSDK.Core and AWSSDK.S3.&lt;/p>
+&lt;p>The using statements you want to use are called Amazon.S3 and Amazon.S3.Transfer, not sure why this doesn’t match nuget, this difference caught me out a couple of times.&lt;/p>
+&lt;p>Now to the code that uploads files&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">AmazonS3Client AWSclient = &lt;span style="color:#66d9ef">new&lt;/span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.EUWest1);
+TransferUtility fileTransferUtility = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtility(AWSclient);
+&lt;span style="color:#66d9ef">using&lt;/span> (FileStream streamWriter = &lt;span style="color:#66d9ef">new&lt;/span> FileStream(path, FileMode.Open))
+{
+TransferUtilityUploadRequest fileTransferUtilityRequest = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtilityUploadRequest
+{
+BucketName = &lt;span style="color:#e6db74">&amp;#34;flawlessimages&amp;#34;&lt;/span>,
+InputStream = streamWriter,
+Key = fileName
+};
+fileTransferUtility.Upload(fileTransferUtilityRequest);
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Lets break it down and look at what it does.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">AmazonS3Client AWSclient = &lt;span style="color:#66d9ef">new&lt;/span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.EUWest1);
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This creates an instance of AmazonS3Client, we are passing the Access Key and Secret Access Key both of which can be found from your Amazon S3 account My Security Credentials section. Amazon.RegionEndpoint.EUWest1 specifies the amazon data centres that your bucket is located in.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">TransferUtility fileTransferUtility = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtility(AWSclient);
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This creates an instance of TransfterUtility using the AmazonS3Client instance we created in the previous step.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">&lt;span style="color:#66d9ef">using&lt;/span> (FileStream streamWriter = &lt;span style="color:#66d9ef">new&lt;/span> FileStream(path, FileMode.Open))
+{
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This opens up a filestream from a files path and specifies that the file should be opened.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">TransferUtilityUploadRequest fileTransferUtilityRequest = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtilityUploadRequest
+{
+BucketName = &lt;span style="color:#e6db74">&amp;#34;flawlessimages&amp;#34;&lt;/span>,
+InputStream = streamWriter,
+Key = fileName
+};
+fileTransferUtility.Upload(fileTransferUtilityRequest);
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This last step specifies which bucket to upload to, what input stream to upload and the Key to use. Key is just AWS way of referring to files, more commonly referred to as the filename.&lt;/p>
+&lt;p>This is all you need to do to upload a file to your Bucket. The file will be located at &lt;a href="https://s3-eu-west-1.amazonaws.com/[bucketname]/[filename]" target="_blank" rel="noopener noreferrer">https://s3-eu-west-1.amazonaws.com/[bucketname]/[filename]&lt;/a>
+, however by default it will not be downloadable until you set Read permission to everyone, once you do that anyone who has the link will be able to download your file.&lt;/p>
+&lt;p>This is the same permission level as any file you have on your webserver, however AWS has a better way.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">&lt;span style="color:#66d9ef">using&lt;/span> (s3Client = &lt;span style="color:#66d9ef">new&lt;/span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.USEast1))
+{
+GetPreSignedUrlRequest request1 = &lt;span style="color:#66d9ef">new&lt;/span> GetPreSignedUrlRequest
+{
+BucketName = bucketName,
+Key = filename,
+Expires = DateTime.Now.AddMinutes(&lt;span style="color:#ae81ff">5&lt;/span>)
+};
+urlString = s3Client.GetPreSignedURL(request1);
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Here we are generating a url to download the file, but we are specifying that it is only valid for 5 minutes. This means that if you share the url it will only work for 5 minutes, after that AWS will give an access denied message.&lt;/p>
+&lt;p>This is much better security than you have on a typical web server, and easy to implement, every time a user clicks on a download link you generate a new presigned url and send the download to the browser, as long as this process doesn’t take longer than 5 minutes the user will never know.&lt;/p></description></item></channel></rss>

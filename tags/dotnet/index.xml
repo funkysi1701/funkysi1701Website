@@ -1,1 +1,211 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DotNet on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/dotnet/</link><description>Recent content in DotNet on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Mon, 14 Feb 2022 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/dotnet/index.xml" rel="self" type="application/rss+xml"/><item><title>dotnet is 20 years old</title><link>https://www.funkysi1701.com/posts/dotnet-is-20-years-old/</link><pubDate>Mon, 14 Feb 2022 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/dotnet-is-20-years-old/</guid><description>Today Microsoft celebrated 20 years since the first version of dotnet was released with a special live stream event.</description></item><item><title>DotNet on a Raspberry Pi</title><link>https://www.funkysi1701.com/posts/dotnet-on-a-raspberry-pi/</link><pubDate>Mon, 10 May 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/dotnet-on-a-raspberry-pi/</guid><description>DotNet on a Raspberry Pi</description></item><item><title>Weekly Update #001</title><link>https://www.funkysi1701.com/posts/weekly-update-001/</link><pubDate>Sat, 14 Nov 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-001/</guid><description>Dotnet 5, dotnetconf and adding devops buildID and hash</description></item><item><title>Security Headers</title><link>https://www.funkysi1701.com/posts/security-headers/</link><pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/security-headers/</guid><description>Check the security headers of your site</description></item><item><title>Back to Blogging</title><link>https://www.funkysi1701.com/posts/back-to-blogging/</link><pubDate>Fri, 25 Sep 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/back-to-blogging/</guid><description>Back to Blogging</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DotNet on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/dotnet/</link><description>Recent content in DotNet on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Mon, 14 Feb 2022 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/dotnet/index.xml" rel="self" type="application/rss+xml"/><item><title>dotnet is 20 years old</title><link>https://www.funkysi1701.com/posts/dotnet-is-20-years-old/</link><pubDate>Mon, 14 Feb 2022 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/dotnet-is-20-years-old/</guid><description>&lt;p>Today Microsoft celebrated 20 years since the first version of dotnet was released with a special live stream event.&lt;/p>
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/67tCWKnweso" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>&lt;/iframe>
+&lt;p>A lot has happened in the 20 years of dotnet (or .Net). It is my understanding that .Net was created to rival Java. When the .Net Framework was first created it was a windows only thing, but today modern .Net is a modern run anywhere platform, with .net applications running everywhere from PCs and Laptops, Raspberry Pi&amp;rsquo;s, Mobile phones and tablets (via Xamarin Forms), to Websites and Microservice APIs running on every Cloud platform out there.&lt;/p>
+&lt;p>If you want to celebrate this achievment tweet with the hashtag &lt;a href="https://twitter.com/search?q=%23dotnetlovesme" target="_blank" rel="noopener noreferrer">#DotNetLovesMe&lt;/a>
+or download some of the digital swag available from &lt;a href="https://github.com/dotnet-presentations/dotNET20th/tree/main/Swag" target="_blank" rel="noopener noreferrer">github&lt;/a>
+&lt;/p>
+&lt;p>On Thursday the 17th Feb the first preview of dotnet 7.0 is going to be released, with the latest version 6.0 only being released last November.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="History of DotNet" src="https://pbs.twimg.com/media/FLj8kj7XEAcW3ng?format=jpg&amp;amp;name=4096x4096" loading="lazy"
+/>
+&lt;/p>
+&lt;p>The above graphic comes from the following tweet.&lt;/p>
+&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">This is 20 years of &lt;a href="https://twitter.com/hashtag/dotnet?src=hash&amp;amp;ref_src=twsrc%5Etfw">#dotnet&lt;/a> releases. &lt;a href="https://twitter.com/hashtag/dotNETLovesMe?src=hash&amp;amp;ref_src=twsrc%5Etfw">#dotNETLovesMe&lt;/a> &lt;a href="https://t.co/Zxfe1SdWTq">pic.twitter.com/Zxfe1SdWTq&lt;/a>&lt;/p>&amp;mdash; Khalid 🎟 (@buhakmeh) &lt;a href="https://twitter.com/buhakmeh/status/1493220984916258817?ref_src=twsrc%5Etfw">February 14, 2022&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+&lt;p>What do you like about dotnet? When did you first start using it? What are you going to build with it next?&lt;/p></description></item><item><title>DotNet on a Raspberry Pi</title><link>https://www.funkysi1701.com/posts/dotnet-on-a-raspberry-pi/</link><pubDate>Mon, 10 May 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/dotnet-on-a-raspberry-pi/</guid><description>&lt;p>I have had a Raspberry Pi for a few years and recently I connected it up again, I plugged in the camera and everything worked.&lt;/p>
+&lt;p>To start off you can view photos from the camera with the raspistill command. With a bit of clever scripting and the crontab I got the Pi taking pictures every 60 seconds. Even managed to take a nice picture of a robin.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="Alt Text" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/e21z7vbamy6w6akhhiwd.jpg" loading="lazy"
+/>
+&lt;/p>
+&lt;p>However scripting isn&amp;rsquo;t really programming, and I would like to write a bit more code. Dotnet can run everywhere these days and it made sense to see if it would run on a Raspberry Pi.&lt;/p>
+&lt;p>@pete_codes has written a nice guide to getting started with dotnet on a Raspberry Pi &lt;a href="https://www.petecodes.co.uk/install-and-use-microsoft-dot-net-5-with-the-raspberry-pi/" target="_blank" rel="noopener noreferrer">https://www.petecodes.co.uk/install-and-use-microsoft-dot-net-5-with-the-raspberry-pi/&lt;/a>
+This guide and the nuget package &lt;a href="https://www.nuget.org/packages/Unosquare.Raspberry.IO/" target="_blank" rel="noopener noreferrer">https://www.nuget.org/packages/Unosquare.Raspberry.IO/&lt;/a>
+was all I needed to get started taking pictures with my Pi.&lt;/p>
+&lt;p>My initial goal is to take some wildlife pictures, stick my camera to a window and take pictures of what flies/crawls/jumps past the window.&lt;/p>
+&lt;p>The code I have written so far is available on github &lt;a href="https://github.com/funkysi1701/RaspberryPiDotNet" target="_blank" rel="noopener noreferrer">https://github.com/funkysi1701/RaspberryPiDotNet&lt;/a>
+&lt;/p>
+&lt;p>So far the code takes a picture, uploads this file to Azure Blob Storage (so as not to fill up the Pi with too many image files) and deletes the image locally.&lt;/p>
+&lt;p>Run a dotnet publish -c Release and then cron can run dotnet RaspberryPiDotNet.dll (with full paths to the relevant files)&lt;/p>
+&lt;p>I then use crontab to execute the code every 60 seconds.&lt;/p>
+&lt;p>My code has an appsetting.json file which has a couple of settings that need completing for my code to work.&lt;/p>
+&lt;p>Storage: This is the connection string for Azure Blob Storage
+LocalPath: This is the path to where the camera will save its photos to, something like /home/pi/ is all you need but feel free to specify what you need.&lt;/p>
+&lt;p>Once the photos are in blob storage I plan to display them somewhere, add options to delete what I don&amp;rsquo;t want, maybe do something timelapsey.&lt;/p>
+&lt;p>I also don&amp;rsquo;t have a proper release pipeline and this grates on me a bit. I have been doing a mixture of writing code in VS and pushing that to github and then doing git pull on the Pi, and also writing code directly on the Pi. (VS Code can connect via SSH which is pretty cool!)&lt;/p></description></item><item><title>Weekly Update #001</title><link>https://www.funkysi1701.com/posts/weekly-update-001/</link><pubDate>Sat, 14 Nov 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-001/</guid><description>&lt;p>One of my favourite podcasts is Troy Hunts weekly update. In it he discusses stuff that he has been working on, plus some personal stuff. I am going to attempt to do something similar. It will probably take me a few of these before we get a look and feel that works.&lt;/p>
+&lt;h4 id="monday">Monday&lt;a class="anchor ms-1" href="#monday">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h4>
+&lt;p>A week off work, mainly to use it up before year end, plus want to get a few jobs around the house done.&lt;/p>
+&lt;p>I did ask the following question on Twitter.&lt;/p>
+&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">Hey &lt;a href="https://twitter.com/hashtag/azurefamily?src=hash&amp;amp;ref_src=twsrc%5Etfw">#azurefamily&lt;/a> and &lt;a href="https://twitter.com/hashtag/dotnet?src=hash&amp;amp;ref_src=twsrc%5Etfw">#dotnet&lt;/a> developers how do I get more involved in mentoring?&lt;/p>&amp;mdash; Simon Foster (@funkysi1701) &lt;a href="https://twitter.com/funkysi1701/status/1325742644014829568?ref_src=twsrc%5Etfw">November 9, 2020&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+&lt;p>As a one person dev team, my biggest weakness is working with others so any ideas of how to change that are great.&lt;/p>
+&lt;h4 id="tuesday">Tuesday&lt;a class="anchor ms-1" href="#tuesday">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h4>
+&lt;p>Dotnet 5 is out! The latest version of dotnet is released by Microsoft and to celebrate there is &lt;a href="https://www.dotnetconf.net/" target="_blank" rel="noopener noreferrer">dotnetconf&lt;/a>
+to listen to. Due to time zones and family commitments, I haven&amp;rsquo;t listened to an awful lot of it but I did see the keynote and loved the 3 Scott&amp;rsquo;s chat.&lt;/p>
+&lt;h4 id="wednesday">Wednesday&lt;a class="anchor ms-1" href="#wednesday">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h4>
+&lt;p>My youngest son was 3 today, due to Coronavirus we didn&amp;rsquo;t do much but we celebrated as a family, and he even had a zoom call.&lt;/p>
+&lt;h4 id="thursday">Thursday&lt;a class="anchor ms-1" href="#thursday">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h4>
+&lt;p>Blazor has a new feature &lt;a href="https://docs.microsoft.com/en-us/aspnet/core/blazor/components/virtualization?view=aspnetcore-5.0" target="_blank" rel="noopener noreferrer">Virtualize&lt;/a>
+where a list of items can only load the ones on screen. I have been trying to get this to work on my blog, works great running locally but not working in production yet.&lt;/p>
+&lt;p>Think I know what might be happening. I use Cloudflare to do my SSL, as Custom SSL certs for the cheaper Azure Web Apps is not supported. Something in Cloudflare is caching or interfering.&lt;/p>
+&lt;p>&lt;a href="https://zimmergren.net/solved-asp-net-core-blazor-web-sites-does-not-work-with-cloudflare-html-minification/" target="_blank" rel="noopener noreferrer">https://zimmergren.net/solved-asp-net-core-blazor-web-sites-does-not-work-with-cloudflare-html-minification/&lt;/a>
+&lt;/p>
+&lt;p>Turning off HTML minification fixed my issue!&lt;/p>
+&lt;p>One additional thing I added to my Blog is the &lt;a href="https://www.funkysi1701.com/config">/config&lt;/a>
+page which details some of the config settings. I think this probably came from &lt;a href="https://www.hanselman.com/blog/adding-a-git-commit-hash-and-azure-devops-build-number-and-build-id-to-an-aspnet-website" target="_blank" rel="noopener noreferrer">https://www.hanselman.com/blog/adding-a-git-commit-hash-and-azure-devops-build-number-and-build-id-to-an-aspnet-website&lt;/a>
+but it was a while ago when I first did this on another project.&lt;/p>
+&lt;p>At the moment we have .net Version, Commit and Build links.&lt;/p>
+&lt;p>The .Net Version is obtained from&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">@System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>A few other bits of info can be obtained from System.Runtime.InteropServices.RuntimeInformation which I have included on the page for fun. There are probably security concerns with exposing all this info publicly so something to bear in mind if you try this.&lt;/p>
+&lt;p>Build Info is passed to my code by a build step&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">- &lt;span style="color:#f92672">script&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;(echo $(Build.BuildNumber) &amp;amp;&amp;amp; echo $(Build.BuildId)) &amp;gt; .buildinfo.json&amp;#39;&lt;/span>
+&lt;span style="color:#f92672">displayName&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Emit build number&amp;#34;&lt;/span>
+&lt;span style="color:#f92672">workingDirectory&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;$(Build.SourcesDirectory)/src/WebBlog&amp;#39;&lt;/span>
+&lt;span style="color:#f92672">failOnStderr&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This simply passed the build id and number which are stored as variabled and saves them in a text file.&lt;/p>
+&lt;p>I then have a class that reads them and constructs a link.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Extensions.Hosting;
+&lt;span style="color:#66d9ef">using&lt;/span> System;
+&lt;span style="color:#66d9ef">using&lt;/span> System.IO;
+&lt;span style="color:#66d9ef">using&lt;/span> System.Linq;
+&lt;span style="color:#66d9ef">using&lt;/span> System.Reflection;
+&lt;span style="color:#66d9ef">namespace&lt;/span> WebBlog
+{
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">AppVersionInfo&lt;/span>
+{
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildFileName = &lt;span style="color:#e6db74">&amp;#34;.buildinfo.json&amp;#34;&lt;/span>;
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">readonly&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildFilePath;
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildNumber = &lt;span style="color:#66d9ef">string&lt;/span>.Empty;
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildId = &lt;span style="color:#66d9ef">string&lt;/span>.Empty;
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>gitHash = &lt;span style="color:#66d9ef">string&lt;/span>.Empty;
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>gitShortHash = &lt;span style="color:#66d9ef">string&lt;/span>.Empty;
+&lt;span style="color:#66d9ef">public&lt;/span> AppVersionInfo(IHostEnvironment hostEnvironment)
+{
+&lt;span style="color:#ae81ff">_&lt;/span>buildFilePath = Path.Combine(hostEnvironment.ContentRootPath, &lt;span style="color:#ae81ff">_&lt;/span>buildFileName);
+}
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> BuildNumber
+{
+&lt;span style="color:#66d9ef">get&lt;/span>
+{
+&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>buildNumber))
+{
+&lt;span style="color:#66d9ef">if&lt;/span> (File.Exists(&lt;span style="color:#ae81ff">_&lt;/span>buildFilePath))
+{
+&lt;span style="color:#66d9ef">var&lt;/span> fileContents = File.ReadLines(&lt;span style="color:#ae81ff">_&lt;/span>buildFilePath).ToList();
+&lt;span style="color:#66d9ef">if&lt;/span> (fileContents.Count &amp;gt; &lt;span style="color:#ae81ff">0&lt;/span>)
+{
+&lt;span style="color:#ae81ff">_&lt;/span>buildNumber = fileContents[&lt;span style="color:#ae81ff">0&lt;/span>];
+}
+&lt;span style="color:#66d9ef">if&lt;/span> (fileContents.Count &amp;gt; &lt;span style="color:#ae81ff">1&lt;/span>)
+{
+&lt;span style="color:#ae81ff">_&lt;/span>buildId = fileContents[&lt;span style="color:#ae81ff">1&lt;/span>];
+}
+}
+&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>buildNumber))
+{
+&lt;span style="color:#ae81ff">_&lt;/span>buildNumber = DateTime.UtcNow.ToString(&lt;span style="color:#e6db74">&amp;#34;yyyyMMdd&amp;#34;&lt;/span>) + &lt;span style="color:#e6db74">&amp;#34;.0&amp;#34;&lt;/span>;
+}
+&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>buildId))
+{
+&lt;span style="color:#ae81ff">_&lt;/span>buildId = &lt;span style="color:#e6db74">&amp;#34;123456&amp;#34;&lt;/span>;
+}
+}
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildNumber;
+}
+}
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> BuildId
+{
+&lt;span style="color:#66d9ef">get&lt;/span>
+{
+&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>buildId))
+{
+&lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span> = BuildNumber;
+}
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildId;
+}
+}
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> GitHash
+{
+&lt;span style="color:#66d9ef">get&lt;/span>
+{
+&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>gitHash))
+{
+&lt;span style="color:#66d9ef">var&lt;/span> version = &lt;span style="color:#e6db74">&amp;#34;1.0.0+LOCALBUILD&amp;#34;&lt;/span>;
+&lt;span style="color:#66d9ef">var&lt;/span> appAssembly = &lt;span style="color:#66d9ef">typeof&lt;/span>(AppVersionInfo).Assembly;
+&lt;span style="color:#66d9ef">var&lt;/span> infoVerAttr = (AssemblyInformationalVersionAttribute)appAssembly
+.GetCustomAttributes(&lt;span style="color:#66d9ef">typeof&lt;/span>(AssemblyInformationalVersionAttribute)).FirstOrDefault();
+&lt;span style="color:#66d9ef">if&lt;/span> (infoVerAttr != &lt;span style="color:#66d9ef">null&lt;/span> &amp;amp;&amp;amp; infoVerAttr.InformationalVersion.Length &amp;gt; &lt;span style="color:#ae81ff">6&lt;/span>)
+{
+version = infoVerAttr.InformationalVersion;
+}
+&lt;span style="color:#ae81ff">_&lt;/span>gitHash = version[(version.IndexOf(&lt;span style="color:#e6db74">&amp;#39;+&amp;#39;&lt;/span>) + &lt;span style="color:#ae81ff">1&lt;/span>)..];
+}
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>gitHash;
+}
+}
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> ShortGitHash
+{
+&lt;span style="color:#66d9ef">get&lt;/span>
+{
+&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>gitShortHash))
+{
+&lt;span style="color:#ae81ff">_&lt;/span>gitShortHash = GitHash.Substring(GitHash.Length - &lt;span style="color:#ae81ff">6&lt;/span>, &lt;span style="color:#ae81ff">6&lt;/span>);
+}
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>gitShortHash;
+}
+}
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>The BuildId and BuildNumber properties just fetch the details saved into the text file during the build. This can then be passed to build the build link.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">a&lt;/span> &lt;span style="color:#a6e22e">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;https://dev.azure.com/{OrgName}/{RepoName}/_build/results?buildId=@appInfo.BuildId&amp;amp;view=results&amp;#34;&lt;/span>&amp;gt;
+@appInfo.BuildNumber
+&amp;lt;/&lt;span style="color:#f92672">a&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Finally, the GitHash properties need to fetch the hash and shorthash of the commit which is a bit more complex. This is achieved using the following line in your build.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">- &lt;span style="color:#f92672">task&lt;/span>: &lt;span style="color:#ae81ff">DotNetCoreCLI@2&lt;/span>
+&lt;span style="color:#f92672">displayName&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;Publish&amp;#39;&lt;/span>
+&lt;span style="color:#f92672">inputs&lt;/span>:
+&lt;span style="color:#f92672">command&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;publish&amp;#39;&lt;/span>
+&lt;span style="color:#f92672">publishWebProjects&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;span style="color:#f92672">arguments&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;--output $(Build.ArtifactStagingDirectory) /p:SourceRevisionId=$(Build.SourceVersion)&amp;#39;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>/p:SourceRevisionId=$(Build.SourceVersion) add the revision hash to [assembly: AssemblyInformationalVersion] during the build which can then be extracted using the gitHash property above, before being passed into the commit link.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">a&lt;/span> &lt;span style="color:#a6e22e">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;https://github.com/{OrgName}/{RepoName}/commit/@appInfo.GitHash&amp;#34;&lt;/span>&amp;gt;
+@appInfo.ShortGitHash
+&amp;lt;/&lt;span style="color:#f92672">a&lt;/span>&amp;gt;&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Security Headers</title><link>https://www.funkysi1701.com/posts/security-headers/</link><pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/security-headers/</guid><description>&lt;p>Have you wondered what info you are leaking via your response headers?, do you want some kind of guide about what headers to set or remove altogether?&lt;/p>
+&lt;p>Head on over to &lt;a href="https://securityheaders.com/" target="_blank" rel="noopener noreferrer">https://securityheaders.com/&lt;/a>
+This is a site created by security expert &lt;a href="https://scotthelme.co.uk" target="_blank" rel="noopener noreferrer">Scott Helme&lt;/a>
+that rates a URL based on what response headers it can see.&lt;/p>
+&lt;p>I am pleased to say &lt;a href="http://www.funkysi1701.com">www.funkysi1701.com&lt;/a>
+is now getting an A.&lt;img class="img-fluid" alt="Alt Text" src="https://dev-to-uploads.s3.amazonaws.com/i/07rwumi94fz141hwessu.PNG" loading="lazy"
+/>
+&lt;/p>
+&lt;p>So how do you add/remove headers in dotnet core?&lt;/p>
+&lt;p>In my configure method in Startup.cs I have the following code block.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">app.Use(
+next =&amp;gt;
+{
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> context =&amp;gt;
+{
+context.Response.OnStarting(
+() =&amp;gt;
+{
+context.Response.Headers.Add(&lt;span style="color:#e6db74">&amp;#34;Permissions-Policy&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;microphone=()&amp;#34;&lt;/span>);
+context.Response.Headers.Remove(&lt;span style="color:#e6db74">&amp;#34;Server&amp;#34;&lt;/span>);
+context.Response.Headers.Remove(&lt;span style="color:#e6db74">&amp;#34;X-Powered-By&amp;#34;&lt;/span>);
+context.Response.Headers.Remove(&lt;span style="color:#e6db74">&amp;#34;X-AspNet-Version&amp;#34;&lt;/span>);
+&lt;span style="color:#66d9ef">return&lt;/span> Task.CompletedTask;
+});
+&lt;span style="color:#66d9ef">await&lt;/span> next(context);
+};
+});
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>I have only included a few of the headers I am adding as the excellent &lt;a href="https://securityheaders.com/" target="_blank" rel="noopener noreferrer">https://securityheaders.com/&lt;/a>
+can tell you which headers you should add and what options you might want.&lt;/p></description></item><item><title>Back to Blogging</title><link>https://www.funkysi1701.com/posts/back-to-blogging/</link><pubDate>Fri, 25 Sep 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/back-to-blogging/</guid><description>&lt;p>My last blog post was over six months ago.&lt;/p>
+&lt;p>Covid 19 has hit the world, and I will be honest I have found it a challenging time.&lt;/p>
+&lt;p>My Blog had gotten into a bit of a mess. It had become fragmented with different versions of the same thing; I will attempt to explain what has become of my blog.&lt;/p>
+&lt;p>The original WordPress site can currently be found at &lt;a href="https://www.pwnedpass.com/" target="_blank" rel="noopener noreferrer">https://www.pwnedpass.com/&lt;/a>
+I would prefer it to be on a sub-domain of funkysi1701.com but for some reason I haven&amp;rsquo;t been able to get that to work, not sure if it is a limitation of my hosting package. I like WordPress, it is very flexible, easy to get blog posts out there. But I want to write content about development and having a site I can tinker with is important to me.&lt;/p>
+&lt;p>Most of my WordPress blogs have been imported into dev.to and a few extra have been written on this platform. I like dev.to it is a wonderful place to share content and it has one or two extra features I like.&lt;/p>
+&lt;p>dev.to has an integration with Stackbit/Netlify and this became &lt;a href="https://dev.funkysi1701.com" target="_blank" rel="noopener noreferrer">https://dev.funkysi1701.com&lt;/a>
+. I like having a personal site, but having the same content as dev.to. To add content to this site all I need to do is write it on dev.to and some magic will go on behind the scenes and new content will be published.&lt;/p>
+&lt;p>However, as a developer I don&amp;rsquo;t like magic, I want to understand what is going on a fiddle with all the settings and make it do what I want.&lt;/p>
+&lt;p>dev.to has an API, I can build a site in .Net Core and make API calls to fetch the content I want. I understand APIs, I understand .Net and can customise my site exactly how I want it, plus play about with a .net website. This is what &lt;a href="https://www.funkysi1701.com">https://www.funkysi1701.com&lt;/a>
+is now.&lt;/p>
+&lt;p>So what have I built so far. I have a Server Side Blazor site running .Net 5. Why Server Side and not Client Side I hear you ask? Well only because I have more experience with Server Side and know how to quickly create a website with that technology, I may change it as time goes by, but we will see.&lt;/p>
+&lt;p>I have two pages a list of my blog posts and a page that displays the content. Both of these use the dev.to API. I lied, there is a third page I hacked together to do some page redirection from the WordPress URLs. This is something I will change as time goes on.&lt;/p>
+&lt;p>There are lots of improvements I want to do, there are probably also lots of broken images or links as well. Hopefully, this will result in a good platform to blog about as well as on.&lt;/p></description></item></channel></rss>

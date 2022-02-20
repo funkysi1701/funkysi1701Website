@@ -1,1 +1,97 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2020-12 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2020/12/</link><description>Recent content in 2020-12 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Mon, 28 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2020/12/index.xml" rel="self" type="application/rss+xml"/><item><title>Goals for 2021</title><link>https://www.funkysi1701.com/posts/goals-for-2021/</link><pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/goals-for-2021/</guid><description>Here are my goals for 2021</description></item><item><title>Building a Twitter Clone</title><link>https://www.funkysi1701.com/posts/building-a-twitter-clone/</link><pubDate>Tue, 22 Dec 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/building-a-twitter-clone/</guid><description>I saw a tweet about building a twitter clone being harder than you would think. So this of course started me thinking how I would go about building something like that.</description></item><item><title>#005: Twitter Cards</title><link>https://www.funkysi1701.com/posts/005-twitter-cards/</link><pubDate>Sat, 12 Dec 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/005-twitter-cards/</guid><description>It has been a bit of a mad week this week.</description></item><item><title>Weekly Update #004</title><link>https://www.funkysi1701.com/posts/weekly-update-004/</link><pubDate>Sun, 06 Dec 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-004/</guid><description>dynamic sql</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2020-12 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2020/12/</link><description>Recent content in 2020-12 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Mon, 28 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2020/12/index.xml" rel="self" type="application/rss+xml"/><item><title>Goals for 2021</title><link>https://www.funkysi1701.com/posts/goals-for-2021/</link><pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/goals-for-2021/</guid><description>&lt;p>I didn&amp;rsquo;t make any goals for 2020, or if I did, I didn&amp;rsquo;t officially announce them. 2020 has been a hard year for all of us, 2021 is going to be better.&lt;/p>
+&lt;p>Here are a few ideas for my goals for the year ahead.&lt;/p>
+&lt;ol>
+&lt;li>Azure certification&lt;/li>
+&lt;li>Mentoring&lt;/li>
+&lt;li>F#&lt;/li>
+&lt;li>Cosmos db/Mongo db&lt;/li>
+&lt;li>Give a talk&lt;/li>
+&lt;li>Mandlebrot Generator&lt;/li>
+&lt;li>Pwned Pass Mobile App&lt;/li>
+&lt;li>More time for me&lt;/li>
+&lt;/ol>
+&lt;ol>
+&lt;li>
+&lt;p>I want to get a certificate to show how much I know. The obvious area for this is Azure. I spend a lot of time playing with Azure, building and deploying to the platform I should be able to get certified in this area. I actually had an exam booked in 2020 but it was an in-person exam so was cancelled when Covid hit. I plan to sit the &lt;a href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-900" target="_blank" rel="noopener noreferrer">foundation&lt;/a>
+exam in the first quarter of 2021 and I will take it from there.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>I have had a few times recently where I have been reminded that I don&amp;rsquo;t have much experience working with others. Mostly because I work in a one-man development team so there are limited opportunities in the workplace. I have a few ideas to change this, but this is one of my top priorities for 2021.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&amp;amp; 4) My experience is very Microsoft and C# so I want to spend some time exploring and learning tech that is adjacent to this. A functional language like F# sounds like a good compliment to my existing skills and my data skills are also very SQL server so some document database skills would be a good place to spend some time.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Doing a talk has been on my list for years. I am terrified of doing one and with everything online now I don&amp;rsquo;t know if that makes things easier or harder. I don&amp;rsquo;t think 2021 is going to be the year for this but maybe I will take baby steps towards this goal.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Twitter recently reminded me about watching a Mandlebrot generate one pixel at a time in the 1980s. I would love to explore the code used to generate them and how fast they currently are to produce.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>My Google play store Xamarin forms app that uses the HIBP API has less than 100 users and I am considering closing it down, especially as I pay a monthly fee for API keys. I haven&amp;rsquo;t really decided what to do, maybe I will spend some time improving it, maybe I will close it down, maybe I will build something else.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For many people 2020 has been a hard year, I am one of those&lt;/p>
+&lt;/li>
+&lt;/ol></description></item><item><title>Building a Twitter Clone</title><link>https://www.funkysi1701.com/posts/building-a-twitter-clone/</link><pubDate>Tue, 22 Dec 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/building-a-twitter-clone/</guid><description>&lt;p>I saw a tweet about building a twitter clone being harder than you would think. So this of course started me thinking how I would go about building something like that.&lt;/p>
+&lt;p>Ok so where would I start? First a few assumptions.&lt;/p>
+&lt;ol>
+&lt;li>Development by a lone developer ie me&lt;/li>
+&lt;li>Tech stack will be dotnet and other tech I am familiar with&lt;/li>
+&lt;li>Database backend, probably SQL Server but I might use table storage for cost reasons should I try and actually build this. However if I design this well this should be something that could be swapped out as the system grows&lt;/li>
+&lt;li>User accounts on the system will be small as I can&amp;rsquo;t imagine anyone ever signing up. Why sign up to a social media platform with no users?&lt;/li>
+&lt;/ol>
+&lt;h2 id="i-guess-the-next-question-is-what-is-twitter">I guess the next question is what is Twitter?&lt;a class="anchor ms-1" href="#i-guess-the-next-question-is-what-is-twitter">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>A website that allows you to share 280 characters of text with your followers, allows you to follow other users updates and allows other user to follow your updates.&lt;/p>
+&lt;p>It also has an API that allow you to do almost everything that you can with the website.&lt;/p>
+&lt;p>Then there are of course mobile apps to consider but I am going to assume this is out of scope, however assuming a good enough API then this shouldn&amp;rsquo;t be a problem for future development.&lt;/p>
+&lt;h2 id="first-steps">First Steps&lt;a class="anchor ms-1" href="#first-steps">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>To start off with I would concentrate on the API, and then build a web client that makes use of the API.&lt;/p>
+&lt;p>So what would my MVP (minimum viable product) be?&lt;/p>
+&lt;ol>
+&lt;li>User can authenticate with my API to get a token which allows access to other API endpoints&lt;/li>
+&lt;li>User can create a tweet&lt;/li>
+&lt;li>User can view own tweets&lt;/li>
+&lt;li>User can view tweets of another user&lt;/li>
+&lt;li>User can view tweets in their timeline&lt;/li>
+&lt;li>User can follow/unfollow other users&lt;/li>
+&lt;li>User can search for other users&lt;/li>
+&lt;li>User can search for keywords in tweets&lt;/li>
+&lt;/ol>
+&lt;p>I think that is probably sufficient to build my MVP for the API.&lt;/p>
+&lt;p>An interesting side note is that I could use the OAuth Twitter authentication to allow users to login to my twitter clone with the real twitter login details. However this makes no sense to me as we are essentially adding a dependency on the real twitter.&lt;/p>
+&lt;p>So what would I use for the frontend? I would start off with a Client Side Blazor frontend. Once I had a proof of concept that worked, I would think about styling and adding the UI elements that are familiar to twitter users.&lt;/p>
+&lt;p>The beauty of Client Side Blazor is that I can host cheaply in azure storage and distribute around the world via a CDN.&lt;/p>
+&lt;p>Due to the high number of times that follower and following count and other stats are queried I would consider storing these in the database and include a regular job to recalculate them so they don&amp;rsquo;t get out of sync with the data.&lt;/p>
+&lt;p>Having said all of this I am very tempted to fire up Visual Studio and see how far I get, and what problems I encounter along the way.&lt;/p></description></item><item><title>#005: Twitter Cards</title><link>https://www.funkysi1701.com/posts/005-twitter-cards/</link><pubDate>Sat, 12 Dec 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/005-twitter-cards/</guid><description>&lt;p>It has been a bit of a mad week this week. I joined a new team so lots of time learning what&amp;rsquo;s what and also being pulled in two directions as usual demands come through on top of that.&lt;/p>
+&lt;p>My blog runs on Blazor and I have been making use of JavaScript interop to update the html headers and update the page title to match the blog post article. This works great, I load the page and check the headers and they were saying what I wanted.&lt;/p>
+&lt;p>The problem was I wanted to add tags for &lt;a href="https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started" target="_blank" rel="noopener noreferrer">twitter cards&lt;/a>
+This means that when I paste a link to my blog on twitter you get a nice preview and pic of me in the tweet. This was not working at all even though I had the correct headers.&lt;/p>
+&lt;p>I eventually figured out that the problem was the fact I was using JavaScript to update my headers after the page had been initially loaded. Twitter was fetching my page before these headers got added and therefore couldn&amp;rsquo;t see the twitter card headers.&lt;/p>
+&lt;p>My solution was to use invalid html. Not ideal but it works. I added the required html tags in the body of my page using Blazor/C# instead of using JavaScript to add them into the header. Twitter appears to not be fussy in finding them in the wrong place.&lt;/p>
+&lt;p>Twitter provides a validator tool at &lt;a href="https://cards-dev.twitter.com/validator" target="_blank" rel="noopener noreferrer">Twitter Card Validator&lt;/a>
+which my website now passes.&lt;/p>
+&lt;p>Not much else to say this week, apart from I am missing Visual Studio and C#, I have been mostly using VS Code on Linux and looking at php which isn&amp;rsquo;t as much fun as my usual day job.&lt;/p></description></item><item><title>Weekly Update #004</title><link>https://www.funkysi1701.com/posts/weekly-update-004/</link><pubDate>Sun, 06 Dec 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-004/</guid><description>&lt;p>I use sp_send_dbmail to send results of sql queries by email to business users. Recently an issue was raised that data was being cut off after 255 characters. To fix this I added @query_no_truncate = 1, however this stopped the column headings from being included. No idea why you can&amp;rsquo;t have all the data and column headings but there you have it.&lt;/p>
+&lt;p>What I am doing now is running 2 queries, one to get the headings, and one to get the data. In theory you should be able to combine them with a Union however you then have datatype issues for non text columns so I gave up with that idea.&lt;/p>
+&lt;p>My results have 60 something columns (don&amp;rsquo;t ask its for a data import into a third party system!) so I am not typing them all out. I can shove query results into a temporary table and then execute to get a list of columns.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sql" data-lang="sql">&lt;span style="color:#66d9ef">SELECT&lt;/span> name
+&lt;span style="color:#66d9ef">FROM&lt;/span> tempdb.sys.columns
+&lt;span style="color:#66d9ef">WHERE&lt;/span> object_id &lt;span style="color:#f92672">=&lt;/span> object_id(&lt;span style="color:#e6db74">&amp;#39;tempdb..#TempTable&amp;#39;&lt;/span>)
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>However I need my list to be horizontal so I can use as column headers. I can use dynamic SQL and a pivot to flip them round.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sql" data-lang="sql">&lt;span style="color:#66d9ef">DECLARE&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#66d9ef">AS&lt;/span> NVARCHAR(&lt;span style="color:#66d9ef">MAX&lt;/span>), &lt;span style="color:#f92672">@&lt;/span>query &lt;span style="color:#66d9ef">AS&lt;/span> NVARCHAR(&lt;span style="color:#66d9ef">MAX&lt;/span>)
+&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#f92672">=&lt;/span> STUFF((&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#e6db74">&amp;#39;,&amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> QUOTENAME(name)
+&lt;span style="color:#66d9ef">FROM&lt;/span> tempdb.sys.columns
+&lt;span style="color:#66d9ef">WHERE&lt;/span> object_id &lt;span style="color:#f92672">=&lt;/span> object_id(&lt;span style="color:#e6db74">&amp;#39;tempdb..#TempTable&amp;#39;&lt;/span>)
+&lt;span style="color:#66d9ef">FOR&lt;/span> XML PATH(&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>), &lt;span style="color:#66d9ef">TYPE&lt;/span>).value(&lt;span style="color:#e6db74">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;NVARCHAR(MAX)&amp;#39;&lt;/span>),&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>)
+&lt;span style="color:#66d9ef">SET&lt;/span> &lt;span style="color:#f92672">@&lt;/span>query &lt;span style="color:#f92672">=&lt;/span> N&lt;span style="color:#e6db74">&amp;#39;SELECT &amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#f92672">+&lt;/span> N&lt;span style="color:#e6db74">&amp;#39; FROM
+&lt;/span>&lt;span style="color:#e6db74">(
+&lt;/span>&lt;span style="color:#e6db74"> SELECT name
+&lt;/span>&lt;span style="color:#e6db74"> FROM tempdb.sys.columns
+&lt;/span>&lt;span style="color:#e6db74"> WHERE object_id = object_id(&amp;#39;&amp;#39;tempdb..#TempTable&amp;#39;&amp;#39;)
+&lt;/span>&lt;span style="color:#e6db74">) x
+&lt;/span>&lt;span style="color:#e6db74">PIVOT
+&lt;/span>&lt;span style="color:#e6db74">(
+&lt;/span>&lt;span style="color:#e6db74"> MAX(name)
+&lt;/span>&lt;span style="color:#e6db74"> FOR name IN (&amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#f92672">+&lt;/span> N&lt;span style="color:#e6db74">&amp;#39;)
+&lt;/span>&lt;span style="color:#e6db74">) y&amp;#39;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

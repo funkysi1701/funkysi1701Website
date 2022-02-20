@@ -1,1 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AzureDevOps on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/azuredevops/</link><description>Recent content in AzureDevOps on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Sun, 14 Feb 2021 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/azuredevops/index.xml" rel="self" type="application/rss+xml"/><item><title>Azure DevOps Release Pipelines Pre and Post Approval</title><link>https://www.funkysi1701.com/posts/azure-devops-release-pipelines-pre-and-post-approval/</link><pubDate>Sun, 14 Feb 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/azure-devops-release-pipelines-pre-and-post-approval/</guid><description>Azure DevOps release pipelines have lots of options to do things how you want. One of my favourites is the option for approval.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AzureDevOps on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/azuredevops/</link><description>Recent content in AzureDevOps on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Sun, 14 Feb 2021 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/azuredevops/index.xml" rel="self" type="application/rss+xml"/><item><title>Azure DevOps Release Pipelines Pre and Post Approval</title><link>https://www.funkysi1701.com/posts/azure-devops-release-pipelines-pre-and-post-approval/</link><pubDate>Sun, 14 Feb 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/azure-devops-release-pipelines-pre-and-post-approval/</guid><description>&lt;p>Azure DevOps release pipelines have lots of options to do things how you want. One of my favourites is the option for approval.&lt;/p>
+&lt;p>There are two ways you can do approvals Pre and Post deployment. Lets look at both.&lt;/p>
+&lt;h2 id="pre-deployment-approval">Pre Deployment Approval&lt;a class="anchor ms-1" href="#pre-deployment-approval">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>&lt;img class="img-fluid" alt="image" src="https://dev-to-uploads.s3.amazonaws.com/i/9k6vo6pfv434u7yq3mt4.png" loading="lazy"
+/>
+&lt;/p>
+&lt;p>Lets imagine you have a simple deployment pipeline that deploys to a test/development environment before deploying to a production environment.&lt;/p>
+&lt;p>Pre Deployment Approval happens immediately before the release so in this example, click in the ellipse before the Prod release step.&lt;/p>
+&lt;p>You will get a screen like the above, you can select what users need to approve it and how long approval waits before timing out, the default is 30 days, but I tend to use a shorter time out of 3 days.&lt;/p>
+&lt;h2 id="post-deployment-approval">Post Deployment Approval&lt;a class="anchor ms-1" href="#post-deployment-approval">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>&lt;img class="img-fluid" alt="image" src="https://dev-to-uploads.s3.amazonaws.com/i/reiulrhinzqyyon6mrqi.png" loading="lazy"
+/>
+&lt;/p>
+&lt;p>Post Deployment Approval happens immediately after the release so in this example, click in the circle after the Test release step.&lt;/p>
+&lt;p>You will get a screen like the above, with the same settings as before.&lt;/p>
+&lt;p>That is pretty much all there is to approvals so either option will prompt you to approve before anything gets deployed to your production environment.&lt;/p>
+&lt;h2 id="deployment-hours">Deployment Hours&lt;a class="anchor ms-1" href="#deployment-hours">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>To complicate matters I make use of the following setting to define deployment hours.
+&lt;img class="img-fluid" alt="image" src="https://dev-to-uploads.s3.amazonaws.com/i/aku2z0dl3m3xkvfvh7wd.png" loading="lazy"
+/>
+&lt;/p>
+&lt;p>This setting will start the Prod deployment at 3am Mon-Fri.&lt;/p>
+&lt;p>If I configure Post Deployment Approval, as soon as my deploy to Test has completed a request for Approval is sent.&lt;/p>
+&lt;p>If I configure Pre Deployment Approval, at 3am Mon-Fri a request for Approval is sent (not ideal if you tend to be asleep at 3am)&lt;/p>
+&lt;p>So it looks like Post Deployment Approval is more useful for my use case. However if you deny approval either in Pre or Post approval this will mark the deployment as failed and show Red in your list of deployments.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="image" src="https://dev-to-uploads.s3.amazonaws.com/i/vichyb1srgc1ln85hj0o.png" loading="lazy"
+/>
+&lt;/p>
+&lt;p>From a casual glance it looks like the deployment to Test is failing, it isn&amp;rsquo;t I am just opting to not continue my deployment to production.&lt;/p>
+&lt;h2 id="my-pipeline">My Pipeline&lt;a class="anchor ms-1" href="#my-pipeline">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>&lt;img class="img-fluid" alt="image" src="https://dev-to-uploads.s3.amazonaws.com/i/9kprp90t59owfmsmqkcp.png" loading="lazy"
+/>
+&lt;/p>
+&lt;p>This is how I have my pipeline setup. Deployment happens on Test and doesn&amp;rsquo;t have a post approval step.&lt;/p>
+&lt;p>After Test an empty stage called Approval runs and that has a post deployment approval, this happens immediately after Test so you get asked straight away for approval.&lt;/p>
+&lt;p>Prod does not start as I have my deployment hours configured. Once it is time for deployment to Prod to start it executes.&lt;/p>
+&lt;p>Now a casual look at my past releases, you can easily see which have been stopped by approval and which have failed due to whatever issue, and which have run all the way through to Prod.&lt;/p>
+&lt;p>And deployments to Prod can only ever run during my defined deployment window.&lt;/p>
+&lt;p>I am interested to hear how you have your deployment pipeline setup. Do you make use of Pre or Post Approvals? Do you ensure deployments always happen at specific times?&lt;/p></description></item></channel></rss>

@@ -1,1 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/api/</link><description>Recent content in API on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Sun, 07 Mar 2021 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/api/index.xml" rel="self" type="application/rss+xml"/><item><title>Charting my Energy usage with the Octopus Energy API</title><link>https://www.funkysi1701.com/posts/charting-my-energy-usage-with-the-octopus-energy-api/</link><pubDate>Sun, 07 Mar 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/charting-my-energy-usage-with-the-octopus-energy-api/</guid><description>Charting my Energy usage with the Octopus Energy API</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/api/</link><description>Recent content in API on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Sun, 07 Mar 2021 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/api/index.xml" rel="self" type="application/rss+xml"/><item><title>Charting my Energy usage with the Octopus Energy API</title><link>https://www.funkysi1701.com/posts/charting-my-energy-usage-with-the-octopus-energy-api/</link><pubDate>Sun, 07 Mar 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/charting-my-energy-usage-with-the-octopus-energy-api/</guid><description>&lt;p>&lt;img class="img-fluid" alt="image" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/63ep8hp6ipyn2l4emiop.png" loading="lazy"
+/>
+&lt;/p>
+&lt;p>Back when I was a kid, I used to record our weekly gas and electricity meter readings in a little notebook. We then typed these reading into a spreadsheet (this was in the pre-Excel days), which allowed plotting as a line graph.&lt;/p>
+&lt;h3 id="how-would-i-go-about-doing-a-similar-thing-today">How would I go about doing a similar thing today?&lt;a class="anchor ms-1" href="#how-would-i-go-about-doing-a-similar-thing-today">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>First off, I have a smart meter that submits meter readings every 30 minutes or so. However, I do not know anyway to get access to these readings directly, short of manually recording them like I did 30 years ago!&lt;/p>
+&lt;p>Octopus Energy have a public API which allows you to pull your consumption readings. The smart meter sends your usage to your energy supplier, in my case Octopus, they then process these readings and allow them to be queried with an API they have created. It is not a direct connection to your data, but it is the next best thing.&lt;/p>
+&lt;p>Other energy suppliers will hopefully follow this example and allow users access to their consumption data.&lt;/p>
+&lt;h3 id="how-do-i-use-the-api">How do I use the API?&lt;a class="anchor ms-1" href="#how-do-i-use-the-api">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>Using the API is straight forward. Octopus supply you with a secret which you use to authenticate against the API with Basic Auth, no password just a username. Then you just need to pass some details of your meters to get an object containing the last few days meter readings.&lt;/p>
+&lt;p>&lt;a href="https://developer.octopus.energy/docs/api/" target="_blank" rel="noopener noreferrer">API Docs&lt;/a>
+&lt;/p>
+&lt;ul>
+&lt;li>GET /v1/electricity-meter-points/{mpan}/meters/{serial_number}/consumption/&lt;/li>
+&lt;li>GET /v1/gas-meter-points/{mprn}/meters/{serial_number}/consumption/&lt;/li>
+&lt;/ul>
+&lt;p>{mpan}/{mprn} of your gas or electricity meter, and {serial_number} is the serial number of the meters.&lt;/p>
+&lt;p>Something to be aware of, I initially collected the last days consumption, which worked, however on one day I encountered a gap in the data for electricity. So, I changed to collect and store the last month&amp;rsquo;s data. I can then query this for what I need.&lt;/p>
+&lt;p>Usually, the last 24 hours of data is available after midnight of that day. e.g. at midnight 2nd March all the data for 1st March should be available. This is not guaranteed so don&amp;rsquo;t rely on it, however I see no problem with having a few days delay between charting your usage.&lt;/p>
+&lt;p>I am still testing this out but so far, I have three charts for gas (and the same for electricity), the first chart covers a 24-hour period, the next covers a day total over 2 weeks, the final chart covers a total for each month (as I write this I have less than a month&amp;rsquo;s worth of data!)&lt;/p>
+&lt;p>For the day and 2 weeks charts, I plot a comparison line of the previous period so you can easily compare the current and previous usage. From my limited testing I have already discovered my usage is very similar day to day.&lt;/p>
+&lt;p>Another point of interest is that gas consumption is in m^3 and electricity is in kW/h.
+&lt;img class="img-fluid" alt="image" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/r5d35ceh0q5zgc15vos8.png" loading="lazy"
+/>
+&lt;/p>
+&lt;p>If you are interested in trying the Octopus Energy API, here is a referral &lt;a href="https://share.octopus.energy/amber-eel-810" target="_blank" rel="noopener noreferrer">link&lt;/a>
+.&lt;/p></description></item></channel></rss>

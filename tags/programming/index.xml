@@ -1,1 +1,153 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programming on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/programming/</link><description>Recent content in Programming on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Tue, 28 Dec 2021 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Back to BASIC</title><link>https://www.funkysi1701.com/posts/back-to-basic/</link><pubDate>Tue, 28 Dec 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/back-to-basic/</guid><description>Writing BASIC for the Lynx</description></item><item><title>DotNet on a Raspberry Pi</title><link>https://www.funkysi1701.com/posts/dotnet-on-a-raspberry-pi/</link><pubDate>Mon, 10 May 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/dotnet-on-a-raspberry-pi/</guid><description>DotNet on a Raspberry Pi</description></item><item><title>Uploading Files to AWS</title><link>https://www.funkysi1701.com/posts/uploading-files-to-aws/</link><pubDate>Mon, 03 Jul 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/uploading-files-to-aws/</guid><description>Uploading Files to AWS</description></item><item><title>Using Azure WebJobs to Automate Stuff</title><link>https://www.funkysi1701.com/posts/using-azure-webjobs-to-automate-stuff/</link><pubDate>Mon, 26 Jun 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/using-azure-webjobs-to-automate-stuff/</guid><description>Using Azure WebJobs to Automate Stuff</description></item><item><title>Amazon Web Services</title><link>https://www.funkysi1701.com/posts/amazon-web-services/</link><pubDate>Thu, 21 Jul 2016 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/amazon-web-services/</guid><description>Amazon Web Services</description></item><item><title>Source Code for Game of Life</title><link>https://www.funkysi1701.com/posts/source-code-for-game-of-life/</link><pubDate>Sat, 21 Feb 2015 09:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/source-code-for-game-of-life/</guid><description>Source Code for Game of Life</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programming on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/programming/</link><description>Recent content in Programming on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Tue, 28 Dec 2021 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Back to BASIC</title><link>https://www.funkysi1701.com/posts/back-to-basic/</link><pubDate>Tue, 28 Dec 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/back-to-basic/</guid><description>&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">How exciting my Lynx Computer from my childhood has come home, all 96k of it &lt;a href="https://t.co/aeN38KBiS8">pic.twitter.com/aeN38KBiS8&lt;/a>&lt;/p>&amp;mdash; Simon Foster (@funkysi1701) &lt;a href="https://twitter.com/funkysi1701/status/1475139125154037760?ref_src=twsrc%5Etfw">December 26, 2021&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+&lt;p>I can&amp;rsquo;t remember the syntax for BASIC, luckily I have been able to find the &lt;a href="http://elborg.dk/books.html" target="_blank" rel="noopener noreferrer">Manual&lt;/a>
+.&lt;/p>
+&lt;p>All the commands are listed inside so lets see what we can do.&lt;/p>
+&lt;p>The Lynx presents you with a command prompt in which you can type text. Back in the 80s we had a tape player to load programs from tape, however I don&amp;rsquo;t have one today so only programs I write can be run.&lt;/p>
+&lt;p>PRINT - To write Hello World, you can just type PRINT &amp;ldquo;Hello World&amp;rdquo; and Hello World appears on the screen. To Write a program that displays Hello World, you just write the line number first.&lt;/p>
+&lt;pre tabindex="0">&lt;code>10 PRINT &amp;quot;Hello World&amp;quot;
+&lt;/code>&lt;/pre>&lt;p>To run this you type RUN
+To view the code you type LIST&lt;/p>
+&lt;p>To Edit a specific Line you can use Ctrl+E and type the line number, or you can just write the line out again.&lt;/p>
+&lt;p>CLS - This command clears the screen&lt;/p>
+&lt;p>INPUT N - stores text typed by the user and stores it in the variable N&lt;/p>
+&lt;p>GOTO N - Execution of code continues at Line Number N&lt;/p>
+&lt;p>The first Program I wrote with a bit of help from my boys.&lt;/p>
+&lt;pre tabindex="0">&lt;code>10 CLS
+20 PRINT &amp;quot;What is your Age?&amp;quot;
+30 INPUT N
+40 IF N&amp;gt;5 AND N&amp;lt;41 THEN PRINT &amp;quot;a good age&amp;quot;
+50 ELSE IF N&amp;lt;6 THEN PRINT &amp;quot;a spaceman&amp;quot;
+60 ELSE IF N&amp;gt;40 THEN PRINT &amp;quot;too old&amp;quot;
+&lt;/code>&lt;/pre>&lt;p>My 4yo didn&amp;rsquo;t like being &amp;ldquo;too young&amp;rdquo; in the original version, so my 6yo helped me change him to be a &amp;ldquo;spaceman&amp;rdquo;.&lt;/p>
+&lt;p>Not bad and it was fun pair programming with a 6yo, all my typos were quickly spotted, and he easily understood the logic of IF/ELSE/THEN statements.&lt;/p>
+&lt;p>The Lynx comes from 1983 and has just 96k of memory. I am very lucky it actually still works, however I have been able to find an emulator so I can write Lynx BASIC from the comfort of my laptop. &lt;a href="https://jynxemulator.wordpress.com/" target="_blank" rel="noopener noreferrer">jynxemulator&lt;/a>
+, it is also on &lt;a href="https://github.com/jonathan-markland/Jynx" target="_blank" rel="noopener noreferrer">github&lt;/a>
+but it doesn&amp;rsquo;t include the ROMs so getting from the website is a better option.&lt;/p>
+&lt;p>The developer experience today is so much nicer than it must have been in the 1980s, however back then distractions must have been much reduced.&lt;/p>
+&lt;ul>
+&lt;li>No internet or google to get answers to your questions&lt;/li>
+&lt;li>No Copy/Paste of text&lt;/li>
+&lt;li>No Load/Save (unless you have a working disk drive or tape player!)&lt;/li>
+&lt;li>No IDE&lt;/li>
+&lt;li>No Build or Release process just type RUN&lt;/li>
+&lt;/ul>
+&lt;p>I then have additional sites, that I use as my playground for learning new tech. I can easily link between them and I can tweak the style so they &amp;ldquo;fit&amp;rdquo; nicely together.&lt;/p>
+&lt;p>I am still considering what to do with dev.to. I like that I am using it as the backend for my blog posts, and its API gives me that flexibility to display that content where I want.&lt;/p></description></item><item><title>DotNet on a Raspberry Pi</title><link>https://www.funkysi1701.com/posts/dotnet-on-a-raspberry-pi/</link><pubDate>Mon, 10 May 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/dotnet-on-a-raspberry-pi/</guid><description>&lt;p>I have had a Raspberry Pi for a few years and recently I connected it up again, I plugged in the camera and everything worked.&lt;/p>
+&lt;p>To start off you can view photos from the camera with the raspistill command. With a bit of clever scripting and the crontab I got the Pi taking pictures every 60 seconds. Even managed to take a nice picture of a robin.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="Alt Text" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/e21z7vbamy6w6akhhiwd.jpg" loading="lazy"
+/>
+&lt;/p>
+&lt;p>However scripting isn&amp;rsquo;t really programming, and I would like to write a bit more code. Dotnet can run everywhere these days and it made sense to see if it would run on a Raspberry Pi.&lt;/p>
+&lt;p>@pete_codes has written a nice guide to getting started with dotnet on a Raspberry Pi &lt;a href="https://www.petecodes.co.uk/install-and-use-microsoft-dot-net-5-with-the-raspberry-pi/" target="_blank" rel="noopener noreferrer">https://www.petecodes.co.uk/install-and-use-microsoft-dot-net-5-with-the-raspberry-pi/&lt;/a>
+This guide and the nuget package &lt;a href="https://www.nuget.org/packages/Unosquare.Raspberry.IO/" target="_blank" rel="noopener noreferrer">https://www.nuget.org/packages/Unosquare.Raspberry.IO/&lt;/a>
+was all I needed to get started taking pictures with my Pi.&lt;/p>
+&lt;p>My initial goal is to take some wildlife pictures, stick my camera to a window and take pictures of what flies/crawls/jumps past the window.&lt;/p>
+&lt;p>The code I have written so far is available on github &lt;a href="https://github.com/funkysi1701/RaspberryPiDotNet" target="_blank" rel="noopener noreferrer">https://github.com/funkysi1701/RaspberryPiDotNet&lt;/a>
+&lt;/p>
+&lt;p>So far the code takes a picture, uploads this file to Azure Blob Storage (so as not to fill up the Pi with too many image files) and deletes the image locally.&lt;/p>
+&lt;p>Run a dotnet publish -c Release and then cron can run dotnet RaspberryPiDotNet.dll (with full paths to the relevant files)&lt;/p>
+&lt;p>I then use crontab to execute the code every 60 seconds.&lt;/p>
+&lt;p>My code has an appsetting.json file which has a couple of settings that need completing for my code to work.&lt;/p>
+&lt;p>Storage: This is the connection string for Azure Blob Storage
+LocalPath: This is the path to where the camera will save its photos to, something like /home/pi/ is all you need but feel free to specify what you need.&lt;/p>
+&lt;p>Once the photos are in blob storage I plan to display them somewhere, add options to delete what I don&amp;rsquo;t want, maybe do something timelapsey.&lt;/p>
+&lt;p>I also don&amp;rsquo;t have a proper release pipeline and this grates on me a bit. I have been doing a mixture of writing code in VS and pushing that to github and then doing git pull on the Pi, and also writing code directly on the Pi. (VS Code can connect via SSH which is pretty cool!)&lt;/p></description></item><item><title>Uploading Files to AWS</title><link>https://www.funkysi1701.com/posts/uploading-files-to-aws/</link><pubDate>Mon, 03 Jul 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/uploading-files-to-aws/</guid><description>&lt;p>I am a fan of Azure but today I have been looking at AWS. Specifically how to upload and download files.&lt;/p>
+&lt;p>AWS S3 stores files in Buckets. I already had an AWS S3 account setup with a Bucket. I am going to assume you have got a bucket setup and concentrate on the code to get files in and out.&lt;/p>
+&lt;p>First step is to use nuget to install the AWS packages. In nuget the packages you want are called AWSSDK.Core and AWSSDK.S3.&lt;/p>
+&lt;p>The using statements you want to use are called Amazon.S3 and Amazon.S3.Transfer, not sure why this doesn’t match nuget, this difference caught me out a couple of times.&lt;/p>
+&lt;p>Now to the code that uploads files&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">AmazonS3Client AWSclient = &lt;span style="color:#66d9ef">new&lt;/span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.EUWest1);
+TransferUtility fileTransferUtility = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtility(AWSclient);
+&lt;span style="color:#66d9ef">using&lt;/span> (FileStream streamWriter = &lt;span style="color:#66d9ef">new&lt;/span> FileStream(path, FileMode.Open))
+{
+TransferUtilityUploadRequest fileTransferUtilityRequest = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtilityUploadRequest
+{
+BucketName = &lt;span style="color:#e6db74">&amp;#34;flawlessimages&amp;#34;&lt;/span>,
+InputStream = streamWriter,
+Key = fileName
+};
+fileTransferUtility.Upload(fileTransferUtilityRequest);
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Lets break it down and look at what it does.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">AmazonS3Client AWSclient = &lt;span style="color:#66d9ef">new&lt;/span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.EUWest1);
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This creates an instance of AmazonS3Client, we are passing the Access Key and Secret Access Key both of which can be found from your Amazon S3 account My Security Credentials section. Amazon.RegionEndpoint.EUWest1 specifies the amazon data centres that your bucket is located in.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">TransferUtility fileTransferUtility = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtility(AWSclient);
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This creates an instance of TransfterUtility using the AmazonS3Client instance we created in the previous step.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">&lt;span style="color:#66d9ef">using&lt;/span> (FileStream streamWriter = &lt;span style="color:#66d9ef">new&lt;/span> FileStream(path, FileMode.Open))
+{
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This opens up a filestream from a files path and specifies that the file should be opened.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">TransferUtilityUploadRequest fileTransferUtilityRequest = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtilityUploadRequest
+{
+BucketName = &lt;span style="color:#e6db74">&amp;#34;flawlessimages&amp;#34;&lt;/span>,
+InputStream = streamWriter,
+Key = fileName
+};
+fileTransferUtility.Upload(fileTransferUtilityRequest);
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This last step specifies which bucket to upload to, what input stream to upload and the Key to use. Key is just AWS way of referring to files, more commonly referred to as the filename.&lt;/p>
+&lt;p>This is all you need to do to upload a file to your Bucket. The file will be located at &lt;a href="https://s3-eu-west-1.amazonaws.com/[bucketname]/[filename]" target="_blank" rel="noopener noreferrer">https://s3-eu-west-1.amazonaws.com/[bucketname]/[filename]&lt;/a>
+, however by default it will not be downloadable until you set Read permission to everyone, once you do that anyone who has the link will be able to download your file.&lt;/p>
+&lt;p>This is the same permission level as any file you have on your webserver, however AWS has a better way.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">&lt;span style="color:#66d9ef">using&lt;/span> (s3Client = &lt;span style="color:#66d9ef">new&lt;/span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.USEast1))
+{
+GetPreSignedUrlRequest request1 = &lt;span style="color:#66d9ef">new&lt;/span> GetPreSignedUrlRequest
+{
+BucketName = bucketName,
+Key = filename,
+Expires = DateTime.Now.AddMinutes(&lt;span style="color:#ae81ff">5&lt;/span>)
+};
+urlString = s3Client.GetPreSignedURL(request1);
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Here we are generating a url to download the file, but we are specifying that it is only valid for 5 minutes. This means that if you share the url it will only work for 5 minutes, after that AWS will give an access denied message.&lt;/p>
+&lt;p>This is much better security than you have on a typical web server, and easy to implement, every time a user clicks on a download link you generate a new presigned url and send the download to the browser, as long as this process doesn’t take longer than 5 minutes the user will never know.&lt;/p></description></item><item><title>Using Azure WebJobs to Automate Stuff</title><link>https://www.funkysi1701.com/posts/using-azure-webjobs-to-automate-stuff/</link><pubDate>Mon, 26 Jun 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/using-azure-webjobs-to-automate-stuff/</guid><description>&lt;p>I keep hearing about Azure WebJobs but I have never used them. Time to change this.&lt;/p>
+&lt;p>WebJobs are a feature of Azure App Service that can run a script at a specific time. In my case I would like to hit a specific url of my website at the same time every day.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="WebJobs" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/06/addkeepalivewebjob.png?resize=313%2C615&amp;amp;ssl=1" loading="lazy"
+/>
+To the right you can see an example of the WebJobs form on the Azure portal that you need to fill in.&lt;/p>
+&lt;p>You need to supply a name for your webjob.&lt;/p>
+&lt;p>You need to upload the script that will run in my case I used a powershell script. My script consisted of which basically just loads the url specified.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">$progressPreference = &lt;span style="color:#e6db74">&amp;#34;silentlyContinue&amp;#34;&lt;/span>;
+$result = Invoke-WebRequest -Uri (&lt;span style="color:#e6db74">&amp;#34;https://www.google.com&amp;#34;&lt;/span>) -Method Get -UseBasicParsing;
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Type refers to if your job will be triggered or run continuously, I want it to be triggered.&lt;/p>
+&lt;p>Triggers refers to if you want it to be scheduled or manual, something that you can run on an ad hoc basis. I of course want scheduled.&lt;/p>
+&lt;p>If you are familiar with the linux CRON then the next box will make sense to you for everyone else I will try and make sense of it. The box consists of 6 numbers which can either have a value or a *. The numbers correspond to the following {second} {minute} {hour} {day} {month} {day of the week}.&lt;/p>
+&lt;p>A hourly job would be expressed as 0 0 * * * *, ie every day of week, every month, every day, every hour and only when minute and second equals zero. For more help with this check out the &lt;a href="https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-create-web-jobs#CreateScheduledCRON" target="_blank" rel="noopener noreferrer">MSDN docs&lt;/a>
+about it. I want to use 0 30 21 * * * to run daily at 9.30pm.&lt;/p>
+&lt;p>That’s it everything setup, now time to wait and see if it works.&lt;/p>
+&lt;p>&lt;strong>Oh no!&lt;/strong>&lt;/p>
+&lt;p>It failed to run at the specified time.&lt;/p>
+&lt;p>The reason for this is the scheduler requires the feature Always On to be turned on which is not available in the free App Service. Before you reach for your wallets, I found a solution on this &lt;a href="https://tomssl.com/2016/12/20/how-to-get-azure-webjobs-to-run-indefinitely-for-free/" target="_blank" rel="noopener noreferrer">blog post&lt;/a>
+that allows them to run on the free tier.&lt;/p>
+&lt;p>The thinking behind this solution is you need to keep the website alive throughout the day so Tom has created a script that does this. His script can be found on his blog or on his &lt;a href="https://github.com/TomChantler/Self-KeepAlive" target="_blank" rel="noopener noreferrer">github page&lt;/a>
+.&lt;/p>
+&lt;p>Set this script up to run every 5 minutes (0 */5 * * * *) like the example above.&lt;/p>
+&lt;p>The nextthing you need to do is create a Custom connection string in the Application Settings blade called SecretThing. Tom’s script references this to access the website and keep it alive. The password you need to put in SecretThing can be found in you publish profile (downloaded from the Overview blade in the Azure portal). For more details and a better explanation check out &lt;a href="https://tomssl.com/2016/12/20/how-to-get-azure-webjobs-to-run-indefinitely-for-free/" target="_blank" rel="noopener noreferrer">Tom’s blog&lt;/a>
+.&lt;/p>
+&lt;p>One last thing to mention about WebJobs is that you can see details about when they have run at https://[YourWebAppName].scm.azurewebsites.net/azurejobs/#/jobs and this can be a great place to help debug your scripts.&lt;/p></description></item><item><title>Amazon Web Services</title><link>https://www.funkysi1701.com/posts/amazon-web-services/</link><pubDate>Thu, 21 Jul 2016 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/amazon-web-services/</guid><description>&lt;p>I am a big fan of Azure but I know zero about its biggest rival – Amazon Web Services or AWS.&lt;/p>
+&lt;p>So lets sign up for a free trial and see what it can do. &lt;img class="img-fluid" alt="Amazon Web Services" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/07/aws-300x169.png?resize=300%2C169" loading="lazy"
+/>
+&lt;/p>
+&lt;p>The AWS free trial is available from &lt;a href="https://aws.amazon.com/free/" target="_blank" rel="noopener noreferrer">https://aws.amazon.com/free/&lt;/a>
+and lasts for 12 months. From memory I think the Azure free trial lasted only one month.&lt;/p>
+&lt;p>To start you need to login with your amazon account and create an AWS account. This requires your name and address and your payment info (you will only get billed if use services not covered by your free trial).&lt;/p>
+&lt;p>Interestingly AWS requires you to verify your identity via an automated phone call. (I don’t recall doing anything like this for Azure but please correct me if I am wrong.)&lt;/p>
+&lt;p>Once you are logged in you get a series of links displaying all the different services that are available. First impression is this is a simpler view to Azure’s portal with a similar amount of services. At the top right is an option to select which region you want to use, in Azure I use North Europe and West Europe, AWS has Ireland and Frankfurt.&lt;/p>
+&lt;h2 id="create-a-web-app">Create a Web App&lt;a class="anchor ms-1" href="#create-a-web-app">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>First thing to try is setting up a website. I selected create a web app and I get a page asking me for its basic details (very similar to Azure, however AWS asked what language your code is written in, Azure handles all of these) AWS websites appear to support a host of different options similar to Azure.&lt;/p>
+&lt;p>The actual creation of your website takes a few moments (like on Azure). However the default URL for websites is similar to &lt;a href="http://test.vjbbimyv7w.eu-central-1.elasticbeanstalk.com/" target="_blank" rel="noopener noreferrer">http://test.vjbbimyv7w.eu-central-1.elasticbeanstalk.com/&lt;/a>
+which is not quite as nice as the Azure equivalent &lt;a href="http://test.azurewebsites.net" target="_blank" rel="noopener noreferrer">http://test.azurewebsites.net&lt;/a>
+&lt;/p>
+&lt;p>Azure has a host of command lines available via powershell. AWS has a similar command line interface called AWS CLI, including the option to deploy from git to your website.&lt;/p>
+&lt;p>AWS Toolkit for Visual Studio is an extension that allows for the publishing of websites to AWS. (Just like you can publish to Azure)&lt;/p>
+&lt;p>As I learn more about AWS I will continue to blog about it. &lt;a href="https://www.funkysi1701.com/2016/08/04/amazon-web-services-pt-2/">Amazon Web Services Pt 2&lt;/a>
+&lt;/p></description></item><item><title>Source Code for Game of Life</title><link>https://www.funkysi1701.com/posts/source-code-for-game-of-life/</link><pubDate>Sat, 21 Feb 2015 09:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/source-code-for-game-of-life/</guid><description>&lt;p>Last week I blogged about the Game of Life.&lt;/p>
+&lt;p>Well it took some searching through dead hard drives and old USB storage but I found the program I wrote, and better than that I have figured out how to turn it back into source code.&lt;/p>
+&lt;p>The file date is November 2004 and the source code has no comments so I don’t know what was going through my head when I wrote it, or even what some of it does.&lt;/p>
+&lt;p>To view the source code download &lt;a href="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/02/Life.src_.zip" target="_blank" rel="noopener noreferrer">Life.src&lt;/a>
+, to download the finished program download &lt;a href="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/02/Life.zip" target="_blank" rel="noopener noreferrer">Life&lt;/a>
+.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="Life" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/02/Life.jpg" loading="lazy"
+/>
+&lt;/p>
+&lt;p>I am actually surprised I was expected the code to be much worse than it was, I am not saying it is good, but I can see more than one method and I can’t see any code that obviously is repeated. I can see some terrible variable names. Note to future self don’t use tmp676_674!&lt;/p>
+&lt;p>Assuming that I wrote this in 2004 what would I have been doing then? It was before I started working in IT. (Hard to imagine I know!) It may even have been before I started living with Keith, before he recruited me for my first IT role. I think I was probably working as an administrator for Defra at this point.&lt;/p>
+&lt;p>If we put 2004 in technical terms, it was before I joined facebook, Office 2003 and XP would have been installed on my PC, and probably felt brand new.&lt;/p></description></item></channel></rss>
