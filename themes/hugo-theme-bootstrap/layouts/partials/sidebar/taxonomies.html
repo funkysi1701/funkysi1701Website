@@ -16,16 +16,27 @@
       </div>
       <div class="card-body">
         <div class="py-2">
-        {{- range $idx, $taxonomy := . -}}
-          {{- if lt $idx $taxonomyCount -}}
-          <a href="{{ $taxonomy.Page.Permalink }}" class="badge rounded post-taxonomy" title="{{ $taxonomy.Page.Title }}">
-            {{ $taxonomy.Page.Title }}
-            {{- if $countPosts -}}
-              <span class="badge badge-sm text-white bg-accent ms-1">{{ $taxonomy.Count }}</span>
-            {{- end -}}
-          </a>
-          {{- end -}}
-        {{- end -}}
+          <div class="container tagcloud">
+            {{ if ne (len $.Site.Taxonomies.tags) 0 }}
+              {{ $largestFontSize := 1.6 }}
+              {{ $smallestFontSize := 0.7 }}
+              {{ $fontSpread := sub $largestFontSize $smallestFontSize }}
+              {{ $max := add (len (index $.Site.Taxonomies.tags.ByCount 0).Pages) 1 }}
+              {{ $min := len (index $.Site.Taxonomies.tags.ByCount.Reverse 0).Pages }}
+              {{ $spread := sub $max $min }}
+              {{ $fontStep := div $fontSpread $spread }}
+                {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
+                  {{ $tagCount := len $taxonomy.Pages }}
+                  {{ $currentFontSize := (add $smallestFontSize (mul (sub $tagCount $min) $fontStep) ) }}
+                  {{ $weigth := div (sub (math.Log $tagCount) (math.Log $min)) (sub (math.Log $max) (math.Log $min)) }}
+                  {{ $currentFontSize := (add $smallestFontSize (mul (sub $largestFontSize $smallestFontSize) $weigth)) }}
+                    <a href="{{ "/tags/" }}{{ $name }}" 
+                    class="tagcloud-item" style="font-size: {{ $currentFontSize }}rem;">
+                      {{ $taxonomy.Page.Title }}
+                    </a>
+                {{ end }}
+            {{ end }}
+        </div>
         </div>
       </div>
     </section>
