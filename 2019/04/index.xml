@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2019-04 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2019/04/</link><description>Recent content in 2019-04 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Fri, 05 Apr 2019 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2019/04/index.xml" rel="self" type="application/rss+xml"/><item><title>Gated Release</title><link>https://www.funkysi1701.com/posts/gated-release/</link><pubDate>Fri, 05 Apr 2019 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/gated-release/</guid><description>&lt;p>Automated releases of software are great but how can we add an element of feedback so only good releases go live.&lt;/p>
+&lt;p>I have been using Azure DevOps to release my &lt;a href="https://www.funkysi1701.com/pwned-pass/">PwnedPass&lt;/a>
+android app to the Google Play Store for a while now. There are options to deploy to the alpha, Beta or Production tracks and even to set % of users to target. For the full range of options check out the Google Play &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vsclient.google-play" target="_blank" rel="noopener noreferrer">extension&lt;/a>
+for Azure DevOps.&lt;/p>
+&lt;p>My release starts by publishing to 10% of users on the production track, my next step makes use of the increase rollout option to increase this %, you can have as many of these additional steps as you want until you reach 100% of your users.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="Image" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/04/image.png?fit=662%2C116&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>Now if you run this release now it will just run through each of the steps one after the other. Now of course you can add a pre or post approval to your pipeline but this just adds a manual dependency to your release. Whoever does the approving needs to check things are working before approving or worse just approves regardless.&lt;/p>
+&lt;p>Azure DevOps has the concept of &lt;a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/release/deploy-using-approvals?view=azure-devops" target="_blank" rel="noopener noreferrer">gated releases&lt;/a>
+which allows you to add automated checks before or after a release happens. These automated checks can be any of the following:&lt;/p>
+&lt;ul>
+&lt;li>An Azure Function&lt;/li>
+&lt;li>A Rest API call&lt;/li>
+&lt;li>Azure Monitor Alert&lt;/li>
+&lt;li>Query Work Items&lt;/li>
+&lt;li>Security and Compliance Assessment&lt;/li>
+&lt;/ul>
+&lt;p>We are going to make use of the Azure Monitor Alert, to create an alert from your Application Insights data and only continue the rollout if no failures are detected.&lt;/p>
+&lt;p>Open up your application insights resource in the Azure portal and look in alerts. Click add new alert rule.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="Image" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/04/image-1.png?fit=662%2C552&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>Select your application insights resource in Resource, In Condition choose a condition to check, I chose Failed Requests, so every time a failure is registered in my API I can stop the deployment. The exact criteria you want to use is entirely up to you.&lt;/p>
+&lt;p>Create an action group, I just set my alert to send an email to myself but there are other alert actions you may want to try. Give your alert a name and description and click save.&lt;/p>
+&lt;p>Now all we need to do is make Azure DevOps make use of this alert. In your release pipeline select the pre-deployment conditions of your second step and open up the Gates section.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="Image" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/04/image-2.png?fit=662%2C498&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>Choose a suitable time to evaluate, I have been using something long like 12 or 24 hours so if there are problems there is time for it to be noticed. Choose Version 1 of the task (I was not able to get it to work with Version 0)&lt;/p>
+&lt;p>Now select your Azure subscription and Resource Group and leave the rest of the settings as they are. Now your Deployment will stop and analyse application insights for any Failed requests and will halt if it finds any.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="Image" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/04/image-3.png?fit=662%2C88&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>I am still testing this out but it will take a few days to figure out if this what I want due to the large time scales involved. I feel this is going to be an improvement of manually approving release steps.&lt;/p></description></item></channel></rss>
