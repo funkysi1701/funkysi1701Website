@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PowerShell on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/powershell/</link><description>Recent content in PowerShell on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Wed, 11 Mar 2015 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/powershell/index.xml" rel="self" type="application/rss+xml"/><item><title>Tidying my desktop</title><link>https://www.funkysi1701.com/posts/tidying-my-desktop/</link><pubDate>Wed, 11 Mar 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/tidying-my-desktop/</guid><description>&lt;p>My desktop is always a mess. I constantly download files there and forget all about them.&lt;/p>
+&lt;p>Every now and then I copy files into sub directories, so my desktop looks sane for a day or two before it gets out of control again.&lt;/p>
+&lt;p>Why don’t I write a script that I can schedule to do this for me. Then my desktop will always be tidy.&lt;/p>
+&lt;p>I have written a few simple batch scripts, but of course the best scripting language out there at the moment is PowerShell. Lets use that.&lt;/p>
+&lt;p>Windows provides a nice little utility for writing scripts called the Windows PowerShell ISE, so let&amp;rsquo;s start by loading that up.&lt;/p>
+&lt;p>PS has lots of help included to help you, just run &lt;strong>Get-Help [name of ps command]&lt;/strong>&lt;/p>
+&lt;p>To move files you can use &lt;strong>Move-Item&lt;/strong> which works very similar to copy, specify source and destination. In my case I moved files based on their file extension.&lt;/p>
+&lt;p>Move-Item *.pdf folder&lt;/p>
+&lt;p>Now all I need to do is schedule this script to run either every day or so, or maybe every time I login or switch my computer on.&lt;/p>
+&lt;p>PowerShell can do lots more interesting things which hopefully I will blog about soon.&lt;/p></description></item></channel></rss>
