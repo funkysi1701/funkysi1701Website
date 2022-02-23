@@ -1,4 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2022-02 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2022/02/</link><description>Recent content in 2022-02 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Mon, 14 Feb 2022 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2022/02/index.xml" rel="self" type="application/rss+xml"/><item><title>dotnet is 20 years old</title><link>https://www.funkysi1701.com/posts/dotnet-is-20-years-old/</link><pubDate>Mon, 14 Feb 2022 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/dotnet-is-20-years-old/</guid><description>&lt;p>Today Microsoft celebrated 20 years since the first version of dotnet was released with a special live stream event.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2022-02 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2022/02/</link><description>Recent content in 2022-02 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Wed, 23 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2022/02/index.xml" rel="self" type="application/rss+xml"/><item><title>Updating SQL Server with Docker</title><link>https://www.funkysi1701.com/posts/updating-sqlserver-with-docker/</link><pubDate>Wed, 23 Feb 2022 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/updating-sqlserver-with-docker/</guid><description>&lt;p>This morning I was listening to a podcast where the new features coming out for SQL Server 2022 were being discussed. This starting me thinking about what would be involved in upgrading.&lt;/p>
+&lt;p>Upgrading production environments is complex and there are licensing considerations to take into account. However for non production workloads like development this isn&amp;rsquo;t a problem so lets look at that first.&lt;/p>
+&lt;p>In the past I have installed SQL Server Devloper Edition onto my laptop, this is fine but I have found that unless you are very careful you may end up with multiple different versions of SQL Server sitting around, and it is difficult to cleanly remove them without a fresh install of the OS.&lt;/p>
+&lt;p>However in this day and age, Docker and Containers are king. My current development environment makes use of Docker and has a docker compose file which sets up SQL Server for this particular application, lets take a look.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml"> &lt;span style="color:#f92672">sqlserver&lt;/span>:
+&lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">mcr.microsoft.com/mssql/server:2019-latest&lt;/span>
+&lt;span style="color:#f92672">container_name&lt;/span>: &lt;span style="color:#ae81ff">Sql&lt;/span>
+&lt;span style="color:#f92672">ports&lt;/span>:
+- &lt;span style="color:#e6db74">&amp;#34;5432:1433&amp;#34;&lt;/span>
+&lt;span style="color:#f92672">networks&lt;/span>:
+- &lt;span style="color:#ae81ff">my-network&lt;/span>
+&lt;span style="color:#f92672">volumes&lt;/span>:
+- &lt;span style="color:#ae81ff">sqlvolume:/var/opt/mssql&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This defines which docker image to use, in this case 2019-latest, sets up ports and the name and saves the data on a docker volume.&lt;/p>
+&lt;p>If we then run SELECT @@VERSION on this instance of SQL Server we get told:&lt;/p>
+&lt;pre tabindex="0">&lt;code>Microsoft SQL Server 2019 (RTM-CU13) (KB5005679) - 15.0.4178.1 (X64) Sep 23 2021 16:47:49 Copyright (C) 2019 Microsoft Corporation Developer Edition (64-bit) on Linux (Ubuntu 20.04.3 LTS) &amp;lt;X64&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>What if we change the docker-compose file to use 2022-latest?&lt;/p>
+&lt;pre tabindex="0">&lt;code>manifest for mcr.microsoft.com/mssql/server:2022-latest not found: manifest unknown: manifest tagged by &amp;quot;2022-latest&amp;quot; is not found
+&lt;/code>&lt;/pre>&lt;p>SQL Server 2022 hasn&amp;rsquo;t been released yet so there is no docker image for it yet. Try this command again in a few months when it is available.&lt;/p>
+&lt;p>OK so what else can we try? What about a downgrade to 2017-latest? Will that work?&lt;/p>
+&lt;p>SQL Server 2017 starts but the following error gets logged.&lt;/p>
+&lt;pre tabindex="0">&lt;code>2022-02-23 21:41:15.30 Server Software Usage Metrics is disabled.
+2022-02-23 21:41:15.30 spid6s Starting up database 'master'.
+2022-02-23 21:41:15.34 spid6s Error: 948, Severity: 20, State: 1.
+2022-02-23 21:41:15.34 spid6s The database 'master' cannot be opened because it is version 904. This server supports version 869 and earlier. A downgrade path is not supported.
+&lt;/code>&lt;/pre>&lt;p>Doh we can&amp;rsquo;t downgrade the existing database we have. Probably a good thing really.&lt;/p>
+&lt;p>Microsoft release regular updates for SQL Server called CU&amp;rsquo;s (Cumulative Updates), you can see above we are on CU13. Is there a CU14 or CU15 we could try?&lt;/p>
+&lt;p>Update the docker compose to: mcr.microsoft.com/mssql/server:2019-CU14-ubuntu-20.04&lt;/p>
+&lt;p>At this point I actually got an error&lt;/p>
+&lt;pre tabindex="0">&lt;code>2022-02-23 21:50:20.71 Server Error: 17058, Severity: 16, State: 1.
+2022-02-23 21:50:20.71 Server initerrlog: Could not open error log file '/var/opt/mssql/log/errorlog'. Operating system error = 5(Access is denied.).
+&lt;/code>&lt;/pre>&lt;p>This is caused by trying to use SQL Server 2017 but it is easy to fix.&lt;/p>
+&lt;p>In docker desktop there is a volumes section, find the volume you are using with SQL Server and delete the errorlog mentioned above.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="Docker Desktop" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2022/docker-desktop1.png" loading="lazy"
+/>
+&lt;/p>
+&lt;p>Now if you retry SQL will start OK.&lt;/p>
+&lt;p>Repeating the SELECT @@VERSION gives us a new CU&lt;/p>
+&lt;pre tabindex="0">&lt;code>Microsoft SQL Server 2019 (RTM-CU14) (KB5007182) - 15.0.4188.2 (X64) Nov 3 2021 19:19:51 Copyright (C) 2019 Microsoft Corporation Developer Edition (64-bit) on Linux (Ubuntu 20.04.3 LTS) &amp;lt;X64&amp;gt;
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>Microsoft SQL Server 2019 (RTM-CU15) (KB5008996) - 15.0.4198.2 (X64) Jan 12 2022 22:30:08 Copyright (C) 2019 Microsoft Corporation Developer Edition (64-bit) on Linux (Ubuntu 20.04.3 LTS) &amp;lt;X64&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>How much easier is this than manually installing updates and rebooting or attempting to uninstall and reinstall SQL Server. As SQL Server 2022 isn&amp;rsquo;t out yet I can&amp;rsquo;t say for certain what issues I may encounter but hopefully it will be as easier as this. And I don&amp;rsquo;t need to backup or restore and databases they are all available as before!&lt;/p></description></item><item><title>dotnet is 20 years old</title><link>https://www.funkysi1701.com/posts/dotnet-is-20-years-old/</link><pubDate>Mon, 14 Feb 2022 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/dotnet-is-20-years-old/</guid><description>&lt;p>Today Microsoft celebrated 20 years since the first version of dotnet was released with a special live stream event.&lt;/p>
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/67tCWKnweso" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>&lt;/iframe>
 &lt;p>A lot has happened in the 20 years of dotnet (or .Net). It is my understanding that .Net was created to rival Java. When the .Net Framework was first created it was a windows only thing, but today modern .Net is a modern run anywhere platform, with .net applications running everywhere from PCs and Laptops, Raspberry Pi&amp;rsquo;s, Mobile phones and tablets (via Xamarin Forms), to Websites and Microservice APIs running on every Cloud platform out there.&lt;/p>
 &lt;p>If you want to celebrate this achievment tweet with the hashtag &lt;a href="https://twitter.com/search?q=%23dotnetlovesme" target="_blank" rel="noopener noreferrer">#DotNetLovesMe&lt;/a>
