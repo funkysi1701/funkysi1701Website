@@ -15,8 +15,10 @@ summary = "Updating SQL Server with Docker"
 showFullContent = false
 readingTime = true
 aliases = [
-    "/posts/updating-sqlserver-with-docker/",
-    "/posts/2022/02/23/updating-sqlserver-with-docker"
+    "/posts/updating-sqlserver-with-docker",
+    "/posts/2022/02/23/updating-sqlserver-with-docker",
+    "/posts/updating-sql-server-with-docker-5def",
+    "/posts/2022/02/23/updating-sql-server-with-docker-5def"
 ]
 +++
 
