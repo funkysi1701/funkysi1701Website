@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2020-03 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2020/03/</link><description>Recent content in 2020-03 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Tue, 03 Mar 2020 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2020/03/index.xml" rel="self" type="application/rss+xml"/><item><title>Testing for expiring SSL Certificates</title><link>https://www.funkysi1701.com/posts/testing-for-expiring-ssl-certificates/</link><pubDate>Tue, 03 Mar 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/testing-for-expiring-ssl-certificates/</guid><description>&lt;p>Let&amp;rsquo;s Encrypt is amazing, you can easily add SSL certificates to any website and automate the renewal process. I have talked &lt;a href="https://www.funkysi1701.com/posts/let-s-encrypt-is-awesome-3f5j/">before&lt;/a>
+about how impressive it is.&lt;/p>
+&lt;p>Once you start adding SSL certificates to your production sites however you may want to check when they expire so you don&amp;rsquo;t get caught out. You can always open your site in your favourite browser and view the certificate information and expiry date.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="SSL Cert" src="https://dev-to-uploads.s3.amazonaws.com/i/jb78re4fmm1ofx81f3mu.JPG" loading="lazy"
+/>
+However there is a way to automate this check.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#a6e22e">[Fact]&lt;/span>
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> IsSSLExpiring()
+{
+&lt;span style="color:#66d9ef">var&lt;/span> handler = &lt;span style="color:#66d9ef">new&lt;/span> HttpClientHandler
+{
+ServerCertificateCustomValidationCallback = CustomCallback
+};
+&lt;span style="color:#66d9ef">var&lt;/span> client = &lt;span style="color:#66d9ef">new&lt;/span> HttpClient(handler);
+HttpResponseMessage response = client.GetAsync(&lt;span style="color:#e6db74">&amp;#34;https://www.example.com&amp;#34;&lt;/span>).GetAwaiter().GetResult();
+Assert.True(response.IsSuccessStatusCode);
+}
+&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">bool&lt;/span> CustomCallback(HttpRequestMessage arg1, X509Certificate2 arg2, X509Chain arg3, SslPolicyErrors arg4)
+{
+&lt;span style="color:#66d9ef">var&lt;/span> now = DateTime.UtcNow;
+&lt;span style="color:#66d9ef">var&lt;/span> expire = arg2.NotAfter;
+&lt;span style="color:#66d9ef">var&lt;/span> diff = (expire - now).TotalDays;
+Assert.InRange(diff, &lt;span style="color:#ae81ff">30&lt;/span>, &lt;span style="color:#ae81ff">1000&lt;/span>);
+&lt;span style="color:#66d9ef">return&lt;/span> arg4 == SslPolicyErrors.None;
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>This code gets the SSL expiry date from &lt;a href="https://www.example.com" target="_blank" rel="noopener noreferrer">https://www.example.com&lt;/a>
+and will fail the xunit test if the expiry date is less than 30 days in the future. I then schedule my tests to run regularly on all my environments with a Let&amp;rsquo;s Encrypt Certificate and this gives me advanced warning if a SSL certificate is about to expire.&lt;/p>
+&lt;p>The Assert.InRange(diff, 30, 1000) line will fail the test if the expiry date is less than 30 days or greater than 1000, but as the default expiry for Let&amp;rsquo;s Encrypt certificates is three months it will never be greater than 1000 days even with a freshly installed certificate. These values can be tweaked to suit your use case, however 30 days is enough time for me to investigate what is happening.&lt;/p>
+&lt;p>To execute my tests I use a scheduled build in Azure DevOps, but anything that regularly can run your tests will do the job.&lt;/p>
+&lt;p>The code above is just a simple example to get your started for my purposes I have put all my URLs into config files and just pass these into my tests, so I don&amp;rsquo;t need a custom test for every different URL.&lt;/p></description></item></channel></rss>
