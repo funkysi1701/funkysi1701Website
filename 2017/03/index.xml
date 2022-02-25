@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2017-03 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2017/03/</link><description>Recent content in 2017-03 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Mon, 27 Mar 2017 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2017/03/index.xml" rel="self" type="application/rss+xml"/><item><title>Interfaces</title><link>https://www.funkysi1701.com/posts/interfaces/</link><pubDate>Mon, 27 Mar 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/interfaces/</guid><description>&lt;p>I am trying to understand interfaces and when to use them in my code.&lt;/p>
+&lt;p>An interface defines a contract and any class that implements that interface agrees to fulfil that contract.&lt;/p>
+&lt;p>Lets look at an example as this tends to be how I learn best.&lt;/p>
+&lt;p>Most applications require some sort of data to work from so lets start by defining IData which can load data.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">interface&lt;/span> IData
+{
+Blog LoadData(&lt;span style="color:#66d9ef">string&lt;/span> Connectionstring);
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>My interface defines one method LoadData and outputs an object called Blog (I will explain why in a minute)&lt;/p>
+&lt;p>A common data source is a SQL database so we could define a SQL class that implements IData.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">SQL&lt;/span> : IData
+{
+&lt;span style="color:#66d9ef">public&lt;/span> Blog LoadData(&lt;span style="color:#66d9ef">string&lt;/span> Connectionstring)
+{
+Blog blog = &lt;span style="color:#66d9ef">new&lt;/span> Blog();
+&lt;span style="color:#66d9ef">using&lt;/span> (SqlConnection con = &lt;span style="color:#66d9ef">new&lt;/span> SqlConnection(Connectionstring))
+{
+con.Open();
+&lt;span style="color:#75715e">//etc
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We could also get data from an RSS feed of a blog (hence why I called the object Blog earlier)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">XML&lt;/span> : IData
+{
+&lt;span style="color:#66d9ef">public&lt;/span> Blog LoadData(&lt;span style="color:#66d9ef">string&lt;/span> Connectionstring)
+{
+XmlDocument myXmlDocument = &lt;span style="color:#66d9ef">new&lt;/span> XmlDocument();
+myXmlDocument.Load(Connectionstring);
+Blog blog = &lt;span style="color:#66d9ef">new&lt;/span> Blog();
+&lt;span style="color:#66d9ef">foreach&lt;/span> (XmlNode RootNode &lt;span style="color:#66d9ef">in&lt;/span> myXmlDocument.ChildNodes)
+{
+&lt;span style="color:#75715e">//etc
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Both classes implement IData and have a method called LoadData which has a string parameter and outputs a blog object. The string parameter is either a connection string to a SQL database or the URL of the rss feed. Not sure if there is a better way of doing this bit, maybe the name of the string needs making more generic.&lt;/p>
+&lt;p>Now we have some classes that implement an interface what can we do with them. Lets write a class called GetData which gets data but doesn’t care if it comes form the rss feed or a SQL database.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">GetData&lt;/span>
+{
+&lt;span style="color:#66d9ef">private&lt;/span> IData &lt;span style="color:#ae81ff">_&lt;/span>repo;
+&lt;span style="color:#66d9ef">public&lt;/span> GetData(IData repo)
+{
+&lt;span style="color:#ae81ff">_&lt;/span>repo = repo;
+}
+&lt;span style="color:#66d9ef">public&lt;/span> Blog LoadData(&lt;span style="color:#66d9ef">string&lt;/span> Connectionstring)
+{
+&lt;span style="color:#66d9ef">var&lt;/span> original = &lt;span style="color:#ae81ff">_&lt;/span>repo.LoadData(Connectionstring);
+&lt;span style="color:#66d9ef">return&lt;/span> original;
+}
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>When we call GetData we can either pass in XML or SQL as the class is not tied to either implementation. We could even write other classes that implement IData for testing purposes.&lt;/p>
+&lt;p>My full code can be found on &lt;a href="https://github.com/funkysi1701/InterfaceExample" target="_blank" rel="noopener noreferrer">github&lt;/a>
+.&lt;/p>
+&lt;p>The advantages of writing code in this way include code that is easier to extend, easier to test and easier to maintain. This is only the start of my understanding and I am sure this is going to be a topic I come back to in the next few weeks.&lt;/p></description></item></channel></rss>
