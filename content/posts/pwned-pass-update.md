@@ -35,7 +35,7 @@ Every successful build of the master branch will kick off a release to the Beta 
 
 All these steps require confirmation by me before proceeding and often don’t get further than the beta track.
 
-A further development is that I have open sourced the source code to [github](https://github.com/funkysi1701/PwnedPass) do take a look if you are curious or want to contribute. With the purchase by Microsoft there are easy ways to connect github repositories to Azure DevOps. Once I create a Pull Request in github it creates a build in Azure DevOps and all the build and release steps can happen.
+A further development is that I have open sourced the source code to [github]() do take a look if you are curious or want to contribute. With the purchase by Microsoft there are easy ways to connect github repositories to Azure DevOps. Once I create a Pull Request in github it creates a build in Azure DevOps and all the build and release steps can happen.
 
 I am still not 100% sure if I want to keep my bug and issue tracking in github or Azure DevOps as both have features for doing so.
 
