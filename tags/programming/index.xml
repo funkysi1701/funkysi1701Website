@@ -51,7 +51,34 @@ was all I needed to get started taking pictures with my Pi.&lt;/p>
 &lt;p>Storage: This is the connection string for Azure Blob Storage
 LocalPath: This is the path to where the camera will save its photos to, something like /home/pi/ is all you need but feel free to specify what you need.&lt;/p>
 &lt;p>Once the photos are in blob storage I plan to display them somewhere, add options to delete what I don&amp;rsquo;t want, maybe do something timelapsey.&lt;/p>
-&lt;p>I also don&amp;rsquo;t have a proper release pipeline and this grates on me a bit. I have been doing a mixture of writing code in VS and pushing that to github and then doing git pull on the Pi, and also writing code directly on the Pi. (VS Code can connect via SSH which is pretty cool!)&lt;/p></description></item><item><title>Pwned Pass – Available from the Play Store</title><link>https://www.funkysi1701.com/posts/pwned-pass-available-from-the-play-store/</link><pubDate>Mon, 14 Aug 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/pwned-pass-available-from-the-play-store/</guid><description>&lt;p>Pwned Pass is now available from the &lt;a href="https://play.google.com/store/apps/details?id=pwnedpasswords.pwnedpasswords" target="_blank" rel="noopener noreferrer">Google Play Store&lt;/a>
+&lt;p>I also don&amp;rsquo;t have a proper release pipeline and this grates on me a bit. I have been doing a mixture of writing code in VS and pushing that to github and then doing git pull on the Pi, and also writing code directly on the Pi. (VS Code can connect via SSH which is pretty cool!)&lt;/p></description></item><item><title>Azure Functions</title><link>https://www.funkysi1701.com/posts/azure-functions/</link><pubDate>Tue, 12 Sep 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/azure-functions/</guid><description>&lt;p>I recently blogged about using &lt;a href="https://www.funkysi1701.com/posts/using-azure-webjobs-to-automate-stuff">Azure Web Jobs&lt;/a>
+, Azure Function is another way of doing the same thing, lets look at how they work.&lt;/p>
+&lt;p>(Sorry its been a while since I blogged but I suspect an erratic schedule will continue for the next few months.)&lt;/p>
+&lt;p>To create an Azure Function go to the Azure portal and click add new and search for &amp;ldquo;Function App&amp;rdquo;&lt;/p>
+&lt;p>Give your app a name and select the usual resource group and location settings.&lt;/p>
+&lt;p>Now when you open Function Apps you should see your new app.&lt;/p>
+&lt;p>I want my Function App to run on a schedule so I clicked the + next to functions and selected TimerTrigger. I am a c# programmer so I selected this option as well.&lt;/p>
+&lt;p>Give your function a name and specify using the usual cron notation how often it should run. I want mine to run at 9.30pm each night so use 0 30 21 * * *&lt;/p>
+&lt;p>Now comes the code bit. By default you get a window with the following code in it&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">using&lt;/span> System;
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> Run(TimerInfo myTimer, TraceWriter log)
+{
+log.Info(&lt;span style="color:#e6db74">$&amp;#34;C# Timer trigger function executed at: {DateTime.Now}&amp;#34;&lt;/span>);
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>It is entirely up to you what you get your function to do. In my case I just wanted to call a URL on a schedule so I created some code that used httpclient.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">
+&lt;span style="color:#66d9ef">using&lt;/span> System;
+&lt;span style="color:#66d9ef">using&lt;/span> System.Net.Http;
+&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task Run(TimerInfo myTimer, TraceWriter log)
+{
+log.Info(&lt;span style="color:#e6db74">$&amp;#34;Buffer 0 function executed at: {DateTime.Now}&amp;#34;&lt;/span>);
+HttpClient client = &lt;span style="color:#66d9ef">new&lt;/span> HttpClient();
+&lt;span style="color:#66d9ef">var&lt;/span> result = &lt;span style="color:#66d9ef">await&lt;/span> client.GetAsync(&lt;span style="color:#e6db74">&amp;#34;URL&amp;#34;&lt;/span>);
+&lt;span style="color:#66d9ef">string&lt;/span> resultContent = &lt;span style="color:#66d9ef">await&lt;/span> result.Content.ReadAsStringAsync();
+log.Info(resultContent);
+}
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once you have created your app and it has run you can use the monitor section to view success and failures.&lt;/p>
+&lt;p>There is loads more you can do with Azure Function but this is a good place to start.&lt;/p></description></item><item><title>Pwned Pass – Available from the Play Store</title><link>https://www.funkysi1701.com/posts/pwned-pass-available-from-the-play-store/</link><pubDate>Mon, 14 Aug 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/pwned-pass-available-from-the-play-store/</guid><description>&lt;p>Pwned Pass is now available from the &lt;a href="https://play.google.com/store/apps/details?id=pwnedpasswords.pwnedpasswords" target="_blank" rel="noopener noreferrer">Google Play Store&lt;/a>
 .&lt;/p>
 &lt;p>&lt;img class="img-fluid" alt="Pwned Pass" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/08/Screenshot_20170813-205152.png?resize=169%2C300&amp;amp;ssl=1" loading="lazy"
 />
