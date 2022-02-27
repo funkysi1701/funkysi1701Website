@@ -27,4 +27,95 @@ Assert.InRange(diff, &lt;span style="color:#ae81ff">30&lt;/span>, &lt;span style
 and will fail the xunit test if the expiry date is less than 30 days in the future. I then schedule my tests to run regularly on all my environments with a Let&amp;rsquo;s Encrypt Certificate and this gives me advanced warning if a SSL certificate is about to expire.&lt;/p>
 &lt;p>The Assert.InRange(diff, 30, 1000) line will fail the test if the expiry date is less than 30 days or greater than 1000, but as the default expiry for Let&amp;rsquo;s Encrypt certificates is three months it will never be greater than 1000 days even with a freshly installed certificate. These values can be tweaked to suit your use case, however 30 days is enough time for me to investigate what is happening.&lt;/p>
 &lt;p>To execute my tests I use a scheduled build in Azure DevOps, but anything that regularly can run your tests will do the job.&lt;/p>
-&lt;p>The code above is just a simple example to get your started for my purposes I have put all my URLs into config files and just pass these into my tests, so I don&amp;rsquo;t need a custom test for every different URL.&lt;/p></description></item></channel></rss>
+&lt;p>The code above is just a simple example to get your started for my purposes I have put all my URLs into config files and just pass these into my tests, so I don&amp;rsquo;t need a custom test for every different URL.&lt;/p></description></item><item><title>How good is your SSL?</title><link>https://www.funkysi1701.com/posts/how-good-is-your-ssl/</link><pubDate>Mon, 17 Jul 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/how-good-is-your-ssl/</guid><description>&lt;p>&lt;img class="img-fluid" alt="Troy Hunt SSL expert" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/07/Troy-Hunt-Profile-Photo.jpg?resize=150%2C150&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>I recently watched Troy Hunt’s &lt;a href="https://www.pluralsight.com/courses/https-every-developer-must-know" target="_blank" rel="noopener noreferrer">What Every Developer Must Know about HTTPS&lt;/a>
+course on Pluralsight. Its very good and really make you think about SSL certificates and how to correctly implement them.&lt;/p>
+&lt;p>One thing in particular Troy mentions is the website &lt;a href="https://www.ssllabs.com/ssltest/index.html" target="_blank" rel="noopener noreferrer">SSL Labs&lt;/a>
+. This website allows you to test a websites implementation of SSL. A grade of A to F is assigned with A being the best and F being the worst.&lt;/p>
+&lt;p>Troy Hunt has a &lt;a href="https://www.troyhunt.com/do-you-really-want-bank-grade-security/" target="_blank" rel="noopener noreferrer">blog&lt;/a>
+post where he discusses how Australian Banks score. Lets look at a few UK banks.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;strong>Bank&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>SSL Certificate&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>Grade&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>Home Page Under SSL&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>HSBC&lt;/td>
+&lt;td>&lt;a href="http://www.hsbc.co.uk" target="_blank" rel="noopener noreferrer">www.hsbc.co.uk&lt;/a>
+&lt;/td>
+&lt;td>B&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Nationwide&lt;/td>
+&lt;td>onlinebanking.nationwide.co.uk&lt;/td>
+&lt;td>C&lt;/td>
+&lt;td>N&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NatWest&lt;/td>
+&lt;td>&lt;a href="http://www.nwolb.com" target="_blank" rel="noopener noreferrer">www.nwolb.com&lt;/a>
+&lt;/td>
+&lt;td>C&lt;/td>
+&lt;td>N&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Barclaycard&lt;/td>
+&lt;td>&lt;a href="http://www.barclaycard.co.uk" target="_blank" rel="noopener noreferrer">www.barclaycard.co.uk&lt;/a>
+&lt;/td>
+&lt;td>A-&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Barclays&lt;/td>
+&lt;td>bank.barclays.co.uk&lt;/td>
+&lt;td>A-&lt;/td>
+&lt;td>N&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Lloyds Bank&lt;/td>
+&lt;td>&lt;a href="http://www.lloydsbank.com" target="_blank" rel="noopener noreferrer">www.lloydsbank.com&lt;/a>
+&lt;/td>
+&lt;td>A&lt;/td>
+&lt;td>N&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Royal Bank of Scotland&lt;/td>
+&lt;td>&lt;a href="http://www.rbsdigital.com" target="_blank" rel="noopener noreferrer">www.rbsdigital.com&lt;/a>
+&lt;/td>
+&lt;td>C&lt;/td>
+&lt;td>N&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Standard Chartered&lt;/td>
+&lt;td>&lt;a href="http://www.sc.com" target="_blank" rel="noopener noreferrer">www.sc.com&lt;/a>
+&lt;/td>
+&lt;td>C&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Virgin Money&lt;/td>
+&lt;td>uk.virginmoney.com&lt;/td>
+&lt;td>A+&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Santander&lt;/td>
+&lt;td>retail.santander.co.uk&lt;/td>
+&lt;td>A-&lt;/td>
+&lt;td>N&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>On the whole the ratings are all quite good with all being in the range A-C. However I have also indicated if they have SSL on the home page. Only 4 out 10 website listed above have the home page load under SSL.&lt;/p>
+&lt;p>Why does this matter as long as the login is under SSL? Any page that loads over http is potentially at risk from a man in the middle attack. A fake malicious home page could contain links to any page and trick users into entering personal information.&lt;/p>
+&lt;p>If you want to test a bank or other website not listed here. Go to &lt;a href="https://www.ssllabs.com/ssltest/index.html" target="_blank" rel="noopener noreferrer">https://www.ssllabs.com/ssltest/index.html&lt;/a>
+and type the address that is on the SSL certificate in to the search. The good news is that this site scores a A.&lt;/p>
+&lt;p>Troy mentions that there is rapid growth in the adoption of SSL, there is also rapid growth in improving ratings. One of these banks went from a C to an A during the course of writing this blog.&lt;/p></description></item></channel></rss>

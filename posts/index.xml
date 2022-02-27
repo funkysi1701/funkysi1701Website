@@ -1037,7 +1037,98 @@ Task&amp;lt;&lt;span style="color:#66d9ef">string&lt;/span>&amp;gt; t = SendNoti
 }
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>So that is it. My first bit of code that uses Async and Await. My controller calls a method asynchronously which then calls another method asynchronously which sends emails asynchronously.&lt;/p>
 &lt;p>Async – This enables the Await keyword to be used in the method&lt;/p>
-&lt;p>Await – This is where things get asynchronous. The await keyword allows the code to wait asynchronously for the long running code to complete.&lt;/p></description></item><item><title>Writing your first test</title><link>https://www.funkysi1701.com/posts/writing-your-first-test/</link><pubDate>Mon, 10 Jul 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/writing-your-first-test/</guid><description>&lt;p>Whenever I write a new test I have to think how best to do it. Hopefully I can summarise a few tips here to help get started.&lt;/p>
+&lt;p>Await – This is where things get asynchronous. The await keyword allows the code to wait asynchronously for the long running code to complete.&lt;/p></description></item><item><title>How good is your SSL?</title><link>https://www.funkysi1701.com/posts/how-good-is-your-ssl/</link><pubDate>Mon, 17 Jul 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/how-good-is-your-ssl/</guid><description>&lt;p>&lt;img class="img-fluid" alt="Troy Hunt SSL expert" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/07/Troy-Hunt-Profile-Photo.jpg?resize=150%2C150&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>I recently watched Troy Hunt’s &lt;a href="https://www.pluralsight.com/courses/https-every-developer-must-know" target="_blank" rel="noopener noreferrer">What Every Developer Must Know about HTTPS&lt;/a>
+course on Pluralsight. Its very good and really make you think about SSL certificates and how to correctly implement them.&lt;/p>
+&lt;p>One thing in particular Troy mentions is the website &lt;a href="https://www.ssllabs.com/ssltest/index.html" target="_blank" rel="noopener noreferrer">SSL Labs&lt;/a>
+. This website allows you to test a websites implementation of SSL. A grade of A to F is assigned with A being the best and F being the worst.&lt;/p>
+&lt;p>Troy Hunt has a &lt;a href="https://www.troyhunt.com/do-you-really-want-bank-grade-security/" target="_blank" rel="noopener noreferrer">blog&lt;/a>
+post where he discusses how Australian Banks score. Lets look at a few UK banks.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;strong>Bank&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>SSL Certificate&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>Grade&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>Home Page Under SSL&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>HSBC&lt;/td>
+&lt;td>&lt;a href="http://www.hsbc.co.uk" target="_blank" rel="noopener noreferrer">www.hsbc.co.uk&lt;/a>
+&lt;/td>
+&lt;td>B&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Nationwide&lt;/td>
+&lt;td>onlinebanking.nationwide.co.uk&lt;/td>
+&lt;td>C&lt;/td>
+&lt;td>N&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>NatWest&lt;/td>
+&lt;td>&lt;a href="http://www.nwolb.com" target="_blank" rel="noopener noreferrer">www.nwolb.com&lt;/a>
+&lt;/td>
+&lt;td>C&lt;/td>
+&lt;td>N&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Barclaycard&lt;/td>
+&lt;td>&lt;a href="http://www.barclaycard.co.uk" target="_blank" rel="noopener noreferrer">www.barclaycard.co.uk&lt;/a>
+&lt;/td>
+&lt;td>A-&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Barclays&lt;/td>
+&lt;td>bank.barclays.co.uk&lt;/td>
+&lt;td>A-&lt;/td>
+&lt;td>N&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Lloyds Bank&lt;/td>
+&lt;td>&lt;a href="http://www.lloydsbank.com" target="_blank" rel="noopener noreferrer">www.lloydsbank.com&lt;/a>
+&lt;/td>
+&lt;td>A&lt;/td>
+&lt;td>N&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Royal Bank of Scotland&lt;/td>
+&lt;td>&lt;a href="http://www.rbsdigital.com" target="_blank" rel="noopener noreferrer">www.rbsdigital.com&lt;/a>
+&lt;/td>
+&lt;td>C&lt;/td>
+&lt;td>N&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Standard Chartered&lt;/td>
+&lt;td>&lt;a href="http://www.sc.com" target="_blank" rel="noopener noreferrer">www.sc.com&lt;/a>
+&lt;/td>
+&lt;td>C&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Virgin Money&lt;/td>
+&lt;td>uk.virginmoney.com&lt;/td>
+&lt;td>A+&lt;/td>
+&lt;td>Y&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Santander&lt;/td>
+&lt;td>retail.santander.co.uk&lt;/td>
+&lt;td>A-&lt;/td>
+&lt;td>N&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>On the whole the ratings are all quite good with all being in the range A-C. However I have also indicated if they have SSL on the home page. Only 4 out 10 website listed above have the home page load under SSL.&lt;/p>
+&lt;p>Why does this matter as long as the login is under SSL? Any page that loads over http is potentially at risk from a man in the middle attack. A fake malicious home page could contain links to any page and trick users into entering personal information.&lt;/p>
+&lt;p>If you want to test a bank or other website not listed here. Go to &lt;a href="https://www.ssllabs.com/ssltest/index.html" target="_blank" rel="noopener noreferrer">https://www.ssllabs.com/ssltest/index.html&lt;/a>
+and type the address that is on the SSL certificate in to the search. The good news is that this site scores a A.&lt;/p>
+&lt;p>Troy mentions that there is rapid growth in the adoption of SSL, there is also rapid growth in improving ratings. One of these banks went from a C to an A during the course of writing this blog.&lt;/p></description></item><item><title>Writing your first test</title><link>https://www.funkysi1701.com/posts/writing-your-first-test/</link><pubDate>Mon, 10 Jul 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/writing-your-first-test/</guid><description>&lt;p>Whenever I write a new test I have to think how best to do it. Hopefully I can summarise a few tips here to help get started.&lt;/p>
 &lt;h3 id="arrange-act-assert">Arrange Act Assert&lt;a class="anchor ms-1" href="#arrange-act-assert">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
 &lt;p>The first thing I think about when writing a test is Arrange, Act, Assert. Arrange, Act, Assert is a pattern for writing the tests.&lt;/p>
 &lt;p>&lt;strong>Arrange&lt;/strong> – This gets things in order ready to execute the test.&lt;/p>
