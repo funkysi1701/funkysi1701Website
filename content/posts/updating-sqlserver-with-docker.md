@@ -6,8 +6,8 @@ month= "2022-02"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 copyright = false
-cover = "https://i0.wp.com/blog.sqlterritory.com/wp-content/uploads/2018/06/header-01.png?fit=1024%2C512&ssl=1"
-images =['https://i0.wp.com/blog.sqlterritory.com/wp-content/uploads/2018/06/header-01.png?fit=1024%2C512&ssl=1']
+cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2022/header-01.png"
+images =['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2022/header-01.png']
 tags = ["SQLServer", "Docker", "SQL"]
 category="tech"
 keywords = ["", ""]
