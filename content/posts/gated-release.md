@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/04/image.png?fit=662%2C116&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/04/image.png?fit=662%2C116&ssl=1']
-tags = ["Azure", "API", "ApplicationInsights", "DevOpsPipeline"]
+tags = ["Azure", "API", "ApplicationInsights", "DevOps"]
 category="tech"
 keywords = ["", ""]
 description = "Automated releases of software are great but how can we add an element of feedback so only good releases go live"
