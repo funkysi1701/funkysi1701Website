@@ -4,7 +4,7 @@
 &lt;p>All the commands are listed inside so lets see what we can do.&lt;/p>
 &lt;p>The Lynx presents you with a command prompt in which you can type text. Back in the 80s we had a tape player to load programs from tape, however I don&amp;rsquo;t have one today so only programs I write can be run.&lt;/p>
 &lt;p>PRINT - To write Hello World, you can just type PRINT &amp;ldquo;Hello World&amp;rdquo; and Hello World appears on the screen. To Write a program that displays Hello World, you just write the line number first.&lt;/p>
-&lt;pre tabindex="0">&lt;code>10 PRINT &amp;quot;Hello World&amp;quot;
+&lt;pre tabindex="0">&lt;code>10 PRINT &amp;#34;Hello World&amp;#34;
 &lt;/code>&lt;/pre>&lt;p>To run this you type RUN
 To view the code you type LIST&lt;/p>
 &lt;p>To Edit a specific Line you can use Ctrl+E and type the line number, or you can just write the line out again.&lt;/p>
@@ -13,11 +13,11 @@ To view the code you type LIST&lt;/p>
 &lt;p>GOTO N - Execution of code continues at Line Number N&lt;/p>
 &lt;p>The first Program I wrote with a bit of help from my boys.&lt;/p>
 &lt;pre tabindex="0">&lt;code>10 CLS
-20 PRINT &amp;quot;What is your Age?&amp;quot;
+20 PRINT &amp;#34;What is your Age?&amp;#34;
 30 INPUT N
-40 IF N&amp;gt;5 AND N&amp;lt;41 THEN PRINT &amp;quot;a good age&amp;quot;
-50 ELSE IF N&amp;lt;6 THEN PRINT &amp;quot;a spaceman&amp;quot;
-60 ELSE IF N&amp;gt;40 THEN PRINT &amp;quot;too old&amp;quot;
+40 IF N&amp;gt;5 AND N&amp;lt;41 THEN PRINT &amp;#34;a good age&amp;#34;
+50 ELSE IF N&amp;lt;6 THEN PRINT &amp;#34;a spaceman&amp;#34;
+60 ELSE IF N&amp;gt;40 THEN PRINT &amp;#34;too old&amp;#34;
 &lt;/code>&lt;/pre>&lt;p>My 4yo didn&amp;rsquo;t like being &amp;ldquo;too young&amp;rdquo; in the original version, so my 6yo helped me change him to be a &amp;ldquo;spaceman&amp;rdquo;.&lt;/p>
 &lt;p>Not bad and it was fun pair programming with a 6yo, all my typos were quickly spotted, and he easily understood the logic of IF/ELSE/THEN statements.&lt;/p>
 &lt;p>The Lynx comes from 1983 and has just 96k of memory. I am very lucky it actually still works, however I have been able to find an emulator so I can write Lynx BASIC from the comfort of my laptop. &lt;a href="https://jynxemulator.wordpress.com/" target="_blank" rel="noopener noreferrer">jynxemulator&lt;/a>

@@ -58,15 +58,15 @@ and this was due to expire at the end of this month so I thought why not book a 
 &lt;p>And deployments to Prod can only ever run during my defined deployment window.&lt;/p>
 &lt;p>I am interested to hear how you have your deployment pipeline setup. Do you make use of Pre or Post Approvals? Do you ensure deployments always happen at specific times?&lt;/p></description></item><item><title>Weekly Update #002</title><link>https://www.funkysi1701.com/posts/weekly-update-002/</link><pubDate>Sat, 21 Nov 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-002/</guid><description>&lt;p>I know Active Directory is fussy about clocks being in sync however not sure how todays issue happened.&lt;/p>
 &lt;p>I run my docker compose file from Visual Studio and I get a weird error.&lt;/p>
-&lt;pre tabindex="0">&lt;code>SecurityTokenNotYetValidException: IDX10222: Lifetime validation failed. The token is not yet valid. ValidFrom: 'System.DateTime', Current time: 'System.DateTime'.
+&lt;pre tabindex="0">&lt;code>SecurityTokenNotYetValidException: IDX10222: Lifetime validation failed. The token is not yet valid. ValidFrom: &amp;#39;System.DateTime&amp;#39;, Current time: &amp;#39;System.DateTime&amp;#39;.
 &lt;/code>&lt;/pre>&lt;p>I deleted my containers, open and close Visual Studio a few times, nothing helps. Eventually I think to find out what the time is on my container. It has yesterday&amp;rsquo;s date. What has happened here? Surely recreating containers would have caused them to have todays date? I reboot and everything is fine again.&lt;/p>
 &lt;p>Turns out that it is a know issue, see &lt;a href="https://thorsten-hans.com/docker-on-windows-fix-time-synchronization-issue" target="_blank" rel="noopener noreferrer">https://thorsten-hans.com/docker-on-windows-fix-time-synchronization-issue&lt;/a>
 I am using WSL2 and I have now changed back to using Hyper-V and the issue hasn&amp;rsquo;t come back.&lt;/p>
 &lt;p>Earlier in the week I spotted my build step was failing.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml"> - &lt;span style="color:#f92672">task&lt;/span>: &lt;span style="color:#ae81ff">NuGetToolInstaller@0&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Swapping to the next version of the step is all I needed to do to fix it.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml"> - &lt;span style="color:#f92672">task&lt;/span>: &lt;span style="color:#ae81ff">NuGetToolInstaller@1&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>My guess is that support was dropped for this earlier version or there is some other incompatability with .Net 5.&lt;/p></description></item><item><title>Gated Release</title><link>https://www.funkysi1701.com/posts/gated-release/</link><pubDate>Fri, 05 Apr 2019 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/gated-release/</guid><description>&lt;p>Automated releases of software are great but how can we add an element of feedback so only good releases go live.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">task&lt;/span>: &lt;span style="color:#ae81ff">NuGetToolInstaller@0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Swapping to the next version of the step is all I needed to do to fix it.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">task&lt;/span>: &lt;span style="color:#ae81ff">NuGetToolInstaller@1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>My guess is that support was dropped for this earlier version or there is some other incompatability with .Net 5.&lt;/p></description></item><item><title>Gated Release</title><link>https://www.funkysi1701.com/posts/gated-release/</link><pubDate>Fri, 05 Apr 2019 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/gated-release/</guid><description>&lt;p>Automated releases of software are great but how can we add an element of feedback so only good releases go live.&lt;/p>
 &lt;p>I have been using Azure DevOps to release my &lt;a href="https://www.funkysi1701.com/pwned-pass/">PwnedPass&lt;/a>
 android app to the Google Play Store for a while now. There are options to deploy to the alpha, Beta or Production tracks and even to set % of users to target. For the full range of options check out the Google Play &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-vsclient.google-play" target="_blank" rel="noopener noreferrer">extension&lt;/a>
 for Azure DevOps.&lt;/p>
@@ -112,24 +112,26 @@ which I have started to watch in an effort to keep more up to date about some of
 &lt;p>I want my Function App to run on a schedule so I clicked the + next to functions and selected TimerTrigger. I am a c# programmer so I selected this option as well.&lt;/p>
 &lt;p>Give your function a name and specify using the usual cron notation how often it should run. I want mine to run at 9.30pm each night so use 0 30 21 * * *&lt;/p>
 &lt;p>Now comes the code bit. By default you get a window with the following code in it&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">using&lt;/span> System;
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> Run(TimerInfo myTimer, TraceWriter log)
-{
-log.Info(&lt;span style="color:#e6db74">$&amp;#34;C# Timer trigger function executed at: {DateTime.Now}&amp;#34;&lt;/span>);
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>It is entirely up to you what you get your function to do. In my case I just wanted to call a URL on a schedule so I created some code that used httpclient.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">
-&lt;span style="color:#66d9ef">using&lt;/span> System;
-&lt;span style="color:#66d9ef">using&lt;/span> System.Net.Http;
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task Run(TimerInfo myTimer, TraceWriter log)
-{
-log.Info(&lt;span style="color:#e6db74">$&amp;#34;Buffer 0 function executed at: {DateTime.Now}&amp;#34;&lt;/span>);
-HttpClient client = &lt;span style="color:#66d9ef">new&lt;/span> HttpClient();
-&lt;span style="color:#66d9ef">var&lt;/span> result = &lt;span style="color:#66d9ef">await&lt;/span> client.GetAsync(&lt;span style="color:#e6db74">&amp;#34;URL&amp;#34;&lt;/span>);
-&lt;span style="color:#66d9ef">string&lt;/span> resultContent = &lt;span style="color:#66d9ef">await&lt;/span> result.Content.ReadAsStringAsync();
-log.Info(resultContent);
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once you have created your app and it has run you can use the monitor section to view success and failures.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> System;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> Run(TimerInfo myTimer, TraceWriter log)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log.Info(&lt;span style="color:#e6db74">$&amp;#34;C# Timer trigger function executed at: {DateTime.Now}&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It is entirely up to you what you get your function to do. In my case I just wanted to call a URL on a schedule so I created some code that used httpclient.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> System;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> System.Net.Http;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task Run(TimerInfo myTimer, TraceWriter log)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log.Info(&lt;span style="color:#e6db74">$&amp;#34;Buffer 0 function executed at: {DateTime.Now}&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HttpClient client = &lt;span style="color:#66d9ef">new&lt;/span> HttpClient();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> result = &lt;span style="color:#66d9ef">await&lt;/span> client.GetAsync(&lt;span style="color:#e6db74">&amp;#34;URL&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">string&lt;/span> resultContent = &lt;span style="color:#66d9ef">await&lt;/span> result.Content.ReadAsStringAsync();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log.Info(resultContent);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once you have created your app and it has run you can use the monitor section to view success and failures.&lt;/p>
 &lt;p>There is loads more you can do with Azure Function but this is a good place to start.&lt;/p></description></item><item><title>Android App Development and the Visual Studio Mobile Centre</title><link>https://www.funkysi1701.com/posts/android-app-development-and-the-visual-studio-mobile-centre/</link><pubDate>Mon, 07 Aug 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/android-app-development-and-the-visual-studio-mobile-centre/</guid><description>&lt;p>For the past week or so I have been playing around with Xamarin and creating an android app.&lt;/p>
 &lt;p>Well I now have an app in the Google Play Store. Check out &lt;a href="https://play.google.com/store/apps/dev?id=6148298088834956775" target="_blank" rel="noopener noreferrer">https://play.google.com/store/apps/dev?id=6148298088834956775&lt;/a>
 . &lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/08/Screenshot_20170806-190053.png?resize=169%2C300&amp;amp;ssl=1" loading="lazy"
@@ -141,13 +143,13 @@ log.Info(resultContent);
 &lt;p>Next I wanted to monitor my app. Now I know Application Insights doesn’t support apps so what tools are out there? HockeyApp is something I had heard of but they are in the process of being replaced with &lt;a href="https://appcenter.ms/apps" target="_blank" rel="noopener noreferrer">Visual Studio Mobile Centre&lt;/a>
 .&lt;/p>
 &lt;p>It was relatively easy to hook up my app to Visual Studio Mobile Centre. First install the required nuget packages. Then add using statements and the following line to your MainActivity.cs file (these instructions are available on the Mobile Centre)&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Azure.Mobile;
-&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Azure.Mobile.Analytics;
-&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Azure.Mobile.Crashes;
-&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Azure.Mobile.Distribute;
-&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Azure.Mobile.Push;
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">MobileCenter.Start(&lt;span style="color:#e6db74">&amp;#34;[Unique ID]&amp;#34;&lt;/span>,&lt;span style="color:#66d9ef">typeof&lt;/span>(Analytics), &lt;span style="color:#66d9ef">typeof&lt;/span>(Crashes), &lt;span style="color:#66d9ef">typeof&lt;/span>(Distribute), &lt;span style="color:#66d9ef">typeof&lt;/span>(Push));
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now you can connect the Mobile Centre to your source code (VSTS in my case) and get it to run a build for every commit.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Azure.Mobile;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Azure.Mobile.Analytics;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Azure.Mobile.Crashes;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Azure.Mobile.Distribute;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Azure.Mobile.Push;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>MobileCenter.Start(&lt;span style="color:#e6db74">&amp;#34;[Unique ID]&amp;#34;&lt;/span>,&lt;span style="color:#66d9ef">typeof&lt;/span>(Analytics), &lt;span style="color:#66d9ef">typeof&lt;/span>(Crashes), &lt;span style="color:#66d9ef">typeof&lt;/span>(Distribute), &lt;span style="color:#66d9ef">typeof&lt;/span>(Push));
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now you can connect the Mobile Centre to your source code (VSTS in my case) and get it to run a build for every commit.&lt;/p>
 &lt;p>One complexity of the build is that you need to supply a keystore file (basically a certificate to digitally sign your app). I found the best way to do this was to use Visual Studio to create the file.&lt;/p>
 &lt;p>In VS2017 there is a option called Archive Manager under the tools menu. In here click the distribute button and select Ad-hoc. In the signing identity section you can create a keystore file. Enter a few details and a keystore file will be created in AppData\Local\Xamarin\Mono for Android\Keystore[keystore name][keystore name.keystore]&lt;/p>
 &lt;p>Once you have added the keystore file to your build you can enable the distribute option. Now you will get an email after every build with a link to install your app.&lt;/p>
@@ -160,9 +162,9 @@ log.Info(resultContent);
 To the right you can see an example of the WebJobs form on the Azure portal that you need to fill in.&lt;/p>
 &lt;p>You need to supply a name for your webjob.&lt;/p>
 &lt;p>You need to upload the script that will run in my case I used a powershell script. My script consisted of which basically just loads the url specified.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">$progressPreference = &lt;span style="color:#e6db74">&amp;#34;silentlyContinue&amp;#34;&lt;/span>;
-$result = Invoke-WebRequest -Uri (&lt;span style="color:#e6db74">&amp;#34;https://www.google.com&amp;#34;&lt;/span>) -Method Get -UseBasicParsing;
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Type refers to if your job will be triggered or run continuously, I want it to be triggered.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>$progressPreference = &lt;span style="color:#e6db74">&amp;#34;silentlyContinue&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$result = Invoke-WebRequest -Uri (&lt;span style="color:#e6db74">&amp;#34;https://www.google.com&amp;#34;&lt;/span>) -Method Get -UseBasicParsing;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Type refers to if your job will be triggered or run continuously, I want it to be triggered.&lt;/p>
 &lt;p>Triggers refers to if you want it to be scheduled or manual, something that you can run on an ad hoc basis. I of course want scheduled.&lt;/p>
 &lt;p>If you are familiar with the linux CRON then the next box will make sense to you for everyone else I will try and make sense of it. The box consists of 6 numbers which can either have a value or a *. The numbers correspond to the following {second} {minute} {hour} {day} {month} {day of the week}.&lt;/p>
 &lt;p>A hourly job would be expressed as 0 0 * * * *, ie every day of week, every month, every day, every hour and only when minute and second equals zero. For more help with this check out the &lt;a href="https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-create-web-jobs#CreateScheduledCRON" target="_blank" rel="noopener noreferrer">MSDN docs&lt;/a>

@@ -8,24 +8,25 @@ is now getting an A.&lt;img class="img-fluid" alt="Alt Text" src="https://dev-to
 &lt;/p>
 &lt;p>So how do you add/remove headers in dotnet core?&lt;/p>
 &lt;p>In my configure method in Startup.cs I have the following code block.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">app.Use(
-next =&amp;gt;
-{
-&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> context =&amp;gt;
-{
-context.Response.OnStarting(
-() =&amp;gt;
-{
-context.Response.Headers.Add(&lt;span style="color:#e6db74">&amp;#34;Permissions-Policy&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;microphone=()&amp;#34;&lt;/span>);
-context.Response.Headers.Remove(&lt;span style="color:#e6db74">&amp;#34;Server&amp;#34;&lt;/span>);
-context.Response.Headers.Remove(&lt;span style="color:#e6db74">&amp;#34;X-Powered-By&amp;#34;&lt;/span>);
-context.Response.Headers.Remove(&lt;span style="color:#e6db74">&amp;#34;X-AspNet-Version&amp;#34;&lt;/span>);
-&lt;span style="color:#66d9ef">return&lt;/span> Task.CompletedTask;
-});
-&lt;span style="color:#66d9ef">await&lt;/span> next(context);
-};
-});
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>I have only included a few of the headers I am adding as the excellent &lt;a href="https://securityheaders.com/" target="_blank" rel="noopener noreferrer">https://securityheaders.com/&lt;/a>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>app.Use(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> next =&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> context =&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.Response.OnStarting(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> () =&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.Response.Headers.Add(&lt;span style="color:#e6db74">&amp;#34;Permissions-Policy&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;microphone=()&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.Response.Headers.Remove(&lt;span style="color:#e6db74">&amp;#34;Server&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.Response.Headers.Remove(&lt;span style="color:#e6db74">&amp;#34;X-Powered-By&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.Response.Headers.Remove(&lt;span style="color:#e6db74">&amp;#34;X-AspNet-Version&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> Task.CompletedTask;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">await&lt;/span> next(context);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>I have only included a few of the headers I am adding as the excellent &lt;a href="https://securityheaders.com/" target="_blank" rel="noopener noreferrer">https://securityheaders.com/&lt;/a>
 can tell you which headers you should add and what options you might want.&lt;/p></description></item><item><title>Back to Blogging</title><link>https://www.funkysi1701.com/posts/back-to-blogging/</link><pubDate>Fri, 25 Sep 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/back-to-blogging/</guid><description>&lt;p>My last blog post was over six months ago.&lt;/p>
 &lt;p>Covid 19 has hit the world, and I will be honest I have found it a challenging time.&lt;/p>
 &lt;p>My Blog had gotten into a bit of a mess. It had become fragmented with different versions of the same thing; I will attempt to explain what has become of my blog.&lt;/p>

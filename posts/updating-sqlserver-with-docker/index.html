@@ -21,8 +21,7 @@
 <meta name=twitter:image content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2022/header-01.png">
 <meta name=twitter:title content="Updating SQL Server with Docker">
 <meta name=twitter:description content="Updating SQL Server with Docker">
-<link rel=stylesheet href=https://www.funkysi1701.com/css/main.min.b7a6eda8d46e39a549f182cf72a9ff4f4c1d4d82c31ecc3ede0b7f4d5b26f32b.css crossorigin=anonymous><link rel=stylesheet href=https://www.funkysi1701.com/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css integrity="sha256-PSKHlLztu/oEEr64+8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin=anonymous></head>
-<body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+<link rel=stylesheet href=https://www.funkysi1701.com/css/main.min.b7a6eda8d46e39a549f182cf72a9ff4f4c1d4d82c31ecc3ede0b7f4d5b26f32b.css crossorigin=anonymous><link rel=stylesheet href=https://www.funkysi1701.com/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css integrity="sha256-PSKHlLztu/oEEr64+8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin=anonymous></head><body><script>const items=["mode","palette"];items.forEach(function(e){const t=localStorage.getItem("hbs-"+e);t&&document.body.parentElement.setAttribute("data-"+e,t)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
 <div class=container>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <i class="fas fa-bars"></i>
@@ -30,55 +29,41 @@
 </a>
 <div class="offcanvas offcanvas-bottom surface" tabindex=-1 id=offcanvasSocialShare aria-labelledby=offcanvasSocialShare>
 <div class=offcanvas-header>
-<h3 class=offcanvas-title>Share</h3>
-<button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
+<h3 class=offcanvas-title>Share</h3><button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
 <i class="fas fa-times"></i>
 </button>
-</div>
-<div class=offcanvas-body>
+</div><div class=offcanvas-body>
 <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button" target=_blank href="https://twitter.com/intent/tweet?title=Updating%20SQL%20Server%20with%20Docker&url=https%3a%2f%2fwww.funkysi1701.com%2fposts%2fupdating-sqlserver-with-docker%2f">
 <i class="fab fa-fw fa-twitter"></i> Twitter
 </a>
 <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button" target=_blank href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.funkysi1701.com%2fposts%2fupdating-sqlserver-with-docker%2f">
 <i class="fab fa-fw fa-facebook-f"></i> Facebook
 </a>
-</div>
-</div>
-<button class=navbar-settings type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasSettings aria-controls=offcanvasSettings aria-label="Toggle settings">
+</div></div><button class=navbar-settings type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasSettings aria-controls=offcanvasSettings aria-label="Toggle settings">
 <i class="fas fa-ellipsis-v"></i>
 </button>
 <div class="offcanvas offcanvas-end surface h-100" tabindex=-1 id=offcanvasSettings aria-labelledby=offcanvasSettings>
 <div class=offcanvas-header>
-<h3 class=offcanvas-title>Settings</h3>
-<button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
+<h3 class=offcanvas-title>Settings</h3><button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
 <i class="fas fa-times"></i>
 </button>
-</div>
-<div class="offcanvas-body d-flex flex-column">
+</div><div class="offcanvas-body d-flex flex-column">
 <section class=setting>
 <form class=row>
 <div class=col-auto>
 <label><i class="fas fa-fw fa-adjust"></i> Mode</label>
-</div>
-<div class="col-auto ms-auto">
+</div><div class="col-auto ms-auto">
 <div class="form-check form-switch">
 <input class=form-check-input type=checkbox id=modeSwitcher>
-</div>
-</div>
-</form>
-</section>
-<section class="setting palettes">
+</div></div></form></section><section class="setting palettes">
 <form class=row>
 <div class=col-auto>
 <label><i class="fas fa-fw fa-palette"></i> Palette</label>
-</div>
-<div class="col-auto ms-auto">
+</div><div class="col-auto ms-auto">
 <a id=btnPalette class="btn btn-sm btn-outline-primary" role=button aria-label=palettePicker>
 <i class="fas fa-eye-dropper"></i>
 </a>
-</div>
-</form>
-<div class="mt-2 d-flex justify-content-between visually-hidden" id=palettePicker><button type=button id=palette-blue aria-label=Blue class="btn btn-sm w-100 palette" data-palette=blue>
+</div></form><div class="mt-2 d-flex justify-content-between visually-hidden" id=palettePicker><button type=button id=palette-blue aria-label=Blue class="btn btn-sm w-100 palette" data-palette=blue>
 </button><button type=button id=palette-blue-gray aria-label="Blue Gray" class="btn btn-sm w-100 palette" data-palette=blue-gray>
 </button><button type=button id=palette-brown aria-label=Brown class="btn btn-sm w-100 palette" data-palette=brown>
 </button><button type=button id=palette-cyan aria-label=Cyan class="btn btn-sm w-100 palette" data-palette=cyan>
@@ -90,9 +75,7 @@
 </button><button type=button id=palette-red aria-label=Red class="btn btn-sm w-100 palette" data-palette=red>
 </button><button type=button id=palette-teal aria-label=Teal class="btn btn-sm w-100 palette" data-palette=teal>
 </button><button type=button id=palette-yellow aria-label=Yellow class="btn btn-sm w-100 palette" data-palette=yellow>
-</button></div>
-</section>
-<section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
+</button></div></section><section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
 <a role=button class="action action-go-back" href="javascript: window.history.back();">
 <span class=action-icon><i class="fas fa-2x fa-arrow-left"></i></span> Go back
 </a>
@@ -103,17 +86,12 @@
 <span class=action-icon><i class="fas fa-2x fa-link"></i></span> Copy URL
 </a><a class="action action-social-share" type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasSocialShare aria-controls=offcanvasSocialShare aria-label="Toggle social share">
 <span class=action-icon><i class="fas fa-2x fa-share-alt"></i></span> Share
-</a></section>
-</div>
-</div>
-<div class="collapse navbar-collapse" tabindex=-1 id=navbarSupportedContent aria-labelledby=navbarSupportedContent>
+</a></section></div></div><div class="collapse navbar-collapse" tabindex=-1 id=navbarSupportedContent aria-labelledby=navbarSupportedContent>
 <form class="search-bar my-1" action=https://www.funkysi1701.com/search>
 <div class="input-group input-group-sm">
 <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
 <input class="form-control rounded-pill" name=q type=search aria-label=Search>
-</div>
-</form>
-<ul class="navbar-nav ms-auto"><li class=nav-item>
+</div></form><ul class="navbar-nav ms-auto"><li class=nav-item>
 <a class=nav-link href=https://www.funkysi1701.com/about>
 About
 </a>
@@ -125,19 +103,12 @@ Metrics
 <a class=nav-link href=https://www.funkysi1701.com/pwned-pass>
 Pwned Pass
 </a>
-</li></ul>
-</div>
-</div>
-</nav>
-</header>
-<main role=main class=container>
+</li></ul></div></div></nav></header><main role=main class=container>
 <div class="row content">
 <div class=col-lg-8>
 <div class=container><nav class="row card component" aria-label=breadcrumb>
 <div class=card-body>
-<ol class=breadcrumb><li class=breadcrumb-item><a href=https://www.funkysi1701.com/>Home</a></li><li class=breadcrumb-item><a href=https://www.funkysi1701.com/posts/>Posts</a></li><li class="breadcrumb-item active">Updating SQL Server with Docker</li></ol>
-</div>
-</nav><div class=post-panel-wrapper>
+<ol class=breadcrumb><li class=breadcrumb-item><a href=https://www.funkysi1701.com/>Home</a></li><li class=breadcrumb-item><a href=https://www.funkysi1701.com/posts/>Posts</a></li><li class="breadcrumb-item active">Updating SQL Server with Docker</li></ol></div></nav><div class=post-panel-wrapper>
 <div class="d-flex flex-column component rounded post-panel">
 <a class="action action-panel-toggler" role=button title="Panel toggler">
 <i class="fas fa-fw fa-chevron-circle-down"></i>
@@ -148,157 +119,103 @@ Pwned Pass
 <a class=action href=#post-comments role=button aria-label=Comments title=Comments>
 <i class="fas fa-fw fa-comments"></i>
 </a>
-</div>
-</div>
-<article class="row card component mb-4 post">
+</div></div><article class="row card component mb-4 post">
 <div class=card-header>
 <h1 class="card-title post-title">Updating SQL Server with Docker
-</h1>
-</div>
-<div class=card-body><div class=post-meta>
+</h1></div><div class=card-body><div class=post-meta>
 <span class=post-date title="created on 2022-02-23 00:00:00 +0000 UTC.">
 Feb 23, 2022
 </span><span class=post-reading-time>
 3 min read
 </span><span class=post-taxonomies><a href=https://www.funkysi1701.com/2022/02/ class="badge post-taxonomy">2022-02</a><a href=https://www.funkysi1701.com/tags/sqlserver/ class="badge post-taxonomy">SQLServer</a><a href=https://www.funkysi1701.com/tags/docker/ class="badge post-taxonomy">Docker</a><a href=https://www.funkysi1701.com/tags/sql/ class="badge post-taxonomy">SQL</a><a href=https://www.funkysi1701.com/2022/ class="badge post-taxonomy">2022</a></span>
-</div>
-<div class="post-content mb-3"><p>This morning I was listening to a podcast where the new features coming out for SQL Server 2022 were being discussed. This starting me thinking about what would be involved in upgrading.</p>
-<p>Upgrading production environments is complex and there are licensing considerations to take into account. However for non production workloads like development this isn&rsquo;t a problem so lets look at that first.</p>
-<p>In the past I have installed SQL Server Devloper Edition onto my laptop, this is fine but I have found that unless you are very careful you may end up with multiple different versions of SQL Server sitting around, and it is difficult to cleanly remove them without a fresh install of the OS.</p>
-<p>However in this day and age, Docker and Containers are king. My current development environment makes use of Docker and has a docker compose file which sets up SQL Server for this particular application, lets take a look.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml>  <span style=color:#f92672>sqlserver</span>:
-    <span style=color:#f92672>image</span>: <span style=color:#ae81ff>mcr.microsoft.com/mssql/server:2019-latest</span>
-    <span style=color:#f92672>container_name</span>: <span style=color:#ae81ff>Sql</span>
-    <span style=color:#f92672>ports</span>:
-      - <span style=color:#e6db74>&#34;5432:1433&#34;</span>
-    <span style=color:#f92672>networks</span>:
-      - <span style=color:#ae81ff>my-network</span>
-    <span style=color:#f92672>volumes</span>:
-      - <span style=color:#ae81ff>sqlvolume:/var/opt/mssql</span>
-</code></pre></div><p>This defines which docker image to use, in this case 2019-latest, sets up ports and the name and saves the data on a docker volume.</p>
-<p>If we then run SELECT @@VERSION on this instance of SQL Server we get told:</p>
-<pre tabindex=0><code>Microsoft SQL Server 2019 (RTM-CU13) (KB5005679) - 15.0.4178.1 (X64)   Sep 23 2021 16:47:49   Copyright (C) 2019 Microsoft Corporation  Developer Edition (64-bit) on Linux (Ubuntu 20.04.3 LTS) &lt;X64&gt;
-</code></pre><p>What if we change the docker-compose file to use 2022-latest?</p>
-<pre tabindex=0><code>manifest for mcr.microsoft.com/mssql/server:2022-latest not found: manifest unknown: manifest tagged by &quot;2022-latest&quot; is not found
-</code></pre><p>SQL Server 2022 hasn&rsquo;t been released yet so there is no docker image for it yet. Try this command again in a few months when it is available.</p>
-<p>OK so what else can we try? What about a downgrade to 2017-latest? Will that work?</p>
-<p>SQL Server 2017 starts but the following error gets logged.</p>
-<pre tabindex=0><code>2022-02-23 21:41:15.30 Server      Software Usage Metrics is disabled.
+</div><div class="post-content mb-3"><p>This morning I was listening to a podcast where the new features coming out for SQL Server 2022 were being discussed. This starting me thinking about what would be involved in upgrading.</p><p>Upgrading production environments is complex and there are licensing considerations to take into account. However for non production workloads like development this isn&rsquo;t a problem so lets look at that first.</p><p>In the past I have installed SQL Server Devloper Edition onto my laptop, this is fine but I have found that unless you are very careful you may end up with multiple different versions of SQL Server sitting around, and it is difficult to cleanly remove them without a fresh install of the OS.</p><p>However in this day and age, Docker and Containers are king. My current development environment makes use of Docker and has a docker compose file which sets up SQL Server for this particular application, lets take a look.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span>  <span style=color:#f92672>sqlserver</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>image</span>: <span style=color:#ae81ff>mcr.microsoft.com/mssql/server:2019-latest</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>container_name</span>: <span style=color:#ae81ff>Sql</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>ports</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#e6db74>&#34;5432:1433&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>networks</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#ae81ff>my-network</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>volumes</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#ae81ff>sqlvolume:/var/opt/mssql</span>
+</span></span></code></pre></div><p>This defines which docker image to use, in this case 2019-latest, sets up ports and the name and saves the data on a docker volume.</p><p>If we then run SELECT @@VERSION on this instance of SQL Server we get told:</p><pre tabindex=0><code>Microsoft SQL Server 2019 (RTM-CU13) (KB5005679) - 15.0.4178.1 (X64)   Sep 23 2021 16:47:49   Copyright (C) 2019 Microsoft Corporation  Developer Edition (64-bit) on Linux (Ubuntu 20.04.3 LTS) &lt;X64&gt;
+</code></pre><p>What if we change the docker-compose file to use 2022-latest?</p><pre tabindex=0><code>manifest for mcr.microsoft.com/mssql/server:2022-latest not found: manifest unknown: manifest tagged by &#34;2022-latest&#34; is not found
+</code></pre><p>SQL Server 2022 hasn&rsquo;t been released yet so there is no docker image for it yet. Try this command again in a few months when it is available.</p><p>OK so what else can we try? What about a downgrade to 2017-latest? Will that work?</p><p>SQL Server 2017 starts but the following error gets logged.</p><pre tabindex=0><code>2022-02-23 21:41:15.30 Server      Software Usage Metrics is disabled.
 
-2022-02-23 21:41:15.30 spid6s      Starting up database 'master'.
+2022-02-23 21:41:15.30 spid6s      Starting up database &#39;master&#39;.
 
 2022-02-23 21:41:15.34 spid6s      Error: 948, Severity: 20, State: 1.
 
-2022-02-23 21:41:15.34 spid6s      The database 'master' cannot be opened because it is version 904. This server supports version 869 and earlier. A downgrade path is not supported.
-</code></pre><p>Doh we can&rsquo;t downgrade the existing database we have. Probably a good thing really.</p>
-<p>Microsoft release regular updates for SQL Server called CU&rsquo;s (Cumulative Updates), you can see above we are on CU13. Is there a CU14 or CU15 we could try?</p>
-<p>Update the docker compose to: mcr.microsoft.com/mssql/server:2019-CU14-ubuntu-20.04</p>
-<p>At this point I actually got an error</p>
-<pre tabindex=0><code>2022-02-23 21:50:20.71 Server      Error: 17058, Severity: 16, State: 1.
+2022-02-23 21:41:15.34 spid6s      The database &#39;master&#39; cannot be opened because it is version 904. This server supports version 869 and earlier. A downgrade path is not supported.
+</code></pre><p>Doh we can&rsquo;t downgrade the existing database we have. Probably a good thing really.</p><p>Microsoft release regular updates for SQL Server called CU&rsquo;s (Cumulative Updates), you can see above we are on CU13. Is there a CU14 or CU15 we could try?</p><p>Update the docker compose to: mcr.microsoft.com/mssql/server:2019-CU14-ubuntu-20.04</p><p>At this point I actually got an error</p><pre tabindex=0><code>2022-02-23 21:50:20.71 Server      Error: 17058, Severity: 16, State: 1.
 
-2022-02-23 21:50:20.71 Server      initerrlog: Could not open error log file '/var/opt/mssql/log/errorlog'. Operating system error = 5(Access is denied.).
-</code></pre><p>This is caused by trying to use SQL Server 2017 but it is easy to fix.</p>
-<p>In docker desktop there is a volumes section, find the volume you are using with SQL Server and delete the errorlog mentioned above.</p>
-<p><img class=img-fluid alt="Docker Desktop" src=https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2022/docker-desktop1.png loading=lazy>
-</p>
-<p>Now if you retry SQL will start OK.</p>
-<p>Repeating the SELECT @@VERSION gives us a new CU</p>
-<pre tabindex=0><code>Microsoft SQL Server 2019 (RTM-CU14) (KB5007182) - 15.0.4188.2 (X64)   Nov  3 2021 19:19:51   Copyright (C) 2019 Microsoft Corporation  Developer Edition (64-bit) on Linux (Ubuntu 20.04.3 LTS) &lt;X64&gt;
+2022-02-23 21:50:20.71 Server      initerrlog: Could not open error log file &#39;/var/opt/mssql/log/errorlog&#39;. Operating system error = 5(Access is denied.).
+</code></pre><p>This is caused by trying to use SQL Server 2017 but it is easy to fix.</p><p>In docker desktop there is a volumes section, find the volume you are using with SQL Server and delete the errorlog mentioned above.</p><p><img class=img-fluid alt="Docker Desktop" src=https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2022/docker-desktop1.png loading=lazy>
+</p><p>Now if you retry SQL will start OK.</p><p>Repeating the SELECT @@VERSION gives us a new CU</p><pre tabindex=0><code>Microsoft SQL Server 2019 (RTM-CU14) (KB5007182) - 15.0.4188.2 (X64)   Nov  3 2021 19:19:51   Copyright (C) 2019 Microsoft Corporation  Developer Edition (64-bit) on Linux (Ubuntu 20.04.3 LTS) &lt;X64&gt;
 </code></pre><pre tabindex=0><code>Microsoft SQL Server 2019 (RTM-CU15) (KB5008996) - 15.0.4198.2 (X64)   Jan 12 2022 22:30:08   Copyright (C) 2019 Microsoft Corporation  Developer Edition (64-bit) on Linux (Ubuntu 20.04.3 LTS) &lt;X64&gt;
-</code></pre><p>How much easier is this than manually installing updates and rebooting or attempting to uninstall and reinstall SQL Server. As SQL Server 2022 isn&rsquo;t out yet I can&rsquo;t say for certain what issues I may encounter but hopefully it will be as easier as this. And I don&rsquo;t need to backup or restore and databases they are all available as before!</p>
-</div></div>
-<div class=card-footer>
+</code></pre><p>How much easier is this than manually installing updates and rebooting or attempting to uninstall and reinstall SQL Server. As SQL Server 2022 isn&rsquo;t out yet I can&rsquo;t say for certain what issues I may encounter but hopefully it will be as easier as this. And I don&rsquo;t need to backup or restore and databases they are all available as before!</p></div></div><div class=card-footer>
 <div class="post-navs d-flex justify-content-evenly">
 <div class="post-nav post-prev">
 <i class="fas fa-fw fa-chevron-left"></i>
 <a href=https://www.funkysi1701.com/posts/dotnet-is-20-years-old/>dotnet is 20 years old
 </a>
-</div></div>
-</div>
-</article><section class="related-posts row card component">
+</div></div></div></article><section class="related-posts row card component">
 <div class=card-header>
-<h2 class=card-title>Related Posts</h2>
-</div>
-<div class=card-body>
+<h2 class=card-title>Related Posts</h2></div><div class=card-body>
 <ul class=post-list>
 <li>
 <a href=https://www.funkysi1701.com/posts/weekly-update-004/>Weekly Update #004
 </a>
 <span class="float-end post-date">Dec 6, 2020
 </span>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/weekly-update-002/>Weekly Update #002
 </a>
 <span class="float-end post-date">Nov 21, 2020
 </span>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/sql-server-management-studio/>SQL Server Management Studio
 </a>
 <span class="float-end post-date">Dec 3, 2015
 </span>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/why-do-i-have-a-website/>Why do I have a website?
 </a>
 <span class="float-end post-date">Jan 25, 2022
 </span>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/using-github-actions/>Using GitHub Actions
 </a>
 <span class="float-end post-date">Jan 10, 2022
 </span>
-</li>
-</ul>
-</div>
-</section><div class="card component row post-comments" id=post-comments>
+</li></ul></div></section><div class="card component row post-comments" id=post-comments>
 <div class=card-header>
-<h2 class=card-title>Comments</h2>
-</div>
-<div class=card-body><div id=disqus_thread></div>
-<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//funkysi1701.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
-<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
-<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div>
-</div></div>
-</div><aside class="col-lg-4 sidebar d-flex">
+<h2 class=card-title>Comments</h2></div><div class=card-body><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//funkysi1701.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div></div><aside class="col-lg-4 sidebar d-flex">
 <div class="container d-flex flex-column">
 <section class="recent-posts row card component">
 <div class=card-header>
-<h2 class=card-title>Recent Posts</h2>
-</div>
-<div class=card-body>
+<h2 class=card-title>Recent Posts</h2></div><div class=card-body>
 <ul class=post-list>
 <li>
 <a href=https://www.funkysi1701.com/posts/updating-sqlserver-with-docker/>Updating SQL Server with Docker
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/dotnet-is-20-years-old/>dotnet is 20 years old
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/why-do-i-have-a-website/>Why do I have a website?
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/using-github-actions/>Using GitHub Actions
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/2022-goals/>2022 Goals
 </a>
-</li>
-</ul>
-</div>
-</section><section class="tags-taxonomies row card component">
+</li></ul></div></section><section class="tags-taxonomies row card component">
 <div class=card-header>
 <h2 class=card-title>
 <a href=https://www.funkysi1701.com/tags>Tags</a>
-</h2>
-</div>
-<div class=card-body>
+</h2></div><div class=card-body>
 <div class=py-2>
 <div class="container tagcloud">
 <a href=/tags/100 class=tagcloud-item style=font-size:.7rem>
@@ -496,35 +413,15 @@ website
 <a href=/tags/xamarin class=tagcloud-item style=font-size:.7rem>
 Xamarin
 </a>
-</div>
-</div>
-</div>
-</section><section class="social row card component">
+</div></div></div></section><section class="social row card component">
 <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.6.1/css/all.css integrity=sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP crossorigin=anonymous>
 <div class=card-header>
 <h2 class=card-title>
 Social Links
-</h2>
-</div>
-<div class=card-body>
+</h2></div><div class=card-body>
 <ul class=post-list>
-<li><span class="fab fa-facebook-f"></span>&nbsp;<a href=https://facebook.com/funkysi1701>Facebook</a></li>
-<li><span class="fab fa-twitter" aria-hidden=true></span>&nbsp;<a href=https://twitter.com/funkysi1701>Twitter</a></li>
-<li><span class="fab fa-brands fa-github" aria-hidden=true></span>&nbsp;<a href=https://github.com/funkysi1701>GitHub</a></li>
-<li><span class="fab fa-linkedin-in" aria-hidden=true></span>&nbsp;<a href=https://www.linkedin.com/in/funkysi1701>LinkedIn</a></li>
-<li><span aria-hidden=true></span>&nbsp;<a href=https://dev.to/funkysi1701>DevTo</a></li>
-</ul>
-</div>
-</section>
-</div>
-</aside>
-</div>
-</main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav justify-content-center mb-2"></nav>
-<div class="copyright mb-2">
-</div>
-</footer>
-<script src=https://www.funkysi1701.com/js/main.b4d13568ea62925adef3e45f80cad4c87607640396981d7e679fff6ab72a3dd4.js integrity="sha256-tNE1aOpiklre8+RfgMrUyHYHZAOWmB1+Z5//arcqPdQ=" crossorigin=anonymous defer></script><script src=https://www.funkysi1701.com/js/icons.min.a35670f2f90c398e5ee5c8e509b428fae75aa2746854cee10b60794633076859.js integrity="sha256-o1Zw8vkMOY5e5cjlCbQo+udaonRoVM7hC2B5RjMHaFk=" crossorigin=anonymous defer></script>
-<script src=https://www.funkysi1701.com/js/viewer.min.4dba52a0a790f909408b7385316651299158381686401d50ff1f04dda6476473.js integrity="sha256-TbpSoKeQ+QlAi3OFMWZRKZFYOBaGQB1Q/x8E3aZHZHM=" crossorigin=anonymous defer></script>
+<li><span class="fab fa-facebook-f"></span>&nbsp;<a href=https://facebook.com/funkysi1701>Facebook</a></li><li><span class="fab fa-twitter" aria-hidden=true></span>&nbsp;<a href=https://twitter.com/funkysi1701>Twitter</a></li><li><span class="fab fa-brands fa-github" aria-hidden=true></span>&nbsp;<a href=https://github.com/funkysi1701>GitHub</a></li><li><span class="fab fa-linkedin-in" aria-hidden=true></span>&nbsp;<a href=https://www.linkedin.com/in/funkysi1701>LinkedIn</a></li><li><span aria-hidden=true></span>&nbsp;<a href=https://dev.to/funkysi1701>DevTo</a></li></ul></div></section></div></aside></div></main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav justify-content-center mb-2"></nav><div class="copyright mb-2">
+</div></footer><script src=https://www.funkysi1701.com/js/main.b4d13568ea62925adef3e45f80cad4c87607640396981d7e679fff6ab72a3dd4.js integrity="sha256-tNE1aOpiklre8+RfgMrUyHYHZAOWmB1+Z5//arcqPdQ=" crossorigin=anonymous defer></script><script src=https://www.funkysi1701.com/js/icons.min.b3391f89dcdef937e99a193c6de12584ac1d7613c16ae6ba852a096e1fd95108.js integrity="sha256-szkfidze+Tfpmhk8beElhKwddhPBaua6hSoJbh/ZUQg=" crossorigin=anonymous defer></script>
+<script src=https://www.funkysi1701.com/js/viewer.min.1721cbc2c5c34a150daae105f4ffed345a8bb269c6b63337f767c272fe6531f7.js integrity="sha256-FyHLwsXDShUNquEF9P/tNFqLsmnGtjM392fCcv5lMfc=" crossorigin=anonymous defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-N1YJNQEHR4"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-N1YJNQEHR4')</script></body>
-</html>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-N1YJNQEHR4")</script></body></html>

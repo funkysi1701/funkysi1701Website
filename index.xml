@@ -2,33 +2,33 @@
 &lt;p>Upgrading production environments is complex and there are licensing considerations to take into account. However for non production workloads like development this isn&amp;rsquo;t a problem so lets look at that first.&lt;/p>
 &lt;p>In the past I have installed SQL Server Devloper Edition onto my laptop, this is fine but I have found that unless you are very careful you may end up with multiple different versions of SQL Server sitting around, and it is difficult to cleanly remove them without a fresh install of the OS.&lt;/p>
 &lt;p>However in this day and age, Docker and Containers are king. My current development environment makes use of Docker and has a docker compose file which sets up SQL Server for this particular application, lets take a look.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml"> &lt;span style="color:#f92672">sqlserver&lt;/span>:
-&lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">mcr.microsoft.com/mssql/server:2019-latest&lt;/span>
-&lt;span style="color:#f92672">container_name&lt;/span>: &lt;span style="color:#ae81ff">Sql&lt;/span>
-&lt;span style="color:#f92672">ports&lt;/span>:
-- &lt;span style="color:#e6db74">&amp;#34;5432:1433&amp;#34;&lt;/span>
-&lt;span style="color:#f92672">networks&lt;/span>:
-- &lt;span style="color:#ae81ff">my-network&lt;/span>
-&lt;span style="color:#f92672">volumes&lt;/span>:
-- &lt;span style="color:#ae81ff">sqlvolume:/var/opt/mssql&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This defines which docker image to use, in this case 2019-latest, sets up ports and the name and saves the data on a docker volume.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">sqlserver&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">mcr.microsoft.com/mssql/server:2019-latest&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">container_name&lt;/span>: &lt;span style="color:#ae81ff">Sql&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">ports&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#e6db74">&amp;#34;5432:1433&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">networks&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">my-network&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">volumes&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">sqlvolume:/var/opt/mssql&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This defines which docker image to use, in this case 2019-latest, sets up ports and the name and saves the data on a docker volume.&lt;/p>
 &lt;p>If we then run SELECT @@VERSION on this instance of SQL Server we get told:&lt;/p>
 &lt;pre tabindex="0">&lt;code>Microsoft SQL Server 2019 (RTM-CU13) (KB5005679) - 15.0.4178.1 (X64) Sep 23 2021 16:47:49 Copyright (C) 2019 Microsoft Corporation Developer Edition (64-bit) on Linux (Ubuntu 20.04.3 LTS) &amp;lt;X64&amp;gt;
 &lt;/code>&lt;/pre>&lt;p>What if we change the docker-compose file to use 2022-latest?&lt;/p>
-&lt;pre tabindex="0">&lt;code>manifest for mcr.microsoft.com/mssql/server:2022-latest not found: manifest unknown: manifest tagged by &amp;quot;2022-latest&amp;quot; is not found
+&lt;pre tabindex="0">&lt;code>manifest for mcr.microsoft.com/mssql/server:2022-latest not found: manifest unknown: manifest tagged by &amp;#34;2022-latest&amp;#34; is not found
 &lt;/code>&lt;/pre>&lt;p>SQL Server 2022 hasn&amp;rsquo;t been released yet so there is no docker image for it yet. Try this command again in a few months when it is available.&lt;/p>
 &lt;p>OK so what else can we try? What about a downgrade to 2017-latest? Will that work?&lt;/p>
 &lt;p>SQL Server 2017 starts but the following error gets logged.&lt;/p>
 &lt;pre tabindex="0">&lt;code>2022-02-23 21:41:15.30 Server Software Usage Metrics is disabled.
-2022-02-23 21:41:15.30 spid6s Starting up database 'master'.
+2022-02-23 21:41:15.30 spid6s Starting up database &amp;#39;master&amp;#39;.
 2022-02-23 21:41:15.34 spid6s Error: 948, Severity: 20, State: 1.
-2022-02-23 21:41:15.34 spid6s The database 'master' cannot be opened because it is version 904. This server supports version 869 and earlier. A downgrade path is not supported.
+2022-02-23 21:41:15.34 spid6s The database &amp;#39;master&amp;#39; cannot be opened because it is version 904. This server supports version 869 and earlier. A downgrade path is not supported.
 &lt;/code>&lt;/pre>&lt;p>Doh we can&amp;rsquo;t downgrade the existing database we have. Probably a good thing really.&lt;/p>
 &lt;p>Microsoft release regular updates for SQL Server called CU&amp;rsquo;s (Cumulative Updates), you can see above we are on CU13. Is there a CU14 or CU15 we could try?&lt;/p>
 &lt;p>Update the docker compose to: mcr.microsoft.com/mssql/server:2019-CU14-ubuntu-20.04&lt;/p>
 &lt;p>At this point I actually got an error&lt;/p>
 &lt;pre tabindex="0">&lt;code>2022-02-23 21:50:20.71 Server Error: 17058, Severity: 16, State: 1.
-2022-02-23 21:50:20.71 Server initerrlog: Could not open error log file '/var/opt/mssql/log/errorlog'. Operating system error = 5(Access is denied.).
+2022-02-23 21:50:20.71 Server initerrlog: Could not open error log file &amp;#39;/var/opt/mssql/log/errorlog&amp;#39;. Operating system error = 5(Access is denied.).
 &lt;/code>&lt;/pre>&lt;p>This is caused by trying to use SQL Server 2017 but it is easy to fix.&lt;/p>
 &lt;p>In docker desktop there is a volumes section, find the volume you are using with SQL Server and delete the errorlog mentioned above.&lt;/p>
 &lt;p>&lt;img class="img-fluid" alt="Docker Desktop" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2022/docker-desktop1.png" loading="lazy"
@@ -89,7 +89,7 @@ branches:
 - feature/tempbranch
 jobs:
 build_and_deploy_job:
-if: github.event_name == 'push' || (github.event_name == 'pull_request' &amp;amp;&amp;amp; github.event.action != 'closed')
+if: github.event_name == &amp;#39;push&amp;#39; || (github.event_name == &amp;#39;pull_request&amp;#39; &amp;amp;&amp;amp; github.event.action != &amp;#39;closed&amp;#39;)
 runs-on: ubuntu-latest
 name: Build and Deploy Job
 steps:
@@ -102,15 +102,15 @@ uses: Azure/static-web-apps-deploy@v1
 with:
 azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_&amp;lt;GENERATED_HOSTNAME&amp;gt; }}
 repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
-action: &amp;quot;upload&amp;quot;
+action: &amp;#34;upload&amp;#34;
 ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
 # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-app_location: &amp;quot;Client&amp;quot; # App source code path
-api_location: &amp;quot;Api&amp;quot; # Api source code path - optional
-output_location: &amp;quot;wwwroot&amp;quot; # Built app content directory - optional
+app_location: &amp;#34;Client&amp;#34; # App source code path
+api_location: &amp;#34;Api&amp;#34; # Api source code path - optional
+output_location: &amp;#34;wwwroot&amp;#34; # Built app content directory - optional
 ###### End of Repository/Build Configurations ######
 close_pull_request_job:
-if: github.event_name == 'pull_request' &amp;amp;&amp;amp; github.event.action == 'closed'
+if: github.event_name == &amp;#39;pull_request&amp;#39; &amp;amp;&amp;amp; github.event.action == &amp;#39;closed&amp;#39;
 runs-on: ubuntu-latest
 name: Close Pull Request Job
 steps:
@@ -119,7 +119,7 @@ id: closepullrequest
 uses: Azure/static-web-apps-deploy@v1
 with:
 azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_&amp;lt;GENERATED_HOSTNAME&amp;gt; }}
-action: &amp;quot;close&amp;quot;
+action: &amp;#34;close&amp;#34;
 &lt;/code>&lt;/pre>&lt;p>This github action will run when you create a Pull Request to the branch mentioned in the file, or if you push code into the branch. This code get added into the .github/workflows/ folder and is the location that all github action workflows live.&lt;/p>
 &lt;p>I haven&amp;rsquo;t done much with github actions, however I have used Azure DevOps quite a bit. Over on the Azure DevOps side I have created a pipeline that deploys to a Dev environment, then a Test environment and finally a production environment.&lt;/p>
 &lt;p>Lets have a look at the workflow that I ended up with and with can break down how it all works. Note I am new to Github actions so if there is a better way of doing this do let me know.&lt;/p>
@@ -146,15 +146,15 @@ uses: Azure/static-web-apps-deploy@v1
 with:
 azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ORANGE_POND_09B18B903 }}
 repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
-action: &amp;quot;upload&amp;quot;
+action: &amp;#34;upload&amp;#34;
 ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
 # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-app_location: &amp;quot;Blog&amp;quot; # App source code path
-api_location: &amp;quot;Blog.Func&amp;quot; # Api source code path - optional
-output_location: &amp;quot;wwwroot&amp;quot; # Built app content directory - optional
+app_location: &amp;#34;Blog&amp;#34; # App source code path
+api_location: &amp;#34;Blog.Func&amp;#34; # Api source code path - optional
+output_location: &amp;#34;wwwroot&amp;#34; # Built app content directory - optional
 ###### End of Repository/Build Configurations ######
 test:
-if: github.ref == 'refs/heads/develop'
+if: github.ref == &amp;#39;refs/heads/develop&amp;#39;
 runs-on: ubuntu-latest
 environment:
 name: Test
@@ -169,15 +169,15 @@ uses: Azure/static-web-apps-deploy@v1
 with:
 azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WITTY_DUNE_0A1A77903 }}
 repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
-action: &amp;quot;upload&amp;quot;
+action: &amp;#34;upload&amp;#34;
 ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
 # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-app_location: &amp;quot;Blog&amp;quot; # App source code path
-api_location: &amp;quot;Blog.Func&amp;quot; # Api source code path - optional
-output_location: &amp;quot;wwwroot&amp;quot; # Built app content directory - optional
+app_location: &amp;#34;Blog&amp;#34; # App source code path
+api_location: &amp;#34;Blog.Func&amp;#34; # Api source code path - optional
+output_location: &amp;#34;wwwroot&amp;#34; # Built app content directory - optional
 ###### End of Repository/Build Configurations ######
 prod:
-if: github.ref == 'refs/heads/main'
+if: github.ref == &amp;#39;refs/heads/main&amp;#39;
 runs-on: ubuntu-latest
 environment:
 name: Prod
@@ -192,12 +192,12 @@ uses: Azure/static-web-apps-deploy@v1
 with:
 azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BRAVE_ROCK_0AAC63D03 }}
 repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
-action: &amp;quot;upload&amp;quot;
+action: &amp;#34;upload&amp;#34;
 ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
 # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-app_location: &amp;quot;Blog&amp;quot; # App source code path
-api_location: &amp;quot;Blog.Func&amp;quot; # Api source code path - optional
-output_location: &amp;quot;wwwroot&amp;quot; # Built app content directory - optional
+app_location: &amp;#34;Blog&amp;#34; # App source code path
+api_location: &amp;#34;Blog.Func&amp;#34; # Api source code path - optional
+output_location: &amp;#34;wwwroot&amp;#34; # Built app content directory - optional
 ###### End of Repository/Build Configurations ######
 &lt;/code>&lt;/pre>&lt;p>The first thing I did was create three Azure Static Web Apps, I am using the free tier so while this is trippling my costs it is all still free! Doing this created three github action workflow files, I deleted two and edited the third, but before I deleted them I made a note of the AZURE_STATIC_WEB_APPS_API_TOKEN. If you look in your settings -&amp;gt; secrets for your repo you will see secrets have been created, this is the secure token that github uses to update your static web app.&lt;/p>
 &lt;p>While we are in settings we might as well look at environments. I created a Prod, Test and Dev environment that I was going to use in my github actions.&lt;/p>
@@ -281,7 +281,7 @@ name: Prod
 &lt;p>All the commands are listed inside so lets see what we can do.&lt;/p>
 &lt;p>The Lynx presents you with a command prompt in which you can type text. Back in the 80s we had a tape player to load programs from tape, however I don&amp;rsquo;t have one today so only programs I write can be run.&lt;/p>
 &lt;p>PRINT - To write Hello World, you can just type PRINT &amp;ldquo;Hello World&amp;rdquo; and Hello World appears on the screen. To Write a program that displays Hello World, you just write the line number first.&lt;/p>
-&lt;pre tabindex="0">&lt;code>10 PRINT &amp;quot;Hello World&amp;quot;
+&lt;pre tabindex="0">&lt;code>10 PRINT &amp;#34;Hello World&amp;#34;
 &lt;/code>&lt;/pre>&lt;p>To run this you type RUN
 To view the code you type LIST&lt;/p>
 &lt;p>To Edit a specific Line you can use Ctrl+E and type the line number, or you can just write the line out again.&lt;/p>
@@ -290,11 +290,11 @@ To view the code you type LIST&lt;/p>
 &lt;p>GOTO N - Execution of code continues at Line Number N&lt;/p>
 &lt;p>The first Program I wrote with a bit of help from my boys.&lt;/p>
 &lt;pre tabindex="0">&lt;code>10 CLS
-20 PRINT &amp;quot;What is your Age?&amp;quot;
+20 PRINT &amp;#34;What is your Age?&amp;#34;
 30 INPUT N
-40 IF N&amp;gt;5 AND N&amp;lt;41 THEN PRINT &amp;quot;a good age&amp;quot;
-50 ELSE IF N&amp;lt;6 THEN PRINT &amp;quot;a spaceman&amp;quot;
-60 ELSE IF N&amp;gt;40 THEN PRINT &amp;quot;too old&amp;quot;
+40 IF N&amp;gt;5 AND N&amp;lt;41 THEN PRINT &amp;#34;a good age&amp;#34;
+50 ELSE IF N&amp;lt;6 THEN PRINT &amp;#34;a spaceman&amp;#34;
+60 ELSE IF N&amp;gt;40 THEN PRINT &amp;#34;too old&amp;#34;
 &lt;/code>&lt;/pre>&lt;p>My 4yo didn&amp;rsquo;t like being &amp;ldquo;too young&amp;rdquo; in the original version, so my 6yo helped me change him to be a &amp;ldquo;spaceman&amp;rdquo;.&lt;/p>
 &lt;p>Not bad and it was fun pair programming with a 6yo, all my typos were quickly spotted, and he easily understood the logic of IF/ELSE/THEN statements.&lt;/p>
 &lt;p>The Lynx comes from 1983 and has just 96k of memory. I am very lucky it actually still works, however I have been able to find an emulator so I can write Lynx BASIC from the comfort of my laptop. &lt;a href="https://jynxemulator.wordpress.com/" target="_blank" rel="noopener noreferrer">jynxemulator&lt;/a>
@@ -598,27 +598,29 @@ which my website now passes.&lt;/p>
 &lt;p>Not much else to say this week, apart from I am missing Visual Studio and C#, I have been mostly using VS Code on Linux and looking at php which isn&amp;rsquo;t as much fun as my usual day job.&lt;/p></description></item><item><title>Weekly Update #004</title><link>https://www.funkysi1701.com/posts/weekly-update-004/</link><pubDate>Sun, 06 Dec 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-004/</guid><description>&lt;p>I use sp_send_dbmail to send results of sql queries by email to business users. Recently an issue was raised that data was being cut off after 255 characters. To fix this I added @query_no_truncate = 1, however this stopped the column headings from being included. No idea why you can&amp;rsquo;t have all the data and column headings but there you have it.&lt;/p>
 &lt;p>What I am doing now is running 2 queries, one to get the headings, and one to get the data. In theory you should be able to combine them with a Union however you then have datatype issues for non text columns so I gave up with that idea.&lt;/p>
 &lt;p>My results have 60 something columns (don&amp;rsquo;t ask its for a data import into a third party system!) so I am not typing them all out. I can shove query results into a temporary table and then execute to get a list of columns.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sql" data-lang="sql">&lt;span style="color:#66d9ef">SELECT&lt;/span> name
-&lt;span style="color:#66d9ef">FROM&lt;/span> tempdb.sys.columns
-&lt;span style="color:#66d9ef">WHERE&lt;/span> object_id &lt;span style="color:#f92672">=&lt;/span> object_id(&lt;span style="color:#e6db74">&amp;#39;tempdb..#TempTable&amp;#39;&lt;/span>)
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>However I need my list to be horizontal so I can use as column headers. I can use dynamic SQL and a pivot to flip them round.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sql" data-lang="sql">&lt;span style="color:#66d9ef">DECLARE&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#66d9ef">AS&lt;/span> NVARCHAR(&lt;span style="color:#66d9ef">MAX&lt;/span>), &lt;span style="color:#f92672">@&lt;/span>query &lt;span style="color:#66d9ef">AS&lt;/span> NVARCHAR(&lt;span style="color:#66d9ef">MAX&lt;/span>)
-&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#f92672">=&lt;/span> STUFF((&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#e6db74">&amp;#39;,&amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> QUOTENAME(name)
-&lt;span style="color:#66d9ef">FROM&lt;/span> tempdb.sys.columns
-&lt;span style="color:#66d9ef">WHERE&lt;/span> object_id &lt;span style="color:#f92672">=&lt;/span> object_id(&lt;span style="color:#e6db74">&amp;#39;tempdb..#TempTable&amp;#39;&lt;/span>)
-&lt;span style="color:#66d9ef">FOR&lt;/span> XML PATH(&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>), &lt;span style="color:#66d9ef">TYPE&lt;/span>).value(&lt;span style="color:#e6db74">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;NVARCHAR(MAX)&amp;#39;&lt;/span>),&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>)
-&lt;span style="color:#66d9ef">SET&lt;/span> &lt;span style="color:#f92672">@&lt;/span>query &lt;span style="color:#f92672">=&lt;/span> N&lt;span style="color:#e6db74">&amp;#39;SELECT &amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#f92672">+&lt;/span> N&lt;span style="color:#e6db74">&amp;#39; FROM
-&lt;/span>&lt;span style="color:#e6db74">(
-&lt;/span>&lt;span style="color:#e6db74"> SELECT name
-&lt;/span>&lt;span style="color:#e6db74"> FROM tempdb.sys.columns
-&lt;/span>&lt;span style="color:#e6db74"> WHERE object_id = object_id(&amp;#39;&amp;#39;tempdb..#TempTable&amp;#39;&amp;#39;)
-&lt;/span>&lt;span style="color:#e6db74">) x
-&lt;/span>&lt;span style="color:#e6db74">PIVOT
-&lt;/span>&lt;span style="color:#e6db74">(
-&lt;/span>&lt;span style="color:#e6db74"> MAX(name)
-&lt;/span>&lt;span style="color:#e6db74"> FOR name IN (&amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#f92672">+&lt;/span> N&lt;span style="color:#e6db74">&amp;#39;)
-&lt;/span>&lt;span style="color:#e6db74">) y&amp;#39;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Weekly Update #003</title><link>https://www.funkysi1701.com/posts/weekly-update-003/</link><pubDate>Sat, 28 Nov 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-003/</guid><description>&lt;p>Been a quiet week, so wasn&amp;rsquo;t expecting to have much to write on here, however a few things happened worth talking about.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> name
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">FROM&lt;/span> tempdb.sys.columns
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">WHERE&lt;/span> object_id &lt;span style="color:#f92672">=&lt;/span> object_id(&lt;span style="color:#e6db74">&amp;#39;tempdb..#TempTable&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>However I need my list to be horizontal so I can use as column headers. I can use dynamic SQL and a pivot to flip them round.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">DECLARE&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#66d9ef">AS&lt;/span> NVARCHAR(&lt;span style="color:#66d9ef">MAX&lt;/span>), &lt;span style="color:#f92672">@&lt;/span>query &lt;span style="color:#66d9ef">AS&lt;/span> NVARCHAR(&lt;span style="color:#66d9ef">MAX&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#f92672">=&lt;/span> STUFF((&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#e6db74">&amp;#39;,&amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> QUOTENAME(name)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">FROM&lt;/span> tempdb.sys.columns
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">WHERE&lt;/span> object_id &lt;span style="color:#f92672">=&lt;/span> object_id(&lt;span style="color:#e6db74">&amp;#39;tempdb..#TempTable&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">FOR&lt;/span> XML PATH(&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>), &lt;span style="color:#66d9ef">TYPE&lt;/span>).value(&lt;span style="color:#e6db74">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;NVARCHAR(MAX)&amp;#39;&lt;/span>),&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SET&lt;/span> &lt;span style="color:#f92672">@&lt;/span>query &lt;span style="color:#f92672">=&lt;/span> N&lt;span style="color:#e6db74">&amp;#39;SELECT &amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#f92672">+&lt;/span> N&lt;span style="color:#e6db74">&amp;#39; FROM
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">(
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> SELECT name
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> FROM tempdb.sys.columns
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> WHERE object_id = object_id(&amp;#39;&amp;#39;tempdb..#TempTable&amp;#39;&amp;#39;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">) x
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">PIVOT
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">(
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> MAX(name)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> FOR name IN (&amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#f92672">+&lt;/span> N&lt;span style="color:#e6db74">&amp;#39;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">) y&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Weekly Update #003</title><link>https://www.funkysi1701.com/posts/weekly-update-003/</link><pubDate>Sat, 28 Nov 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-003/</guid><description>&lt;p>Been a quiet week, so wasn&amp;rsquo;t expecting to have much to write on here, however a few things happened worth talking about.&lt;/p>
 &lt;h3 id="my-first-pr">My First PR&lt;a class="anchor ms-1" href="#my-first-pr">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
 &lt;p>A comment was made to me to do something with the postcodes that are in the system I am developing. Find out what projects have postcodes near each other, and that way work can be grouped together and reduce potential mileage costs of staff that need to visit these projects.&lt;/p>
 &lt;p>A quick google search found &lt;a href="https://postcodes.io/" target="_blank" rel="noopener noreferrer">https://postcodes.io/&lt;/a>
@@ -638,15 +640,15 @@ which has an API that returns nearby postcodes. It also has a C# wrapper &lt;a h
 framework and the first file I opened had methods and classes, so apart from the syntax you could think you were looking at C#.&lt;/p>
 &lt;p>Another thing that interested me was the project used docker containers, it has automated builds as well. Lots of modern programming ideas that I had some ideas about. I am looking forward to learning more about this project and how I might contribute to it.&lt;/p></description></item><item><title>Weekly Update #002</title><link>https://www.funkysi1701.com/posts/weekly-update-002/</link><pubDate>Sat, 21 Nov 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-002/</guid><description>&lt;p>I know Active Directory is fussy about clocks being in sync however not sure how todays issue happened.&lt;/p>
 &lt;p>I run my docker compose file from Visual Studio and I get a weird error.&lt;/p>
-&lt;pre tabindex="0">&lt;code>SecurityTokenNotYetValidException: IDX10222: Lifetime validation failed. The token is not yet valid. ValidFrom: 'System.DateTime', Current time: 'System.DateTime'.
+&lt;pre tabindex="0">&lt;code>SecurityTokenNotYetValidException: IDX10222: Lifetime validation failed. The token is not yet valid. ValidFrom: &amp;#39;System.DateTime&amp;#39;, Current time: &amp;#39;System.DateTime&amp;#39;.
 &lt;/code>&lt;/pre>&lt;p>I deleted my containers, open and close Visual Studio a few times, nothing helps. Eventually I think to find out what the time is on my container. It has yesterday&amp;rsquo;s date. What has happened here? Surely recreating containers would have caused them to have todays date? I reboot and everything is fine again.&lt;/p>
 &lt;p>Turns out that it is a know issue, see &lt;a href="https://thorsten-hans.com/docker-on-windows-fix-time-synchronization-issue" target="_blank" rel="noopener noreferrer">https://thorsten-hans.com/docker-on-windows-fix-time-synchronization-issue&lt;/a>
 I am using WSL2 and I have now changed back to using Hyper-V and the issue hasn&amp;rsquo;t come back.&lt;/p>
 &lt;p>Earlier in the week I spotted my build step was failing.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml"> - &lt;span style="color:#f92672">task&lt;/span>: &lt;span style="color:#ae81ff">NuGetToolInstaller@0&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Swapping to the next version of the step is all I needed to do to fix it.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml"> - &lt;span style="color:#f92672">task&lt;/span>: &lt;span style="color:#ae81ff">NuGetToolInstaller@1&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>My guess is that support was dropped for this earlier version or there is some other incompatability with .Net 5.&lt;/p></description></item><item><title>Weekly Update #001</title><link>https://www.funkysi1701.com/posts/weekly-update-001/</link><pubDate>Sat, 14 Nov 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-001/</guid><description>&lt;p>One of my favourite podcasts is Troy Hunts weekly update. In it he discusses stuff that he has been working on, plus some personal stuff. I am going to attempt to do something similar. It will probably take me a few of these before we get a look and feel that works.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">task&lt;/span>: &lt;span style="color:#ae81ff">NuGetToolInstaller@0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Swapping to the next version of the step is all I needed to do to fix it.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">task&lt;/span>: &lt;span style="color:#ae81ff">NuGetToolInstaller@1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>My guess is that support was dropped for this earlier version or there is some other incompatability with .Net 5.&lt;/p></description></item><item><title>Weekly Update #001</title><link>https://www.funkysi1701.com/posts/weekly-update-001/</link><pubDate>Sat, 14 Nov 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-001/</guid><description>&lt;p>One of my favourite podcasts is Troy Hunts weekly update. In it he discusses stuff that he has been working on, plus some personal stuff. I am going to attempt to do something similar. It will probably take me a few of these before we get a look and feel that works.&lt;/p>
 &lt;h4 id="monday">Monday&lt;a class="anchor ms-1" href="#monday">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h4>
 &lt;p>A week off work, mainly to use it up before year end, plus want to get a few jobs around the house done.&lt;/p>
 &lt;p>I did ask the following question on Twitter.&lt;/p>
@@ -669,122 +671,136 @@ page which details some of the config settings. I think this probably came from 
 but it was a while ago when I first did this on another project.&lt;/p>
 &lt;p>At the moment we have .net Version, Commit and Build links.&lt;/p>
 &lt;p>The .Net Version is obtained from&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">@System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>A few other bits of info can be obtained from System.Runtime.InteropServices.RuntimeInformation which I have included on the page for fun. There are probably security concerns with exposing all this info publicly so something to bear in mind if you try this.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>@System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>A few other bits of info can be obtained from System.Runtime.InteropServices.RuntimeInformation which I have included on the page for fun. There are probably security concerns with exposing all this info publicly so something to bear in mind if you try this.&lt;/p>
 &lt;p>Build Info is passed to my code by a build step&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">- &lt;span style="color:#f92672">script&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;(echo $(Build.BuildNumber) &amp;amp;&amp;amp; echo $(Build.BuildId)) &amp;gt; .buildinfo.json&amp;#39;&lt;/span>
-&lt;span style="color:#f92672">displayName&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Emit build number&amp;#34;&lt;/span>
-&lt;span style="color:#f92672">workingDirectory&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;$(Build.SourcesDirectory)/src/WebBlog&amp;#39;&lt;/span>
-&lt;span style="color:#f92672">failOnStderr&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This simply passed the build id and number which are stored as variabled and saves them in a text file.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>- &lt;span style="color:#f92672">script&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;(echo $(Build.BuildNumber) &amp;amp;&amp;amp; echo $(Build.BuildId)) &amp;gt; .buildinfo.json&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">displayName&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Emit build number&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">workingDirectory&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;$(Build.SourcesDirectory)/src/WebBlog&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">failOnStderr&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This simply passed the build id and number which are stored as variabled and saves them in a text file.&lt;/p>
 &lt;p>I then have a class that reads them and constructs a link.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Extensions.Hosting;
-&lt;span style="color:#66d9ef">using&lt;/span> System;
-&lt;span style="color:#66d9ef">using&lt;/span> System.IO;
-&lt;span style="color:#66d9ef">using&lt;/span> System.Linq;
-&lt;span style="color:#66d9ef">using&lt;/span> System.Reflection;
-&lt;span style="color:#66d9ef">namespace&lt;/span> WebBlog
-{
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">AppVersionInfo&lt;/span>
-{
-&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildFileName = &lt;span style="color:#e6db74">&amp;#34;.buildinfo.json&amp;#34;&lt;/span>;
-&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">readonly&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildFilePath;
-&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildNumber = &lt;span style="color:#66d9ef">string&lt;/span>.Empty;
-&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildId = &lt;span style="color:#66d9ef">string&lt;/span>.Empty;
-&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>gitHash = &lt;span style="color:#66d9ef">string&lt;/span>.Empty;
-&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>gitShortHash = &lt;span style="color:#66d9ef">string&lt;/span>.Empty;
-&lt;span style="color:#66d9ef">public&lt;/span> AppVersionInfo(IHostEnvironment hostEnvironment)
-{
-&lt;span style="color:#ae81ff">_&lt;/span>buildFilePath = Path.Combine(hostEnvironment.ContentRootPath, &lt;span style="color:#ae81ff">_&lt;/span>buildFileName);
-}
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> BuildNumber
-{
-&lt;span style="color:#66d9ef">get&lt;/span>
-{
-&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>buildNumber))
-{
-&lt;span style="color:#66d9ef">if&lt;/span> (File.Exists(&lt;span style="color:#ae81ff">_&lt;/span>buildFilePath))
-{
-&lt;span style="color:#66d9ef">var&lt;/span> fileContents = File.ReadLines(&lt;span style="color:#ae81ff">_&lt;/span>buildFilePath).ToList();
-&lt;span style="color:#66d9ef">if&lt;/span> (fileContents.Count &amp;gt; &lt;span style="color:#ae81ff">0&lt;/span>)
-{
-&lt;span style="color:#ae81ff">_&lt;/span>buildNumber = fileContents[&lt;span style="color:#ae81ff">0&lt;/span>];
-}
-&lt;span style="color:#66d9ef">if&lt;/span> (fileContents.Count &amp;gt; &lt;span style="color:#ae81ff">1&lt;/span>)
-{
-&lt;span style="color:#ae81ff">_&lt;/span>buildId = fileContents[&lt;span style="color:#ae81ff">1&lt;/span>];
-}
-}
-&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>buildNumber))
-{
-&lt;span style="color:#ae81ff">_&lt;/span>buildNumber = DateTime.UtcNow.ToString(&lt;span style="color:#e6db74">&amp;#34;yyyyMMdd&amp;#34;&lt;/span>) + &lt;span style="color:#e6db74">&amp;#34;.0&amp;#34;&lt;/span>;
-}
-&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>buildId))
-{
-&lt;span style="color:#ae81ff">_&lt;/span>buildId = &lt;span style="color:#e6db74">&amp;#34;123456&amp;#34;&lt;/span>;
-}
-}
-&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildNumber;
-}
-}
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> BuildId
-{
-&lt;span style="color:#66d9ef">get&lt;/span>
-{
-&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>buildId))
-{
-&lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span> = BuildNumber;
-}
-&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildId;
-}
-}
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> GitHash
-{
-&lt;span style="color:#66d9ef">get&lt;/span>
-{
-&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>gitHash))
-{
-&lt;span style="color:#66d9ef">var&lt;/span> version = &lt;span style="color:#e6db74">&amp;#34;1.0.0+LOCALBUILD&amp;#34;&lt;/span>;
-&lt;span style="color:#66d9ef">var&lt;/span> appAssembly = &lt;span style="color:#66d9ef">typeof&lt;/span>(AppVersionInfo).Assembly;
-&lt;span style="color:#66d9ef">var&lt;/span> infoVerAttr = (AssemblyInformationalVersionAttribute)appAssembly
-.GetCustomAttributes(&lt;span style="color:#66d9ef">typeof&lt;/span>(AssemblyInformationalVersionAttribute)).FirstOrDefault();
-&lt;span style="color:#66d9ef">if&lt;/span> (infoVerAttr != &lt;span style="color:#66d9ef">null&lt;/span> &amp;amp;&amp;amp; infoVerAttr.InformationalVersion.Length &amp;gt; &lt;span style="color:#ae81ff">6&lt;/span>)
-{
-version = infoVerAttr.InformationalVersion;
-}
-&lt;span style="color:#ae81ff">_&lt;/span>gitHash = version[(version.IndexOf(&lt;span style="color:#e6db74">&amp;#39;+&amp;#39;&lt;/span>) + &lt;span style="color:#ae81ff">1&lt;/span>)..];
-}
-&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>gitHash;
-}
-}
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> ShortGitHash
-{
-&lt;span style="color:#66d9ef">get&lt;/span>
-{
-&lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>gitShortHash))
-{
-&lt;span style="color:#ae81ff">_&lt;/span>gitShortHash = GitHash.Substring(GitHash.Length - &lt;span style="color:#ae81ff">6&lt;/span>, &lt;span style="color:#ae81ff">6&lt;/span>);
-}
-&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>gitShortHash;
-}
-}
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The BuildId and BuildNumber properties just fetch the details saved into the text file during the build. This can then be passed to build the build link.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">a&lt;/span> &lt;span style="color:#a6e22e">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;https://dev.azure.com/{OrgName}/{RepoName}/_build/results?buildId=@appInfo.BuildId&amp;amp;view=results&amp;#34;&lt;/span>&amp;gt;
-@appInfo.BuildNumber
-&amp;lt;/&lt;span style="color:#f92672">a&lt;/span>&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Finally, the GitHash properties need to fetch the hash and shorthash of the commit which is a bit more complex. This is achieved using the following line in your build.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml">- &lt;span style="color:#f92672">task&lt;/span>: &lt;span style="color:#ae81ff">DotNetCoreCLI@2&lt;/span>
-&lt;span style="color:#f92672">displayName&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;Publish&amp;#39;&lt;/span>
-&lt;span style="color:#f92672">inputs&lt;/span>:
-&lt;span style="color:#f92672">command&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;publish&amp;#39;&lt;/span>
-&lt;span style="color:#f92672">publishWebProjects&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
-&lt;span style="color:#f92672">arguments&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;--output $(Build.ArtifactStagingDirectory) /p:SourceRevisionId=$(Build.SourceVersion)&amp;#39;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>/p:SourceRevisionId=$(Build.SourceVersion) add the revision hash to [assembly: AssemblyInformationalVersion] during the build which can then be extracted using the gitHash property above, before being passed into the commit link.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">a&lt;/span> &lt;span style="color:#a6e22e">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;https://github.com/{OrgName}/{RepoName}/commit/@appInfo.GitHash&amp;#34;&lt;/span>&amp;gt;
-@appInfo.ShortGitHash
-&amp;lt;/&lt;span style="color:#f92672">a&lt;/span>&amp;gt;&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Security Headers</title><link>https://www.funkysi1701.com/posts/security-headers/</link><pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/security-headers/</guid><description>&lt;p>Have you wondered what info you are leaking via your response headers?, do you want some kind of guide about what headers to set or remove altogether?&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Extensions.Hosting;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> System;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> System.IO;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> System.Linq;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> System.Reflection;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">namespace&lt;/span> WebBlog
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">AppVersionInfo&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildFileName = &lt;span style="color:#e6db74">&amp;#34;.buildinfo.json&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">readonly&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildFilePath;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildNumber = &lt;span style="color:#66d9ef">string&lt;/span>.Empty;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildId = &lt;span style="color:#66d9ef">string&lt;/span>.Empty;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>gitHash = &lt;span style="color:#66d9ef">string&lt;/span>.Empty;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>gitShortHash = &lt;span style="color:#66d9ef">string&lt;/span>.Empty;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> AppVersionInfo(IHostEnvironment hostEnvironment)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">_&lt;/span>buildFilePath = Path.Combine(hostEnvironment.ContentRootPath, &lt;span style="color:#ae81ff">_&lt;/span>buildFileName);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> BuildNumber
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">get&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>buildNumber))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (File.Exists(&lt;span style="color:#ae81ff">_&lt;/span>buildFilePath))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> fileContents = File.ReadLines(&lt;span style="color:#ae81ff">_&lt;/span>buildFilePath).ToList();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (fileContents.Count &amp;gt; &lt;span style="color:#ae81ff">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">_&lt;/span>buildNumber = fileContents[&lt;span style="color:#ae81ff">0&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (fileContents.Count &amp;gt; &lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">_&lt;/span>buildId = fileContents[&lt;span style="color:#ae81ff">1&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>buildNumber))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">_&lt;/span>buildNumber = DateTime.UtcNow.ToString(&lt;span style="color:#e6db74">&amp;#34;yyyyMMdd&amp;#34;&lt;/span>) + &lt;span style="color:#e6db74">&amp;#34;.0&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>buildId))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">_&lt;/span>buildId = &lt;span style="color:#e6db74">&amp;#34;123456&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildNumber;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> BuildId
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">get&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>buildId))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span> = BuildNumber;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>buildId;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> GitHash
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">get&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>gitHash))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> version = &lt;span style="color:#e6db74">&amp;#34;1.0.0+LOCALBUILD&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> appAssembly = &lt;span style="color:#66d9ef">typeof&lt;/span>(AppVersionInfo).Assembly;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> infoVerAttr = (AssemblyInformationalVersionAttribute)appAssembly
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .GetCustomAttributes(&lt;span style="color:#66d9ef">typeof&lt;/span>(AssemblyInformationalVersionAttribute)).FirstOrDefault();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (infoVerAttr != &lt;span style="color:#66d9ef">null&lt;/span> &amp;amp;&amp;amp; infoVerAttr.InformationalVersion.Length &amp;gt; &lt;span style="color:#ae81ff">6&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> version = infoVerAttr.InformationalVersion;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">_&lt;/span>gitHash = version[(version.IndexOf(&lt;span style="color:#e6db74">&amp;#39;+&amp;#39;&lt;/span>) + &lt;span style="color:#ae81ff">1&lt;/span>)..];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>gitHash;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> ShortGitHash
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">get&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span>.IsNullOrEmpty(&lt;span style="color:#ae81ff">_&lt;/span>gitShortHash))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">_&lt;/span>gitShortHash = GitHash.Substring(GitHash.Length - &lt;span style="color:#ae81ff">6&lt;/span>, &lt;span style="color:#ae81ff">6&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>gitShortHash;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The BuildId and BuildNumber properties just fetch the details saved into the text file during the build. This can then be passed to build the build link.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">a&lt;/span> &lt;span style="color:#a6e22e">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;https://dev.azure.com/{OrgName}/{RepoName}/_build/results?buildId=@appInfo.BuildId&amp;amp;view=results&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @appInfo.BuildNumber
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">a&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Finally, the GitHash properties need to fetch the hash and shorthash of the commit which is a bit more complex. This is achieved using the following line in your build.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>- &lt;span style="color:#f92672">task&lt;/span>: &lt;span style="color:#ae81ff">DotNetCoreCLI@2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">displayName&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;Publish&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">inputs&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">command&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;publish&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">publishWebProjects&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">arguments&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;--output $(Build.ArtifactStagingDirectory) /p:SourceRevisionId=$(Build.SourceVersion)&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>/p:SourceRevisionId=$(Build.SourceVersion) add the revision hash to [assembly: AssemblyInformationalVersion] during the build which can then be extracted using the gitHash property above, before being passed into the commit link.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">a&lt;/span> &lt;span style="color:#a6e22e">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;https://github.com/{OrgName}/{RepoName}/commit/@appInfo.GitHash&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> @appInfo.ShortGitHash
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">a&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Security Headers</title><link>https://www.funkysi1701.com/posts/security-headers/</link><pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/security-headers/</guid><description>&lt;p>Have you wondered what info you are leaking via your response headers?, do you want some kind of guide about what headers to set or remove altogether?&lt;/p>
 &lt;p>Head on over to &lt;a href="https://securityheaders.com/" target="_blank" rel="noopener noreferrer">https://securityheaders.com/&lt;/a>
 This is a site created by security expert &lt;a href="https://scotthelme.co.uk" target="_blank" rel="noopener noreferrer">Scott Helme&lt;/a>
 that rates a URL based on what response headers it can see.&lt;/p>
@@ -794,24 +810,25 @@ is now getting an A.&lt;img class="img-fluid" alt="Alt Text" src="https://dev-to
 &lt;/p>
 &lt;p>So how do you add/remove headers in dotnet core?&lt;/p>
 &lt;p>In my configure method in Startup.cs I have the following code block.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">app.Use(
-next =&amp;gt;
-{
-&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> context =&amp;gt;
-{
-context.Response.OnStarting(
-() =&amp;gt;
-{
-context.Response.Headers.Add(&lt;span style="color:#e6db74">&amp;#34;Permissions-Policy&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;microphone=()&amp;#34;&lt;/span>);
-context.Response.Headers.Remove(&lt;span style="color:#e6db74">&amp;#34;Server&amp;#34;&lt;/span>);
-context.Response.Headers.Remove(&lt;span style="color:#e6db74">&amp;#34;X-Powered-By&amp;#34;&lt;/span>);
-context.Response.Headers.Remove(&lt;span style="color:#e6db74">&amp;#34;X-AspNet-Version&amp;#34;&lt;/span>);
-&lt;span style="color:#66d9ef">return&lt;/span> Task.CompletedTask;
-});
-&lt;span style="color:#66d9ef">await&lt;/span> next(context);
-};
-});
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>I have only included a few of the headers I am adding as the excellent &lt;a href="https://securityheaders.com/" target="_blank" rel="noopener noreferrer">https://securityheaders.com/&lt;/a>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>app.Use(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> next =&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> context =&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.Response.OnStarting(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> () =&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.Response.Headers.Add(&lt;span style="color:#e6db74">&amp;#34;Permissions-Policy&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;microphone=()&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.Response.Headers.Remove(&lt;span style="color:#e6db74">&amp;#34;Server&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.Response.Headers.Remove(&lt;span style="color:#e6db74">&amp;#34;X-Powered-By&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.Response.Headers.Remove(&lt;span style="color:#e6db74">&amp;#34;X-AspNet-Version&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> Task.CompletedTask;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">await&lt;/span> next(context);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>I have only included a few of the headers I am adding as the excellent &lt;a href="https://securityheaders.com/" target="_blank" rel="noopener noreferrer">https://securityheaders.com/&lt;/a>
 can tell you which headers you should add and what options you might want.&lt;/p></description></item><item><title>Back to Blogging</title><link>https://www.funkysi1701.com/posts/back-to-blogging/</link><pubDate>Fri, 25 Sep 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/back-to-blogging/</guid><description>&lt;p>My last blog post was over six months ago.&lt;/p>
 &lt;p>Covid 19 has hit the world, and I will be honest I have found it a challenging time.&lt;/p>
 &lt;p>My Blog had gotten into a bit of a mess. It had become fragmented with different versions of the same thing; I will attempt to explain what has become of my blog.&lt;/p>
@@ -831,26 +848,29 @@ about how impressive it is.&lt;/p>
 &lt;p>&lt;img class="img-fluid" alt="SSL Cert" src="https://dev-to-uploads.s3.amazonaws.com/i/jb78re4fmm1ofx81f3mu.JPG" loading="lazy"
 />
 However there is a way to automate this check.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#a6e22e">[Fact]&lt;/span>
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> IsSSLExpiring()
-{
-&lt;span style="color:#66d9ef">var&lt;/span> handler = &lt;span style="color:#66d9ef">new&lt;/span> HttpClientHandler
-{
-ServerCertificateCustomValidationCallback = CustomCallback
-};
-&lt;span style="color:#66d9ef">var&lt;/span> client = &lt;span style="color:#66d9ef">new&lt;/span> HttpClient(handler);
-HttpResponseMessage response = client.GetAsync(&lt;span style="color:#e6db74">&amp;#34;https://www.example.com&amp;#34;&lt;/span>).GetAwaiter().GetResult();
-Assert.True(response.IsSuccessStatusCode);
-}
-&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">bool&lt;/span> CustomCallback(HttpRequestMessage arg1, X509Certificate2 arg2, X509Chain arg3, SslPolicyErrors arg4)
-{
-&lt;span style="color:#66d9ef">var&lt;/span> now = DateTime.UtcNow;
-&lt;span style="color:#66d9ef">var&lt;/span> expire = arg2.NotAfter;
-&lt;span style="color:#66d9ef">var&lt;/span> diff = (expire - now).TotalDays;
-Assert.InRange(diff, &lt;span style="color:#ae81ff">30&lt;/span>, &lt;span style="color:#ae81ff">1000&lt;/span>);
-&lt;span style="color:#66d9ef">return&lt;/span> arg4 == SslPolicyErrors.None;
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This code gets the SSL expiry date from &lt;a href="https://www.example.com" target="_blank" rel="noopener noreferrer">https://www.example.com&lt;/a>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">[Fact]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> IsSSLExpiring()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> handler = &lt;span style="color:#66d9ef">new&lt;/span> HttpClientHandler
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ServerCertificateCustomValidationCallback = CustomCallback
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> client = &lt;span style="color:#66d9ef">new&lt;/span> HttpClient(handler);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HttpResponseMessage response = client.GetAsync(&lt;span style="color:#e6db74">&amp;#34;https://www.example.com&amp;#34;&lt;/span>).GetAwaiter().GetResult();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Assert.True(response.IsSuccessStatusCode);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">bool&lt;/span> CustomCallback(HttpRequestMessage arg1, X509Certificate2 arg2, X509Chain arg3, SslPolicyErrors arg4)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> now = DateTime.UtcNow;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> expire = arg2.NotAfter;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> diff = (expire - now).TotalDays;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Assert.InRange(diff, &lt;span style="color:#ae81ff">30&lt;/span>, &lt;span style="color:#ae81ff">1000&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> arg4 == SslPolicyErrors.None;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This code gets the SSL expiry date from &lt;a href="https://www.example.com" target="_blank" rel="noopener noreferrer">https://www.example.com&lt;/a>
 and will fail the xunit test if the expiry date is less than 30 days in the future. I then schedule my tests to run regularly on all my environments with a Let&amp;rsquo;s Encrypt Certificate and this gives me advanced warning if a SSL certificate is about to expire.&lt;/p>
 &lt;p>The Assert.InRange(diff, 30, 1000) line will fail the test if the expiry date is less than 30 days or greater than 1000, but as the default expiry for Let&amp;rsquo;s Encrypt certificates is three months it will never be greater than 1000 days even with a freshly installed certificate. These values can be tweaked to suit your use case, however 30 days is enough time for me to investigate what is happening.&lt;/p>
 &lt;p>To execute my tests I use a scheduled build in Azure DevOps, but anything that regularly can run your tests will do the job.&lt;/p>
@@ -945,24 +965,26 @@ which I have started to watch in an effort to keep more up to date about some of
 &lt;p>I want my Function App to run on a schedule so I clicked the + next to functions and selected TimerTrigger. I am a c# programmer so I selected this option as well.&lt;/p>
 &lt;p>Give your function a name and specify using the usual cron notation how often it should run. I want mine to run at 9.30pm each night so use 0 30 21 * * *&lt;/p>
 &lt;p>Now comes the code bit. By default you get a window with the following code in it&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">using&lt;/span> System;
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> Run(TimerInfo myTimer, TraceWriter log)
-{
-log.Info(&lt;span style="color:#e6db74">$&amp;#34;C# Timer trigger function executed at: {DateTime.Now}&amp;#34;&lt;/span>);
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>It is entirely up to you what you get your function to do. In my case I just wanted to call a URL on a schedule so I created some code that used httpclient.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">
-&lt;span style="color:#66d9ef">using&lt;/span> System;
-&lt;span style="color:#66d9ef">using&lt;/span> System.Net.Http;
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task Run(TimerInfo myTimer, TraceWriter log)
-{
-log.Info(&lt;span style="color:#e6db74">$&amp;#34;Buffer 0 function executed at: {DateTime.Now}&amp;#34;&lt;/span>);
-HttpClient client = &lt;span style="color:#66d9ef">new&lt;/span> HttpClient();
-&lt;span style="color:#66d9ef">var&lt;/span> result = &lt;span style="color:#66d9ef">await&lt;/span> client.GetAsync(&lt;span style="color:#e6db74">&amp;#34;URL&amp;#34;&lt;/span>);
-&lt;span style="color:#66d9ef">string&lt;/span> resultContent = &lt;span style="color:#66d9ef">await&lt;/span> result.Content.ReadAsStringAsync();
-log.Info(resultContent);
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once you have created your app and it has run you can use the monitor section to view success and failures.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> System;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> Run(TimerInfo myTimer, TraceWriter log)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log.Info(&lt;span style="color:#e6db74">$&amp;#34;C# Timer trigger function executed at: {DateTime.Now}&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It is entirely up to you what you get your function to do. In my case I just wanted to call a URL on a schedule so I created some code that used httpclient.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> System;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> System.Net.Http;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task Run(TimerInfo myTimer, TraceWriter log)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log.Info(&lt;span style="color:#e6db74">$&amp;#34;Buffer 0 function executed at: {DateTime.Now}&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HttpClient client = &lt;span style="color:#66d9ef">new&lt;/span> HttpClient();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> result = &lt;span style="color:#66d9ef">await&lt;/span> client.GetAsync(&lt;span style="color:#e6db74">&amp;#34;URL&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">string&lt;/span> resultContent = &lt;span style="color:#66d9ef">await&lt;/span> result.Content.ReadAsStringAsync();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log.Info(resultContent);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once you have created your app and it has run you can use the monitor section to view success and failures.&lt;/p>
 &lt;p>There is loads more you can do with Azure Function but this is a good place to start.&lt;/p></description></item><item><title>Pwned Pass – Available from the Play Store</title><link>https://www.funkysi1701.com/posts/pwned-pass-available-from-the-play-store/</link><pubDate>Mon, 14 Aug 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/pwned-pass-available-from-the-play-store/</guid><description>&lt;p>Pwned Pass is now available from the &lt;a href="https://play.google.com/store/apps/details?id=pwnedpasswords.pwnedpasswords" target="_blank" rel="noopener noreferrer">Google Play Store&lt;/a>
 .&lt;/p>
 &lt;p>&lt;img class="img-fluid" alt="Pwned Pass" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/08/Screenshot_20170813-205152.png?resize=169%2C300&amp;amp;ssl=1" loading="lazy"
@@ -991,13 +1013,13 @@ nuget package due to problems I encountered with httpclient and SSL. This is due
 &lt;p>Next I wanted to monitor my app. Now I know Application Insights doesn’t support apps so what tools are out there? HockeyApp is something I had heard of but they are in the process of being replaced with &lt;a href="https://appcenter.ms/apps" target="_blank" rel="noopener noreferrer">Visual Studio Mobile Centre&lt;/a>
 .&lt;/p>
 &lt;p>It was relatively easy to hook up my app to Visual Studio Mobile Centre. First install the required nuget packages. Then add using statements and the following line to your MainActivity.cs file (these instructions are available on the Mobile Centre)&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Azure.Mobile;
-&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Azure.Mobile.Analytics;
-&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Azure.Mobile.Crashes;
-&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Azure.Mobile.Distribute;
-&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Azure.Mobile.Push;
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">MobileCenter.Start(&lt;span style="color:#e6db74">&amp;#34;[Unique ID]&amp;#34;&lt;/span>,&lt;span style="color:#66d9ef">typeof&lt;/span>(Analytics), &lt;span style="color:#66d9ef">typeof&lt;/span>(Crashes), &lt;span style="color:#66d9ef">typeof&lt;/span>(Distribute), &lt;span style="color:#66d9ef">typeof&lt;/span>(Push));
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now you can connect the Mobile Centre to your source code (VSTS in my case) and get it to run a build for every commit.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Azure.Mobile;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Azure.Mobile.Analytics;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Azure.Mobile.Crashes;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Azure.Mobile.Distribute;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> Microsoft.Azure.Mobile.Push;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>MobileCenter.Start(&lt;span style="color:#e6db74">&amp;#34;[Unique ID]&amp;#34;&lt;/span>,&lt;span style="color:#66d9ef">typeof&lt;/span>(Analytics), &lt;span style="color:#66d9ef">typeof&lt;/span>(Crashes), &lt;span style="color:#66d9ef">typeof&lt;/span>(Distribute), &lt;span style="color:#66d9ef">typeof&lt;/span>(Push));
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now you can connect the Mobile Centre to your source code (VSTS in my case) and get it to run a build for every commit.&lt;/p>
 &lt;p>One complexity of the build is that you need to supply a keystore file (basically a certificate to digitally sign your app). I found the best way to do this was to use Visual Studio to create the file.&lt;/p>
 &lt;p>In VS2017 there is a option called Archive Manager under the tools menu. In here click the distribute button and select Ad-hoc. In the signing identity section you can create a keystore file. Enter a few details and a keystore file will be created in AppData\Local\Xamarin\Mono for Android\Keystore[keystore name][keystore name.keystore]&lt;/p>
 &lt;p>Once you have added the keystore file to your build you can enable the distribute option. Now you will get an email after every build with a link to install your app.&lt;/p>
@@ -1007,35 +1029,35 @@ nuget package due to problems I encountered with httpclient and SSL. This is due
 &lt;p>Like most things the best way to learn about something is to use it in a real world example. I am currently adding an email alert feature to a website. This is an ideal example of something that would benefit from Asynchronous programming. There is no need for the webpage to wait to send 1000s of emails, lets just send a call to get started and allow the browser to carry on as normal.&lt;/p>
 &lt;p>This is my first try at using async and await so feel free to suggest best practises in the comments.&lt;/p>
 &lt;p>Lets start with a Send method in my EmailController.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> ActionResult Send(&lt;span style="color:#66d9ef">int&lt;/span> id, &lt;span style="color:#66d9ef">int&lt;/span> pageId, &lt;span style="color:#66d9ef">int&lt;/span> userID)
-{
-&lt;span style="color:#66d9ef">if&lt;/span> (!Authorize.checkPageIsAuthorised(userID, (Authorize.PageIds)pageId))
-{
-&lt;span style="color:#66d9ef">return&lt;/span> Redirect(&lt;span style="color:#e6db74">&amp;#34;/login&amp;#34;&lt;/span>);
-}
-&lt;span style="color:#66d9ef">else&lt;/span>
-{
-Task&amp;lt;&lt;span style="color:#66d9ef">string&lt;/span>&amp;gt; t = SendNotifications(id,userID);
-&lt;span style="color:#66d9ef">return&lt;/span> Redirect(Request.UrlReferrer.ToString());
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This simply checks to see if you have permission to the page. If not redirects to the login page otherwise it makes a method call and redirects back to the page it came from.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> ActionResult Send(&lt;span style="color:#66d9ef">int&lt;/span> id, &lt;span style="color:#66d9ef">int&lt;/span> pageId, &lt;span style="color:#66d9ef">int&lt;/span> userID)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (!Authorize.checkPageIsAuthorised(userID, (Authorize.PageIds)pageId))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> Redirect(&lt;span style="color:#e6db74">&amp;#34;/login&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Task&amp;lt;&lt;span style="color:#66d9ef">string&lt;/span>&amp;gt; t = SendNotifications(id,userID);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> Redirect(Request.UrlReferrer.ToString());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This simply checks to see if you have permission to the page. If not redirects to the login page otherwise it makes a method call and redirects back to the page it came from.&lt;/p>
 &lt;p>Lets have a look at that method call in more detail.&lt;/p>
 &lt;p>Task&lt;string> t = SendNotification(id, userid);&lt;/p>
 &lt;p>SendNotification doesn’t return a normal string it returns a Task&lt;string>, so lets look at how we are creating this.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task&amp;lt;&lt;span style="color:#66d9ef">string&lt;/span>&amp;gt; SendNotifications(&lt;span style="color:#66d9ef">int&lt;/span> id,&lt;span style="color:#66d9ef">string&lt;/span> type,&lt;span style="color:#66d9ef">int&lt;/span> userid)
-{
-&lt;span style="color:#75715e">//logic ommitted
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">await&lt;/span> ef.SendEmail(model, emailHtmlBody);
-&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;OK&amp;#34;&lt;/span>;
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The return type is set to Task but it has the aysnc keyword appended to it. It also makes a call with the await keyword.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task SendEmail(EmailModel model,&lt;span style="color:#66d9ef">string&lt;/span> emailHtmlBody)
-{
-&lt;span style="color:#75715e">//logic removed
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">await&lt;/span> smtp.SendMailAsync(message);
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>So that is it. My first bit of code that uses Async and Await. My controller calls a method asynchronously which then calls another method asynchronously which sends emails asynchronously.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task&amp;lt;&lt;span style="color:#66d9ef">string&lt;/span>&amp;gt; SendNotifications(&lt;span style="color:#66d9ef">int&lt;/span> id,&lt;span style="color:#66d9ef">string&lt;/span> type,&lt;span style="color:#66d9ef">int&lt;/span> userid)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//logic ommitted&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">await&lt;/span> ef.SendEmail(model, emailHtmlBody);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;OK&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The return type is set to Task but it has the aysnc keyword appended to it. It also makes a call with the await keyword.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task SendEmail(EmailModel model,&lt;span style="color:#66d9ef">string&lt;/span> emailHtmlBody)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//logic removed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">await&lt;/span> smtp.SendMailAsync(message);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>So that is it. My first bit of code that uses Async and Await. My controller calls a method asynchronously which then calls another method asynchronously which sends emails asynchronously.&lt;/p>
 &lt;p>Async – This enables the Await keyword to be used in the method&lt;/p>
 &lt;p>Await – This is where things get asynchronous. The await keyword allows the code to wait asynchronously for the long running code to complete.&lt;/p></description></item><item><title>How good is your SSL?</title><link>https://www.funkysi1701.com/posts/how-good-is-your-ssl/</link><pubDate>Mon, 17 Jul 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/how-good-is-your-ssl/</guid><description>&lt;p>&lt;img class="img-fluid" alt="Troy Hunt SSL expert" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/07/Troy-Hunt-Profile-Photo.jpg?resize=150%2C150&amp;amp;ssl=1" loading="lazy"
 />
@@ -1137,12 +1159,12 @@ and type the address that is on the SSL certificate in to the search. The good n
 &lt;p>Assert.AreEqual(expected value, actual value)&lt;/p>
 &lt;p>Say for example you wanted to test a method called ReturnsTrue() which does nothing but returns a value of true. This method is in a class called ReturnsTrueClass&lt;/p>
 &lt;p>The Arrange step in this example would be.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">ReturnsTrueClass t = &lt;span style="color:#66d9ef">new&lt;/span> ReturnsTrueClass();
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The Act step in this example would be.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">var&lt;/span> result = t.ReturnTrue();
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The Assert step in this example would be.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">Assert.AreEqual(&lt;span style="color:#66d9ef">true&lt;/span>, result);
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is a stupidly simple example but hopefully you get the idea of how you can build all your tests with these three steps.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>ReturnsTrueClass t = &lt;span style="color:#66d9ef">new&lt;/span> ReturnsTrueClass();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The Act step in this example would be.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">var&lt;/span> result = t.ReturnTrue();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The Assert step in this example would be.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>Assert.AreEqual(&lt;span style="color:#66d9ef">true&lt;/span>, result);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is a stupidly simple example but hopefully you get the idea of how you can build all your tests with these three steps.&lt;/p>
 &lt;p>Recently I saw a tweet complaining that someone has mixed up expected and actual in the Assert statement.&lt;/p>
 &lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">There is a minor but special hell reserved for those who mix up the expected and actual parameters in Assert.Equals&lt;/p>&amp;mdash; Keith Williams (@zogface) &lt;a href="https://twitter.com/zogface/status/882737770095149056?ref_src=twsrc%5Etfw">July 5, 2017&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
 &lt;p>At first glance this probably isn’t the worst mistake to make as if your tests are all passing actual and expected are the same.&lt;/p>
@@ -1153,48 +1175,48 @@ and type the address that is on the SSL certificate in to the search. The good n
 &lt;p>First step is to use nuget to install the AWS packages. In nuget the packages you want are called AWSSDK.Core and AWSSDK.S3.&lt;/p>
 &lt;p>The using statements you want to use are called Amazon.S3 and Amazon.S3.Transfer, not sure why this doesn’t match nuget, this difference caught me out a couple of times.&lt;/p>
 &lt;p>Now to the code that uploads files&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">AmazonS3Client AWSclient = &lt;span style="color:#66d9ef">new&lt;/span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.EUWest1);
-TransferUtility fileTransferUtility = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtility(AWSclient);
-&lt;span style="color:#66d9ef">using&lt;/span> (FileStream streamWriter = &lt;span style="color:#66d9ef">new&lt;/span> FileStream(path, FileMode.Open))
-{
-TransferUtilityUploadRequest fileTransferUtilityRequest = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtilityUploadRequest
-{
-BucketName = &lt;span style="color:#e6db74">&amp;#34;flawlessimages&amp;#34;&lt;/span>,
-InputStream = streamWriter,
-Key = fileName
-};
-fileTransferUtility.Upload(fileTransferUtilityRequest);
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Lets break it down and look at what it does.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">AmazonS3Client AWSclient = &lt;span style="color:#66d9ef">new&lt;/span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.EUWest1);
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This creates an instance of AmazonS3Client, we are passing the Access Key and Secret Access Key both of which can be found from your Amazon S3 account My Security Credentials section. Amazon.RegionEndpoint.EUWest1 specifies the amazon data centres that your bucket is located in.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">TransferUtility fileTransferUtility = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtility(AWSclient);
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This creates an instance of TransfterUtility using the AmazonS3Client instance we created in the previous step.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">&lt;span style="color:#66d9ef">using&lt;/span> (FileStream streamWriter = &lt;span style="color:#66d9ef">new&lt;/span> FileStream(path, FileMode.Open))
-{
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This opens up a filestream from a files path and specifies that the file should be opened.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">TransferUtilityUploadRequest fileTransferUtilityRequest = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtilityUploadRequest
-{
-BucketName = &lt;span style="color:#e6db74">&amp;#34;flawlessimages&amp;#34;&lt;/span>,
-InputStream = streamWriter,
-Key = fileName
-};
-fileTransferUtility.Upload(fileTransferUtilityRequest);
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This last step specifies which bucket to upload to, what input stream to upload and the Key to use. Key is just AWS way of referring to files, more commonly referred to as the filename.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c#" data-lang="c#">&lt;span style="display:flex;">&lt;span>AmazonS3Client AWSclient = &lt;span style="color:#66d9ef">new&lt;/span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.EUWest1);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>TransferUtility fileTransferUtility = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtility(AWSclient);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> (FileStream streamWriter = &lt;span style="color:#66d9ef">new&lt;/span> FileStream(path, FileMode.Open))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> TransferUtilityUploadRequest fileTransferUtilityRequest = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtilityUploadRequest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> BucketName = &lt;span style="color:#e6db74">&amp;#34;flawlessimages&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> InputStream = streamWriter,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Key = fileName
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fileTransferUtility.Upload(fileTransferUtilityRequest);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Lets break it down and look at what it does.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c#" data-lang="c#">&lt;span style="display:flex;">&lt;span>AmazonS3Client AWSclient = &lt;span style="color:#66d9ef">new&lt;/span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.EUWest1);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This creates an instance of AmazonS3Client, we are passing the Access Key and Secret Access Key both of which can be found from your Amazon S3 account My Security Credentials section. Amazon.RegionEndpoint.EUWest1 specifies the amazon data centres that your bucket is located in.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c#" data-lang="c#">&lt;span style="display:flex;">&lt;span>TransferUtility fileTransferUtility = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtility(AWSclient);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This creates an instance of TransfterUtility using the AmazonS3Client instance we created in the previous step.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c#" data-lang="c#">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> (FileStream streamWriter = &lt;span style="color:#66d9ef">new&lt;/span> FileStream(path, FileMode.Open))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This opens up a filestream from a files path and specifies that the file should be opened.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c#" data-lang="c#">&lt;span style="display:flex;">&lt;span>TransferUtilityUploadRequest fileTransferUtilityRequest = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtilityUploadRequest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> BucketName = &lt;span style="color:#e6db74">&amp;#34;flawlessimages&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> InputStream = streamWriter,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Key = fileName
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fileTransferUtility.Upload(fileTransferUtilityRequest);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This last step specifies which bucket to upload to, what input stream to upload and the Key to use. Key is just AWS way of referring to files, more commonly referred to as the filename.&lt;/p>
 &lt;p>This is all you need to do to upload a file to your Bucket. The file will be located at &lt;a href="https://s3-eu-west-1.amazonaws.com/[bucketname]/[filename]" target="_blank" rel="noopener noreferrer">https://s3-eu-west-1.amazonaws.com/[bucketname]/[filename]&lt;/a>
 , however by default it will not be downloadable until you set Read permission to everyone, once you do that anyone who has the link will be able to download your file.&lt;/p>
 &lt;p>This is the same permission level as any file you have on your webserver, however AWS has a better way.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">&lt;span style="color:#66d9ef">using&lt;/span> (s3Client = &lt;span style="color:#66d9ef">new&lt;/span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.USEast1))
-{
-GetPreSignedUrlRequest request1 = &lt;span style="color:#66d9ef">new&lt;/span> GetPreSignedUrlRequest
-{
-BucketName = bucketName,
-Key = filename,
-Expires = DateTime.Now.AddMinutes(&lt;span style="color:#ae81ff">5&lt;/span>)
-};
-urlString = s3Client.GetPreSignedURL(request1);
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Here we are generating a url to download the file, but we are specifying that it is only valid for 5 minutes. This means that if you share the url it will only work for 5 minutes, after that AWS will give an access denied message.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c#" data-lang="c#">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> (s3Client = &lt;span style="color:#66d9ef">new&lt;/span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.USEast1))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> GetPreSignedUrlRequest request1 = &lt;span style="color:#66d9ef">new&lt;/span> GetPreSignedUrlRequest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> BucketName = bucketName,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Key = filename,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Expires = DateTime.Now.AddMinutes(&lt;span style="color:#ae81ff">5&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> urlString = s3Client.GetPreSignedURL(request1);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Here we are generating a url to download the file, but we are specifying that it is only valid for 5 minutes. This means that if you share the url it will only work for 5 minutes, after that AWS will give an access denied message.&lt;/p>
 &lt;p>This is much better security than you have on a typical web server, and easy to implement, every time a user clicks on a download link you generate a new presigned url and send the download to the browser, as long as this process doesn’t take longer than 5 minutes the user will never know.&lt;/p></description></item><item><title>Using Azure WebJobs to Automate Stuff</title><link>https://www.funkysi1701.com/posts/using-azure-webjobs-to-automate-stuff/</link><pubDate>Mon, 26 Jun 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/using-azure-webjobs-to-automate-stuff/</guid><description>&lt;p>I keep hearing about Azure WebJobs but I have never used them. Time to change this.&lt;/p>
 &lt;p>WebJobs are a feature of Azure App Service that can run a script at a specific time. In my case I would like to hit a specific url of my website at the same time every day.&lt;/p>
 &lt;p>&lt;img class="img-fluid" alt="WebJobs" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/06/addkeepalivewebjob.png?resize=313%2C615&amp;amp;ssl=1" loading="lazy"
@@ -1202,9 +1224,9 @@ urlString = s3Client.GetPreSignedURL(request1);
 To the right you can see an example of the WebJobs form on the Azure portal that you need to fill in.&lt;/p>
 &lt;p>You need to supply a name for your webjob.&lt;/p>
 &lt;p>You need to upload the script that will run in my case I used a powershell script. My script consisted of which basically just loads the url specified.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">$progressPreference = &lt;span style="color:#e6db74">&amp;#34;silentlyContinue&amp;#34;&lt;/span>;
-$result = Invoke-WebRequest -Uri (&lt;span style="color:#e6db74">&amp;#34;https://www.google.com&amp;#34;&lt;/span>) -Method Get -UseBasicParsing;
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Type refers to if your job will be triggered or run continuously, I want it to be triggered.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>$progressPreference = &lt;span style="color:#e6db74">&amp;#34;silentlyContinue&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$result = Invoke-WebRequest -Uri (&lt;span style="color:#e6db74">&amp;#34;https://www.google.com&amp;#34;&lt;/span>) -Method Get -UseBasicParsing;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Type refers to if your job will be triggered or run continuously, I want it to be triggered.&lt;/p>
 &lt;p>Triggers refers to if you want it to be scheduled or manual, something that you can run on an ad hoc basis. I of course want scheduled.&lt;/p>
 &lt;p>If you are familiar with the linux CRON then the next box will make sense to you for everyone else I will try and make sense of it. The box consists of 6 numbers which can either have a value or a *. The numbers correspond to the following {second} {minute} {hour} {day} {month} {day of the week}.&lt;/p>
 &lt;p>A hourly job would be expressed as 0 0 * * * *, ie every day of week, every month, every day, every hour and only when minute and second equals zero. For more help with this check out the &lt;a href="https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-create-web-jobs#CreateScheduledCRON" target="_blank" rel="noopener noreferrer">MSDN docs&lt;/a>
@@ -1272,48 +1294,49 @@ For the past few weeks my software developing has been taking a back seat as I p
 &lt;p>An interface defines a contract and any class that implements that interface agrees to fulfil that contract.&lt;/p>
 &lt;p>Lets look at an example as this tends to be how I learn best.&lt;/p>
 &lt;p>Most applications require some sort of data to work from so lets start by defining IData which can load data.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">interface&lt;/span> IData
-{
-Blog LoadData(&lt;span style="color:#66d9ef">string&lt;/span> Connectionstring);
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>My interface defines one method LoadData and outputs an object called Blog (I will explain why in a minute)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">interface&lt;/span> &lt;span style="color:#a6e22e">IData&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Blog LoadData(&lt;span style="color:#66d9ef">string&lt;/span> Connectionstring);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>My interface defines one method LoadData and outputs an object called Blog (I will explain why in a minute)&lt;/p>
 &lt;p>A common data source is a SQL database so we could define a SQL class that implements IData.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">SQL&lt;/span> : IData
-{
-&lt;span style="color:#66d9ef">public&lt;/span> Blog LoadData(&lt;span style="color:#66d9ef">string&lt;/span> Connectionstring)
-{
-Blog blog = &lt;span style="color:#66d9ef">new&lt;/span> Blog();
-&lt;span style="color:#66d9ef">using&lt;/span> (SqlConnection con = &lt;span style="color:#66d9ef">new&lt;/span> SqlConnection(Connectionstring))
-{
-con.Open();
-&lt;span style="color:#75715e">//etc
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We could also get data from an RSS feed of a blog (hence why I called the object Blog earlier)&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">XML&lt;/span> : IData
-{
-&lt;span style="color:#66d9ef">public&lt;/span> Blog LoadData(&lt;span style="color:#66d9ef">string&lt;/span> Connectionstring)
-{
-XmlDocument myXmlDocument = &lt;span style="color:#66d9ef">new&lt;/span> XmlDocument();
-myXmlDocument.Load(Connectionstring);
-Blog blog = &lt;span style="color:#66d9ef">new&lt;/span> Blog();
-&lt;span style="color:#66d9ef">foreach&lt;/span> (XmlNode RootNode &lt;span style="color:#66d9ef">in&lt;/span> myXmlDocument.ChildNodes)
-{
-&lt;span style="color:#75715e">//etc
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Both classes implement IData and have a method called LoadData which has a string parameter and outputs a blog object. The string parameter is either a connection string to a SQL database or the URL of the rss feed. Not sure if there is a better way of doing this bit, maybe the name of the string needs making more generic.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">SQL&lt;/span> : IData
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Blog LoadData(&lt;span style="color:#66d9ef">string&lt;/span> Connectionstring)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Blog blog = &lt;span style="color:#66d9ef">new&lt;/span> Blog();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">using&lt;/span> (SqlConnection con = &lt;span style="color:#66d9ef">new&lt;/span> SqlConnection(Connectionstring))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> con.Open();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//etc&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We could also get data from an RSS feed of a blog (hence why I called the object Blog earlier)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">XML&lt;/span> : IData
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Blog LoadData(&lt;span style="color:#66d9ef">string&lt;/span> Connectionstring)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> XmlDocument myXmlDocument = &lt;span style="color:#66d9ef">new&lt;/span> XmlDocument();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> myXmlDocument.Load(Connectionstring);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Blog blog = &lt;span style="color:#66d9ef">new&lt;/span> Blog();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">foreach&lt;/span> (XmlNode RootNode &lt;span style="color:#66d9ef">in&lt;/span> myXmlDocument.ChildNodes)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//etc&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Both classes implement IData and have a method called LoadData which has a string parameter and outputs a blog object. The string parameter is either a connection string to a SQL database or the URL of the rss feed. Not sure if there is a better way of doing this bit, maybe the name of the string needs making more generic.&lt;/p>
 &lt;p>Now we have some classes that implement an interface what can we do with them. Lets write a class called GetData which gets data but doesn’t care if it comes form the rss feed or a SQL database.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">GetData&lt;/span>
-{
-&lt;span style="color:#66d9ef">private&lt;/span> IData &lt;span style="color:#ae81ff">_&lt;/span>repo;
-&lt;span style="color:#66d9ef">public&lt;/span> GetData(IData repo)
-{
-&lt;span style="color:#ae81ff">_&lt;/span>repo = repo;
-}
-&lt;span style="color:#66d9ef">public&lt;/span> Blog LoadData(&lt;span style="color:#66d9ef">string&lt;/span> Connectionstring)
-{
-&lt;span style="color:#66d9ef">var&lt;/span> original = &lt;span style="color:#ae81ff">_&lt;/span>repo.LoadData(Connectionstring);
-&lt;span style="color:#66d9ef">return&lt;/span> original;
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>When we call GetData we can either pass in XML or SQL as the class is not tied to either implementation. We could even write other classes that implement IData for testing purposes.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">GetData&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> IData &lt;span style="color:#ae81ff">_&lt;/span>repo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> GetData(IData repo)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">_&lt;/span>repo = repo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Blog LoadData(&lt;span style="color:#66d9ef">string&lt;/span> Connectionstring)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> original = &lt;span style="color:#ae81ff">_&lt;/span>repo.LoadData(Connectionstring);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> original;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>When we call GetData we can either pass in XML or SQL as the class is not tied to either implementation. We could even write other classes that implement IData for testing purposes.&lt;/p>
 &lt;p>My full code can be found on &lt;a href="https://github.com/funkysi1701/InterfaceExample" target="_blank" rel="noopener noreferrer">github&lt;/a>
 .&lt;/p>
 &lt;p>The advantages of writing code in this way include code that is easier to extend, easier to test and easier to maintain. This is only the start of my understanding and I am sure this is going to be a topic I come back to in the next few weeks.&lt;/p></description></item><item><title>Learning R</title><link>https://www.funkysi1701.com/posts/learning-r/</link><pubDate>Mon, 27 Feb 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/learning-r/</guid><description>&lt;p>&lt;img class="img-fluid" alt="R" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/02/Exchange-Rate-Calculator.jpg?resize=300%2C202&amp;amp;ssl=1" loading="lazy"
@@ -1325,18 +1348,18 @@ Today I spent some time learning the R language.&lt;/p>
 &lt;p>My finished code can be found on &lt;a href="https://github.com/funkysi1701/ExchangeRate/blob/master/script.R" target="_blank" rel="noopener noreferrer">github&lt;/a>
 and I will attempt to explain some of it.&lt;/p>
 &lt;p>R defines functions fairly simply&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-r" data-lang="r">nameoffunction &lt;span style="color:#f92672">&amp;lt;-&lt;/span> &lt;span style="color:#a6e22e">function&lt;/span>(arg1, arg2)
-{
-arg1 &lt;span style="color:#f92672">*&lt;/span> arg2
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>I have created a function that takes 2 parameters date and currency. I know I have about 10 different currencies that I want to get currencies for and I want to loop through each day so I will need to pass in a date.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-r" data-lang="r">&lt;span style="display:flex;">&lt;span>nameoffunction &lt;span style="color:#f92672">&amp;lt;-&lt;/span> &lt;span style="color:#a6e22e">function&lt;/span>(arg1, arg2)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>arg1 &lt;span style="color:#f92672">*&lt;/span> arg2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>I have created a function that takes 2 parameters date and currency. I know I have about 10 different currencies that I want to get currencies for and I want to loop through each day so I will need to pass in a date.&lt;/p>
 &lt;p>The source of my exchange rate information is the &lt;a href="http://www.xe.com" target="_blank" rel="noopener noreferrer">www.xe.com&lt;/a>
 website, its historical exchange rate page passes currency and date into the query string so I should be able to build up a string containing all the different elements.&lt;/p>
 &lt;p>All programming language can concatenate strings and R is no different. R uses paste()&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-r" data-lang="r">var &lt;span style="color:#f92672">&amp;lt;-&lt;/span> &lt;span style="color:#a6e22e">paste&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Hello&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;World&amp;#34;&lt;/span>)
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>However R has an annoying feature in this function. I would expect that var in the above example would contain &amp;ldquo;HelloWorld&amp;rdquo;, it doesn’t it contains &amp;ldquo;Hello World&amp;rdquo;. Why it automatically adds a space I don’t know?&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-r" data-lang="r">var &lt;span style="color:#f92672">&amp;lt;-&lt;/span> &lt;span style="color:#a6e22e">paste&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Hello&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;World&amp;#34;&lt;/span>, sep&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>)
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>I am not entirely sure what all of the code does but I can take a good guess.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-r" data-lang="r">&lt;span style="display:flex;">&lt;span>var &lt;span style="color:#f92672">&amp;lt;-&lt;/span> &lt;span style="color:#a6e22e">paste&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Hello&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;World&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>However R has an annoying feature in this function. I would expect that var in the above example would contain &amp;ldquo;HelloWorld&amp;rdquo;, it doesn’t it contains &amp;ldquo;Hello World&amp;rdquo;. Why it automatically adds a space I don’t know?&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-r" data-lang="r">&lt;span style="display:flex;">&lt;span>var &lt;span style="color:#f92672">&amp;lt;-&lt;/span> &lt;span style="color:#a6e22e">paste&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Hello&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;World&amp;#34;&lt;/span>, sep&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>I am not entirely sure what all of the code does but I can take a good guess.&lt;/p>
 &lt;p>read_html() I would guess loads a html page, html_nodes() finds all the html tags of a certain type on the page, in my case &amp;lt;table&amp;gt;, html_table() reads the first table it finds.&lt;/p>
 &lt;p>table1[2] selects the second column, and head() selects a specific number of rows. I want the first row and second column so I combine these two as head(table1[2],1)&lt;/p>
 &lt;p>Now that I have found my exchange rate what do I do with it? R can read and write to SQL Server so why not store this info in a SQL lookup table. I can then use this data in a stored procedure when I process my data.&lt;/p>
@@ -1387,8 +1410,8 @@ which got me to start thinking more if I was giving myself future problems. But 
 &lt;p>A common data item that gets stored in databases is addresses and addresses often contain line breaks to make the data display better. In the earlier versions of SSMS, when you copied and pasted these line breaks were ignored and the data displayed the same in SSMS as it did in Excel. However in the more recent version, theses line breaks got copied across breaking your spreadsheet and making it hard to see what data corresponded with what.&lt;/p>
 &lt;p>Now I don’t know if this should be described as introducing a bug or fixing one. I can easily argue both sides. If your data contains a line break and you copy this data it should include the line break in the destination, but if it does that it displays badly in Excel.&lt;/p>
 &lt;p>The fix I have been using until recently is to use the following TSQL command in my queries.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sql" data-lang="sql">&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#66d9ef">REPLACE&lt;/span>(&lt;span style="color:#66d9ef">REPLACE&lt;/span>(&lt;span style="color:#f92672">@&lt;/span>str, CHAR(&lt;span style="color:#ae81ff">13&lt;/span>), &lt;span style="color:#e6db74">&amp;#34;), CHAR(10), &amp;#34;&lt;/span>)
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This command replaces any line breaks with an empty string. Both Char(10) and Char(13) are needed because you can have different types of line breaks. This is great if you are writing the script from scratch but isn’t great if your are running a stored procedure or your query has a lot of columns.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#66d9ef">REPLACE&lt;/span>(&lt;span style="color:#66d9ef">REPLACE&lt;/span>(&lt;span style="color:#f92672">@&lt;/span>str, CHAR(&lt;span style="color:#ae81ff">13&lt;/span>), &lt;span style="color:#e6db74">&amp;#34;), CHAR(10), &amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This command replaces any line breaks with an empty string. Both Char(10) and Char(13) are needed because you can have different types of line breaks. This is great if you are writing the script from scratch but isn’t great if your are running a stored procedure or your query has a lot of columns.&lt;/p>
 &lt;p>The answer to this is to use Visual Studio to run your SQL query. In Visual Studio you can write and run queries via Server Explorer and the results produced don’t contain line breaks. I have only just discovered this solution, but so far it has worked and is very easy to do, plus as I do most of my development in Visual Studio anyway it saves me having to open SSMS to test my queries.&lt;/p></description></item><item><title>Star Trek is back (in 2017)</title><link>https://www.funkysi1701.com/posts/star-trek-is-back-in-2017/</link><pubDate>Thu, 12 Nov 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/star-trek-is-back-in-2017/</guid><description>&lt;p>&lt;img class="img-fluid" alt="3f448330857e4ca7ba40ab5465a3c2cb62cdb98c" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/11/3f448330857e4ca7ba40ab5465a3c2cb62cdb98c.png?resize=620%2C260" loading="lazy"
 />
 &lt;/p>

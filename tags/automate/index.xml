@@ -5,9 +5,9 @@
 To the right you can see an example of the WebJobs form on the Azure portal that you need to fill in.&lt;/p>
 &lt;p>You need to supply a name for your webjob.&lt;/p>
 &lt;p>You need to upload the script that will run in my case I used a powershell script. My script consisted of which basically just loads the url specified.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-powershell" data-lang="powershell">$progressPreference = &lt;span style="color:#e6db74">&amp;#34;silentlyContinue&amp;#34;&lt;/span>;
-$result = Invoke-WebRequest -Uri (&lt;span style="color:#e6db74">&amp;#34;https://www.google.com&amp;#34;&lt;/span>) -Method Get -UseBasicParsing;
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Type refers to if your job will be triggered or run continuously, I want it to be triggered.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>$progressPreference = &lt;span style="color:#e6db74">&amp;#34;silentlyContinue&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$result = Invoke-WebRequest -Uri (&lt;span style="color:#e6db74">&amp;#34;https://www.google.com&amp;#34;&lt;/span>) -Method Get -UseBasicParsing;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Type refers to if your job will be triggered or run continuously, I want it to be triggered.&lt;/p>
 &lt;p>Triggers refers to if you want it to be scheduled or manual, something that you can run on an ad hoc basis. I of course want scheduled.&lt;/p>
 &lt;p>If you are familiar with the linux CRON then the next box will make sense to you for everyone else I will try and make sense of it. The box consists of 6 numbers which can either have a value or a *. The numbers correspond to the following {second} {minute} {hour} {day} {month} {day of the week}.&lt;/p>
 &lt;p>A hourly job would be expressed as 0 0 * * * *, ie every day of week, every month, every day, every hour and only when minute and second equals zero. For more help with this check out the &lt;a href="https://docs.microsoft.com/en-us/azure/app-service-web/web-sites-create-web-jobs#CreateScheduledCRON" target="_blank" rel="noopener noreferrer">MSDN docs&lt;/a>

@@ -21,8 +21,7 @@
 <meta name=twitter:image content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg">
 <meta name=twitter:title content="Lets see what 2019 can do!">
 <meta name=twitter:description content="This is my annual lets make some goals for the new year blog post.">
-<link rel=stylesheet href=https://www.funkysi1701.com/css/main.min.b7a6eda8d46e39a549f182cf72a9ff4f4c1d4d82c31ecc3ede0b7f4d5b26f32b.css crossorigin=anonymous><link rel=stylesheet href=https://www.funkysi1701.com/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css integrity="sha256-PSKHlLztu/oEEr64+8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin=anonymous></head>
-<body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+<link rel=stylesheet href=https://www.funkysi1701.com/css/main.min.b7a6eda8d46e39a549f182cf72a9ff4f4c1d4d82c31ecc3ede0b7f4d5b26f32b.css crossorigin=anonymous><link rel=stylesheet href=https://www.funkysi1701.com/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css integrity="sha256-PSKHlLztu/oEEr64+8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin=anonymous></head><body><script>const items=["mode","palette"];items.forEach(function(e){const t=localStorage.getItem("hbs-"+e);t&&document.body.parentElement.setAttribute("data-"+e,t)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
 <div class=container>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <i class="fas fa-bars"></i>
@@ -30,55 +29,41 @@
 </a>
 <div class="offcanvas offcanvas-bottom surface" tabindex=-1 id=offcanvasSocialShare aria-labelledby=offcanvasSocialShare>
 <div class=offcanvas-header>
-<h3 class=offcanvas-title>Share</h3>
-<button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
+<h3 class=offcanvas-title>Share</h3><button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
 <i class="fas fa-times"></i>
 </button>
-</div>
-<div class=offcanvas-body>
+</div><div class=offcanvas-body>
 <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button" target=_blank href="https://twitter.com/intent/tweet?title=Lets%20see%20what%202019%20can%20do%21&url=https%3a%2f%2fwww.funkysi1701.com%2fposts%2flets-see-what-2019-can-do%2f">
 <i class="fab fa-fw fa-twitter"></i> Twitter
 </a>
 <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button" target=_blank href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.funkysi1701.com%2fposts%2flets-see-what-2019-can-do%2f">
 <i class="fab fa-fw fa-facebook-f"></i> Facebook
 </a>
-</div>
-</div>
-<button class=navbar-settings type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasSettings aria-controls=offcanvasSettings aria-label="Toggle settings">
+</div></div><button class=navbar-settings type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasSettings aria-controls=offcanvasSettings aria-label="Toggle settings">
 <i class="fas fa-ellipsis-v"></i>
 </button>
 <div class="offcanvas offcanvas-end surface h-100" tabindex=-1 id=offcanvasSettings aria-labelledby=offcanvasSettings>
 <div class=offcanvas-header>
-<h3 class=offcanvas-title>Settings</h3>
-<button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
+<h3 class=offcanvas-title>Settings</h3><button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
 <i class="fas fa-times"></i>
 </button>
-</div>
-<div class="offcanvas-body d-flex flex-column">
+</div><div class="offcanvas-body d-flex flex-column">
 <section class=setting>
 <form class=row>
 <div class=col-auto>
 <label><i class="fas fa-fw fa-adjust"></i> Mode</label>
-</div>
-<div class="col-auto ms-auto">
+</div><div class="col-auto ms-auto">
 <div class="form-check form-switch">
 <input class=form-check-input type=checkbox id=modeSwitcher>
-</div>
-</div>
-</form>
-</section>
-<section class="setting palettes">
+</div></div></form></section><section class="setting palettes">
 <form class=row>
 <div class=col-auto>
 <label><i class="fas fa-fw fa-palette"></i> Palette</label>
-</div>
-<div class="col-auto ms-auto">
+</div><div class="col-auto ms-auto">
 <a id=btnPalette class="btn btn-sm btn-outline-primary" role=button aria-label=palettePicker>
 <i class="fas fa-eye-dropper"></i>
 </a>
-</div>
-</form>
-<div class="mt-2 d-flex justify-content-between visually-hidden" id=palettePicker><button type=button id=palette-blue aria-label=Blue class="btn btn-sm w-100 palette" data-palette=blue>
+</div></form><div class="mt-2 d-flex justify-content-between visually-hidden" id=palettePicker><button type=button id=palette-blue aria-label=Blue class="btn btn-sm w-100 palette" data-palette=blue>
 </button><button type=button id=palette-blue-gray aria-label="Blue Gray" class="btn btn-sm w-100 palette" data-palette=blue-gray>
 </button><button type=button id=palette-brown aria-label=Brown class="btn btn-sm w-100 palette" data-palette=brown>
 </button><button type=button id=palette-cyan aria-label=Cyan class="btn btn-sm w-100 palette" data-palette=cyan>
@@ -90,9 +75,7 @@
 </button><button type=button id=palette-red aria-label=Red class="btn btn-sm w-100 palette" data-palette=red>
 </button><button type=button id=palette-teal aria-label=Teal class="btn btn-sm w-100 palette" data-palette=teal>
 </button><button type=button id=palette-yellow aria-label=Yellow class="btn btn-sm w-100 palette" data-palette=yellow>
-</button></div>
-</section>
-<section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
+</button></div></section><section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
 <a role=button class="action action-go-back" href="javascript: window.history.back();">
 <span class=action-icon><i class="fas fa-2x fa-arrow-left"></i></span> Go back
 </a>
@@ -103,17 +86,12 @@
 <span class=action-icon><i class="fas fa-2x fa-link"></i></span> Copy URL
 </a><a class="action action-social-share" type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasSocialShare aria-controls=offcanvasSocialShare aria-label="Toggle social share">
 <span class=action-icon><i class="fas fa-2x fa-share-alt"></i></span> Share
-</a></section>
-</div>
-</div>
-<div class="collapse navbar-collapse" tabindex=-1 id=navbarSupportedContent aria-labelledby=navbarSupportedContent>
+</a></section></div></div><div class="collapse navbar-collapse" tabindex=-1 id=navbarSupportedContent aria-labelledby=navbarSupportedContent>
 <form class="search-bar my-1" action=https://www.funkysi1701.com/search>
 <div class="input-group input-group-sm">
 <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
 <input class="form-control rounded-pill" name=q type=search aria-label=Search>
-</div>
-</form>
-<ul class="navbar-nav ms-auto"><li class=nav-item>
+</div></form><ul class="navbar-nav ms-auto"><li class=nav-item>
 <a class=nav-link href=https://www.funkysi1701.com/about>
 About
 </a>
@@ -125,19 +103,12 @@ Metrics
 <a class=nav-link href=https://www.funkysi1701.com/pwned-pass>
 Pwned Pass
 </a>
-</li></ul>
-</div>
-</div>
-</nav>
-</header>
-<main role=main class=container>
+</li></ul></div></div></nav></header><main role=main class=container>
 <div class="row content">
 <div class=col-lg-8>
 <div class=container><nav class="row card component" aria-label=breadcrumb>
 <div class=card-body>
-<ol class=breadcrumb><li class=breadcrumb-item><a href=https://www.funkysi1701.com/>Home</a></li><li class=breadcrumb-item><a href=https://www.funkysi1701.com/posts/>Posts</a></li><li class="breadcrumb-item active">Lets see what 2019 can do!</li></ol>
-</div>
-</nav><div class=post-panel-wrapper>
+<ol class=breadcrumb><li class=breadcrumb-item><a href=https://www.funkysi1701.com/>Home</a></li><li class=breadcrumb-item><a href=https://www.funkysi1701.com/posts/>Posts</a></li><li class="breadcrumb-item active">Lets see what 2019 can do!</li></ol></div></nav><div class=post-panel-wrapper>
 <div class="d-flex flex-column component rounded post-panel">
 <a class="action action-panel-toggler" role=button title="Panel toggler">
 <i class="fas fa-fw fa-chevron-circle-down"></i>
@@ -151,38 +122,17 @@ Pwned Pass
 <a class=action href=#postTOC aria-controls="Table of contents" role=button title="Table of contents">
 <i class="fas fa-fw fa-list-alt"></i>
 </a>
-</div>
-</div>
-<article class="row card component mb-4 post">
+</div></div><article class="row card component mb-4 post">
 <div class=card-header>
 <h1 class="card-title post-title">Lets see what 2019 can do!
-</h1>
-</div>
-<div class=card-body><div class=post-meta>
+</h1></div><div class=card-body><div class=post-meta>
 <span class=post-date title="created on 2019-01-01 20:00:45 +0000 UTC.">
 Jan 1, 2019
 </span><span class=post-reading-time>
 3 min read
 </span><span class=post-taxonomies><a href=https://www.funkysi1701.com/2019/01/ class="badge post-taxonomy">2019-01</a><a href=https://www.funkysi1701.com/tags/goals/ class="badge post-taxonomy">Goals</a><a href=https://www.funkysi1701.com/2019/ class="badge post-taxonomy">2019</a></span>
-</div>
-<div class="post-content mb-3"><p>This is my annual lets make some goals for the new year blog post. So in no particular order.</p>
-<h2 id=improve-house>Improve House<a class="anchor ms-1" href=#improve-house><i class="fas fa-link"></i></a></h2>
-<p>I can’t outdo last years goal of buying a house but I can continue to make efforts to improve it. I was going to put something about decorating or doing something to our bedrooms, however today I spotted a hole in the roof so this may well absorb most of my home improvement budget.</p>
-<h2 id=connect-with-local-area>Connect with local area<a class="anchor ms-1" href=#connect-with-local-area><i class="fas fa-link"></i></a></h2>
-<p>Since we moved in October we haven’t really connected with our local area yet. My only interaction with my neighbours was when my car blocked his drive!</p>
-<p>I am going to make efforts to change this in 2019. I don’t exactly know how yet, but I have some ideas. My son starts nursery and later school this year so could be one way to meet other parents and teachers. I want to connect with a local church, so far this hasn’t happened so need to make more effort with this. There are other local groups that put on child friendly events which would be good to attend.</p>
-<h2 id=lightning-talk>Lightning Talk<a class="anchor ms-1" href=#lightning-talk><i class="fas fa-link"></i></a></h2>
-<p>I failed last year to do this so it is back on my list. I know I must have stuff of value to share so going to try again on this.</p>
-<p>A lightning talk is a very short talk or presentation given at a conference or user group. I am not a natural public speaker so this is a step out of my comfort zone, however I am going to start small and see what happens.</p>
-<p>##Family Holiday
-As always we Fosters are going to have a holiday in the summer and have some quality family time. I also want to take the boys to London for a weekend.</p>
-<h2 id=blogging>Blogging<a class="anchor ms-1" href=#blogging><i class="fas fa-link"></i></a></h2>
-<p>This blog has taken a bit of a backseat in 2018 so I want to try and refocus it for 2019. My commitment is for 12 blog posts in 2019, that is one a month. It doesn’t sound like much but I know how easily life can get in the way.</p>
-<p>Having said that my log has had record views this year. 7159 views. However I believe this number to be incorrect and has been inflated by my app development and some of the automated processes taking place.</p>
-<h2 id=routine>Routine<a class="anchor ms-1" href=#routine><i class="fas fa-link"></i></a></h2>
-<p>Last goal is to try a get more of a routine going. With two small boys, one of which is starting school in September a routine is going to be essential and will allow all of us all a chance to get more things done.</p>
-</div></div>
-<div class=card-footer>
+</div><div class="post-content mb-3"><p>This is my annual lets make some goals for the new year blog post. So in no particular order.</p><h2 id=improve-house>Improve House<a class="anchor ms-1" href=#improve-house><i class="fas fa-link"></i></a></h2><p>I can’t outdo last years goal of buying a house but I can continue to make efforts to improve it. I was going to put something about decorating or doing something to our bedrooms, however today I spotted a hole in the roof so this may well absorb most of my home improvement budget.</p><h2 id=connect-with-local-area>Connect with local area<a class="anchor ms-1" href=#connect-with-local-area><i class="fas fa-link"></i></a></h2><p>Since we moved in October we haven’t really connected with our local area yet. My only interaction with my neighbours was when my car blocked his drive!</p><p>I am going to make efforts to change this in 2019. I don’t exactly know how yet, but I have some ideas. My son starts nursery and later school this year so could be one way to meet other parents and teachers. I want to connect with a local church, so far this hasn’t happened so need to make more effort with this. There are other local groups that put on child friendly events which would be good to attend.</p><h2 id=lightning-talk>Lightning Talk<a class="anchor ms-1" href=#lightning-talk><i class="fas fa-link"></i></a></h2><p>I failed last year to do this so it is back on my list. I know I must have stuff of value to share so going to try again on this.</p><p>A lightning talk is a very short talk or presentation given at a conference or user group. I am not a natural public speaker so this is a step out of my comfort zone, however I am going to start small and see what happens.</p><p>##Family Holiday
+As always we Fosters are going to have a holiday in the summer and have some quality family time. I also want to take the boys to London for a weekend.</p><h2 id=blogging>Blogging<a class="anchor ms-1" href=#blogging><i class="fas fa-link"></i></a></h2><p>This blog has taken a bit of a backseat in 2018 so I want to try and refocus it for 2019. My commitment is for 12 blog posts in 2019, that is one a month. It doesn’t sound like much but I know how easily life can get in the way.</p><p>Having said that my log has had record views this year. 7159 views. However I believe this number to be incorrect and has been inflated by my app development and some of the automated processes taking place.</p><h2 id=routine>Routine<a class="anchor ms-1" href=#routine><i class="fas fa-link"></i></a></h2><p>Last goal is to try a get more of a routine going. With two small boys, one of which is starting school in September a routine is going to be essential and will allow all of us all a chance to get more things done.</p></div></div><div class=card-footer>
 <div class="post-navs d-flex justify-content-evenly">
 <div class="post-nav post-prev">
 <i class="fas fa-fw fa-chevron-left"></i>
@@ -192,107 +142,69 @@ As always we Fosters are going to have a holiday in the summer and have some qua
 <a href=https://www.funkysi1701.com/posts/pwned-pass-update/>Pwned Pass Update
 </a>
 <i class="fas fa-fw fa-chevron-right"></i>
-</div></div>
-</div>
-</article><section class="related-posts row card component">
+</div></div></div></article><section class="related-posts row card component">
 <div class=card-header>
-<h2 class=card-title>Related Posts</h2>
-</div>
-<div class=card-body>
+<h2 class=card-title>Related Posts</h2></div><div class=card-body>
 <ul class=post-list>
 <li>
 <a href=https://www.funkysi1701.com/posts/fiddler-and-apis/>Fiddler and APIs
 </a>
 <span class="float-end post-date">Jun 19, 2017
 </span>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/how-do-i-add-power-bi-data-to-a-webpage/>How do I add Power BI data to a webpage?
 </a>
 <span class="float-end post-date">Jun 12, 2017
 </span>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/star-trek-is-back-with-discovery/>Star Trek is back with Discovery
 </a>
 <span class="float-end post-date">Sep 22, 2017
 </span>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/azure-friday/>Azure Friday
 </a>
 <span class="float-end post-date">Sep 18, 2017
 </span>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/azure-functions/>Azure Functions
 </a>
 <span class="float-end post-date">Sep 12, 2017
 </span>
-</li>
-</ul>
-</div>
-</section><div class="card component row post-comments" id=post-comments>
+</li></ul></div></section><div class="card component row post-comments" id=post-comments>
 <div class=card-header>
-<h2 class=card-title>Comments</h2>
-</div>
-<div class=card-body><div id=disqus_thread></div>
-<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//funkysi1701.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
-<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
-<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div>
-</div></div>
-</div><aside class="col-lg-4 sidebar d-flex">
+<h2 class=card-title>Comments</h2></div><div class=card-body><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//funkysi1701.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div></div><aside class="col-lg-4 sidebar d-flex">
 <div class="container d-flex flex-column">
 <div class="post-toc row mb-4 card component" id=postTOC>
 <div class=card-header>
-<h2 class=card-title>Contents</h2>
-</div>
-<div class=card-body>
+<h2 class=card-title>Contents</h2></div><div class=card-body>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#improve-house>Improve House</a></li>
-<li><a href=#connect-with-local-area>Connect with local area</a></li>
-<li><a href=#lightning-talk>Lightning Talk</a></li>
-<li><a href=#blogging>Blogging</a></li>
-<li><a href=#routine>Routine</a></li>
-</ul>
-</nav>
-</div>
-</div><section class="recent-posts row card component">
+<li><a href=#improve-house>Improve House</a></li><li><a href=#connect-with-local-area>Connect with local area</a></li><li><a href=#lightning-talk>Lightning Talk</a></li><li><a href=#blogging>Blogging</a></li><li><a href=#routine>Routine</a></li></ul></nav></div></div><section class="recent-posts row card component">
 <div class=card-header>
-<h2 class=card-title>Recent Posts</h2>
-</div>
-<div class=card-body>
+<h2 class=card-title>Recent Posts</h2></div><div class=card-body>
 <ul class=post-list>
 <li>
 <a href=https://www.funkysi1701.com/posts/updating-sqlserver-with-docker/>Updating SQL Server with Docker
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/dotnet-is-20-years-old/>dotnet is 20 years old
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/why-do-i-have-a-website/>Why do I have a website?
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/using-github-actions/>Using GitHub Actions
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/2022-goals/>2022 Goals
 </a>
-</li>
-</ul>
-</div>
-</section><section class="tags-taxonomies row card component">
+</li></ul></div></section><section class="tags-taxonomies row card component">
 <div class=card-header>
 <h2 class=card-title>
 <a href=https://www.funkysi1701.com/tags>Tags</a>
-</h2>
-</div>
-<div class=card-body>
+</h2></div><div class=card-body>
 <div class=py-2>
 <div class="container tagcloud">
 <a href=/tags/100 class=tagcloud-item style=font-size:.7rem>
@@ -490,35 +402,15 @@ website
 <a href=/tags/xamarin class=tagcloud-item style=font-size:.7rem>
 Xamarin
 </a>
-</div>
-</div>
-</div>
-</section><section class="social row card component">
+</div></div></div></section><section class="social row card component">
 <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.6.1/css/all.css integrity=sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP crossorigin=anonymous>
 <div class=card-header>
 <h2 class=card-title>
 Social Links
-</h2>
-</div>
-<div class=card-body>
+</h2></div><div class=card-body>
 <ul class=post-list>
-<li><span class="fab fa-facebook-f"></span>&nbsp;<a href=https://facebook.com/funkysi1701>Facebook</a></li>
-<li><span class="fab fa-twitter" aria-hidden=true></span>&nbsp;<a href=https://twitter.com/funkysi1701>Twitter</a></li>
-<li><span class="fab fa-brands fa-github" aria-hidden=true></span>&nbsp;<a href=https://github.com/funkysi1701>GitHub</a></li>
-<li><span class="fab fa-linkedin-in" aria-hidden=true></span>&nbsp;<a href=https://www.linkedin.com/in/funkysi1701>LinkedIn</a></li>
-<li><span aria-hidden=true></span>&nbsp;<a href=https://dev.to/funkysi1701>DevTo</a></li>
-</ul>
-</div>
-</section>
-</div>
-</aside>
-</div>
-</main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav justify-content-center mb-2"></nav>
-<div class="copyright mb-2">
-</div>
-</footer>
-<script src=https://www.funkysi1701.com/js/main.b4d13568ea62925adef3e45f80cad4c87607640396981d7e679fff6ab72a3dd4.js integrity="sha256-tNE1aOpiklre8+RfgMrUyHYHZAOWmB1+Z5//arcqPdQ=" crossorigin=anonymous defer></script><script src=https://www.funkysi1701.com/js/icons.min.a35670f2f90c398e5ee5c8e509b428fae75aa2746854cee10b60794633076859.js integrity="sha256-o1Zw8vkMOY5e5cjlCbQo+udaonRoVM7hC2B5RjMHaFk=" crossorigin=anonymous defer></script>
-<script src=https://www.funkysi1701.com/js/viewer.min.4dba52a0a790f909408b7385316651299158381686401d50ff1f04dda6476473.js integrity="sha256-TbpSoKeQ+QlAi3OFMWZRKZFYOBaGQB1Q/x8E3aZHZHM=" crossorigin=anonymous defer></script>
+<li><span class="fab fa-facebook-f"></span>&nbsp;<a href=https://facebook.com/funkysi1701>Facebook</a></li><li><span class="fab fa-twitter" aria-hidden=true></span>&nbsp;<a href=https://twitter.com/funkysi1701>Twitter</a></li><li><span class="fab fa-brands fa-github" aria-hidden=true></span>&nbsp;<a href=https://github.com/funkysi1701>GitHub</a></li><li><span class="fab fa-linkedin-in" aria-hidden=true></span>&nbsp;<a href=https://www.linkedin.com/in/funkysi1701>LinkedIn</a></li><li><span aria-hidden=true></span>&nbsp;<a href=https://dev.to/funkysi1701>DevTo</a></li></ul></div></section></div></aside></div></main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav justify-content-center mb-2"></nav><div class="copyright mb-2">
+</div></footer><script src=https://www.funkysi1701.com/js/main.b4d13568ea62925adef3e45f80cad4c87607640396981d7e679fff6ab72a3dd4.js integrity="sha256-tNE1aOpiklre8+RfgMrUyHYHZAOWmB1+Z5//arcqPdQ=" crossorigin=anonymous defer></script><script src=https://www.funkysi1701.com/js/icons.min.b3391f89dcdef937e99a193c6de12584ac1d7613c16ae6ba852a096e1fd95108.js integrity="sha256-szkfidze+Tfpmhk8beElhKwddhPBaua6hSoJbh/ZUQg=" crossorigin=anonymous defer></script>
+<script src=https://www.funkysi1701.com/js/viewer.min.1721cbc2c5c34a150daae105f4ffed345a8bb269c6b63337f767c272fe6531f7.js integrity="sha256-FyHLwsXDShUNquEF9P/tNFqLsmnGtjM392fCcv5lMfc=" crossorigin=anonymous defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-N1YJNQEHR4"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-N1YJNQEHR4')</script></body>
-</html>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-N1YJNQEHR4")</script></body></html>

@@ -74,24 +74,26 @@ which my website now passes.&lt;/p>
 &lt;p>Not much else to say this week, apart from I am missing Visual Studio and C#, I have been mostly using VS Code on Linux and looking at php which isn&amp;rsquo;t as much fun as my usual day job.&lt;/p></description></item><item><title>Weekly Update #004</title><link>https://www.funkysi1701.com/posts/weekly-update-004/</link><pubDate>Sun, 06 Dec 2020 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/weekly-update-004/</guid><description>&lt;p>I use sp_send_dbmail to send results of sql queries by email to business users. Recently an issue was raised that data was being cut off after 255 characters. To fix this I added @query_no_truncate = 1, however this stopped the column headings from being included. No idea why you can&amp;rsquo;t have all the data and column headings but there you have it.&lt;/p>
 &lt;p>What I am doing now is running 2 queries, one to get the headings, and one to get the data. In theory you should be able to combine them with a Union however you then have datatype issues for non text columns so I gave up with that idea.&lt;/p>
 &lt;p>My results have 60 something columns (don&amp;rsquo;t ask its for a data import into a third party system!) so I am not typing them all out. I can shove query results into a temporary table and then execute to get a list of columns.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sql" data-lang="sql">&lt;span style="color:#66d9ef">SELECT&lt;/span> name
-&lt;span style="color:#66d9ef">FROM&lt;/span> tempdb.sys.columns
-&lt;span style="color:#66d9ef">WHERE&lt;/span> object_id &lt;span style="color:#f92672">=&lt;/span> object_id(&lt;span style="color:#e6db74">&amp;#39;tempdb..#TempTable&amp;#39;&lt;/span>)
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>However I need my list to be horizontal so I can use as column headers. I can use dynamic SQL and a pivot to flip them round.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sql" data-lang="sql">&lt;span style="color:#66d9ef">DECLARE&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#66d9ef">AS&lt;/span> NVARCHAR(&lt;span style="color:#66d9ef">MAX&lt;/span>), &lt;span style="color:#f92672">@&lt;/span>query &lt;span style="color:#66d9ef">AS&lt;/span> NVARCHAR(&lt;span style="color:#66d9ef">MAX&lt;/span>)
-&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#f92672">=&lt;/span> STUFF((&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#e6db74">&amp;#39;,&amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> QUOTENAME(name)
-&lt;span style="color:#66d9ef">FROM&lt;/span> tempdb.sys.columns
-&lt;span style="color:#66d9ef">WHERE&lt;/span> object_id &lt;span style="color:#f92672">=&lt;/span> object_id(&lt;span style="color:#e6db74">&amp;#39;tempdb..#TempTable&amp;#39;&lt;/span>)
-&lt;span style="color:#66d9ef">FOR&lt;/span> XML PATH(&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>), &lt;span style="color:#66d9ef">TYPE&lt;/span>).value(&lt;span style="color:#e6db74">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;NVARCHAR(MAX)&amp;#39;&lt;/span>),&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>)
-&lt;span style="color:#66d9ef">SET&lt;/span> &lt;span style="color:#f92672">@&lt;/span>query &lt;span style="color:#f92672">=&lt;/span> N&lt;span style="color:#e6db74">&amp;#39;SELECT &amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#f92672">+&lt;/span> N&lt;span style="color:#e6db74">&amp;#39; FROM
-&lt;/span>&lt;span style="color:#e6db74">(
-&lt;/span>&lt;span style="color:#e6db74"> SELECT name
-&lt;/span>&lt;span style="color:#e6db74"> FROM tempdb.sys.columns
-&lt;/span>&lt;span style="color:#e6db74"> WHERE object_id = object_id(&amp;#39;&amp;#39;tempdb..#TempTable&amp;#39;&amp;#39;)
-&lt;/span>&lt;span style="color:#e6db74">) x
-&lt;/span>&lt;span style="color:#e6db74">PIVOT
-&lt;/span>&lt;span style="color:#e6db74">(
-&lt;/span>&lt;span style="color:#e6db74"> MAX(name)
-&lt;/span>&lt;span style="color:#e6db74"> FOR name IN (&amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#f92672">+&lt;/span> N&lt;span style="color:#e6db74">&amp;#39;)
-&lt;/span>&lt;span style="color:#e6db74">) y&amp;#39;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> name
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">FROM&lt;/span> tempdb.sys.columns
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">WHERE&lt;/span> object_id &lt;span style="color:#f92672">=&lt;/span> object_id(&lt;span style="color:#e6db74">&amp;#39;tempdb..#TempTable&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>However I need my list to be horizontal so I can use as column headers. I can use dynamic SQL and a pivot to flip them round.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">DECLARE&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#66d9ef">AS&lt;/span> NVARCHAR(&lt;span style="color:#66d9ef">MAX&lt;/span>), &lt;span style="color:#f92672">@&lt;/span>query &lt;span style="color:#66d9ef">AS&lt;/span> NVARCHAR(&lt;span style="color:#66d9ef">MAX&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#f92672">=&lt;/span> STUFF((&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#e6db74">&amp;#39;,&amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> QUOTENAME(name)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">FROM&lt;/span> tempdb.sys.columns
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">WHERE&lt;/span> object_id &lt;span style="color:#f92672">=&lt;/span> object_id(&lt;span style="color:#e6db74">&amp;#39;tempdb..#TempTable&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">FOR&lt;/span> XML PATH(&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>), &lt;span style="color:#66d9ef">TYPE&lt;/span>).value(&lt;span style="color:#e6db74">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;NVARCHAR(MAX)&amp;#39;&lt;/span>),&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SET&lt;/span> &lt;span style="color:#f92672">@&lt;/span>query &lt;span style="color:#f92672">=&lt;/span> N&lt;span style="color:#e6db74">&amp;#39;SELECT &amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#f92672">+&lt;/span> N&lt;span style="color:#e6db74">&amp;#39; FROM
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">(
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> SELECT name
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> FROM tempdb.sys.columns
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> WHERE object_id = object_id(&amp;#39;&amp;#39;tempdb..#TempTable&amp;#39;&amp;#39;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">) x
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">PIVOT
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">(
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> MAX(name)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> FOR name IN (&amp;#39;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#f92672">@&lt;/span>cols &lt;span style="color:#f92672">+&lt;/span> N&lt;span style="color:#e6db74">&amp;#39;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">) y&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

@@ -4,26 +4,29 @@ about how impressive it is.&lt;/p>
 &lt;p>&lt;img class="img-fluid" alt="SSL Cert" src="https://dev-to-uploads.s3.amazonaws.com/i/jb78re4fmm1ofx81f3mu.JPG" loading="lazy"
 />
 However there is a way to automate this check.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#a6e22e">[Fact]&lt;/span>
-&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> IsSSLExpiring()
-{
-&lt;span style="color:#66d9ef">var&lt;/span> handler = &lt;span style="color:#66d9ef">new&lt;/span> HttpClientHandler
-{
-ServerCertificateCustomValidationCallback = CustomCallback
-};
-&lt;span style="color:#66d9ef">var&lt;/span> client = &lt;span style="color:#66d9ef">new&lt;/span> HttpClient(handler);
-HttpResponseMessage response = client.GetAsync(&lt;span style="color:#e6db74">&amp;#34;https://www.example.com&amp;#34;&lt;/span>).GetAwaiter().GetResult();
-Assert.True(response.IsSuccessStatusCode);
-}
-&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">bool&lt;/span> CustomCallback(HttpRequestMessage arg1, X509Certificate2 arg2, X509Chain arg3, SslPolicyErrors arg4)
-{
-&lt;span style="color:#66d9ef">var&lt;/span> now = DateTime.UtcNow;
-&lt;span style="color:#66d9ef">var&lt;/span> expire = arg2.NotAfter;
-&lt;span style="color:#66d9ef">var&lt;/span> diff = (expire - now).TotalDays;
-Assert.InRange(diff, &lt;span style="color:#ae81ff">30&lt;/span>, &lt;span style="color:#ae81ff">1000&lt;/span>);
-&lt;span style="color:#66d9ef">return&lt;/span> arg4 == SslPolicyErrors.None;
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This code gets the SSL expiry date from &lt;a href="https://www.example.com" target="_blank" rel="noopener noreferrer">https://www.example.com&lt;/a>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">[Fact]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> IsSSLExpiring()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> handler = &lt;span style="color:#66d9ef">new&lt;/span> HttpClientHandler
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ServerCertificateCustomValidationCallback = CustomCallback
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> client = &lt;span style="color:#66d9ef">new&lt;/span> HttpClient(handler);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HttpResponseMessage response = client.GetAsync(&lt;span style="color:#e6db74">&amp;#34;https://www.example.com&amp;#34;&lt;/span>).GetAwaiter().GetResult();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Assert.True(response.IsSuccessStatusCode);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">bool&lt;/span> CustomCallback(HttpRequestMessage arg1, X509Certificate2 arg2, X509Chain arg3, SslPolicyErrors arg4)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> now = DateTime.UtcNow;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> expire = arg2.NotAfter;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> diff = (expire - now).TotalDays;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Assert.InRange(diff, &lt;span style="color:#ae81ff">30&lt;/span>, &lt;span style="color:#ae81ff">1000&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> arg4 == SslPolicyErrors.None;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This code gets the SSL expiry date from &lt;a href="https://www.example.com" target="_blank" rel="noopener noreferrer">https://www.example.com&lt;/a>
 and will fail the xunit test if the expiry date is less than 30 days in the future. I then schedule my tests to run regularly on all my environments with a Let&amp;rsquo;s Encrypt Certificate and this gives me advanced warning if a SSL certificate is about to expire.&lt;/p>
 &lt;p>The Assert.InRange(diff, 30, 1000) line will fail the test if the expiry date is less than 30 days or greater than 1000, but as the default expiry for Let&amp;rsquo;s Encrypt certificates is three months it will never be greater than 1000 days even with a freshly installed certificate. These values can be tweaked to suit your use case, however 30 days is enough time for me to investigate what is happening.&lt;/p>
 &lt;p>To execute my tests I use a scheduled build in Azure DevOps, but anything that regularly can run your tests will do the job.&lt;/p>
@@ -36,12 +39,12 @@ and will fail the xunit test if the expiry date is less than 30 days in the futu
 &lt;p>Assert.AreEqual(expected value, actual value)&lt;/p>
 &lt;p>Say for example you wanted to test a method called ReturnsTrue() which does nothing but returns a value of true. This method is in a class called ReturnsTrueClass&lt;/p>
 &lt;p>The Arrange step in this example would be.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">ReturnsTrueClass t = &lt;span style="color:#66d9ef">new&lt;/span> ReturnsTrueClass();
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The Act step in this example would be.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">var&lt;/span> result = t.ReturnTrue();
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The Assert step in this example would be.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">Assert.AreEqual(&lt;span style="color:#66d9ef">true&lt;/span>, result);
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is a stupidly simple example but hopefully you get the idea of how you can build all your tests with these three steps.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>ReturnsTrueClass t = &lt;span style="color:#66d9ef">new&lt;/span> ReturnsTrueClass();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The Act step in this example would be.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">var&lt;/span> result = t.ReturnTrue();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The Assert step in this example would be.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>Assert.AreEqual(&lt;span style="color:#66d9ef">true&lt;/span>, result);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is a stupidly simple example but hopefully you get the idea of how you can build all your tests with these three steps.&lt;/p>
 &lt;p>Recently I saw a tweet complaining that someone has mixed up expected and actual in the Assert statement.&lt;/p>
 &lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">There is a minor but special hell reserved for those who mix up the expected and actual parameters in Assert.Equals&lt;/p>&amp;mdash; Keith Williams (@zogface) &lt;a href="https://twitter.com/zogface/status/882737770095149056?ref_src=twsrc%5Etfw">July 5, 2017&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
 &lt;p>At first glance this probably isn’t the worst mistake to make as if your tests are all passing actual and expected are the same.&lt;/p>

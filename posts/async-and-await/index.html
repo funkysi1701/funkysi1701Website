@@ -21,8 +21,7 @@
 <meta name=twitter:image content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg">
 <meta name=twitter:title content="Async and Await">
 <meta name=twitter:description content="Async and Await">
-<link rel=stylesheet href=https://www.funkysi1701.com/css/main.min.b7a6eda8d46e39a549f182cf72a9ff4f4c1d4d82c31ecc3ede0b7f4d5b26f32b.css crossorigin=anonymous><link rel=stylesheet href=https://www.funkysi1701.com/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css integrity="sha256-PSKHlLztu/oEEr64+8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin=anonymous></head>
-<body><script>const items=['mode','palette'];items.forEach(function(a){const b=localStorage.getItem('hbs-'+a);b&&document.body.parentElement.setAttribute('data-'+a,b)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+<link rel=stylesheet href=https://www.funkysi1701.com/css/main.min.b7a6eda8d46e39a549f182cf72a9ff4f4c1d4d82c31ecc3ede0b7f4d5b26f32b.css crossorigin=anonymous><link rel=stylesheet href=https://www.funkysi1701.com/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css integrity="sha256-PSKHlLztu/oEEr64+8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin=anonymous></head><body><script>const items=["mode","palette"];items.forEach(function(e){const t=localStorage.getItem("hbs-"+e);t&&document.body.parentElement.setAttribute("data-"+e,t)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
 <div class=container>
 <button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <i class="fas fa-bars"></i>
@@ -30,55 +29,41 @@
 </a>
 <div class="offcanvas offcanvas-bottom surface" tabindex=-1 id=offcanvasSocialShare aria-labelledby=offcanvasSocialShare>
 <div class=offcanvas-header>
-<h3 class=offcanvas-title>Share</h3>
-<button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
+<h3 class=offcanvas-title>Share</h3><button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
 <i class="fas fa-times"></i>
 </button>
-</div>
-<div class=offcanvas-body>
+</div><div class=offcanvas-body>
 <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button" target=_blank href="https://twitter.com/intent/tweet?title=Async%20and%20Await&url=https%3a%2f%2fwww.funkysi1701.com%2fposts%2fasync-and-await%2f">
 <i class="fab fa-fw fa-twitter"></i> Twitter
 </a>
 <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button" target=_blank href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.funkysi1701.com%2fposts%2fasync-and-await%2f">
 <i class="fab fa-fw fa-facebook-f"></i> Facebook
 </a>
-</div>
-</div>
-<button class=navbar-settings type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasSettings aria-controls=offcanvasSettings aria-label="Toggle settings">
+</div></div><button class=navbar-settings type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasSettings aria-controls=offcanvasSettings aria-label="Toggle settings">
 <i class="fas fa-ellipsis-v"></i>
 </button>
 <div class="offcanvas offcanvas-end surface h-100" tabindex=-1 id=offcanvasSettings aria-labelledby=offcanvasSettings>
 <div class=offcanvas-header>
-<h3 class=offcanvas-title>Settings</h3>
-<button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
+<h3 class=offcanvas-title>Settings</h3><button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
 <i class="fas fa-times"></i>
 </button>
-</div>
-<div class="offcanvas-body d-flex flex-column">
+</div><div class="offcanvas-body d-flex flex-column">
 <section class=setting>
 <form class=row>
 <div class=col-auto>
 <label><i class="fas fa-fw fa-adjust"></i> Mode</label>
-</div>
-<div class="col-auto ms-auto">
+</div><div class="col-auto ms-auto">
 <div class="form-check form-switch">
 <input class=form-check-input type=checkbox id=modeSwitcher>
-</div>
-</div>
-</form>
-</section>
-<section class="setting palettes">
+</div></div></form></section><section class="setting palettes">
 <form class=row>
 <div class=col-auto>
 <label><i class="fas fa-fw fa-palette"></i> Palette</label>
-</div>
-<div class="col-auto ms-auto">
+</div><div class="col-auto ms-auto">
 <a id=btnPalette class="btn btn-sm btn-outline-primary" role=button aria-label=palettePicker>
 <i class="fas fa-eye-dropper"></i>
 </a>
-</div>
-</form>
-<div class="mt-2 d-flex justify-content-between visually-hidden" id=palettePicker><button type=button id=palette-blue aria-label=Blue class="btn btn-sm w-100 palette" data-palette=blue>
+</div></form><div class="mt-2 d-flex justify-content-between visually-hidden" id=palettePicker><button type=button id=palette-blue aria-label=Blue class="btn btn-sm w-100 palette" data-palette=blue>
 </button><button type=button id=palette-blue-gray aria-label="Blue Gray" class="btn btn-sm w-100 palette" data-palette=blue-gray>
 </button><button type=button id=palette-brown aria-label=Brown class="btn btn-sm w-100 palette" data-palette=brown>
 </button><button type=button id=palette-cyan aria-label=Cyan class="btn btn-sm w-100 palette" data-palette=cyan>
@@ -90,9 +75,7 @@
 </button><button type=button id=palette-red aria-label=Red class="btn btn-sm w-100 palette" data-palette=red>
 </button><button type=button id=palette-teal aria-label=Teal class="btn btn-sm w-100 palette" data-palette=teal>
 </button><button type=button id=palette-yellow aria-label=Yellow class="btn btn-sm w-100 palette" data-palette=yellow>
-</button></div>
-</section>
-<section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
+</button></div></section><section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
 <a role=button class="action action-go-back" href="javascript: window.history.back();">
 <span class=action-icon><i class="fas fa-2x fa-arrow-left"></i></span> Go back
 </a>
@@ -103,17 +86,12 @@
 <span class=action-icon><i class="fas fa-2x fa-link"></i></span> Copy URL
 </a><a class="action action-social-share" type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasSocialShare aria-controls=offcanvasSocialShare aria-label="Toggle social share">
 <span class=action-icon><i class="fas fa-2x fa-share-alt"></i></span> Share
-</a></section>
-</div>
-</div>
-<div class="collapse navbar-collapse" tabindex=-1 id=navbarSupportedContent aria-labelledby=navbarSupportedContent>
+</a></section></div></div><div class="collapse navbar-collapse" tabindex=-1 id=navbarSupportedContent aria-labelledby=navbarSupportedContent>
 <form class="search-bar my-1" action=https://www.funkysi1701.com/search>
 <div class="input-group input-group-sm">
 <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
 <input class="form-control rounded-pill" name=q type=search aria-label=Search>
-</div>
-</form>
-<ul class="navbar-nav ms-auto"><li class=nav-item>
+</div></form><ul class="navbar-nav ms-auto"><li class=nav-item>
 <a class=nav-link href=https://www.funkysi1701.com/about>
 About
 </a>
@@ -125,19 +103,12 @@ Metrics
 <a class=nav-link href=https://www.funkysi1701.com/pwned-pass>
 Pwned Pass
 </a>
-</li></ul>
-</div>
-</div>
-</nav>
-</header>
-<main role=main class=container>
+</li></ul></div></div></nav></header><main role=main class=container>
 <div class="row content">
 <div class=col-lg-8>
 <div class=container><nav class="row card component" aria-label=breadcrumb>
 <div class=card-body>
-<ol class=breadcrumb><li class=breadcrumb-item><a href=https://www.funkysi1701.com/>Home</a></li><li class=breadcrumb-item><a href=https://www.funkysi1701.com/posts/>Posts</a></li><li class="breadcrumb-item active">Async and Await</li></ol>
-</div>
-</nav><div class=post-panel-wrapper>
+<ol class=breadcrumb><li class=breadcrumb-item><a href=https://www.funkysi1701.com/>Home</a></li><li class=breadcrumb-item><a href=https://www.funkysi1701.com/posts/>Posts</a></li><li class="breadcrumb-item active">Async and Await</li></ol></div></nav><div class=post-panel-wrapper>
 <div class="d-flex flex-column component rounded post-panel">
 <a class="action action-panel-toggler" role=button title="Panel toggler">
 <i class="fas fa-fw fa-chevron-circle-down"></i>
@@ -148,57 +119,39 @@ Pwned Pass
 <a class=action href=#post-comments role=button aria-label=Comments title=Comments>
 <i class="fas fa-fw fa-comments"></i>
 </a>
-</div>
-</div>
-<article class="row card component mb-4 post">
+</div></div><article class="row card component mb-4 post">
 <div class=card-header>
 <h1 class="card-title post-title">Async and Await
-</h1>
-</div>
-<div class=card-body><div class=post-meta>
+</h1></div><div class=card-body><div class=post-meta>
 <span class=post-date title="created on 2017-07-24 20:00:45 +0000 UTC.">
 Jul 24, 2017
 </span><span class=post-reading-time>
 2 min read
 </span><span class=post-taxonomies><a href=https://www.funkysi1701.com/2017/07/ class="badge post-taxonomy">2017-07</a><a href=https://www.funkysi1701.com/tags/async/ class="badge post-taxonomy">Async</a><a href=https://www.funkysi1701.com/tags/await/ class="badge post-taxonomy">Await</a><a href=https://www.funkysi1701.com/tags/asynchronous/ class="badge post-taxonomy">Asynchronous</a><a href=https://www.funkysi1701.com/tags/programming/ class="badge post-taxonomy">Programming</a><a href=https://www.funkysi1701.com/tags/c-sharp/ class="badge post-taxonomy">C-Sharp</a><a href=https://www.funkysi1701.com/2017/ class="badge post-taxonomy">2017</a></span>
-</div>
-<div class="post-content mb-3"><p>For a while the Async and Await commands in c# have confused me.</p>
-<p>Like most things the best way to learn about something is to use it in a real world example. I am currently adding an email alert feature to a website. This is an ideal example of something that would benefit from Asynchronous programming. There is no need for the webpage to wait to send 1000s of emails, lets just send a call to get started and allow the browser to carry on as normal.</p>
-<p>This is my first try at using async and await so feel free to suggest best practises in the comments.</p>
-<p>Lets start with a Send method in my EmailController.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#66d9ef>public</span> ActionResult Send(<span style=color:#66d9ef>int</span> id, <span style=color:#66d9ef>int</span> pageId, <span style=color:#66d9ef>int</span> userID)
-{
- <span style=color:#66d9ef>if</span> (!Authorize.checkPageIsAuthorised(userID, (Authorize.PageIds)pageId))
- {
-   <span style=color:#66d9ef>return</span> Redirect(<span style=color:#e6db74>&#34;/login&#34;</span>);
- }
- <span style=color:#66d9ef>else</span>
- {
-   Task&lt;<span style=color:#66d9ef>string</span>&gt; t = SendNotifications(id,userID);
-   <span style=color:#66d9ef>return</span> Redirect(Request.UrlReferrer.ToString());
- }
-}
-</code></pre></div><p>This simply checks to see if you have permission to the page. If not redirects to the login page otherwise it makes a method call and redirects back to the page it came from.</p>
-<p>Lets have a look at that method call in more detail.</p>
-<p>Task<string> t = SendNotification(id, userid);</p>
-<p>SendNotification doesn’t return a normal string it returns a Task<string>, so lets look at how we are creating this.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>async</span> Task&lt;<span style=color:#66d9ef>string</span>&gt; SendNotifications(<span style=color:#66d9ef>int</span> id,<span style=color:#66d9ef>string</span> type,<span style=color:#66d9ef>int</span> userid)
-{
- <span style=color:#75715e>//logic ommitted
-</span><span style=color:#75715e></span> <span style=color:#66d9ef>await</span> ef.SendEmail(model, emailHtmlBody);
- <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;OK&#34;</span>;
-}
-</code></pre></div><p>The return type is set to Task but it has the aysnc keyword appended to it. It also makes a call with the await keyword.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>async</span> Task SendEmail(EmailModel model,<span style=color:#66d9ef>string</span> emailHtmlBody)
-{
- <span style=color:#75715e>//logic removed
-</span><span style=color:#75715e></span> <span style=color:#66d9ef>await</span> smtp.SendMailAsync(message);
-}
-</code></pre></div><p>So that is it. My first bit of code that uses Async and Await. My controller calls a method asynchronously which then calls another method asynchronously which sends emails asynchronously.</p>
-<p>Async – This enables the Await keyword to be used in the method</p>
-<p>Await – This is where things get asynchronous. The await keyword allows the code to wait asynchronously for the long running code to complete.</p>
-</div></div>
-<div class=card-footer>
+</div><div class="post-content mb-3"><p>For a while the Async and Await commands in c# have confused me.</p><p>Like most things the best way to learn about something is to use it in a real world example. I am currently adding an email alert feature to a website. This is an ideal example of something that would benefit from Asynchronous programming. There is no need for the webpage to wait to send 1000s of emails, lets just send a call to get started and allow the browser to carry on as normal.</p><p>This is my first try at using async and await so feel free to suggest best practises in the comments.</p><p>Lets start with a Send method in my EmailController.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>public</span> ActionResult Send(<span style=color:#66d9ef>int</span> id, <span style=color:#66d9ef>int</span> pageId, <span style=color:#66d9ef>int</span> userID)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span> <span style=color:#66d9ef>if</span> (!Authorize.checkPageIsAuthorised(userID, (Authorize.PageIds)pageId))
+</span></span><span style=display:flex><span> {
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>return</span> Redirect(<span style=color:#e6db74>&#34;/login&#34;</span>);
+</span></span><span style=display:flex><span> }
+</span></span><span style=display:flex><span> <span style=color:#66d9ef>else</span>
+</span></span><span style=display:flex><span> {
+</span></span><span style=display:flex><span>   Task&lt;<span style=color:#66d9ef>string</span>&gt; t = SendNotifications(id,userID);
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>return</span> Redirect(Request.UrlReferrer.ToString());
+</span></span><span style=display:flex><span> }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>This simply checks to see if you have permission to the page. If not redirects to the login page otherwise it makes a method call and redirects back to the page it came from.</p><p>Lets have a look at that method call in more detail.</p><p>Task<string> t = SendNotification(id, userid);</p><p>SendNotification doesn’t return a normal string it returns a Task<string>, so lets look at how we are creating this.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>async</span> Task&lt;<span style=color:#66d9ef>string</span>&gt; SendNotifications(<span style=color:#66d9ef>int</span> id,<span style=color:#66d9ef>string</span> type,<span style=color:#66d9ef>int</span> userid)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span> <span style=color:#75715e>//logic ommitted</span>
+</span></span><span style=display:flex><span> <span style=color:#66d9ef>await</span> ef.SendEmail(model, emailHtmlBody);
+</span></span><span style=display:flex><span> <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;OK&#34;</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>The return type is set to Task but it has the aysnc keyword appended to it. It also makes a call with the await keyword.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>async</span> Task SendEmail(EmailModel model,<span style=color:#66d9ef>string</span> emailHtmlBody)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span> <span style=color:#75715e>//logic removed</span>
+</span></span><span style=display:flex><span> <span style=color:#66d9ef>await</span> smtp.SendMailAsync(message);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>So that is it. My first bit of code that uses Async and Await. My controller calls a method asynchronously which then calls another method asynchronously which sends emails asynchronously.</p><p>Async – This enables the Await keyword to be used in the method</p><p>Await – This is where things get asynchronous. The await keyword allows the code to wait asynchronously for the long running code to complete.</p></div></div><div class=card-footer>
 <div class="post-navs d-flex justify-content-evenly">
 <div class="post-nav post-prev">
 <i class="fas fa-fw fa-chevron-left"></i>
@@ -208,92 +161,64 @@ Jul 24, 2017
 <a href=https://www.funkysi1701.com/posts/android-app-development-and-the-visual-studio-mobile-centre/>Android App Development and the Visual Studio Mobile Centre
 </a>
 <i class="fas fa-fw fa-chevron-right"></i>
-</div></div>
-</div>
-</article><section class="related-posts row card component">
+</div></div></div></article><section class="related-posts row card component">
 <div class=card-header>
-<h2 class=card-title>Related Posts</h2>
-</div>
-<div class=card-body>
+<h2 class=card-title>Related Posts</h2></div><div class=card-body>
 <ul class=post-list>
 <li>
 <a href=https://www.funkysi1701.com/posts/uploading-files-to-aws/>Uploading Files to AWS
 </a>
 <span class="float-end post-date">Jul 3, 2017
 </span>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/interfaces/>Interfaces
 </a>
 <span class="float-end post-date">Mar 27, 2017
 </span>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/writing-your-first-test/>Writing your first test
 </a>
 <span class="float-end post-date">Jul 10, 2017
 </span>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/using-azure-webjobs-to-automate-stuff/>Using Azure WebJobs to Automate Stuff
 </a>
 <span class="float-end post-date">Jun 26, 2017
 </span>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/learning-r/>Learning R
 </a>
 <span class="float-end post-date">Feb 27, 2017
 </span>
-</li>
-</ul>
-</div>
-</section><div class="card component row post-comments" id=post-comments>
+</li></ul></div></section><div class="card component row post-comments" id=post-comments>
 <div class=card-header>
-<h2 class=card-title>Comments</h2>
-</div>
-<div class=card-body><div id=disqus_thread></div>
-<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//funkysi1701.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
-<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
-<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div>
-</div></div>
-</div><aside class="col-lg-4 sidebar d-flex">
+<h2 class=card-title>Comments</h2></div><div class=card-body><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//funkysi1701.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div></div><aside class="col-lg-4 sidebar d-flex">
 <div class="container d-flex flex-column">
 <section class="recent-posts row card component">
 <div class=card-header>
-<h2 class=card-title>Recent Posts</h2>
-</div>
-<div class=card-body>
+<h2 class=card-title>Recent Posts</h2></div><div class=card-body>
 <ul class=post-list>
 <li>
 <a href=https://www.funkysi1701.com/posts/updating-sqlserver-with-docker/>Updating SQL Server with Docker
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/dotnet-is-20-years-old/>dotnet is 20 years old
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/why-do-i-have-a-website/>Why do I have a website?
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/using-github-actions/>Using GitHub Actions
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://www.funkysi1701.com/posts/2022-goals/>2022 Goals
 </a>
-</li>
-</ul>
-</div>
-</section><section class="tags-taxonomies row card component">
+</li></ul></div></section><section class="tags-taxonomies row card component">
 <div class=card-header>
 <h2 class=card-title>
 <a href=https://www.funkysi1701.com/tags>Tags</a>
-</h2>
-</div>
-<div class=card-body>
+</h2></div><div class=card-body>
 <div class=py-2>
 <div class="container tagcloud">
 <a href=/tags/100 class=tagcloud-item style=font-size:.7rem>
@@ -491,35 +416,15 @@ website
 <a href=/tags/xamarin class=tagcloud-item style=font-size:.7rem>
 Xamarin
 </a>
-</div>
-</div>
-</div>
-</section><section class="social row card component">
+</div></div></div></section><section class="social row card component">
 <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.6.1/css/all.css integrity=sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP crossorigin=anonymous>
 <div class=card-header>
 <h2 class=card-title>
 Social Links
-</h2>
-</div>
-<div class=card-body>
+</h2></div><div class=card-body>
 <ul class=post-list>
-<li><span class="fab fa-facebook-f"></span>&nbsp;<a href=https://facebook.com/funkysi1701>Facebook</a></li>
-<li><span class="fab fa-twitter" aria-hidden=true></span>&nbsp;<a href=https://twitter.com/funkysi1701>Twitter</a></li>
-<li><span class="fab fa-brands fa-github" aria-hidden=true></span>&nbsp;<a href=https://github.com/funkysi1701>GitHub</a></li>
-<li><span class="fab fa-linkedin-in" aria-hidden=true></span>&nbsp;<a href=https://www.linkedin.com/in/funkysi1701>LinkedIn</a></li>
-<li><span aria-hidden=true></span>&nbsp;<a href=https://dev.to/funkysi1701>DevTo</a></li>
-</ul>
-</div>
-</section>
-</div>
-</aside>
-</div>
-</main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav justify-content-center mb-2"></nav>
-<div class="copyright mb-2">
-</div>
-</footer>
-<script src=https://www.funkysi1701.com/js/main.b4d13568ea62925adef3e45f80cad4c87607640396981d7e679fff6ab72a3dd4.js integrity="sha256-tNE1aOpiklre8+RfgMrUyHYHZAOWmB1+Z5//arcqPdQ=" crossorigin=anonymous defer></script><script src=https://www.funkysi1701.com/js/icons.min.a35670f2f90c398e5ee5c8e509b428fae75aa2746854cee10b60794633076859.js integrity="sha256-o1Zw8vkMOY5e5cjlCbQo+udaonRoVM7hC2B5RjMHaFk=" crossorigin=anonymous defer></script>
-<script src=https://www.funkysi1701.com/js/viewer.min.4dba52a0a790f909408b7385316651299158381686401d50ff1f04dda6476473.js integrity="sha256-TbpSoKeQ+QlAi3OFMWZRKZFYOBaGQB1Q/x8E3aZHZHM=" crossorigin=anonymous defer></script>
+<li><span class="fab fa-facebook-f"></span>&nbsp;<a href=https://facebook.com/funkysi1701>Facebook</a></li><li><span class="fab fa-twitter" aria-hidden=true></span>&nbsp;<a href=https://twitter.com/funkysi1701>Twitter</a></li><li><span class="fab fa-brands fa-github" aria-hidden=true></span>&nbsp;<a href=https://github.com/funkysi1701>GitHub</a></li><li><span class="fab fa-linkedin-in" aria-hidden=true></span>&nbsp;<a href=https://www.linkedin.com/in/funkysi1701>LinkedIn</a></li><li><span aria-hidden=true></span>&nbsp;<a href=https://dev.to/funkysi1701>DevTo</a></li></ul></div></section></div></aside></div></main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav justify-content-center mb-2"></nav><div class="copyright mb-2">
+</div></footer><script src=https://www.funkysi1701.com/js/main.b4d13568ea62925adef3e45f80cad4c87607640396981d7e679fff6ab72a3dd4.js integrity="sha256-tNE1aOpiklre8+RfgMrUyHYHZAOWmB1+Z5//arcqPdQ=" crossorigin=anonymous defer></script><script src=https://www.funkysi1701.com/js/icons.min.b3391f89dcdef937e99a193c6de12584ac1d7613c16ae6ba852a096e1fd95108.js integrity="sha256-szkfidze+Tfpmhk8beElhKwddhPBaua6hSoJbh/ZUQg=" crossorigin=anonymous defer></script>
+<script src=https://www.funkysi1701.com/js/viewer.min.1721cbc2c5c34a150daae105f4ffed345a8bb269c6b63337f767c272fe6531f7.js integrity="sha256-FyHLwsXDShUNquEF9P/tNFqLsmnGtjM392fCcv5lMfc=" crossorigin=anonymous defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-N1YJNQEHR4"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-N1YJNQEHR4')</script></body>
-</html>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-N1YJNQEHR4")</script></body></html>

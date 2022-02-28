@@ -37,7 +37,7 @@ branches:
 - feature/tempbranch
 jobs:
 build_and_deploy_job:
-if: github.event_name == 'push' || (github.event_name == 'pull_request' &amp;amp;&amp;amp; github.event.action != 'closed')
+if: github.event_name == &amp;#39;push&amp;#39; || (github.event_name == &amp;#39;pull_request&amp;#39; &amp;amp;&amp;amp; github.event.action != &amp;#39;closed&amp;#39;)
 runs-on: ubuntu-latest
 name: Build and Deploy Job
 steps:
@@ -50,15 +50,15 @@ uses: Azure/static-web-apps-deploy@v1
 with:
 azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_&amp;lt;GENERATED_HOSTNAME&amp;gt; }}
 repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
-action: &amp;quot;upload&amp;quot;
+action: &amp;#34;upload&amp;#34;
 ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
 # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-app_location: &amp;quot;Client&amp;quot; # App source code path
-api_location: &amp;quot;Api&amp;quot; # Api source code path - optional
-output_location: &amp;quot;wwwroot&amp;quot; # Built app content directory - optional
+app_location: &amp;#34;Client&amp;#34; # App source code path
+api_location: &amp;#34;Api&amp;#34; # Api source code path - optional
+output_location: &amp;#34;wwwroot&amp;#34; # Built app content directory - optional
 ###### End of Repository/Build Configurations ######
 close_pull_request_job:
-if: github.event_name == 'pull_request' &amp;amp;&amp;amp; github.event.action == 'closed'
+if: github.event_name == &amp;#39;pull_request&amp;#39; &amp;amp;&amp;amp; github.event.action == &amp;#39;closed&amp;#39;
 runs-on: ubuntu-latest
 name: Close Pull Request Job
 steps:
@@ -67,7 +67,7 @@ id: closepullrequest
 uses: Azure/static-web-apps-deploy@v1
 with:
 azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_&amp;lt;GENERATED_HOSTNAME&amp;gt; }}
-action: &amp;quot;close&amp;quot;
+action: &amp;#34;close&amp;#34;
 &lt;/code>&lt;/pre>&lt;p>This github action will run when you create a Pull Request to the branch mentioned in the file, or if you push code into the branch. This code get added into the .github/workflows/ folder and is the location that all github action workflows live.&lt;/p>
 &lt;p>I haven&amp;rsquo;t done much with github actions, however I have used Azure DevOps quite a bit. Over on the Azure DevOps side I have created a pipeline that deploys to a Dev environment, then a Test environment and finally a production environment.&lt;/p>
 &lt;p>Lets have a look at the workflow that I ended up with and with can break down how it all works. Note I am new to Github actions so if there is a better way of doing this do let me know.&lt;/p>
@@ -94,15 +94,15 @@ uses: Azure/static-web-apps-deploy@v1
 with:
 azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ORANGE_POND_09B18B903 }}
 repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
-action: &amp;quot;upload&amp;quot;
+action: &amp;#34;upload&amp;#34;
 ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
 # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-app_location: &amp;quot;Blog&amp;quot; # App source code path
-api_location: &amp;quot;Blog.Func&amp;quot; # Api source code path - optional
-output_location: &amp;quot;wwwroot&amp;quot; # Built app content directory - optional
+app_location: &amp;#34;Blog&amp;#34; # App source code path
+api_location: &amp;#34;Blog.Func&amp;#34; # Api source code path - optional
+output_location: &amp;#34;wwwroot&amp;#34; # Built app content directory - optional
 ###### End of Repository/Build Configurations ######
 test:
-if: github.ref == 'refs/heads/develop'
+if: github.ref == &amp;#39;refs/heads/develop&amp;#39;
 runs-on: ubuntu-latest
 environment:
 name: Test
@@ -117,15 +117,15 @@ uses: Azure/static-web-apps-deploy@v1
 with:
 azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WITTY_DUNE_0A1A77903 }}
 repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
-action: &amp;quot;upload&amp;quot;
+action: &amp;#34;upload&amp;#34;
 ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
 # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-app_location: &amp;quot;Blog&amp;quot; # App source code path
-api_location: &amp;quot;Blog.Func&amp;quot; # Api source code path - optional
-output_location: &amp;quot;wwwroot&amp;quot; # Built app content directory - optional
+app_location: &amp;#34;Blog&amp;#34; # App source code path
+api_location: &amp;#34;Blog.Func&amp;#34; # Api source code path - optional
+output_location: &amp;#34;wwwroot&amp;#34; # Built app content directory - optional
 ###### End of Repository/Build Configurations ######
 prod:
-if: github.ref == 'refs/heads/main'
+if: github.ref == &amp;#39;refs/heads/main&amp;#39;
 runs-on: ubuntu-latest
 environment:
 name: Prod
@@ -140,12 +140,12 @@ uses: Azure/static-web-apps-deploy@v1
 with:
 azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BRAVE_ROCK_0AAC63D03 }}
 repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
-action: &amp;quot;upload&amp;quot;
+action: &amp;#34;upload&amp;#34;
 ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
 # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-app_location: &amp;quot;Blog&amp;quot; # App source code path
-api_location: &amp;quot;Blog.Func&amp;quot; # Api source code path - optional
-output_location: &amp;quot;wwwroot&amp;quot; # Built app content directory - optional
+app_location: &amp;#34;Blog&amp;#34; # App source code path
+api_location: &amp;#34;Blog.Func&amp;#34; # Api source code path - optional
+output_location: &amp;#34;wwwroot&amp;#34; # Built app content directory - optional
 ###### End of Repository/Build Configurations ######
 &lt;/code>&lt;/pre>&lt;p>The first thing I did was create three Azure Static Web Apps, I am using the free tier so while this is trippling my costs it is all still free! Doing this created three github action workflow files, I deleted two and edited the third, but before I deleted them I made a note of the AZURE_STATIC_WEB_APPS_API_TOKEN. If you look in your settings -&amp;gt; secrets for your repo you will see secrets have been created, this is the secure token that github uses to update your static web app.&lt;/p>
 &lt;p>While we are in settings we might as well look at environments. I created a Prod, Test and Dev environment that I was going to use in my github actions.&lt;/p>

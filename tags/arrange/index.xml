@@ -7,12 +7,12 @@
 &lt;p>Assert.AreEqual(expected value, actual value)&lt;/p>
 &lt;p>Say for example you wanted to test a method called ReturnsTrue() which does nothing but returns a value of true. This method is in a class called ReturnsTrueClass&lt;/p>
 &lt;p>The Arrange step in this example would be.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">ReturnsTrueClass t = &lt;span style="color:#66d9ef">new&lt;/span> ReturnsTrueClass();
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The Act step in this example would be.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">var&lt;/span> result = t.ReturnTrue();
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The Assert step in this example would be.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">Assert.AreEqual(&lt;span style="color:#66d9ef">true&lt;/span>, result);
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is a stupidly simple example but hopefully you get the idea of how you can build all your tests with these three steps.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>ReturnsTrueClass t = &lt;span style="color:#66d9ef">new&lt;/span> ReturnsTrueClass();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The Act step in this example would be.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">var&lt;/span> result = t.ReturnTrue();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The Assert step in this example would be.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>Assert.AreEqual(&lt;span style="color:#66d9ef">true&lt;/span>, result);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is a stupidly simple example but hopefully you get the idea of how you can build all your tests with these three steps.&lt;/p>
 &lt;p>Recently I saw a tweet complaining that someone has mixed up expected and actual in the Assert statement.&lt;/p>
 &lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">There is a minor but special hell reserved for those who mix up the expected and actual parameters in Assert.Equals&lt;/p>&amp;mdash; Keith Williams (@zogface) &lt;a href="https://twitter.com/zogface/status/882737770095149056?ref_src=twsrc%5Etfw">July 5, 2017&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
 &lt;p>At first glance this probably isn’t the worst mistake to make as if your tests are all passing actual and expected are the same.&lt;/p>

@@ -2,129 +2,130 @@
 &lt;p>Like most things the best way to learn about something is to use it in a real world example. I am currently adding an email alert feature to a website. This is an ideal example of something that would benefit from Asynchronous programming. There is no need for the webpage to wait to send 1000s of emails, lets just send a call to get started and allow the browser to carry on as normal.&lt;/p>
 &lt;p>This is my first try at using async and await so feel free to suggest best practises in the comments.&lt;/p>
 &lt;p>Lets start with a Send method in my EmailController.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> ActionResult Send(&lt;span style="color:#66d9ef">int&lt;/span> id, &lt;span style="color:#66d9ef">int&lt;/span> pageId, &lt;span style="color:#66d9ef">int&lt;/span> userID)
-{
-&lt;span style="color:#66d9ef">if&lt;/span> (!Authorize.checkPageIsAuthorised(userID, (Authorize.PageIds)pageId))
-{
-&lt;span style="color:#66d9ef">return&lt;/span> Redirect(&lt;span style="color:#e6db74">&amp;#34;/login&amp;#34;&lt;/span>);
-}
-&lt;span style="color:#66d9ef">else&lt;/span>
-{
-Task&amp;lt;&lt;span style="color:#66d9ef">string&lt;/span>&amp;gt; t = SendNotifications(id,userID);
-&lt;span style="color:#66d9ef">return&lt;/span> Redirect(Request.UrlReferrer.ToString());
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This simply checks to see if you have permission to the page. If not redirects to the login page otherwise it makes a method call and redirects back to the page it came from.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> ActionResult Send(&lt;span style="color:#66d9ef">int&lt;/span> id, &lt;span style="color:#66d9ef">int&lt;/span> pageId, &lt;span style="color:#66d9ef">int&lt;/span> userID)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (!Authorize.checkPageIsAuthorised(userID, (Authorize.PageIds)pageId))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> Redirect(&lt;span style="color:#e6db74">&amp;#34;/login&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Task&amp;lt;&lt;span style="color:#66d9ef">string&lt;/span>&amp;gt; t = SendNotifications(id,userID);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> Redirect(Request.UrlReferrer.ToString());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This simply checks to see if you have permission to the page. If not redirects to the login page otherwise it makes a method call and redirects back to the page it came from.&lt;/p>
 &lt;p>Lets have a look at that method call in more detail.&lt;/p>
 &lt;p>Task&lt;string> t = SendNotification(id, userid);&lt;/p>
 &lt;p>SendNotification doesn’t return a normal string it returns a Task&lt;string>, so lets look at how we are creating this.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task&amp;lt;&lt;span style="color:#66d9ef">string&lt;/span>&amp;gt; SendNotifications(&lt;span style="color:#66d9ef">int&lt;/span> id,&lt;span style="color:#66d9ef">string&lt;/span> type,&lt;span style="color:#66d9ef">int&lt;/span> userid)
-{
-&lt;span style="color:#75715e">//logic ommitted
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">await&lt;/span> ef.SendEmail(model, emailHtmlBody);
-&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;OK&amp;#34;&lt;/span>;
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>The return type is set to Task but it has the aysnc keyword appended to it. It also makes a call with the await keyword.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task SendEmail(EmailModel model,&lt;span style="color:#66d9ef">string&lt;/span> emailHtmlBody)
-{
-&lt;span style="color:#75715e">//logic removed
-&lt;/span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#66d9ef">await&lt;/span> smtp.SendMailAsync(message);
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>So that is it. My first bit of code that uses Async and Await. My controller calls a method asynchronously which then calls another method asynchronously which sends emails asynchronously.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task&amp;lt;&lt;span style="color:#66d9ef">string&lt;/span>&amp;gt; SendNotifications(&lt;span style="color:#66d9ef">int&lt;/span> id,&lt;span style="color:#66d9ef">string&lt;/span> type,&lt;span style="color:#66d9ef">int&lt;/span> userid)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//logic ommitted&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">await&lt;/span> ef.SendEmail(model, emailHtmlBody);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;OK&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The return type is set to Task but it has the aysnc keyword appended to it. It also makes a call with the await keyword.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">async&lt;/span> Task SendEmail(EmailModel model,&lt;span style="color:#66d9ef">string&lt;/span> emailHtmlBody)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//logic removed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">await&lt;/span> smtp.SendMailAsync(message);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>So that is it. My first bit of code that uses Async and Await. My controller calls a method asynchronously which then calls another method asynchronously which sends emails asynchronously.&lt;/p>
 &lt;p>Async – This enables the Await keyword to be used in the method&lt;/p>
 &lt;p>Await – This is where things get asynchronous. The await keyword allows the code to wait asynchronously for the long running code to complete.&lt;/p></description></item><item><title>Uploading Files to AWS</title><link>https://www.funkysi1701.com/posts/uploading-files-to-aws/</link><pubDate>Mon, 03 Jul 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/uploading-files-to-aws/</guid><description>&lt;p>I am a fan of Azure but today I have been looking at AWS. Specifically how to upload and download files.&lt;/p>
 &lt;p>AWS S3 stores files in Buckets. I already had an AWS S3 account setup with a Bucket. I am going to assume you have got a bucket setup and concentrate on the code to get files in and out.&lt;/p>
 &lt;p>First step is to use nuget to install the AWS packages. In nuget the packages you want are called AWSSDK.Core and AWSSDK.S3.&lt;/p>
 &lt;p>The using statements you want to use are called Amazon.S3 and Amazon.S3.Transfer, not sure why this doesn’t match nuget, this difference caught me out a couple of times.&lt;/p>
 &lt;p>Now to the code that uploads files&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">AmazonS3Client AWSclient = &lt;span style="color:#66d9ef">new&lt;/span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.EUWest1);
-TransferUtility fileTransferUtility = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtility(AWSclient);
-&lt;span style="color:#66d9ef">using&lt;/span> (FileStream streamWriter = &lt;span style="color:#66d9ef">new&lt;/span> FileStream(path, FileMode.Open))
-{
-TransferUtilityUploadRequest fileTransferUtilityRequest = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtilityUploadRequest
-{
-BucketName = &lt;span style="color:#e6db74">&amp;#34;flawlessimages&amp;#34;&lt;/span>,
-InputStream = streamWriter,
-Key = fileName
-};
-fileTransferUtility.Upload(fileTransferUtilityRequest);
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Lets break it down and look at what it does.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">AmazonS3Client AWSclient = &lt;span style="color:#66d9ef">new&lt;/span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.EUWest1);
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This creates an instance of AmazonS3Client, we are passing the Access Key and Secret Access Key both of which can be found from your Amazon S3 account My Security Credentials section. Amazon.RegionEndpoint.EUWest1 specifies the amazon data centres that your bucket is located in.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">TransferUtility fileTransferUtility = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtility(AWSclient);
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This creates an instance of TransfterUtility using the AmazonS3Client instance we created in the previous step.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">&lt;span style="color:#66d9ef">using&lt;/span> (FileStream streamWriter = &lt;span style="color:#66d9ef">new&lt;/span> FileStream(path, FileMode.Open))
-{
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This opens up a filestream from a files path and specifies that the file should be opened.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">TransferUtilityUploadRequest fileTransferUtilityRequest = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtilityUploadRequest
-{
-BucketName = &lt;span style="color:#e6db74">&amp;#34;flawlessimages&amp;#34;&lt;/span>,
-InputStream = streamWriter,
-Key = fileName
-};
-fileTransferUtility.Upload(fileTransferUtilityRequest);
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This last step specifies which bucket to upload to, what input stream to upload and the Key to use. Key is just AWS way of referring to files, more commonly referred to as the filename.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c#" data-lang="c#">&lt;span style="display:flex;">&lt;span>AmazonS3Client AWSclient = &lt;span style="color:#66d9ef">new&lt;/span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.EUWest1);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>TransferUtility fileTransferUtility = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtility(AWSclient);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> (FileStream streamWriter = &lt;span style="color:#66d9ef">new&lt;/span> FileStream(path, FileMode.Open))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> TransferUtilityUploadRequest fileTransferUtilityRequest = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtilityUploadRequest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> BucketName = &lt;span style="color:#e6db74">&amp;#34;flawlessimages&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> InputStream = streamWriter,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Key = fileName
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fileTransferUtility.Upload(fileTransferUtilityRequest);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Lets break it down and look at what it does.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c#" data-lang="c#">&lt;span style="display:flex;">&lt;span>AmazonS3Client AWSclient = &lt;span style="color:#66d9ef">new&lt;/span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.EUWest1);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This creates an instance of AmazonS3Client, we are passing the Access Key and Secret Access Key both of which can be found from your Amazon S3 account My Security Credentials section. Amazon.RegionEndpoint.EUWest1 specifies the amazon data centres that your bucket is located in.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c#" data-lang="c#">&lt;span style="display:flex;">&lt;span>TransferUtility fileTransferUtility = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtility(AWSclient);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This creates an instance of TransfterUtility using the AmazonS3Client instance we created in the previous step.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c#" data-lang="c#">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> (FileStream streamWriter = &lt;span style="color:#66d9ef">new&lt;/span> FileStream(path, FileMode.Open))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This opens up a filestream from a files path and specifies that the file should be opened.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c#" data-lang="c#">&lt;span style="display:flex;">&lt;span>TransferUtilityUploadRequest fileTransferUtilityRequest = &lt;span style="color:#66d9ef">new&lt;/span> TransferUtilityUploadRequest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> BucketName = &lt;span style="color:#e6db74">&amp;#34;flawlessimages&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> InputStream = streamWriter,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Key = fileName
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fileTransferUtility.Upload(fileTransferUtilityRequest);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This last step specifies which bucket to upload to, what input stream to upload and the Key to use. Key is just AWS way of referring to files, more commonly referred to as the filename.&lt;/p>
 &lt;p>This is all you need to do to upload a file to your Bucket. The file will be located at &lt;a href="https://s3-eu-west-1.amazonaws.com/[bucketname]/[filename]" target="_blank" rel="noopener noreferrer">https://s3-eu-west-1.amazonaws.com/[bucketname]/[filename]&lt;/a>
 , however by default it will not be downloadable until you set Read permission to everyone, once you do that anyone who has the link will be able to download your file.&lt;/p>
 &lt;p>This is the same permission level as any file you have on your webserver, however AWS has a better way.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c#" data-lang="c#">&lt;span style="color:#66d9ef">using&lt;/span> (s3Client = &lt;span style="color:#66d9ef">new&lt;/span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.USEast1))
-{
-GetPreSignedUrlRequest request1 = &lt;span style="color:#66d9ef">new&lt;/span> GetPreSignedUrlRequest
-{
-BucketName = bucketName,
-Key = filename,
-Expires = DateTime.Now.AddMinutes(&lt;span style="color:#ae81ff">5&lt;/span>)
-};
-urlString = s3Client.GetPreSignedURL(request1);
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Here we are generating a url to download the file, but we are specifying that it is only valid for 5 minutes. This means that if you share the url it will only work for 5 minutes, after that AWS will give an access denied message.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-c#" data-lang="c#">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">using&lt;/span> (s3Client = &lt;span style="color:#66d9ef">new&lt;/span> AmazonS3Client(accessKeyID, secretAccessKeyID, Amazon.RegionEndpoint.USEast1))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> GetPreSignedUrlRequest request1 = &lt;span style="color:#66d9ef">new&lt;/span> GetPreSignedUrlRequest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> BucketName = bucketName,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Key = filename,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Expires = DateTime.Now.AddMinutes(&lt;span style="color:#ae81ff">5&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> urlString = s3Client.GetPreSignedURL(request1);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Here we are generating a url to download the file, but we are specifying that it is only valid for 5 minutes. This means that if you share the url it will only work for 5 minutes, after that AWS will give an access denied message.&lt;/p>
 &lt;p>This is much better security than you have on a typical web server, and easy to implement, every time a user clicks on a download link you generate a new presigned url and send the download to the browser, as long as this process doesn’t take longer than 5 minutes the user will never know.&lt;/p></description></item><item><title>Interfaces</title><link>https://www.funkysi1701.com/posts/interfaces/</link><pubDate>Mon, 27 Mar 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/interfaces/</guid><description>&lt;p>I am trying to understand interfaces and when to use them in my code.&lt;/p>
 &lt;p>An interface defines a contract and any class that implements that interface agrees to fulfil that contract.&lt;/p>
 &lt;p>Lets look at an example as this tends to be how I learn best.&lt;/p>
 &lt;p>Most applications require some sort of data to work from so lets start by defining IData which can load data.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">interface&lt;/span> IData
-{
-Blog LoadData(&lt;span style="color:#66d9ef">string&lt;/span> Connectionstring);
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>My interface defines one method LoadData and outputs an object called Blog (I will explain why in a minute)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">interface&lt;/span> &lt;span style="color:#a6e22e">IData&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Blog LoadData(&lt;span style="color:#66d9ef">string&lt;/span> Connectionstring);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>My interface defines one method LoadData and outputs an object called Blog (I will explain why in a minute)&lt;/p>
 &lt;p>A common data source is a SQL database so we could define a SQL class that implements IData.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">SQL&lt;/span> : IData
-{
-&lt;span style="color:#66d9ef">public&lt;/span> Blog LoadData(&lt;span style="color:#66d9ef">string&lt;/span> Connectionstring)
-{
-Blog blog = &lt;span style="color:#66d9ef">new&lt;/span> Blog();
-&lt;span style="color:#66d9ef">using&lt;/span> (SqlConnection con = &lt;span style="color:#66d9ef">new&lt;/span> SqlConnection(Connectionstring))
-{
-con.Open();
-&lt;span style="color:#75715e">//etc
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We could also get data from an RSS feed of a blog (hence why I called the object Blog earlier)&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">XML&lt;/span> : IData
-{
-&lt;span style="color:#66d9ef">public&lt;/span> Blog LoadData(&lt;span style="color:#66d9ef">string&lt;/span> Connectionstring)
-{
-XmlDocument myXmlDocument = &lt;span style="color:#66d9ef">new&lt;/span> XmlDocument();
-myXmlDocument.Load(Connectionstring);
-Blog blog = &lt;span style="color:#66d9ef">new&lt;/span> Blog();
-&lt;span style="color:#66d9ef">foreach&lt;/span> (XmlNode RootNode &lt;span style="color:#66d9ef">in&lt;/span> myXmlDocument.ChildNodes)
-{
-&lt;span style="color:#75715e">//etc
-&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Both classes implement IData and have a method called LoadData which has a string parameter and outputs a blog object. The string parameter is either a connection string to a SQL database or the URL of the rss feed. Not sure if there is a better way of doing this bit, maybe the name of the string needs making more generic.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">SQL&lt;/span> : IData
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Blog LoadData(&lt;span style="color:#66d9ef">string&lt;/span> Connectionstring)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Blog blog = &lt;span style="color:#66d9ef">new&lt;/span> Blog();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">using&lt;/span> (SqlConnection con = &lt;span style="color:#66d9ef">new&lt;/span> SqlConnection(Connectionstring))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> con.Open();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//etc&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We could also get data from an RSS feed of a blog (hence why I called the object Blog earlier)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">XML&lt;/span> : IData
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Blog LoadData(&lt;span style="color:#66d9ef">string&lt;/span> Connectionstring)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> XmlDocument myXmlDocument = &lt;span style="color:#66d9ef">new&lt;/span> XmlDocument();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> myXmlDocument.Load(Connectionstring);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Blog blog = &lt;span style="color:#66d9ef">new&lt;/span> Blog();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">foreach&lt;/span> (XmlNode RootNode &lt;span style="color:#66d9ef">in&lt;/span> myXmlDocument.ChildNodes)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//etc&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Both classes implement IData and have a method called LoadData which has a string parameter and outputs a blog object. The string parameter is either a connection string to a SQL database or the URL of the rss feed. Not sure if there is a better way of doing this bit, maybe the name of the string needs making more generic.&lt;/p>
 &lt;p>Now we have some classes that implement an interface what can we do with them. Lets write a class called GetData which gets data but doesn’t care if it comes form the rss feed or a SQL database.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">GetData&lt;/span>
-{
-&lt;span style="color:#66d9ef">private&lt;/span> IData &lt;span style="color:#ae81ff">_&lt;/span>repo;
-&lt;span style="color:#66d9ef">public&lt;/span> GetData(IData repo)
-{
-&lt;span style="color:#ae81ff">_&lt;/span>repo = repo;
-}
-&lt;span style="color:#66d9ef">public&lt;/span> Blog LoadData(&lt;span style="color:#66d9ef">string&lt;/span> Connectionstring)
-{
-&lt;span style="color:#66d9ef">var&lt;/span> original = &lt;span style="color:#ae81ff">_&lt;/span>repo.LoadData(Connectionstring);
-&lt;span style="color:#66d9ef">return&lt;/span> original;
-}
-}
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>When we call GetData we can either pass in XML or SQL as the class is not tied to either implementation. We could even write other classes that implement IData for testing purposes.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">GetData&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> IData &lt;span style="color:#ae81ff">_&lt;/span>repo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> GetData(IData repo)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">_&lt;/span>repo = repo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Blog LoadData(&lt;span style="color:#66d9ef">string&lt;/span> Connectionstring)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> original = &lt;span style="color:#ae81ff">_&lt;/span>repo.LoadData(Connectionstring);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> original;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>When we call GetData we can either pass in XML or SQL as the class is not tied to either implementation. We could even write other classes that implement IData for testing purposes.&lt;/p>
 &lt;p>My full code can be found on &lt;a href="https://github.com/funkysi1701/InterfaceExample" target="_blank" rel="noopener noreferrer">github&lt;/a>
 .&lt;/p>
 &lt;p>The advantages of writing code in this way include code that is easier to extend, easier to test and easier to maintain. This is only the start of my understanding and I am sure this is going to be a topic I come back to in the next few weeks.&lt;/p></description></item></channel></rss>

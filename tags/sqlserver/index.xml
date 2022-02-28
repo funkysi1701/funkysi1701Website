@@ -2,33 +2,33 @@
 &lt;p>Upgrading production environments is complex and there are licensing considerations to take into account. However for non production workloads like development this isn&amp;rsquo;t a problem so lets look at that first.&lt;/p>
 &lt;p>In the past I have installed SQL Server Devloper Edition onto my laptop, this is fine but I have found that unless you are very careful you may end up with multiple different versions of SQL Server sitting around, and it is difficult to cleanly remove them without a fresh install of the OS.&lt;/p>
 &lt;p>However in this day and age, Docker and Containers are king. My current development environment makes use of Docker and has a docker compose file which sets up SQL Server for this particular application, lets take a look.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yml" data-lang="yml"> &lt;span style="color:#f92672">sqlserver&lt;/span>:
-&lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">mcr.microsoft.com/mssql/server:2019-latest&lt;/span>
-&lt;span style="color:#f92672">container_name&lt;/span>: &lt;span style="color:#ae81ff">Sql&lt;/span>
-&lt;span style="color:#f92672">ports&lt;/span>:
-- &lt;span style="color:#e6db74">&amp;#34;5432:1433&amp;#34;&lt;/span>
-&lt;span style="color:#f92672">networks&lt;/span>:
-- &lt;span style="color:#ae81ff">my-network&lt;/span>
-&lt;span style="color:#f92672">volumes&lt;/span>:
-- &lt;span style="color:#ae81ff">sqlvolume:/var/opt/mssql&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This defines which docker image to use, in this case 2019-latest, sets up ports and the name and saves the data on a docker volume.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">sqlserver&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">mcr.microsoft.com/mssql/server:2019-latest&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">container_name&lt;/span>: &lt;span style="color:#ae81ff">Sql&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">ports&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#e6db74">&amp;#34;5432:1433&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">networks&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">my-network&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">volumes&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">sqlvolume:/var/opt/mssql&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This defines which docker image to use, in this case 2019-latest, sets up ports and the name and saves the data on a docker volume.&lt;/p>
 &lt;p>If we then run SELECT @@VERSION on this instance of SQL Server we get told:&lt;/p>
 &lt;pre tabindex="0">&lt;code>Microsoft SQL Server 2019 (RTM-CU13) (KB5005679) - 15.0.4178.1 (X64) Sep 23 2021 16:47:49 Copyright (C) 2019 Microsoft Corporation Developer Edition (64-bit) on Linux (Ubuntu 20.04.3 LTS) &amp;lt;X64&amp;gt;
 &lt;/code>&lt;/pre>&lt;p>What if we change the docker-compose file to use 2022-latest?&lt;/p>
-&lt;pre tabindex="0">&lt;code>manifest for mcr.microsoft.com/mssql/server:2022-latest not found: manifest unknown: manifest tagged by &amp;quot;2022-latest&amp;quot; is not found
+&lt;pre tabindex="0">&lt;code>manifest for mcr.microsoft.com/mssql/server:2022-latest not found: manifest unknown: manifest tagged by &amp;#34;2022-latest&amp;#34; is not found
 &lt;/code>&lt;/pre>&lt;p>SQL Server 2022 hasn&amp;rsquo;t been released yet so there is no docker image for it yet. Try this command again in a few months when it is available.&lt;/p>
 &lt;p>OK so what else can we try? What about a downgrade to 2017-latest? Will that work?&lt;/p>
 &lt;p>SQL Server 2017 starts but the following error gets logged.&lt;/p>
 &lt;pre tabindex="0">&lt;code>2022-02-23 21:41:15.30 Server Software Usage Metrics is disabled.
-2022-02-23 21:41:15.30 spid6s Starting up database 'master'.
+2022-02-23 21:41:15.30 spid6s Starting up database &amp;#39;master&amp;#39;.
 2022-02-23 21:41:15.34 spid6s Error: 948, Severity: 20, State: 1.
-2022-02-23 21:41:15.34 spid6s The database 'master' cannot be opened because it is version 904. This server supports version 869 and earlier. A downgrade path is not supported.
+2022-02-23 21:41:15.34 spid6s The database &amp;#39;master&amp;#39; cannot be opened because it is version 904. This server supports version 869 and earlier. A downgrade path is not supported.
 &lt;/code>&lt;/pre>&lt;p>Doh we can&amp;rsquo;t downgrade the existing database we have. Probably a good thing really.&lt;/p>
 &lt;p>Microsoft release regular updates for SQL Server called CU&amp;rsquo;s (Cumulative Updates), you can see above we are on CU13. Is there a CU14 or CU15 we could try?&lt;/p>
 &lt;p>Update the docker compose to: mcr.microsoft.com/mssql/server:2019-CU14-ubuntu-20.04&lt;/p>
 &lt;p>At this point I actually got an error&lt;/p>
 &lt;pre tabindex="0">&lt;code>2022-02-23 21:50:20.71 Server Error: 17058, Severity: 16, State: 1.
-2022-02-23 21:50:20.71 Server initerrlog: Could not open error log file '/var/opt/mssql/log/errorlog'. Operating system error = 5(Access is denied.).
+2022-02-23 21:50:20.71 Server initerrlog: Could not open error log file &amp;#39;/var/opt/mssql/log/errorlog&amp;#39;. Operating system error = 5(Access is denied.).
 &lt;/code>&lt;/pre>&lt;p>This is caused by trying to use SQL Server 2017 but it is easy to fix.&lt;/p>
 &lt;p>In docker desktop there is a volumes section, find the volume you are using with SQL Server and delete the errorlog mentioned above.&lt;/p>
 &lt;p>&lt;img class="img-fluid" alt="Docker Desktop" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2022/docker-desktop1.png" loading="lazy"
@@ -48,6 +48,6 @@
 &lt;p>A common data item that gets stored in databases is addresses and addresses often contain line breaks to make the data display better. In the earlier versions of SSMS, when you copied and pasted these line breaks were ignored and the data displayed the same in SSMS as it did in Excel. However in the more recent version, theses line breaks got copied across breaking your spreadsheet and making it hard to see what data corresponded with what.&lt;/p>
 &lt;p>Now I don’t know if this should be described as introducing a bug or fixing one. I can easily argue both sides. If your data contains a line break and you copy this data it should include the line break in the destination, but if it does that it displays badly in Excel.&lt;/p>
 &lt;p>The fix I have been using until recently is to use the following TSQL command in my queries.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-sql" data-lang="sql">&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#66d9ef">REPLACE&lt;/span>(&lt;span style="color:#66d9ef">REPLACE&lt;/span>(&lt;span style="color:#f92672">@&lt;/span>str, CHAR(&lt;span style="color:#ae81ff">13&lt;/span>), &lt;span style="color:#e6db74">&amp;#34;), CHAR(10), &amp;#34;&lt;/span>)
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This command replaces any line breaks with an empty string. Both Char(10) and Char(13) are needed because you can have different types of line breaks. This is great if you are writing the script from scratch but isn’t great if your are running a stored procedure or your query has a lot of columns.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#66d9ef">REPLACE&lt;/span>(&lt;span style="color:#66d9ef">REPLACE&lt;/span>(&lt;span style="color:#f92672">@&lt;/span>str, CHAR(&lt;span style="color:#ae81ff">13&lt;/span>), &lt;span style="color:#e6db74">&amp;#34;), CHAR(10), &amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This command replaces any line breaks with an empty string. Both Char(10) and Char(13) are needed because you can have different types of line breaks. This is great if you are writing the script from scratch but isn’t great if your are running a stored procedure or your query has a lot of columns.&lt;/p>
 &lt;p>The answer to this is to use Visual Studio to run your SQL query. In Visual Studio you can write and run queries via Server Explorer and the results produced don’t contain line breaks. I have only just discovered this solution, but so far it has worked and is very easy to do, plus as I do most of my development in Visual Studio anyway it saves me having to open SSMS to test my queries.&lt;/p></description></item></channel></rss>
