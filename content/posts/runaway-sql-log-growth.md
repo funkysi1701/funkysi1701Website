@@ -18,7 +18,9 @@ aliases = [
     "/posts/runaway-sql-log-growth",
     "/posts/runaway-sql-log-growth-10ip",
     "/posts/2015/06/12/runaway-sql-log-growth-10ip",
-    "/posts/2015/06/12/runaway-sql-log-growth"
+    "/posts/2015/06/12/runaway-sql-log-growth",
+    "/2015/06/12/runaway-sql-log-growth-10ip",
+    "/2015/06/12/runaway-sql-log-growth"
 ]
 +++
 
