@@ -56,7 +56,7 @@ As we have seen Patrick Stewart does not appear to be ageing. Below is a compari
 
 ![All Good Things..](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/08/all-good-things.jpg?w=584&ssl=1)
 
-![Star Trek Picard](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2022/3625097-star%20trek%20picard.jpeg)
+![Star Trek Picard](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2022/picard.jpeg)
 
 I really enjoyed the first episode of Star Trek Picard and it is going to be interesting seeing what other similarities and differences there are between it and All Good Things...
 
