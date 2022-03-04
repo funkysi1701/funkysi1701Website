@@ -18,7 +18,9 @@ aliases = [
     "/posts/weekly-update-004/",
     "/posts/weekly-update-004-341p",
     "/posts/2020/12/06/weekly-update-004-341p",
-    "/posts/2020/12/06/weekly-update-004"
+    "/posts/2020/12/06/weekly-update-004",
+    "/2020/12/06/weekly-update-004-341p",
+    "/2020/12/06/weekly-update-004"
 ]
 +++
 

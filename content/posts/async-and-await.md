@@ -18,7 +18,9 @@ aliases = [
     "/posts/tidying-my-desktop/",
     "/posts/tidying-my-desktop-2f1a",
     "/posts/2017/07/24/tidying-my-desktop-2f1a",
-    "/posts/2017/07/24/tidying-my-desktop"
+    "/posts/2017/07/24/tidying-my-desktop",
+    "/2017/07/24/tidying-my-desktop-2f1a",
+    "/2017/07/24/tidying-my-desktop"
 ]
 +++
 For a while the Async and Await commands in c# have confused me.

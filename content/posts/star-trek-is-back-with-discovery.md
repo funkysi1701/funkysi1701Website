@@ -19,7 +19,9 @@ aliases = [
     "/posts/star-trek-is-back-with-discovery",
     "/posts/star-trek-is-back-with-discovery-4lab",
     "/posts/2017/09/22/star-trek-is-back-with-discovery-4lab",
-    "/posts/2017/09/22/star-trek-is-back-with-discovery"
+    "/posts/2017/09/22/star-trek-is-back-with-discovery",
+    "/2017/09/22/star-trek-is-back-with-discovery-4lab",
+    "/2017/09/22/star-trek-is-back-with-discovery"
 ]
 +++
 

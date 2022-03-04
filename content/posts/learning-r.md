@@ -19,7 +19,9 @@ aliases = [
     "/posts/learning-r",
     "/posts/learning-r-2p31",
     "/posts/2017/02/27/learning-r-2p31",
-    "/posts/2017/02/27/learning-r"
+    "/posts/2017/02/27/learning-r",
+    "/2017/02/27/learning-r-2p31",
+    "/2017/02/27/learning-r"
 ]
 +++
 

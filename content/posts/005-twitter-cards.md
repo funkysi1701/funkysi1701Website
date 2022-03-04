@@ -18,7 +18,9 @@ aliases = [
     "/posts/005-twitter-cards/",
     "/posts/005-twitter-cards-46eb",
     "/posts/2020/12/12/005-twitter-cards-46eb",
-    "/posts/2020/12/12/005-twitter-cards"
+    "/posts/2020/12/12/005-twitter-cards",
+    "/2020/12/12/005-twitter-cards-46eb",
+    "/2020/12/12/005-twitter-cards"
 ]
 +++
 

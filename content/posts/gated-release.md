@@ -19,7 +19,9 @@ aliases = [
     "/posts/gated-release/",
     "/posts/gated-release-4772",
     "/posts/2019/04/05/gated-release-4772",
-    "/posts/2019/04/05/gated-release"
+    "/posts/2019/04/05/gated-release",
+    "/2019/04/05/gated-release-4772",
+    "/2019/04/05/gated-release"
 ]
 +++
 

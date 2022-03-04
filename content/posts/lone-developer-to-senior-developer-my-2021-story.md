@@ -20,6 +20,8 @@ aliases = [
     "/posts/lone-developer-to-senior-developer-my-2021-story-3g0a",
     "/posts/2021/12/05/lone-developer-to-senior-developer-my-2021-story-3g0a",
     "/posts/2021/12/05/lone-developer-to-senior-developer-my-2021-story"
+    "/2021/12/05/lone-developer-to-senior-developer-my-2021-story-3g0a",
+    "/2021/12/05/lone-developer-to-senior-developer-my-2021-story"
 ]
 +++
 ## Welcome to Day 5 of the Festive Tech Calendar!

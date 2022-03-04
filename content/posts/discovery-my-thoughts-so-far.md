@@ -19,7 +19,9 @@ aliases = [
     "/posts/discovery-my-thoughts-so-far",
     "/posts/discovery-my-thoughts-so-far-55bl",
     "/posts/2017/10/10/discovery-my-thoughts-so-far-55bl",
-    "/posts/2017/10/10/discovery-my-thoughts-so-far"
+    "/posts/2017/10/10/discovery-my-thoughts-so-far",
+    "/2017/10/10/discovery-my-thoughts-so-far-55bl",
+    "/2017/10/10/discovery-my-thoughts-so-far"
 ]
 +++
 I tried to resist but I am going to have to write about the new Star Trek series Discovery. Warning this post is going to include SPOILERS. If you read on you have been warned.

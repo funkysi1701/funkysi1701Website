@@ -18,7 +18,9 @@ aliases = [
     "/posts/uploading-files-to-aws/",
     "/posts/uploading-files-to-aws-1koo",
     "/posts/2017/07/03/uploading-files-to-aws-1koo",
-    "/posts/2017/07/03/uploading-files-to-aws"
+    "/posts/2017/07/03/uploading-files-to-aws",
+    "/2017/07/03/uploading-files-to-aws-1koo",
+    "/2017/07/03/uploading-files-to-aws"
 ]
 +++
 

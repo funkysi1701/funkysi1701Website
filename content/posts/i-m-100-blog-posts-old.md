@@ -18,7 +18,9 @@ aliases = [
     "/posts/i-m-100-blog-posts-old/",
     "/posts/i-m-100-blog-posts-old-1cf0",
     "/posts/2016/06/02/i-m-100-blog-posts-old-1cf0",
-    "/posts/2016/06/02/i-m-100-blog-posts-old"
+    "/posts/2016/06/02/i-m-100-blog-posts-old",
+    "/2016/06/02/i-m-100-blog-posts-old-1cf0",
+    "/2016/06/02/i-m-100-blog-posts-old"
 ]
 +++
 That’s right this is the one hundredth post that I have written on this blog.

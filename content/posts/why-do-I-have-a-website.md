@@ -19,7 +19,9 @@ aliases = [
     "/posts/why-do-i-have-a-website/",
     "/posts/why-do-i-have-a-website-1m5l",
     "/posts/2022/01/25/why-do-i-have-a-website-1m5l",
-    "/posts/2022/01/25/why-do-i-have-a-website"
+    "/posts/2022/01/25/why-do-i-have-a-website",
+    "/2022/01/25/why-do-i-have-a-website-1m5l",
+    "/2022/01/25/why-do-i-have-a-website"
 ]
 +++
 

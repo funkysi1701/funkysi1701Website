@@ -19,7 +19,9 @@ aliases = [
     "/posts/dotnet-on-a-raspberry-pi/",
     "/posts/dotnet-on-a-raspberry-pi-3ldn",
     "/posts/2021/05/10/dotnet-on-a-raspberry-pi-3ldn",
-    "/posts/2021/05/10/dotnet-on-a-raspberry-pi"
+    "/posts/2021/05/10/dotnet-on-a-raspberry-pi",
+    "/2021/05/10/dotnet-on-a-raspberry-pi-3ldn",
+    "/2021/05/10/dotnet-on-a-raspberry-pi"
 ]
 +++
 

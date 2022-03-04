@@ -19,7 +19,9 @@ aliases = [
     "/posts/source-code-for-game-of-life/",
     "/posts/source-code-for-game-of-life-2eo3",
     "/posts/2015/02/21/source-code-for-game-of-life-2eo3",
-    "/posts/2015/02/21/source-code-for-game-of-life"
+    "/posts/2015/02/21/source-code-for-game-of-life",
+    "/2015/02/21/source-code-for-game-of-life-2eo3",
+    "/2015/02/21/source-code-for-game-of-life"
 ]
 +++
 

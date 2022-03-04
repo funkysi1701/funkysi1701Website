@@ -18,7 +18,9 @@ aliases = [
     "/posts/fiddler-and-apis/",
     "/posts/fiddler-and-apis-1304",
     "/posts/2017/06/19/fiddler-and-apis-1304",
-    "/posts/2017/06/19/fiddler-and-apis"
+    "/posts/2017/06/19/fiddler-and-apis",
+    "/2017/06/19/fiddler-and-apis-1304",
+    "/2017/06/19/fiddler-and-apis"
 ]
 +++
 

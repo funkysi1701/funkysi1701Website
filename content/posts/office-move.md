@@ -18,7 +18,9 @@ aliases = [
     "/posts/office-move",
     "/posts/office-move-2khb",
     "/posts/2017/05/01/office-move-2khb",
-    "/posts/2017/05/01/office-move"
+    "/posts/2017/05/01/office-move",
+    "/2017/05/01/office-move-2khb",
+    "/2017/05/01/office-move"
 ]
 +++
 

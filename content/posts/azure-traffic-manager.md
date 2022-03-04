@@ -18,7 +18,9 @@ aliases = [
     "/posts/azure-traffic-manager/",
     "/posts/azure-traffic-manager-3k9k",
     "/posts/2015/03/12/azure-traffic-manager-3k9k",
-    "/posts/2015/03/12/azure-traffic-manager"
+    "/posts/2015/03/12/azure-traffic-manager",
+    "/2015/03/12/azure-traffic-manager-3k9k",
+    "/2015/03/12/azure-traffic-manager"    
 ]
 +++
 I have spent most of the day tweaking my Azure websites. Lots of fun!

@@ -18,7 +18,9 @@ aliases = [
     "/posts/2022-goals/",
     "/posts/2022-goals-24nj",
     "/posts/2022/01/01/2022-goals-24nj",
-    "/posts/2022/01/01/2022-goals"
+    "/posts/2022/01/01/2022-goals",
+    "/2022/01/01/2022-goals-24nj",
+    "/2022/01/01/2022-goals"
 ]
 +++
 

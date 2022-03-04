@@ -18,7 +18,9 @@ aliases = [
     "/posts/interfaces",
     "/posts/interfaces-1kfa",
     "/posts/2017/03/27/interfaces-1kfa",
-    "/posts/2017/03/27/interfaces"
+    "/posts/2017/03/27/interfaces",
+    "/2017/03/27/interfaces-1kfa",
+    "/2017/03/27/interfaces"
 ]
 +++
 I am trying to understand interfaces and when to use them in my code.

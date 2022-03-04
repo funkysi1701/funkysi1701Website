@@ -19,7 +19,9 @@ aliases = [
     "/posts/back-to-basic/",
     "/posts/back-to-basic-3c83",
     "/posts/2021/12/28/back-to-basic-3c83",
-    "/posts/2021/12/28/back-to-basic"
+    "/posts/2021/12/28/back-to-basic",
+    "/2021/12/28/back-to-basic-3c83",
+    "/2021/12/28/back-to-basic"
 ]
 +++
 

@@ -18,7 +18,9 @@ aliases = [
     "/posts/more-than-halfway-through-2021/",
     "/posts/more-than-halfway-through-2021-29i5",
     "/posts/2021/08/31/more-than-halfway-through-2021-29i5",
-    "/posts/2021/08/31/more-than-halfway-through-2021"
+    "/posts/2021/08/31/more-than-halfway-through-2021",
+    "/2021/08/31/more-than-halfway-through-2021-29i5",
+    "/2021/08/31/more-than-halfway-through-2021"
 ]
 +++
 We are over halfway through 2021, let's have a quick look at some things I have done this year:

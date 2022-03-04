@@ -18,7 +18,9 @@ aliases = [
     "/posts/azure-functions",
     "/posts/azure-functions-301k",
     "/posts/2017/09/12/azure-functions-301k",
-    "/posts/2017/09/12/azure-functions"
+    "/posts/2017/09/12/azure-functions",
+    "/2017/09/12/azure-functions-301k",
+    "/2017/09/12/azure-functions"
 ]
 +++
 I recently blogged about using [Azure Web Jobs](https://www.funkysi1701.com/posts/using-azure-webjobs-to-automate-stuff), Azure Function is another way of doing the same thing, lets look at how they work.

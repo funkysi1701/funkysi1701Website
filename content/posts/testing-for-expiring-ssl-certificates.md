@@ -18,7 +18,9 @@ aliases = [
     "/posts/testing-for-expiring-ssl-certificates",
     "/posts/testing-for-expiring-ssl-certificates-2dmj",
     "/posts/2020/03/03/testing-for-expiring-ssl-certificates-2dmj",
-    "/posts/2020/03/03/testing-for-expiring-ssl-certificates"
+    "/posts/2020/03/03/testing-for-expiring-ssl-certificates",
+    "/2020/03/03/testing-for-expiring-ssl-certificates-2dmj",
+    "/2020/03/03/testing-for-expiring-ssl-certificates"
 ]
 +++
 Let's Encrypt is amazing, you can easily add SSL certificates to any website and automate the renewal process. I have talked [before](https://www.funkysi1701.com/posts/let-s-encrypt-is-awesome-3f5j/) about how impressive it is.

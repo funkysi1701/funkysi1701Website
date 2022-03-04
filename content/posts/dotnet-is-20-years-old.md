@@ -18,7 +18,9 @@ aliases = [
     "/posts/dotnet-is-20-years-old",
     "/posts/2022/02/14/dotnet-is-20-years-old",
     "/posts/dotnet-is-20-years-old-361e",
-    "/posts/2022/02/14/dotnet-is-20-years-old-361e"
+    "/posts/2022/02/14/dotnet-is-20-years-old-361e",
+    "/dotnet-is-20-years-old-361e",
+    "/2022/02/14/dotnet-is-20-years-old-361e"    
 ]
 +++
 

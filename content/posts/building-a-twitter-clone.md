@@ -18,7 +18,9 @@ aliases = [
     "/posts/building-a-twitter-clone/",
     "/posts/building-a-twitter-clone-2h0c",
     "/posts/2020/12/22/building-a-twitter-clone-2h0c",
-    "/posts/2020/12/22/building-a-twitter-clone"
+    "/posts/2020/12/22/building-a-twitter-clone",
+    "/2020/12/22/building-a-twitter-clone-2h0c",
+    "/2020/12/22/building-a-twitter-clone"
 ]
 +++
 

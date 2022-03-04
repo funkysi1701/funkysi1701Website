@@ -19,7 +19,9 @@ aliases = [
     "/posts/star-trek-is-back-in-2017/",
     "/posts/star-trek-is-back-in-2017-11np",
     "/posts/2015/11/12/star-trek-is-back-in-2017-11np",
-    "/posts/2015/11/12/star-trek-is-back-in-2017"
+    "/posts/2015/11/12/star-trek-is-back-in-2017",
+    "/2015/11/12/star-trek-is-back-in-2017-11np",
+    "/2015/11/12/star-trek-is-back-in-2017"
 ]
 +++
 

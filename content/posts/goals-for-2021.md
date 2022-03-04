@@ -18,7 +18,9 @@ aliases = [
     "/posts/goals-for-2021/",
     "/posts/goals-for-2021-mfm",
     "/posts/2020/12/28/goals-for-2021-mfm",
-    "/posts/2020/12/28/goals-for-2021"
+    "/posts/2020/12/28/goals-for-2021",
+    "/2020/12/28/goals-for-2021-mfm",
+    "/2020/12/28/goals-for-2021"
 ]
 +++
 

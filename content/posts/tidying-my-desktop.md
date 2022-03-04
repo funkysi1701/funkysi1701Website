@@ -18,7 +18,9 @@ aliases = [
     "/posts/tidying-my-desktop/",
     "/posts/tidying-my-desktop-2f1a",
     "/posts/2015/03/11/tidying-my-desktop-2f1a",
-    "/posts/2015/03/11/tidying-my-desktop"
+    "/posts/2015/03/11/tidying-my-desktop",
+    "/2015/03/11/tidying-my-desktop-2f1a",
+    "/2015/03/11/tidying-my-desktop"
 ]
 +++
 My desktop is always a mess. I constantly download files there and forget all about them.

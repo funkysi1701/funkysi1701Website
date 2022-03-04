@@ -19,7 +19,9 @@ aliases = [
     "/posts/charting-my-energy-usage-with-the-octopus-energy-api/",
     "/posts/charting-my-energy-usage-with-the-octopus-energy-api-em8",
     "/posts/2021/03/07/charting-my-energy-usage-with-the-octopus-energy-api-em8",
-    "/posts/2021/03/07/charting-my-energy-usage-with-the-octopus-energy-api"
+    "/posts/2021/03/07/charting-my-energy-usage-with-the-octopus-energy-api",
+    "/2021/03/07/charting-my-energy-usage-with-the-octopus-energy-api-em8",
+    "/2021/03/07/charting-my-energy-usage-with-the-octopus-energy-api"
 ]
 +++
 

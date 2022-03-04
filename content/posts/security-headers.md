@@ -18,7 +18,9 @@ aliases = [
     "/posts/security-headers/",
     "/posts/security-headers-3ec3",
     "/posts/2020/09/26/security-headers-3ec3",
-    "/posts/2020/09/26/security-headers"
+    "/posts/2020/09/26/security-headers",
+    "/2020/09/26/security-headers-3ec3",
+    "/2020/09/26/security-headers"
 ]
 +++
 Have you wondered what info you are leaking via your response headers?, do you want some kind of guide about what headers to set or remove altogether?

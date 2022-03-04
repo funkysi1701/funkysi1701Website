@@ -18,7 +18,9 @@ aliases = [
     "/posts/using-azure-webjobs-to-automate-stuff/",
     "/posts/using-azure-webjobs-to-automate-stuff-38mj",
     "/posts/2017/06/26/using-azure-webjobs-to-automate-stuff-38mj",
-    "/posts/2017/06/26/using-azure-webjobs-to-automate-stuff"
+    "/posts/2017/06/26/using-azure-webjobs-to-automate-stuff",
+    "/2017/06/26/using-azure-webjobs-to-automate-stuff-38mj",
+    "/2017/06/26/using-azure-webjobs-to-automate-stuff"
 ]
 +++
 

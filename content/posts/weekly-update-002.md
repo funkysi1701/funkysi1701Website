@@ -18,7 +18,9 @@ aliases = [
     "/posts/weekly-update-002/",
     "/posts/weekly-update-002-1021",
     "/posts/2020/11/21/weekly-update-002-1021",
-    "/posts/2020/11/21/weekly-update-002"
+    "/posts/2020/11/21/weekly-update-002",
+    "/2020/11/21/weekly-update-002-1021",
+    "/2020/11/21/weekly-update-002"
 ]
 +++
 I know Active Directory is fussy about clocks being in sync however not sure how todays issue happened. 

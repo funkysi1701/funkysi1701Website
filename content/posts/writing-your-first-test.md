@@ -18,7 +18,9 @@ aliases = [
     "/posts/writing-your-first-test",
     "/posts/writing-your-first-test-2plo",
     "/posts/2017/07/10/writing-your-first-test-2plo",
-    "/posts/2017/07/10/writing-your-first-test"
+    "/posts/2017/07/10/writing-your-first-test",
+    "/2017/07/10/writing-your-first-test-2plo",
+    "/2017/07/10/writing-your-first-test"
 ]
 +++
 Whenever I write a new test I have to think how best to do it. Hopefully I can summarise a few tips here to help get started.

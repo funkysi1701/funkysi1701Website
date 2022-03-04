@@ -18,7 +18,9 @@ aliases = [
     "/posts/weekly-update-001/",
     "/posts/weekly-update-001-33d0",
     "/posts/2020/11/14/weekly-update-001-33d0",
-    "/posts/2020/11/14/weekly-update-001"
+    "/posts/2020/11/14/weekly-update-001",
+    "/2020/11/14/weekly-update-001-33d0",
+    "/2020/11/14/weekly-update-001"
 ]
 +++
 One of my favourite podcasts is Troy Hunts weekly update. In it he discusses stuff that he has been working on, plus some personal stuff. I am going to attempt to do something similar. It will probably take me a few of these before we get a look and feel that works.

@@ -20,7 +20,8 @@ aliases = [
     "/posts/using-github-actions-3jo1",
     "/posts/2022/01/10/using-github-actions-3jo1",
     "/posts/2022/01/10/using-github-actions",
-    "/test/"
+    "/2022/01/10/using-github-actions-3jo1",
+    "/2022/01/10/using-github-actions",
 ]
 +++
 

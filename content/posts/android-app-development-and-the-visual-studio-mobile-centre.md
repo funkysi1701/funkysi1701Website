@@ -18,7 +18,9 @@ aliases = [
     "/posts/android-app-development-and-the-visual-studio-mobile-centre",
     "/posts/android-app-development-and-the-visual-studio-mobile-centre-2o2",
     "/posts/2017/08/07/android-app-development-and-the-visual-studio-mobile-centre-2o2",
-    "/posts/2017/08/07/android-app-development-and-the-visual-studio-mobile-centre"
+    "/posts/2017/08/07/android-app-development-and-the-visual-studio-mobile-centre",
+    "/2017/08/07/android-app-development-and-the-visual-studio-mobile-centre-2o2",
+    "/2017/08/07/android-app-development-and-the-visual-studio-mobile-centre"    
 ]
 +++
 For the past week or so I have been playing around with Xamarin and creating an android app.

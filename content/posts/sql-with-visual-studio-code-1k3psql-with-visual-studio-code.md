@@ -18,7 +18,9 @@ aliases = [
     "/posts/sql-with-visual-studio-code",
     "/posts/sql-with-visual-studio-code-1k3p",
     "/posts/2017/11/06/sql-with-visual-studio-code-1k3p",
-    "/posts/2017/11/06/sql-with-visual-studio-code"
+    "/posts/2017/11/06/sql-with-visual-studio-code",
+    "/2017/11/06/sql-with-visual-studio-code-1k3p",
+    "/2017/11/06/sql-with-visual-studio-code"
 ]
 +++
 

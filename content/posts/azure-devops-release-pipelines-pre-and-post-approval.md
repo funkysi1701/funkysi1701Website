@@ -19,7 +19,9 @@ aliases = [
     "/posts/azure-devops-release-pipelines-pre-and-post-approval/",
     "/posts/azure-devops-release-pipelines-pre-and-post-approval-4095",
     "/posts/2021/02/14/azure-devops-release-pipelines-pre-and-post-approval-4095",
-    "/posts/2021/02/14/azure-devops-release-pipelines-pre-and-post-approval"
+    "/posts/2021/02/14/azure-devops-release-pipelines-pre-and-post-approval",
+    "/2021/02/14/azure-devops-release-pipelines-pre-and-post-approval-4095",
+    "/2021/02/14/azure-devops-release-pipelines-pre-and-post-approval"
 ]
 +++
 

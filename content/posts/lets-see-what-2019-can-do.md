@@ -18,7 +18,9 @@ aliases = [
     "/posts/lets-see-what-2019-can-do/",
     "/posts/lets-see-what-2019-can-do-42ni",
     "/posts/2019/01/01/lets-see-what-2019-can-do-42ni",
-    "/posts/2019/01/01/lets-see-what-2019-can-do"
+    "/posts/2019/01/01/lets-see-what-2019-can-do",
+    "/2019/01/01/lets-see-what-2019-can-do-42ni",
+    "/2019/01/01/lets-see-what-2019-can-do"
 ]
 +++
 This is my annual lets make some goals for the new year blog post. So in no particular order.

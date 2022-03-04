@@ -19,7 +19,9 @@ aliases = [
     "/posts/pwned-pass-update/",
     "/posts/pwned-pass-update-55io",
     "/posts/2019/01/23/pwned-pass-update-55io",
-    "/posts/2019/01/23/pwned-pass-update"
+    "/posts/2019/01/23/pwned-pass-update",
+    "/2019/01/23/pwned-pass-update-55io",
+    "/2019/01/23/pwned-pass-update"
 ]
 +++
 

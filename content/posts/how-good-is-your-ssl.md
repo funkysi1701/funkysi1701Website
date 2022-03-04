@@ -18,7 +18,9 @@ aliases = [
     "/posts/how-good-is-your-ssl",
     "/posts/how-good-is-your-ssl-3ncf",
     "/posts/2017/07/17/how-good-is-your-ssl-3ncf",
-    "/posts/2017/07/17/how-good-is-your-ssl"
+    "/posts/2017/07/17/how-good-is-your-ssl",
+    "/2017/07/17/how-good-is-your-ssl-3ncf",
+    "/2017/07/17/how-good-is-your-ssl"
 ]
 +++
 
