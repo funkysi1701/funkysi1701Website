@@ -28,7 +28,7 @@ The final episode of Star Trek: The Next Generation features a few scenes set 25
 
 I thought it would be interesting to compare the two time periods.
 
-##Fate of Picards crew
+## Fate of Picards crew
 
 In All Good Things... all of Picards crew are still alive except one. Deanna Troi passed away but it is never revealed how.
 
@@ -36,7 +36,7 @@ In Star Trek Picard, we know Data has died as featured in the feature file Star 
 
 In both timelines we have one dead crew member.
 
-##Living arrangements
+## Living arrangements
 
 In both time lines Picard is living in France at his vineyard. 
 
@@ -44,19 +44,19 @@ In All Good Things... we do not know who Picard is living with, it is assumed he
 
 In Star Trek Picard we learn that Picard is living with a Romulan couple, due to the involvement Picard made to save the Romulan people when their star went supernova. Picard appears older but for the most part in good health, he can't for example run up a flight of stairs (he is 92 so not surprising really!) and is plagued by dreams from his past.
 
-##Romulan Neutral Zone
+## Romulan Neutral Zone
 
 In All Good Things... there is no Neutral Zone, the Romulan empire has been taken over by the Klingons.
 
 In Star Trek Picard one would assume there is no Neutral Zone as well because the Romulan star system was destroyed. A handful of Romulans survived mostly due to the actions of Picard.
 
-##Looks
+## Looks
 
 As we have seen Patrick Stewart does not appear to be ageing. Below is a comparison of how he looks in the two time frames.
 
 ![All Good Things..](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/08/all-good-things.jpg?w=584&ssl=1)
 
-![Star Trek Picard](https://gamespot1.cbsistatic.com/uploads/scale_super/1581/15811374/3625097-star%20trek%20picard.jpeg)
+![Star Trek Picard](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2022/3625097-star%20trek%20picard.jpeg)
 
 I really enjoyed the first episode of Star Trek Picard and it is going to be interesting seeing what other similarities and differences there are between it and All Good Things...
 
