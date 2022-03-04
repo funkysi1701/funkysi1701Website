@@ -11,7 +11,7 @@
 <meta itemprop=description content="Runaway SQL Log growth"><meta itemprop=datePublished content="2015-06-12T20:00:45+00:00">
 <meta itemprop=dateModified content="2015-06-12T20:00:45+00:00">
 <meta itemprop=wordCount content="406"><meta itemprop=image content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg">
-<meta itemprop=keywords content="ITAdmin,Backups,SQLServer,"><meta property="og:title" content="Runaway SQL Log growth">
+<meta itemprop=keywords content="ITAdmin,Backups,SQL,"><meta property="og:title" content="Runaway SQL Log growth">
 <meta property="og:description" content="Runaway SQL Log growth">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.funkysi1701.com/posts/runaway-sql-log-growth/"><meta property="og:image" content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg"><meta property="article:section" content="posts">
@@ -127,7 +127,7 @@ Pwned Pass
 Jun 12, 2015
 </span><span class=post-reading-time>
 2 min read
-</span><span class=post-taxonomies><a href=https://www.funkysi1701.com/2015/06/ class="badge post-taxonomy">2015-06</a><a href=https://www.funkysi1701.com/tags/itadmin/ class="badge post-taxonomy">ITAdmin</a><a href=https://www.funkysi1701.com/tags/backups/ class="badge post-taxonomy">Backups</a><a href=https://www.funkysi1701.com/tags/sqlserver/ class="badge post-taxonomy">SQLServer</a><a href=https://www.funkysi1701.com/2015/ class="badge post-taxonomy">2015</a></span>
+</span><span class=post-taxonomies><a href=https://www.funkysi1701.com/2015/06/ class="badge post-taxonomy">2015-06</a><a href=https://www.funkysi1701.com/tags/itadmin/ class="badge post-taxonomy">ITAdmin</a><a href=https://www.funkysi1701.com/tags/backups/ class="badge post-taxonomy">Backups</a><a href=https://www.funkysi1701.com/tags/sql/ class="badge post-taxonomy">SQL</a><a href=https://www.funkysi1701.com/2015/ class="badge post-taxonomy">2015</a></span>
 </div><div class="post-content mb-3"><p>Today is my day off, but I wake up and have a quick look at <a href=https://www.funkysi1701.com/posts/i-love-nagios/>nagios</a>
 to see if there is anything I need to worry about. Yes there is, SQL Server has run out of disk space on its data disk.</p><p>I race downstairs and VPN onto the server to find out what has happened. One of my monitoring databases has had runaway log growth and is over 80Gb is size.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span>BACKUP LOG [DBName] <span style=color:#66d9ef>WITH</span> TRUNCATE_ONLY  
 </span></span><span style=display:flex><span>DBCC SHRINKFILE(<span style=color:#e6db74>&#39;DBName_Log&#39;</span>)
@@ -270,14 +270,8 @@ C-Sharp
 <a href=/tags/career class=tagcloud-item style=font-size:.7rem>
 Career
 </a>
-<a href=/tags/certificates class=tagcloud-item style=font-size:.7rem>
-Certificates
-</a>
 <a href=/tags/certification class=tagcloud-item style=font-size:.7rem>
 Certification
-</a>
-<a href=/tags/clouds class=tagcloud-item style=font-size:.7rem>
-Clouds
 </a>
 <a href=/tags/code class=tagcloud-item style=font-size:.7rem>
 Code
@@ -387,10 +381,10 @@ Servers
 <a href=/tags/sourcecode class=tagcloud-item style=font-size:.7rem>
 SourceCode
 </a>
-<a href=/tags/sql class=tagcloud-item style=font-size:1.0358028700194732rem>
+<a href=/tags/sql class=tagcloud-item style=font-size:1.1919423127596123rem>
 SQL
 </a>
-<a href=/tags/sqlserver class=tagcloud-item style=font-size:1.0358028700194732rem>
+<a href=/tags/sqlserver class=tagcloud-item style=font-size:.7rem>
 SQLServer
 </a>
 <a href=/tags/ssl class=tagcloud-item style=font-size:.9118680220299744rem>

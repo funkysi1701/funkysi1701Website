@@ -11,7 +11,7 @@
 <meta itemprop=description content="However Azure has some amazing features that you can configure to help manage when downtime occurs"><meta itemprop=datePublished content="2015-03-12T20:00:45+00:00">
 <meta itemprop=dateModified content="2015-03-12T20:00:45+00:00">
 <meta itemprop=wordCount content="418"><meta itemprop=image content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg">
-<meta itemprop=keywords content="Azure,Clouds,DevOps,ITAdmin,"><meta property="og:title" content="Azure Traffic Manager">
+<meta itemprop=keywords content="Azure,DevOps,ITAdmin,"><meta property="og:title" content="Azure Traffic Manager">
 <meta property="og:description" content="However Azure has some amazing features that you can configure to help manage when downtime occurs">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.funkysi1701.com/posts/azure-traffic-manager/"><meta property="og:image" content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg"><meta property="article:section" content="posts">
@@ -127,7 +127,7 @@ Pwned Pass
 Mar 12, 2015
 </span><span class=post-reading-time>
 2 min read
-</span><span class=post-taxonomies><a href=https://www.funkysi1701.com/2015/03/ class="badge post-taxonomy">2015-03</a><a href=https://www.funkysi1701.com/tags/azure/ class="badge post-taxonomy">Azure</a><a href=https://www.funkysi1701.com/tags/clouds/ class="badge post-taxonomy">Clouds</a><a href=https://www.funkysi1701.com/tags/devops/ class="badge post-taxonomy">DevOps</a><a href=https://www.funkysi1701.com/tags/itadmin/ class="badge post-taxonomy">ITAdmin</a><a href=https://www.funkysi1701.com/2015/ class="badge post-taxonomy">2015</a></span>
+</span><span class=post-taxonomies><a href=https://www.funkysi1701.com/2015/03/ class="badge post-taxonomy">2015-03</a><a href=https://www.funkysi1701.com/tags/azure/ class="badge post-taxonomy">Azure</a><a href=https://www.funkysi1701.com/tags/devops/ class="badge post-taxonomy">DevOps</a><a href=https://www.funkysi1701.com/tags/itadmin/ class="badge post-taxonomy">ITAdmin</a><a href=https://www.funkysi1701.com/2015/ class="badge post-taxonomy">2015</a></span>
 </div><div class="post-content mb-3"><p>I have spent most of the day tweaking my Azure websites. Lots of fun!</p><p>Last week unfortunately Azure had some problems and many websites that were running in the North Europe data centre were unavailable for several hours. And you guessed it my websites were hosted here.</p><p>All hosting providers are going to have downtime from time to time and this is just something you have to take on the chin. The important thing to do in times like these is communicate with your customers about what is going on and that you are doing everything you can to restore service.</p><p>However Azure has some amazing features that you can configure to help manage when downtime occurs.</p><p>Azure is Microsoft’s global cloud platform. And it really is global, there are data centres in North Europe, West Europe, Brazil, Japan, two more in Asia and five in the US. In the event of problems it is highly unlikely that more than one of these would go down at once. If all of these are unavailable, I expect the planet earth is facing some kind of cataclysmic event and the fact that my website is down is not a priority.</p><p><a href=https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/03/IC750592.jpg target=_blank rel="noopener noreferrer"><img class=img-fluid alt=IC750592 src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/03/IC750592.jpg?resize=662%2C347" loading=lazy>
 </a>
 To take advantage of these multiple data centres, Azure has something called a Traffic Manager.</p><p>Traffic Manager has various settings but I am using it in failover mode. This means that if one website goes down, the next one is used.</p><p>All you need to do is create a traffic manager, add two or more websites to it (called endpoints) and choose a page that needs to be monitored so Azure knows which websites are up and which are down.</p><p>If you are using SSL or custom domain names, there are a few extra steps you need to do. Your custom domain name needs pointing at the traffic manager, not the individual websites. The websites themselves have three domain names, the traffic manager address, the azure address and the custom domain name. The SSL certificate can then be assigned to each website that you have added to the traffic manager.</p><p>That was easy wasn’t it, and now if a website goes down traffic manager will use the next one. While testing this, the transition to the next website was almost immediate. I did notice that if you had a browser showing the website open during a problem you sometimes got an error page, I think this was probably due to browser caching, reopening a tab or browser fixed this issue.</p></div></div><div class=card-footer>
@@ -262,14 +262,8 @@ C-Sharp
 <a href=/tags/career class=tagcloud-item style=font-size:.7rem>
 Career
 </a>
-<a href=/tags/certificates class=tagcloud-item style=font-size:.7rem>
-Certificates
-</a>
 <a href=/tags/certification class=tagcloud-item style=font-size:.7rem>
 Certification
-</a>
-<a href=/tags/clouds class=tagcloud-item style=font-size:.7rem>
-Clouds
 </a>
 <a href=/tags/code class=tagcloud-item style=font-size:.7rem>
 Code
@@ -379,10 +373,10 @@ Servers
 <a href=/tags/sourcecode class=tagcloud-item style=font-size:.7rem>
 SourceCode
 </a>
-<a href=/tags/sql class=tagcloud-item style=font-size:1.0358028700194732rem>
+<a href=/tags/sql class=tagcloud-item style=font-size:1.1919423127596123rem>
 SQL
 </a>
-<a href=/tags/sqlserver class=tagcloud-item style=font-size:1.0358028700194732rem>
+<a href=/tags/sqlserver class=tagcloud-item style=font-size:.7rem>
 SQLServer
 </a>
 <a href=/tags/ssl class=tagcloud-item style=font-size:.9118680220299744rem>

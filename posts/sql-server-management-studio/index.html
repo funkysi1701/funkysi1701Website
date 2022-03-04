@@ -11,7 +11,7 @@
 <meta itemprop=description content="SQL Server Management Studio"><meta itemprop=datePublished content="2015-12-03T00:00:00+00:00">
 <meta itemprop=dateModified content="2015-12-03T00:00:00+00:00">
 <meta itemprop=wordCount content="398"><meta itemprop=image content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg">
-<meta itemprop=keywords content="Database,Programming,SQLServer,"><meta property="og:title" content="SQL Server Management Studio">
+<meta itemprop=keywords content="Database,Programming,SQL,"><meta property="og:title" content="SQL Server Management Studio">
 <meta property="og:description" content="SQL Server Management Studio">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.funkysi1701.com/posts/sql-server-management-studio/"><meta property="og:image" content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg"><meta property="article:section" content="posts">
@@ -127,7 +127,7 @@ Pwned Pass
 Dec 3, 2015
 </span><span class=post-reading-time>
 2 min read
-</span><span class=post-taxonomies><a href=https://www.funkysi1701.com/2015/12/ class="badge post-taxonomy">2015-12</a><a href=https://www.funkysi1701.com/tags/database/ class="badge post-taxonomy">Database</a><a href=https://www.funkysi1701.com/tags/programming/ class="badge post-taxonomy">Programming</a><a href=https://www.funkysi1701.com/tags/sqlserver/ class="badge post-taxonomy">SQLServer</a><a href=https://www.funkysi1701.com/2015/ class="badge post-taxonomy">2015</a></span>
+</span><span class=post-taxonomies><a href=https://www.funkysi1701.com/2015/12/ class="badge post-taxonomy">2015-12</a><a href=https://www.funkysi1701.com/tags/database/ class="badge post-taxonomy">Database</a><a href=https://www.funkysi1701.com/tags/programming/ class="badge post-taxonomy">Programming</a><a href=https://www.funkysi1701.com/tags/sql/ class="badge post-taxonomy">SQL</a><a href=https://www.funkysi1701.com/2015/ class="badge post-taxonomy">2015</a></span>
 </div><div class="post-content mb-3"><p>I use SQL Server Management Studio all the time for writing queries, getting data and general SQL development.</p><p><img class=img-fluid alt="SQL Server Management Studio" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/12/sql-server-2012-management-studio-splash-screen.png?resize=529%2C360" loading=lazy>
 </p><p>I have enjoyed seeing the improvements that each new version of SQL Server Management Studio (SSMS) introduced. One great improvement was intellisense.</p><p>This feature saves typing and reduces errors by automatically suggesting tables, column names or other database objects.</p><p>A common query that I get asked to write is provide a spreadsheet that gives the information that satisfies certain criteria. This is easy to do in SSMS, you can write the query, click execute and the rows that satisfy the criteria are displayed. These rows can then be easily copy/pasted into Excel or other spreadsheets.</p><p>A common data item that gets stored in databases is addresses and addresses often contain line breaks to make the data display better. In the earlier versions of SSMS, when you copied and pasted these line breaks were ignored and the data displayed the same in SSMS as it did in Excel. However in the more recent version, theses line breaks got copied across breaking your spreadsheet and making it hard to see what data corresponded with what.</p><p>Now I don’t know if this should be described as introducing a bug or fixing one. I can easily argue both sides. If your data contains a line break and you copy this data it should include the line break in the destination, but if it does that it displays badly in Excel.</p><p>The fix I have been using until recently is to use the following TSQL command in my queries.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span> <span style=color:#66d9ef>REPLACE</span>(<span style=color:#66d9ef>REPLACE</span>(<span style=color:#f92672>@</span>str, CHAR(<span style=color:#ae81ff>13</span>), <span style=color:#e6db74>&#34;), CHAR(10), &#34;</span>)
 </span></span></code></pre></div><p>This command replaces any line breaks with an empty string. Both Char(10) and Char(13) are needed because you can have different types of line breaks. This is great if you are writing the script from scratch but isn’t great if your are running a stored procedure or your query has a lot of columns.</p><p>The answer to this is to use Visual Studio to run your SQL query. In Visual Studio you can write and run queries via Server Explorer and the results produced don’t contain line breaks. I have only just discovered this solution, but so far it has worked and is very easy to do, plus as I do most of my development in Visual Studio anyway it saves me having to open SSMS to test my queries.</p></div></div><div class=card-footer>
@@ -272,14 +272,8 @@ C-Sharp
 <a href=/tags/career class=tagcloud-item style=font-size:.7rem>
 Career
 </a>
-<a href=/tags/certificates class=tagcloud-item style=font-size:.7rem>
-Certificates
-</a>
 <a href=/tags/certification class=tagcloud-item style=font-size:.7rem>
 Certification
-</a>
-<a href=/tags/clouds class=tagcloud-item style=font-size:.7rem>
-Clouds
 </a>
 <a href=/tags/code class=tagcloud-item style=font-size:.7rem>
 Code
@@ -389,10 +383,10 @@ Servers
 <a href=/tags/sourcecode class=tagcloud-item style=font-size:.7rem>
 SourceCode
 </a>
-<a href=/tags/sql class=tagcloud-item style=font-size:1.0358028700194732rem>
+<a href=/tags/sql class=tagcloud-item style=font-size:1.1919423127596123rem>
 SQL
 </a>
-<a href=/tags/sqlserver class=tagcloud-item style=font-size:1.0358028700194732rem>
+<a href=/tags/sqlserver class=tagcloud-item style=font-size:.7rem>
 SQLServer
 </a>
 <a href=/tags/ssl class=tagcloud-item style=font-size:.9118680220299744rem>
