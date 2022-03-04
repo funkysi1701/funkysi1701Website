@@ -18,9 +18,9 @@ aliases = [
     "/posts/pwned-pass-available-from-the-play-store",
     "/posts/pwned-pass-available-from-the-play-store-2fjp",
     "/posts/2017/08/14/pwned-pass-available-from-the-play-store-2fjp",
-    "/posts/2017/08/14/pwned-pass-available-from-the-play-store",
+    "/posts/2017/08/14/pwned-pass",
     "/2017/08/14/pwned-pass-available-from-the-play-store-2fjp",
-    "/2017/08/14/pwned-pass-available-from-the-play-store"
+    "/2017/08/14/pwned-pass"
 ]
 +++
 

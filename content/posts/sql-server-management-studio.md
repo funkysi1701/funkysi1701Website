@@ -15,12 +15,12 @@ summary = "SQL Server Management Studio"
 showFullContent = false
 readingTime = true
 aliases = [
-    "/posts/sql-server-management-studio",
+    "/posts/line-breaks-stored-in-sql-server",
     "/posts/sql-server-management-studio-5013",
     "/posts/2015/12/03/sql-server-management-studio-5013",
-    "/posts/2015/12/03/sql-server-management-studio",
+    "/posts/2015/12/03/line-breaks-stored-in-sql-server",
     "/2015/12/03/sql-server-management-studio-5013",
-    "/2015/12/03/sql-server-management-studio"
+    "/2015/12/03/line-breaks-stored-in-sql-server"
 ]
 +++
 I use SQL Server Management Studio all the time for writing queries, getting data and general SQL development.
