@@ -15,12 +15,12 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
-    "/posts/tidying-my-desktop/",
-    "/posts/tidying-my-desktop-2f1a",
-    "/posts/2017/07/24/tidying-my-desktop-2f1a",
-    "/posts/2017/07/24/tidying-my-desktop",
-    "/2017/07/24/tidying-my-desktop-2f1a",
-    "/2017/07/24/tidying-my-desktop"
+    "/posts/async-and-await",
+    "/posts/async-and-await-4he2",
+    "/posts/2017/07/24/async-and-await-4he2",
+    "/posts/2017/07/24/async-and-await",
+    "/2017/07/24/async-and-await-4he2",
+    "/2017/07/24/async-and-await"
 ]
 +++
 For a while the Async and Await commands in c# have confused me.
