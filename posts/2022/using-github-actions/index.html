@@ -1,0 +1,550 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Using GitHub Actions - Funky Si's Blog</title><link rel=apple-touch-icon href=https://www.funkysi1701.com/images/icons/icon-180x180.png sizes=180x180>
+<link rel=icon href=https://www.funkysi1701.com/images/icons/icon-32x32.png sizes=32x32 type=image/png>
+<link rel=icon href=https://www.funkysi1701.com/images/icons/icon-16x16.png sizes=16x16 type=image/png>
+<link rel=icon href=https://www.funkysi1701.com/images/icons/favicon.png>
+<meta name=keywords content=",">
+<meta name=description content="Using a GitHub Actions pipeline to deploy my Azure Static Web App"><meta itemprop=name content="Using GitHub Actions">
+<meta itemprop=description content="Using a GitHub Actions pipeline to deploy my Azure Static Web App"><meta itemprop=datePublished content="2022-01-10T20:00:45+00:00">
+<meta itemprop=dateModified content="2022-01-10T20:00:45+00:00">
+<meta itemprop=wordCount content="1262"><meta itemprop=image content="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bj77rx0jetjdf7c24nhk.png">
+<meta itemprop=keywords content="GitHub,DevOps,"><meta property="og:title" content="Using GitHub Actions">
+<meta property="og:description" content="Using a GitHub Actions pipeline to deploy my Azure Static Web App">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.funkysi1701.com/posts/2022/using-github-actions/"><meta property="og:image" content="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bj77rx0jetjdf7c24nhk.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2022-01-10T20:00:45+00:00">
+<meta property="article:modified_time" content="2022-01-10T20:00:45+00:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bj77rx0jetjdf7c24nhk.png">
+<meta name=twitter:title content="Using GitHub Actions">
+<meta name=twitter:description content="Using a GitHub Actions pipeline to deploy my Azure Static Web App">
+<link rel=stylesheet href=https://www.funkysi1701.com/css/main.min.b7a6eda8d46e39a549f182cf72a9ff4f4c1d4d82c31ecc3ede0b7f4d5b26f32b.css crossorigin=anonymous><link rel=stylesheet href=https://www.funkysi1701.com/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css integrity="sha256-PSKHlLztu/oEEr64+8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin=anonymous></head><body><script>const items=["mode","palette"];items.forEach(function(e){const t=localStorage.getItem("hbs-"+e);t&&document.body.parentElement.setAttribute("data-"+e,t)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+<div class=container>
+<button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
+<i class="fas fa-bars"></i>
+</button><a class="navbar-brand flex-grow-1 flex-lg-grow-0 text-center text-lg-start mx-auto me-lg-3" href=https://www.funkysi1701.com/>Funky Si's Blog
+</a>
+<div class="offcanvas offcanvas-bottom surface" tabindex=-1 id=offcanvasSocialShare aria-labelledby=offcanvasSocialShare>
+<div class=offcanvas-header>
+<h3 class=offcanvas-title>Share</h3><button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
+<i class="fas fa-times"></i>
+</button>
+</div><div class=offcanvas-body>
+<a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button" target=_blank href="https://twitter.com/intent/tweet?title=Using%20GitHub%20Actions&url=https%3a%2f%2fwww.funkysi1701.com%2fposts%2f2022%2fusing-github-actions%2f">
+<i class="fab fa-fw fa-twitter"></i> Twitter
+</a>
+<a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button" target=_blank href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.funkysi1701.com%2fposts%2f2022%2fusing-github-actions%2f">
+<i class="fab fa-fw fa-facebook-f"></i> Facebook
+</a>
+</div></div><button class=navbar-settings type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasSettings aria-controls=offcanvasSettings aria-label="Toggle settings">
+<i class="fas fa-ellipsis-v"></i>
+</button>
+<div class="offcanvas offcanvas-end surface h-100" tabindex=-1 id=offcanvasSettings aria-labelledby=offcanvasSettings>
+<div class=offcanvas-header>
+<h3 class=offcanvas-title>Settings</h3><button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
+<i class="fas fa-times"></i>
+</button>
+</div><div class="offcanvas-body d-flex flex-column">
+<section class=setting>
+<form class=row>
+<div class=col-auto>
+<label><i class="fas fa-fw fa-adjust"></i> Mode</label>
+</div><div class="col-auto ms-auto">
+<div class="form-check form-switch">
+<input class=form-check-input type=checkbox id=modeSwitcher>
+</div></div></form></section><section class="setting palettes">
+<form class=row>
+<div class=col-auto>
+<label><i class="fas fa-fw fa-palette"></i> Palette</label>
+</div><div class="col-auto ms-auto">
+<a id=btnPalette class="btn btn-sm btn-outline-primary" role=button aria-label=palettePicker>
+<i class="fas fa-eye-dropper"></i>
+</a>
+</div></form><div class="mt-2 d-flex justify-content-between visually-hidden" id=palettePicker><button type=button id=palette-blue aria-label=Blue class="btn btn-sm w-100 palette" data-palette=blue>
+</button><button type=button id=palette-blue-gray aria-label="Blue Gray" class="btn btn-sm w-100 palette" data-palette=blue-gray>
+</button><button type=button id=palette-brown aria-label=Brown class="btn btn-sm w-100 palette" data-palette=brown>
+</button><button type=button id=palette-cyan aria-label=Cyan class="btn btn-sm w-100 palette" data-palette=cyan>
+</button><button type=button id=palette-green aria-label=Green class="btn btn-sm w-100 palette" data-palette=green>
+</button><button type=button id=palette-indigo aria-label=Indigo class="btn btn-sm w-100 palette" data-palette=indigo>
+</button><button type=button id=palette-orange aria-label=Orange class="btn btn-sm w-100 palette" data-palette=orange>
+</button><button type=button id=palette-pink aria-label=Pink class="btn btn-sm w-100 palette" data-palette=pink>
+</button><button type=button id=palette-purple aria-label=Purple class="btn btn-sm w-100 palette" data-palette=purple>
+</button><button type=button id=palette-red aria-label=Red class="btn btn-sm w-100 palette" data-palette=red>
+</button><button type=button id=palette-teal aria-label=Teal class="btn btn-sm w-100 palette" data-palette=teal>
+</button><button type=button id=palette-yellow aria-label=Yellow class="btn btn-sm w-100 palette" data-palette=yellow>
+</button></div></section><section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
+<a role=button class="action action-go-back" href="javascript: window.history.back();">
+<span class=action-icon><i class="fas fa-2x fa-arrow-left"></i></span> Go back
+</a>
+<a role=button class="action action-reload-page">
+<span class=action-icon><i class="fas fa-2x fa-redo-alt"></i></span> Reload
+</a>
+<a role=button class="action action-copy-url">
+<span class=action-icon><i class="fas fa-2x fa-link"></i></span> Copy URL
+</a><a class="action action-social-share" type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasSocialShare aria-controls=offcanvasSocialShare aria-label="Toggle social share">
+<span class=action-icon><i class="fas fa-2x fa-share-alt"></i></span> Share
+</a></section></div></div><div class="collapse navbar-collapse" tabindex=-1 id=navbarSupportedContent aria-labelledby=navbarSupportedContent>
+<form class="search-bar my-1" action=https://www.funkysi1701.com/search>
+<div class="input-group input-group-sm">
+<span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+<input class="form-control rounded-pill" name=q type=search aria-label=Search>
+</div></form><ul class="navbar-nav ms-auto"><li class=nav-item>
+<a class=nav-link href=https://www.funkysi1701.com/about>
+About
+</a>
+</li><li class=nav-item>
+<a class=nav-link href=https://metrics.funkysi1701.com/ target=_blank rel="noopener noreferrer">
+Metrics
+</a>
+</li><li class=nav-item>
+<a class=nav-link href=https://www.funkysi1701.com/pwned-pass>
+Pwned Pass
+</a>
+</li></ul></div></div></nav></header><main role=main class=container>
+<div class="row content">
+<div class=col-lg-8>
+<div class=container><nav class="row card component" aria-label=breadcrumb>
+<div class=card-body>
+<ol class=breadcrumb><li class=breadcrumb-item><a href=https://www.funkysi1701.com/>Home</a></li><li class=breadcrumb-item><a href=https://www.funkysi1701.com/posts/>Posts</a></li><li class="breadcrumb-item active">Using GitHub Actions</li></ol></div></nav><div class=post-panel-wrapper>
+<div class="d-flex flex-column component rounded post-panel">
+<a class="action action-panel-toggler" role=button title="Panel toggler">
+<i class="fas fa-fw fa-chevron-circle-down"></i>
+</a>
+<a id=sidebarToggler class="action d-none d-lg-block" role=button title="Sidebar toggler">
+<i class="fas fa-fw fa-expand-alt" data-fa-transform=rotate-45></i>
+</a>
+<a class=action href=#post-comments role=button aria-label=Comments title=Comments>
+<i class="fas fa-fw fa-comments"></i>
+</a>
+</div></div><article class="row card component mb-4 post">
+<div class=card-header>
+<h1 class="card-title post-title">Using GitHub Actions
+</h1></div><div class=card-body><div class=post-meta>
+<span class=post-date title="created on 2022-01-10 20:00:45 +0000 UTC.">
+Jan 10, 2022
+</span><span class=post-reading-time>
+6 min read
+</span><span class=post-taxonomies><a href=https://www.funkysi1701.com/2022/01/ class="badge post-taxonomy">2022-01</a><a href=https://www.funkysi1701.com/tags/github/ class="badge post-taxonomy">GitHub</a><a href=https://www.funkysi1701.com/tags/devops/ class="badge post-taxonomy">DevOps</a><a href=https://www.funkysi1701.com/2022/ class="badge post-taxonomy">2022</a></span>
+</div><div class="post-content mb-3"><p>I&rsquo;ve been running my website on Azure Static Web Apps for a while and it is pretty cool.</p><p>When you create a Static Web App on Azure you get asked for the github repo of your source code and even the branch to use.
+<img class=img-fluid alt="GitHub Repo for my Static Web App" src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/off7ur2tgsla4smkrhhi.png loading=lazy>
+</p><p>Once you have selected this, you get asked for the type of code to deploy, mine is Blazor Web Assembly but you can use Angular, React or Vue.</p><p><img class=img-fluid alt="GitHub Actions workflow creation" src=https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ruhzjeujgl1yjxx5lng8.png loading=lazy>
+You now have three variables to fill in the location in your code of the Website, the location of your Azure Functions and the output location usually wwwroot. Once you have set these three you can preview the GitHub Actions file that will be created and added to your repository.</p><p>I get something like this</p><pre tabindex=0><code>name: Azure Static Web Apps CI/CD
+
+on:
+  push:
+    branches:
+      - feature/tempbranch
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - feature/tempbranch
+
+jobs:
+  build_and_deploy_job:
+    if: github.event_name == &#39;push&#39; || (github.event_name == &#39;pull_request&#39; &amp;&amp; github.event.action != &#39;closed&#39;)
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_&lt;GENERATED_HOSTNAME&gt; }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          action: &#34;upload&#34;
+          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
+          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+          app_location: &#34;Client&#34; # App source code path
+          api_location: &#34;Api&#34; # Api source code path - optional
+          output_location: &#34;wwwroot&#34; # Built app content directory - optional
+          ###### End of Repository/Build Configurations ######
+
+  close_pull_request_job:
+    if: github.event_name == &#39;pull_request&#39; &amp;&amp; github.event.action == &#39;closed&#39;
+    runs-on: ubuntu-latest
+    name: Close Pull Request Job
+    steps:
+      - name: Close Pull Request
+        id: closepullrequest
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_&lt;GENERATED_HOSTNAME&gt; }}
+          action: &#34;close&#34;
+ 
+</code></pre><p>This github action will run when you create a Pull Request to the branch mentioned in the file, or if you push code into the branch. This code get added into the .github/workflows/ folder and is the location that all github action workflows live.</p><p>I haven&rsquo;t done much with github actions, however I have used Azure DevOps quite a bit. Over on the Azure DevOps side I have created a pipeline that deploys to a Dev environment, then a Test environment and finally a production environment.</p><p>Lets have a look at the workflow that I ended up with and with can break down how it all works. Note I am new to Github actions so if there is a better way of doing this do let me know.</p><pre tabindex=0><code>name: Azure Static Web Apps
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - feature/*
+
+jobs:
+  dev:
+    runs-on: ubuntu-latest
+    environment: 
+      name: Dev
+    name: Dev
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ORANGE_POND_09B18B903  }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          action: &#34;upload&#34;
+          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
+          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+          app_location: &#34;Blog&#34; # App source code path
+          api_location: &#34;Blog.Func&#34; # Api source code path - optional
+          output_location: &#34;wwwroot&#34; # Built app content directory - optional
+          ###### End of Repository/Build Configurations ######
+  test:
+    if: github.ref == &#39;refs/heads/develop&#39;
+    runs-on: ubuntu-latest
+    environment: 
+      name: Test
+    name: Test
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WITTY_DUNE_0A1A77903  }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          action: &#34;upload&#34;
+          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
+          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+          app_location: &#34;Blog&#34; # App source code path
+          api_location: &#34;Blog.Func&#34; # Api source code path - optional
+          output_location: &#34;wwwroot&#34; # Built app content directory - optional
+          ###### End of Repository/Build Configurations ######
+  prod:
+    if: github.ref == &#39;refs/heads/main&#39;
+    runs-on: ubuntu-latest
+    environment: 
+      name: Prod
+    name: Prod
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BRAVE_ROCK_0AAC63D03 }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          action: &#34;upload&#34;
+          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
+          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+          app_location: &#34;Blog&#34; # App source code path
+          api_location: &#34;Blog.Func&#34; # Api source code path - optional
+          output_location: &#34;wwwroot&#34; # Built app content directory - optional
+          ###### End of Repository/Build Configurations ######     
+</code></pre><p>The first thing I did was create three Azure Static Web Apps, I am using the free tier so while this is trippling my costs it is all still free! Doing this created three github action workflow files, I deleted two and edited the third, but before I deleted them I made a note of the AZURE_STATIC_WEB_APPS_API_TOKEN. If you look in your settings -> secrets for your repo you will see secrets have been created, this is the secure token that github uses to update your static web app.</p><p>While we are in settings we might as well look at environments. I created a Prod, Test and Dev environment that I was going to use in my github actions.</p><p>Environments can have various rules setup on them.</p><ul>
+<li>Required reviewers - this is like an approver, a user specified here must aprove for the workflow to be deployed</li><li>Wait time - I didn&rsquo;t use this, but it looks like a certain amount of time can be set to pause the deployment. (I assume to do some kind of manual check)</li><li>Deployment Branch - specify what branch are allowed to be deployed to what environments. I specified develop, main and feature branches could be deployed to the Dev environment, develop and main could go on Test and main could go on Prod</li><li>Environment secrets - I didn&rsquo;t use this as my secrets were already created, however it looks like your secrets can be associated with a specific environment</li></ul><p>Now that we have the static web apps setup and the environments lets look at the github action file.</p><p>First of all I removed the PR stuff and just concentrated on pushes. I wanted my workflow to be.</p><ol>
+<li>Push to feature branch</li><li>Deploys to Dev env</li><li>PR feature branch to develop</li><li>Once merged code gets pushed into develop</li><li>Deploys to Test env</li><li>PR develop to main</li><li>Once merged code gets pushed into main</li><li>Deploys to Prod env (after approval)</li></ol><p>The approval on deploying to production I think is probably overkill, but I still have it setup like that for now.</p><p>My gh action has three jobs defined as dev: test: and prod: they are all the same except they have the azure_static_web_apps_api_token that is correct for their environment.</p><p>They also each have a environment defined eg</p><pre tabindex=0><code>environment:
+  name: Prod
+</code></pre><p>Lastly Test and Prod have an if test setup, if the test is false the job won&rsquo;t run. Importantly it won&rsquo;t fail it just won&rsquo;t run.</p><p>For Prod this needs to only run on main branch so we have</p><p>if: github.ref == &lsquo;refs/heads/main&rsquo;</p><p>For Test this needs to only run on develop so</p><p>if: github.ref == &lsquo;refs/heads/develop&rsquo;</p><p>I could have a test for develop to only run on feature/* but I have allowed it to run everytime.</p><p>There is loads more you can do with github actions, but hopefully this gives you a taste of some of the things you can do. I currently have a mix of Azure DevOps and github actions so I will be working on getting github actions to do more.</p></div></div><div class=card-footer>
+<div class="post-navs d-flex justify-content-evenly">
+<div class="post-nav post-prev">
+<i class="fas fa-fw fa-chevron-left"></i>
+<a href=https://www.funkysi1701.com/posts/2022/2022-goals/>2022 Goals
+</a>
+</div><div class="post-nav post-next">
+<a href=https://www.funkysi1701.com/posts/2022/why-do-i-have-a-website/>Why do I have a website?
+</a>
+<i class="fas fa-fw fa-chevron-right"></i>
+</div></div></div></article><section class="related-posts row card component">
+<div class=card-header>
+<h2 class=card-title>Related Posts</h2></div><div class=card-body>
+<ul class=post-list>
+<li>
+<a href=https://www.funkysi1701.com/posts/2021/azure-devops-release-pipelines-pre-and-post-approval/>Azure DevOps Release Pipelines Pre and Post Approval
+</a>
+<span class="float-end post-date">Feb 14, 2021
+</span>
+</li><li>
+<a href=https://www.funkysi1701.com/posts/2019/gated-release/>Gated Release
+</a>
+<span class="float-end post-date">Apr 5, 2019
+</span>
+</li><li>
+<a href=https://www.funkysi1701.com/posts/2017/azure-functions/>Azure Functions
+</a>
+<span class="float-end post-date">Sep 12, 2017
+</span>
+</li><li>
+<a href=https://www.funkysi1701.com/posts/2015/azure-traffic-manager/>Azure Traffic Manager
+</a>
+<span class="float-end post-date">Mar 12, 2015
+</span>
+</li><li>
+<a href=https://www.funkysi1701.com/posts/2022/2022-goals/>2022 Goals
+</a>
+<span class="float-end post-date">Jan 1, 2022
+</span>
+</li></ul></div></section><div class="card component row post-comments" id=post-comments>
+<div class=card-header>
+<h2 class=card-title>Comments</h2></div><div class=card-body><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//funkysi1701.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div></div><aside class="col-lg-4 sidebar d-flex">
+<div class="container d-flex flex-column">
+<section class="recent-posts row card component">
+<div class=card-header>
+<h2 class=card-title>Recent Posts</h2></div><div class=card-body>
+<ul class=post-list>
+<li>
+<a href=https://www.funkysi1701.com/posts/2022/updating-sqlserver-with-docker/>Updating SQL Server with Docker
+</a>
+</li><li>
+<a href=https://www.funkysi1701.com/posts/2022/dotnet-is-20-years-old/>dotnet is 20 years old
+</a>
+</li><li>
+<a href=https://www.funkysi1701.com/posts/2022/why-do-i-have-a-website/>Why do I have a website?
+</a>
+</li><li>
+<a href=https://www.funkysi1701.com/posts/2022/using-github-actions/>Using GitHub Actions
+</a>
+</li><li>
+<a href=https://www.funkysi1701.com/posts/2022/2022-goals/>2022 Goals
+</a>
+</li></ul></div></section><section class="tags-taxonomies row card component">
+<div class=card-header>
+<h2 class=card-title>
+<a href=https://www.funkysi1701.com/tags>Tags</a>
+</h2></div><div class=card-body>
+<div class=py-2>
+<div class="container tagcloud">
+<a href=/tags/100 class=tagcloud-item style=font-size:.7rem>
+100
+</a>
+<a href=/tags/act class=tagcloud-item style=font-size:.7rem>
+Act
+</a>
+<a href=/tags/amazon class=tagcloud-item style=font-size:.7rem>
+Amazon
+</a>
+<a href=/tags/android class=tagcloud-item style=font-size:1.1164807836875665rem>
+Android
+</a>
+<a href=/tags/api class=tagcloud-item style=font-size:.9082403918437832rem>
+API
+</a>
+<a href=/tags/app class=tagcloud-item style=font-size:1.0300532122078763rem>
+App
+</a>
+<a href=/tags/applicationinsights class=tagcloud-item style=font-size:.9082403918437832rem>
+ApplicationInsights
+</a>
+<a href=/tags/architecture class=tagcloud-item style=font-size:.7rem>
+Architecture
+</a>
+<a href=/tags/arrange class=tagcloud-item style=font-size:.7rem>
+Arrange
+</a>
+<a href=/tags/assert class=tagcloud-item style=font-size:.7rem>
+Assert
+</a>
+<a href=/tags/async class=tagcloud-item style=font-size:.7rem>
+Async
+</a>
+<a href=/tags/asynchronous class=tagcloud-item style=font-size:.7rem>
+Asynchronous
+</a>
+<a href=/tags/automate class=tagcloud-item style=font-size:.7rem>
+Automate
+</a>
+<a href=/tags/await class=tagcloud-item style=font-size:.7rem>
+Await
+</a>
+<a href=/tags/aws class=tagcloud-item style=font-size:.9082403918437832rem>
+AWS
+</a>
+<a href=/tags/azure class=tagcloud-item style=font-size:1.4203933958218045rem>
+Azure
+</a>
+<a href=/tags/azuredevops class=tagcloud-item style=font-size:.7rem>
+AzureDevOps
+</a>
+<a href=/tags/backups class=tagcloud-item style=font-size:.7rem>
+Backups
+</a>
+<a href=/tags/baddesign class=tagcloud-item style=font-size:.7rem>
+BadDesign
+</a>
+<a href=/tags/basic class=tagcloud-item style=font-size:.7rem>
+BASIC
+</a>
+<a href=/tags/blazor class=tagcloud-item style=font-size:.7rem>
+Blazor
+</a>
+<a href=/tags/blogging class=tagcloud-item style=font-size:.9082403918437832rem>
+Blogging
+</a>
+<a href=/tags/c-sharp class=tagcloud-item style=font-size:1.0300532122078763rem>
+C-Sharp
+</a>
+<a href=/tags/career class=tagcloud-item style=font-size:.7rem>
+Career
+</a>
+<a href=/tags/certification class=tagcloud-item style=font-size:.7rem>
+Certification
+</a>
+<a href=/tags/code class=tagcloud-item style=font-size:.7rem>
+Code
+</a>
+<a href=/tags/cron class=tagcloud-item style=font-size:.7rem>
+Cron
+</a>
+<a href=/tags/database class=tagcloud-item style=font-size:.9082403918437832rem>
+Database
+</a>
+<a href=/tags/design class=tagcloud-item style=font-size:.7rem>
+Design
+</a>
+<a href=/tags/desktop class=tagcloud-item style=font-size:.7rem>
+Desktop
+</a>
+<a href=/tags/devops class=tagcloud-item style=font-size:1.1835192163124335rem>
+DevOps
+</a>
+<a href=/tags/discovery class=tagcloud-item style=font-size:.9082403918437832rem>
+Discovery
+</a>
+<a href=/tags/docker class=tagcloud-item style=font-size:.9082403918437832rem>
+Docker
+</a>
+<a href=/tags/dotnet class=tagcloud-item style=font-size:1.1835192163124335rem>
+DotNet
+</a>
+<a href=/tags/exchangerates class=tagcloud-item style=font-size:.7rem>
+ExchangeRates
+</a>
+<a href=/tags/festivetechcalendar2021 class=tagcloud-item style=font-size:.7rem>
+FestiveTechCalendar2021
+</a>
+<a href=/tags/git class=tagcloud-item style=font-size:.7rem>
+Git
+</a>
+<a href=/tags/github class=tagcloud-item style=font-size:.7rem>
+GitHub
+</a>
+<a href=/tags/goals class=tagcloud-item style=font-size:1.1164807836875665rem>
+Goals
+</a>
+<a href=/tags/history class=tagcloud-item style=font-size:.7rem>
+History
+</a>
+<a href=/tags/interface class=tagcloud-item style=font-size:.9082403918437832rem>
+Interface
+</a>
+<a href=/tags/itadmin class=tagcloud-item style=font-size:1.1835192163124335rem>
+ITAdmin
+</a>
+<a href=/tags/java class=tagcloud-item style=font-size:.7rem>
+Java
+</a>
+<a href=/tags/lifestory class=tagcloud-item style=font-size:.7rem>
+LifeStory
+</a>
+<a href=/tags/mobile class=tagcloud-item style=font-size:.7rem>
+Mobile
+</a>
+<a href=/tags/monitoring class=tagcloud-item style=font-size:.7rem>
+Monitoring
+</a>
+<a href=/tags/nagios class=tagcloud-item style=font-size:.7rem>
+Nagios
+</a>
+<a href=/tags/octopusenergy class=tagcloud-item style=font-size:.7rem>
+OctopusEnergy
+</a>
+<a href=/tags/officemove class=tagcloud-item style=font-size:.7rem>
+OfficeMove
+</a>
+<a href=/tags/opensource class=tagcloud-item style=font-size:.7rem>
+OpenSource
+</a>
+<a href=/tags/php class=tagcloud-item style=font-size:.7rem>
+PHP
+</a>
+<a href=/tags/picard class=tagcloud-item style=font-size:.7rem>
+Picard
+</a>
+<a href=/tags/podcast class=tagcloud-item style=font-size:.7rem>
+podcast
+</a>
+<a href=/tags/powerbi class=tagcloud-item style=font-size:.7rem>
+PowerBI
+</a>
+<a href=/tags/powershell class=tagcloud-item style=font-size:.7rem>
+PowerShell
+</a>
+<a href=/tags/programming class=tagcloud-item style=font-size:1.5845900899234802rem>
+Programming
+</a>
+<a href=/tags/r class=tagcloud-item style=font-size:.7rem>
+R
+</a>
+<a href=/tags/raspberrypi class=tagcloud-item style=font-size:.7rem>
+RaspberryPi
+</a>
+<a href=/tags/routers class=tagcloud-item style=font-size:.7rem>
+Routers
+</a>
+<a href=/tags/security class=tagcloud-item style=font-size:1.0300532122078763rem>
+Security
+</a>
+<a href=/tags/servers class=tagcloud-item style=font-size:.9082403918437832rem>
+Servers
+</a>
+<a href=/tags/sourcecode class=tagcloud-item style=font-size:.7rem>
+SourceCode
+</a>
+<a href=/tags/sql class=tagcloud-item style=font-size:1.1835192163124335rem>
+SQL
+</a>
+<a href=/tags/ssl class=tagcloud-item style=font-size:.9082403918437832rem>
+SSL
+</a>
+<a href=/tags/startrek class=tagcloud-item style=font-size:1.1164807836875665rem>
+StarTrek
+</a>
+<a href=/tags/testing class=tagcloud-item style=font-size:.9082403918437832rem>
+Testing
+</a>
+<a href=/tags/twitter class=tagcloud-item style=font-size:.9082403918437832rem>
+Twitter
+</a>
+<a href=/tags/website class=tagcloud-item style=font-size:.7rem>
+website
+</a>
+<a href=/tags/xamarin class=tagcloud-item style=font-size:.7rem>
+Xamarin
+</a>
+</div></div></div></section><section class="social row card component">
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.6.1/css/all.css integrity=sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP crossorigin=anonymous>
+<div class=card-header>
+<h2 class=card-title>
+Social Links
+</h2></div><div class=card-body>
+<ul class=post-list>
+<li><span class="fab fa-facebook-f"></span>&nbsp;<a href=https://facebook.com/funkysi1701>Facebook</a></li><li><span class="fab fa-twitter" aria-hidden=true></span>&nbsp;<a href=https://twitter.com/funkysi1701>Twitter</a></li><li><span class="fab fa-brands fa-github" aria-hidden=true></span>&nbsp;<a href=https://github.com/funkysi1701>GitHub</a></li><li><span class="fab fa-linkedin-in" aria-hidden=true></span>&nbsp;<a href=https://www.linkedin.com/in/funkysi1701>LinkedIn</a></li><li><span aria-hidden=true></span>&nbsp;<a href=https://dev.to/funkysi1701>DevTo</a></li></ul></div></section></div></aside></div></main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav justify-content-center mb-2"></nav><div class="copyright mb-2">
+</div></footer><script src=https://www.funkysi1701.com/js/main.b4d13568ea62925adef3e45f80cad4c87607640396981d7e679fff6ab72a3dd4.js integrity="sha256-tNE1aOpiklre8+RfgMrUyHYHZAOWmB1+Z5//arcqPdQ=" crossorigin=anonymous defer></script><script src=https://www.funkysi1701.com/js/icons.min.b3391f89dcdef937e99a193c6de12584ac1d7613c16ae6ba852a096e1fd95108.js integrity="sha256-szkfidze+Tfpmhk8beElhKwddhPBaua6hSoJbh/ZUQg=" crossorigin=anonymous defer></script>
+<script src=https://www.funkysi1701.com/js/viewer.min.1721cbc2c5c34a150daae105f4ffed345a8bb269c6b63337f767c272fe6531f7.js integrity="sha256-FyHLwsXDShUNquEF9P/tNFqLsmnGtjM392fCcv5lMfc=" crossorigin=anonymous defer></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N1YJNQEHR4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-N1YJNQEHR4")</script></body></html>
