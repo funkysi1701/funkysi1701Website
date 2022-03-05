@@ -1,1 +1,426 @@
-<!doctype html><html><head><title>https://www.funkysi1701.com/posts-old/mobile-app-ui-testing/</title><link rel=canonical href=https://www.funkysi1701.com/posts-old/mobile-app-ui-testing/><meta name=robots content="noindex"><meta charset=utf-8><meta http-equiv=refresh content="0; url=https://www.funkysi1701.com/posts-old/mobile-app-ui-testing/"></head></html>
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Mobile App UI Testing - Funky Si's Blog</title><link rel=apple-touch-icon href=https://www.funkysi1701.com/images/icons/icon-180x180.png sizes=180x180>
+<link rel=icon href=https://www.funkysi1701.com/images/icons/icon-32x32.png sizes=32x32 type=image/png>
+<link rel=icon href=https://www.funkysi1701.com/images/icons/icon-16x16.png sizes=16x16 type=image/png>
+<link rel=icon href=https://www.funkysi1701.com/images/icons/favicon.png>
+<meta name=keywords content=",">
+<meta name=description content="Mobile App UI Testing"><meta itemprop=name content="Mobile App UI Testing">
+<meta itemprop=description content="Mobile App UI Testing"><meta itemprop=datePublished content="2018-01-08T00:00:00+00:00">
+<meta itemprop=dateModified content="2018-01-08T00:00:00+00:00">
+<meta itemprop=wordCount content="564"><meta itemprop=image content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/01/01-newproject-vs.png?resize=300%2C182&ssl=1">
+<meta itemprop=keywords content="Android,Azure,App,"><meta property="og:title" content="Mobile App UI Testing">
+<meta property="og:description" content="Mobile App UI Testing">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.funkysi1701.com/posts/mobile-app-ui-testing/"><meta property="og:image" content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/01/01-newproject-vs.png?resize=300%2C182&ssl=1"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2018-01-08T00:00:00+00:00">
+<meta property="article:modified_time" content="2018-01-08T00:00:00+00:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/01/01-newproject-vs.png?resize=300%2C182&ssl=1">
+<meta name=twitter:title content="Mobile App UI Testing">
+<meta name=twitter:description content="Mobile App UI Testing">
+<link rel=stylesheet href=https://www.funkysi1701.com/css/main.min.b7a6eda8d46e39a549f182cf72a9ff4f4c1d4d82c31ecc3ede0b7f4d5b26f32b.css crossorigin=anonymous><link rel=stylesheet href=https://www.funkysi1701.com/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css integrity="sha256-PSKHlLztu/oEEr64+8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin=anonymous></head><body><script>const items=["mode","palette"];items.forEach(function(e){const t=localStorage.getItem("hbs-"+e);t&&document.body.parentElement.setAttribute("data-"+e,t)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+<div class=container>
+<button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
+<i class="fas fa-bars"></i>
+</button><a class="navbar-brand flex-grow-1 flex-lg-grow-0 text-center text-lg-start mx-auto me-lg-3" href=https://www.funkysi1701.com/>Funky Si's Blog
+</a>
+<div class="offcanvas offcanvas-bottom surface" tabindex=-1 id=offcanvasSocialShare aria-labelledby=offcanvasSocialShare>
+<div class=offcanvas-header>
+<h3 class=offcanvas-title>Share</h3><button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
+<i class="fas fa-times"></i>
+</button>
+</div><div class=offcanvas-body>
+<a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button" target=_blank href="https://twitter.com/intent/tweet?title=Mobile%20App%20UI%20Testing&url=https%3a%2f%2fwww.funkysi1701.com%2fposts%2fmobile-app-ui-testing%2f">
+<i class="fab fa-fw fa-twitter"></i> Twitter
+</a>
+<a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button" target=_blank href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.funkysi1701.com%2fposts%2fmobile-app-ui-testing%2f">
+<i class="fab fa-fw fa-facebook-f"></i> Facebook
+</a>
+</div></div><button class=navbar-settings type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasSettings aria-controls=offcanvasSettings aria-label="Toggle settings">
+<i class="fas fa-ellipsis-v"></i>
+</button>
+<div class="offcanvas offcanvas-end surface h-100" tabindex=-1 id=offcanvasSettings aria-labelledby=offcanvasSettings>
+<div class=offcanvas-header>
+<h3 class=offcanvas-title>Settings</h3><button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
+<i class="fas fa-times"></i>
+</button>
+</div><div class="offcanvas-body d-flex flex-column">
+<section class=setting>
+<form class=row>
+<div class=col-auto>
+<label><i class="fas fa-fw fa-adjust"></i> Mode</label>
+</div><div class="col-auto ms-auto">
+<div class="form-check form-switch">
+<input class=form-check-input type=checkbox id=modeSwitcher>
+</div></div></form></section><section class="setting palettes">
+<form class=row>
+<div class=col-auto>
+<label><i class="fas fa-fw fa-palette"></i> Palette</label>
+</div><div class="col-auto ms-auto">
+<a id=btnPalette class="btn btn-sm btn-outline-primary" role=button aria-label=palettePicker>
+<i class="fas fa-eye-dropper"></i>
+</a>
+</div></form><div class="mt-2 d-flex justify-content-between visually-hidden" id=palettePicker><button type=button id=palette-blue aria-label=Blue class="btn btn-sm w-100 palette" data-palette=blue>
+</button><button type=button id=palette-blue-gray aria-label="Blue Gray" class="btn btn-sm w-100 palette" data-palette=blue-gray>
+</button><button type=button id=palette-brown aria-label=Brown class="btn btn-sm w-100 palette" data-palette=brown>
+</button><button type=button id=palette-cyan aria-label=Cyan class="btn btn-sm w-100 palette" data-palette=cyan>
+</button><button type=button id=palette-green aria-label=Green class="btn btn-sm w-100 palette" data-palette=green>
+</button><button type=button id=palette-indigo aria-label=Indigo class="btn btn-sm w-100 palette" data-palette=indigo>
+</button><button type=button id=palette-orange aria-label=Orange class="btn btn-sm w-100 palette" data-palette=orange>
+</button><button type=button id=palette-pink aria-label=Pink class="btn btn-sm w-100 palette" data-palette=pink>
+</button><button type=button id=palette-purple aria-label=Purple class="btn btn-sm w-100 palette" data-palette=purple>
+</button><button type=button id=palette-red aria-label=Red class="btn btn-sm w-100 palette" data-palette=red>
+</button><button type=button id=palette-teal aria-label=Teal class="btn btn-sm w-100 palette" data-palette=teal>
+</button><button type=button id=palette-yellow aria-label=Yellow class="btn btn-sm w-100 palette" data-palette=yellow>
+</button></div></section><section class="setting actions d-flex justify-content-around mt-auto overflow-auto">
+<a role=button class="action action-go-back" href="javascript: window.history.back();">
+<span class=action-icon><i class="fas fa-2x fa-arrow-left"></i></span> Go back
+</a>
+<a role=button class="action action-reload-page">
+<span class=action-icon><i class="fas fa-2x fa-redo-alt"></i></span> Reload
+</a>
+<a role=button class="action action-copy-url">
+<span class=action-icon><i class="fas fa-2x fa-link"></i></span> Copy URL
+</a><a class="action action-social-share" type=button data-bs-toggle=offcanvas data-bs-target=#offcanvasSocialShare aria-controls=offcanvasSocialShare aria-label="Toggle social share">
+<span class=action-icon><i class="fas fa-2x fa-share-alt"></i></span> Share
+</a></section></div></div><div class="collapse navbar-collapse" tabindex=-1 id=navbarSupportedContent aria-labelledby=navbarSupportedContent>
+<form class="search-bar my-1" action=https://www.funkysi1701.com/search>
+<div class="input-group input-group-sm">
+<span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+<input class="form-control rounded-pill" name=q type=search aria-label=Search>
+</div></form><ul class="navbar-nav ms-auto"><li class=nav-item>
+<a class=nav-link href=https://www.funkysi1701.com/about>
+About
+</a>
+</li><li class=nav-item>
+<a class=nav-link href=https://metrics.funkysi1701.com/ target=_blank rel="noopener noreferrer">
+Metrics
+</a>
+</li><li class=nav-item>
+<a class=nav-link href=https://www.funkysi1701.com/pwned-pass>
+Pwned Pass
+</a>
+</li></ul></div></div></nav></header><main role=main class=container>
+<div class="row content">
+<div class=col-lg-8>
+<div class=container><nav class="row card component" aria-label=breadcrumb>
+<div class=card-body>
+<ol class=breadcrumb><li class=breadcrumb-item><a href=https://www.funkysi1701.com/>Home</a></li><li class=breadcrumb-item><a href=https://www.funkysi1701.com/posts/>Posts</a></li><li class="breadcrumb-item active">Mobile App UI Testing</li></ol></div></nav><div class=post-panel-wrapper>
+<div class="d-flex flex-column component rounded post-panel">
+<a class="action action-panel-toggler" role=button title="Panel toggler">
+<i class="fas fa-fw fa-chevron-circle-down"></i>
+</a>
+<a id=sidebarToggler class="action d-none d-lg-block" role=button title="Sidebar toggler">
+<i class="fas fa-fw fa-expand-alt" data-fa-transform=rotate-45></i>
+</a>
+<a class=action href=#post-comments role=button aria-label=Comments title=Comments>
+<i class="fas fa-fw fa-comments"></i>
+</a>
+</div></div><article class="row card component mb-4 post">
+<div class=card-header>
+<h1 class="card-title post-title">Mobile App UI Testing
+</h1></div><div class=card-body><div class=post-meta>
+<span class=post-date title="created on 2018-01-08 00:00:00 +0000 UTC.">
+Jan 8, 2018
+</span><span class=post-reading-time>
+3 min read
+</span><span class=post-taxonomies><a href=https://www.funkysi1701.com/2018/01/ class="badge post-taxonomy">2018-01</a><a href=https://www.funkysi1701.com/tags/android/ class="badge post-taxonomy">Android</a><a href=https://www.funkysi1701.com/tags/azure/ class="badge post-taxonomy">Azure</a><a href=https://www.funkysi1701.com/tags/app/ class="badge post-taxonomy">App</a><a href=https://www.funkysi1701.com/2018/ class="badge post-taxonomy">2018</a></span>
+</div><div class="post-content mb-3"><p>Since I started creating an android app I have been writing simple UI tests.</p><p>I have been taking advantage of the Visual Studio App Center which allows you to test against hundreds of different devices in the <strong>Test Cloud</strong>.</p><p><img class=img-fluid alt="Xamarin UI tests" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/01/01-newproject-vs.png?resize=300%2C182&ssl=1" loading=lazy>
+In order to write a UI test create a UI Test App, this makes use of the nuget package Xamarin UI Test. By default you will now have a test called AppLaunches which will take a screenshot of you app after it starts.</p><p>You can now run this test against any device from Visual Studio assuming you have it physically plugged into your machine. However, how do you run against the Test Cloud?</p><p>To run against the Test Cloud you need to first install node.js. Now you can install the appcenter cli with the following command.</p><pre tabindex=0><code>**npm** install -g appcenter-cli
+</code></pre><p>To run the tests in the Test Cloud run the following command</p><pre tabindex=0><code>**appcenter** test run uitest --app &#34;&lt;username&gt;/&lt;appname&gt;&#34; --devices &#34;&lt;username&gt;/&lt;deviceset&gt;&#34; --app-path _pathToFile.apk_ --test-series &#34;master&#34; --locale &#34;en_US&#34; --build-dir _pathToUITestBuildDir_
+</code></pre><p>where <username> is your appcenter username, is the name of your app in appcenter and is the group of apps you have created in app center to test against.</p><p>Look at device sets in the test section of the appcenter and click the new device set button. You can then search for any device you like and add it to a set, as I write this there are 244 devices you can test against.</p><p>It is currently not possible within app center to run tests against a new build, however if you build your app in VSTS as well you can create build or release step that runs it. As the Visual Studio app center is still under development I wouldn’t be surprised if it is added at some point.</p><p>In VSTS look for Mobile Center Test in the definitions and you can specify the same variables as specified in the command line above.</p><p>Now how do you actually write a useful UI test? I mentioned above you get a default test which contains the following code, this takes a screenshot of your app. However you don’t have to include this when using the Test Cloud as screenshots are included for free.</p><pre tabindex=0><code>app.Screenshot(&#34;First screen.&#34;);
+</code></pre><p>Lets look at what else is included in app</p><pre tabindex=0><code>app.Repl();
+</code></pre><p>This starts an interactive REPL (Read-Eval-Print-Loop) which lets you explore what is on screen in your app and pauses execution. I don’t include this in my tests, however I do make use of it to explore what is on screen and what tests I might make use of.</p><pre tabindex=0><code>app.Tap(c =&gt; c.Marked(&#34;Button&#34;));
+</code></pre><p>This taps an element on screen called Button. There is also a method called TapCoordinates which would allow you to click anywhere you like.</p><pre tabindex=0><code>app.WaitForElement(c =&gt; c.Marked(&#34;View&#34;));
+</code></pre><p>After clicking a button you are probably going to want to wait for the app to load extra data or a new screen. The WaitForElement waits for an element to appear on screen. There are also methods that wait a period of time or wait until an element no longer exists.</p><p>These are the main methods I have used so far, however there is an extensive list including methods for scrolling, swiping, pinching and adjusting the volume buttons. So you should be able to test all manner of app functionality and if you make use of the Test Clouds will know which devices are causing problems.</p></div></div><div class=card-footer>
+<div class="post-navs d-flex justify-content-evenly">
+<div class="post-nav post-prev">
+<i class="fas fa-fw fa-chevron-left"></i>
+<a href=https://www.funkysi1701.com/posts/sql-with-visual-studio-code/>SQL with Visual Studio Code
+</a>
+</div><div class="post-nav post-next">
+<a href=https://www.funkysi1701.com/posts/lets-see-what-2019-can-do/>Lets see what 2019 can do!
+</a>
+<i class="fas fa-fw fa-chevron-right"></i>
+</div></div></div></article><section class="related-posts row card component">
+<div class=card-header>
+<h2 class=card-title>Related Posts</h2></div><div class=card-body>
+<ul class=post-list>
+<li>
+<a href=https://www.funkysi1701.com/posts/android-app-development-and-the-visual-studio-mobile-centre/>Android App Development and the Visual Studio Mobile Centre
+</a>
+<span class="float-end post-date">Aug 7, 2017
+</span>
+</li><li>
+<a href=https://www.funkysi1701.com/posts/pwned-pass-available-from-the-play-store/>Pwned Pass – Available from the Play Store
+</a>
+<span class="float-end post-date">Aug 14, 2017
+</span>
+</li><li>
+<a href=https://www.funkysi1701.com/posts/azure-friday/>Azure Friday
+</a>
+<span class="float-end post-date">Sep 18, 2017
+</span>
+</li><li>
+<a href=https://www.funkysi1701.com/posts/azure-functions/>Azure Functions
+</a>
+<span class="float-end post-date">Sep 12, 2017
+</span>
+</li><li>
+<a href=https://www.funkysi1701.com/posts/using-azure-webjobs-to-automate-stuff/>Using Azure WebJobs to Automate Stuff
+</a>
+<span class="float-end post-date">Jun 26, 2017
+</span>
+</li></ul></div></section><div class="card component row post-comments" id=post-comments>
+<div class=card-header>
+<h2 class=card-title>Comments</h2></div><div class=card-body><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//funkysi1701.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div></div><aside class="col-lg-4 sidebar d-flex">
+<div class="container d-flex flex-column">
+<section class="recent-posts row card component">
+<div class=card-header>
+<h2 class=card-title>Recent Posts</h2></div><div class=card-body>
+<ul class=post-list>
+<li>
+<a href=https://www.funkysi1701.com/posts/updating-sqlserver-with-docker/>Updating SQL Server with Docker
+</a>
+</li><li>
+<a href=https://www.funkysi1701.com/posts/dotnet-is-20-years-old/>dotnet is 20 years old
+</a>
+</li><li>
+<a href=https://www.funkysi1701.com/posts/why-do-i-have-a-website/>Why do I have a website?
+</a>
+</li><li>
+<a href=https://www.funkysi1701.com/posts/using-github-actions/>Using GitHub Actions
+</a>
+</li><li>
+<a href=https://www.funkysi1701.com/posts/2022-goals/>2022 Goals
+</a>
+</li></ul></div></section><section class="tags-taxonomies row card component">
+<div class=card-header>
+<h2 class=card-title>
+<a href=https://www.funkysi1701.com/tags>Tags</a>
+</h2></div><div class=card-body>
+<div class=py-2>
+<div class="container tagcloud">
+<a href=/tags/100 class=tagcloud-item style=font-size:.7rem>
+100
+</a>
+<a href=/tags/act class=tagcloud-item style=font-size:.7rem>
+Act
+</a>
+<a href=/tags/amazon class=tagcloud-item style=font-size:.7rem>
+Amazon
+</a>
+<a href=/tags/android class=tagcloud-item style=font-size:1.1164807836875665rem>
+Android
+</a>
+<a href=/tags/api class=tagcloud-item style=font-size:.9082403918437832rem>
+API
+</a>
+<a href=/tags/app class=tagcloud-item style=font-size:1.0300532122078763rem>
+App
+</a>
+<a href=/tags/applicationinsights class=tagcloud-item style=font-size:.9082403918437832rem>
+ApplicationInsights
+</a>
+<a href=/tags/architecture class=tagcloud-item style=font-size:.7rem>
+Architecture
+</a>
+<a href=/tags/arrange class=tagcloud-item style=font-size:.7rem>
+Arrange
+</a>
+<a href=/tags/assert class=tagcloud-item style=font-size:.7rem>
+Assert
+</a>
+<a href=/tags/async class=tagcloud-item style=font-size:.7rem>
+Async
+</a>
+<a href=/tags/asynchronous class=tagcloud-item style=font-size:.7rem>
+Asynchronous
+</a>
+<a href=/tags/automate class=tagcloud-item style=font-size:.7rem>
+Automate
+</a>
+<a href=/tags/await class=tagcloud-item style=font-size:.7rem>
+Await
+</a>
+<a href=/tags/aws class=tagcloud-item style=font-size:.9082403918437832rem>
+AWS
+</a>
+<a href=/tags/azure class=tagcloud-item style=font-size:1.4203933958218045rem>
+Azure
+</a>
+<a href=/tags/azuredevops class=tagcloud-item style=font-size:.7rem>
+AzureDevOps
+</a>
+<a href=/tags/backups class=tagcloud-item style=font-size:.7rem>
+Backups
+</a>
+<a href=/tags/baddesign class=tagcloud-item style=font-size:.7rem>
+BadDesign
+</a>
+<a href=/tags/basic class=tagcloud-item style=font-size:.7rem>
+BASIC
+</a>
+<a href=/tags/blazor class=tagcloud-item style=font-size:.7rem>
+Blazor
+</a>
+<a href=/tags/blogging class=tagcloud-item style=font-size:.9082403918437832rem>
+Blogging
+</a>
+<a href=/tags/c-sharp class=tagcloud-item style=font-size:1.0300532122078763rem>
+C-Sharp
+</a>
+<a href=/tags/career class=tagcloud-item style=font-size:.7rem>
+Career
+</a>
+<a href=/tags/certification class=tagcloud-item style=font-size:.7rem>
+Certification
+</a>
+<a href=/tags/code class=tagcloud-item style=font-size:.7rem>
+Code
+</a>
+<a href=/tags/cron class=tagcloud-item style=font-size:.7rem>
+Cron
+</a>
+<a href=/tags/database class=tagcloud-item style=font-size:.9082403918437832rem>
+Database
+</a>
+<a href=/tags/design class=tagcloud-item style=font-size:.7rem>
+Design
+</a>
+<a href=/tags/desktop class=tagcloud-item style=font-size:.7rem>
+Desktop
+</a>
+<a href=/tags/devops class=tagcloud-item style=font-size:1.1835192163124335rem>
+DevOps
+</a>
+<a href=/tags/discovery class=tagcloud-item style=font-size:.9082403918437832rem>
+Discovery
+</a>
+<a href=/tags/docker class=tagcloud-item style=font-size:.9082403918437832rem>
+Docker
+</a>
+<a href=/tags/dotnet class=tagcloud-item style=font-size:1.1835192163124335rem>
+DotNet
+</a>
+<a href=/tags/exchangerates class=tagcloud-item style=font-size:.7rem>
+ExchangeRates
+</a>
+<a href=/tags/festivetechcalendar2021 class=tagcloud-item style=font-size:.7rem>
+FestiveTechCalendar2021
+</a>
+<a href=/tags/git class=tagcloud-item style=font-size:.7rem>
+Git
+</a>
+<a href=/tags/github class=tagcloud-item style=font-size:.7rem>
+GitHub
+</a>
+<a href=/tags/goals class=tagcloud-item style=font-size:1.1164807836875665rem>
+Goals
+</a>
+<a href=/tags/history class=tagcloud-item style=font-size:.7rem>
+History
+</a>
+<a href=/tags/interface class=tagcloud-item style=font-size:.9082403918437832rem>
+Interface
+</a>
+<a href=/tags/itadmin class=tagcloud-item style=font-size:1.1835192163124335rem>
+ITAdmin
+</a>
+<a href=/tags/java class=tagcloud-item style=font-size:.7rem>
+Java
+</a>
+<a href=/tags/lifestory class=tagcloud-item style=font-size:.7rem>
+LifeStory
+</a>
+<a href=/tags/mobile class=tagcloud-item style=font-size:.7rem>
+Mobile
+</a>
+<a href=/tags/monitoring class=tagcloud-item style=font-size:.7rem>
+Monitoring
+</a>
+<a href=/tags/nagios class=tagcloud-item style=font-size:.7rem>
+Nagios
+</a>
+<a href=/tags/octopusenergy class=tagcloud-item style=font-size:.7rem>
+OctopusEnergy
+</a>
+<a href=/tags/officemove class=tagcloud-item style=font-size:.7rem>
+OfficeMove
+</a>
+<a href=/tags/opensource class=tagcloud-item style=font-size:.7rem>
+OpenSource
+</a>
+<a href=/tags/php class=tagcloud-item style=font-size:.7rem>
+PHP
+</a>
+<a href=/tags/picard class=tagcloud-item style=font-size:.7rem>
+Picard
+</a>
+<a href=/tags/podcast class=tagcloud-item style=font-size:.7rem>
+podcast
+</a>
+<a href=/tags/powerbi class=tagcloud-item style=font-size:.7rem>
+PowerBI
+</a>
+<a href=/tags/powershell class=tagcloud-item style=font-size:.7rem>
+PowerShell
+</a>
+<a href=/tags/programming class=tagcloud-item style=font-size:1.5845900899234802rem>
+Programming
+</a>
+<a href=/tags/r class=tagcloud-item style=font-size:.7rem>
+R
+</a>
+<a href=/tags/raspberrypi class=tagcloud-item style=font-size:.7rem>
+RaspberryPi
+</a>
+<a href=/tags/routers class=tagcloud-item style=font-size:.7rem>
+Routers
+</a>
+<a href=/tags/security class=tagcloud-item style=font-size:1.0300532122078763rem>
+Security
+</a>
+<a href=/tags/servers class=tagcloud-item style=font-size:.9082403918437832rem>
+Servers
+</a>
+<a href=/tags/sourcecode class=tagcloud-item style=font-size:.7rem>
+SourceCode
+</a>
+<a href=/tags/sql class=tagcloud-item style=font-size:1.1835192163124335rem>
+SQL
+</a>
+<a href=/tags/ssl class=tagcloud-item style=font-size:.9082403918437832rem>
+SSL
+</a>
+<a href=/tags/startrek class=tagcloud-item style=font-size:1.1164807836875665rem>
+StarTrek
+</a>
+<a href=/tags/testing class=tagcloud-item style=font-size:.9082403918437832rem>
+Testing
+</a>
+<a href=/tags/twitter class=tagcloud-item style=font-size:.9082403918437832rem>
+Twitter
+</a>
+<a href=/tags/website class=tagcloud-item style=font-size:.7rem>
+website
+</a>
+<a href=/tags/xamarin class=tagcloud-item style=font-size:.7rem>
+Xamarin
+</a>
+</div></div></div></section><section class="social row card component">
+<link rel=stylesheet href=https://use.fontawesome.com/releases/v5.6.1/css/all.css integrity=sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP crossorigin=anonymous>
+<div class=card-header>
+<h2 class=card-title>
+Social Links
+</h2></div><div class=card-body>
+<ul class=post-list>
+<li><span class="fab fa-facebook-f"></span>&nbsp;<a href=https://facebook.com/funkysi1701>Facebook</a></li><li><span class="fab fa-twitter" aria-hidden=true></span>&nbsp;<a href=https://twitter.com/funkysi1701>Twitter</a></li><li><span class="fab fa-brands fa-github" aria-hidden=true></span>&nbsp;<a href=https://github.com/funkysi1701>GitHub</a></li><li><span class="fab fa-linkedin-in" aria-hidden=true></span>&nbsp;<a href=https://www.linkedin.com/in/funkysi1701>LinkedIn</a></li><li><span aria-hidden=true></span>&nbsp;<a href=https://dev.to/funkysi1701>DevTo</a></li></ul></div></section></div></aside></div></main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav justify-content-center mb-2"></nav><div class="copyright mb-2">
+</div></footer><script src=https://www.funkysi1701.com/js/main.b4d13568ea62925adef3e45f80cad4c87607640396981d7e679fff6ab72a3dd4.js integrity="sha256-tNE1aOpiklre8+RfgMrUyHYHZAOWmB1+Z5//arcqPdQ=" crossorigin=anonymous defer></script><script src=https://www.funkysi1701.com/js/icons.min.b3391f89dcdef937e99a193c6de12584ac1d7613c16ae6ba852a096e1fd95108.js integrity="sha256-szkfidze+Tfpmhk8beElhKwddhPBaua6hSoJbh/ZUQg=" crossorigin=anonymous defer></script>
+<script src=https://www.funkysi1701.com/js/viewer.min.1721cbc2c5c34a150daae105f4ffed345a8bb269c6b63337f767c272fe6531f7.js integrity="sha256-FyHLwsXDShUNquEF9P/tNFqLsmnGtjM392fCcv5lMfc=" crossorigin=anonymous defer></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N1YJNQEHR4"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-N1YJNQEHR4")</script></body></html>
