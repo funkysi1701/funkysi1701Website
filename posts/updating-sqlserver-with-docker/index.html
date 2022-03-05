@@ -11,7 +11,7 @@
 <meta itemprop=description content="Updating SQL Server with Docker"><meta itemprop=datePublished content="2022-02-23T00:00:00+00:00">
 <meta itemprop=dateModified content="2022-02-23T00:00:00+00:00">
 <meta itemprop=wordCount content="619"><meta itemprop=image content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2022/header-01.png">
-<meta itemprop=keywords content="SQLServer,Docker,SQL,"><meta property="og:title" content="Updating SQL Server with Docker">
+<meta itemprop=keywords content="Docker,SQL,"><meta property="og:title" content="Updating SQL Server with Docker">
 <meta property="og:description" content="Updating SQL Server with Docker">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.funkysi1701.com/posts/updating-sqlserver-with-docker/"><meta property="og:image" content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2022/header-01.png"><meta property="article:section" content="posts">
@@ -127,7 +127,7 @@ Pwned Pass
 Feb 23, 2022
 </span><span class=post-reading-time>
 3 min read
-</span><span class=post-taxonomies><a href=https://www.funkysi1701.com/2022/02/ class="badge post-taxonomy">2022-02</a><a href=https://www.funkysi1701.com/tags/sqlserver/ class="badge post-taxonomy">SQLServer</a><a href=https://www.funkysi1701.com/tags/docker/ class="badge post-taxonomy">Docker</a><a href=https://www.funkysi1701.com/tags/sql/ class="badge post-taxonomy">SQL</a><a href=https://www.funkysi1701.com/2022/ class="badge post-taxonomy">2022</a></span>
+</span><span class=post-taxonomies><a href=https://www.funkysi1701.com/2022/02/ class="badge post-taxonomy">2022-02</a><a href=https://www.funkysi1701.com/tags/docker/ class="badge post-taxonomy">Docker</a><a href=https://www.funkysi1701.com/tags/sql/ class="badge post-taxonomy">SQL</a><a href=https://www.funkysi1701.com/2022/ class="badge post-taxonomy">2022</a></span>
 </div><div class="post-content mb-3"><p>This morning I was listening to a podcast where the new features coming out for SQL Server 2022 were being discussed. This starting me thinking about what would be involved in upgrading.</p><p>Upgrading production environments is complex and there are licensing considerations to take into account. However for non production workloads like development this isn&rsquo;t a problem so lets look at that first.</p><p>In the past I have installed SQL Server Devloper Edition onto my laptop, this is fine but I have found that unless you are very careful you may end up with multiple different versions of SQL Server sitting around, and it is difficult to cleanly remove them without a fresh install of the OS.</p><p>However in this day and age, Docker and Containers are king. My current development environment makes use of Docker and has a docker compose file which sets up SQL Server for this particular application, lets take a look.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span>  <span style=color:#f92672>sqlserver</span>:
 </span></span><span style=display:flex><span>    <span style=color:#f92672>image</span>: <span style=color:#ae81ff>mcr.microsoft.com/mssql/server:2019-latest</span>
 </span></span><span style=display:flex><span>    <span style=color:#f92672>container_name</span>: <span style=color:#ae81ff>Sql</span>
@@ -227,16 +227,16 @@ Act
 <a href=/tags/amazon class=tagcloud-item style=font-size:.7rem>
 Amazon
 </a>
-<a href=/tags/android class=tagcloud-item style=font-size:1.0358028700194732rem>
+<a href=/tags/android class=tagcloud-item style=font-size:1.0300532122078763rem>
 Android
 </a>
-<a href=/tags/api class=tagcloud-item style=font-size:.9118680220299744rem>
+<a href=/tags/api class=tagcloud-item style=font-size:.9082403918437832rem>
 API
 </a>
-<a href=/tags/app class=tagcloud-item style=font-size:.9118680220299744rem>
+<a href=/tags/app class=tagcloud-item style=font-size:.9082403918437832rem>
 App
 </a>
-<a href=/tags/applicationinsights class=tagcloud-item style=font-size:.9118680220299744rem>
+<a href=/tags/applicationinsights class=tagcloud-item style=font-size:.9082403918437832rem>
 ApplicationInsights
 </a>
 <a href=/tags/architecture class=tagcloud-item style=font-size:.7rem>
@@ -260,10 +260,10 @@ Automate
 <a href=/tags/await class=tagcloud-item style=font-size:.7rem>
 Await
 </a>
-<a href=/tags/aws class=tagcloud-item style=font-size:.9118680220299744rem>
+<a href=/tags/aws class=tagcloud-item style=font-size:.9082403918437832rem>
 AWS
 </a>
-<a href=/tags/azure class=tagcloud-item style=font-size:1.4038103347895867rem>
+<a href=/tags/azure class=tagcloud-item style=font-size:1.391759608156217rem>
 Azure
 </a>
 <a href=/tags/azuredevops class=tagcloud-item style=font-size:.7rem>
@@ -281,10 +281,10 @@ BASIC
 <a href=/tags/blazor class=tagcloud-item style=font-size:.7rem>
 Blazor
 </a>
-<a href=/tags/blogging class=tagcloud-item style=font-size:.9118680220299744rem>
+<a href=/tags/blogging class=tagcloud-item style=font-size:.9082403918437832rem>
 Blogging
 </a>
-<a href=/tags/c-sharp class=tagcloud-item style=font-size:1.0358028700194732rem>
+<a href=/tags/c-sharp class=tagcloud-item style=font-size:1.0300532122078763rem>
 C-Sharp
 </a>
 <a href=/tags/career class=tagcloud-item style=font-size:.7rem>
@@ -299,7 +299,7 @@ Code
 <a href=/tags/cron class=tagcloud-item style=font-size:.7rem>
 Cron
 </a>
-<a href=/tags/database class=tagcloud-item style=font-size:.9118680220299744rem>
+<a href=/tags/database class=tagcloud-item style=font-size:.9082403918437832rem>
 Database
 </a>
 <a href=/tags/design class=tagcloud-item style=font-size:.7rem>
@@ -308,16 +308,16 @@ Design
 <a href=/tags/desktop class=tagcloud-item style=font-size:.7rem>
 Desktop
 </a>
-<a href=/tags/devops class=tagcloud-item style=font-size:1.1919423127596123rem>
+<a href=/tags/devops class=tagcloud-item style=font-size:1.1835192163124335rem>
 DevOps
 </a>
-<a href=/tags/discovery class=tagcloud-item style=font-size:.9118680220299744rem>
+<a href=/tags/discovery class=tagcloud-item style=font-size:.9082403918437832rem>
 Discovery
 </a>
-<a href=/tags/docker class=tagcloud-item style=font-size:.9118680220299744rem>
+<a href=/tags/docker class=tagcloud-item style=font-size:.9082403918437832rem>
 Docker
 </a>
-<a href=/tags/dotnet class=tagcloud-item style=font-size:1.1919423127596123rem>
+<a href=/tags/dotnet class=tagcloud-item style=font-size:1.1835192163124335rem>
 DotNet
 </a>
 <a href=/tags/exchangerates class=tagcloud-item style=font-size:.7rem>
@@ -326,19 +326,22 @@ ExchangeRates
 <a href=/tags/festivetechcalendar2021 class=tagcloud-item style=font-size:.7rem>
 FestiveTechCalendar2021
 </a>
+<a href=/tags/git class=tagcloud-item style=font-size:.7rem>
+Git
+</a>
 <a href=/tags/github class=tagcloud-item style=font-size:.7rem>
 GitHub
 </a>
-<a href=/tags/goals class=tagcloud-item style=font-size:1.1237360440599489rem>
+<a href=/tags/goals class=tagcloud-item style=font-size:1.1164807836875665rem>
 Goals
 </a>
 <a href=/tags/history class=tagcloud-item style=font-size:.7rem>
 History
 </a>
-<a href=/tags/interface class=tagcloud-item style=font-size:.9118680220299744rem>
+<a href=/tags/interface class=tagcloud-item style=font-size:.9082403918437832rem>
 Interface
 </a>
-<a href=/tags/itadmin class=tagcloud-item style=font-size:1.1919423127596123rem>
+<a href=/tags/itadmin class=tagcloud-item style=font-size:1.1835192163124335rem>
 ITAdmin
 </a>
 <a href=/tags/java class=tagcloud-item style=font-size:.7rem>
@@ -380,7 +383,7 @@ PowerBI
 <a href=/tags/powershell class=tagcloud-item style=font-size:.7rem>
 PowerShell
 </a>
-<a href=/tags/programming class=tagcloud-item style=font-size:1.583473762068921rem>
+<a href=/tags/programming class=tagcloud-item style=font-size:1.5845900899234802rem>
 Programming
 </a>
 <a href=/tags/r class=tagcloud-item style=font-size:.7rem>
@@ -392,31 +395,28 @@ RaspberryPi
 <a href=/tags/routers class=tagcloud-item style=font-size:.7rem>
 Routers
 </a>
-<a href=/tags/security class=tagcloud-item style=font-size:1.0358028700194732rem>
+<a href=/tags/security class=tagcloud-item style=font-size:1.0300532122078763rem>
 Security
 </a>
-<a href=/tags/servers class=tagcloud-item style=font-size:.9118680220299744rem>
+<a href=/tags/servers class=tagcloud-item style=font-size:.9082403918437832rem>
 Servers
 </a>
 <a href=/tags/sourcecode class=tagcloud-item style=font-size:.7rem>
 SourceCode
 </a>
-<a href=/tags/sql class=tagcloud-item style=font-size:1.1919423127596123rem>
+<a href=/tags/sql class=tagcloud-item style=font-size:1.1835192163124335rem>
 SQL
 </a>
-<a href=/tags/sqlserver class=tagcloud-item style=font-size:.7rem>
-SQLServer
-</a>
-<a href=/tags/ssl class=tagcloud-item style=font-size:.9118680220299744rem>
+<a href=/tags/ssl class=tagcloud-item style=font-size:.9082403918437832rem>
 SSL
 </a>
-<a href=/tags/startrek class=tagcloud-item style=font-size:1.1237360440599489rem>
+<a href=/tags/startrek class=tagcloud-item style=font-size:1.1164807836875665rem>
 StarTrek
 </a>
-<a href=/tags/testing class=tagcloud-item style=font-size:.9118680220299744rem>
+<a href=/tags/testing class=tagcloud-item style=font-size:.9082403918437832rem>
 Testing
 </a>
-<a href=/tags/twitter class=tagcloud-item style=font-size:.9118680220299744rem>
+<a href=/tags/twitter class=tagcloud-item style=font-size:.9082403918437832rem>
 Twitter
 </a>
 <a href=/tags/website class=tagcloud-item style=font-size:.7rem>
