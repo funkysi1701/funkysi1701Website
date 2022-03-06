@@ -16,12 +16,12 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
-    "/posts/pwned-pass-update/",
-    "/posts/pwned-pass-update-55io",
-    "/posts/2019/08/08/pwned-pass-update-55io",
-    "/posts/2019/08/08/pwned-pass-update",
-    "/2019/08/08/pwned-pass-update-55io",
-    "/2019/08/08/pwned-pass-update"
+    "/posts/picard-is-back",
+    "/posts/picard-is-back-3bkm",
+    "/posts/2019/08/08/picard-is-back-3bkm",
+    "/posts/2019/08/08/picard-is-back",
+    "/2019/08/08/picard-is-back-3bkm",
+    "/2019/08/08/picard-is-back"
 ]
 +++
 
