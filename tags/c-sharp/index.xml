@@ -128,4 +128,13 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>When we call GetData we can either pass in XML or SQL as the class is not tied to either implementation. We could even write other classes that implement IData for testing purposes.&lt;/p>
 &lt;p>My full code can be found on &lt;a href="https://github.com/funkysi1701/InterfaceExample" target="_blank" rel="noopener noreferrer">github&lt;/a>
 .&lt;/p>
-&lt;p>The advantages of writing code in this way include code that is easier to extend, easier to test and easier to maintain. This is only the start of my understanding and I am sure this is going to be a topic I come back to in the next few weeks.&lt;/p></description></item></channel></rss>
+&lt;p>The advantages of writing code in this way include code that is easier to extend, easier to test and easier to maintain. This is only the start of my understanding and I am sure this is going to be a topic I come back to in the next few weeks.&lt;/p></description></item><item><title>Sudoku Challenge</title><link>https://www.funkysi1701.com/posts/2015/sudoku-challenge/</link><pubDate>Fri, 26 Jun 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/sudoku-challenge/</guid><description>&lt;p>Last night I went to a Code Dojo at Leeds Sharp (the coding user group I have started going to). A Code Dojo is a programming challenge that people work on usually in pairs.&lt;/p>
+&lt;p>The challenge that we worked on was to code a solution to the puzzle game Sudoku. The code we worked with can be found on github.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/06/2000px-Sudoku-by-L2G-20050714.svg_.png?resize=660%2C660&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>I don’t know much about Sudoku but the game goes like this. You start with a 9×9 grid, and the idea is to fill in all the missing numbers.&lt;/p>
+&lt;p>Each Row can only use each digit 1 to 9 once, each column can only use each digit 1 to 9 once and each subgrid (3×3) can only use each digit once.&lt;/p>
+&lt;p>I worked with Richard one of the Leeds Sharp organisers, we started by trying to loop through each empty cell and insert values in a brute force attack, but this approach didn’t get us very far (literally as the application crashed!)&lt;/p>
+&lt;p>The approach that we needed to use was to loop through calculating possible values.&lt;/p>
+&lt;p>It was only when I sat down at this dojo did I realise how much I still have to learn, but while talking with Richard about different approaches and different coding structures I started to learn.&lt;/p></description></item></channel></rss>
