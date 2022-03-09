@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/sudoku-challenge",
-    "/posts/hello-world-2e41",
-    "/posts/2015/06/26/hello-world-2e41",
+    "/posts/sudoku-challenge-1gdd",
+    "/posts/2015/06/26/sudoku-challenge-1gdd",
     "/posts/2015/06/26/sudoku-challenge",
-    "/2015/06/26/hello-world-2e41",
+    "/2015/06/26/sudoku-challenge-1gdd",
     "/2015/06/26/sudoku-challenge"
 ]
 +++

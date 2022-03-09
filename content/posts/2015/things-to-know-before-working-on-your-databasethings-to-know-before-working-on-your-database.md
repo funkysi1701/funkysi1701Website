@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/things-to-know-before-working-on-your-database",
-    "/posts/hello-world-2e41",
-    "/posts/2015/07/20/hello-world-2e41",
+    "/posts/things-to-know-before-working-on-your-database-1aa3",
+    "/posts/2015/07/20/things-to-know-before-working-on-your-database-1aa3",
     "/posts/2015/07/20/things-to-know-before-working-on-your-database",
-    "/2015/07/20/hello-world-2e41",
+    "/2015/07/20/things-to-know-before-working-on-your-database-1aa3",
     "/2015/07/20/things-to-know-before-working-on-your-database"
 ]
 +++
