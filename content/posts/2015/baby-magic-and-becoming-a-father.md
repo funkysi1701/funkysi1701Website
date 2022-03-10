@@ -1,8 +1,8 @@
 +++
 title = "Baby Magic and Becoming a Father"
-date = "2015-03-11T20:00:45Z"
+date = "2015-09-03T20:00:45Z"
 year = "2015"
-month= "2015-03"
+month= "2015-09"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/james5.jpg?resize=300%2C225&ssl=1"
