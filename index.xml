@@ -825,7 +825,7 @@ but it was a while ago when I first did this on another project.&lt;/p>
 &lt;p>Head on over to &lt;a href="https://securityheaders.com/" target="_blank" rel="noopener noreferrer">https://securityheaders.com/&lt;/a>
 This is a site created by security expert &lt;a href="https://scotthelme.co.uk" target="_blank" rel="noopener noreferrer">Scott Helme&lt;/a>
 that rates a URL based on what response headers it can see.&lt;/p>
-&lt;p>I am pleased to say &lt;a href="http://www.funkysi1701.com">www.funkysi1701.com&lt;/a>
+&lt;p>I am pleased to say &lt;a href="https://www.funkysi1701.com">www.funkysi1701.com&lt;/a>
 is now getting an A.&lt;img class="img-fluid" alt="Alt Text" src="https://dev-to-uploads.s3.amazonaws.com/i/07rwumi94fz141hwessu.PNG" loading="lazy"
 />
 &lt;/p>
@@ -1227,7 +1227,7 @@ post where he discusses how Australian Banks score. Lets look at a few UK banks.
 &lt;tbody>
 &lt;tr>
 &lt;td>HSBC&lt;/td>
-&lt;td>&lt;a href="http://www.hsbc.co.uk" target="_blank" rel="noopener noreferrer">www.hsbc.co.uk&lt;/a>
+&lt;td>&lt;a href="https://www.hsbc.co.uk" target="_blank" rel="noopener noreferrer">www.hsbc.co.uk&lt;/a>
 &lt;/td>
 &lt;td>B&lt;/td>
 &lt;td>Y&lt;/td>
@@ -1240,14 +1240,14 @@ post where he discusses how Australian Banks score. Lets look at a few UK banks.
 &lt;/tr>
 &lt;tr>
 &lt;td>NatWest&lt;/td>
-&lt;td>&lt;a href="http://www.nwolb.com" target="_blank" rel="noopener noreferrer">www.nwolb.com&lt;/a>
+&lt;td>&lt;a href="https://www.nwolb.com" target="_blank" rel="noopener noreferrer">www.nwolb.com&lt;/a>
 &lt;/td>
 &lt;td>C&lt;/td>
 &lt;td>N&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Barclaycard&lt;/td>
-&lt;td>&lt;a href="http://www.barclaycard.co.uk" target="_blank" rel="noopener noreferrer">www.barclaycard.co.uk&lt;/a>
+&lt;td>&lt;a href="https://www.barclaycard.co.uk" target="_blank" rel="noopener noreferrer">www.barclaycard.co.uk&lt;/a>
 &lt;/td>
 &lt;td>A-&lt;/td>
 &lt;td>Y&lt;/td>
@@ -1260,21 +1260,21 @@ post where he discusses how Australian Banks score. Lets look at a few UK banks.
 &lt;/tr>
 &lt;tr>
 &lt;td>Lloyds Bank&lt;/td>
-&lt;td>&lt;a href="http://www.lloydsbank.com" target="_blank" rel="noopener noreferrer">www.lloydsbank.com&lt;/a>
+&lt;td>&lt;a href="https://www.lloydsbank.com" target="_blank" rel="noopener noreferrer">www.lloydsbank.com&lt;/a>
 &lt;/td>
 &lt;td>A&lt;/td>
 &lt;td>N&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Royal Bank of Scotland&lt;/td>
-&lt;td>&lt;a href="http://www.rbsdigital.com" target="_blank" rel="noopener noreferrer">www.rbsdigital.com&lt;/a>
+&lt;td>&lt;a href="https://www.rbsdigital.com" target="_blank" rel="noopener noreferrer">www.rbsdigital.com&lt;/a>
 &lt;/td>
 &lt;td>C&lt;/td>
 &lt;td>N&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Standard Chartered&lt;/td>
-&lt;td>&lt;a href="http://www.sc.com" target="_blank" rel="noopener noreferrer">www.sc.com&lt;/a>
+&lt;td>&lt;a href="https://www.sc.com" target="_blank" rel="noopener noreferrer">www.sc.com&lt;/a>
 &lt;/td>
 &lt;td>C&lt;/td>
 &lt;td>Y&lt;/td>
@@ -1500,7 +1500,7 @@ and I will attempt to explain some of it.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>arg1 &lt;span style="color:#f92672">*&lt;/span> arg2
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>I have created a function that takes 2 parameters date and currency. I know I have about 10 different currencies that I want to get currencies for and I want to loop through each day so I will need to pass in a date.&lt;/p>
-&lt;p>The source of my exchange rate information is the &lt;a href="http://www.xe.com" target="_blank" rel="noopener noreferrer">www.xe.com&lt;/a>
+&lt;p>The source of my exchange rate information is the &lt;a href="https://www.xe.com" target="_blank" rel="noopener noreferrer">www.xe.com&lt;/a>
 website, its historical exchange rate page passes currency and date into the query string so I should be able to build up a string containing all the different elements.&lt;/p>
 &lt;p>All programming language can concatenate strings and R is no different. R uses paste()&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-r" data-lang="r">&lt;span style="display:flex;">&lt;span>var &lt;span style="color:#f92672">&amp;lt;-&lt;/span> &lt;span style="color:#a6e22e">paste&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Hello&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;World&amp;#34;&lt;/span>)
@@ -1757,7 +1757,23 @@ To take advantage of these multiple data centres, Azure has something called a T
 &lt;h2 id="recommendations">Recommendations&lt;a class="anchor ms-1" href="#recommendations">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
 &lt;p>&lt;em>Simon is an excellent developer, always looking for new methods and technology to improve existing solutions, along with his own skills. He is open to new ideas, though not afraid to share his thoughts and feedback and guide others to the best solution possible. It’s worth noting that Simon has vast knowledge on hardware and infrastructure which really does compliment his skill as a developer.&lt;/em> - Alasdair Thomson (Head of Business Data Solutions at NPD Travel Retail)&lt;/p>
 &lt;p>&lt;em>Simon worked for my company for a number of years and was a very valued member of staff, and later on management. He is an intelligent and conscientious worker who gives over and above on a regular basis. He leads by example and was respected by his peers and the directors of the company. I would not hesitate to recommend Simon both in terms of the quality of his work and his ethics and values in life in general.&lt;/em> - Alison Davies (CEO at Eurosafe UK)&lt;/p>
-&lt;p>&lt;em>If you want a developer who really understands DevOps, then Si is your man. With a mixture of operations, support, development and management experience, he can bring a balanced skillset to a team, as well as excellent knowledge of Azure, .NET, SQL and the web.&lt;/em> - Keith Williams (Development Manager at IRIS for Cascade HR and KashFlow Payroll)&lt;/p></description></item><item><title>Pwned Pass</title><link>https://www.funkysi1701.com/posts/pwned-pass/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/pwned-pass/</guid><description>&lt;p>Using the data supplied by Troy Hunt and his Have I been pwned? website Pwned Pass allows you to check to see if any password has appeared in a data breach.&lt;/p>
+&lt;p>&lt;em>If you want a developer who really understands DevOps, then Si is your man. With a mixture of operations, support, development and management experience, he can bring a balanced skillset to a team, as well as excellent knowledge of Azure, .NET, SQL and the web.&lt;/em> - Keith Williams (Development Manager at IRIS for Cascade HR and KashFlow Payroll)&lt;/p></description></item><item><title>Funky Si: The Next Generation</title><link>https://www.funkysi1701.com/posts/funky-si-the-next-generation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/funky-si-the-next-generation/</guid><description>&lt;p>On 19th August at 9.39 pm James David Martin Foster arrived weighing 9 lb 12.&lt;/p>
+&lt;img src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/james5.jpg?resize=300%2C225&amp;ssl=1" width="300">
+&lt;img src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/20150827_134624-e1442143961495.jpg?resize=300%2C169&amp;ssl=1" width="300">
+&lt;img src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/James.jpg?resize=300%2C165&amp;ssl=1" width="300">
+&lt;img src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/SAM_4939.jpg?resize=300%2C225&amp;ssl=1" width="300">
+&lt;img src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/COogcqtXAAAzZ7A.jpg?resize=300%2C300&amp;ssl=1" width="300">
+&lt;img src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/COZF5PjWUAAhcan.jpg?resize=300%2C300&amp;ssl=1" width="300">
+&lt;p>My initial thoughts on fatherhood can be found &lt;a href="https://www.funkysi1701.com/2015/09/03/baby-magic-and-becoming-a-father/">here&lt;/a>
+. More baby photos can also be found on my &lt;a href="https://www.instagram.com/funkysi1701/" target="_blank" rel="noopener noreferrer">instragram&lt;/a>
+.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/twitter.jpg?resize=768%2C256&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>On 11th November 2017 at 22:58pm Edward Leonard Alan Foster arrived weighing 11 lb&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/DSC_0376-e1510563039193.jpg?resize=225%2C300&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p></description></item><item><title>Pwned Pass</title><link>https://www.funkysi1701.com/posts/pwned-pass/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/pwned-pass/</guid><description>&lt;p>Using the data supplied by Troy Hunt and his Have I been pwned? website Pwned Pass allows you to check to see if any password has appeared in a data breach.&lt;/p>
 &lt;p>For more details about Have I been pwned? check out &lt;a href="https://haveibeenpwned.com/">haveibeenpwned.com&lt;/a> and &lt;a href="https://www.troyhunt.com">www.troyhunt.com&lt;/a>.&lt;/p>
 &lt;p>Pwned Pass is a simple Xamarin app that allows you to type in a password and tells you if it has been used in a data breach.&lt;/p>
 &lt;p>Troy Hunt of &lt;a href="https://haveibeenpwned.com/">Have I Been Pwned?&lt;/a> recently added a new API to his website which allows you to search his extensive database of pwned passwords, over 306 million of them. I have simply created a Android frontend to this API.&lt;/p>

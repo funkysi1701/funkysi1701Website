@@ -200,7 +200,7 @@ post where he discusses how Australian Banks score. Lets look at a few UK banks.
 &lt;tbody>
 &lt;tr>
 &lt;td>HSBC&lt;/td>
-&lt;td>&lt;a href="http://www.hsbc.co.uk" target="_blank" rel="noopener noreferrer">www.hsbc.co.uk&lt;/a>
+&lt;td>&lt;a href="https://www.hsbc.co.uk" target="_blank" rel="noopener noreferrer">www.hsbc.co.uk&lt;/a>
 &lt;/td>
 &lt;td>B&lt;/td>
 &lt;td>Y&lt;/td>
@@ -213,14 +213,14 @@ post where he discusses how Australian Banks score. Lets look at a few UK banks.
 &lt;/tr>
 &lt;tr>
 &lt;td>NatWest&lt;/td>
-&lt;td>&lt;a href="http://www.nwolb.com" target="_blank" rel="noopener noreferrer">www.nwolb.com&lt;/a>
+&lt;td>&lt;a href="https://www.nwolb.com" target="_blank" rel="noopener noreferrer">www.nwolb.com&lt;/a>
 &lt;/td>
 &lt;td>C&lt;/td>
 &lt;td>N&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Barclaycard&lt;/td>
-&lt;td>&lt;a href="http://www.barclaycard.co.uk" target="_blank" rel="noopener noreferrer">www.barclaycard.co.uk&lt;/a>
+&lt;td>&lt;a href="https://www.barclaycard.co.uk" target="_blank" rel="noopener noreferrer">www.barclaycard.co.uk&lt;/a>
 &lt;/td>
 &lt;td>A-&lt;/td>
 &lt;td>Y&lt;/td>
@@ -233,21 +233,21 @@ post where he discusses how Australian Banks score. Lets look at a few UK banks.
 &lt;/tr>
 &lt;tr>
 &lt;td>Lloyds Bank&lt;/td>
-&lt;td>&lt;a href="http://www.lloydsbank.com" target="_blank" rel="noopener noreferrer">www.lloydsbank.com&lt;/a>
+&lt;td>&lt;a href="https://www.lloydsbank.com" target="_blank" rel="noopener noreferrer">www.lloydsbank.com&lt;/a>
 &lt;/td>
 &lt;td>A&lt;/td>
 &lt;td>N&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Royal Bank of Scotland&lt;/td>
-&lt;td>&lt;a href="http://www.rbsdigital.com" target="_blank" rel="noopener noreferrer">www.rbsdigital.com&lt;/a>
+&lt;td>&lt;a href="https://www.rbsdigital.com" target="_blank" rel="noopener noreferrer">www.rbsdigital.com&lt;/a>
 &lt;/td>
 &lt;td>C&lt;/td>
 &lt;td>N&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Standard Chartered&lt;/td>
-&lt;td>&lt;a href="http://www.sc.com" target="_blank" rel="noopener noreferrer">www.sc.com&lt;/a>
+&lt;td>&lt;a href="https://www.sc.com" target="_blank" rel="noopener noreferrer">www.sc.com&lt;/a>
 &lt;/td>
 &lt;td>C&lt;/td>
 &lt;td>Y&lt;/td>
@@ -473,7 +473,7 @@ and I will attempt to explain some of it.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>arg1 &lt;span style="color:#f92672">*&lt;/span> arg2
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>I have created a function that takes 2 parameters date and currency. I know I have about 10 different currencies that I want to get currencies for and I want to loop through each day so I will need to pass in a date.&lt;/p>
-&lt;p>The source of my exchange rate information is the &lt;a href="http://www.xe.com" target="_blank" rel="noopener noreferrer">www.xe.com&lt;/a>
+&lt;p>The source of my exchange rate information is the &lt;a href="https://www.xe.com" target="_blank" rel="noopener noreferrer">www.xe.com&lt;/a>
 website, its historical exchange rate page passes currency and date into the query string so I should be able to build up a string containing all the different elements.&lt;/p>
 &lt;p>All programming language can concatenate strings and R is no different. R uses paste()&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-r" data-lang="r">&lt;span style="display:flex;">&lt;span>var &lt;span style="color:#f92672">&amp;lt;-&lt;/span> &lt;span style="color:#a6e22e">paste&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Hello&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;World&amp;#34;&lt;/span>)
