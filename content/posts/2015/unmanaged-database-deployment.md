@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/unmanaged-database-deployment",
-    "/posts/tidying-my-desktop-2f1a",
-    "/posts/2015/09/10/tidying-my-desktop-2f1a",
+    "/posts/unmanaged-database-deployment-5edl",
+    "/posts/2015/09/10/unmanaged-database-deployment-5edl",
     "/posts/2015/09/10/unmanaged-database-deployment",
-    "/2015/09/10/tidying-my-desktop-2f1a",
+    "/2015/09/10/unmanaged-database-deployment-5edl",
     "/2015/09/10/unmanaged-database-deployment"
 ]
 +++
