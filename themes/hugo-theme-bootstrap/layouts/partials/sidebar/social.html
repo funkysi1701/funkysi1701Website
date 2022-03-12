@@ -18,7 +18,7 @@
 <section class="year row card component">
   <div class="card-header">
     <h2 class="card-title">
-      Years
+      <a href="/year">Years</a>
     </h2>
   </div>
   <div class="card-body">    
@@ -26,17 +26,17 @@
         <!-- Get all posts-->
         {{ $posts := where .Site.RegularPages "Section" "==" "posts" }}
         <!-- loop all tags that you've used -->
-        {{ range $name, $taxonomy := .Site.Taxonomies.year }}
+        {{ range $name, $taxonomy := .Site.Taxonomies.year.Alphabetical.Reverse }}     
           <!-- (re)set the counter to 0 -->
           {{ $.Scratch.Set "tagCounter" 0 }}
           <!-- increment counter if post contains the current tag-->
           {{ range $posts}}
-            {{ if in .Params.year $name }}
+            {{ if in .Params.year $taxonomy.Term }}
               {{ $.Scratch.Add "tagCounter" 1 }}
             {{ end }}
           {{ end }}
           
-          <li><a href="/{{ $name }}">{{ $name }}</a> ({{ $.Scratch.Get "tagCounter" }})</li>
+          <li><a href="/{{ $taxonomy.Term }}">{{ $taxonomy.Term }}</a> ({{ $.Scratch.Get "tagCounter" }})</li>
         {{end}}
       </ul>
   </div>
