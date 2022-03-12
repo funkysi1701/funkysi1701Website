@@ -14,6 +14,7 @@ summary = "Today Microsoft celebrated 20 years since the first version of dotnet
 showFullContent = false
 readingTime = true
 copyright = false
+featured = true
 aliases = [
     "/posts/dotnet-is-20-years-old",
     "/posts/2022/02/14/dotnet-is-20-years-old",

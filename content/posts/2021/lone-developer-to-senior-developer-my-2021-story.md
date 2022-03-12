@@ -15,6 +15,7 @@ description = "Part of Festive Tech Calendar 2021"
 summary = "Part of Festive Tech Calendar 2021"
 showFullContent = false
 readingTime = true
+featured = true
 aliases = [
     "/posts/lone-developer-to-senior-developer-my-2021-story/",
     "/posts/lone-developer-to-senior-developer-my-2021-story-3g0a",

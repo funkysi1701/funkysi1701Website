@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/adding-internet-connection-resiliency",
-    "/posts/unmanaged-database-deployment-5edl",
-    "/posts/2015/09/24/unmanaged-database-deployment-5edl",
+    "/posts/adding-internet-connection-resiliency-o1a",
+    "/posts/2015/09/24/adding-internet-connection-resiliency-o1a",
     "/posts/2015/09/24/adding-internet-connection-resiliency",
-    "/2015/09/24/unmanaged-database-deployment-5edl",
+    "/2015/09/24/adding-internet-connection-resiliency-o1a",
     "/2015/09/24/adding-internet-connection-resiliency"
 ]
 +++

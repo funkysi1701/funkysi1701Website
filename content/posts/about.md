@@ -10,6 +10,7 @@ images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-conten
 showFullContent = false
 copyright = false
 readingTime = true
+comment = false
 aliases = [
     "/about",
     "/posts/about"
