@@ -59,7 +59,30 @@ To take advantage of these multiple data centres, Azure has something called a T
 &lt;p>PowerShell is something Microsoft are really pushing at the moment, you can even write scripts to create new user accounts, so no longer will you have to remember to tick that tickbox for every new user account. And because PowerShell is part of almost all MS technologies you can link Exchange to Active Directory and you don’t even have to remember the right syntax as PowerShell has a built-in help command to tell you how to run that useful command.&lt;/p>
 &lt;p>As I am now moving into a more developer role can I continue to be lazy? I sure can. Code should be written once and reused as often as possible and this is one of the features of OOP (Object Oriented Programming).&lt;/p>
 &lt;p>It can be as simple as creating a master page so you don’t need to recreate the same code on every one of your webpages. Or every time you find yourself rewriting the same code again, you plug it into a method so it can be called again and again.&lt;/p>
-&lt;p>But of course the ultimate way to be lazy is of course get yourself some staff and spend all day getting them to do everything. If you are lucky they may even try and adopt some of these lazy ideas.&lt;/p></description></item><item><title>What is the difference between Development and Operations?</title><link>https://www.funkysi1701.com/posts/2014/what-is-the-difference-between-dev-and-ops/</link><pubDate>Sat, 27 Sep 2014 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2014/what-is-the-difference-between-dev-and-ops/</guid><description>&lt;p>I want to learn Development and eventually move into a development role. But what is the difference between development and what I already do?&lt;/p>
+&lt;p>But of course the ultimate way to be lazy is of course get yourself some staff and spend all day getting them to do everything. If you are lucky they may even try and adopt some of these lazy ideas.&lt;/p></description></item><item><title>Windows 9 or do I mean 10</title><link>https://www.funkysi1701.com/posts/2014/windows-9-or-do-i-mean-10/</link><pubDate>Wed, 01 Oct 2014 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2014/windows-9-or-do-i-mean-10/</guid><description>&lt;p>Like many systems administrators I watched as the news came out yesterday about the latest version of windows. What would it be like? What would it be called? Would it be better or worse than previous versions?&lt;/p>
+&lt;p>I was shocked when the name of the new operating system was revealed to be Windows 10. What really!? At first I though someone had tweeted a photoshopped image of the press conference, but no it was really going to be called Windows 10.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="Windows 10" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/10/windows_10_fullwidth.jpg?w=800&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>Windows 10 is the next operating system to be released after windows 8, many had been calling it windows 9 or windows Threshold.&lt;/p>
+&lt;p>Microsoft has never had a fixed naming convention for its OSes, so should we really be that surprised at its new name.&lt;/p>
+&lt;ul>
+&lt;li>Windows 1.0 (1985)&lt;/li>
+&lt;li>Windows 2.0 (1987)&lt;/li>
+&lt;li>Windows 3.0 (1990)&lt;/li>
+&lt;li>Windows 95 (1995)&lt;/li>
+&lt;li>Windows 98 (1998)&lt;/li>
+&lt;li>Windows ME (2000)&lt;/li>
+&lt;li>Windows XP (2001)&lt;/li>
+&lt;li>Windows Vista (2007)&lt;/li>
+&lt;li>Windows 7 (2009)&lt;/li>
+&lt;li>Windows 8 (2012)&lt;/li>
+&lt;li>Windows 10 (2015)&lt;/li>
+&lt;/ul>
+&lt;p>One reason Microsoft may have gone with with Windows 10 is because they wanted to signify that the coming Windows release would be the last “major” Windows update. What does it mean to be the last major update?&lt;/p>
+&lt;p>If you look at the list of OSes above you will see that between XP and Vista was a huge 6 years, this gap is/has caused a huge headache for IT professionals (me included). Software was written for XP because that is all that was available, when XP moved out of support earlier this year it caused loads as problems as people tried to get this software to work on more modern OSes.&lt;/p>
+&lt;p>If windows 10 is around for a long time we may end up with a similar situation to XP, in that loads of software will run only on it and cause problems if you try and port it to whatever comes next. I am only a trainee developer so I don’t know what is involved with building an OS, but I would imagine there must be things that are very difficult or almost impossible to fix without ripping them out and starting again which is what happens when a new version of an OS is written.&lt;/p>
+&lt;p>Only time will tell if Windows 10 really is the last version of windows and what will happen to the OS in the future. What ever the case I am downloading a preview so I can have a look (I want my start menu back!)&lt;/p></description></item><item><title>What is the difference between Development and Operations?</title><link>https://www.funkysi1701.com/posts/2014/what-is-the-difference-between-dev-and-ops/</link><pubDate>Sat, 27 Sep 2014 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2014/what-is-the-difference-between-dev-and-ops/</guid><description>&lt;p>I want to learn Development and eventually move into a development role. But what is the difference between development and what I already do?&lt;/p>
 &lt;p>Put simply Development or programming is the creation of new programs, websites or databases.&lt;/p>
 &lt;p>IT Operations or System Administration is the administration of existing servers, websites or databases.&lt;/p>
 &lt;p>I have been doing System Administration since I started my job back in 2006. What you do as part of this role can be very simple like setting up new users or computers to something very complex like upgrading the version of Exchange that the company uses for its emails.&lt;/p>
