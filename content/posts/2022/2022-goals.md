@@ -53,3 +53,6 @@ Lets have a look at what my goals were for 2021. I had eight of them, lets look 
 4. **Metrics**. I have been recording various metrics from twitter, github etc and I would like to expand this and make it a service. 
 
 5. **Profile Pic**. My profile pic is getting a bit old, so it would be nice to update the images I use online and improve my personal brand.
+
+- [View on DevTo](https://dev.to/funkysi1701/2022-goals-24nj)
+- [View on Hashnode](https://funkysi1701.hashnode.dev/2022-goals)

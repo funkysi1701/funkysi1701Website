@@ -41,3 +41,6 @@ The above graphic comes from the following tweet.
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">This is 20 years of <a href="https://twitter.com/hashtag/dotnet?src=hash&amp;ref_src=twsrc%5Etfw">#dotnet</a> releases. <a href="https://twitter.com/hashtag/dotNETLovesMe?src=hash&amp;ref_src=twsrc%5Etfw">#dotNETLovesMe</a> <a href="https://t.co/Zxfe1SdWTq">pic.twitter.com/Zxfe1SdWTq</a></p>&mdash; Khalid 🎟 (@buhakmeh) <a href="https://twitter.com/buhakmeh/status/1493220984916258817?ref_src=twsrc%5Etfw">February 14, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 What do you like about dotnet? When did you first start using it? What are you going to build with it next?
+
+- [View on DevTo](https://dev.to/funkysi1701/dotnet-is-20-years-old-361e)
+- [View on Hashnode](https://funkysi1701.hashnode.dev/dotnet-is-20-years-old)

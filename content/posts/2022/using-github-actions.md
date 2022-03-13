@@ -221,3 +221,5 @@ I could have a test for develop to only run on feature/* but I have allowed it t
 
 There is loads more you can do with github actions, but hopefully this gives you a taste of some of the things you can do. I currently have a mix of Azure DevOps and github actions so I will be working on getting github actions to do more.
  
+- [View on DevTo](https://dev.to/funkysi1701/using-github-actions-3jo1)
+- [View on Hashnode](https://funkysi1701.hashnode.dev/using-github-actions)

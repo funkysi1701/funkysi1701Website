@@ -54,3 +54,6 @@ I think my website needs to be split in two. I need a stable blog platform proba
 I then have additional sites, that I use as my playground for learning new tech. I can easily link between them and I can tweak the style so they "fit" nicely together.
 
 I am still considering what to do with dev.to. I like that I am using it as the backend for my blog posts, and its API gives me that flexibility to display that content where I want.
+
+- [View on DevTo](https://dev.to/funkysi1701/why-do-i-have-a-website-1m5l)
+- [View on Hashnode](https://funkysi1701.hashnode.dev/why-do-i-have-a-website)
