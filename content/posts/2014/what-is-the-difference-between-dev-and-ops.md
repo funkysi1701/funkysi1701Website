@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/what-is-the-difference-between-dev-and-ops",
-    "/posts/i-love-nagios-m6",
-    "/posts/2014/09/27/i-love-nagios-m6",
+    "/posts/what-is-the-difference-between-development-and-operations-ii8",
+    "/posts/2014/09/27/what-is-the-difference-between-development-and-operations-ii8",
     "/posts/2014/09/27/what-is-the-difference-between-dev-and-ops",
-    "/2014/09/27/i-love-nagios-m6",
+    "/2014/09/27/what-is-the-difference-between-development-and-operations-ii8",
     "/2014/09/27/what-is-the-difference-between-dev-and-ops"
 ]
 +++
