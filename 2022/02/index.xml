@@ -38,7 +38,13 @@
 &lt;p>Repeating the SELECT @@VERSION gives us a new CU&lt;/p>
 &lt;pre tabindex="0">&lt;code>Microsoft SQL Server 2019 (RTM-CU14) (KB5007182) - 15.0.4188.2 (X64) Nov 3 2021 19:19:51 Copyright (C) 2019 Microsoft Corporation Developer Edition (64-bit) on Linux (Ubuntu 20.04.3 LTS) &amp;lt;X64&amp;gt;
 &lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>Microsoft SQL Server 2019 (RTM-CU15) (KB5008996) - 15.0.4198.2 (X64) Jan 12 2022 22:30:08 Copyright (C) 2019 Microsoft Corporation Developer Edition (64-bit) on Linux (Ubuntu 20.04.3 LTS) &amp;lt;X64&amp;gt;
-&lt;/code>&lt;/pre>&lt;p>How much easier is this than manually installing updates and rebooting or attempting to uninstall and reinstall SQL Server. As SQL Server 2022 isn&amp;rsquo;t out yet I can&amp;rsquo;t say for certain what issues I may encounter but hopefully it will be as easier as this. And I don&amp;rsquo;t need to backup or restore and databases they are all available as before!&lt;/p></description></item><item><title>dotnet is 20 years old</title><link>https://www.funkysi1701.com/posts/2022/dotnet-is-20-years-old/</link><pubDate>Mon, 14 Feb 2022 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/dotnet-is-20-years-old/</guid><description>&lt;p>Today Microsoft celebrated 20 years since the first version of dotnet was released with a special live stream event.&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>How much easier is this than manually installing updates and rebooting or attempting to uninstall and reinstall SQL Server. As SQL Server 2022 isn&amp;rsquo;t out yet I can&amp;rsquo;t say for certain what issues I may encounter but hopefully it will be as easier as this. And I don&amp;rsquo;t need to backup or restore and databases they are all available as before!&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://dev.to/funkysi1701/updating-sql-server-with-docker-5def" target="_blank" rel="noopener noreferrer">View on DevTo&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://funkysi1701.hashnode.dev/updating-sql-server-with-docker" target="_blank" rel="noopener noreferrer">View on Hashnode&lt;/a>
+&lt;/li>
+&lt;/ul></description></item><item><title>dotnet is 20 years old</title><link>https://www.funkysi1701.com/posts/2022/dotnet-is-20-years-old/</link><pubDate>Mon, 14 Feb 2022 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/dotnet-is-20-years-old/</guid><description>&lt;p>Today Microsoft celebrated 20 years since the first version of dotnet was released with a special live stream event.&lt;/p>
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/67tCWKnweso" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>&lt;/iframe>
 &lt;p>A lot has happened in the 20 years of dotnet (or .Net). It is my understanding that .Net was created to rival Java. When the .Net Framework was first created it was a windows only thing, but today modern .Net is a modern run anywhere platform, with .net applications running everywhere from PCs and Laptops, Raspberry Pi&amp;rsquo;s, Mobile phones and tablets (via Xamarin Forms), to Websites and Microservice APIs running on every Cloud platform out there.&lt;/p>
 &lt;p>If you want to celebrate this achievment tweet with the hashtag &lt;a href="https://twitter.com/search?q=%23dotnetlovesme" target="_blank" rel="noopener noreferrer">#DotNetLovesMe&lt;/a>
@@ -50,4 +56,10 @@ or download some of the digital swag available from &lt;a href="https://github.c
 &lt;/p>
 &lt;p>The above graphic comes from the following tweet.&lt;/p>
 &lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">This is 20 years of &lt;a href="https://twitter.com/hashtag/dotnet?src=hash&amp;amp;ref_src=twsrc%5Etfw">#dotnet&lt;/a> releases. &lt;a href="https://twitter.com/hashtag/dotNETLovesMe?src=hash&amp;amp;ref_src=twsrc%5Etfw">#dotNETLovesMe&lt;/a> &lt;a href="https://t.co/Zxfe1SdWTq">pic.twitter.com/Zxfe1SdWTq&lt;/a>&lt;/p>&amp;mdash; Khalid 🎟 (@buhakmeh) &lt;a href="https://twitter.com/buhakmeh/status/1493220984916258817?ref_src=twsrc%5Etfw">February 14, 2022&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
-&lt;p>What do you like about dotnet? When did you first start using it? What are you going to build with it next?&lt;/p></description></item></channel></rss>
+&lt;p>What do you like about dotnet? When did you first start using it? What are you going to build with it next?&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://dev.to/funkysi1701/dotnet-is-20-years-old-361e" target="_blank" rel="noopener noreferrer">View on DevTo&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://funkysi1701.hashnode.dev/dotnet-is-20-years-old" target="_blank" rel="noopener noreferrer">View on Hashnode&lt;/a>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>

@@ -16,7 +16,13 @@ appear to be the most popular. Both produce static content and both are a new fo
 &lt;h2 id="split-in-two">Split in two&lt;a class="anchor ms-1" href="#split-in-two">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
 &lt;p>I think my website needs to be split in two. I need a stable blog platform probably using Hugo and github pages. This is what I want to get indexed by the search engines and be the primary way people find out about what I am doing.&lt;/p>
 &lt;p>I then have additional sites, that I use as my playground for learning new tech. I can easily link between them and I can tweak the style so they &amp;ldquo;fit&amp;rdquo; nicely together.&lt;/p>
-&lt;p>I am still considering what to do with dev.to. I like that I am using it as the backend for my blog posts, and its API gives me that flexibility to display that content where I want.&lt;/p></description></item><item><title>Using GitHub Actions</title><link>https://www.funkysi1701.com/posts/2022/using-github-actions/</link><pubDate>Mon, 10 Jan 2022 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/using-github-actions/</guid><description>&lt;p>I&amp;rsquo;ve been running my website on Azure Static Web Apps for a while and it is pretty cool.&lt;/p>
+&lt;p>I am still considering what to do with dev.to. I like that I am using it as the backend for my blog posts, and its API gives me that flexibility to display that content where I want.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://dev.to/funkysi1701/why-do-i-have-a-website-1m5l" target="_blank" rel="noopener noreferrer">View on DevTo&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://funkysi1701.hashnode.dev/why-do-i-have-a-website" target="_blank" rel="noopener noreferrer">View on Hashnode&lt;/a>
+&lt;/li>
+&lt;/ul></description></item><item><title>Using GitHub Actions</title><link>https://www.funkysi1701.com/posts/2022/using-github-actions/</link><pubDate>Mon, 10 Jan 2022 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/using-github-actions/</guid><description>&lt;p>I&amp;rsquo;ve been running my website on Azure Static Web Apps for a while and it is pretty cool.&lt;/p>
 &lt;p>When you create a Static Web App on Azure you get asked for the github repo of your source code and even the branch to use.
 &lt;img class="img-fluid" alt="GitHub Repo for my Static Web App" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/off7ur2tgsla4smkrhhi.png" loading="lazy"
 />
@@ -179,7 +185,13 @@ name: Prod
 &lt;p>For Test this needs to only run on develop so&lt;/p>
 &lt;p>if: github.ref == &amp;lsquo;refs/heads/develop&amp;rsquo;&lt;/p>
 &lt;p>I could have a test for develop to only run on feature/* but I have allowed it to run everytime.&lt;/p>
-&lt;p>There is loads more you can do with github actions, but hopefully this gives you a taste of some of the things you can do. I currently have a mix of Azure DevOps and github actions so I will be working on getting github actions to do more.&lt;/p></description></item><item><title>2022 Goals</title><link>https://www.funkysi1701.com/posts/2022/2022-goals/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/2022-goals/</guid><description>&lt;p>Lets have a look at what my goals were for 2021. I had eight of them, lets look at them one by one.&lt;/p>
+&lt;p>There is loads more you can do with github actions, but hopefully this gives you a taste of some of the things you can do. I currently have a mix of Azure DevOps and github actions so I will be working on getting github actions to do more.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://dev.to/funkysi1701/using-github-actions-3jo1" target="_blank" rel="noopener noreferrer">View on DevTo&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://funkysi1701.hashnode.dev/using-github-actions" target="_blank" rel="noopener noreferrer">View on Hashnode&lt;/a>
+&lt;/li>
+&lt;/ul></description></item><item><title>2022 Goals</title><link>https://www.funkysi1701.com/posts/2022/2022-goals/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/2022-goals/</guid><description>&lt;p>Lets have a look at what my goals were for 2021. I had eight of them, lets look at them one by one.&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>&lt;strong>Azure certification&lt;/strong>. In May of this year I sat and passed the Azure Fundamentals exam. I am calling this goal as achieved.&lt;/p>
@@ -223,4 +235,10 @@ name: Prod
 &lt;li>
 &lt;p>&lt;strong>Profile Pic&lt;/strong>. My profile pic is getting a bit old, so it would be nice to update the images I use online and improve my personal brand.&lt;/p>
 &lt;/li>
-&lt;/ol></description></item></channel></rss>
+&lt;/ol>
+&lt;ul>
+&lt;li>&lt;a href="https://dev.to/funkysi1701/2022-goals-24nj" target="_blank" rel="noopener noreferrer">View on DevTo&lt;/a>
+&lt;/li>
+&lt;li>&lt;a href="https://funkysi1701.hashnode.dev/2022-goals" target="_blank" rel="noopener noreferrer">View on Hashnode&lt;/a>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>
