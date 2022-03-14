@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/destination-star-trek",
-    "/posts/what-is-the-difference-between-development-and-operations-ii8",
-    "/posts/2014/10/05/what-is-the-difference-between-development-and-operations-ii8",
+    "/posts/destination-star-trek-38ei",
+    "/posts/2014/10/05/destination-star-trek-38ei",
     "/posts/2014/10/05/destination-star-trek",
-    "/2014/10/05/what-is-the-difference-between-development-and-operations-ii8",
+    "/2014/10/05/destination-star-trek-38ei",
     "/2014/10/05/destination-star-trek"
 ]
 +++

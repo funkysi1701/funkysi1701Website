@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/windows-9-or-do-i-mean-10",
-    "/posts/what-is-the-difference-between-development-and-operations-ii8",
-    "/posts/2014/10/01/what-is-the-difference-between-development-and-operations-ii8",
+    "/posts/windows-9-or-do-i-mean-10-241n",
+    "/posts/2014/10/01/windows-9-or-do-i-mean-10-241n",
     "/posts/2014/10/01/windows-9-or-do-i-mean-10",
-    "/2014/10/01/what-is-the-difference-between-development-and-operations-ii8",
+    "/2014/10/01/windows-9-or-do-i-mean-10-241n",
     "/2014/10/01/windows-9-or-do-i-mean-10"
 ]
 +++
