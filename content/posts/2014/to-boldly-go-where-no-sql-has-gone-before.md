@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/to-boldly-go-where-no-sql-has-gone-before",
-    "/posts/windows-9-or-do-i-mean-10-241n",
-    "/posts/2014/10/12/windows-9-or-do-i-mean-10-241n",
+    "/posts/to-boldly-go-where-no-sql-has-gone-before-4fe7",
+    "/posts/2014/10/12/to-boldly-go-where-no-sql-has-gone-before-4fe7",
     "/posts/2014/10/12/to-boldly-go-where-no-sql-has-gone-before",
-    "/2014/10/12/windows-9-or-do-i-mean-10-241n",
+    "/2014/10/12/to-boldly-go-where-no-sql-has-gone-before-4fe7",
     "/2014/10/12/to-boldly-go-where-no-sql-has-gone-before"
 ]
 +++
