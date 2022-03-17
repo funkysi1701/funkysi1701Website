@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/interview-questions",
-    "/posts/i-love-nagios-m6",
-    "/posts/2014/10/23/i-love-nagios-m6",
+    "/posts/interview-questions-2a83",
+    "/posts/2014/10/23/interview-questions-2a83",
     "/posts/2014/10/23/interview-questions",
-    "/2014/10/23/i-love-nagios-m6",
+    "/2014/10/23/interview-questions-2a83",
     "/2014/10/23/interview-questions"
 ]
 +++
