@@ -17,11 +17,11 @@ copyright = false
 featured = true
 aliases = [
     "/posts/aws-cloud-practitioner",
-    "/posts/2022/02/14/aws-cloud-practitioner",
-    "/posts/dotnet-is-20-years-old-361e",
-    "/posts/2022/02/14/dotnet-is-20-years-old-361e",
-    "/dotnet-is-20-years-old-361e",
-    "/2022/02/14/dotnet-is-20-years-old-361e"    
+    "/posts/2022/03/17/aws-cloud-practitioner",
+    "/posts/aws-cloud-practitioner-1kan",
+    "/posts/2022/03/17/aws-cloud-practitioner-1kan",
+    "/aws-cloud-practitioner-1kan",
+    "/2022/03/17/aws-cloud-practitioner-1kan"    
 ]
 +++
 So today I sat the AWS Cloud Practitioner Certification Exam and passed! This is my second certification exam I have sat after the Azure Fundamentals one I sat last year.
@@ -38,5 +38,5 @@ My memory is the Azure gave you a breakdown of your score at the end, while I am
 
 I still prefer Azure to AWS, however today has proven that I can learn AWS stuff as well. For my next exam I want to get more hands on with my learning, as most of the services I have learnt about so far I haven't seen in action.
 
-- [View on DevTo]()
-- [View on Hashnode]()
+- [View on DevTo](https://dev.to/funkysi1701/aws-cloud-practitioner-1kan)
+- [View on Hashnode](https://funkysi1701.hashnode.dev/aws-cloud-practitioner)
