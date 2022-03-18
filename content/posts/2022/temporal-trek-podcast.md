@@ -1,6 +1,6 @@
 +++
 title = "Temporal Trek Podcast"
-date = "2022-03-18T20:00:45Z"
+date = "2022-03-18T18:00:45Z"
 year = "2022"
 month= "2022-03"
 author = "funkysi1701"
