@@ -18,10 +18,10 @@ featured = true
 aliases = [
     "/posts/temporal-trek-podcast",
     "/posts/2022/03/18/temporal-trek-podcast",
-    "/posts/aws-cloud-practitioner-1kan",
-    "/posts/2022/03/18/aws-cloud-practitioner-1kan",
-    "/aws-cloud-practitioner-1kan",
-    "/2022/03/18/aws-cloud-practitioner-1kan"    
+    "/posts/temporal-trek-podcast-2cdj",
+    "/posts/2022/03/18/temporal-trek-podcast-2cdj",
+    "/temporal-trek-podcast-2cdj",
+    "/2022/03/18/temporal-trek-podcast-2cdj"    
 ]
 +++
 
@@ -47,5 +47,5 @@ It was great fun to record and I hope you enjoy giving it a listen.
 
 
 
-- [View on DevTo]()
+- [View on DevTo](temporal-trek-podcast-2cdj)
 - [View on Hashnode]()
