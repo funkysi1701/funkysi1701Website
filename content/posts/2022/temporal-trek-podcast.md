@@ -47,5 +47,6 @@ It was great fun to record and I hope you enjoy giving it a listen.
 
 
 
-- [View on DevTo](temporal-trek-podcast-2cdj)
+- [View on DevTo](https://dev.to/funkysi1701/
+temporal-trek-podcast-2cdj)
 - [View on Hashnode]()
