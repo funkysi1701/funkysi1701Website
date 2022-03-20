@@ -10,6 +10,8 @@
 &lt;/li>
 &lt;li>&lt;a href="https://funkysi1701.hashnode.dev/aws-cloud-practitioner" target="_blank" rel="noopener noreferrer">View on Hashnode&lt;/a>
 &lt;/li>
+&lt;li>&lt;a href="https://github.com/funkysi1701/funkysi1701.github.io/blob/master/content/posts/2022/aws-cloud-practitioner.md" target="_blank" rel="noopener noreferrer">Edit this page on GitHub&lt;/a>
+&lt;/li>
 &lt;/ul></description></item><item><title>Uploading Files to AWS</title><link>https://www.funkysi1701.com/posts/2017/uploading-files-to-aws/</link><pubDate>Mon, 03 Jul 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/uploading-files-to-aws/</guid><description>&lt;p>I am a fan of Azure but today I have been looking at AWS. Specifically how to upload and download files.&lt;/p>
 &lt;p>AWS S3 stores files in Buckets. I already had an AWS S3 account setup with a Bucket. I am going to assume you have got a bucket setup and concentrate on the code to get files in and out.&lt;/p>
 &lt;p>First step is to use nuget to install the AWS packages. In nuget the packages you want are called AWSSDK.Core and AWSSDK.S3.&lt;/p>
