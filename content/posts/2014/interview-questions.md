@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/10/how-not-to-ace-the-technical-interview.jpg?w=550&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/10/how-not-to-ace-the-technical-interview.jpg?w=550&ssl=1']
-tags = ["ITAdmin", "Interview", "Tecnical"]
+tags = ["ITAdmin", "Interview", "Technical"]
 category="tech"
 keywords = ["", ""]
 description = "Interview questions"
