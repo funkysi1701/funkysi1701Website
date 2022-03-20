@@ -40,3 +40,4 @@ I still prefer Azure to AWS, however today has proven that I can learn AWS stuff
 
 - [View on DevTo](https://dev.to/funkysi1701/aws-cloud-practitioner-1kan)
 - [View on Hashnode](https://funkysi1701.hashnode.dev/aws-cloud-practitioner)
+- [Edit this page on GitHub](https://github.com/funkysi1701/funkysi1701.github.io/blob/master/content/posts/2022/aws-cloud-practitioner.md)
