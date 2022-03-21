@@ -16,6 +16,7 @@ readingTime = true
 copyright = false
 featured = true
 aliases = [
+    "/dotnet-is-20-years-old-361e",
     "/posts/dotnet-is-20-years-old",
     "/posts/2022/02/14/dotnet-is-20-years-old",
     "/posts/dotnet-is-20-years-old-361e",
@@ -42,5 +43,3 @@ The above graphic comes from the following tweet.
 
 What do you like about dotnet? When did you first start using it? What are you going to build with it next?
 
-- [View on DevTo](https://dev.to/funkysi1701/dotnet-is-20-years-old-361e)
-- [View on Hashnode](https://funkysi1701.hashnode.dev/dotnet-is-20-years-old)

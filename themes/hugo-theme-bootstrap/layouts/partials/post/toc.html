@@ -12,3 +12,17 @@
   </div>
 </div>
 {{- end -}}
+
+
+{{ if .Params.date }}
+<div class="row mb-4 card component">
+  <div class="card-header">
+    <h2 class="card-title">Related Links</h2>
+  </div>
+  <div class="card-body">
+    <a href="https://dev.to/funkysi1701{{ index (.Aliases) 0 }}">View on DevTo</a><br>
+    <a href="https://funkysi1701.hashnode.dev/{{ .File.TranslationBaseName }}">View on  Hashnode</a><br>
+    <a href="https://github.com/funkysi1701/funkysi1701.github.io/blob/master/content/posts/{{ .Date.Year }}/{{ .File.LogicalName }}">Edit this page on GitHub</a>
+  </div>
+</div>
+{{- end -}}

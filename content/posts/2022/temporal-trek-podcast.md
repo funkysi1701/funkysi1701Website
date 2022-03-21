@@ -16,6 +16,7 @@ readingTime = true
 copyright = false
 featured = true
 aliases = [
+    "/temporal-trek-podcast-2cdj",
     "/posts/temporal-trek-podcast",
     "/posts/2022/03/18/temporal-trek-podcast",
     "/posts/temporal-trek-podcast-2cdj",
@@ -46,7 +47,3 @@ Oh and by the way has anyone seen the guy who flies the ship, you know the one, 
 It was great fun to record and I hope you enjoy giving it a listen.
 
 
-
-- [View on DevTo](https://dev.to/funkysi1701/temporal-trek-podcast-2cdj)
-- [View on Hashnode](https://funkysi1701.hashnode.dev/temporal-trek-podcast)
-- [Edit this page on GitHub](https://github.com/funkysi1701/funkysi1701.github.io/blob/master/content/posts/2022/temporal-trek-podcast.md)

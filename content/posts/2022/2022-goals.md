@@ -15,6 +15,7 @@ summary = "A review of last years goals and setting of new ones for 2022"
 showFullContent = false
 readingTime = true
 aliases = [
+    "/2022-goals-24nj",
     "/posts/2022-goals/",
     "/posts/2022-goals-24nj",
     "/posts/2022/01/01/2022-goals-24nj",
@@ -54,5 +55,3 @@ Lets have a look at what my goals were for 2021. I had eight of them, lets look 
 
 5. **Profile Pic**. My profile pic is getting a bit old, so it would be nice to update the images I use online and improve my personal brand.
 
-- [View on DevTo](https://dev.to/funkysi1701/2022-goals-24nj)
-- [View on Hashnode](https://funkysi1701.hashnode.dev/2022-goals)

@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/if-you-had-ps5000-to-spend-on-technology-what-would-you-get-15ee",
     "/posts/if-you-had-5000-to-spend-on-technology-what-would-you-get",
     "/posts/if-you-had-ps5000-to-spend-on-technology-what-would-you-get-15ee",
     "/posts/2014/10/26/if-you-had-ps5000-to-spend-on-technology-what-would-you-get-15ee",

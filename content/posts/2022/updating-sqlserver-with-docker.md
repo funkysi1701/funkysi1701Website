@@ -16,6 +16,7 @@ summary = "Updating SQL Server with Docker"
 showFullContent = false
 readingTime = true
 aliases = [
+    "/updating-sql-server-with-docker-5def",
     "/posts/updating-sqlserver-with-docker",
     "/posts/2022/02/23/updating-sqlserver-with-docker",
     "/posts/updating-sql-server-with-docker-5def",
@@ -109,5 +110,3 @@ Microsoft SQL Server 2019 (RTM-CU15) (KB5008996) - 15.0.4198.2 (X64)   Jan 12 20
 
 How much easier is this than manually installing updates and rebooting or attempting to uninstall and reinstall SQL Server. As SQL Server 2022 isn't out yet I can't say for certain what issues I may encounter but hopefully it will be as easier as this. And I don't need to backup or restore and databases they are all available as before!
 
-- [View on DevTo](https://dev.to/funkysi1701/updating-sql-server-with-docker-5def)
-- [View on Hashnode](https://funkysi1701.hashnode.dev/updating-sql-server-with-docker)
