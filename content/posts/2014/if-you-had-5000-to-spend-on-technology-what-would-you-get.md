@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/if-you-had-5000-to-spend-on-technology-what-would-you-get",
-    "/posts/interview-questions-2a83",
-    "/posts/2014/10/26/interview-questions-2a83",
+    "/posts/if-you-had-ps5000-to-spend-on-technology-what-would-you-get-15ee",
+    "/posts/2014/10/26/if-you-had-ps5000-to-spend-on-technology-what-would-you-get-15ee",
     "/posts/2014/10/26/if-you-had-5000-to-spend-on-technology-what-would-you-get",
-    "/2014/10/26/interview-questions-2a83",
+    "/2014/10/26/if-you-had-ps5000-to-spend-on-technology-what-would-you-get-15ee",
     "/2014/10/26/if-you-had-5000-to-spend-on-technology-what-would-you-get"
 ]
 +++
