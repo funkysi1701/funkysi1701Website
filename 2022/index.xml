@@ -15,29 +15,13 @@
 width="268" height="268"
 />
 &lt;/p>
-&lt;p>It was great fun to record and I hope you enjoy giving it a listen.&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://dev.to/funkysi1701/temporal-trek-podcast-2cdj" target="_blank" rel="noopener noreferrer">View on DevTo&lt;/a>
-&lt;/li>
-&lt;li>&lt;a href="https://funkysi1701.hashnode.dev/temporal-trek-podcast" target="_blank" rel="noopener noreferrer">View on Hashnode&lt;/a>
-&lt;/li>
-&lt;li>&lt;a href="https://github.com/funkysi1701/funkysi1701.github.io/blob/master/content/posts/2022/temporal-trek-podcast.md" target="_blank" rel="noopener noreferrer">Edit this page on GitHub&lt;/a>
-&lt;/li>
-&lt;/ul></description></item><item><title>AWS Cloud Practitioner</title><link>https://www.funkysi1701.com/posts/2022/aws-cloud-practitioner/</link><pubDate>Thu, 17 Mar 2022 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/aws-cloud-practitioner/</guid><description>&lt;p>So today I sat the AWS Cloud Practitioner Certification Exam and passed! This is my second certification exam I have sat after the Azure Fundamentals one I sat last year.&lt;/p>
+&lt;p>It was great fun to record and I hope you enjoy giving it a listen.&lt;/p></description></item><item><title>AWS Cloud Practitioner</title><link>https://www.funkysi1701.com/posts/2022/aws-cloud-practitioner/</link><pubDate>Thu, 17 Mar 2022 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/aws-cloud-practitioner/</guid><description>&lt;p>So today I sat the AWS Cloud Practitioner Certification Exam and passed! This is my second certification exam I have sat after the Azure Fundamentals one I sat last year.&lt;/p>
 &lt;p>&lt;a href="https://www.credly.com/badges/3aab54c8-a109-4018-bcad-dbe0d6a1fc0c/public_url">&lt;img src="https://images.credly.com/size/680x680/images/68468004-5a85-4f3b-bc58-590773979486/AWS-CloudPractitioner-2020.png" alt="AWS Cloud Practitioner" width="150" />&lt;/a>&lt;/p>
 &lt;p>This time was different than the Azure one. Colleagues at work encouraged me to look into doing this particular exam and my employer is going to cover the cost of the exam itself. Last time I did the exam in my own time and didn&amp;rsquo;t really discuss it with anyone from work.&lt;/p>
 &lt;p>The other difference was this time I went to a testing centre. The centre was a 5 minute walk from the office. So I decided to work from the office today and 20 minutes before the exam started I walked to the centre. I signed a couple of bits of paper, had my photo taken, had my passport and driving license laughed at, put my belongings in a locker and I was free to start the exam. No worrying about internet connectivity or kids making noise outside my room, or the endless photos at the prep stage of an exam from home. I think I prefer the exam centre experience.&lt;/p>
 &lt;p>The other difference was the first exam was Azure, this one was AWS. Both exams cover similar concepts, they are both introductions to Cloud Computing. It&amp;rsquo;s ten months since I did the Azure one, however they both had multiple choice questions and gave you the results at the end. I feel overly familir with Azure, while I don&amp;rsquo;t feel that was with AWS yet. A lot of questions relied on you knowing what AWS services are called. eg AWS Pipeline, AWS CodeStar, AWS CodeBuild, Amazon CodeGuru are all AWS services and are easily mixed up, especially as I have only used a few AWS services, while I have used a lot more of the Azure ones.&lt;/p>
 &lt;p>My memory is the Azure gave you a breakdown of your score at the end, while I am still waiting for that from todays exam. This difference may of course be due to it being in a testing centre.&lt;/p>
-&lt;p>I still prefer Azure to AWS, however today has proven that I can learn AWS stuff as well. For my next exam I want to get more hands on with my learning, as most of the services I have learnt about so far I haven&amp;rsquo;t seen in action.&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://dev.to/funkysi1701/aws-cloud-practitioner-1kan" target="_blank" rel="noopener noreferrer">View on DevTo&lt;/a>
-&lt;/li>
-&lt;li>&lt;a href="https://funkysi1701.hashnode.dev/aws-cloud-practitioner" target="_blank" rel="noopener noreferrer">View on Hashnode&lt;/a>
-&lt;/li>
-&lt;li>&lt;a href="https://github.com/funkysi1701/funkysi1701.github.io/blob/master/content/posts/2022/aws-cloud-practitioner.md" target="_blank" rel="noopener noreferrer">Edit this page on GitHub&lt;/a>
-&lt;/li>
-&lt;/ul></description></item><item><title>Updating SQL Server with Docker</title><link>https://www.funkysi1701.com/posts/2022/updating-sqlserver-with-docker/</link><pubDate>Wed, 23 Feb 2022 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/updating-sqlserver-with-docker/</guid><description>&lt;p>This morning I was listening to a podcast where the new features coming out for SQL Server 2022 were being discussed. This starting me thinking about what would be involved in upgrading.&lt;/p>
+&lt;p>I still prefer Azure to AWS, however today has proven that I can learn AWS stuff as well. For my next exam I want to get more hands on with my learning, as most of the services I have learnt about so far I haven&amp;rsquo;t seen in action.&lt;/p></description></item><item><title>Updating SQL Server with Docker</title><link>https://www.funkysi1701.com/posts/2022/updating-sqlserver-with-docker/</link><pubDate>Wed, 23 Feb 2022 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/updating-sqlserver-with-docker/</guid><description>&lt;p>This morning I was listening to a podcast where the new features coming out for SQL Server 2022 were being discussed. This starting me thinking about what would be involved in upgrading.&lt;/p>
 &lt;p>Upgrading production environments is complex and there are licensing considerations to take into account. However for non production workloads like development this isn&amp;rsquo;t a problem so lets look at that first.&lt;/p>
 &lt;p>In the past I have installed SQL Server Devloper Edition onto my laptop, this is fine but I have found that unless you are very careful you may end up with multiple different versions of SQL Server sitting around, and it is difficult to cleanly remove them without a fresh install of the OS.&lt;/p>
 &lt;p>However in this day and age, Docker and Containers are king. My current development environment makes use of Docker and has a docker compose file which sets up SQL Server for this particular application, lets take a look.&lt;/p>
@@ -77,13 +61,7 @@ width="268" height="268"
 &lt;p>Repeating the SELECT @@VERSION gives us a new CU&lt;/p>
 &lt;pre tabindex="0">&lt;code>Microsoft SQL Server 2019 (RTM-CU14) (KB5007182) - 15.0.4188.2 (X64) Nov 3 2021 19:19:51 Copyright (C) 2019 Microsoft Corporation Developer Edition (64-bit) on Linux (Ubuntu 20.04.3 LTS) &amp;lt;X64&amp;gt;
 &lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>Microsoft SQL Server 2019 (RTM-CU15) (KB5008996) - 15.0.4198.2 (X64) Jan 12 2022 22:30:08 Copyright (C) 2019 Microsoft Corporation Developer Edition (64-bit) on Linux (Ubuntu 20.04.3 LTS) &amp;lt;X64&amp;gt;
-&lt;/code>&lt;/pre>&lt;p>How much easier is this than manually installing updates and rebooting or attempting to uninstall and reinstall SQL Server. As SQL Server 2022 isn&amp;rsquo;t out yet I can&amp;rsquo;t say for certain what issues I may encounter but hopefully it will be as easier as this. And I don&amp;rsquo;t need to backup or restore and databases they are all available as before!&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://dev.to/funkysi1701/updating-sql-server-with-docker-5def" target="_blank" rel="noopener noreferrer">View on DevTo&lt;/a>
-&lt;/li>
-&lt;li>&lt;a href="https://funkysi1701.hashnode.dev/updating-sql-server-with-docker" target="_blank" rel="noopener noreferrer">View on Hashnode&lt;/a>
-&lt;/li>
-&lt;/ul></description></item><item><title>dotnet is 20 years old</title><link>https://www.funkysi1701.com/posts/2022/dotnet-is-20-years-old/</link><pubDate>Mon, 14 Feb 2022 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/dotnet-is-20-years-old/</guid><description>&lt;p>Today Microsoft celebrated 20 years since the first version of dotnet was released with a special live stream event.&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>How much easier is this than manually installing updates and rebooting or attempting to uninstall and reinstall SQL Server. As SQL Server 2022 isn&amp;rsquo;t out yet I can&amp;rsquo;t say for certain what issues I may encounter but hopefully it will be as easier as this. And I don&amp;rsquo;t need to backup or restore and databases they are all available as before!&lt;/p></description></item><item><title>dotnet is 20 years old</title><link>https://www.funkysi1701.com/posts/2022/dotnet-is-20-years-old/</link><pubDate>Mon, 14 Feb 2022 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/dotnet-is-20-years-old/</guid><description>&lt;p>Today Microsoft celebrated 20 years since the first version of dotnet was released with a special live stream event.&lt;/p>
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/67tCWKnweso" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>&lt;/iframe>
 &lt;p>A lot has happened in the 20 years of dotnet (or .Net). It is my understanding that .Net was created to rival Java. When the .Net Framework was first created it was a windows only thing, but today modern .Net is a modern run anywhere platform, with .net applications running everywhere from PCs and Laptops, Raspberry Pi&amp;rsquo;s, Mobile phones and tablets (via Xamarin Forms), to Websites and Microservice APIs running on every Cloud platform out there.&lt;/p>
 &lt;p>If you want to celebrate this achievment tweet with the hashtag &lt;a href="https://twitter.com/search?q=%23dotnetlovesme" target="_blank" rel="noopener noreferrer">#DotNetLovesMe&lt;/a>
@@ -95,13 +73,7 @@ or download some of the digital swag available from &lt;a href="https://github.c
 &lt;/p>
 &lt;p>The above graphic comes from the following tweet.&lt;/p>
 &lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">This is 20 years of &lt;a href="https://twitter.com/hashtag/dotnet?src=hash&amp;amp;ref_src=twsrc%5Etfw">#dotnet&lt;/a> releases. &lt;a href="https://twitter.com/hashtag/dotNETLovesMe?src=hash&amp;amp;ref_src=twsrc%5Etfw">#dotNETLovesMe&lt;/a> &lt;a href="https://t.co/Zxfe1SdWTq">pic.twitter.com/Zxfe1SdWTq&lt;/a>&lt;/p>&amp;mdash; Khalid 🎟 (@buhakmeh) &lt;a href="https://twitter.com/buhakmeh/status/1493220984916258817?ref_src=twsrc%5Etfw">February 14, 2022&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
-&lt;p>What do you like about dotnet? When did you first start using it? What are you going to build with it next?&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://dev.to/funkysi1701/dotnet-is-20-years-old-361e" target="_blank" rel="noopener noreferrer">View on DevTo&lt;/a>
-&lt;/li>
-&lt;li>&lt;a href="https://funkysi1701.hashnode.dev/dotnet-is-20-years-old" target="_blank" rel="noopener noreferrer">View on Hashnode&lt;/a>
-&lt;/li>
-&lt;/ul></description></item><item><title>Why do I have a website?</title><link>https://www.funkysi1701.com/posts/2022/why-do-i-have-a-website/</link><pubDate>Tue, 25 Jan 2022 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/why-do-i-have-a-website/</guid><description>&lt;p>Is it to share my ideas? Is it to learn new technologies and techniques? Is it to create a following? Is it to educate others? Is it to build some kind of service? Is it some combination of all of these.&lt;/p>
+&lt;p>What do you like about dotnet? When did you first start using it? What are you going to build with it next?&lt;/p></description></item><item><title>Why do I have a website?</title><link>https://www.funkysi1701.com/posts/2022/why-do-i-have-a-website/</link><pubDate>Tue, 25 Jan 2022 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/why-do-i-have-a-website/</guid><description>&lt;p>Is it to share my ideas? Is it to learn new technologies and techniques? Is it to create a following? Is it to educate others? Is it to build some kind of service? Is it some combination of all of these.&lt;/p>
 &lt;h2 id="history">History&lt;a class="anchor ms-1" href="#history">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
 &lt;p>Back when the web was young and I was first learning HTML. I hand crafted web pages, adding photos I had taken with captions. If I needed a new page I just added a new html page and linked to it from another page.&lt;/p>
 &lt;p>As time went on I started to learn mysql and php and my website became a hand crafted php nightmare. I also applied what I learned to help my father run the website for his camera club.&lt;/p>
@@ -119,13 +91,7 @@ appear to be the most popular. Both produce static content and both are a new fo
 &lt;h2 id="split-in-two">Split in two&lt;a class="anchor ms-1" href="#split-in-two">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
 &lt;p>I think my website needs to be split in two. I need a stable blog platform probably using Hugo and github pages. This is what I want to get indexed by the search engines and be the primary way people find out about what I am doing.&lt;/p>
 &lt;p>I then have additional sites, that I use as my playground for learning new tech. I can easily link between them and I can tweak the style so they &amp;ldquo;fit&amp;rdquo; nicely together.&lt;/p>
-&lt;p>I am still considering what to do with dev.to. I like that I am using it as the backend for my blog posts, and its API gives me that flexibility to display that content where I want.&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://dev.to/funkysi1701/why-do-i-have-a-website-1m5l" target="_blank" rel="noopener noreferrer">View on DevTo&lt;/a>
-&lt;/li>
-&lt;li>&lt;a href="https://funkysi1701.hashnode.dev/why-do-i-have-a-website" target="_blank" rel="noopener noreferrer">View on Hashnode&lt;/a>
-&lt;/li>
-&lt;/ul></description></item><item><title>Using GitHub Actions</title><link>https://www.funkysi1701.com/posts/2022/using-github-actions/</link><pubDate>Mon, 10 Jan 2022 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/using-github-actions/</guid><description>&lt;p>I&amp;rsquo;ve been running my website on Azure Static Web Apps for a while and it is pretty cool.&lt;/p>
+&lt;p>I am still considering what to do with dev.to. I like that I am using it as the backend for my blog posts, and its API gives me that flexibility to display that content where I want.&lt;/p></description></item><item><title>Using GitHub Actions</title><link>https://www.funkysi1701.com/posts/2022/using-github-actions/</link><pubDate>Mon, 10 Jan 2022 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/using-github-actions/</guid><description>&lt;p>I&amp;rsquo;ve been running my website on Azure Static Web Apps for a while and it is pretty cool.&lt;/p>
 &lt;p>When you create a Static Web App on Azure you get asked for the github repo of your source code and even the branch to use.
 &lt;img class="img-fluid" alt="GitHub Repo for my Static Web App" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/off7ur2tgsla4smkrhhi.png" loading="lazy"
 />
@@ -288,13 +254,7 @@ name: Prod
 &lt;p>For Test this needs to only run on develop so&lt;/p>
 &lt;p>if: github.ref == &amp;lsquo;refs/heads/develop&amp;rsquo;&lt;/p>
 &lt;p>I could have a test for develop to only run on feature/* but I have allowed it to run everytime.&lt;/p>
-&lt;p>There is loads more you can do with github actions, but hopefully this gives you a taste of some of the things you can do. I currently have a mix of Azure DevOps and github actions so I will be working on getting github actions to do more.&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://dev.to/funkysi1701/using-github-actions-3jo1" target="_blank" rel="noopener noreferrer">View on DevTo&lt;/a>
-&lt;/li>
-&lt;li>&lt;a href="https://funkysi1701.hashnode.dev/using-github-actions" target="_blank" rel="noopener noreferrer">View on Hashnode&lt;/a>
-&lt;/li>
-&lt;/ul></description></item><item><title>2022 Goals</title><link>https://www.funkysi1701.com/posts/2022/2022-goals/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/2022-goals/</guid><description>&lt;p>Lets have a look at what my goals were for 2021. I had eight of them, lets look at them one by one.&lt;/p>
+&lt;p>There is loads more you can do with github actions, but hopefully this gives you a taste of some of the things you can do. I currently have a mix of Azure DevOps and github actions so I will be working on getting github actions to do more.&lt;/p></description></item><item><title>2022 Goals</title><link>https://www.funkysi1701.com/posts/2022/2022-goals/</link><pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/2022-goals/</guid><description>&lt;p>Lets have a look at what my goals were for 2021. I had eight of them, lets look at them one by one.&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>&lt;strong>Azure certification&lt;/strong>. In May of this year I sat and passed the Azure Fundamentals exam. I am calling this goal as achieved.&lt;/p>
@@ -338,10 +298,4 @@ name: Prod
 &lt;li>
 &lt;p>&lt;strong>Profile Pic&lt;/strong>. My profile pic is getting a bit old, so it would be nice to update the images I use online and improve my personal brand.&lt;/p>
 &lt;/li>
-&lt;/ol>
-&lt;ul>
-&lt;li>&lt;a href="https://dev.to/funkysi1701/2022-goals-24nj" target="_blank" rel="noopener noreferrer">View on DevTo&lt;/a>
-&lt;/li>
-&lt;li>&lt;a href="https://funkysi1701.hashnode.dev/2022-goals" target="_blank" rel="noopener noreferrer">View on Hashnode&lt;/a>
-&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/ol></description></item></channel></rss>

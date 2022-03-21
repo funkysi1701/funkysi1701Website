@@ -161,10 +161,4 @@ name: Prod
 &lt;p>For Test this needs to only run on develop so&lt;/p>
 &lt;p>if: github.ref == &amp;lsquo;refs/heads/develop&amp;rsquo;&lt;/p>
 &lt;p>I could have a test for develop to only run on feature/* but I have allowed it to run everytime.&lt;/p>
-&lt;p>There is loads more you can do with github actions, but hopefully this gives you a taste of some of the things you can do. I currently have a mix of Azure DevOps and github actions so I will be working on getting github actions to do more.&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://dev.to/funkysi1701/using-github-actions-3jo1" target="_blank" rel="noopener noreferrer">View on DevTo&lt;/a>
-&lt;/li>
-&lt;li>&lt;a href="https://funkysi1701.hashnode.dev/using-github-actions" target="_blank" rel="noopener noreferrer">View on Hashnode&lt;/a>
-&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;p>There is loads more you can do with github actions, but hopefully this gives you a taste of some of the things you can do. I currently have a mix of Azure DevOps and github actions so I will be working on getting github actions to do more.&lt;/p></description></item></channel></rss>

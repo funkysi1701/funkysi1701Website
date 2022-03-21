@@ -10,13 +10,7 @@ or download some of the digital swag available from &lt;a href="https://github.c
 &lt;/p>
 &lt;p>The above graphic comes from the following tweet.&lt;/p>
 &lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">This is 20 years of &lt;a href="https://twitter.com/hashtag/dotnet?src=hash&amp;amp;ref_src=twsrc%5Etfw">#dotnet&lt;/a> releases. &lt;a href="https://twitter.com/hashtag/dotNETLovesMe?src=hash&amp;amp;ref_src=twsrc%5Etfw">#dotNETLovesMe&lt;/a> &lt;a href="https://t.co/Zxfe1SdWTq">pic.twitter.com/Zxfe1SdWTq&lt;/a>&lt;/p>&amp;mdash; Khalid 🎟 (@buhakmeh) &lt;a href="https://twitter.com/buhakmeh/status/1493220984916258817?ref_src=twsrc%5Etfw">February 14, 2022&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
-&lt;p>What do you like about dotnet? When did you first start using it? What are you going to build with it next?&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://dev.to/funkysi1701/dotnet-is-20-years-old-361e" target="_blank" rel="noopener noreferrer">View on DevTo&lt;/a>
-&lt;/li>
-&lt;li>&lt;a href="https://funkysi1701.hashnode.dev/dotnet-is-20-years-old" target="_blank" rel="noopener noreferrer">View on Hashnode&lt;/a>
-&lt;/li>
-&lt;/ul></description></item><item><title>DotNet on a Raspberry Pi</title><link>https://www.funkysi1701.com/posts/2021/dotnet-on-a-raspberry-pi/</link><pubDate>Mon, 10 May 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2021/dotnet-on-a-raspberry-pi/</guid><description>&lt;p>I have had a Raspberry Pi for a few years and recently I connected it up again, I plugged in the camera and everything worked.&lt;/p>
+&lt;p>What do you like about dotnet? When did you first start using it? What are you going to build with it next?&lt;/p></description></item><item><title>DotNet on a Raspberry Pi</title><link>https://www.funkysi1701.com/posts/2021/dotnet-on-a-raspberry-pi/</link><pubDate>Mon, 10 May 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2021/dotnet-on-a-raspberry-pi/</guid><description>&lt;p>I have had a Raspberry Pi for a few years and recently I connected it up again, I plugged in the camera and everything worked.&lt;/p>
 &lt;p>To start off you can view photos from the camera with the raspistill command. With a bit of clever scripting and the crontab I got the Pi taking pictures every 60 seconds. Even managed to take a nice picture of a robin.&lt;/p>
 &lt;p>&lt;img class="img-fluid" alt="Alt Text" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/e21z7vbamy6w6akhhiwd.jpg" loading="lazy"
 />

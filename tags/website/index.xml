@@ -16,10 +16,4 @@ appear to be the most popular. Both produce static content and both are a new fo
 &lt;h2 id="split-in-two">Split in two&lt;a class="anchor ms-1" href="#split-in-two">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
 &lt;p>I think my website needs to be split in two. I need a stable blog platform probably using Hugo and github pages. This is what I want to get indexed by the search engines and be the primary way people find out about what I am doing.&lt;/p>
 &lt;p>I then have additional sites, that I use as my playground for learning new tech. I can easily link between them and I can tweak the style so they &amp;ldquo;fit&amp;rdquo; nicely together.&lt;/p>
-&lt;p>I am still considering what to do with dev.to. I like that I am using it as the backend for my blog posts, and its API gives me that flexibility to display that content where I want.&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://dev.to/funkysi1701/why-do-i-have-a-website-1m5l" target="_blank" rel="noopener noreferrer">View on DevTo&lt;/a>
-&lt;/li>
-&lt;li>&lt;a href="https://funkysi1701.hashnode.dev/why-do-i-have-a-website" target="_blank" rel="noopener noreferrer">View on Hashnode&lt;/a>
-&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;p>I am still considering what to do with dev.to. I like that I am using it as the backend for my blog posts, and its API gives me that flexibility to display that content where I want.&lt;/p></description></item></channel></rss>
