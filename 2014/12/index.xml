@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2014-12 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2014/12/</link><description>Recent content in 2014-12 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Fri, 05 Dec 2014 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2014/12/index.xml" rel="self" type="application/rss+xml"/><item><title>Software Developer Quiz</title><link>https://www.funkysi1701.com/posts/2014/software-developer-quiz/</link><pubDate>Fri, 05 Dec 2014 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2014/software-developer-quiz/</guid><description>&lt;p>Moving house, lack of internet and lack of inspiration has caused a lack of posts recently but hopefully more to come. Been doing some filing and found an old software developer quiz. Thought I would have a go.&lt;/p>
+&lt;p>Many thanks to &lt;a href="https://twitter.com/zogface">Keith&lt;/a> for originally writing the quiz.&lt;/p>
+&lt;p>&lt;strong>Questions:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Write a function that determines if a string starts with an upper-case letter A-Z&lt;/li>
+&lt;li>Write a function that determines the area of a circle given the radius&lt;/li>
+&lt;li>Add up all the values in an array of integers&lt;/li>
+&lt;li>Given a table called &amp;ldquo;Nodes&amp;rdquo; with the following structure and sample data (see below after questions):
+…where ID is the primary key,andParentID references ID, complete the following:
+&lt;ul>
+&lt;li>write a stored procedure to return all nodes beneath a given node ID&lt;/li>
+&lt;li>describe how you might write a query to return all nodes at any depth below a given node ID (i.e. recursively)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Write a function to get the prime numbers up to 1,000,000&lt;/li>
+&lt;li>You’ve been given the following code to review (below table)– what comments would you give back to the developer?&lt;/li>
+&lt;/ol>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>ID&lt;/th>
+&lt;th>ParentID&lt;/th>
+&lt;th>Name&lt;/th>
+&lt;th>Type&lt;/th>
+&lt;th>Depth&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>NULL&lt;/td>
+&lt;td>My Documents&lt;/td>
+&lt;td>Folder&lt;/td>
+&lt;td>0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>My Pictures&lt;/td>
+&lt;td>Folder&lt;/td>
+&lt;td>1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>1&lt;/td>
+&lt;td>My CV&lt;/td>
+&lt;td>Document&lt;/td>
+&lt;td>1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td>2&lt;/td>
+&lt;td>Photo of me&lt;/td>
+&lt;td>Document&lt;/td>
+&lt;td>2&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">CREATE&lt;/span> &lt;span style="color:#66d9ef">PROCEDURE&lt;/span> GetNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">@&lt;/span>NodeId INT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">AS&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">DECLARE&lt;/span> &lt;span style="color:#f92672">@&lt;/span>ID INT, &lt;span style="color:#f92672">@&lt;/span>ParentID INT, &lt;span style="color:#f92672">@&lt;/span>Name NVARCHAR(&lt;span style="color:#ae81ff">255&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">DECLARE&lt;/span> &lt;span style="color:#f92672">@&lt;/span>&lt;span style="color:#66d9ef">Type&lt;/span> NVARCHAR(&lt;span style="color:#ae81ff">20&lt;/span>), &lt;span style="color:#f92672">@&lt;/span>Depth INT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#f92672">@&lt;/span>ID &lt;span style="color:#f92672">=&lt;/span> ID &lt;span style="color:#66d9ef">FROM&lt;/span> Nodes &lt;span style="color:#66d9ef">WHERE&lt;/span> ID &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">@&lt;/span>ID
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#f92672">@&lt;/span>ParentID &lt;span style="color:#f92672">=&lt;/span> ParentID &lt;span style="color:#66d9ef">FROM&lt;/span> Nodes &lt;span style="color:#66d9ef">where&lt;/span> ID &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">@&lt;/span>ID
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">IF&lt;/span> (&lt;span style="color:#66d9ef">EXISTS&lt;/span>(&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span> &lt;span style="color:#66d9ef">FROM&lt;/span> Nodes &lt;span style="color:#66d9ef">WHERE&lt;/span> ID &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">@&lt;/span>ID &lt;span style="color:#66d9ef">AND&lt;/span> Name &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#f92672">@&lt;/span>Name &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">ELSE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#f92672">@&lt;/span>Name &lt;span style="color:#f92672">=&lt;/span> Name &lt;span style="color:#66d9ef">FROM&lt;/span> Nodes &lt;span style="color:#66d9ef">WHERE&lt;/span> ID &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">@&lt;/span>ID
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#f92672">@&lt;/span>&lt;span style="color:#66d9ef">Type&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">Type&lt;/span> &lt;span style="color:#66d9ef">FROM&lt;/span> Nodes &lt;span style="color:#66d9ef">WHERE&lt;/span> ID &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">@&lt;/span>ID
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#f92672">@&lt;/span>Depth &lt;span style="color:#f92672">=&lt;/span> Depth &lt;span style="color:#66d9ef">FROM&lt;/span> Nodes &lt;span style="color:#66d9ef">WHERE&lt;/span> ID &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">@&lt;/span>ID
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#f92672">@&lt;/span>ID, &lt;span style="color:#f92672">@&lt;/span>ParentID, &lt;span style="color:#f92672">@&lt;/span>Name, &lt;span style="color:#f92672">@&lt;/span>&lt;span style="color:#66d9ef">Type&lt;/span>, &lt;span style="color:#f92672">@&lt;/span>Depth
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>My Answers:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">bool&lt;/span> GetUpper(&lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#66d9ef">var&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#66d9ef">char&lt;/span>.IsUpper(&lt;span style="color:#66d9ef">var&lt;/span>[&lt;span style="color:#ae81ff">0&lt;/span>]))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">true&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">double&lt;/span> AreaOfCircle(&lt;span style="color:#66d9ef">int&lt;/span> radius)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">double&lt;/span> area = &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> area = Math.PI * radius * radius;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> area;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> SumArray()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span>[] MyArray = &lt;span style="color:#66d9ef">new&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span>[&lt;span style="color:#ae81ff">10&lt;/span>] { &lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">5&lt;/span>, &lt;span style="color:#ae81ff">12&lt;/span>, &lt;span style="color:#ae81ff">4&lt;/span>, &lt;span style="color:#ae81ff">9&lt;/span>, &lt;span style="color:#ae81ff">8&lt;/span>, &lt;span style="color:#ae81ff">18&lt;/span>, &lt;span style="color:#ae81ff">9&lt;/span>, &lt;span style="color:#ae81ff">6&lt;/span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">int&lt;/span> Sum = MyArray.Sum();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> Sum;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">create&lt;/span> &lt;span style="color:#66d9ef">procedure&lt;/span> getnodes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">@&lt;/span>node int
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#66d9ef">from&lt;/span> dbo.nodes &lt;span style="color:#66d9ef">where&lt;/span> parentid &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">@&lt;/span>node
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For a recursive query I would write something along the lines of, but it would need to be customised depending on the depth, eg more joins for higher depths&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#66d9ef">from&lt;/span> dbo.nodes n1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">join&lt;/span> dbo.nodes n2 &lt;span style="color:#66d9ef">on&lt;/span> n1.id &lt;span style="color:#f92672">=&lt;/span> n2.ParentId
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">join&lt;/span> dbo.nodes n3 &lt;span style="color:#66d9ef">on&lt;/span> n2.id &lt;span style="color:#f92672">=&lt;/span> n3.ParentId
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">where&lt;/span> n1.parentid &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">4544054&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> prime()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#e6db74">&amp;#34;Prime: 1&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> (&lt;span style="color:#66d9ef">long&lt;/span> i = &lt;span style="color:#ae81ff">3&lt;/span>; i &amp;lt;= &lt;span style="color:#ae81ff">1000000&lt;/span>;i++ )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">bool&lt;/span> isprime = &lt;span style="color:#66d9ef">true&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> (&lt;span style="color:#66d9ef">long&lt;/span> j = &lt;span style="color:#ae81ff">2&lt;/span>; j &amp;lt;i; j++)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(i%j==&lt;span style="color:#ae81ff">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> isprime = &lt;span style="color:#66d9ef">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">break&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (isprime)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Console.WriteLine(&lt;span style="color:#e6db74">&amp;#34;Prime: &amp;#34;&lt;/span>+i);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>No Brackets around parameters, @NodeId parameter never used, select @id = id from dbo.nodes where id = @id is pointless as same id that is passed it being set, Name = NULL should be Name is NULL, no from specified in last query. There are probably more issues as well.&lt;/p></description></item></channel></rss>
