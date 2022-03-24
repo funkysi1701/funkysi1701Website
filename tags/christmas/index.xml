@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Christmas on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/christmas/</link><description>Recent content in Christmas on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Wed, 24 Dec 2014 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/christmas/index.xml" rel="self" type="application/rss+xml"/><item><title>Happy Christmas</title><link>https://www.funkysi1701.com/posts/2014/happy-christmas/</link><pubDate>Wed, 24 Dec 2014 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2014/happy-christmas/</guid><description>&lt;p>I saw this tweet on twitter.&lt;/p>
+&lt;pre tabindex="0">&lt;code>He’s making a database,
+He’s filtering twice
+SELECT * FROM customers WHERE behaviour = Nice
+Santa Clause is Coming to town.
+&lt;/code>&lt;/pre>&lt;p>This started me thinking surely in a normalized database structure behaviour wouldn’t be stored in the customer table, so I propose the following change.&lt;/p>
+&lt;pre tabindex="0">&lt;code>He’s making a database,
+He’s filtering twice
+SELECT * FROM customers WHERE EXISTS (select * from behaviour where behaviour.CustomerId = customers.Id and behaviour.Type = Nice)
+Santa Clause is Coming to town.
+&lt;/code>&lt;/pre>&lt;p>Happy Christmas everyone, hope you all have restful holidays.&lt;/p></description></item></channel></rss>
