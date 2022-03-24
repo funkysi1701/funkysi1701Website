@@ -16,12 +16,12 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
-    "/if-you-had-ps5000-to-spend-on-technology-what-would-you-get-15ee",
+    "/in-the-zone-4bkj",
     "/posts/in-the-zone",
-    "/posts/if-you-had-ps5000-to-spend-on-technology-what-would-you-get-15ee",
-    "/posts/2014/11/02/if-you-had-ps5000-to-spend-on-technology-what-would-you-get-15ee",
+    "/posts/in-the-zone-4bkj",
+    "/posts/2014/11/02/in-the-zone-4bkj",
     "/posts/2014/11/02/in-the-zone",
-    "/2014/11/02/if-you-had-ps5000-to-spend-on-technology-what-would-you-get-15ee",
+    "/2014/11/02/in-the-zone-4bkj",
     "/2014/11/02/in-the-zone"
 ]
 +++

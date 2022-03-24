@@ -16,12 +16,12 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
-    "/if-you-had-ps5000-to-spend-on-technology-what-would-you-get-15ee",
+    "/software-developer-quiz-3p8d",
     "/posts/software-developer-quiz",
-    "/posts/if-you-had-ps5000-to-spend-on-technology-what-would-you-get-15ee",
-    "/posts/2014/12/05/if-you-had-ps5000-to-spend-on-technology-what-would-you-get-15ee",
+    "/posts/software-developer-quiz-3p8d",
+    "/posts/2014/12/05/software-developer-quiz-3p8d",
     "/posts/2014/12/05/software-developer-quiz",
-    "/2014/12/05/if-you-had-ps5000-to-spend-on-technology-what-would-you-get-15ee",
+    "/2014/12/05/software-developer-quiz-3p8d",
     "/2014/12/05/software-developer-quiz"
 ]
 +++
