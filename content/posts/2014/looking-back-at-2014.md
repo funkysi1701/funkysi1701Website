@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/looking-back-at-2014",
-    "/posts/hello-world-2e41",
-    "/posts/2014/12/31/hello-world-2e41",
+    "/posts/looking-back-at-2014-h3g",
+    "/posts/2014/12/31/looking-back-at-2014-h3g",
     "/posts/2014/12/31/looking-back-at-2014",
-    "/2014/12/31/hello-world-2e41",
+    "/2014/12/31/looking-back-at-2014-h3g",
     "/2014/12/31/looking-back-at-2014"
 ]
 +++

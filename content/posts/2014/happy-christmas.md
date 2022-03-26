@@ -16,12 +16,12 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
-    "/software-developer-quiz-3p8d",
+    "/happy-christmas-5cfj",
     "/posts/happy-christmas",
-    "/posts/software-developer-quiz-3p8d",
-    "/posts/2014/12/05/software-developer-quiz-3p8d",
+    "/posts/happy-christmas-5cfj",
+    "/posts/2014/12/05/happy-christmas-5cfj",
     "/posts/2014/12/05/happy-christmas",
-    "/2014/12/05/software-developer-quiz-3p8d",
+    "/2014/12/05/happy-christmas-5cfj",
     "/2014/12/05/happy-christmas"
 ]
 +++

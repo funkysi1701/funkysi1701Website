@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/my-year-of-code",
-    "/posts/hello-world-2e41",
-    "/posts/2015/01/09/hello-world-2e41",
+    "/posts/my-year-of-code-2iei",
+    "/posts/2015/01/09/my-year-of-code-2iei",
     "/posts/2015/01/09/my-year-of-code",
-    "/2015/01/09/hello-world-2e41",
+    "/2015/01/09/my-year-of-code-2iei",
     "/2015/01/09/my-year-of-code"
 ]
 +++
