@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/to-boldly-go-where-no-sql-has-gone-before-4fe7",
     "/posts/to-boldly-go-where-no-sql-has-gone-before",
     "/posts/to-boldly-go-where-no-sql-has-gone-before-4fe7",
     "/posts/2014/10/12/to-boldly-go-where-no-sql-has-gone-before-4fe7",

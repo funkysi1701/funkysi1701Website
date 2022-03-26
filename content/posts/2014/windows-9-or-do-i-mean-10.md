@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/windows-9-or-do-i-mean-10-241n",
     "/posts/windows-9-or-do-i-mean-10",
     "/posts/windows-9-or-do-i-mean-10-241n",
     "/posts/2014/10/01/windows-9-or-do-i-mean-10-241n",

@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/to-boldly-go-where-no-sql-has-gone-before-part-2-3po5",
     "/posts/to-boldly-go-where-no-sql-has-gone-before-part-2",
     "/posts/to-boldly-go-where-no-sql-has-gone-before-part-2-3po5",
     "/posts/2014/10/21/to-boldly-go-where-no-sql-has-gone-before-part-2-3po5",

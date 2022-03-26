@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/destination-star-trek-38ei",
     "/posts/destination-star-trek",
     "/posts/destination-star-trek-38ei",
     "/posts/2014/10/05/destination-star-trek-38ei",

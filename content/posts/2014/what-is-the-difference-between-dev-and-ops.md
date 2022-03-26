@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/what-is-the-difference-between-development-and-operations-ii8",
     "/posts/what-is-the-difference-between-dev-and-ops",
     "/posts/what-is-the-difference-between-development-and-operations-ii8",
     "/posts/2014/09/27/what-is-the-difference-between-development-and-operations-ii8",

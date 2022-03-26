@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/interview-questions-2a83",
     "/posts/interview-questions",
     "/posts/interview-questions-2a83",
     "/posts/2014/10/23/interview-questions-2a83",
