@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/my-year-of-code-2iei",
     "/posts/my-year-of-code",
     "/posts/my-year-of-code-2iei",
     "/posts/2015/01/09/my-year-of-code-2iei",

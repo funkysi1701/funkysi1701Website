@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/hello-world-2e41",
     "/posts/hello-world-2",
     "/posts/hello-world-2e41",
     "/posts/2015/01/10/hello-world-2e41",
