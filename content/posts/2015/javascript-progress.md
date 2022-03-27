@@ -16,12 +16,12 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
-    "/hello-world-2e41",
+    "/javascript-progress-3mfd",
     "/posts/javascript-progress",
-    "/posts/hello-world-2e41",
-    "/posts/2015/01/16/hello-world-2e41",
+    "/posts/javascript-progress-3mfd",
+    "/posts/2015/01/16/javascript-progress-3mfd",
     "/posts/2015/01/16/javascript-progress",
-    "/2015/01/16/hello-world-2e41",
+    "/2015/01/16/javascript-progress-3mfd",
     "/2015/01/16/javascript-progress"
 ]
 +++
