@@ -24,7 +24,7 @@ aliases = [
     "/2015/02/07/great-british-code-off"
 ]
 +++
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/02/logo.jpg)
+![Great British Code Off](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/02/logo.jpg)
 
 The Great British Bake Off and The Great British Sewing Bee are very popular TV shows. Each week the contestants take part in a baking or sewing challenge and the judges choose the best and the worst, with the worst having to leave. This is very entertaining as you watch the drama between the contestants and the reactions as the judges tell them they are rubbish.
 
