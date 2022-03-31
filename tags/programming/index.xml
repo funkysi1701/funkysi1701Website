@@ -496,7 +496,24 @@ about the 10 commandments of using source control. His number two commandment is
 &lt;/p>
 &lt;p>I am actually surprised I was expected the code to be much worse than it was, I am not saying it is good, but I can see more than one method and I can’t see any code that obviously is repeated. I can see some terrible variable names. Note to future self don’t use tmp676_674!&lt;/p>
 &lt;p>Assuming that I wrote this in 2004 what would I have been doing then? It was before I started working in IT. (Hard to imagine I know!) It may even have been before I started living with Keith, before he recruited me for my first IT role. I think I was probably working as an administrator for Defra at this point.&lt;/p>
-&lt;p>If we put 2004 in technical terms, it was before I joined facebook, Office 2003 and XP would have been installed on my PC, and probably felt brand new.&lt;/p></description></item><item><title>Great British Code Off</title><link>https://www.funkysi1701.com/posts/2015/great-british-code-off/</link><pubDate>Sat, 07 Feb 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/great-british-code-off/</guid><description>&lt;p>&lt;img class="img-fluid" alt="Great British Code Off" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/02/logo.jpg" loading="lazy"
+&lt;p>If we put 2004 in technical terms, it was before I joined facebook, Office 2003 and XP would have been installed on my PC, and probably felt brand new.&lt;/p></description></item><item><title>Game of Life</title><link>https://www.funkysi1701.com/posts/2015/game-of-life/</link><pubDate>Wed, 11 Feb 2015 09:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/game-of-life/</guid><description>&lt;p>Many, many years ago I tried to learn Java. I didn’t get very far but one of the things I built was The Game of Life.&lt;/p>
+&lt;p>Unfortunately I can not find the code I wrote, probably a good things as it is probably amusingly bad.&lt;/p>
+&lt;p>Now you are probably asking what is the &lt;a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank" rel="noopener noreferrer">Game of Life&lt;/a>
+? The game of life, sometimes called cellular automation, is a simulation of cells being born and dying. It is sometimes called Conway’s Game of Life after the British mathematician who devised it in 1970.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Gospers_glider_gun.gif" loading="lazy"
+/>
+&lt;/p>
+&lt;p>The game has several rules:&lt;/p>
+&lt;ol>
+&lt;li>Any cell with less than three neighbours will die on the next turn&lt;/li>
+&lt;li>Any cell with three neighbours lives on to the next turn&lt;/li>
+&lt;li>Any cell with more than three neighbours will die on the next turn&lt;/li>
+&lt;li>Any dead cell with three live neighbours will be born on the next turn&lt;/li>
+&lt;/ol>
+&lt;p>Now I had not thought about this game until the other day when I came across a &lt;a href="https://chaosnil.wordpress.com/2015/02/09/new-project-conways-game-of-life-in-every-language/" target="_blank" rel="noopener noreferrer">blog&lt;/a>
+and a &lt;a href="https://github.com/chaomodus/gameoflife" target="_blank" rel="noopener noreferrer">github page&lt;/a>
+which sparked my interest again. This version is written in javascript, but the blog mentions a desire to build this program in many different languages. I want to build this with visual studio in C# as it should provide a good training exercise.&lt;/p>
+&lt;p>There are several problems I need to overcome to achieve this, I am currently trying to work out how to &amp;ldquo;draw&amp;rdquo; the cells. My current thinking is that maybe I can code it using characters to display the cells and then replace with pixels once I have the logic correct. Well lots for me to learn!&lt;/p></description></item><item><title>Great British Code Off</title><link>https://www.funkysi1701.com/posts/2015/great-british-code-off/</link><pubDate>Sat, 07 Feb 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/great-british-code-off/</guid><description>&lt;p>&lt;img class="img-fluid" alt="Great British Code Off" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/02/logo.jpg" loading="lazy"
 />
 &lt;/p>
 &lt;p>The Great British Bake Off and The Great British Sewing Bee are very popular TV shows. Each week the contestants take part in a baking or sewing challenge and the judges choose the best and the worst, with the worst having to leave. This is very entertaining as you watch the drama between the contestants and the reactions as the judges tell them they are rubbish.&lt;/p>
