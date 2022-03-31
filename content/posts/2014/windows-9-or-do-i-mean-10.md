@@ -46,6 +46,7 @@ Microsoft has never had a fixed naming convention for its OSes, so should we rea
 - Windows 7 (2009)
 - Windows 8 (2012)
 - Windows 10 (2015)
+- *Windows 11 (2021)*
 
 One reason Microsoft may have gone with with Windows 10 is because they wanted to signify that the coming Windows release would be the last “major” Windows update. What does it mean to be the last major update?
 
