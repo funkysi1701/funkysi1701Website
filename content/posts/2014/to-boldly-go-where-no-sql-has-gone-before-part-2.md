@@ -31,8 +31,6 @@ We have three tables, Episode, EpisodeWriter and Writer. See my last post for mo
 
 Lets rename Writer and call it Credit, and rename EpisodeWriter and call it EpisodeCredit. Now any creative staff member involved in an episode can be stored in the Credit table. Lets alter EpisodeCredit and add an extra column called CreditType. CreditType is just a text field that stores the role that creative person had on that episode, it can be anything from Director, Writer, Actor, Science Consultant etc.
 
-In case anyone wants to recreate the databases I have described here, I have saved the SQL on a separate page which can be found here.
-
 We now have the ability to store information relating to the episode in the episode table and any creative people in the credit table. What else can we add to the database? How about a table that can be used to record when an episode was last watched. I am probably weird but sometimes I want to watch a Star Trek episode that I like but I haven’t watched in ages.
 
 The last watched table is really simple and just have a datetime field and episodeId. This can be further expanded to have a userId field if you wanted to keep track of what episodes your friends had been watching.
