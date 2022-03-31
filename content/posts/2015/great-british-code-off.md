@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/great-british-code-off",
-    "/posts/laziness-17n5",
-    "/posts/2015/02/07/laziness-17n5",
+    "/posts/great-british-code-off-2peb",
+    "/posts/2015/02/07/great-british-code-off-2peb",
     "/posts/2015/02/07/great-british-code-off",
-    "/2015/02/07/laziness-17n5",
+    "/2015/02/07/great-british-code-off-2peb",
     "/2015/02/07/great-british-code-off"
 ]
 +++

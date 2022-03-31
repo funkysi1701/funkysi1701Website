@@ -16,12 +16,12 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
-    "/pair-programming-4ep6",
+    "/podcasts-14j5",
     "/posts/podcasts",
-    "/posts/pair-programming-4ep6",
-    "/posts/2015/01/27/pair-programming-4ep6",
+    "/posts/podcasts-14j5",
+    "/posts/2015/01/27/podcasts-14j5",
     "/posts/2015/01/27/podcasts",
-    "/2015/01/27/pair-programming-4ep6",
+    "/2015/01/27/podcasts-14j5",
     "/2015/01/27/podcasts"
 ]
 +++
