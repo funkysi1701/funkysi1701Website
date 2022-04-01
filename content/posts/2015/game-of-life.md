@@ -5,8 +5,8 @@ year = "2015"
 month= "2015-02"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/02/Gospers_glider_gun2.gif"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/02/Gospers_glider_gun2.gif']
+cover = "/images/Gospers_glider_gun2.gif"
+images = ['/images/Gospers_glider_gun2.gif']
 tags = ["Java", "Programming"]
 category="tech"
 keywords = ["", ""]
@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/game-of-life/",
-    "/posts/source-code-for-game-of-life-2eo3",
-    "/posts/2015/02/11/source-code-for-game-of-life-2eo3",
+    "/posts/game-of-life-4dhp",
+    "/posts/2015/02/11/game-of-life-4dhp",
     "/posts/2015/02/11/game-of-life",
-    "/2015/02/11/source-code-for-game-of-life-2eo3",
+    "/2015/02/11/game-of-life-4dhp",
     "/2015/02/11/game-of-life"
 ]
 +++
@@ -31,7 +31,7 @@ Unfortunately I can not find the code I wrote, probably a good things as it is p
 
 Now you are probably asking what is the [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)? The game of life, sometimes called cellular automation, is a simulation of cells being born and dying. It is sometimes called Conway’s Game of Life after the British mathematician who devised it in 1970.
 
-![](https://upload.wikimedia.org/wikipedia/commons/e/e5/Gospers_glider_gun.gif)
+![](/iamges/Gospers_glider_gun.gif)
 
 The game has several rules:
 
