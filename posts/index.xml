@@ -1788,7 +1788,7 @@ To take advantage of these multiple data centres, Azure has something called a T
 &lt;p>Unfortunately I can not find the code I wrote, probably a good things as it is probably amusingly bad.&lt;/p>
 &lt;p>Now you are probably asking what is the &lt;a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank" rel="noopener noreferrer">Game of Life&lt;/a>
 ? The game of life, sometimes called cellular automation, is a simulation of cells being born and dying. It is sometimes called Conway’s Game of Life after the British mathematician who devised it in 1970.&lt;/p>
-&lt;p>&lt;img class="img-fluid" alt="" src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Gospers_glider_gun.gif" loading="lazy"
+&lt;p>&lt;img class="img-fluid" alt="" src="" loading="lazy"
 />
 &lt;/p>
 &lt;p>The game has several rules:&lt;/p>
