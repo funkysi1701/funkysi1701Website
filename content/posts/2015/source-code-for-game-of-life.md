@@ -16,7 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
-    "/game-of-life-4dhp"
+    "/game-of-life-4dhp",
     "/posts/source-code-for-game-of-life/",
     "/posts/source-code-for-game-of-life-2eo3",
     "/posts/2015/02/21/source-code-for-game-of-life-2eo3",
