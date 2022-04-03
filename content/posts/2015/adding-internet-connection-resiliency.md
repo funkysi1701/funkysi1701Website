@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/adding-internet-connection-resiliency-o1a",
     "/posts/adding-internet-connection-resiliency",
     "/posts/adding-internet-connection-resiliency-o1a",
     "/posts/2015/09/24/adding-internet-connection-resiliency-o1a",
