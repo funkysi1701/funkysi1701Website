@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/ten-forward-episode-135-anti-firbob-is-back-or-simons-desert-island-trek",
-    "/posts/things-to-know-before-working-on-your-database-1aa3",
-    "/posts/2015/02/13/things-to-know-before-working-on-your-database-1aa3",
+    "/posts/ten-forward-episode-135-anti-firbob-is-back-or-simons-desert-island-trek-22mk",
+    "/posts/2015/02/13/ten-forward-episode-135-anti-firbob-is-back-or-simons-desert-island-trek-22mk",
     "/posts/2015/02/13/ten-forward-episode-135-anti-firbob-is-back-or-simons-desert-island-trek",
-    "/2015/02/13/things-to-know-before-working-on-your-database-1aa3",
+    "/2015/02/13/ten-forward-episode-135-anti-firbob-is-back-or-simons-desert-island-trek-22mk",
     "/2015/02/13/ten-forward-episode-135-anti-firbob-is-back-or-simons-desert-island-trek"
 ]
 +++
