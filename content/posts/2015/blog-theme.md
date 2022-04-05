@@ -16,11 +16,12 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/choosing-a-blog-theme-2n83",
     "/posts/blog-theme",
-    "/posts/ten-forward-episode-135-anti-firbob-is-back-or-simons-desert-island-trek-22mk",
-    "/posts/2015/02/15/ten-forward-episode-135-anti-firbob-is-back-or-simons-desert-island-trek-22mk",
+    "/posts/choosing-a-blog-theme-2n83",
+    "/posts/2015/02/15/choosing-a-blog-theme-2n83",
     "/posts/2015/02/15/blog-theme",
-    "/2015/02/15/ten-forward-episode-135-anti-firbob-is-back-or-simons-desert-island-trek-22mk",
+    "/2015/02/15/choosing-a-blog-theme-2n83",
     "/2015/02/15/blog-theme"
 ]
 +++
