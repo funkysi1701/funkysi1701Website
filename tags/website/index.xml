@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>website on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/website/</link><description>Recent content in website on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Tue, 25 Jan 2022 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/website/index.xml" rel="self" type="application/rss+xml"/><item><title>Why do I have a website?</title><link>https://www.funkysi1701.com/posts/2022/why-do-i-have-a-website/</link><pubDate>Tue, 25 Jan 2022 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/why-do-i-have-a-website/</guid><description>&lt;p>Is it to share my ideas? Is it to learn new technologies and techniques? Is it to create a following? Is it to educate others? Is it to build some kind of service? Is it some combination of all of these.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Website on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/website/</link><description>Recent content in Website on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Tue, 25 Jan 2022 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/website/index.xml" rel="self" type="application/rss+xml"/><item><title>Why do I have a website?</title><link>https://www.funkysi1701.com/posts/2022/why-do-i-have-a-website/</link><pubDate>Tue, 25 Jan 2022 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/why-do-i-have-a-website/</guid><description>&lt;p>Is it to share my ideas? Is it to learn new technologies and techniques? Is it to create a following? Is it to educate others? Is it to build some kind of service? Is it some combination of all of these.&lt;/p>
 &lt;h2 id="history">History&lt;a class="anchor ms-1" href="#history">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
 &lt;p>Back when the web was young and I was first learning HTML. I hand crafted web pages, adding photos I had taken with captions. If I needed a new page I just added a new html page and linked to it from another page.&lt;/p>
 &lt;p>As time went on I started to learn mysql and php and my website became a hand crafted php nightmare. I also applied what I learned to help my father run the website for his camera club.&lt;/p>
@@ -16,4 +16,55 @@ appear to be the most popular. Both produce static content and both are a new fo
 &lt;h2 id="split-in-two">Split in two&lt;a class="anchor ms-1" href="#split-in-two">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
 &lt;p>I think my website needs to be split in two. I need a stable blog platform probably using Hugo and github pages. This is what I want to get indexed by the search engines and be the primary way people find out about what I am doing.&lt;/p>
 &lt;p>I then have additional sites, that I use as my playground for learning new tech. I can easily link between them and I can tweak the style so they &amp;ldquo;fit&amp;rdquo; nicely together.&lt;/p>
-&lt;p>I am still considering what to do with dev.to. I like that I am using it as the backend for my blog posts, and its API gives me that flexibility to display that content where I want.&lt;/p></description></item></channel></rss>
+&lt;p>I am still considering what to do with dev.to. I like that I am using it as the backend for my blog posts, and its API gives me that flexibility to display that content where I want.&lt;/p></description></item><item><title>Azure Key Vault</title><link>https://www.funkysi1701.com/posts/2019/azure-key-vault/</link><pubDate>Tue, 19 Mar 2019 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2019/azure-key-vault/</guid><description>&lt;p>&lt;a href="https://docs.microsoft.com/en-gb/azure/key-vault/" target="_blank" rel="noopener noreferrer">Azure Key Vault&lt;/a>
+is a secure way of storing your keys, certificates and secrets so your application can access everything it needs to but you don’t have them being stored insecurely anywhere such as in source control.&lt;/p>
+&lt;p>I have been wanting to give Azure Key Vault a try for a while now as it can make use of Azure Active Directory to give your web app an identity so it can authenticate itself into the key vault to access secrets. Pretty clever but with a lot of moving parts a bit complex.&lt;/p>
+&lt;p>For my example I am just going to connect to my Key Vault and get a secret and display it somewhere on a web page. This is of course not what you want to do as secrets are secret and shouldn’t be displayed just used to authenticate into whatever, however it is an easy way to prove I am connecting to the Key Vault and everything is working.&lt;/p>
+&lt;p>Lets look at some code. I have a .net core application and to start with lets install three nuget packages.&lt;/p>
+&lt;pre tabindex="0">&lt;code>Microsoft.Azure.KeyVault
+Microsoft.Azure.Services.AppAuthentication
+Microsoft.Extensions.Configuration.AzureKeyVault
+&lt;/code>&lt;/pre>&lt;p>I’ve not include version numbers as these will no doubt get updated over time but hopefully it will still work.&lt;/p>
+&lt;p>Now in your Program.cs add the following code, replacing [KeyVaultName] with the name of your Key Vault.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Program&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> Main(&lt;span style="color:#66d9ef">string&lt;/span>[] args)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CreateWebHostBuilder(args).Build().Run();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> IWebHostBuilder CreateWebHostBuilder(&lt;span style="color:#66d9ef">string&lt;/span>[] args) =&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> WebHost.CreateDefaultBuilder(args)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .ConfigureAppConfiguration((context, config) =&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> builtConfig = config.Build();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> azureServiceTokenProvider = &lt;span style="color:#66d9ef">new&lt;/span> AzureServiceTokenProvider();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> keyVaultClient = &lt;span style="color:#66d9ef">new&lt;/span> KeyVaultClient(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">new&lt;/span> KeyVaultClient.AuthenticationCallback(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> azureServiceTokenProvider.KeyVaultTokenCallback));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> config.AddAzureKeyVault(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">$&amp;#34;https://[KeyVaultName].vault.azure.net/&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> keyVaultClient,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">new&lt;/span> DefaultKeyVaultSecretManager());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .UseApplicationInsights()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .UseStartup&amp;lt;Startup&amp;gt;();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now all you need to do is look at your configuration to pull out secrets from your Azure Key Vault. If you have a secret called AppSecret then you can use the following code snippet to retrieve its value, assuming _configuration is an implementation of Microsoft.Extensions.Configuration.IConfiguration.&lt;/p>
+&lt;pre tabindex="0">&lt;code>_configuration[&amp;#34;AppSecret&amp;#34;];
+&lt;/code>&lt;/pre>&lt;p>Now if you do all of this and run from an Azure Web App or run locally it will fail to pull anything from the Key Vault. You need to give your web app an identity and configure your key vault to allow access from that identity.&lt;/p>
+&lt;p>Once my code has been deployed to an Azure Web App I get the following error.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="Image" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/03/image.png?fit=662%2C292&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>Lets look at fixing that, first lets give my web app an Identity. Open up the Azure portal and find the identity section of your web app and turn the setting on.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="Image" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/03/image-1.png?fit=662%2C396&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>Now you need to grant that identity permission to your key vault. In the portal open up Access Policies in your key vault and click add Policy, select the identity of your web app in the principal box and select the following settings to grant access to your secret.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="Image" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/03/image-2.png?resize=206%2C428&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>Now you have a website that can pull secrets out of Key Vault but only that unique identity. Anyone who has access to your source code will not have access to your secrets, even if they push your code to a different Azure Web App.&lt;/p></description></item></channel></rss>
