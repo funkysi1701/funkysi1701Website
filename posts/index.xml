@@ -2458,7 +2458,7 @@ Santa Clause is Coming to town.
 &lt;p>If you have any questions about this Privacy Policy, You can contact us:&lt;/p>
 &lt;ul>
 &lt;li>By email: simon@funkysi1701.com&lt;/li>
-&lt;/ul></description></item><item><title>Pwned Pass</title><link>https://www.funkysi1701.com/posts/pwned-pass/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/pwned-pass/</guid><description>&lt;p>Using the data supplied by Troy Hunt and his Have I been pwned? website Pwned Pass allows you to check to see if any password has appeared in a data breach.&lt;/p>
+&lt;/ul></description></item><item><title>Pwned Passwords</title><link>https://www.funkysi1701.com/posts/pwned-pass/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/pwned-pass/</guid><description>&lt;p>Using the data supplied by Troy Hunt and his Have I been pwned? website Pwned Pass allows you to check to see if any password has appeared in a data breach.&lt;/p>
 &lt;p>For more details about Have I been pwned? check out &lt;a href="https://haveibeenpwned.com/">haveibeenpwned.com&lt;/a> and &lt;a href="https://www.troyhunt.com">www.troyhunt.com&lt;/a>.&lt;/p>
 &lt;p>Pwned Pass is a simple Xamarin app that allows you to type in a password and tells you if it has been used in a data breach.&lt;/p>
 &lt;p>Troy Hunt of &lt;a href="https://haveibeenpwned.com/">Have I Been Pwned?&lt;/a> recently added a new API to his website which allows you to search his extensive database of pwned passwords, over 306 million of them. I have simply created a Android frontend to this API.&lt;/p>
