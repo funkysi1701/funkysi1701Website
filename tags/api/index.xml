@@ -58,4 +58,42 @@ which allows you to add automated checks before or after a release happens. Thes
 &lt;p>&lt;img class="img-fluid" alt="Image" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/04/image-3.png?fit=662%2C88&amp;amp;ssl=1" loading="lazy"
 />
 &lt;/p>
-&lt;p>I am still testing this out but it will take a few days to figure out if this what I want due to the large time scales involved. I feel this is going to be an improvement of manually approving release steps.&lt;/p></description></item></channel></rss>
+&lt;p>I am still testing this out but it will take a few days to figure out if this what I want due to the large time scales involved. I feel this is going to be an improvement of manually approving release steps.&lt;/p></description></item><item><title>Documenting your API</title><link>https://www.funkysi1701.com/posts/2019/documenting-your-api/</link><pubDate>Wed, 27 Mar 2019 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2019/documenting-your-api/</guid><description>&lt;p>So you have created a super API that does something amazing. How do you document it so people will use it?&lt;/p>
+&lt;p>One way of easily documenting your API is to install the Swashbuckle package.&lt;/p>
+&lt;pre tabindex="0">&lt;code>Install-Package Swashbuckle.AspNetCore
+Install-Package Swashbuckle.AspNetCore.Swagger
+&lt;/code>&lt;/pre>&lt;p>Then in you startup.cs add the following lines&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">//In ConfigureServices&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>services.AddSwaggerGen(c =&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c.SwaggerDoc(&lt;span style="color:#e6db74">&amp;#34;v1&amp;#34;&lt;/span>, &lt;span style="color:#66d9ef">new&lt;/span> Info { Title = &lt;span style="color:#e6db74">&amp;#34;API&amp;#34;&lt;/span>, Version = &lt;span style="color:#e6db74">&amp;#34;v1&amp;#34;&lt;/span>, Description = &lt;span style="color:#e6db74">&amp;#34;An API Description&amp;#34;&lt;/span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c.IncludeXmlComments(&lt;span style="color:#66d9ef">string&lt;/span>.Format(&lt;span style="color:#e6db74">@&amp;#34;{0}\API.xml&amp;#34;&lt;/span>, System.AppDomain.CurrentDomain.BaseDirectory));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>});
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">//In Configure&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app.UseSwagger();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app.UseSwaggerUI(c =&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c.SwaggerEndpoint(&lt;span style="color:#e6db74">&amp;#34;/swagger/v1/swagger.json&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;API V1&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c.RoutePrefix = &lt;span style="color:#66d9ef">string&lt;/span>.Empty;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>});
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now when you browse to your API you will see the swagger documentation system.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="Image" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/03/image-3.png?w=662&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>The RoutePrefix setting controls the path in which swagger will display. I have my docs at the root, but you might want them under the /docs or similar path.&lt;/p>
+&lt;p>The IncludeXmlComments setting from the ConfigureServices method allows you to load in any XML comments you have added to methods. For this to work you need to enable a setting to your build.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="Image" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/03/image-4.png?w=662&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>The XML documentation file must be ticked and contain a path. Everytime you do a build, a XML file will be generated which contains all the comment blocks you have added to your code.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="Image" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/03/image-5.png?w=662&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>Swagger will then use this XML documentation file to produce lovely looking documentation without you having to do anything extra.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="Image" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/03/image-6.png?fit=662%2C260&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p></description></item></channel></rss>
