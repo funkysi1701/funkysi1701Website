@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/picard-is-back-3bkm",
     "/posts/picard-is-back",
     "/posts/picard-is-back-3bkm",
     "/posts/2019/08/08/picard-is-back-3bkm",

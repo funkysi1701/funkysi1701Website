@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/gated-release",
     "/posts/gated-release/",
     "/posts/gated-release-4772",
     "/posts/2019/04/05/gated-release-4772",

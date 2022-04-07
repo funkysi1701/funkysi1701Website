@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/lets-see-what-2019-can-do-42ni",
     "/posts/lets-see-what-2019-can-do/",
     "/posts/lets-see-what-2019-can-do-42ni",
     "/posts/2019/01/01/lets-see-what-2019-can-do-42ni",

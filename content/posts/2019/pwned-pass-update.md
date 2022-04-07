@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/pwned-pass-update-55io",
     "/posts/pwned-pass-update/",
     "/posts/pwned-pass-update-55io",
     "/posts/2019/01/23/pwned-pass-update-55io",
