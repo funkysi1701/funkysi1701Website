@@ -27,15 +27,18 @@
         {{ range $name, $taxonomy := .Site.Taxonomies.year.Alphabetical.Reverse }}     
           <!-- (re)set the counter to 0 -->
           {{ $.Scratch.Set "tagCounter" 0 }}
+          {{ $.Scratch.Set "tagCounter2" 0 }}
           <!-- increment counter if post contains the current tag-->
           {{ range $posts}}
             {{ if in .Params.year $taxonomy.Term }}
               {{ $.Scratch.Add "tagCounter" 1 }}
             {{ end }}
+            {{ $.Scratch.Add "tagCounter2" 1 }}
           {{ end }}
           
           <li><a href="/{{ $taxonomy.Term }}">{{ $taxonomy.Term }}</a> ({{ $.Scratch.Get "tagCounter" }})</li>
         {{end}}
+        <li>{{ $.Scratch.Get "tagCounter2" }} Posts so far</li>
       </ul>
   </div>
 </section>
