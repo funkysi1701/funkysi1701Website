@@ -5,7 +5,8 @@ year = "2019"
 month= "2019-02"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = ""
+cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/02/D0UTj08XgAEo1YJ.jpg?fit=662%2C440&ssl=1"
+images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/02/D0UTj08XgAEo1YJ.jpg?fit=662%2C440&ssl=1']
 tags = ["Conference", "Azure", "Programming", "Microsoft", "DevOps"]
 category="tech"
 keywords = ["", ""]
