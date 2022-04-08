@@ -151,7 +151,31 @@ Microsoft.Extensions.Configuration.AzureKeyVault
 &lt;p>&lt;img class="img-fluid" alt="Image" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/03/image-2.png?resize=206%2C428&amp;amp;ssl=1" loading="lazy"
 />
 &lt;/p>
-&lt;p>Now you have a website that can pull secrets out of Key Vault but only that unique identity. Anyone who has access to your source code will not have access to your secrets, even if they push your code to a different Azure Web App.&lt;/p></description></item><item><title>Mobile App UI Testing</title><link>https://www.funkysi1701.com/posts/2018/mobile-app-ui-testing/</link><pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/mobile-app-ui-testing/</guid><description>&lt;p>Since I started creating an android app I have been writing simple UI tests.&lt;/p>
+&lt;p>Now you have a website that can pull secrets out of Key Vault but only that unique identity. Anyone who has access to your source code will not have access to your secrets, even if they push your code to a different Azure Web App.&lt;/p></description></item><item><title>Technology I want to learn more about</title><link>https://www.funkysi1701.com/posts/2019/technology-i-want-to-learn-more-about/</link><pubDate>Tue, 05 Mar 2019 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2019/technology-i-want-to-learn-more-about/</guid><description>&lt;p>While at &lt;a href="https://www.funkysi1701.com/2019/02/26/microsoft-ignite-the-tour-london">Microsoft Ignite&lt;/a>
+I heard about a lot of cool tech that I want to know more about. The best way to learn something is use it to solve a problem.&lt;/p>
+&lt;p>So what can I build that is both useful and will let me play with some new tech?&lt;/p>
+&lt;p>I have a Xamarin Forms app &lt;a href="https://www.funkysi1701.com/pwned-pass/">Pwned Pass&lt;/a>
+that has over 500 downloads on &lt;a href="https://play.google.com/store/apps/details?id=pwnedpasswords.pwnedpasswords" target="_blank" rel="noopener noreferrer">Google play&lt;/a>
+and over 80 downloads on the &lt;a href="https://www.microsoft.com/en-gb/p/pwned-pass/9nm2whnztnlt?rtc=1" target="_blank" rel="noopener noreferrer">Microsoft Store&lt;/a>
+. This has given me a small user base that I can use to make use of whatever I build.&lt;/p>
+&lt;p>My app makes use of the &lt;a href="https://haveibeenpwned.com/API/v2" target="_blank" rel="noopener noreferrer">HIBP API&lt;/a>
+created by Troy Hunt. I am going to build my own API, initially it will just make calls to the HIBP API. Building this will give me experience of building something with .net Core from design to deployment. I have made a start already on doing this, I have an empty .net core API project which deploys to an Azure web app using the build and release pipelines from Azure DevOps.&lt;/p>
+&lt;p>You may be wondering why I am not making use of Azure Functions to build this API. Azure functions is certainly a great technology that is worth learning about. However I have done a little bit with them in the past and I don’t believe I would be able to learn all the things I want to if I used Azure Functions. My primary goal is learning and sharing that learning via this blog. It may well be I move to using Azure Functions later on.&lt;/p>
+&lt;p>Another tech I am keen to learn more about is &lt;a href="https://docs.microsoft.com/en-gb/azure/key-vault/" target="_blank" rel="noopener noreferrer">Azure Key Vault&lt;/a>
+. This is a technology that allows the securing of keys, connection strings and certificates. I want my app to securely get keys and security information without any of it having to be committed to source code or shared insecurely.&lt;/p>
+&lt;p>Monitoring my app is also a key learning from me. I use application insights already, but I would like to extend my understanding of this so telemetry can be fed back into the build and bad deployments stopped.&lt;/p>
+&lt;p>Below is my complete list of learning and tech I want to touch on. It is a long list and I imagine it will get longer as I work through it. I want to regularly blog and share what I have been working on. I currently have a working build and release pipeline but nothing of note to build or release. I know Key Vault needs looking at early as the identity of the website in Azure is key to getting that tech working correctly.&lt;/p>
+&lt;ol>
+&lt;li>Build API with .net core&lt;/li>
+&lt;li>Add build and release pipeline&lt;/li>
+&lt;li>Make use of Azure KeyVault for secrets, connection strings etc&lt;/li>
+&lt;li>Plugin My Xamarin app to make use of it&lt;/li>
+&lt;li>Monitor my API with Application Insights&lt;/li>
+&lt;li>Secure it with CSPs and log this into &lt;a href="https://report-uri.com/" target="_blank" rel="noopener noreferrer">Report URI&lt;/a>
+&lt;/li>
+&lt;li>Consider building a web frontend to my API using a javascript library or framework. Maybe react but this can be decided later.&lt;/li>
+&lt;li>Dockerize the API and add the creation of docker images to the build/release pipeline&lt;/li>
+&lt;/ol></description></item><item><title>Mobile App UI Testing</title><link>https://www.funkysi1701.com/posts/2018/mobile-app-ui-testing/</link><pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/mobile-app-ui-testing/</guid><description>&lt;p>Since I started creating an android app I have been writing simple UI tests.&lt;/p>
 &lt;p>I have been taking advantage of the Visual Studio App Center which allows you to test against hundreds of different devices in the &lt;strong>Test Cloud&lt;/strong>.&lt;/p>
 &lt;p>&lt;img class="img-fluid" alt="Xamarin UI tests" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/01/01-newproject-vs.png?resize=300%2C182&amp;amp;ssl=1" loading="lazy"
 />
