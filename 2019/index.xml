@@ -189,7 +189,7 @@ created by Troy Hunt. I am going to build my own API, initially it will just mak
 &lt;li>Consider building a web frontend to my API using a javascript library or framework. Maybe react but this can be decided later.&lt;/li>
 &lt;li>Dockerize the API and add the creation of docker images to the build/release pipeline&lt;/li>
 &lt;/ol></description></item><item><title>Microsoft Ignite | The Tour – London</title><link>https://www.funkysi1701.com/posts/2019/microsoft-ignite-the-tour-london/</link><pubDate>Tue, 26 Feb 2019 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2019/microsoft-ignite-the-tour-london/</guid><description>&lt;p>I have just spent the first day at the conference Microsoft Ignite | The Tour.
-&lt;img class="img-fluid" alt="Alt Text" src="https://www.funkysi1701.com/wp-content/uploads/2019/02/D0UTj08XgAEo1YJ.jpg?fit=662%2C440&amp;amp;ssl=1" loading="lazy"
+&lt;img class="img-fluid" alt="Alt Text" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/02/D0UTj08XgAEo1YJ.jpg?fit=662%2C440&amp;amp;ssl=1" loading="lazy"
 />
 The conference was free I just needed to arrange travel and accommodation. Microsoft have really looked after me and all the other guests, breakfast and lunch has been provided, I got a free t-shirt, coffee (or tea) all day plus a beer or glass of wine to end the day. And that’s before you collect any free stuff the vendors are giving away.&lt;/p>
 &lt;p>The first session was Designing resilient cloud applications with &lt;a href="https://twitter.com/CodeMillMatt" target="_blank" rel="noopener noreferrer">Matt Soucoup&lt;/a>
