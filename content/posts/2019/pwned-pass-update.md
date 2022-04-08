@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/01/image.png?w=662&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/01/image.png?w=662&ssl=1']
-tags = ["Xamarin", "Android"]
+tags = ["Xamarin", "Android", "PwnedPass"]
 category="tech"
 keywords = ["", ""]
 description = "Its been a while since I first released Pwned Pass so lets have a look at where we are"
