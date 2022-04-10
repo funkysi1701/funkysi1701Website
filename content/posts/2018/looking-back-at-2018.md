@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 copyright = false
 cover = ""
-tags = ["C-Sharp", "Deveopment", "Home", "Family"]
+tags = ["C-Sharp", "Deveopment", "Home", "Family", "Goals"]
 category="tech"
 keywords = ["", ""]
 description = "Looking back at 2018"
@@ -15,12 +15,12 @@ summary = "Looking back at 2018"
 showFullContent = false
 readingTime = true
 aliases = [
+    "/looking-back-at-2018-3j3n",
     "/posts/looking-back-at-2018",
     "/posts/2018/12/27/looking-back-at-2018",
     "/posts/looking-back-at-2018-437k",
-    "/posts/2018/12/27/looking-back-at-2018-437k",
-    "/looking-back-at-2018-437k",
-    "/2018/12/27/looking-back-at-2018-437k"
+    "/posts/2018/12/27/looking-back-at-2018-3j3n",
+    "/2018/12/27/looking-back-at-2018-3j3n"
 ]
 +++
 As 2018 starts to draw to a close let’s look at some of the highlights from the past year.
