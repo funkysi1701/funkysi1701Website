@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2018-11 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2018/11/</link><description>Recent content in 2018-11 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Mon, 05 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2018/11/index.xml" rel="self" type="application/rss+xml"/><item><title>Running SQL Server on a Linux Container using Docker for Windows</title><link>https://www.funkysi1701.com/posts/2018/running-sql-server-on-a-linux-container-using-docker-for-windows/</link><pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/running-sql-server-on-a-linux-container-using-docker-for-windows/</guid><description>&lt;p>Recently I have been investigating what all the fuss is about Docker and it has been well worth my time as Docker is pretty awesome for automating stuff.&lt;/p>
+&lt;p>My development environment has typically required installing SQL Server. SQL is a bit of a beast with lots of options and takes time to setup how you want.&lt;/p>
+&lt;p>However since Microsoft have now created a version of SQL Server that runs on Linux you can run SQL Server in a Linux container with only a few commands.&lt;/p>
+&lt;p>I am going to assume you already have Docker for windows installed on your development machine. If not head over to &lt;a href="https://docs.docker.com/docker-for-windows/install/#where-to-go-next" target="_blank" rel="noopener noreferrer">Docker&lt;/a>
+and find out how.&lt;/p>
+&lt;p>The Microsoft guide to setting up SQL Server in a Linux container can be found &lt;a href="https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-2017" target="_blank" rel="noopener noreferrer">here&lt;/a>
+.&lt;/p>
+&lt;p>First you need to download the image. In a powershell window run:&lt;/p>
+&lt;pre tabindex="0">&lt;code>docker pull mcr.microsoft.com/mssql/server:2017-latest
+&lt;/code>&lt;/pre>&lt;p>This downloads the latest sql server image.&lt;/p>
+&lt;p>To run this image run the following:&lt;/p>
+&lt;pre tabindex="0">&lt;code>docker run -e &amp;#34;ACCEPT_EULA=Y&amp;#34; -e &amp;#34;SA_PASSWORD=password&amp;#34;
+-p 1433:1433 --name sql
+-d mcr.microsoft.com/mssql/server:2017-latest
+&lt;/code>&lt;/pre>&lt;p>To run a SQL Server image you are required to accept the terms and conditions and set a default sa password. These are added as environment variables with the -e flag.&lt;/p>
+&lt;p>You also need to set the ports that your container will run on (1433 is the default SQL port) and give your container a name, in this case &amp;ldquo;sql&amp;rdquo;.&lt;/p>
+&lt;p>If you have already installed SQL Server you will not be able to run the container on the same port as your local install. To solve this you can select a different port.&lt;/p>
+&lt;pre tabindex="0">&lt;code>docker run -e &amp;#34;ACCEPT_EULA=Y&amp;#34; -e &amp;#34;SA_PASSWORD=password&amp;#34;
+-p 1434:1433 --name sql
+-d mcr.microsoft.com/mssql/server:2017-latest
+&lt;/code>&lt;/pre>&lt;p>-p 1434:1433 maps the 1433 port on the container to port 1434 of your local environment.&lt;/p>
+&lt;p>Once you have run this command you can connect SQL Server Management Studio (SSMS) to (local) or (local),1434 if you are using a different port using the credentials you provided and execute any SQL you like.&lt;/p>
+&lt;p>If your development environment requires windows authentication this of course is not for you, if it doesn’t you are good to go.&lt;/p>
+&lt;p>The development environment I have been using has various powershell scripts for setting things up. These assume windows auth. However I have adapted them to take custom credentials.&lt;/p>
+&lt;pre tabindex="0">&lt;code>$credential = Get-Credential $server.ConnectionContext.LoginSecure=$false
+$server.ConnectionContext.set_Login($credential.UserName)
+$server.ConnectionContext.set_SecurePassword($credential.Password)
+&lt;/code>&lt;/pre>&lt;p>The Get-Credential command creates a dialog where you can enter SQL credentials, this is then stored in a variable and used in the rest of the script.&lt;/p>
+&lt;p>&lt;strong>How do I restore a backup file to my container?&lt;/strong>&lt;/p>
+&lt;p>Run:&lt;/p>
+&lt;pre tabindex="0">&lt;code>docker exec -it sql mkdir /var/opt/mssql/backup
+docker cp database.bak sql:/var/opt/mssql/backup
+&lt;/code>&lt;/pre>&lt;p>This creates a backup folder and copies a backup file from your local environment to the container. You can then use management studio to restore the backup file (or you could write a sql script to do it). One thing to note when restoring databases, make sure the files are restored to Linux locations not windows locations.&lt;/p>
+&lt;p>The only issues I have encountered so far are the lack of support for SSIS packages and no windows auth. There are sql server windows images available which I haven’t tried yet which may work better with some of these options.&lt;/p></description></item></channel></rss>
