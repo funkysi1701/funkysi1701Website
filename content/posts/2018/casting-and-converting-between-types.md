@@ -31,18 +31,24 @@ Int32 is a struct so it inherits from System.ValueType which also inherits from 
 
 so in code
 
+```csharp
 int a = 9;
 string b = a.ToString();
+```
 
 Now let's look at the reverse. However the reverse runs the risk of throwing an error, let's look at why.
 
-string b= "9";
-string c ="a";
+```chsarp
+string b = "9";
+string c = "a";
 string d = "two";
+```
 
 All are valid strings but only one can be converted to a number. Use the TryParse method to convert to a number.
 
+```csharp
 int.TryParse("9", out int e);
+```
 
 TryParse will not throw an exception if the conversion fails, if it succeeds variable e will contain the result. Note an earlier version of c# required you to define the out parameter before using it with TryParse.
 
@@ -52,7 +58,9 @@ int.Parse exists to do the same thing however it will throw exceptions if a conv
 
 Casting is a way to explicitly telling the compiler that a type is actually another type and you are aware data loss will occur.
 
+```csharp
 double x = 4.5;
 int y = (int)x;
+```
 
 However it is not possible to cast a string to a number format as a string can contain any character not just number characters.
