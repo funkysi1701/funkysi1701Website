@@ -38,10 +38,10 @@ created by Troy Hunt. I am going to build my own API, initially it will just mak
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> a = &lt;span style="color:#ae81ff">9&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">string&lt;/span> b = a.ToString();
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now let&amp;rsquo;s look at the reverse. However the reverse runs the risk of throwing an error, let&amp;rsquo;s look at why.&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-chsarp" data-lang="chsarp">string b = &amp;#34;9&amp;#34;;
-string c = &amp;#34;a&amp;#34;;
-string d = &amp;#34;two&amp;#34;;
-&lt;/code>&lt;/pre>&lt;p>All are valid strings but only one can be converted to a number. Use the TryParse method to convert to a number.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">string&lt;/span> b = &lt;span style="color:#e6db74">&amp;#34;9&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">string&lt;/span> c = &lt;span style="color:#e6db74">&amp;#34;a&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">string&lt;/span> d = &lt;span style="color:#e6db74">&amp;#34;two&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>All are valid strings but only one can be converted to a number. Use the TryParse method to convert to a number.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span>.TryParse(&lt;span style="color:#e6db74">&amp;#34;9&amp;#34;&lt;/span>, &lt;span style="color:#66d9ef">out&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> e);
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>TryParse will not throw an exception if the conversion fails, if it succeeds variable e will contain the result. Note an earlier version of c# required you to define the out parameter before using it with TryParse.&lt;/p>
 &lt;p>int.Parse exists to do the same thing however it will throw exceptions if a conversion is not possible. The same is true if you use Convert.ToInt32(&amp;ldquo;two&amp;rdquo;);&lt;/p>
