@@ -15,15 +15,15 @@ summary = "2018 The Story So far"
 showFullContent = false
 readingTime = true
 aliases = [
-    "/looking-back-at-2018-3j3n",
+    "/2018-the-story-so-far-1lkf",
     "/posts/2018-the-story-so-far",
     "/posts/2018/07/28/2018-the-story-so-far",
-    "/posts/looking-back-at-2018-437k",
-    "/posts/2018/07/28/looking-back-at-2018-3j3n",
-    "/2018/07/28/looking-back-at-2018-3j3n"
+    "/posts/2018-the-story-so-far-1lkf",
+    "/posts/2018/07/28/2018-the-story-so-far-1lkf",
+    "/2018/07/28/2018-the-story-so-far-1lkf"
 ]
 +++
-Remember me? I used to write blog posts but somehow life got in the way. So much has happened this year, lets have a look at my [goals](https://dev.to/funkysi1701/lets-see-what-2018-can-do-38o1-temp-slug-2157705) for 2018 and see how far we have got with them.
+Remember me? I used to write blog posts but somehow life got in the way. So much has happened this year, lets have a look at my [goals](https://www.funkysi1701.com/2018/lets-see-what-2018-can-do) for 2018 and see how far we have got with them.
 
 ### Buy a house
 
