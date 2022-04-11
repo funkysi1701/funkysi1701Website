@@ -38,7 +38,7 @@ string b = a.ToString();
 
 Now let's look at the reverse. However the reverse runs the risk of throwing an error, let's look at why.
 
-```chsarp
+```csharp
 string b = "9";
 string c = "a";
 string d = "two";
