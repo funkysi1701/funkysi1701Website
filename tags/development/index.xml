@@ -58,18 +58,18 @@ for 2018 and see how far we have got with them.&lt;/p>
 &lt;p>Most objects in c# have a method called ToString() which displays the string representation of that object. This is because of inheritance, all objects inherit from System.Object which defines ToString().&lt;/p>
 &lt;p>Int32 is a struct so it inherits from System.ValueType which also inherits from System.Object&lt;/p>
 &lt;p>so in code&lt;/p>
-&lt;p>int a = 9;
-string b = a.ToString();&lt;/p>
-&lt;p>Now let&amp;rsquo;s look at the reverse. However the reverse runs the risk of throwing an error, let&amp;rsquo;s look at why.&lt;/p>
-&lt;p>string b= &amp;ldquo;9&amp;rdquo;;
-string c =&amp;ldquo;a&amp;rdquo;;
-string d = &amp;ldquo;two&amp;rdquo;;&lt;/p>
-&lt;p>All are valid strings but only one can be converted to a number. Use the TryParse method to convert to a number.&lt;/p>
-&lt;p>int.TryParse(&amp;ldquo;9&amp;rdquo;, out int e);&lt;/p>
-&lt;p>TryParse will not throw an exception if the conversion fails, if it succeeds variable e will contain the result. Note an earlier version of c# required you to define the out parameter before using it with TryParse.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> a = &lt;span style="color:#ae81ff">9&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">string&lt;/span> b = a.ToString();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now let&amp;rsquo;s look at the reverse. However the reverse runs the risk of throwing an error, let&amp;rsquo;s look at why.&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-chsarp" data-lang="chsarp">string b = &amp;#34;9&amp;#34;;
+string c = &amp;#34;a&amp;#34;;
+string d = &amp;#34;two&amp;#34;;
+&lt;/code>&lt;/pre>&lt;p>All are valid strings but only one can be converted to a number. Use the TryParse method to convert to a number.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span>.TryParse(&lt;span style="color:#e6db74">&amp;#34;9&amp;#34;&lt;/span>, &lt;span style="color:#66d9ef">out&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> e);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>TryParse will not throw an exception if the conversion fails, if it succeeds variable e will contain the result. Note an earlier version of c# required you to define the out parameter before using it with TryParse.&lt;/p>
 &lt;p>int.Parse exists to do the same thing however it will throw exceptions if a conversion is not possible. The same is true if you use Convert.ToInt32(&amp;ldquo;two&amp;rdquo;);&lt;/p>
 &lt;h2 id="casting">Casting&lt;a class="anchor ms-1" href="#casting">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
 &lt;p>Casting is a way to explicitly telling the compiler that a type is actually another type and you are aware data loss will occur.&lt;/p>
-&lt;p>double x = 4.5;
-int y = (int)x;&lt;/p>
-&lt;p>However it is not possible to cast a string to a number format as a string can contain any character not just number characters.&lt;/p></description></item></channel></rss>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">double&lt;/span> x = &lt;span style="color:#ae81ff">4.5&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> y = (&lt;span style="color:#66d9ef">int&lt;/span>)x;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>However it is not possible to cast a string to a number format as a string can contain any character not just number characters.&lt;/p></description></item></channel></rss>
