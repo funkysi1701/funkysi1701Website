@@ -15,12 +15,12 @@ summary = "Running SQL Server on a Linux Container using Docker for Windows"
 showFullContent = false
 readingTime = true
 aliases = [
-    "/running-sql-server-on-a-linux-container-using-docker-for-windows-156l",
+    "/running-sql-server-on-a-linux-container-using-docker-for-windows-24k3",
     "/posts/running-sql-server-on-a-linux-container-using-docker-for-windows",
     "/posts/2018/11/05/running-sql-server-on-a-linux-container-using-docker-for-windows",
-    "/posts/running-sql-server-on-a-linux-container-using-docker-for-windows-156l",
-    "/posts/2018/11/05/running-sql-server-on-a-linux-container-using-docker-for-windows-156l",
-    "/2018/11/05/running-sql-server-on-a-linux-container-using-docker-for-windows-156l"
+    "/posts/running-sql-server-on-a-linux-container-using-docker-for-windows-24k3",
+    "/posts/2018/11/05/running-sql-server-on-a-linux-container-using-docker-for-windows-24k3",
+    "/2018/11/05/running-sql-server-on-a-linux-container-using-docker-for-windows-24k3"
 ]
 +++
 Recently I have been investigating what all the fuss is about Docker and it has been well worth my time as Docker is pretty awesome for automating stuff.
