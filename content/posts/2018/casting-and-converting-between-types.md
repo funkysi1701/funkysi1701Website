@@ -15,12 +15,12 @@ summary = "Casting and Converting between types"
 showFullContent = false
 readingTime = true
 aliases = [
-    "/2018-the-story-so-far-1lkf",
+    "/casting-and-converting-between-types-4g3a",
     "/posts/casting-and-converting-between-types",
     "/posts/2018/05/07/casting-and-converting-between-types",
-    "/posts/2018-the-story-so-far-1lkf",
-    "/posts/2018/05/07/2018-the-story-so-far-1lkf",
-    "/2018/05/07/2018-the-story-so-far-1lkf"
+    "/posts/casting-and-converting-between-types-4g3a",
+    "/posts/2018/05/07/casting-and-converting-between-types-4g3a",
+    "/2018/05/07/casting-and-converting-between-types-4g3a"
 ]
 +++
 Recently I was asked how to convert a number to a string. Let's look at a few ways of approaching this problem.
