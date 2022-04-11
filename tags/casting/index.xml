@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Casting on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/casting/</link><description>Recent content in Casting on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Mon, 07 May 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/casting/index.xml" rel="self" type="application/rss+xml"/><item><title>Casting and Converting between types</title><link>https://www.funkysi1701.com/posts/2018/casting-and-converting-between-types/</link><pubDate>Mon, 07 May 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/casting-and-converting-between-types/</guid><description>&lt;p>Recently I was asked how to convert a number to a string. Let&amp;rsquo;s look at a few ways of approaching this problem.&lt;/p>
+&lt;p>Most objects in c# have a method called ToString() which displays the string representation of that object. This is because of inheritance, all objects inherit from System.Object which defines ToString().&lt;/p>
+&lt;p>Int32 is a struct so it inherits from System.ValueType which also inherits from System.Object&lt;/p>
+&lt;p>so in code&lt;/p>
+&lt;p>int a = 9;
+string b = a.ToString();&lt;/p>
+&lt;p>Now let&amp;rsquo;s look at the reverse. However the reverse runs the risk of throwing an error, let&amp;rsquo;s look at why.&lt;/p>
+&lt;p>string b= &amp;ldquo;9&amp;rdquo;;
+string c =&amp;ldquo;a&amp;rdquo;;
+string d = &amp;ldquo;two&amp;rdquo;;&lt;/p>
+&lt;p>All are valid strings but only one can be converted to a number. Use the TryParse method to convert to a number.&lt;/p>
+&lt;p>int.TryParse(&amp;ldquo;9&amp;rdquo;, out int e);&lt;/p>
+&lt;p>TryParse will not throw an exception if the conversion fails, if it succeeds variable e will contain the result. Note an earlier version of c# required you to define the out parameter before using it with TryParse.&lt;/p>
+&lt;p>int.Parse exists to do the same thing however it will throw exceptions if a conversion is not possible. The same is true if you use Convert.ToInt32(&amp;ldquo;two&amp;rdquo;);&lt;/p>
+&lt;h2 id="casting">Casting&lt;a class="anchor ms-1" href="#casting">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>Casting is a way to explicitly telling the compiler that a type is actually another type and you are aware data loss will occur.&lt;/p>
+&lt;p>double x = 4.5;
+int y = (int)x;&lt;/p>
+&lt;p>However it is not possible to cast a string to a number format as a string can contain any character not just number characters.&lt;/p></description></item></channel></rss>

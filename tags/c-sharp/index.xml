@@ -31,7 +31,25 @@ created by Troy Hunt. I am going to build my own API, initially it will just mak
 &lt;li>Celebrate 5 years of marriage. It hasn&amp;rsquo;t been an easy year for me and the wife due to moving house and all the stress that involved plus with two children she was diagnosed with Postnatal Depression which as a family we are still dealing with. All that said we had a fab weekend away and we so need to do something similar again soon.&lt;/li>
 &lt;li>Family. 2018 has included many great times with my two boys. It&amp;rsquo;s been amazing seeing them grow, in September we had a thanksgiving service for them and in July we had our annual holiday.&lt;/li>
 &lt;li>Lightning Talk. This is the only thing I mentioned as a goal that didn&amp;rsquo;t happen, it&amp;rsquo;s on my 2019 list so hopefully I can kick myself into action but with everything else I achieved something had to slip.   &lt;/li>
-&lt;/ol></description></item><item><title>Async and Await</title><link>https://www.funkysi1701.com/posts/2017/async-and-await/</link><pubDate>Mon, 24 Jul 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/async-and-await/</guid><description>&lt;p>For a while the Async and Await commands in c# have confused me.&lt;/p>
+&lt;/ol></description></item><item><title>Casting and Converting between types</title><link>https://www.funkysi1701.com/posts/2018/casting-and-converting-between-types/</link><pubDate>Mon, 07 May 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/casting-and-converting-between-types/</guid><description>&lt;p>Recently I was asked how to convert a number to a string. Let&amp;rsquo;s look at a few ways of approaching this problem.&lt;/p>
+&lt;p>Most objects in c# have a method called ToString() which displays the string representation of that object. This is because of inheritance, all objects inherit from System.Object which defines ToString().&lt;/p>
+&lt;p>Int32 is a struct so it inherits from System.ValueType which also inherits from System.Object&lt;/p>
+&lt;p>so in code&lt;/p>
+&lt;p>int a = 9;
+string b = a.ToString();&lt;/p>
+&lt;p>Now let&amp;rsquo;s look at the reverse. However the reverse runs the risk of throwing an error, let&amp;rsquo;s look at why.&lt;/p>
+&lt;p>string b= &amp;ldquo;9&amp;rdquo;;
+string c =&amp;ldquo;a&amp;rdquo;;
+string d = &amp;ldquo;two&amp;rdquo;;&lt;/p>
+&lt;p>All are valid strings but only one can be converted to a number. Use the TryParse method to convert to a number.&lt;/p>
+&lt;p>int.TryParse(&amp;ldquo;9&amp;rdquo;, out int e);&lt;/p>
+&lt;p>TryParse will not throw an exception if the conversion fails, if it succeeds variable e will contain the result. Note an earlier version of c# required you to define the out parameter before using it with TryParse.&lt;/p>
+&lt;p>int.Parse exists to do the same thing however it will throw exceptions if a conversion is not possible. The same is true if you use Convert.ToInt32(&amp;ldquo;two&amp;rdquo;);&lt;/p>
+&lt;h2 id="casting">Casting&lt;a class="anchor ms-1" href="#casting">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>Casting is a way to explicitly telling the compiler that a type is actually another type and you are aware data loss will occur.&lt;/p>
+&lt;p>double x = 4.5;
+int y = (int)x;&lt;/p>
+&lt;p>However it is not possible to cast a string to a number format as a string can contain any character not just number characters.&lt;/p></description></item><item><title>Async and Await</title><link>https://www.funkysi1701.com/posts/2017/async-and-await/</link><pubDate>Mon, 24 Jul 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/async-and-await/</guid><description>&lt;p>For a while the Async and Await commands in c# have confused me.&lt;/p>
 &lt;p>Like most things the best way to learn about something is to use it in a real world example. I am currently adding an email alert feature to a website. This is an ideal example of something that would benefit from Asynchronous programming. There is no need for the webpage to wait to send 1000s of emails, lets just send a call to get started and allow the browser to carry on as normal.&lt;/p>
 &lt;p>This is my first try at using async and await so feel free to suggest best practises in the comments.&lt;/p>
 &lt;p>Lets start with a Send method in my EmailController.&lt;/p>
