@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/more-than-halfway-through-2021-29i5",
     "/posts/more-than-halfway-through-2021/",
     "/posts/more-than-halfway-through-2021-29i5",
     "/posts/2021/08/31/more-than-halfway-through-2021-29i5",

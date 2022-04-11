@@ -15,6 +15,7 @@ summary = "Here are my goals for 2021"
 showFullContent = false
 readingTime = true
 aliases = [
+    "/goals-for-2021-mfm",
     "/posts/goals-for-2021/",
     "/posts/goals-for-2021-mfm",
     "/posts/2020/12/28/goals-for-2021-mfm",

@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/back-to-basic-3c83",
     "/posts/back-to-basic/",
     "/posts/back-to-basic-3c83",
     "/posts/2021/12/28/back-to-basic-3c83",

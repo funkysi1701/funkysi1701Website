@@ -15,6 +15,7 @@ summary = "Time sync in docker containers"
 showFullContent = false
 readingTime = true
 aliases = [
+    "/weekly-update-002-1021",
     "/posts/weekly-update-002/",
     "/posts/weekly-update-002-1021",
     "/posts/2020/11/21/weekly-update-002-1021",

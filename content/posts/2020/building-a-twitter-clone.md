@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/building-a-twitter-clone-2h0c",
     "/posts/building-a-twitter-clone/",
     "/posts/building-a-twitter-clone-2h0c",
     "/posts/2020/12/22/building-a-twitter-clone-2h0c",

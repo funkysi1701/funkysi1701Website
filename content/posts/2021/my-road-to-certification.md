@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/my-road-to-certification-3bep",
     "/posts/my-road-to-certification/",
     "/posts/my-road-to-certification-3bep",
     "/posts/2021/05/11/my-road-to-certification-3bep",

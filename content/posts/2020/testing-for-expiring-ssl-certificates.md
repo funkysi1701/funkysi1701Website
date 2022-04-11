@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/testing-for-expiring-ssl-certificates-2dmj",
     "/posts/testing-for-expiring-ssl-certificates",
     "/posts/testing-for-expiring-ssl-certificates-2dmj",
     "/posts/2020/03/03/testing-for-expiring-ssl-certificates-2dmj",

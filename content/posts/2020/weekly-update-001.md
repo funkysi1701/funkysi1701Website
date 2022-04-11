@@ -15,6 +15,7 @@ summary = "Dotnet 5, dotnetconf and adding devops buildID and hash"
 showFullContent = false
 readingTime = true
 aliases = [
+    "/weekly-update-001-33d0",
     "/posts/weekly-update-001/",
     "/posts/weekly-update-001-33d0",
     "/posts/2020/11/14/weekly-update-001-33d0",

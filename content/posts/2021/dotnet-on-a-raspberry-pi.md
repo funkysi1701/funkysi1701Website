@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/dotnet-on-a-raspberry-pi-3ldn",
     "/posts/dotnet-on-a-raspberry-pi/",
     "/posts/dotnet-on-a-raspberry-pi-3ldn",
     "/posts/2021/05/10/dotnet-on-a-raspberry-pi-3ldn",

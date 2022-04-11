@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/azure-devops-release-pipelines-pre-and-post-approval-4095",
     "/posts/azure-devops-release-pipelines-pre-and-post-approval/",
     "/posts/azure-devops-release-pipelines-pre-and-post-approval-4095",
     "/posts/2021/02/14/azure-devops-release-pipelines-pre-and-post-approval-4095",

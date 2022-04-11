@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/weekly-update-004-341p",
     "/posts/weekly-update-004/",
     "/posts/weekly-update-004-341p",
     "/posts/2020/12/06/weekly-update-004-341p",

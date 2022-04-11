@@ -17,6 +17,7 @@ showFullContent = false
 readingTime = true
 featured = true
 aliases = [
+    "/lone-developer-to-senior-developer-my-2021-story-3g0a",
     "/posts/lone-developer-to-senior-developer-my-2021-story/",
     "/posts/lone-developer-to-senior-developer-my-2021-story-3g0a",
     "/posts/2021/12/05/lone-developer-to-senior-developer-my-2021-story-3g0a",

@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/005-twitter-cards-46eb",
     "/posts/005-twitter-cards/",
     "/posts/005-twitter-cards-46eb",
     "/posts/2020/12/12/005-twitter-cards-46eb",

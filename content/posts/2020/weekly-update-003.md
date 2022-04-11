@@ -15,6 +15,7 @@ summary = "My first PR and PHP"
 showFullContent = false
 readingTime = true
 aliases = [
+    "/weekly-update-003-3nfl",
     "/posts/weekly-update-003/",
     "/posts/weekly-update-003-3nfl",
     "/posts/2020/11/28/weekly-update-003-3nfl",

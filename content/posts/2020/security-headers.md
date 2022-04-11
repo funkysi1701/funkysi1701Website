@@ -15,6 +15,7 @@ summary = "Check the security headers of your site"
 showFullContent = false
 readingTime = true
 aliases = [
+    "/security-headers-3ec3",
     "/posts/security-headers/",
     "/posts/security-headers-3ec3",
     "/posts/2020/09/26/security-headers-3ec3",

@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/a-comparison-of-all-good-things-and-star-trek-picard-nb0",
     "/posts/a-comparison-of-all-good-things-and-star-trek-picard",
     "/posts/a-comparison-of-all-good-things-and-star-trek-picard-nb0",
     "/posts/2021/12/15/a-comparison-of-all-good-things-and-star-trek-picard-nb0",
