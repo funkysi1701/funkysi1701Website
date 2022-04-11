@@ -16,6 +16,7 @@ summary = "Mobile App UI Testing"
 showFullContent = false
 readingTime = true
 aliases = [
+    "/mobile-app-ui-testing-4p8h",
     "/posts/mobile-app-ui-testing",
     "/posts/2018/01/08/mobile-app-ui-testing",
     "/posts/mobile-app-ui-testing-4p8h",
