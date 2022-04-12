@@ -265,7 +265,36 @@ and &lt;a href="https://twitter.com/TheOpsMgr" target="_blank" rel="noopener nor
 &lt;p>For my mobile app my YAML files consist of downloading nuget packages, building the solution, building specific projects with desired settings, running powershell or other scripts to set things up and finally publishing the results of the build as artifacts so that they can be used in any releases.&lt;/p>
 &lt;h2 id="secure-it">Secure It!&lt;a class="anchor ms-1" href="#secure-it">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
 &lt;p>Avoid committing passwords and secure keys into source control. I have found you can upload secure files via Azure DevOps and then add a download secure files step at the start of your build. This allows the secure file to be used during the build but the contents of the file can’t be viewed by anyone with access to the source code.&lt;/p>
-&lt;p>I find it often takes a bit of thinking about how to achieve this, but it is usually possible to keep keys and secrets secure.&lt;/p></description></item><item><title>Azure Functions</title><link>https://www.funkysi1701.com/posts/2017/azure-functions/</link><pubDate>Tue, 12 Sep 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/azure-functions/</guid><description>&lt;p>I recently blogged about using &lt;a href="https://www.funkysi1701.com/posts/using-azure-webjobs-to-automate-stuff">Azure Web Jobs&lt;/a>
+&lt;p>I find it often takes a bit of thinking about how to achieve this, but it is usually possible to keep keys and secrets secure.&lt;/p></description></item><item><title>Let’s Encrypt is awesome</title><link>https://www.funkysi1701.com/posts/2018/lets-encrypt-is-awesome/</link><pubDate>Mon, 30 Apr 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/lets-encrypt-is-awesome/</guid><description>&lt;p>Let’s Encrypt is a free way to get a SSL certificate onto your website and until recently I had never tried it. It is very easy and I think it is awesome.&lt;/p>
+&lt;p>IIS is the web server software the Microsoft include with Windows 10 and Windows Server. I have it installed on my laptop and it displays the default IIS page.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/04/iis.jpg?resize=768%2C464&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>It is not really a good idea to host websites on your laptop, use a dedicated web server, or host with a hosting company, however the techniques are the same and it gives me something to write about!&lt;/p>
+&lt;p>In order to point a domain name at what IIS on my machine was serving up I did the following:&lt;/p>
+&lt;ul>
+&lt;li>Do a google search for “whats my IP”, this will return your public IP. Most residential ISPs use dynamic IPs so it may change over time, (which is another reason not to host a website on your laptop!)&lt;/li>
+&lt;li>Add an A record on a domain with the IP address you have just got&lt;/li>
+&lt;li>Your public IP most likely points at your router not your laptop so enable port forwarding of port 80 and port 443 to the internal IP of your laptop (something like 192.168.0.11 etc)&lt;/li>
+&lt;/ul>
+&lt;p>Now comes the fun Let’s Encrypt stuff!&lt;/p>
+&lt;p>First you need a Let’s Encrypt client, there are a lot of them out there mostly for linux flavours, however a bit of googling found a windows one. Go to &lt;a href="https://github.com/PKISharp/win-acme/releases" target="_blank" rel="noopener noreferrer">https://github.com/PKISharp/win-acme/releases&lt;/a>
+and download the zip file and unzip it.&lt;/p>
+&lt;p>Run the executable from the zip file and follow the onscreen prompts.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/04/letsencrypt.jpg?resize=768%2C480&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>Press N to create a new certificate.&lt;/p>
+&lt;p>Then press 1 to bind to single website found in your IIS setup&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/04/letsencrypt2.jpg?resize=768%2C686&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>And now magically Let’s Encrypt knows what you have setup in IIS.&lt;/p>
+&lt;p>Now all you need to do is enter an email address incase a renewal fails and agree to the let’s encrypt terms and you are all setup.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/04/letsencrypt3.jpg?resize=768%2C920&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>How awesome and easy is that for getting your websites working with a SSL certificate. If you have IIS configured on a server, give it a try and you can SSL all your things.&lt;/p></description></item><item><title>Azure Functions</title><link>https://www.funkysi1701.com/posts/2017/azure-functions/</link><pubDate>Tue, 12 Sep 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/azure-functions/</guid><description>&lt;p>I recently blogged about using &lt;a href="https://www.funkysi1701.com/posts/using-azure-webjobs-to-automate-stuff">Azure Web Jobs&lt;/a>
 , Azure Function is another way of doing the same thing, lets look at how they work.&lt;/p>
 &lt;p>(Sorry its been a while since I blogged but I suspect an erratic schedule will continue for the next few months.)&lt;/p>
 &lt;p>To create an Azure Function go to the Azure portal and click add new and search for &amp;ldquo;Function App&amp;rdquo;&lt;/p>
