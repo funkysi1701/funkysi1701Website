@@ -20,7 +20,8 @@ aliases = [
     "/posts/2018/04/09/dns-for-developers",
     "/posts/dns-for-developers-3mmj",
     "/posts/2018/04/09/dns-for-developers-3mmj",
-    "/2018/04/09/dns-for-developers-3mmj"
+    "/2018/04/09/dns-for-developers-3mmj",
+    "/2018/04/09/dns-for-developers"
 ]
 +++
 DNS is the backbone of the internet and as such I believe every developer should know something about the basics and not just leave it for the sysadmin to sort.
