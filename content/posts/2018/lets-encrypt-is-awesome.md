@@ -15,12 +15,12 @@ summary = "Let’s Encrypt is awesome"
 showFullContent = false
 readingTime = true
 aliases = [
-    "/2018-the-story-so-far-1lkf",
+    "/lets-encrypt-is-awesome-5d23",
     "/posts/lets-encrypt-is-awesome",
     "/posts/2018/04/30/lets-encrypt-is-awesome",
-    "/posts/2018-the-story-so-far-1lkf",
-    "/posts/2018/04/30/2018-the-story-so-far-1lkf",
-    "/2018/04/30/2018-the-story-so-far-1lkf"
+    "/posts/lets-encrypt-is-awesome-5d23",
+    "/posts/2018/04/30/lets-encrypt-is-awesome-5d23",
+    "/2018/04/30/lets-encrypt-is-awesome-5d23"
 ]
 +++
 Let’s Encrypt is a free way to get a SSL certificate onto your website and until recently I had never tried it. It is very easy and I think it is awesome.
