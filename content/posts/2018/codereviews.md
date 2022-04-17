@@ -39,7 +39,9 @@ Select a branch you want to merge from and a branch that should be merged into (
 
 Now if you are anything like me you want your code merged in as soon as you have created your pull request and there is nothing stopping you reviewing your own code and clicking approve and merge on your own pull request. However [branch policies](https://docs.microsoft.com/en-us/vsts/git/branch-policies?view=vsts) is a way around this problem.
 
-#### ![Branch Policy](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/04/save-policy-changes.png?resize=599%2C901&ssl=1)Branch Policies
+#### Branch Policies
+
+![Branch Policy](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/04/save-policy-changes.png?resize=599%2C901&ssl=1)
 
 Branch policies allow you to specify how your code gets merged in.
 
