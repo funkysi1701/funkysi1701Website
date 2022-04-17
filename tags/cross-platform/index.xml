@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cross Platform on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/cross-platform/</link><description>Recent content in Cross Platform on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Mon, 26 Mar 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/cross-platform/index.xml" rel="self" type="application/rss+xml"/><item><title>Android Development Options</title><link>https://www.funkysi1701.com/posts/2018/android-development-optionsandroid-development-options/</link><pubDate>Mon, 26 Mar 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/android-development-optionsandroid-development-options/</guid><description>&lt;p>A friend asked me how to get started in Android Development and I thought I might have a go at answering that question here.&lt;/p>
+&lt;p>I am by no means an expert in Android development, I do have an app in the play store so I know something.&lt;/p>
+&lt;h4 id="manifest-file">Manifest File&lt;a class="anchor ms-1" href="#manifest-file">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h4>
+&lt;p>This is probably the easiest option and also doesn’t actually create an android app so I am not sure if it should be included in this list of not.&lt;/p>
+&lt;p>If you have a website and you want to create an app for that you could just create a manifest file and add this to your website.&lt;/p>
+&lt;p>Once your website has a manifest file, if you visit your website using a mobile phone or tablet you will get the option to add a shortcut to the home screen. You then have an app like experience in that you can click an icon to launch your website.&lt;/p>
+&lt;p>A manifest file is a simple text file which specifies a few settings like the icon size, filename, what page loads when clicked and name of your “app”&lt;/p>
+&lt;p>&lt;a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank" rel="noopener noreferrer">More information&lt;/a>
+&lt;/p>
+&lt;h4 id="visual-studio">Visual Studio&lt;a class="anchor ms-1" href="#visual-studio">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h4>
+&lt;p>This is the option I know most about as is what I have used.&lt;/p>
+&lt;p>If you are familiar with Visual Studio you can use the Xamarin Forms software to create your app in C#. Xamarin Forms allows you to easily create cross platform apps that run on Android, IOS and windows phone. So far I have only experimented with Android but it should be relatively easy to extend my code to run on other platforms.&lt;/p>
+&lt;p>Xamarin Forms allows you to write one a single codebase that can be compiled to run on the different platforms. Xamarin requires the use of XAML a XML like markup language for designing UI elements.&lt;/p>
+&lt;p>More Information on &lt;a href="https://www.visualstudio.com/" target="_blank" rel="noopener noreferrer">Visual Studio&lt;/a>
+, &lt;a href="https://www.xamarin.com/forms" target="_blank" rel="noopener noreferrer">Xamarin Forms&lt;/a>
+&lt;/p>
+&lt;h4 id="android-studio">Android Studio&lt;a class="anchor ms-1" href="#android-studio">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h4>
+&lt;p>I don’t know much about this option so do correct me if I don’t get the details correct.&lt;/p>
+&lt;p>Android Studio can be downloaded from Google this allows you to create java code to run directly on an android device. From what I know this is fairly similar experience to Visual Studio but instead of writing your code in C# you use Android Studio and write it directly in java.&lt;/p>
+&lt;p>&lt;a href="https://developer.android.com/studio/index.html" target="_blank" rel="noopener noreferrer">More information&lt;/a>
+&lt;/p>
+&lt;h4 id="cordova">Cordova&lt;a class="anchor ms-1" href="#cordova">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h4>
+&lt;p>Cordova allows you to use HTML, CSS and javascript to create cross platform apps. I have no idea why I haven’t heard of this technology until today as it sounds very flexible especially if you know a little bit of javascript.&lt;/p>
+&lt;p>&lt;a href="https://cordova.apache.org/docs/en/latest/guide/overview/" target="_blank" rel="noopener noreferrer">More information&lt;/a>
+&lt;/p>
+&lt;p>To summarize there are lots of different options available to create an android app. What you choose depends on what you want to build, what language and experience you have and if your app needs to be cross platform.&lt;/p></description></item></channel></rss>
