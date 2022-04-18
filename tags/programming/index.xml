@@ -107,7 +107,178 @@ and &lt;a href="https://twitter.com/TheOpsMgr" target="_blank" rel="noopener nor
 &lt;p>For my mobile app my YAML files consist of downloading nuget packages, building the solution, building specific projects with desired settings, running powershell or other scripts to set things up and finally publishing the results of the build as artifacts so that they can be used in any releases.&lt;/p>
 &lt;h2 id="secure-it">Secure It!&lt;a class="anchor ms-1" href="#secure-it">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
 &lt;p>Avoid committing passwords and secure keys into source control. I have found you can upload secure files via Azure DevOps and then add a download secure files step at the start of your build. This allows the secure file to be used during the build but the contents of the file can’t be viewed by anyone with access to the source code.&lt;/p>
-&lt;p>I find it often takes a bit of thinking about how to achieve this, but it is usually possible to keep keys and secrets secure.&lt;/p></description></item><item><title>SQL with Visual Studio Code</title><link>https://www.funkysi1701.com/posts/2017/sql-with-visual-studio-code/</link><pubDate>Mon, 06 Nov 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/sql-with-visual-studio-code/</guid><description>&lt;p>Writing SQL queries is typically done with SQL Management Studio (SSMS). However this tool is a bit of a beast so let’s look at how you could use Visual Studio Code instead.&lt;/p>
+&lt;p>I find it often takes a bit of thinking about how to achieve this, but it is usually possible to keep keys and secrets secure.&lt;/p></description></item><item><title>Looking back at 2018</title><link>https://www.funkysi1701.com/posts/2018/looking-back-at-2018/</link><pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/looking-back-at-2018/</guid><description>&lt;p>As 2018 starts to draw to a close let’s look at some of the highlights from the past year.&lt;/p>
+&lt;ol>
+&lt;li>New Home - I started 2018 with the goal of buying my own home and I managed it. At the end of October I actually moved in but it was months of looking at houses, speaking to estate agents, saving, packing and unpacking. There is more I want to do to my home in 2019 so this is only really the beginning.&lt;/li>
+&lt;li>New Job - Another goal was to kick my career up a notch and this happened in June. It has been great working as part of a large team and I have learnt loads, there is much more I want to learn and contribute to so 2019 should be great on that front.&lt;/li>
+&lt;li>New Car - Not a goal that I achieved as unfortunately in October I was involved in a car accident, no one was seriously hurt but this was a horrible experience to go through. My car was written off which gave me an excuse to buy a new car.&lt;/li>
+&lt;li>See more of family was a goal, I am not sure if I really achieved this. However family have been around loads for us during our move and we do live closer so hopefully I can work on this some more.&lt;/li>
+&lt;li>Celebrate 5 years of marriage. It hasn&amp;rsquo;t been an easy year for me and the wife due to moving house and all the stress that involved plus with two children she was diagnosed with Postnatal Depression which as a family we are still dealing with. All that said we had a fab weekend away and we so need to do something similar again soon.&lt;/li>
+&lt;li>Family. 2018 has included many great times with my two boys. It&amp;rsquo;s been amazing seeing them grow, in September we had a thanksgiving service for them and in July we had our annual holiday.&lt;/li>
+&lt;li>Lightning Talk. This is the only thing I mentioned as a goal that didn&amp;rsquo;t happen, it&amp;rsquo;s on my 2019 list so hopefully I can kick myself into action but with everything else I achieved something had to slip.   &lt;/li>
+&lt;/ol></description></item><item><title>Running SQL Server on a Linux Container using Docker for Windows</title><link>https://www.funkysi1701.com/posts/2018/running-sql-server-on-a-linux-container-using-docker-for-windows/</link><pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/running-sql-server-on-a-linux-container-using-docker-for-windows/</guid><description>&lt;p>Recently I have been investigating what all the fuss is about Docker and it has been well worth my time as Docker is pretty awesome for automating stuff.&lt;/p>
+&lt;p>My development environment has typically required installing SQL Server. SQL is a bit of a beast with lots of options and takes time to setup how you want.&lt;/p>
+&lt;p>However since Microsoft have now created a version of SQL Server that runs on Linux you can run SQL Server in a Linux container with only a few commands.&lt;/p>
+&lt;p>I am going to assume you already have Docker for windows installed on your development machine. If not head over to &lt;a href="https://docs.docker.com/docker-for-windows/install/#where-to-go-next" target="_blank" rel="noopener noreferrer">Docker&lt;/a>
+and find out how.&lt;/p>
+&lt;p>The Microsoft guide to setting up SQL Server in a Linux container can be found &lt;a href="https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-2017" target="_blank" rel="noopener noreferrer">here&lt;/a>
+.&lt;/p>
+&lt;p>First you need to download the image. In a powershell window run:&lt;/p>
+&lt;pre tabindex="0">&lt;code>docker pull mcr.microsoft.com/mssql/server:2017-latest
+&lt;/code>&lt;/pre>&lt;p>This downloads the latest sql server image.&lt;/p>
+&lt;p>To run this image run the following:&lt;/p>
+&lt;pre tabindex="0">&lt;code>docker run -e &amp;#34;ACCEPT_EULA=Y&amp;#34; -e &amp;#34;SA_PASSWORD=password&amp;#34;
+-p 1433:1433 --name sql
+-d mcr.microsoft.com/mssql/server:2017-latest
+&lt;/code>&lt;/pre>&lt;p>To run a SQL Server image you are required to accept the terms and conditions and set a default sa password. These are added as environment variables with the -e flag.&lt;/p>
+&lt;p>You also need to set the ports that your container will run on (1433 is the default SQL port) and give your container a name, in this case &amp;ldquo;sql&amp;rdquo;.&lt;/p>
+&lt;p>If you have already installed SQL Server you will not be able to run the container on the same port as your local install. To solve this you can select a different port.&lt;/p>
+&lt;pre tabindex="0">&lt;code>docker run -e &amp;#34;ACCEPT_EULA=Y&amp;#34; -e &amp;#34;SA_PASSWORD=password&amp;#34;
+-p 1434:1433 --name sql
+-d mcr.microsoft.com/mssql/server:2017-latest
+&lt;/code>&lt;/pre>&lt;p>-p 1434:1433 maps the 1433 port on the container to port 1434 of your local environment.&lt;/p>
+&lt;p>Once you have run this command you can connect SQL Server Management Studio (SSMS) to (local) or (local),1434 if you are using a different port using the credentials you provided and execute any SQL you like.&lt;/p>
+&lt;p>If your development environment requires windows authentication this of course is not for you, if it doesn’t you are good to go.&lt;/p>
+&lt;p>The development environment I have been using has various powershell scripts for setting things up. These assume windows auth. However I have adapted them to take custom credentials.&lt;/p>
+&lt;pre tabindex="0">&lt;code>$credential = Get-Credential $server.ConnectionContext.LoginSecure=$false
+$server.ConnectionContext.set_Login($credential.UserName)
+$server.ConnectionContext.set_SecurePassword($credential.Password)
+&lt;/code>&lt;/pre>&lt;p>The Get-Credential command creates a dialog where you can enter SQL credentials, this is then stored in a variable and used in the rest of the script.&lt;/p>
+&lt;p>&lt;strong>How do I restore a backup file to my container?&lt;/strong>&lt;/p>
+&lt;p>Run:&lt;/p>
+&lt;pre tabindex="0">&lt;code>docker exec -it sql mkdir /var/opt/mssql/backup
+docker cp database.bak sql:/var/opt/mssql/backup
+&lt;/code>&lt;/pre>&lt;p>This creates a backup folder and copies a backup file from your local environment to the container. You can then use management studio to restore the backup file (or you could write a sql script to do it). One thing to note when restoring databases, make sure the files are restored to Linux locations not windows locations.&lt;/p>
+&lt;p>The only issues I have encountered so far are the lack of support for SSIS packages and no windows auth. There are sql server windows images available which I haven’t tried yet which may work better with some of these options.&lt;/p></description></item><item><title>2018 The Story So far</title><link>https://www.funkysi1701.com/posts/2018/2018-the-story-so-far/</link><pubDate>Sat, 28 Jul 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/2018-the-story-so-far/</guid><description>&lt;p>Remember me? I used to write blog posts but somehow life got in the way. So much has happened this year, lets have a look at my &lt;a href="https://www.funkysi1701.com/2018/lets-see-what-2018-can-do">goals&lt;/a>
+for 2018 and see how far we have got with them.&lt;/p>
+&lt;h3 id="buy-a-house">Buy a house&lt;a class="anchor ms-1" href="#buy-a-house">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>My first goal for 2018 was to buy a house. Well so much progress has been made with this goal.&lt;/p>
+&lt;p>We looked at a few houses, and have made an offer, had it accepted and are waiting for the last few things to get arranged before we start arranging to move in.&lt;/p>
+&lt;p>The location we decided upon was &lt;a href="https://www.google.co.uk/maps/place/Thorne,&amp;#43;Doncaster/" target="_blank" rel="noopener noreferrer">Thorne&lt;/a>
+. This is about an hour from York where most of our friends are and my wife has lived all her life, and also an hour from where my family live. I have tried my best to balance location and size of property and we think our new home is going to be a good balance but only time will tell.&lt;/p>
+&lt;p>I have a bit of a mammoth time ahead of me getting everything we own packed up and moved to our new home so wish me luck, but we will get there it is just going to be hard work.&lt;/p>
+&lt;h3 id="new-job">New Job&lt;a class="anchor ms-1" href="#new-job">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>In June 2018 I started a new job. This was slightly later than I had hoped but I believe it has been worth the wait.&lt;/p>
+&lt;p>My new job has lots of perks. Finish early on a Friday (1pm), On site canteen, Cool air-conditioned office, Flexible working hours, Part of a big development team.&lt;/p>
+&lt;p>The main benefit is that I am part of a big development team. I have a huge list of things to learn both in terms of technology and how large development teams function. The team is about to finish the first sprint that I have contributed to. My contributions have been very small. A bug fix here, a tweak of an API there. But the important thing is that I am making a contribution and learning along the way.&lt;/p>
+&lt;p>I have also started asking questions about deployment and how this could be automated. Something that interests me, especially with the sysadmin and devops background. I have been tasked with learning &lt;a href="https://docs.docker.com/" target="_blank" rel="noopener noreferrer">docker&lt;/a>
+, so expect some blog posts on this topic in the near future.&lt;/p>
+&lt;h3 id="see-more-of-family">See more of family&lt;a class="anchor ms-1" href="#see-more-of-family">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>This one I am going to count as a miss. I have seen family a few times this year, but my efforts have been more on the first two items in this list. Hopefully this will change as things settle down.&lt;/p>
+&lt;h3 id="celebrate-5-years-of-marriage">Celebrate 5 years of Marriage&lt;a class="anchor ms-1" href="#celebrate-5-years-of-marriage">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>Me and the wife had a great weekend away to celebrate our wedding anniversary.&lt;/p>
+&lt;h3 id="celebrate-my-two-children">Celebrate my two children&lt;a class="anchor ms-1" href="#celebrate-my-two-children">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>Not happened yet but it is booked and we just need to arrange a few more details.&lt;/p>
+&lt;h3 id="lightning-talk">Lightning Talk&lt;a class="anchor ms-1" href="#lightning-talk">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>I have made no effort to do a talk and this is going to be a goal for 2019 I think. Most of the reason is concentrating on the other areas above, but also because I am not a natural speaker and I don’t like stepping out of my comfort zone. But I will do it, I just need to wait for other things to calm down a bit first.&lt;/p>
+&lt;h3 id="family-holiday">Family Holiday&lt;a class="anchor ms-1" href="#family-holiday">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>We had a great week away at the start of July. The weather was really great (and still is) and we had lots of time doing things as a family.&lt;/p></description></item><item><title>Casting and Converting between types</title><link>https://www.funkysi1701.com/posts/2018/casting-and-converting-between-types/</link><pubDate>Mon, 07 May 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/casting-and-converting-between-types/</guid><description>&lt;p>Recently I was asked how to convert a number to a string. Let&amp;rsquo;s look at a few ways of approaching this problem.&lt;/p>
+&lt;p>Most objects in c# have a method called ToString() which displays the string representation of that object. This is because of inheritance, all objects inherit from System.Object which defines ToString().&lt;/p>
+&lt;p>Int32 is a struct so it inherits from System.ValueType which also inherits from System.Object&lt;/p>
+&lt;p>so in code&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> a = &lt;span style="color:#ae81ff">9&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">string&lt;/span> b = a.ToString();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now let&amp;rsquo;s look at the reverse. However the reverse runs the risk of throwing an error, let&amp;rsquo;s look at why.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">string&lt;/span> b = &lt;span style="color:#e6db74">&amp;#34;9&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">string&lt;/span> c = &lt;span style="color:#e6db74">&amp;#34;a&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">string&lt;/span> d = &lt;span style="color:#e6db74">&amp;#34;two&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>All are valid strings but only one can be converted to a number. Use the TryParse method to convert to a number.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span>.TryParse(&lt;span style="color:#e6db74">&amp;#34;9&amp;#34;&lt;/span>, &lt;span style="color:#66d9ef">out&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> e);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>TryParse will not throw an exception if the conversion fails, if it succeeds variable e will contain the result. Note an earlier version of c# required you to define the out parameter before using it with TryParse.&lt;/p>
+&lt;p>int.Parse exists to do the same thing however it will throw exceptions if a conversion is not possible. The same is true if you use Convert.ToInt32(&amp;ldquo;two&amp;rdquo;);&lt;/p>
+&lt;h2 id="casting">Casting&lt;a class="anchor ms-1" href="#casting">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>Casting is a way to explicitly telling the compiler that a type is actually another type and you are aware data loss will occur.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">double&lt;/span> x = &lt;span style="color:#ae81ff">4.5&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">int&lt;/span> y = (&lt;span style="color:#66d9ef">int&lt;/span>)x;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>However it is not possible to cast a string to a number format as a string can contain any character not just number characters.&lt;/p></description></item><item><title>Let’s Encrypt is awesome</title><link>https://www.funkysi1701.com/posts/2018/lets-encrypt-is-awesome/</link><pubDate>Mon, 30 Apr 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/lets-encrypt-is-awesome/</guid><description>&lt;p>Let’s Encrypt is a free way to get a SSL certificate onto your website and until recently I had never tried it. It is very easy and I think it is awesome.&lt;/p>
+&lt;p>IIS is the web server software the Microsoft include with Windows 10 and Windows Server. I have it installed on my laptop and it displays the default IIS page.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/04/iis.jpg?resize=768%2C464&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>It is not really a good idea to host websites on your laptop, use a dedicated web server, or host with a hosting company, however the techniques are the same and it gives me something to write about!&lt;/p>
+&lt;p>In order to point a domain name at what IIS on my machine was serving up I did the following:&lt;/p>
+&lt;ul>
+&lt;li>Do a google search for “whats my IP”, this will return your public IP. Most residential ISPs use dynamic IPs so it may change over time, (which is another reason not to host a website on your laptop!)&lt;/li>
+&lt;li>Add an A record on a domain with the IP address you have just got&lt;/li>
+&lt;li>Your public IP most likely points at your router not your laptop so enable port forwarding of port 80 and port 443 to the internal IP of your laptop (something like 192.168.0.11 etc)&lt;/li>
+&lt;/ul>
+&lt;p>Now comes the fun Let’s Encrypt stuff!&lt;/p>
+&lt;p>First you need a Let’s Encrypt client, there are a lot of them out there mostly for linux flavours, however a bit of googling found a windows one. Go to &lt;a href="https://github.com/PKISharp/win-acme/releases" target="_blank" rel="noopener noreferrer">https://github.com/PKISharp/win-acme/releases&lt;/a>
+and download the zip file and unzip it.&lt;/p>
+&lt;p>Run the executable from the zip file and follow the onscreen prompts.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/04/letsencrypt.jpg?resize=768%2C480&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>Press N to create a new certificate.&lt;/p>
+&lt;p>Then press 1 to bind to single website found in your IIS setup&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/04/letsencrypt2.jpg?resize=768%2C686&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>And now magically Let’s Encrypt knows what you have setup in IIS.&lt;/p>
+&lt;p>Now all you need to do is enter an email address incase a renewal fails and agree to the let’s encrypt terms and you are all setup.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/04/letsencrypt3.jpg?resize=768%2C920&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>How awesome and easy is that for getting your websites working with a SSL certificate. If you have IIS configured on a server, give it a try and you can SSL all your things.&lt;/p></description></item><item><title>DNS for Developers</title><link>https://www.funkysi1701.com/posts/2018/dns-for-developers/</link><pubDate>Mon, 09 Apr 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/dns-for-developers/</guid><description>&lt;p>DNS is the backbone of the internet and as such I believe every developer should know something about the basics and not just leave it for the sysadmin to sort.&lt;/p>
+&lt;h3 id="what-is-dns">What is DNS?&lt;a class="anchor ms-1" href="#what-is-dns">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>DNS or Domain Name System is what translates Domain names to IP addresses and vice versa.&lt;/p>
+&lt;h3 id="wait-what-is-an-ip-address-and-what-are-domain-names">Wait what is an IP address and what are domain names?&lt;a class="anchor ms-1" href="#wait-what-is-an-ip-address-and-what-are-domain-names">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>You do realise this is a developer blog? An IP address is a unique address on the internet and a domain name is a user friendly label for one or more of these.&lt;/p>
+&lt;p>An example might be google.com which for me resolves to 216.58.204.14&lt;/p>
+&lt;h3 id="how-it-works">How it works&lt;a class="anchor ms-1" href="#how-it-works">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/04/dns-rev-1.gif?resize=360%2C320&amp;amp;ssl=1" loading="lazy"
+/>
+When your browser makes a request to google.com it makes a request to your ISPs DNS Servers. This resolves google.com to 216.58.204.14&lt;/p>
+&lt;p>In more detail your ISPs DNS server will forward the DNS query to another DNS server and will cache the results for a set amount of time. This is the TTL or Time To Live. Next time the ISP DNS Server will be able to reply directly without needing to forward requests.&lt;/p>
+&lt;p>This forwarding and caching is what makes making a DNS change not instantaneous. The TTL needs to be reached so that no results are still being fetched from the cache of DNS servers across the globe.&lt;/p>
+&lt;h3 id="dns-records">DNS Records&lt;a class="anchor ms-1" href="#dns-records">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>Now we know roughly how DNS works let’s look at the most common type of records&lt;/p>
+&lt;h4 id="a">A&lt;a class="anchor ms-1" href="#a">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h4>
+&lt;p>A (Host) records are the most simple records which translate domain names to IPs&lt;/p>
+&lt;p>eg &lt;a href="https://www.google.com" target="_blank" rel="noopener noreferrer">www.google.com&lt;/a>
+to 216.58.204.14&lt;/p>
+&lt;h4 id="cname">CNAME&lt;a class="anchor ms-1" href="#cname">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h4>
+&lt;p>A CNAME (Canonical Name) record is different to an A record in that it maps a domain name to another domain name when no A record exists.&lt;/p>
+&lt;p>eg &lt;a href="https://www.google.com" target="_blank" rel="noopener noreferrer">www.google.com&lt;/a>
+to somethingelse.google.com&lt;/p>
+&lt;p>Typically Azure makes use of CNAMEs for many of its services especially adding a custom domain name&lt;/p>
+&lt;h4 id="mx">MX&lt;a class="anchor ms-1" href="#mx">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h4>
+&lt;p>MX stands for Mail Exchange and is used for configuring email&lt;/p>
+&lt;h4 id="name-server">Name Server&lt;a class="anchor ms-1" href="#name-server">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h4>
+&lt;p>Every domain has a number of Name Servers which tells you what servers control the DNS settings for that domain. If you change your Name Servers then the new Name servers will be where you can change your DNS settings.&lt;/p>
+&lt;p>If you want to use a service like &lt;a href="https://dnsimple.com/" target="_blank" rel="noopener noreferrer">DNSimple&lt;/a>
+instead of &lt;a href="https://www.123-reg.co.uk/" target="_blank" rel="noopener noreferrer">123reg&lt;/a>
+or where ever you registered your domain then all you need to do is change your Name servers.&lt;/p>
+&lt;h4 id="aaaa">AAAA&lt;a class="anchor ms-1" href="#aaaa">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h4>
+&lt;p>Like A record but for ipv6&lt;/p>
+&lt;h3 id="what-next">What next?&lt;a class="anchor ms-1" href="#what-next">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>Want to put some different DNS records into practise? Buy a domain name and publish some content to it. Check out my previous post about &lt;a href="https://www.funkysi1701.com/creating-dns-records-programmatically">programmatically adding records&lt;/a>
+. Want an SSL certificate? Get a wildcard one and then you can apply it to any subdomain you add to your domain.&lt;/p>
+&lt;p>If you have a new website you want to publish consider which of the following is better:&lt;/p>
+&lt;p>&lt;a href="https://www.example.com/newsite" target="_blank" rel="noopener noreferrer">https://www.example.com/newsite&lt;/a>
+&lt;/p>
+&lt;p>&lt;a href="https://newsite.example.com" target="_blank" rel="noopener noreferrer">https://newsite.example.com&lt;/a>
+&lt;/p>
+&lt;p>I much prefer the second option, it looks cleaner, there is no potential conflict with the parent site, no subfolder issues between production and development.&lt;/p></description></item><item><title>Code Reviews</title><link>https://www.funkysi1701.com/posts/2018/codereviews/</link><pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/codereviews/</guid><description>&lt;p>Reviewing code is a great habit to get into. Code reviews help share knowledge between your team members and help catch bugs before they get into production. But how do you get into the habit of reviewing and avoid the we don’t have time to do this mentality?&lt;/p>
+&lt;p>Visual Studio Team Services (VSTS) has some great options that can help make code reviews second nature.&lt;/p>
+&lt;h4 id="pull-requests">Pull Requests&lt;a class="anchor ms-1" href="#pull-requests">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h4>
+&lt;p>A lot of source control systems have the concept of pull requests. This is where you request others to review your code usually in a branch and if they approve it, merge it into a main branch.&lt;/p>
+&lt;p>To create a pull request in VSTS go to the Code section and select Pull Requests. Often VSTS will make a suggestion of what branch to make a pull request for, if you don’t see this just click the New Pull request button.&lt;/p>
+&lt;p>Select a branch you want to merge from and a branch that should be merged into (usually you merge into master from a feature branch). Give your pull request a title and description and select who should review your code, this can either be an individual or a group of people. You can also review all the changes that will be reviewed so you can make any last minute changes before it is reviewed.&lt;/p>
+&lt;p>Now if you are anything like me you want your code merged in as soon as you have created your pull request and there is nothing stopping you reviewing your own code and clicking approve and merge on your own pull request. However &lt;a href="https://docs.microsoft.com/en-us/vsts/git/branch-policies?view=vsts" target="_blank" rel="noopener noreferrer">branch policies&lt;/a>
+is a way around this problem.&lt;/p>
+&lt;h4 id="branch-policies">Branch Policies&lt;a class="anchor ms-1" href="#branch-policies">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h4>
+&lt;p>&lt;img class="img-fluid" alt="Branch Policy" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/04/save-policy-changes.png?resize=599%2C901&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>Branch policies allow you to specify how your code gets merged in.&lt;/p>
+&lt;p>Go to the list of branches in VSTS and select branch policy and you will see a whole host of options to customise the merge process. If you do this on the master branch you will not be able to commit any changes to master without it going through a pull request.&lt;/p>
+&lt;p>The first option enables you to select how many reviewers are needed on your code. If no one else works on your project best not setting this, but for everyone else setting at least one person to review your code is a great practice.&lt;/p>
+&lt;p>Next you can ensure that your pull request is linked to a work item, this helps keep ensure you are actually fixing issues and not just making change for the sake of it.&lt;/p>
+&lt;p>Check for comment resolution is a good setting to enable. This ensures that if your reviewer has commented about you needing to change this line here, it ensures that you do.&lt;/p>
+&lt;p>Enforce merge strategy allows you to choose between fast forward merge or squash merge.&lt;/p>
+&lt;p>Build validation enables the code to be built using a build definition you have configured. This is a great way to check code builds or tests pass before it gets merged in.&lt;/p>
+&lt;p>The last two options allow you to specify code reviewers and third party external services.&lt;/p></description></item><item><title>SQL with Visual Studio Code</title><link>https://www.funkysi1701.com/posts/2017/sql-with-visual-studio-code/</link><pubDate>Mon, 06 Nov 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/sql-with-visual-studio-code/</guid><description>&lt;p>Writing SQL queries is typically done with SQL Management Studio (SSMS). However this tool is a bit of a beast so let’s look at how you could use Visual Studio Code instead.&lt;/p>
 &lt;p>Visual Studio Code is a free text editor but it is so much more than just a text editor. VS Code can be downloaded from &lt;a href="https://code.visualstudio.com/Download" target="_blank" rel="noopener noreferrer">https://code.visualstudio.com/Download&lt;/a>
 &lt;/p>
 &lt;p>To work with SQL Server download the mssql extension. Press &lt;strong>CTRL+SHIFT+P&lt;/strong> and then Select &lt;strong>Install Extension&lt;/strong> and type &lt;strong>mssql&lt;/strong>.&lt;/p>

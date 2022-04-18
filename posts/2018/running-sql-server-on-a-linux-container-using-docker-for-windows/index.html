@@ -1,4 +1,4 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Running SQL Server on a Linux Container using Docker for Windows - Funky Si's Blog</title><link rel=apple-touch-icon href=https://www.funkysi1701.com/images/icons/icon-180x180.png sizes=180x180><link rel=icon href=https://www.funkysi1701.com/images/icons/icon-32x32.png sizes=32x32 type=image/png><link rel=icon href=https://www.funkysi1701.com/images/icons/icon-16x16.png sizes=16x16 type=image/png><link rel=icon href=https://www.funkysi1701.com/images/icons/favicon.png><meta name=keywords content=","><meta name=description content="Running SQL Server on a Linux Container using Docker for Windows"><meta itemprop=name content="Running SQL Server on a Linux Container using Docker for Windows"><meta itemprop=description content="Running SQL Server on a Linux Container using Docker for Windows"><meta itemprop=datePublished content="2018-11-05T00:00:00+00:00"><meta itemprop=dateModified content="2018-11-05T00:00:00+00:00"><meta itemprop=wordCount content="528"><meta itemprop=image content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg"><meta itemprop=keywords content="Windows,Development,Docker,SQL,Linux,"><meta property="og:title" content="Running SQL Server on a Linux Container using Docker for Windows"><meta property="og:description" content="Running SQL Server on a Linux Container using Docker for Windows"><meta property="og:type" content="article"><meta property="og:url" content="https://www.funkysi1701.com/posts/2018/running-sql-server-on-a-linux-container-using-docker-for-windows/"><meta property="og:image" content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg"><meta property="article:section" content="posts"><meta property="article:published_time" content="2018-11-05T00:00:00+00:00"><meta property="article:modified_time" content="2018-11-05T00:00:00+00:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg"><meta name=twitter:title content="Running SQL Server on a Linux Container using Docker for Windows"><meta name=twitter:description content="Running SQL Server on a Linux Container using Docker for Windows"><meta name=twitter:site content="@funkysi1701"><link rel=stylesheet href=https://www.funkysi1701.com/css/main.min.b6cdf8228fc5b3487ec7e150c08afb57711fb35f05a5e2fce896257310ab80cc.css crossorigin=anonymous><link rel=stylesheet href=https://www.funkysi1701.com/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css integrity="sha256-PSKHlLztu/oEEr64+8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin=anonymous></head><body><script>const items=["mode","palette"];items.forEach(function(e){const t=localStorage.getItem("hbs-"+e);t&&document.body.parentElement.setAttribute("data-"+e,t)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top"><div class=container><button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Running SQL Server on a Linux Container using Docker for Windows - Funky Si's Blog</title><link rel=apple-touch-icon href=https://www.funkysi1701.com/images/icons/icon-180x180.png sizes=180x180><link rel=icon href=https://www.funkysi1701.com/images/icons/icon-32x32.png sizes=32x32 type=image/png><link rel=icon href=https://www.funkysi1701.com/images/icons/icon-16x16.png sizes=16x16 type=image/png><link rel=icon href=https://www.funkysi1701.com/images/icons/favicon.png><meta name=keywords content=","><meta name=description content="Running SQL Server on a Linux Container using Docker for Windows"><meta itemprop=name content="Running SQL Server on a Linux Container using Docker for Windows"><meta itemprop=description content="Running SQL Server on a Linux Container using Docker for Windows"><meta itemprop=datePublished content="2018-11-05T00:00:00+00:00"><meta itemprop=dateModified content="2018-11-05T00:00:00+00:00"><meta itemprop=wordCount content="528"><meta itemprop=image content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg"><meta itemprop=keywords content="Windows,Programming,Docker,SQL,Linux,"><meta property="og:title" content="Running SQL Server on a Linux Container using Docker for Windows"><meta property="og:description" content="Running SQL Server on a Linux Container using Docker for Windows"><meta property="og:type" content="article"><meta property="og:url" content="https://www.funkysi1701.com/posts/2018/running-sql-server-on-a-linux-container-using-docker-for-windows/"><meta property="og:image" content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg"><meta property="article:section" content="posts"><meta property="article:published_time" content="2018-11-05T00:00:00+00:00"><meta property="article:modified_time" content="2018-11-05T00:00:00+00:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/09/1922276.jpg"><meta name=twitter:title content="Running SQL Server on a Linux Container using Docker for Windows"><meta name=twitter:description content="Running SQL Server on a Linux Container using Docker for Windows"><meta name=twitter:site content="@funkysi1701"><link rel=stylesheet href=https://www.funkysi1701.com/css/main.min.b6cdf8228fc5b3487ec7e150c08afb57711fb35f05a5e2fce896257310ab80cc.css crossorigin=anonymous><link rel=stylesheet href=https://www.funkysi1701.com/css/viewer.min.3d228794bcedbbfa0412beb8fbc1ec6973202945e42af7004f742a4d7bd620ab.css integrity="sha256-PSKHlLztu/oEEr64+8HsaXMgKUXkKvcAT3QqTXvWIKs=" crossorigin=anonymous></head><body><script>const items=["mode","palette"];items.forEach(function(e){const t=localStorage.getItem("hbs-"+e);t&&document.body.parentElement.setAttribute("data-"+e,t)})</script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top"><div class=container><button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
 <i class="fas fa-bars"></i>
 </button><a class="navbar-brand flex-grow-1 flex-lg-grow-0 text-center text-lg-start mx-auto me-lg-3" href=https://www.funkysi1701.com/>Funky Si's Blog</a><div class="offcanvas offcanvas-bottom surface" tabindex=-1 id=offcanvasSocialShare aria-labelledby=offcanvasSocialShare><div class=offcanvas-header><h3 class=offcanvas-title>Share</h3><button type=button class="btn btn-sm btn-outline-primary" data-bs-dismiss=offcanvas aria-label=Close>
 <i class="fas fa-times"></i></button></div><div class=offcanvas-body><a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button" target=_blank href="https://twitter.com/intent/tweet?title=Running%20SQL%20Server%20on%20a%20Linux%20Container%20using%20Docker%20for%20Windows&url=https%3a%2f%2fwww.funkysi1701.com%2fposts%2f2018%2frunning-sql-server-on-a-linux-container-using-docker-for-windows%2f"><i class="fab fa-fw fa-twitter"></i> Twitter</a>
@@ -23,7 +23,7 @@
 <a id=sidebarToggler class="action d-none d-lg-block" role=button title="Sidebar toggler"><i class="fas fa-fw fa-expand-alt" data-fa-transform=rotate-45></i></a>
 <a class=action href=#post-comments role=button aria-label=Comments title=Comments><i class="fas fa-fw fa-comments"></i></a></div></div><article class="row card component mb-4 post"><div class=card-header><h1 class="card-title post-title">Running SQL Server on a Linux Container using Docker for Windows</h1></div><div class=card-body><div class=post-meta><span class=post-date title="created on 2018-11-05 00:00:00 +0000 UTC.">Nov 5, 2018
 </span><span class=post-reading-time>3 min read
-</span><span class=post-taxonomies><a href=https://www.funkysi1701.com/2018/11/ class="badge post-taxonomy">2018-11</a><a href=https://www.funkysi1701.com/tags/windows/ class="badge post-taxonomy">Windows</a><a href=https://www.funkysi1701.com/tags/development/ class="badge post-taxonomy">Development</a><a href=https://www.funkysi1701.com/tags/docker/ class="badge post-taxonomy">Docker</a><a href=https://www.funkysi1701.com/tags/sql/ class="badge post-taxonomy">SQL</a><a href=https://www.funkysi1701.com/tags/linux/ class="badge post-taxonomy">Linux</a><a href=https://www.funkysi1701.com/2018/ class="badge post-taxonomy">2018</a></span></div><div class="post-content mb-3"><p>Recently I have been investigating what all the fuss is about Docker and it has been well worth my time as Docker is pretty awesome for automating stuff.</p><p>My development environment has typically required installing SQL Server. SQL is a bit of a beast with lots of options and takes time to setup how you want.</p><p>However since Microsoft have now created a version of SQL Server that runs on Linux you can run SQL Server in a Linux container with only a few commands.</p><p>I am going to assume you already have Docker for windows installed on your development machine. If not head over to <a href=https://docs.docker.com/docker-for-windows/install/#where-to-go-next target=_blank rel="noopener noreferrer">Docker</a>
+</span><span class=post-taxonomies><a href=https://www.funkysi1701.com/2018/11/ class="badge post-taxonomy">2018-11</a><a href=https://www.funkysi1701.com/tags/windows/ class="badge post-taxonomy">Windows</a><a href=https://www.funkysi1701.com/tags/programming/ class="badge post-taxonomy">Programming</a><a href=https://www.funkysi1701.com/tags/docker/ class="badge post-taxonomy">Docker</a><a href=https://www.funkysi1701.com/tags/sql/ class="badge post-taxonomy">SQL</a><a href=https://www.funkysi1701.com/tags/linux/ class="badge post-taxonomy">Linux</a><a href=https://www.funkysi1701.com/2018/ class="badge post-taxonomy">2018</a></span></div><div class="post-content mb-3"><p>Recently I have been investigating what all the fuss is about Docker and it has been well worth my time as Docker is pretty awesome for automating stuff.</p><p>My development environment has typically required installing SQL Server. SQL is a bit of a beast with lots of options and takes time to setup how you want.</p><p>However since Microsoft have now created a version of SQL Server that runs on Linux you can run SQL Server in a Linux container with only a few commands.</p><p>I am going to assume you already have Docker for windows installed on your development machine. If not head over to <a href=https://docs.docker.com/docker-for-windows/install/#where-to-go-next target=_blank rel="noopener noreferrer">Docker</a>
 and find out how.</p><p>The Microsoft guide to setting up SQL Server in a Linux container can be found <a href="https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-2017" target=_blank rel="noopener noreferrer">here</a>
 .</p><p>First you need to download the image. In a powershell window run:</p><pre tabindex=0><code>docker pull mcr.microsoft.com/mssql/server:2017-latest
 </code></pre><p>This downloads the latest sql server image.</p><p>To run this image run the following:</p><pre tabindex=0><code>docker run -e &#34;ACCEPT_EULA=Y&#34; -e &#34;SA_PASSWORD=password&#34;
@@ -39,22 +39,22 @@ $server.ConnectionContext.set_SecurePassword($credential.Password)
 docker cp database.bak sql:/var/opt/mssql/backup
 </code></pre><p>This creates a backup folder and copies a backup file from your local environment to the container. You can then use management studio to restore the backup file (or you could write a sql script to do it). One thing to note when restoring databases, make sure the files are restored to Linux locations not windows locations.</p><p>The only issues I have encountered so far are the lack of support for SSIS packages and no windows auth. There are sql server windows images available which I haven’t tried yet which may work better with some of these options.</p></div></div><div class=card-footer><div class="post-navs d-flex justify-content-evenly"><div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
 <a href=https://www.funkysi1701.com/posts/2018/2018-the-story-so-far/>2018 The Story So far</a></div><div class="post-nav post-next"><a href=https://www.funkysi1701.com/posts/2018/looking-back-at-2018/>Looking back at 2018</a>
-<i class="fas fa-fw fa-chevron-right"></i></div></div></div></article><section class="related-posts row card component"><div class=card-header><h2 class=card-title>Related Posts</h2></div><div class=card-body><ul class=post-list><li><a href=https://www.funkysi1701.com/posts/2018/2018-the-story-so-far/>2018 The Story So far</a>
-<span class="float-end post-date">Jul 28, 2018</span></li><li><a href=https://www.funkysi1701.com/posts/2018/casting-and-converting-between-types/>Casting and Converting between types</a>
-<span class="float-end post-date">May 7, 2018</span></li><li><a href=https://www.funkysi1701.com/posts/2018/lets-encrypt-is-awesome/>Let’s Encrypt is awesome</a>
-<span class="float-end post-date">Apr 30, 2018</span></li><li><a href=https://www.funkysi1701.com/posts/2018/dns-for-developers/>DNS for Developers</a>
-<span class="float-end post-date">Apr 9, 2018</span></li><li><a href=https://www.funkysi1701.com/posts/2018/codereviews/>Code Reviews</a>
-<span class="float-end post-date">Apr 2, 2018</span></li></ul></div></section><div class="card component row post-comments" id=post-comments><div class=card-header><h2 class=card-title>Comments</h2></div><div class=card-body><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//funkysi1701.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div></div><aside class="col-lg-4 sidebar d-flex"><div class="container d-flex flex-column"><section class="card row text-center profile component"><div class=card-body><div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="Simon Foster" src=https://www.funkysi1701.com/images/profile.webp loading=lazy width=357 height=357></div><div class="col-12 profile-meta"><div class=profile-name>Simon Foster</div><div class=profile-bio>More than just another developer</div><div class=profile-location><i class="fas fa-fw fa-map-marker-alt"></i>North Yorkshire</div><div class=profile-about><i class="fas fa-fw fa-user"></i><a target=_blank rel="noopener noreferrer" href=/about>About Me</a></div><nav class="social-links nav justify-content-center"><a class="nav-link social-link" href=mailto:simon@funkysi1701.com title=Email><i class="fas fa-fw fa-2x fa-envelope"></i>
+<i class="fas fa-fw fa-chevron-right"></i></div></div></div></article><section class="related-posts row card component"><div class=card-header><h2 class=card-title>Related Posts</h2></div><div class=card-body><ul class=post-list><li><a href=https://www.funkysi1701.com/posts/2017/sql-with-visual-studio-code/>SQL with Visual Studio Code</a>
+<span class="float-end post-date">Nov 6, 2017</span></li><li><a href=https://www.funkysi1701.com/posts/2015/sql-server-management-studio/>SQL Server Management Studio</a>
+<span class="float-end post-date">Dec 3, 2015</span></li><li><a href=https://www.funkysi1701.com/posts/2015/unmanaged-database-deployment/>Unmanaged Database Deployment</a>
+<span class="float-end post-date">Sep 10, 2015</span></li><li><a href=https://www.funkysi1701.com/posts/2015/things-to-know-before-working-on-your-databasethings-to-know-before-working-on-your-database/>Things to know before working on your database</a>
+<span class="float-end post-date">Jul 20, 2015</span></li><li><a href=https://www.funkysi1701.com/posts/2014/to-boldly-go-where-no-sql-has-gone-before-part-2/>To boldly go where no SQL has gone before Part 2</a>
+<span class="float-end post-date">Oct 21, 2014</span></li></ul></div></section><div class="card component row post-comments" id=post-comments><div class=card-header><h2 class=card-title>Comments</h2></div><div class=card-body><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//funkysi1701.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div></div><aside class="col-lg-4 sidebar d-flex"><div class="container d-flex flex-column"><section class="card row text-center profile component"><div class=card-body><div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="Simon Foster" src=https://www.funkysi1701.com/images/profile.webp loading=lazy width=357 height=357></div><div class="col-12 profile-meta"><div class=profile-name>Simon Foster</div><div class=profile-bio>More than just another developer</div><div class=profile-location><i class="fas fa-fw fa-map-marker-alt"></i>North Yorkshire</div><div class=profile-about><i class="fas fa-fw fa-user"></i><a target=_blank rel="noopener noreferrer" href=/about>About Me</a></div><nav class="social-links nav justify-content-center"><a class="nav-link social-link" href=mailto:simon@funkysi1701.com title=Email><i class="fas fa-fw fa-2x fa-envelope"></i>
 </a><a class="nav-link social-link" target=_blank href=https://facebook.com/funkysi1701 title=Facebook rel="noopener noreferrer"><i class="fa-fw fa-2x fab fa-facebook-f"></i>
 </a><a class="nav-link social-link" target=_blank href=https://github.com/funkysi1701 title=GitHub rel="noopener noreferrer"><i class="fa-fw fa-2x fab fa-github"></i>
 </a><a class="nav-link social-link" target=_blank href=https://linkedin.com/in/funkysi1701/ title=LinkedIn rel="noopener noreferrer"><i class="fa-fw fa-2x fab fa-linkedin-in"></i>
 </a><a class="nav-link social-link" target=_blank href=https://twitter.com/funkysi1701 title=Twitter rel="noopener noreferrer"><i class="fa-fw fa-2x fab fa-twitter"></i></a></nav></div></div></section><div class="row mb-4 card component"><div class=card-header><h2 class=card-title>Related Links</h2></div><div class=card-body><a href=https://dev.to/funkysi1701/running-sql-server-on-a-linux-container-using-docker-for-windows-24k3>View on DevTo</a><br><a href=https://github.com/funkysi1701/funkysi1701.github.io/blob/master/content/posts/2018/running-sql-server-on-a-linux-container-using-docker-for-windows.md>Edit this page on GitHub</a></div></div><section class="featured-posts row card component"><div class=card-header><h2 class=card-title>Featured Posts</h2></div><div class=card-body><ul class=post-list><li><a href=https://www.funkysi1701.com/posts/2021/lone-developer-to-senior-developer-my-2021-story/>Lone Developer to Senior Developer, my 2021 story</a></li></ul></div></section><section class="recent-posts row card component"><div class=card-header><h2 class=card-title>Recent Posts</h2></div><div class=card-body><ul class=post-list><li><a href=https://www.funkysi1701.com/posts/2022/temporal-trek-podcast/>Temporal Trek Podcast</a></li><li><a href=https://www.funkysi1701.com/posts/2022/aws-cloud-practitioner/>AWS Cloud Practitioner</a></li><li><a href=https://www.funkysi1701.com/posts/2022/updating-sqlserver-with-docker/>Updating SQL Server with Docker</a></li><li><a href=https://www.funkysi1701.com/posts/2022/dotnet-is-20-years-old/>dotnet is 20 years old</a></li><li><a href=https://www.funkysi1701.com/posts/2022/why-do-i-have-a-website/>Why do I have a website?</a></li></ul></div></section><section class="tags-taxonomies row card component"><div class=card-header><h2 class=card-title><a href=https://www.funkysi1701.com/tags>Tags</a></h2></div><div class=card-body><div class=py-2><div class="container tagcloud"><a href=/tags/100 class=tagcloud-item style=font-size:.7rem>100</a>
 <a href=/tags/act class=tagcloud-item style=font-size:.7rem>Act</a>
 <a href=/tags/amazon class=tagcloud-item style=font-size:.7rem>Amazon</a>
-<a href=/tags/android class=tagcloud-item style=font-size:1.2751806814444522rem>Android</a>
-<a href=/tags/api class=tagcloud-item style=font-size:1.0926218961026533rem>API</a>
-<a href=/tags/app class=tagcloud-item style=font-size:1.0926218961026533rem>App</a>
-<a href=/tags/applicationinsights class=tagcloud-item style=font-size:.9477168361548054rem>ApplicationInsights</a>
+<a href=/tags/android class=tagcloud-item style=font-size:1.2496335153922642rem>Android</a>
+<a href=/tags/api class=tagcloud-item style=font-size:1.0751832423038676rem>API</a>
+<a href=/tags/app class=tagcloud-item style=font-size:1.0751832423038676rem>App</a>
+<a href=/tags/applicationinsights class=tagcloud-item style=font-size:.9367142706109197rem>ApplicationInsights</a>
 <a href=/tags/architecture class=tagcloud-item style=font-size:.7rem>Architecture</a>
 <a href=/tags/arrange class=tagcloud-item style=font-size:.7rem>Arrange</a>
 <a href=/tags/assert class=tagcloud-item style=font-size:.7rem>Assert</a>
@@ -62,21 +62,21 @@ docker cp database.bak sql:/var/opt/mssql/backup
 <a href=/tags/asynchronous class=tagcloud-item style=font-size:.7rem>Asynchronous</a>
 <a href=/tags/automate class=tagcloud-item style=font-size:.7rem>Automate</a>
 <a href=/tags/await class=tagcloud-item style=font-size:.7rem>Await</a>
-<a href=/tags/aws class=tagcloud-item style=font-size:1.0926218961026533rem>AWS</a>
-<a href=/tags/azure class=tagcloud-item style=font-size:1.6908673446192215rem>Azure</a>
-<a href=/tags/azuredevops class=tagcloud-item style=font-size:.9477168361548054rem>AzureDevOps</a>
+<a href=/tags/aws class=tagcloud-item style=font-size:1.0751832423038676rem>AWS</a>
+<a href=/tags/azure class=tagcloud-item style=font-size:1.6468570824436788rem>Azure</a>
+<a href=/tags/azuredevops class=tagcloud-item style=font-size:.9367142706109197rem>AzureDevOps</a>
 <a href=/tags/baby class=tagcloud-item style=font-size:.7rem>Baby</a>
-<a href=/tags/backups class=tagcloud-item style=font-size:1.0926218961026533rem>Backups</a>
+<a href=/tags/backups class=tagcloud-item style=font-size:1.0751832423038676rem>Backups</a>
 <a href=/tags/baddesign class=tagcloud-item style=font-size:.7rem>BadDesign</a>
 <a href=/tags/basic class=tagcloud-item style=font-size:.7rem>BASIC</a>
 <a href=/tags/blazor class=tagcloud-item style=font-size:.7rem>Blazor</a>
 <a href=/tags/blog class=tagcloud-item style=font-size:.7rem>Blog</a>
-<a href=/tags/blogging class=tagcloud-item style=font-size:1.0926218961026533rem>Blogging</a>
+<a href=/tags/blogging class=tagcloud-item style=font-size:1.0751832423038676rem>Blogging</a>
 <a href=/tags/build class=tagcloud-item style=font-size:.7rem>Build</a>
-<a href=/tags/c-sharp class=tagcloud-item style=font-size:1.39542907925573rem>C-Sharp</a>
-<a href=/tags/career class=tagcloud-item style=font-size:.9477168361548054rem>Career</a>
+<a href=/tags/c-sharp class=tagcloud-item style=font-size:1.364540972720841rem>C-Sharp</a>
+<a href=/tags/career class=tagcloud-item style=font-size:.9367142706109197rem>Career</a>
 <a href=/tags/casting class=tagcloud-item style=font-size:.7rem>Casting</a>
-<a href=/tags/certification class=tagcloud-item style=font-size:.9477168361548054rem>Certification</a>
+<a href=/tags/certification class=tagcloud-item style=font-size:.9367142706109197rem>Certification</a>
 <a href=/tags/christmas class=tagcloud-item style=font-size:.7rem>Christmas</a>
 <a href=/tags/ci class=tagcloud-item style=font-size:.7rem>CI</a>
 <a href=/tags/code class=tagcloud-item style=font-size:.7rem>Code</a>
@@ -86,36 +86,36 @@ docker cp database.bak sql:/var/opt/mssql/backup
 <a href=/tags/cron class=tagcloud-item style=font-size:.7rem>Cron</a>
 <a href=/tags/cross-platform class=tagcloud-item style=font-size:.7rem>Cross Platform</a>
 <a href=/tags/dad class=tagcloud-item style=font-size:.7rem>Dad</a>
-<a href=/tags/database class=tagcloud-item style=font-size:1.1954336723096108rem>Database</a>
+<a href=/tags/database class=tagcloud-item style=font-size:1.1734285412218395rem>Database</a>
 <a href=/tags/deployment class=tagcloud-item style=font-size:.7rem>Deployment</a>
 <a href=/tags/design class=tagcloud-item style=font-size:.7rem>Design</a>
 <a href=/tags/desktop class=tagcloud-item style=font-size:.7rem>Desktop</a>
-<a href=/tags/development class=tagcloud-item style=font-size:1.4852437922053068rem>Development</a>
-<a href=/tags/devops class=tagcloud-item style=font-size:1.5228975175992576rem>DevOps</a>
+<a href=/tags/development class=tagcloud-item style=font-size:.9367142706109197rem>Development</a>
+<a href=/tags/devops class=tagcloud-item style=font-size:1.4863477860031842rem>DevOps</a>
 <a href=/tags/disaster-recovery class=tagcloud-item style=font-size:.7rem>Disaster Recovery</a>
-<a href=/tags/discovery class=tagcloud-item style=font-size:.9477168361548054rem>Discovery</a>
+<a href=/tags/discovery class=tagcloud-item style=font-size:.9367142706109197rem>Discovery</a>
 <a href=/tags/dns class=tagcloud-item style=font-size:.7rem>DNS</a>
-<a href=/tags/docker class=tagcloud-item style=font-size:1.0926218961026533rem>Docker</a>
+<a href=/tags/docker class=tagcloud-item style=font-size:1.0751832423038676rem>Docker</a>
 <a href=/tags/dojo class=tagcloud-item style=font-size:.7rem>Dojo</a>
-<a href=/tags/dotnet class=tagcloud-item style=font-size:1.2751806814444522rem>DotNet</a>
+<a href=/tags/dotnet class=tagcloud-item style=font-size:1.2496335153922642rem>DotNet</a>
 <a href=/tags/exchangerates class=tagcloud-item style=font-size:.7rem>ExchangeRates</a>
-<a href=/tags/family class=tagcloud-item style=font-size:1.0926218961026533rem>Family</a>
+<a href=/tags/family class=tagcloud-item style=font-size:1.0751832423038676rem>Family</a>
 <a href=/tags/fatherhood class=tagcloud-item style=font-size:.7rem>Fatherhood</a>
 <a href=/tags/festivetechcalendar2021 class=tagcloud-item style=font-size:.7rem>FestiveTechCalendar2021</a>
 <a href=/tags/fibre class=tagcloud-item style=font-size:.7rem>Fibre</a>
-<a href=/tags/freecodecamp class=tagcloud-item style=font-size:.9477168361548054rem>FreeCodeCamp</a>
-<a href=/tags/git class=tagcloud-item style=font-size:.9477168361548054rem>Git</a>
+<a href=/tags/freecodecamp class=tagcloud-item style=font-size:.9367142706109197rem>FreeCodeCamp</a>
+<a href=/tags/git class=tagcloud-item style=font-size:.9367142706109197rem>Git</a>
 <a href=/tags/github class=tagcloud-item style=font-size:.7rem>GitHub</a>
-<a href=/tags/goals class=tagcloud-item style=font-size:1.443150508464416rem>Goals</a>
+<a href=/tags/goals class=tagcloud-item style=font-size:1.4101428118327592rem>Goals</a>
 <a href=/tags/history class=tagcloud-item style=font-size:.7rem>History</a>
-<a href=/tags/home class=tagcloud-item style=font-size:.9477168361548054rem>Home</a>
+<a href=/tags/home class=tagcloud-item style=font-size:.9367142706109197rem>Home</a>
 <a href=/tags/house class=tagcloud-item style=font-size:.7rem>House</a>
-<a href=/tags/interface class=tagcloud-item style=font-size:.9477168361548054rem>Interface</a>
+<a href=/tags/interface class=tagcloud-item style=font-size:.9367142706109197rem>Interface</a>
 <a href=/tags/internet class=tagcloud-item style=font-size:.7rem>Internet</a>
 <a href=/tags/interview class=tagcloud-item style=font-size:.7rem>Interview</a>
-<a href=/tags/itadmin class=tagcloud-item style=font-size:1.5569594554627288rem>ITAdmin</a>
-<a href=/tags/java class=tagcloud-item style=font-size:.9477168361548054rem>Java</a>
-<a href=/tags/javascript class=tagcloud-item style=font-size:.9477168361548054rem>JavaScript</a>
+<a href=/tags/itadmin class=tagcloud-item style=font-size:1.5188968323340812rem>ITAdmin</a>
+<a href=/tags/java class=tagcloud-item style=font-size:.9367142706109197rem>Java</a>
+<a href=/tags/javascript class=tagcloud-item style=font-size:.9367142706109197rem>JavaScript</a>
 <a href=/tags/job class=tagcloud-item style=font-size:.7rem>Job</a>
 <a href=/tags/jquery class=tagcloud-item style=font-size:.7rem>JQuery</a>
 <a href=/tags/languages class=tagcloud-item style=font-size:.7rem>Languages</a>
@@ -124,7 +124,7 @@ docker cp database.bak sql:/var/opt/mssql/backup
 <a href=/tags/lifestory class=tagcloud-item style=font-size:.7rem>LifeStory</a>
 <a href=/tags/linux class=tagcloud-item style=font-size:.7rem>Linux</a>
 <a href=/tags/manifest class=tagcloud-item style=font-size:.7rem>Manifest</a>
-<a href=/tags/microsoft class=tagcloud-item style=font-size:.9477168361548054rem>Microsoft</a>
+<a href=/tags/microsoft class=tagcloud-item style=font-size:.9367142706109197rem>Microsoft</a>
 <a href=/tags/mobile class=tagcloud-item style=font-size:.7rem>Mobile</a>
 <a href=/tags/monitoring class=tagcloud-item style=font-size:.7rem>Monitoring</a>
 <a href=/tags/nagios class=tagcloud-item style=font-size:.7rem>Nagios</a>
@@ -135,36 +135,36 @@ docker cp database.bak sql:/var/opt/mssql/backup
 <a href=/tags/pairprogramming class=tagcloud-item style=font-size:.7rem>PairProgramming</a>
 <a href=/tags/patrickstewart class=tagcloud-item style=font-size:.7rem>PatrickStewart</a>
 <a href=/tags/php class=tagcloud-item style=font-size:.7rem>PHP</a>
-<a href=/tags/picard class=tagcloud-item style=font-size:.9477168361548054rem>Picard</a>
-<a href=/tags/podcast class=tagcloud-item style=font-size:1.1954336723096108rem>Podcast</a>
+<a href=/tags/picard class=tagcloud-item style=font-size:.9367142706109197rem>Picard</a>
+<a href=/tags/podcast class=tagcloud-item style=font-size:1.1734285412218395rem>Podcast</a>
 <a href=/tags/powerbi class=tagcloud-item style=font-size:.7rem>PowerBI</a>
-<a href=/tags/powershell class=tagcloud-item style=font-size:.9477168361548054rem>PowerShell</a>
-<a href=/tags/programming class=tagcloud-item style=font-size:1.9904693058296061rem>Programming</a>
-<a href=/tags/pwnedpass class=tagcloud-item style=font-size:.9477168361548054rem>PwnedPass</a>
+<a href=/tags/powershell class=tagcloud-item style=font-size:.9367142706109197rem>PowerShell</a>
+<a href=/tags/programming class=tagcloud-item style=font-size:1.9923253735559205rem>Programming</a>
+<a href=/tags/pwnedpass class=tagcloud-item style=font-size:.9367142706109197rem>PwnedPass</a>
 <a href=/tags/quiz class=tagcloud-item style=font-size:.7rem>Quiz</a>
 <a href=/tags/r class=tagcloud-item style=font-size:.7rem>R</a>
 <a href=/tags/raspberrypi class=tagcloud-item style=font-size:.7rem>RaspberryPi</a>
 <a href=/tags/rdp class=tagcloud-item style=font-size:.7rem>RDP</a>
 <a href=/tags/routers class=tagcloud-item style=font-size:.7rem>Routers</a>
-<a href=/tags/security class=tagcloud-item style=font-size:1.3403387322574587rem>Security</a>
-<a href=/tags/servers class=tagcloud-item style=font-size:1.0926218961026533rem>Servers</a>
-<a href=/tags/sourcecode class=tagcloud-item style=font-size:1.0926218961026533rem>SourceCode</a>
+<a href=/tags/security class=tagcloud-item style=font-size:1.3118975129147876rem>Security</a>
+<a href=/tags/servers class=tagcloud-item style=font-size:1.0751832423038676rem>Servers</a>
+<a href=/tags/sourcecode class=tagcloud-item style=font-size:1.0751832423038676rem>SourceCode</a>
 <a href=/tags/spending class=tagcloud-item style=font-size:.7rem>Spending</a>
-<a href=/tags/sql class=tagcloud-item style=font-size:1.5569594554627288rem>SQL</a>
-<a href=/tags/ssl class=tagcloud-item style=font-size:1.0926218961026533rem>SSL</a>
-<a href=/tags/startrek class=tagcloud-item style=font-size:1.5569594554627288rem>StarTrek</a>
+<a href=/tags/sql class=tagcloud-item style=font-size:1.5188968323340812rem>SQL</a>
+<a href=/tags/ssl class=tagcloud-item style=font-size:1.0751832423038676rem>SSL</a>
+<a href=/tags/startrek class=tagcloud-item style=font-size:1.5188968323340812rem>StarTrek</a>
 <a href=/tags/swagger class=tagcloud-item style=font-size:.7rem>Swagger</a>
 <a href=/tags/technical class=tagcloud-item style=font-size:.7rem>Technical</a>
-<a href=/tags/testing class=tagcloud-item style=font-size:.9477168361548054rem>Testing</a>
+<a href=/tags/testing class=tagcloud-item style=font-size:.9367142706109197rem>Testing</a>
 <a href=/tags/theme class=tagcloud-item style=font-size:.7rem>Theme</a>
-<a href=/tags/twitter class=tagcloud-item style=font-size:.9477168361548054rem>Twitter</a>
-<a href=/tags/visual-studio class=tagcloud-item style=font-size:.9477168361548054rem>Visual Studio</a>
+<a href=/tags/twitter class=tagcloud-item style=font-size:.9367142706109197rem>Twitter</a>
+<a href=/tags/visual-studio class=tagcloud-item style=font-size:.9367142706109197rem>Visual Studio</a>
 <a href=/tags/vpn class=tagcloud-item style=font-size:.7rem>VPN</a>
-<a href=/tags/website class=tagcloud-item style=font-size:.9477168361548054rem>Website</a>
-<a href=/tags/windows class=tagcloud-item style=font-size:.9477168361548054rem>Windows</a>
+<a href=/tags/website class=tagcloud-item style=font-size:.9367142706109197rem>Website</a>
+<a href=/tags/windows class=tagcloud-item style=font-size:.9367142706109197rem>Windows</a>
 <a href=/tags/windows10 class=tagcloud-item style=font-size:.7rem>Windows10</a>
 <a href=/tags/wordpress class=tagcloud-item style=font-size:.7rem>WordPress</a>
-<a href=/tags/xamarin class=tagcloud-item style=font-size:.9477168361548054rem>Xamarin</a>
+<a href=/tags/xamarin class=tagcloud-item style=font-size:.9367142706109197rem>Xamarin</a>
 <a href=/tags/zone class=tagcloud-item style=font-size:.7rem>Zone</a></div></div></div></section><section class="social row card component"><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.6.1/css/all.css integrity=sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP crossorigin=anonymous><div class=card-header><h2 class=card-title>Social Links</h2></div><div class=card-body><ul class=post-list><li><span aria-hidden=true></span>&nbsp;<a href=https://www.buymeacoffee.com/funkysi1701>Buy Me A Coffee</a></li><li><span aria-hidden=true></span>&nbsp;<a href=https://dev.to/funkysi1701>DevTo</a></li><li><span aria-hidden=true></span>&nbsp;<a href=https://funkysi1701.hashnode.dev/>Hashnode</a></li></ul></div></section><section class="year row card component"><div class=card-header><h2 class=card-title><a href=/year>Years</a></h2></div><div class=card-body><ul class=post-list><li><a href=/2022>2022</a> (7)</li><li><a href=/2021>2021</a> (8)</li><li><a href=/2020>2020</a> (10)</li><li><a href=/2019>2019</a> (9)</li><li><a href=/2018>2018</a> (10)</li><li><a href=/2017>2017</a> (18)</li><li><a href=/2016>2016</a> (2)</li><li><a href=/2015>2015</a> (22)</li><li><a href=/2014>2014</a> (12)</li><li>102 Posts so far</li></ul></div></section></div></aside></div></main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav justify-content-center mb-2"><a class="nav-link social-link" target=_blank href=https://facebook.com/funkysi1701 title=Facebook rel="noopener noreferrer"><i class="fa-fw fa-2x fab fa-facebook-f"></i>
 </a><a class="nav-link social-link" target=_blank href=https://github.com/funkysi1701 title=GitHub rel="noopener noreferrer"><i class="fa-fw fa-2x fab fa-github"></i>
 </a><a class="nav-link social-link" target=_blank href=https://linkedin.com/in/funkysi1701/ title=LinkedIn rel="noopener noreferrer"><i class="fa-fw fa-2x fab fa-linkedin-in"></i>
