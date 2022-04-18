@@ -14,7 +14,7 @@ summary = "So today I sat the AWS Cloud Practitioner Certification Exam and pass
 showFullContent = false
 readingTime = true
 copyright = false
-featured = true
+featured = false
 aliases = [
     "/aws-cloud-practitioner-1kan",
     "/posts/aws-cloud-practitioner",

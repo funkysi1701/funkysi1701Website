@@ -14,7 +14,7 @@ summary = "Temporal Trek Podcast"
 showFullContent = false
 readingTime = true
 copyright = false
-featured = true
+featured = false
 aliases = [
     "/temporal-trek-podcast-2cdj",
     "/posts/temporal-trek-podcast",
