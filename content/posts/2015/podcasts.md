@@ -18,6 +18,7 @@ copyright = false
 aliases = [
     "/podcasts-14j5",
     "/posts/podcasts",
+    "/podcasts",
     "/posts/podcasts-14j5",
     "/posts/2015/01/27/podcasts-14j5",
     "/posts/2015/01/27/podcasts",
