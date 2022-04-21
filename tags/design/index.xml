@@ -28,4 +28,49 @@
 &lt;p>So what would I use for the frontend? I would start off with a Client Side Blazor frontend. Once I had a proof of concept that worked, I would think about styling and adding the UI elements that are familiar to twitter users.&lt;/p>
 &lt;p>The beauty of Client Side Blazor is that I can host cheaply in azure storage and distribute around the world via a CDN.&lt;/p>
 &lt;p>Due to the high number of times that follower and following count and other stats are queried I would consider storing these in the database and include a regular job to recalculate them so they don&amp;rsquo;t get out of sync with the data.&lt;/p>
-&lt;p>Having said all of this I am very tempted to fire up Visual Studio and see how far I get, and what problems I encounter along the way.&lt;/p></description></item></channel></rss>
+&lt;p>Having said all of this I am very tempted to fire up Visual Studio and see how far I get, and what problems I encounter along the way.&lt;/p></description></item><item><title>Refactoring if statements</title><link>https://www.funkysi1701.com/posts/2018/refactoringifstatements/</link><pubDate>Mon, 26 Feb 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/refactoringifstatements/</guid><description>&lt;p>The code base I am working on contains a huge if block. By huge I mean 77 if statements one after the other, each if checks to see what page id you are on and loads different content. This is not easy to maintain and I want to refactor it.&lt;/p>
+&lt;p>One option would be to replace the if statements with a switch block. However this is just as unmanageable as the huge if block. Lets look at a better option.&lt;/p>
+&lt;p>&lt;strong>Polymorphism&lt;/strong> is where you create a base class and then create sub classes from it. In my case I created an interface IPage with a single method CreateContent.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">interface&lt;/span> &lt;span style="color:#a6e22e">IPage&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">string&lt;/span> CreatePageContent();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and then create 77 classes for each page which implemented this single method.&lt;/p>
+&lt;p>Now comes the fun bit how do I call the correct page class from my original code?&lt;/p>
+&lt;p>I created a dictionary than maps page ids to the class names.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> Dictionary&amp;lt;PageIds, Type&amp;gt; PageIdToClass = &lt;span style="color:#66d9ef">new&lt;/span> Dictionary&amp;lt;PageIds, Type&amp;gt;()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> PageIds.HomePage,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">typeof&lt;/span>(HomePage)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> PageIds.ContactPage,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">typeof&lt;/span>(ContactPage)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//etc &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is the one step I am not 100% happy with as I think it may be possible to remove or simplify this step.&lt;/p>
+&lt;p>Now I have a way to map ids to classes I can write a class to do this.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">MyPage&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IPage &lt;span style="color:#ae81ff">_&lt;/span>repo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> MyPage(&lt;span style="color:#66d9ef">int&lt;/span> pageId)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> PageIds p = (PageIds)pageId;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Type t = PageIdToClass[p];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ConstructorInfo constructor = t.GetConstructor(&lt;span style="color:#66d9ef">new&lt;/span> Type[] { });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">_&lt;/span>repo = (IPage)constructor.Invoke(&lt;span style="color:#66d9ef">null&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> Create()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>repo.CreatePageContent();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>So in my constructor I take the pageId and pass it to my dictionary to get which subclass to load. I then get its Constructor and invoke it.&lt;/p>
+&lt;p>Now I can remove the huge if block and replace it with a single line of code.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">var&lt;/span> page = &lt;span style="color:#66d9ef">new&lt;/span> MyPage(pageId);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>On the face of it this change might look like a lot of work for not much gain as we started off with one file and now we have the original file, an interface, 77 subclasses and the MyPage class. However the original file is a lot more manageable and each sub class can be altered independently of each other.&lt;/p>
+&lt;p>This is a big step towards making this code more maintainable, there is always more that can be done but that can wait for another day.&lt;/p></description></item></channel></rss>

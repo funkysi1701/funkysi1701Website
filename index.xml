@@ -1407,7 +1407,52 @@ website. There are now over half a billion passwords that have appeared in data 
 &lt;p>Calendar of Breaches – this shows a github like chart of what days breaches are added&lt;/p>
 &lt;p>If you like my app do let me know. I have received a few ratings on google play it would be great to get a few more. If you want me to add a feature or have ideas of how I could improve it let me know as well.&lt;/p>
 &lt;p>To download take a look at &lt;a href="https://play.google.com/store/apps/details?id=pwnedpasswords.pwnedpasswords" target="_blank" rel="noopener noreferrer">https://play.google.com/store/apps/details?id=pwnedpasswords.pwnedpasswords&lt;/a>
-&lt;/p></description></item><item><title>Mobile App UI Testing</title><link>https://www.funkysi1701.com/posts/2018/mobile-app-ui-testing/</link><pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/mobile-app-ui-testing/</guid><description>&lt;p>Since I started creating an android app I have been writing simple UI tests.&lt;/p>
+&lt;/p></description></item><item><title>Refactoring if statements</title><link>https://www.funkysi1701.com/posts/2018/refactoringifstatements/</link><pubDate>Mon, 26 Feb 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/refactoringifstatements/</guid><description>&lt;p>The code base I am working on contains a huge if block. By huge I mean 77 if statements one after the other, each if checks to see what page id you are on and loads different content. This is not easy to maintain and I want to refactor it.&lt;/p>
+&lt;p>One option would be to replace the if statements with a switch block. However this is just as unmanageable as the huge if block. Lets look at a better option.&lt;/p>
+&lt;p>&lt;strong>Polymorphism&lt;/strong> is where you create a base class and then create sub classes from it. In my case I created an interface IPage with a single method CreateContent.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">interface&lt;/span> &lt;span style="color:#a6e22e">IPage&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">string&lt;/span> CreatePageContent();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and then create 77 classes for each page which implemented this single method.&lt;/p>
+&lt;p>Now comes the fun bit how do I call the correct page class from my original code?&lt;/p>
+&lt;p>I created a dictionary than maps page ids to the class names.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> Dictionary&amp;lt;PageIds, Type&amp;gt; PageIdToClass = &lt;span style="color:#66d9ef">new&lt;/span> Dictionary&amp;lt;PageIds, Type&amp;gt;()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> PageIds.HomePage,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">typeof&lt;/span>(HomePage)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> PageIds.ContactPage,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">typeof&lt;/span>(ContactPage)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//etc &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is the one step I am not 100% happy with as I think it may be possible to remove or simplify this step.&lt;/p>
+&lt;p>Now I have a way to map ids to classes I can write a class to do this.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">MyPage&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IPage &lt;span style="color:#ae81ff">_&lt;/span>repo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> MyPage(&lt;span style="color:#66d9ef">int&lt;/span> pageId)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> PageIds p = (PageIds)pageId;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Type t = PageIdToClass[p];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ConstructorInfo constructor = t.GetConstructor(&lt;span style="color:#66d9ef">new&lt;/span> Type[] { });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">_&lt;/span>repo = (IPage)constructor.Invoke(&lt;span style="color:#66d9ef">null&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> Create()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>repo.CreatePageContent();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>So in my constructor I take the pageId and pass it to my dictionary to get which subclass to load. I then get its Constructor and invoke it.&lt;/p>
+&lt;p>Now I can remove the huge if block and replace it with a single line of code.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">var&lt;/span> page = &lt;span style="color:#66d9ef">new&lt;/span> MyPage(pageId);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>On the face of it this change might look like a lot of work for not much gain as we started off with one file and now we have the original file, an interface, 77 subclasses and the MyPage class. However the original file is a lot more manageable and each sub class can be altered independently of each other.&lt;/p>
+&lt;p>This is a big step towards making this code more maintainable, there is always more that can be done but that can wait for another day.&lt;/p></description></item><item><title>Mobile App UI Testing</title><link>https://www.funkysi1701.com/posts/2018/mobile-app-ui-testing/</link><pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/mobile-app-ui-testing/</guid><description>&lt;p>Since I started creating an android app I have been writing simple UI tests.&lt;/p>
 &lt;p>I have been taking advantage of the Visual Studio App Center which allows you to test against hundreds of different devices in the &lt;strong>Test Cloud&lt;/strong>.&lt;/p>
 &lt;p>&lt;img class="img-fluid" alt="Xamarin UI tests" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/01/01-newproject-vs.png?resize=300%2C182&amp;amp;ssl=1" loading="lazy"
 />
