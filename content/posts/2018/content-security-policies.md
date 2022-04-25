@@ -45,9 +45,9 @@ Let’s look at some examples
 Content-Security-Policy: script-src 'self'
 ```
 
-This allows <script> tags to only load from the current webhost. script-src is not the only keyword you can use, let’s look at some of the others.
+This allows ```<script>``` tags to only load from the current webhost. script-src is not the only keyword you can use, let’s look at some of the others.
 
-**script-src** – control what <script> tags will load  
+**script-src** – control what ```<script>``` tags will load  
 **style-src** – control what css will load  
 **img-src** – control what images will load  
 **frame-src** – control what frames will load  
