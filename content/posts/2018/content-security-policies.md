@@ -41,7 +41,9 @@ A CSP allows the browser to only load from sources that you specify. You could s
 
 Let’s look at some examples
 
-`Content-Security-Policy: script-src 'self'`
+```
+Content-Security-Policy: script-src 'self'
+```
 
 This allows <script> tags to only load from the current webhost. script-src is not the only keyword you can use, let’s look at some of the others.
 
@@ -55,11 +57,15 @@ This allows <script> tags to only load from the current webhost. script-src is n
 **media-src** – controls what media (audio/video) will load  
 **default-src** – if no specific rule exists then the default directive will run
 
-`Content-Security-Policy: default-src https`
+```
+Content-Security-Policy: default-src https
+```
 
 This allows any content to be loaded from any site as long as it comes from a secure (https) site
 
-`Content-Security-Policy: default-src https://example.com`
+```
+Content-Security-Policy: default-src https://example.com
+```
 
 This allows any content to be loaded from https://example.com only.
 
@@ -77,12 +83,16 @@ For .net core it is a bit more complex as you don’t tend to use web.config fil
 
 One last thing about CSPs to mention is the Report Only flag.
 
-`Content-Security-Policy-Report-Only`
+```
+Content-Security-Policy-Report-Only
+```
 
 This does the same as the above but doesn’t enforce anything, so you can fix any problems before you break anything.
 
 To view your issues just look in the developer tools in your favourite browser. Or you can configure all your reports to be collated in one place with a report-uri directive.
 
-`Content-Security-Policy: default-src https://example.com; report-uri https://example.report-uri.com/r/d/csp/reportOnly;`
+```
+Content-Security-Policy: default-src https://example.com; report-uri https://example.report-uri.com/r/d/csp/reportOnly;
+```
 
 Scott Helme and Troy Hunt have a site called [report-uri](https://report-uri.com/) which offer a service for collating and viewing all your CSP violations so check it out if you want to know more about CSPs.
