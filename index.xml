@@ -1467,7 +1467,43 @@ provided.&lt;/p>
 &lt;p>I first saw this error a few months ago and have been reading up about it and waiting for Chrome 66 to reach the dev channel so I could test what it did to my site. However now that I have Chrome 66 installed I spotted the intranet for the company I work for is also affected. I do not directly work on the intranet so I notified the security team that they may want to look into this.&lt;/p>
 &lt;p>Unfortunately the response I received has been that Google needs to fix this before Chrome 66 is released. I am not criticising my employer or the security team, however this isn’t something Google can just “ &lt;strong>fix&lt;/strong> “.&lt;/p>
 &lt;p>The certificates issued were issued by a CA that had issues so in order to maintain the trustworthiness of all certificates Google had little choice but to distrust them. Google and security experts need to be making more of a fuss about this and I am joining in on making a fuss by writing this blog. &lt;a href="https://scotthelme.co.uk/are-you-ready-for-the-symantec-distrust/" target="_blank" rel="noopener noreferrer">Scott Helme&lt;/a>
-estimates that there are about 7000 websites which may be affected by the M66 and M70 distrusts.&lt;/p></description></item><item><title>Mobile App UI Testing</title><link>https://www.funkysi1701.com/posts/2018/mobile-app-ui-testing/</link><pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/mobile-app-ui-testing/</guid><description>&lt;p>Since I started creating an android app I have been writing simple UI tests.&lt;/p>
+estimates that there are about 7000 websites which may be affected by the M66 and M70 distrusts.&lt;/p></description></item><item><title>Content Security Policies</title><link>https://www.funkysi1701.com/posts/2018/content-security-policies/</link><pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/content-security-policies/</guid><description>&lt;p>A content Security Policy or CSP is a HTTP response header that defines what sources of content can be loaded on a web page. It is a way to combat Cross Site Scripting (XSS) attacks.&lt;/p>
+&lt;h3 id="what-is-a-xss-attack-then">What is a XSS attack then?&lt;a class="anchor ms-1" href="#what-is-a-xss-attack-then">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>When you load a webpage it also loads various other resources like images, some css style sheets, various javascript files that you want to run and probably many other things.&lt;/p>
+&lt;p>How do you know that you can trust all of these things? If you created them and they live under you control then the answer is probably yes. However these days you will probably want to use resources from across the internet, like youtube videos, google analytics, disqus comments, jquery libraries from a cdn etc and you can’t be sure exactly what they are doing.&lt;/p>
+&lt;p>Imagine you had a page which you could add any text into a form which would then be displayed. A malicious user could add evil javascript or get the browser to load evil code from anywhere on the internet.&lt;/p>
+&lt;h3 id="csp-to-the-rescue">CSP to the rescue!&lt;a class="anchor ms-1" href="#csp-to-the-rescue">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>A CSP allows the browser to only load from sources that you specify. You could specify that resources from your own site will load but the evil script will not.&lt;/p>
+&lt;p>Let’s look at some examples&lt;/p>
+&lt;pre tabindex="0">&lt;code>Content-Security-Policy: script-src &amp;#39;self&amp;#39;
+&lt;/code>&lt;/pre>&lt;p>This allows &lt;code>&amp;lt;script&amp;gt;&lt;/code> tags to only load from the current webhost. script-src is not the only keyword you can use, let’s look at some of the others.&lt;/p>
+&lt;p>&lt;strong>script-src&lt;/strong> – control what &lt;code>&amp;lt;script&amp;gt;&lt;/code> tags will load&lt;br>
+&lt;strong>style-src&lt;/strong> – control what css will load&lt;br>
+&lt;strong>img-src&lt;/strong> – control what images will load&lt;br>
+&lt;strong>frame-src&lt;/strong> – control what frames will load&lt;br>
+&lt;strong>font-src&lt;/strong> – control what fonts will load&lt;br>
+&lt;strong>object-src&lt;/strong> – control what object tags will load&lt;br>
+&lt;strong>connect-src&lt;/strong> – control what resources a script can connect to&lt;br>
+&lt;strong>media-src&lt;/strong> – controls what media (audio/video) will load&lt;br>
+&lt;strong>default-src&lt;/strong> – if no specific rule exists then the default directive will run&lt;/p>
+&lt;pre tabindex="0">&lt;code>Content-Security-Policy: default-src https
+&lt;/code>&lt;/pre>&lt;p>This allows any content to be loaded from any site as long as it comes from a secure (https) site&lt;/p>
+&lt;pre tabindex="0">&lt;code>Content-Security-Policy: default-src https://example.com
+&lt;/code>&lt;/pre>&lt;p>This allows any content to be loaded from &lt;a href="https://example.com" target="_blank" rel="noopener noreferrer">https://example.com&lt;/a>
+only.&lt;/p>
+&lt;h3 id="how-do-i-use-this-on-my-site">How do I use this on my site?&lt;a class="anchor ms-1" href="#how-do-i-use-this-on-my-site">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>I have added CSPs into my web.config which works great for my .Net Framework code.&lt;/p>
+&lt;pre tabindex="0">&lt;code> &amp;lt;system.webServer&amp;gt; &amp;lt;httpProtocol&amp;gt; &amp;lt;customHeaders&amp;gt; &amp;lt;add name=&amp;#34;Content-Security-Policy&amp;#34; value=&amp;#34;default-src https://example.com&amp;#34; /&amp;gt; &amp;lt;/customHeaders&amp;gt; &amp;lt;/httpProtocol&amp;gt; &amp;lt;/system.webServer&amp;gt;
+&lt;/code>&lt;/pre>&lt;p>For .net core it is a bit more complex as you don’t tend to use web.config files, however check out Anthony Chu’s &lt;a href="https://anthonychu.ca/post/aspnet-core-csp/" target="_blank" rel="noopener noreferrer">post&lt;/a>
+, which has a solution to that problem.&lt;/p>
+&lt;h3 id="report-only">Report Only&lt;a class="anchor ms-1" href="#report-only">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>One last thing about CSPs to mention is the Report Only flag.&lt;/p>
+&lt;pre tabindex="0">&lt;code>Content-Security-Policy-Report-Only
+&lt;/code>&lt;/pre>&lt;p>This does the same as the above but doesn’t enforce anything, so you can fix any problems before you break anything.&lt;/p>
+&lt;p>To view your issues just look in the developer tools in your favourite browser. Or you can configure all your reports to be collated in one place with a report-uri directive.&lt;/p>
+&lt;pre tabindex="0">&lt;code>Content-Security-Policy: default-src https://example.com; report-uri https://example.report-uri.com/r/d/csp/reportOnly;
+&lt;/code>&lt;/pre>&lt;p>Scott Helme and Troy Hunt have a site called &lt;a href="https://report-uri.com/" target="_blank" rel="noopener noreferrer">report-uri&lt;/a>
+which offer a service for collating and viewing all your CSP violations so check it out if you want to know more about CSPs.&lt;/p></description></item><item><title>Mobile App UI Testing</title><link>https://www.funkysi1701.com/posts/2018/mobile-app-ui-testing/</link><pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/mobile-app-ui-testing/</guid><description>&lt;p>Since I started creating an android app I have been writing simple UI tests.&lt;/p>
 &lt;p>I have been taking advantage of the Visual Studio App Center which allows you to test against hundreds of different devices in the &lt;strong>Test Cloud&lt;/strong>.&lt;/p>
 &lt;p>&lt;img class="img-fluid" alt="Xamarin UI tests" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/01/01-newproject-vs.png?resize=300%2C182&amp;amp;ssl=1" loading="lazy"
 />
