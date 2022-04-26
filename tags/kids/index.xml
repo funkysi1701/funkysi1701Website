@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>kids on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/kids/</link><description>Recent content in kids on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Tue, 26 Apr 2022 18:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/kids/index.xml" rel="self" type="application/rss+xml"/><item><title>Scratch</title><link>https://www.funkysi1701.com/posts/2022/scratch/</link><pubDate>Tue, 26 Apr 2022 18:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/scratch/</guid><description>&lt;p>My 6 year old boy has been playing with Scratch, so here is a quick introduction to what we have learnt about it.&lt;/p>
+&lt;p>Scratch is a website that allows you to &amp;ldquo;code&amp;rdquo; by combining blocks together.&lt;/p>
+&lt;p>This is how the scratch website describes its self&lt;/p>
+&lt;blockquote>
+&lt;p>Scratch is the world’s largest coding community for children and a coding language with a simple visual interface that allows young people to create digital stories, games, and animations. Scratch is designed, developed, and moderated by the Scratch Foundation, a nonprofit organization.
+Scratch promotes computational thinking and problem solving skills; creative teaching and learning; self-expression and collaboration; and equity in computing.
+Scratch is always free and is available in more than 70 languages.&lt;/p>
+&lt;/blockquote>
+&lt;p>Scratch can be found by going to &lt;a href="https://scratch.mit.edu/projects/editor/" target="_blank" rel="noopener noreferrer">https://scratch.mit.edu/projects/editor/&lt;/a>
+&lt;/p>
+&lt;p>A lot of the blocks affect your character or &amp;ldquo;sprite&amp;rdquo;, the default is a cute looking dog which may also be the scratch logo.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://www.funkysi1701.com/images/scratch.png" loading="lazy"
+width="905" height="835"
+/>
+&lt;/p>
+&lt;p>The left hand side of the screen consists of a list of the blocks of code you can use and your coding area where you can arrange them.&lt;/p>
+&lt;p>The right hand side shows the results of your code, where you can run and test what your code does.&lt;/p>
+&lt;p>It didn&amp;rsquo;t take my boy long to code something like this tonight.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://www.funkysi1701.com/images/scratch2.png" loading="lazy"
+width="712" height="725"
+/>
+&lt;/p>
+&lt;p>This game moves the &amp;ldquo;sprite&amp;rdquo; towards the mouse pointer and a message &amp;ldquo;got you&amp;rdquo; appears on screen when it reaches your mouse pointer.&lt;/p>
+&lt;p>I won&amp;rsquo;t go through all the different blocks you can choose from, but I will highlight some of the programming concepts being learnt here.&lt;/p>
+&lt;p>&lt;strong>inputs&lt;/strong> every computer program needs inputs and there are lots to choose from, things like moving the mouse or pressing a key on the keyboard.&lt;/p>
+&lt;p>&lt;strong>outputs&lt;/strong> your code needs to do something, this code moves a sprite about the screen&lt;/p>
+&lt;p>&lt;strong>variables&lt;/strong> my boy hasn&amp;rsquo;t heard of algebra yet, but he is already grasping concepts like variables, where a value can be assigned and maths can be applied to. In this example the score increases&lt;/p>
+&lt;p>&lt;strong>loops&lt;/strong> this program keeps looping until it reaches the mouse pointer&lt;/p>
+&lt;p>&lt;strong>logic&lt;/strong> other logic commands are also available, like if / else statements, also &amp;lt;, &amp;gt; and = statements can be used&lt;/p>
+&lt;p>There are lots of help and tutorials on the site to help you along, and you can customise the look and even record short sound clips to play in your code.&lt;/p></description></item></channel></rss>
