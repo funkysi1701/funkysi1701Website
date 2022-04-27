@@ -16,13 +16,12 @@ readingTime = true
 copyright = false
 featured = false
 aliases = [
-    "/scratch",
+    "/scratch-1f7l",
     "/posts/scratch",
     "/posts/2022/04/26/scratch",
-    "/posts/temporal-trek-podcast-2cdj",
-    "/posts/2022/03/18/temporal-trek-podcast-2cdj",
-    "/temporal-trek-podcast-2cdj",
-    "/2022/03/18/temporal-trek-podcast-2cdj"    
+    "/posts/scratch-1f7l",
+    "/posts/2022/03/18/scratch-1f7l",
+    "/2022/03/18/scratch-1f7l"    
 ]
 +++
 My 6 year old boy has been playing with Scratch, so here is a quick introduction to what we have learnt about it.
