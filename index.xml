@@ -1540,7 +1540,42 @@ to get money off.&lt;/p>
 &lt;p>Since I signed up I have listened to over 27 hours of technical videos. These have covered topics like C#, Security, Xamarin, MVVM, Interfaces, Getting Involved and Clean architecture. The number one thing I have learnt is that there is a lot that I still don’t understand.&lt;/p>
 &lt;p>That said I would like to think that since starting to listen to pluralsight concepts have gone from being unknown unknowns (I don’t know about them and I don’t understand them) to known unknowns (I know about them but don’t yet fully understand them)&lt;/p>
 &lt;p>To keep track of your learning pluralsight has some tests which you can complete. I am particularly proud of my score on the Azure test which ranks me as an expert.&lt;/p>
-&lt;p>Why not check out what you can learn from pluralsight?&lt;/p></description></item><item><title>Mobile App UI Testing</title><link>https://www.funkysi1701.com/posts/2018/mobile-app-ui-testing/</link><pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/mobile-app-ui-testing/</guid><description>&lt;p>Since I started creating an android app I have been writing simple UI tests.&lt;/p>
+&lt;p>Why not check out what you can learn from pluralsight?&lt;/p></description></item><item><title>Flexible Architecture with Interfaces</title><link>https://www.funkysi1701.com/posts/2018/flexible-architecture/</link><pubDate>Mon, 29 Jan 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/flexible-architecture/</guid><description>&lt;p>I have blogged a few times about &lt;a href="https://www.funkysi1701.com/posts/2017/interfaces/">interfaces&lt;/a>
+, and how useful they are for producing good quality maintainable code. Let’s look at a problem and the solution I came up with which I am quite proud of.&lt;/p>
+&lt;p>As previously mentioned I am in the process of moving &lt;a href="https://dev.to/funkysi1701/moving-files-into-blob-storage-1ckh-temp-slug-2044961" target="_blank" rel="noopener noreferrer">images&lt;/a>
+from AWS to Azure blob storage. Now that the actual files themselves have been moved I need to change the code that references them.&lt;/p>
+&lt;p>Now I could find all the code that uses the AWS API and replace it with the Azure API but I am not very good at predicting the future, we may stay on Azure for a while, we may move to AWS or Google Cloud, or we may want to go back to files sitting on a server.&lt;/p>
+&lt;p>Lets try and code a solution that is as flexible as possible. As you have probably guessed I am going to create an interface.&lt;/p>
+&lt;p>At first I thought about creating an interface called &lt;strong>ICloudStorage&lt;/strong> , however this isn’t flexible enough as what happens if we go back to sticking files on a server so instead I created &lt;strong>IStorage&lt;/strong>.&lt;/p>
+&lt;p>I created three classes that implemented IStorage, &lt;strong>AWSStorage&lt;/strong> , &lt;strong>AzureStorage&lt;/strong> and mostly for testing at the moment &lt;strong>FileStorage&lt;/strong>. I then created a class Storage that would call these three classes. Initially I created it like this&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Storage&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> IStorage &lt;span style="color:#ae81ff">_&lt;/span>repo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Storage(IStorage repo)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">_&lt;/span>repo = repo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>However this would require I call it like Storage(new AzureStorage()) and I would need to know everywhere in my code which implementation I want to use. This isn’t too bad as when we change from AWS to Azure we would need to do a find and replace throughout the code and replace all AWSStorage and make them AzureStorage.&lt;/p>
+&lt;p>However we can do better than that.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Storage&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> IStorage &lt;span style="color:#ae81ff">_&lt;/span>repo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Storage()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Type obj = Type.GetType(ConfigurationManager.AppSettings[&lt;span style="color:#e6db74">&amp;#34;DefaultStorageRepository&amp;#34;&lt;/span>]);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ConstructorInfo constructor = obj.GetConstructor(&lt;span style="color:#66d9ef">new&lt;/span> Type[] { });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">_&lt;/span>repo = (IStorage)constructor.Invoke(&lt;span style="color:#66d9ef">null&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This code will read from the web.config which implementation to use and that will decide which class to call. This means that to change from AWS to Azure we do not need to redeploy any code, all we need to do is change the web.config.&lt;/p>
+&lt;p>Let’s look at the three lines and see if we can understand what is happening.&lt;/p>
+&lt;p>&lt;strong>Type.GetType()&lt;/strong> looks straight forward and gets the type from the web.config&lt;/p>
+&lt;p>&lt;strong>obj.GetConstructor()&lt;/strong> This gets the constructor for the type we have just found.&lt;/p>
+&lt;p>&lt;strong>constructor.Invoke&lt;/strong> This then invokes the constructor and it then gets cast to the interface so can be used by the _repo variable.&lt;/p>
+&lt;p>This is all fairly simple and makes sense, however it has produced some very flexible code and allows the code to be extended without recompiling.&lt;/p>
+&lt;p>Let’s look at a hypothetical example. We want to add support for Google Cloud Storage. All we need to do is create a class library which implements the IStorage interface, place the compiled binary in the website and update the web.config to reference it. I haven’t tried this hypothetical example so it might be more complex than I think but in theory it should work.&lt;/p>
+&lt;p>I am pretty excited at how flexible this code can be, hopefully I will use code like this more often now I understand it.&lt;/p></description></item><item><title>Mobile App UI Testing</title><link>https://www.funkysi1701.com/posts/2018/mobile-app-ui-testing/</link><pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/mobile-app-ui-testing/</guid><description>&lt;p>Since I started creating an android app I have been writing simple UI tests.&lt;/p>
 &lt;p>I have been taking advantage of the Visual Studio App Center which allows you to test against hundreds of different devices in the &lt;strong>Test Cloud&lt;/strong>.&lt;/p>
 &lt;p>&lt;img class="img-fluid" alt="Xamarin UI tests" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2018/01/01-newproject-vs.png?resize=300%2C182&amp;amp;ssl=1" loading="lazy"
 />

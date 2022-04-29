@@ -28,4 +28,39 @@
 &lt;p>So what would I use for the frontend? I would start off with a Client Side Blazor frontend. Once I had a proof of concept that worked, I would think about styling and adding the UI elements that are familiar to twitter users.&lt;/p>
 &lt;p>The beauty of Client Side Blazor is that I can host cheaply in azure storage and distribute around the world via a CDN.&lt;/p>
 &lt;p>Due to the high number of times that follower and following count and other stats are queried I would consider storing these in the database and include a regular job to recalculate them so they don&amp;rsquo;t get out of sync with the data.&lt;/p>
-&lt;p>Having said all of this I am very tempted to fire up Visual Studio and see how far I get, and what problems I encounter along the way.&lt;/p></description></item></channel></rss>
+&lt;p>Having said all of this I am very tempted to fire up Visual Studio and see how far I get, and what problems I encounter along the way.&lt;/p></description></item><item><title>Flexible Architecture with Interfaces</title><link>https://www.funkysi1701.com/posts/2018/flexible-architecture/</link><pubDate>Mon, 29 Jan 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/flexible-architecture/</guid><description>&lt;p>I have blogged a few times about &lt;a href="https://www.funkysi1701.com/posts/2017/interfaces/">interfaces&lt;/a>
+, and how useful they are for producing good quality maintainable code. Let’s look at a problem and the solution I came up with which I am quite proud of.&lt;/p>
+&lt;p>As previously mentioned I am in the process of moving &lt;a href="https://dev.to/funkysi1701/moving-files-into-blob-storage-1ckh-temp-slug-2044961" target="_blank" rel="noopener noreferrer">images&lt;/a>
+from AWS to Azure blob storage. Now that the actual files themselves have been moved I need to change the code that references them.&lt;/p>
+&lt;p>Now I could find all the code that uses the AWS API and replace it with the Azure API but I am not very good at predicting the future, we may stay on Azure for a while, we may move to AWS or Google Cloud, or we may want to go back to files sitting on a server.&lt;/p>
+&lt;p>Lets try and code a solution that is as flexible as possible. As you have probably guessed I am going to create an interface.&lt;/p>
+&lt;p>At first I thought about creating an interface called &lt;strong>ICloudStorage&lt;/strong> , however this isn’t flexible enough as what happens if we go back to sticking files on a server so instead I created &lt;strong>IStorage&lt;/strong>.&lt;/p>
+&lt;p>I created three classes that implemented IStorage, &lt;strong>AWSStorage&lt;/strong> , &lt;strong>AzureStorage&lt;/strong> and mostly for testing at the moment &lt;strong>FileStorage&lt;/strong>. I then created a class Storage that would call these three classes. Initially I created it like this&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Storage&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> IStorage &lt;span style="color:#ae81ff">_&lt;/span>repo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Storage(IStorage repo)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">_&lt;/span>repo = repo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>However this would require I call it like Storage(new AzureStorage()) and I would need to know everywhere in my code which implementation I want to use. This isn’t too bad as when we change from AWS to Azure we would need to do a find and replace throughout the code and replace all AWSStorage and make them AzureStorage.&lt;/p>
+&lt;p>However we can do better than that.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Storage&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> IStorage &lt;span style="color:#ae81ff">_&lt;/span>repo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Storage()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Type obj = Type.GetType(ConfigurationManager.AppSettings[&lt;span style="color:#e6db74">&amp;#34;DefaultStorageRepository&amp;#34;&lt;/span>]);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ConstructorInfo constructor = obj.GetConstructor(&lt;span style="color:#66d9ef">new&lt;/span> Type[] { });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">_&lt;/span>repo = (IStorage)constructor.Invoke(&lt;span style="color:#66d9ef">null&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This code will read from the web.config which implementation to use and that will decide which class to call. This means that to change from AWS to Azure we do not need to redeploy any code, all we need to do is change the web.config.&lt;/p>
+&lt;p>Let’s look at the three lines and see if we can understand what is happening.&lt;/p>
+&lt;p>&lt;strong>Type.GetType()&lt;/strong> looks straight forward and gets the type from the web.config&lt;/p>
+&lt;p>&lt;strong>obj.GetConstructor()&lt;/strong> This gets the constructor for the type we have just found.&lt;/p>
+&lt;p>&lt;strong>constructor.Invoke&lt;/strong> This then invokes the constructor and it then gets cast to the interface so can be used by the _repo variable.&lt;/p>
+&lt;p>This is all fairly simple and makes sense, however it has produced some very flexible code and allows the code to be extended without recompiling.&lt;/p>
+&lt;p>Let’s look at a hypothetical example. We want to add support for Google Cloud Storage. All we need to do is create a class library which implements the IStorage interface, place the compiled binary in the website and update the web.config to reference it. I haven’t tried this hypothetical example so it might be more complex than I think but in theory it should work.&lt;/p>
+&lt;p>I am pretty excited at how flexible this code can be, hopefully I will use code like this more often now I understand it.&lt;/p></description></item></channel></rss>
