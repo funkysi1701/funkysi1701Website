@@ -341,7 +341,7 @@ to get money off.&lt;/p>
 &lt;p>To keep track of your learning pluralsight has some tests which you can complete. I am particularly proud of my score on the Azure test which ranks me as an expert.&lt;/p>
 &lt;p>Why not check out what you can learn from pluralsight?&lt;/p></description></item><item><title>Flexible Architecture with Interfaces</title><link>https://www.funkysi1701.com/posts/2018/flexible-architecture/</link><pubDate>Mon, 29 Jan 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/flexible-architecture/</guid><description>&lt;p>I have blogged a few times about &lt;a href="https://www.funkysi1701.com/posts/2017/interfaces/">interfaces&lt;/a>
 , and how useful they are for producing good quality maintainable code. Let’s look at a problem and the solution I came up with which I am quite proud of.&lt;/p>
-&lt;p>As previously mentioned I am in the process of moving &lt;a href="https://dev.to/funkysi1701/moving-files-into-blob-storage-1ckh-temp-slug-2044961" target="_blank" rel="noopener noreferrer">images&lt;/a>
+&lt;p>As previously mentioned I am in the process of moving &lt;a href="https://www.funkysi1701.com/2018/01/22/moving-blobs-cloud-suppliers/">images&lt;/a>
 from AWS to Azure blob storage. Now that the actual files themselves have been moved I need to change the code that references them.&lt;/p>
 &lt;p>Now I could find all the code that uses the AWS API and replace it with the Azure API but I am not very good at predicting the future, we may stay on Azure for a while, we may move to AWS or Google Cloud, or we may want to go back to files sitting on a server.&lt;/p>
 &lt;p>Lets try and code a solution that is as flexible as possible. As you have probably guessed I am going to create an interface.&lt;/p>
@@ -379,8 +379,41 @@ from AWS to Azure blob storage. Now that the actual files themselves have been m
 &lt;p>Azure blob storage also gives you advantages like distributing storage across multiple datacenters which would be impossible with traditional files on a server.&lt;/p>
 &lt;p>So now that we have established that this is a good idea lets look at how we could move large amounts of data. In my case all the filenames are stored in a SQL database so the plan of action was to simply loop through the files in the database, download from current storage (either locally or other cloud storage), upload to Azure and tidy up afterwards. Due to the number of images I am going to update the database and mark when a file has been processed so I can do the move over several days.&lt;/p>
 &lt;p>This is my code&lt;/p>
-&lt;style>.gist table { margin-bottom: 0; }&lt;/style>
-&lt;p>First of all I create a tmp folder in the root of my website if it doesn’t exist to store my images temporarily.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">var&lt;/span> source = &lt;span style="color:#e6db74">&amp;#34;https://example.com/images/&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">var&lt;/span> tmp = Server.MapPath(&lt;span style="color:#e6db74">&amp;#34;~/tmp/&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> (!Directory.Exists(tmp))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Directory.CreateDirectory(tmp);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">var&lt;/span> fixturePhotos = db.Images.Where(x =&amp;gt; x.Moved == &lt;span style="color:#66d9ef">null&lt;/span> || x.Moved == &lt;span style="color:#ae81ff">0&lt;/span>).Take(id);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">foreach&lt;/span> (&lt;span style="color:#66d9ef">var&lt;/span> photo &lt;span style="color:#66d9ef">in&lt;/span> fixturePhotos)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">string&lt;/span> path = getFilePath(photo.FileName);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (!Directory.Exists(Server.MapPath(&lt;span style="color:#e6db74">&amp;#34;~/tmp/&amp;#34;&lt;/span> + path)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Directory.CreateDirectory(Server.MapPath(&lt;span style="color:#e6db74">&amp;#34;~/tmp/&amp;#34;&lt;/span> + path));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> WebClient WebClient = &lt;span style="color:#66d9ef">new&lt;/span> WebClient();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> WebClient.DownloadFile(source + photo.FileName, tmp + photo.FileName);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> FileUploader f = &lt;span style="color:#66d9ef">new&lt;/span> FileUploader(tmp + photo.FileName, photo.FileName);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.IO.File.Delete(tmp + photo.FileName);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> photo.Moved = &lt;span style="color:#ae81ff">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">catch&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> photo.Moved = &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>db.SaveChanges();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> (Directory.Exists(tmp))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Directory.Delete(tmp, &lt;span style="color:#66d9ef">true&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>First of all I create a tmp folder in the root of my website if it doesn’t exist to store my images temporarily.&lt;/p>
 &lt;p>I then use an entity framework model to query the database that haven’t been moved, and I use the take() method to limit how many results I process. (I have been passing in 1000 at a time)&lt;/p>
 &lt;p>I then use a foreach loop over all these files to perform the following actions.&lt;/p>
 &lt;ol>
