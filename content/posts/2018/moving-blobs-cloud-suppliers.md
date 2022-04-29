@@ -34,7 +34,42 @@ So now that we have established that this is a good idea lets look at how we cou
 
 This is my code
 
-<style>.gist table { margin-bottom: 0; }</style>
+```csharp
+var source = "https://example.com/images/";
+var tmp = Server.MapPath("~/tmp/");
+if (!Directory.Exists(tmp))
+{
+ Directory.CreateDirectory(tmp);
+}
+var fixturePhotos = db.Images.Where(x => x.Moved == null || x.Moved == 0).Take(id);
+
+foreach (var photo in fixturePhotos)
+{
+ try
+ {
+  string path = getFilePath(photo.FileName);
+
+  if (!Directory.Exists(Server.MapPath("~/tmp/" + path)))
+  {
+    Directory.CreateDirectory(Server.MapPath("~/tmp/" + path));
+  }
+  WebClient WebClient = new WebClient();
+  WebClient.DownloadFile(source + photo.FileName, tmp + photo.FileName);
+  FileUploader f = new FileUploader(tmp + photo.FileName, photo.FileName);
+  System.IO.File.Delete(tmp + photo.FileName);
+  photo.Moved = 1;
+ }
+ catch
+ {
+  photo.Moved = 0;
+ }
+}
+db.SaveChanges();
+if (Directory.Exists(tmp))
+{
+ Directory.Delete(tmp, true);
+}
+```
 
 First of all I create a tmp folder in the root of my website if it doesn’t exist to store my images temporarily.
 
