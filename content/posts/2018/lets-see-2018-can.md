@@ -26,7 +26,9 @@ aliases = [
 +++
 It is 2018 so it must be time to think about what my plans and goals are for the new year.
 
-### ![House](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/12/LEGO-Classic-10703-Creative-Building-Box-Yellow-House.jpg?resize=300%2C300&ssl=1)Buy a house
+### Buy a house
+
+![House](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/12/LEGO-Classic-10703-Creative-Building-Box-Yellow-House.jpg?resize=300%2C300&ssl=1)
 
 This a huge goal for me. For many years I was content with renting and thought owning my own home wasn’t for me, but then I went and started a family and my career started going in the right direction and my thoughts about this have changed.
 
@@ -50,7 +52,9 @@ I don’t have a clear idea how to achieve this one as it takes two but I am goi
 
 Wow how has it been five years since we got married? At some point in 2018 I will take time out from the usual and spend it with the wife away from the boys. I won’t give away more details as I want that to be a surprise.
 
-### ![Celebrate James and Edward]https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/james5.jpg?resize=300%2C225&ssl=1)Celebrate the birth of my two sons
+### Celebrate the birth of my two sons
+
+![Celebrate James and Edward](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/james5.jpg?resize=300%2C225&ssl=1)
 
 I don’t want to get my boys christened as I would like them to make up their own minds when they are old enough, however I do want to celebrate all that they are with a thanksgiving service. Not sure when we are going to sort this, however it is my hope that it will be soon.
 
