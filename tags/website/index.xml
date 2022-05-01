@@ -67,4 +67,45 @@ Microsoft.Extensions.Configuration.AzureKeyVault
 &lt;p>&lt;img class="img-fluid" alt="Image" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2019/03/image-2.png?resize=206%2C428&amp;amp;ssl=1" loading="lazy"
 />
 &lt;/p>
-&lt;p>Now you have a website that can pull secrets out of Key Vault but only that unique identity. Anyone who has access to your source code will not have access to your secrets, even if they push your code to a different Azure Web App.&lt;/p></description></item></channel></rss>
+&lt;p>Now you have a website that can pull secrets out of Key Vault but only that unique identity. Anyone who has access to your source code will not have access to your secrets, even if they push your code to a different Azure Web App.&lt;/p></description></item><item><title>Website UI Testing</title><link>https://www.funkysi1701.com/posts/2018/website-ui-testing/</link><pubDate>Mon, 15 Jan 2018 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2018/website-ui-testing/</guid><description>&lt;p>Last week I looked at testing the &lt;a href="https://dev.to/funkysi1701/mobile-app-ui-testing-jgg-temp-slug-9433902" target="_blank" rel="noopener noreferrer">UI of mobile apps&lt;/a>
+, this week lets look at how we could do a similar thing for websites.&lt;/p>
+&lt;p>Testing the user interface is not an excuse for a lack of &lt;a href="https://dev.to/funkysi1701/writing-your-first-test-53gi-temp-slug-2645725" target="_blank" rel="noopener noreferrer">unit tests&lt;/a>
+. Testing the user interface takes longer so for keep creating your small unit tests that can be run after ever build. That said lets look at how you create a UI test.&lt;/p>
+&lt;p>Create a Unit Test project as normal. Now install the following nuget packages&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>Selenium.WebDriver.ChromeDriverSelenium.WebDriverSelenium.WebDriver.PhantomJS.Xplatform
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>I am going to be using Selenium to achieve my website testing and I am going to concentrate on the Chrome browser. However packages exist for other browsers so have a look at the following and I expect there are others as well.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>Selenium.WebDriver.IEDriverSelenium.Firefox.WebDriver
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="http://www.seleniumhq.org/" target="_blank" rel="noopener noreferrer">Selenium&lt;/a>
+started life as a plugin for Firefox to help create automated tests, however the latest version of Firefox is not compatible with the plugin as I write this. I have not had to install any plugins or extensions to my browsers to achieve my testing.&lt;/p>
+&lt;p>Enough talk lets write a test. First we create two instance variables to store the baseURL and the driver for the browser you are using.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> baseURL = &lt;span style="color:#e6db74">&amp;#34;https://www.example.com/&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">private&lt;/span> RemoteWebDriver driver;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Next we need to set things up for the test to run. This creates an instance of the chrome driver, maximizes the window and sets it to wait 30 seconds before timing out.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">[TestInitialize()]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> MyTestInitialize()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> driver = &lt;span style="color:#66d9ef">new&lt;/span> ChromeDriver();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> driver.Manage().Window.Maximize();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(&lt;span style="color:#ae81ff">30&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now comes the actual test. We navigate to a URL and then compare the title of the page loaded with a know value with a Assert statement like you would find in a unit test.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">[TestMethod]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> CheckBrowserTitle()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> driver.Navigate().GoToUrl(&lt;span style="color:#66d9ef">this&lt;/span>.baseURL);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Assert.AreEqual(&lt;span style="color:#e6db74">&amp;#34;Home Page&amp;#34;&lt;/span>, driver.Title);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Finally we need to tidy up after ourselves.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">[TestCleanup()]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> MyTestCleanup()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> driver.Quit();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you are used to writing tests you will know that the are usually constructed in three sections Arrange, Act and Assert. The Arrange is done in the initialize method, which makes the actual test much simpler, the first line does the Act and the last line does the Assert.&lt;/p>
+&lt;p>Now we have written a simple test lets look at something more complex.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>driver.FindElementByLinkTest(&lt;span style="color:#e6db74">&amp;#34;click&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This finds any Link on the page which is click. Be careful as the string need to be exactly what appears on screen it may well be easier to specify by id or class or something that doesn’t change as often. By adding .click() on the end of this command Selenium will click on the link and you can navigate to a new page.&lt;/p>
+&lt;p>&lt;strong>What about submitting form data?&lt;/strong> Well you can find the element you want to fill in and add .SendKeys(&amp;ldquo;example text&amp;rdquo;) or .Submit() and this will fill in and submit form data.&lt;/p>
+&lt;p>&lt;strong>What about a screenshot?&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>Screenshot ss = driver.GetScreenshot();ss.SaveAsFile(&lt;span style="color:#e6db74">&amp;#34;test.jpg&amp;#34;&lt;/span>,System.Drawing.Imaging.ImageFormat.Jpeg);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>I have only just started playing around with web UI tests but you can see there is a fair bit you can do.&lt;/p></description></item></channel></rss>
