@@ -97,7 +97,8 @@ This finds any Link on the page which is click. Be careful as the string need to
 **What about a screenshot?**
 
 ```csharp
-Screenshot ss = driver.GetScreenshot();ss.SaveAsFile("test.jpg",System.Drawing.Imaging.ImageFormat.Jpeg);
+Screenshot ss = driver.GetScreenshot();
+ss.SaveAsFile("test.jpg",System.Drawing.Imaging.ImageFormat.Jpeg);
 ```
 
 I have only just started playing around with web UI tests but you can see there is a fair bit you can do.
