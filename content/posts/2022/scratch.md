@@ -36,7 +36,7 @@ This is how the scratch website describes its self
 
 Scratch can be found by going to [https://scratch.mit.edu/projects/editor/](https://scratch.mit.edu/projects/editor/)
 
-A lot of the blocks affect your character or "sprite", the default is a cute looking dog which may also be the scratch logo.
+A lot of the blocks affect your character or "sprite", the default is a cute looking cat which may also be the scratch logo.
 
 ![](/images/scratch.png)
 
