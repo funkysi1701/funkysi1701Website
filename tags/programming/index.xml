@@ -618,7 +618,42 @@ started life as a plugin for Firefox to help create automated tests, however the
 &lt;h3 id="family-holiday">Family holiday&lt;a class="anchor ms-1" href="#family-holiday">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
 &lt;p>Not much of a goal but in the summer I will take time out to spend a week away with the family. In previous years we have done scotland, wales and northumberland. This year I am thinking of somewhere not too far away as Edward is still small, but maybe near where I grew up.&lt;/p>
 &lt;h3 id="lightning-talk">Lightning Talk&lt;a class="anchor ms-1" href="#lightning-talk">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
-&lt;p>A lightning talk is a very short talk or presentation given at a conference or user group. Friends of mine are having lots of success talking about what they know about and I think it might be time for me to have a go. I am not a natural public speaker so this is a step out of my comfort zone, however I am going to start small and see what happens. At the moment I don’t know what my subject or topic is going to be, my suspicion is that it will be devops related as that interest me more but watch this space.&lt;/p></description></item><item><title>SQL with Visual Studio Code</title><link>https://www.funkysi1701.com/posts/2017/sql-with-visual-studio-code/</link><pubDate>Mon, 06 Nov 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/sql-with-visual-studio-code/</guid><description>&lt;p>Writing SQL queries is typically done with SQL Management Studio (SSMS). However this tool is a bit of a beast so let’s look at how you could use Visual Studio Code instead.&lt;/p>
+&lt;p>A lightning talk is a very short talk or presentation given at a conference or user group. Friends of mine are having lots of success talking about what they know about and I think it might be time for me to have a go. I am not a natural public speaker so this is a step out of my comfort zone, however I am going to start small and see what happens. At the moment I don’t know what my subject or topic is going to be, my suspicion is that it will be devops related as that interest me more but watch this space.&lt;/p></description></item><item><title>Looking back at 2017</title><link>https://www.funkysi1701.com/posts/2017/looking-back-at-2017/</link><pubDate>Thu, 28 Dec 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/looking-back-at-2017/</guid><description>&lt;p>As 2017 starts to draw to a close let’s look at some of the highlights from the past year.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="Edward" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/DSC_0376-e1510563039193-225x300.jpg?resize=225%2C300&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;ol>
+&lt;li>Edward&lt;/li>
+&lt;/ol>
+&lt;p>In November I became a father again and celebrated the arrival of Edward into the world. Before the birth I was worried how well my first son James would adapt to the new arrival but I am happy to say I didn’t need to, he mostly ignores the new arrival.&lt;/p>
+&lt;ol start="2">
+&lt;li>Star Trek&lt;/li>
+&lt;/ol>
+&lt;p>In September the latest Star Trek TV series Discovery arrived on Netflix. I have been very positive so far about the show, I am still positive however there are things that annoy me about the new show, however I am keen to see the next episode each week so they are definitely doing something right.&lt;/p>
+&lt;ol start="3">
+&lt;li>Office move&lt;/li>
+&lt;/ol>
+&lt;p>In May I helped my employer move to brand new &lt;a href="https://funkysi1701.com/office-move" target="_blank" rel="noopener noreferrer">offices&lt;/a>
+. This was a lot of hard work, but everything went as planned and our new home is great.&lt;/p>
+&lt;ol start="4">
+&lt;li>Side projects &lt;img class="img-fluid" alt="Google Play" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/08/googleplay.jpg?resize=300%2C300&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/li>
+&lt;/ol>
+&lt;p>I blogged in February about having a side project but it wasn’t until later in the year that this solidified into what I am working on now. It started as a way to understand &lt;a href="https://funkysi1701.com/interfaces" target="_blank" rel="noopener noreferrer">interfaces&lt;/a>
+this then led to learning Xamarin and creating an android app to help promote this blog. Troy Hunt expanded his HIBP API to include passwords that have been in data breaches, I then started working on &lt;a href="https://funkysi1701.com/pwned-pass--available-from-the-play-store" target="_blank" rel="noopener noreferrer">pwned passwords&lt;/a>
+which is a simple android frontend for this.&lt;/p>
+&lt;ol start="5">
+&lt;li>Learning R&lt;/li>
+&lt;/ol>
+&lt;p>In Feb I also experimented with a new programming language &lt;a href="https://funkysi1701.com/learning-r" target="_blank" rel="noopener noreferrer">R&lt;/a>
+. It started with a problem about converting exchange rates and ended with a SQL stored procedure that executed some R code, I still want to learn lots more but it was a good example of the sorts of thing you can build with R.&lt;/p>
+&lt;ol start="6">
+&lt;li>DNS programmatically&lt;/li>
+&lt;/ol>
+&lt;p>One of my most successful blogs was about how you can create &lt;a href="https://dev.to/funkysi1701/creating-dns-records-programmatically-1o3c-temp-slug-3062796" target="_blank" rel="noopener noreferrer">dns&lt;/a>
+records within your application eg sites that have yourname.domain in the url. It was a great chance to look at how dns works and learn more about what azure can do to manage this. I want to expand on this and build something.&lt;/p>
+&lt;p>So that was 2017, for some ideas about what 2018 might have in store for me look out for my next blog post.&lt;/p></description></item><item><title>SQL with Visual Studio Code</title><link>https://www.funkysi1701.com/posts/2017/sql-with-visual-studio-code/</link><pubDate>Mon, 06 Nov 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/sql-with-visual-studio-code/</guid><description>&lt;p>Writing SQL queries is typically done with SQL Management Studio (SSMS). However this tool is a bit of a beast so let’s look at how you could use Visual Studio Code instead.&lt;/p>
 &lt;p>Visual Studio Code is a free text editor but it is so much more than just a text editor. VS Code can be downloaded from &lt;a href="https://code.visualstudio.com/Download" target="_blank" rel="noopener noreferrer">https://code.visualstudio.com/Download&lt;/a>
 &lt;/p>
 &lt;p>To work with SQL Server download the mssql extension. Press &lt;strong>CTRL+SHIFT+P&lt;/strong> and then Select &lt;strong>Install Extension&lt;/strong> and type &lt;strong>mssql&lt;/strong>.&lt;/p>

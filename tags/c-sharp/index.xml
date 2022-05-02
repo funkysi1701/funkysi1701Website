@@ -57,7 +57,42 @@ to get money off.&lt;/p>
 &lt;p>Since I signed up I have listened to over 27 hours of technical videos. These have covered topics like C#, Security, Xamarin, MVVM, Interfaces, Getting Involved and Clean architecture. The number one thing I have learnt is that there is a lot that I still don’t understand.&lt;/p>
 &lt;p>That said I would like to think that since starting to listen to pluralsight concepts have gone from being unknown unknowns (I don’t know about them and I don’t understand them) to known unknowns (I know about them but don’t yet fully understand them)&lt;/p>
 &lt;p>To keep track of your learning pluralsight has some tests which you can complete. I am particularly proud of my score on the Azure test which ranks me as an expert.&lt;/p>
-&lt;p>Why not check out what you can learn from pluralsight?&lt;/p></description></item><item><title>Async and Await</title><link>https://www.funkysi1701.com/posts/2017/async-and-await/</link><pubDate>Mon, 24 Jul 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/async-and-await/</guid><description>&lt;p>For a while the Async and Await commands in c# have confused me.&lt;/p>
+&lt;p>Why not check out what you can learn from pluralsight?&lt;/p></description></item><item><title>Looking back at 2017</title><link>https://www.funkysi1701.com/posts/2017/looking-back-at-2017/</link><pubDate>Thu, 28 Dec 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/looking-back-at-2017/</guid><description>&lt;p>As 2017 starts to draw to a close let’s look at some of the highlights from the past year.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="Edward" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/DSC_0376-e1510563039193-225x300.jpg?resize=225%2C300&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;ol>
+&lt;li>Edward&lt;/li>
+&lt;/ol>
+&lt;p>In November I became a father again and celebrated the arrival of Edward into the world. Before the birth I was worried how well my first son James would adapt to the new arrival but I am happy to say I didn’t need to, he mostly ignores the new arrival.&lt;/p>
+&lt;ol start="2">
+&lt;li>Star Trek&lt;/li>
+&lt;/ol>
+&lt;p>In September the latest Star Trek TV series Discovery arrived on Netflix. I have been very positive so far about the show, I am still positive however there are things that annoy me about the new show, however I am keen to see the next episode each week so they are definitely doing something right.&lt;/p>
+&lt;ol start="3">
+&lt;li>Office move&lt;/li>
+&lt;/ol>
+&lt;p>In May I helped my employer move to brand new &lt;a href="https://funkysi1701.com/office-move" target="_blank" rel="noopener noreferrer">offices&lt;/a>
+. This was a lot of hard work, but everything went as planned and our new home is great.&lt;/p>
+&lt;ol start="4">
+&lt;li>Side projects &lt;img class="img-fluid" alt="Google Play" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/08/googleplay.jpg?resize=300%2C300&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/li>
+&lt;/ol>
+&lt;p>I blogged in February about having a side project but it wasn’t until later in the year that this solidified into what I am working on now. It started as a way to understand &lt;a href="https://funkysi1701.com/interfaces" target="_blank" rel="noopener noreferrer">interfaces&lt;/a>
+this then led to learning Xamarin and creating an android app to help promote this blog. Troy Hunt expanded his HIBP API to include passwords that have been in data breaches, I then started working on &lt;a href="https://funkysi1701.com/pwned-pass--available-from-the-play-store" target="_blank" rel="noopener noreferrer">pwned passwords&lt;/a>
+which is a simple android frontend for this.&lt;/p>
+&lt;ol start="5">
+&lt;li>Learning R&lt;/li>
+&lt;/ol>
+&lt;p>In Feb I also experimented with a new programming language &lt;a href="https://funkysi1701.com/learning-r" target="_blank" rel="noopener noreferrer">R&lt;/a>
+. It started with a problem about converting exchange rates and ended with a SQL stored procedure that executed some R code, I still want to learn lots more but it was a good example of the sorts of thing you can build with R.&lt;/p>
+&lt;ol start="6">
+&lt;li>DNS programmatically&lt;/li>
+&lt;/ol>
+&lt;p>One of my most successful blogs was about how you can create &lt;a href="https://dev.to/funkysi1701/creating-dns-records-programmatically-1o3c-temp-slug-3062796" target="_blank" rel="noopener noreferrer">dns&lt;/a>
+records within your application eg sites that have yourname.domain in the url. It was a great chance to look at how dns works and learn more about what azure can do to manage this. I want to expand on this and build something.&lt;/p>
+&lt;p>So that was 2017, for some ideas about what 2018 might have in store for me look out for my next blog post.&lt;/p></description></item><item><title>Async and Await</title><link>https://www.funkysi1701.com/posts/2017/async-and-await/</link><pubDate>Mon, 24 Jul 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/async-and-await/</guid><description>&lt;p>For a while the Async and Await commands in c# have confused me.&lt;/p>
 &lt;p>Like most things the best way to learn about something is to use it in a real world example. I am currently adding an email alert feature to a website. This is an ideal example of something that would benefit from Asynchronous programming. There is no need for the webpage to wait to send 1000s of emails, lets just send a call to get started and allow the browser to carry on as normal.&lt;/p>
 &lt;p>This is my first try at using async and await so feel free to suggest best practises in the comments.&lt;/p>
 &lt;p>Lets start with a Send method in my EmailController.&lt;/p>
