@@ -15,6 +15,8 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/pwned-pass-available-from-the-play-store-2fjp",
+    "/pwned-pass-available-from-the-play-store",
     "/posts/pwned-pass-available-from-the-play-store",
     "/posts/pwned-pass-available-from-the-play-store-2fjp",
     "/posts/2017/08/14/pwned-pass-available-from-the-play-store-2fjp",

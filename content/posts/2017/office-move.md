@@ -15,6 +15,8 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/office-move-2khb",
+    "/office-move",
     "/posts/office-move",
     "/posts/office-move-2khb",
     "/posts/2017/05/01/office-move-2khb",

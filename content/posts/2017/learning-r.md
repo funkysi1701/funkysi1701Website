@@ -16,6 +16,8 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/learning-r-2p31",
+    "/learning-r",
     "/posts/learning-r",
     "/posts/learning-r-2p31",
     "/posts/2017/02/27/learning-r-2p31",

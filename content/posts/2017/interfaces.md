@@ -15,6 +15,8 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/interfaces-1kfa",
+    "/interfaces",
     "/posts/interfaces",
     "/posts/interfaces-1kfa",
     "/posts/2017/03/27/interfaces-1kfa",
