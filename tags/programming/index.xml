@@ -653,7 +653,38 @@ which is a simple android frontend for this.&lt;/p>
 &lt;/ol>
 &lt;p>One of my most successful blogs was about how you can create &lt;a href="https://dev.to/funkysi1701/creating-dns-records-programmatically-1o3c-temp-slug-3062796" target="_blank" rel="noopener noreferrer">dns&lt;/a>
 records within your application eg sites that have yourname.domain in the url. It was a great chance to look at how dns works and learn more about what azure can do to manage this. I want to expand on this and build something.&lt;/p>
-&lt;p>So that was 2017, for some ideas about what 2018 might have in store for me look out for my next blog post.&lt;/p></description></item><item><title>SQL with Visual Studio Code</title><link>https://www.funkysi1701.com/posts/2017/sql-with-visual-studio-code/</link><pubDate>Mon, 06 Nov 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/sql-with-visual-studio-code/</guid><description>&lt;p>Writing SQL queries is typically done with SQL Management Studio (SSMS). However this tool is a bit of a beast so let’s look at how you could use Visual Studio Code instead.&lt;/p>
+&lt;p>So that was 2017, for some ideas about what 2018 might have in store for me look out for my next blog post.&lt;/p></description></item><item><title>How to get Zero Code Changes outside of Source Control</title><link>https://www.funkysi1701.com/posts/2017/get-zero-code-changes-outside-source-control/</link><pubDate>Mon, 13 Nov 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/get-zero-code-changes-outside-source-control/</guid><description>&lt;p>Source control is bread and butter for web developers, however not so much for SQL developers and other business people. One of my goals for the coming year is to get the whole of my team using source control processes.&lt;/p>
+&lt;p>One of the arguments against using source control is there will always be a few exceptions where it won’t be used. Lets look at a few scenarios to help make the case for source control.&lt;/p>
+&lt;p>&lt;strong>Scenario One&lt;/strong>&lt;/p>
+&lt;p>Web Dev 1 makes a change in production to fix an issue and doesn’t use source control. Web Dev 2 is working on a new feature and makes use of source control. He is given the sign-off to deploy his new feature and in the process undoes Web Dev 1’s fix.&lt;/p>
+&lt;p>Management blames Web Dev 2 as they “broke” stuff during the deployment. Web Dev 2 doesn’t understand what happened and Web Dev 1 is oblivious to the entire scenario despite in reality being part of the problem.&lt;/p>
+&lt;p>&lt;strong>Scenario Two&lt;/strong>&lt;/p>
+&lt;p>A SQL Dev works all night to fix a problem. He deploy to production and doesn’t notice a missed where clause due to lack of sleep.&lt;/p>
+&lt;p>—&lt;/p>
+&lt;p>Let’s look at these two scenarios done with the whole team buying into source control.&lt;/p>
+&lt;p>&lt;strong>Scenario One&lt;/strong>&lt;/p>
+&lt;p>Web Dev 1 makes a change in production to fix an issue and also commits to source control. This takes him an extra 5 minutes (if that!) Web Dev 2 is working on a new feature and makes use of source control. He is given the sign-off to deploy his new feature and in the process merges Web Dev 1’s fix before he deploys to production.&lt;/p>
+&lt;p>Management is happy with Web Dev 1, nothing is broken and new functionality has made the website better not worse.&lt;/p>
+&lt;p>&lt;strong>Scenario Two&lt;/strong>&lt;/p>
+&lt;p>A SQL Dev works all night to fix a problem. He deploy to production and doesn’t notice a missed where clause due to lack of sleep, he also commits to source control this takes him an extra 5 minutes (if that!).&lt;/p>
+&lt;p>In the morning a colleague looks through the commits made during the night and queries the missing where clause. A fix is made in source control and deployed, management and the client are unaware that a problem was created and fixed.&lt;/p>
+&lt;p>—&lt;/p>
+&lt;p>These are simple scenarios but I cannot think of any situation where the outcome would be better to not use source control. These examples assume no continuous deployment, adding this to the system before every team has bought into source control would cause bugs and issues all over the place.&lt;/p>
+&lt;p>However with a team that is 100% behind source control continuous deployment can achieve an amazing productivity boost. After every commit code could be automatically tested, reviewed by other members of the team and deployed to test environments for further analysis. Only tested code that has been reviewed can get anywhere near production environments.&lt;/p>
+&lt;p>Having said all this there are ways especially on the SQL side to mitigate loosing changes while you work on training individuals and convincing management. Before any code is deployed to production do a schema compare. If you only see changes you have made you can proceed, if you don’t shout at your team.&lt;/p>
+&lt;p>&lt;strong>Advantages&lt;/strong>&lt;/p>
+&lt;p>Code Reviews&lt;br>
+Team awareness of what is being changed&lt;br>
+History of changes&lt;br>
+Smoother Deployments&lt;br>
+Automation&lt;br>
+Better Teamwork&lt;br>
+Diff changes between different versions&lt;br>
+Many more&lt;/p>
+&lt;p>&lt;strong>Disadvantages&lt;/strong>&lt;/p>
+&lt;p>Time to learn tools&lt;br>
+Remember to commit changes&lt;br>
+Technologies that use binary files harder to version control&lt;/p></description></item><item><title>SQL with Visual Studio Code</title><link>https://www.funkysi1701.com/posts/2017/sql-with-visual-studio-code/</link><pubDate>Mon, 06 Nov 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/sql-with-visual-studio-code/</guid><description>&lt;p>Writing SQL queries is typically done with SQL Management Studio (SSMS). However this tool is a bit of a beast so let’s look at how you could use Visual Studio Code instead.&lt;/p>
 &lt;p>Visual Studio Code is a free text editor but it is so much more than just a text editor. VS Code can be downloaded from &lt;a href="https://code.visualstudio.com/Download" target="_blank" rel="noopener noreferrer">https://code.visualstudio.com/Download&lt;/a>
 &lt;/p>
 &lt;p>To work with SQL Server download the mssql extension. Press &lt;strong>CTRL+SHIFT+P&lt;/strong> and then Select &lt;strong>Install Extension&lt;/strong> and type &lt;strong>mssql&lt;/strong>.&lt;/p>
