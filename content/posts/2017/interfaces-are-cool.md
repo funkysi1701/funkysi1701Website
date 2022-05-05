@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/interfaces-are-cool-dde",
     "/posts/interfaces-are-cool",
     "/posts/interfaces-are-cool-dde",
     "/posts/2017/10/31/interfaces-are-cool-dde",
