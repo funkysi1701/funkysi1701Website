@@ -2317,7 +2317,31 @@ but lets look at some improvements I can make.&lt;/p>
 &lt;p>If your code is hosted in Visual Studio Team Services you can get some cool analytics from your commit history. &lt;img class="img-fluid" alt="Business Intelligence from VSTS" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/06/Capture-1.jpg?resize=662%2C177&amp;amp;ssl=1" loading="lazy"
 />
 &lt;/p>
-&lt;p>There is a huge long list of apps you can connect to power BI so you can start getting all sorts of analysis very easily. I am hopefully going to talk another time about getting custom data into Power BI.&lt;/p></description></item><item><title>Office Move</title><link>https://www.funkysi1701.com/posts/2017/office-move/</link><pubDate>Mon, 01 May 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/office-move/</guid><description>&lt;p>&lt;img class="img-fluid" alt="New Rack" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/04/20170422_191127-e1493403982560-169x300.jpg?resize=169%2C300&amp;amp;ssl=1" loading="lazy"
+&lt;p>There is a huge long list of apps you can connect to power BI so you can start getting all sorts of analysis very easily. I am hopefully going to talk another time about getting custom data into Power BI.&lt;/p></description></item><item><title>Have I Been Pwned?</title><link>https://www.funkysi1701.com/posts/2017/have-i-been-pwned/</link><pubDate>Mon, 29 May 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/have-i-been-pwned/</guid><description>&lt;p>Have you heard of the website &lt;a href="https://haveibeenpwned.com" target="_blank" rel="noopener noreferrer">https://haveibeenpwned.com&lt;/a>
+?&lt;/p>
+&lt;p>Well you should have. Have I Been Pwned is a website created by security expert Troy Hunt that keeps track of data breaches and allows you to search and find ones that affect you. As I write this &lt;a href="https://www.troyhunt.com/" target="_blank" rel="noopener noreferrer">Troy Hunt&lt;/a>
+has tracked 3,752,984,562 pwned accounts from 216 pwned websites.&lt;/p>
+&lt;h3 id="what-does-pwned-mean">What does “pwned” mean?&lt;a class="anchor ms-1" href="#what-does-pwned-mean">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>pwn means to compromise or control, specifically another computer (server or PC), website, gateway device, or application. (as defined on wikipedia)&lt;/p>
+&lt;p>Originally, pwn and its variants were pronounced /ˈoʊn/ in the same way as the verb own, the tail of the p being “silent”.&lt;/p>
+&lt;p>In terms of this site Troy Hunt defines it as:&lt;/p>
+&lt;p>&lt;quote>A &amp;ldquo;breach&amp;rdquo; is an incident where a hacker illegally obtains data from a vulnerable system, usually by exploiting weaknesses in the software. All the data in the site comes from website breaches which have been made publicly available.&lt;/quote>&lt;/p>
+&lt;h3 id="what-can-i-do">What can I do?&lt;a class="anchor ms-1" href="#what-can-i-do">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>As an individual you can search for your email address in Have I Been Pwned, I am in 7 data breaches.&lt;/p>
+&lt;p>As a person responsible for an email domain you can search and find which of your users are in a data breach.&lt;/p>
+&lt;p>You can also sign up to get notified of any future data breaches you might get caught up in.&lt;/p>
+&lt;p>If you are in a data breach change your password. If you use the same password across multiple sites or services change them as well. Consider using a &lt;a href="https://www.troyhunt.com/only-secure-password-is-one-you-cant/" target="_blank" rel="noopener noreferrer">password manager&lt;/a>
+so you can have unique complex passwords for every services you use and not have to worry about forgetting them.&lt;/p>
+&lt;p>If you look after a website or service then follow Troy Hunt. Think about security, is your site vulnerable to SQL injection, do you store passwords with reversible encryption?&lt;/p>
+&lt;h3 id="how-worried-should-i-be">How worried should I be?&lt;a class="anchor ms-1" href="#how-worried-should-i-be">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>Data breaches are happening more and more often. Its not showing any sign of slowing down, in fact I expect there to be lots more in the years to come. However there are things you can do to mitigate the damage of being in a breach.&lt;/p>
+&lt;ul>
+&lt;li>Use a password manager&lt;/li>
+&lt;li>Don’t share passwords between sites&lt;/li>
+&lt;li>Regularly change your passwords&lt;/li>
+&lt;li>Think of passwords as pass phrases and include spaces between the different words&lt;/li>
+&lt;/ul>
+&lt;p>Consider what information a company has about you. How worried would you be if this became public knowledge? Consider if you want this online, weigh up the benefits etc&lt;/p></description></item><item><title>Office Move</title><link>https://www.funkysi1701.com/posts/2017/office-move/</link><pubDate>Mon, 01 May 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/office-move/</guid><description>&lt;p>&lt;img class="img-fluid" alt="New Rack" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/04/20170422_191127-e1493403982560-169x300.jpg?resize=169%2C300&amp;amp;ssl=1" loading="lazy"
 />
 For the past few weeks my software developing has been taking a back seat as I planned and coordinated the IT requirements of an office move.&lt;/p>
 &lt;p>The company I work for has been working out of a converted barn, but as the company has grown we have outgrown the building and for quite a while it has been a real squeeze to get everyone in. We now have a shiny new offices with plenty of room for growth.&lt;/p>
