@@ -6,7 +6,7 @@ month= "2017-11"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = ""
-tags = ["Code", "Database", "SQL", "Programming"]
+tags = ["Database", "SQL","Visual Studio", "Programming"]
 category="tech"
 keywords = ["", ""]
 description = "SQL with Visual Studio Code"
@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/sql-with-visual-studio-code-1k3p",
     "/posts/sql-visual-studio-code",
     "/posts/sql-with-visual-studio-code-1k3p",
     "/posts/2017/11/06/sql-with-visual-studio-code-1k3p",
