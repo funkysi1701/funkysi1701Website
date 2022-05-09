@@ -15,12 +15,12 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
-    "/what-the-heck-is-business-intelligence-28gm",
+    "/have-i-been-pwned-7lf",
     "/posts/have-i-been-pwned",
-    "/posts/what-the-heck-is-business-intelligence-28gm",
-    "/posts/2017/05/29/what-the-heck-is-business-intelligence-28gm",
+    "/posts/have-i-been-pwned-7lf",
+    "/posts/2017/05/29/have-i-been-pwned-7lf",
     "/posts/2017/05/29/have-i-been-pwned",
-    "/2017/05/29/what-the-heck-is-business-intelligence-28gm",
+    "/2017/05/29/have-i-been-pwned-7lf",
     "/2017/05/29/have-i-been-pwned"
 ]
 +++
