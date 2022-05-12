@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/windows-update-dont-turn-off",
-    "/posts/writing-your-first-test-2plo",
-    "/posts/2017/05/15/writing-your-first-test-2plo",
+    "/posts/windows-update-dont-turn-it-off-5ago",
+    "/posts/2017/05/15/windows-update-dont-turn-it-off-5ago",
     "/posts/2017/05/15/windows-update-dont-turn-off",
-    "/2017/05/11/writing-your-first-test-2plo",
+    "/2017/05/11/windows-update-dont-turn-it-off-5ago",
     "/2017/05/15/windows-update-dont-turn-off"
 ]
 +++

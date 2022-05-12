@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/highcharts",
-    "/posts/writing-your-first-test-2plo",
-    "/posts/2017/05/08/writing-your-first-test-2plo",
+    "/posts/highcharts-27cb",
+    "/posts/2017/05/08/highcharts-27cb",
     "/posts/2017/05/08/highcharts",
-    "/2017/05/08/writing-your-first-test-2plo",
+    "/2017/05/08/highcharts-27cb",
     "/2017/05/08/highcharts"
 ]
 +++
