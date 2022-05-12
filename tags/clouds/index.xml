@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Clouds on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/clouds/</link><description>Recent content in Clouds on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Thu, 21 Jul 2016 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/clouds/index.xml" rel="self" type="application/rss+xml"/><item><title>Amazon Web Services</title><link>https://www.funkysi1701.com/posts/2016/amazon-web-services/</link><pubDate>Thu, 21 Jul 2016 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2016/amazon-web-services/</guid><description>&lt;p>I am a big fan of Azure but I know zero about its biggest rival – Amazon Web Services or AWS.&lt;/p>
+&lt;p>So lets sign up for a free trial and see what it can do. &lt;img class="img-fluid" alt="Amazon Web Services" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/07/aws-300x169.png?resize=300%2C169" loading="lazy"
+/>
+&lt;/p>
+&lt;p>The AWS free trial is available from &lt;a href="https://aws.amazon.com/free/" target="_blank" rel="noopener noreferrer">https://aws.amazon.com/free/&lt;/a>
+and lasts for 12 months. From memory I think the Azure free trial lasted only one month.&lt;/p>
+&lt;p>To start you need to login with your amazon account and create an AWS account. This requires your name and address and your payment info (you will only get billed if use services not covered by your free trial).&lt;/p>
+&lt;p>Interestingly AWS requires you to verify your identity via an automated phone call. (I don’t recall doing anything like this for Azure but please correct me if I am wrong.)&lt;/p>
+&lt;p>Once you are logged in you get a series of links displaying all the different services that are available. First impression is this is a simpler view to Azure’s portal with a similar amount of services. At the top right is an option to select which region you want to use, in Azure I use North Europe and West Europe, AWS has Ireland and Frankfurt.&lt;/p>
+&lt;h2 id="create-a-web-app">Create a Web App&lt;a class="anchor ms-1" href="#create-a-web-app">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>First thing to try is setting up a website. I selected create a web app and I get a page asking me for its basic details (very similar to Azure, however AWS asked what language your code is written in, Azure handles all of these) AWS websites appear to support a host of different options similar to Azure.&lt;/p>
+&lt;p>The actual creation of your website takes a few moments (like on Azure). However the default URL for websites is similar to &lt;a href="http://test.vjbbimyv7w.eu-central-1.elasticbeanstalk.com/" target="_blank" rel="noopener noreferrer">http://test.vjbbimyv7w.eu-central-1.elasticbeanstalk.com/&lt;/a>
+which is not quite as nice as the Azure equivalent &lt;a href="http://test.azurewebsites.net" target="_blank" rel="noopener noreferrer">http://test.azurewebsites.net&lt;/a>
+&lt;/p>
+&lt;p>Azure has a host of command lines available via powershell. AWS has a similar command line interface called AWS CLI, including the option to deploy from git to your website.&lt;/p>
+&lt;p>AWS Toolkit for Visual Studio is an extension that allows for the publishing of websites to AWS. (Just like you can publish to Azure)&lt;/p>
+&lt;p>As I learn more about AWS I will continue to blog about it. &lt;a href="https://www.funkysi1701.com/2016/08/04/amazon-web-services-pt-2/">Amazon Web Services Pt 2&lt;/a>
+&lt;/p></description></item></channel></rss>
