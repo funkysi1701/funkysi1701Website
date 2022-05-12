@@ -42,7 +42,7 @@ R defines functions fairly simply
 ```r
 nameoffunction <- function(arg1, arg2)  
 {  
-arg1 * arg2  
+  arg1 * arg2  
 }
 ```
 
