@@ -15,11 +15,12 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/github-history-1com",
     "/posts/github-history",
-    "/posts/writing-your-first-test-2plo",
-    "/posts/2017/04/24/writing-your-first-test-2plo",
+    "/posts/github-history-1com",
+    "/posts/2017/04/24/github-history-1com",
     "/posts/2017/04/24/github-history",
-    "/2017/04/24/writing-your-first-test-2plo",
+    "/2017/04/24/github-history-1com",
     "/2017/04/24/github-history"
 ]
 +++

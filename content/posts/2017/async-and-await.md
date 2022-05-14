@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/async-and-await-4he2",
     "/posts/async-and-await",
     "/posts/async-and-await-4he2",
     "/posts/2017/07/24/async-and-await-4he2",

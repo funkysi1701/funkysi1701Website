@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/discovery-my-thoughts-so-far-55bl",
     "/posts/discovery-thoughts-far",
     "/posts/discovery-my-thoughts-so-far-55bl",
     "/posts/2017/10/10/discovery-my-thoughts-so-far-55bl",

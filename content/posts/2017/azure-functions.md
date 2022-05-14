@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/azure-functions-301k",
     "/posts/azure-functions",
     "/posts/azure-functions-301k",
     "/posts/2017/09/12/azure-functions-301k",

@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/android-app-development-and-the-visual-studio-mobile-centre-2o2",
     "/posts/android-app-development-and-the-visual-studio-mobile-centre",
     "/posts/android-app-development-and-the-visual-studio-mobile-centre-2o2",
     "/posts/2017/08/07/android-app-development-and-the-visual-studio-mobile-centre-2o2",

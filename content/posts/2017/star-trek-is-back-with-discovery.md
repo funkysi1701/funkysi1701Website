@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/star-trek-is-back-with-discovery-4lab",
     "/posts/star-trek-is-back-with-discovery",
     "/posts/star-trek-is-back-with-discovery-4lab",
     "/posts/2017/09/22/star-trek-is-back-with-discovery-4lab",

@@ -16,11 +16,12 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/test-driven-development-or-tdd-2m06",
     "/posts/test-driven-development-tdd",
-    "/posts/async-and-await-4he2",
-    "/posts/2017/03/13/async-and-await-4he2",
+    "/posts/test-driven-development-or-tdd-2m06",
+    "/posts/2017/03/13/test-driven-development-or-tdd-2m06",
     "/posts/2017/03/13/test-driven-development-tdd",
-    "/2017/03/13/async-and-await-4he2",
+    "/2017/03/13/test-driven-development-or-tdd-2m06",
     "/2017/03/13/test-driven-development-tdd"
 ]
 +++

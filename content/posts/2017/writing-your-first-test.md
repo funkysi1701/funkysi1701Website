@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/writing-your-first-test-2plo",
     "/posts/writing-your-first-test",
     "/posts/writing-your-first-test-2plo",
     "/posts/2017/07/10/writing-your-first-test-2plo",

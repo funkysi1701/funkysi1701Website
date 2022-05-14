@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/azure-friday-4ena",
     "/posts/azure-friday",
     "/posts/azure-friday-4ena",
     "/posts/2017/09/18/azure-friday-4ena",

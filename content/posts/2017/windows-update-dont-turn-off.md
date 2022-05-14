@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/windows-update-dont-turn-it-off-5ago",
     "/posts/windows-update-dont-turn-off",
     "/posts/windows-update-dont-turn-it-off-5ago",
     "/posts/2017/05/15/windows-update-dont-turn-it-off-5ago",

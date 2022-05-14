@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/how-do-i-add-power-bi-data-to-a-webpage-49f1",
     "/posts/how-do-i-add-power-bi-data-to-a-webpage/",
     "/posts/how-do-i-add-power-bi-data-to-a-webpage-49f1",
     "/posts/2017/06/12/how-do-i-add-power-bi-data-to-a-webpage-49f1",

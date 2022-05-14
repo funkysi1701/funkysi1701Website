@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/how-good-is-your-ssl-3ncf",
     "/posts/how-good-is-your-ssl",
     "/posts/how-good-is-your-ssl-3ncf",
     "/posts/2017/07/17/how-good-is-your-ssl-3ncf",

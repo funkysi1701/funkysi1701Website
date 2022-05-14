@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/fiddler-and-apis-1304",
     "/posts/fiddler-and-apis/",
     "/posts/fiddler-and-apis-1304",
     "/posts/2017/06/19/fiddler-and-apis-1304",

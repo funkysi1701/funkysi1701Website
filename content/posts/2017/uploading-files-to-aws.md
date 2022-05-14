@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/uploading-files-to-aws-1koo",
     "/posts/uploading-files-to-aws/",
     "/posts/uploading-files-to-aws-1koo",
     "/posts/2017/07/03/uploading-files-to-aws-1koo",

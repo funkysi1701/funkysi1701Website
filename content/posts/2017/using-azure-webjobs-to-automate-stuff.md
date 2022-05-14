@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/using-azure-webjobs-to-automate-stuff-38mj",
     "/posts/using-azure-webjobs-to-automate-stuff/",
     "/posts/using-azure-webjobs-to-automate-stuff-38mj",
     "/posts/2017/06/26/using-azure-webjobs-to-automate-stuff-38mj",

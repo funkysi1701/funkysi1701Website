@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/highcharts-27cb",
     "/posts/highcharts",
     "/posts/highcharts-27cb",
     "/posts/2017/05/08/highcharts-27cb",
