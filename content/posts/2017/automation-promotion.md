@@ -27,9 +27,9 @@ aliases = [
 I would like to automate the promotion of this blog. Currently to promote this blog on social media I use a few different services.
 ![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/04/img-buffer-illustration-hub-960@2x.png?w=1780&ssl=1)
 
-Buffer ([buffer.com](buffer.com)) is a service that allows you to schedule updates to the main social media channels (Facebook, Twitter, LinkedIn and Google+)
+Buffer ([buffer.com](https://buffer.com)) is a service that allows you to schedule updates to the main social media channels (Facebook, Twitter, LinkedIn and Google+)
 
-IFTTT or If This Then That ([ifttt.com](ifttt.com)) is a service that allows you to connect different online services. You can send an email when a specific event occurs in your calendar for example.
+IFTTT or If This Then That ([ifttt.com](https://ifttt.com)) is a service that allows you to connect different online services. You can send an email when a specific event occurs in your calendar for example.
 
 I have been using a combination of these services to share to social media some of my past blog posts. I then add to my calendar details of my blog posts. Then I use IFTTT to add the event to Buffer, and then buffer tweets on a schedule.
 
