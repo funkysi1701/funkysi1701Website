@@ -15,12 +15,12 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
-    "/writing-your-first-test-2plo",
+    "/automation-of-the-promotion-of-my-blog-1ei0",
     "/posts/automation-promotion",
-    "/posts/writing-your-first-test-2plo",
-    "/posts/2017/04/17/writing-your-first-test-2plo",
+    "/posts/automation-of-the-promotion-of-my-blog-1ei0",
+    "/posts/2017/04/17/automation-of-the-promotion-of-my-blog-1ei0",
     "/posts/2017/04/17/automation-promotion",
-    "/2017/04/17/writing-your-first-test-2plo",
+    "/2017/04/17/automation-of-the-promotion-of-my-blog-1ei0",
     "/2017/04/17/automation-promotion"
 ]
 +++
