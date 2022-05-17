@@ -1,4 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lynx on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/lynx/</link><description>Recent content in Lynx on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Sun, 21 Jun 2015 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/lynx/index.xml" rel="self" type="application/rss+xml"/><item><title>Fathers Day</title><link>https://www.funkysi1701.com/posts/2015/fathers-day/</link><pubDate>Sun, 21 Jun 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/fathers-day/</guid><description>&lt;p>In the UK today is Fathers Day. Happy Fathers Day Dad!&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lynx on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/lynx/</link><description>Recent content in Lynx on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Tue, 28 Dec 2021 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/lynx/index.xml" rel="self" type="application/rss+xml"/><item><title>Back to BASIC</title><link>https://www.funkysi1701.com/posts/2021/back-to-basic/</link><pubDate>Tue, 28 Dec 2021 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2021/back-to-basic/</guid><description>&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">How exciting my Lynx Computer from my childhood has come home, all 96k of it &lt;a href="https://t.co/aeN38KBiS8">pic.twitter.com/aeN38KBiS8&lt;/a>&lt;/p>&amp;mdash; Simon Foster (@funkysi1701) &lt;a href="https://twitter.com/funkysi1701/status/1475139125154037760?ref_src=twsrc%5Etfw">December 26, 2021&lt;/a>&lt;/blockquote> &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+&lt;p>I can&amp;rsquo;t remember the syntax for BASIC, luckily I have been able to find the &lt;a href="http://elborg.dk/books.html" target="_blank" rel="noopener noreferrer">Manual&lt;/a>
+.&lt;/p>
+&lt;p>All the commands are listed inside so lets see what we can do.&lt;/p>
+&lt;p>The Lynx presents you with a command prompt in which you can type text. Back in the 80s we had a tape player to load programs from tape, however I don&amp;rsquo;t have one today so only programs I write can be run.&lt;/p>
+&lt;p>PRINT - To write Hello World, you can just type PRINT &amp;ldquo;Hello World&amp;rdquo; and Hello World appears on the screen. To Write a program that displays Hello World, you just write the line number first.&lt;/p>
+&lt;pre tabindex="0">&lt;code>10 PRINT &amp;#34;Hello World&amp;#34;
+&lt;/code>&lt;/pre>&lt;p>To run this you type RUN
+To view the code you type LIST&lt;/p>
+&lt;p>To Edit a specific Line you can use Ctrl+E and type the line number, or you can just write the line out again.&lt;/p>
+&lt;p>CLS - This command clears the screen&lt;/p>
+&lt;p>INPUT N - stores text typed by the user and stores it in the variable N&lt;/p>
+&lt;p>GOTO N - Execution of code continues at Line Number N&lt;/p>
+&lt;p>The first Program I wrote with a bit of help from my boys.&lt;/p>
+&lt;pre tabindex="0">&lt;code>10 CLS
+20 PRINT &amp;#34;What is your Age?&amp;#34;
+30 INPUT N
+40 IF N&amp;gt;5 AND N&amp;lt;41 THEN PRINT &amp;#34;a good age&amp;#34;
+50 ELSE IF N&amp;lt;6 THEN PRINT &amp;#34;a spaceman&amp;#34;
+60 ELSE IF N&amp;gt;40 THEN PRINT &amp;#34;too old&amp;#34;
+&lt;/code>&lt;/pre>&lt;p>My 4yo didn&amp;rsquo;t like being &amp;ldquo;too young&amp;rdquo; in the original version, so my 6yo helped me change him to be a &amp;ldquo;spaceman&amp;rdquo;.&lt;/p>
+&lt;p>Not bad and it was fun pair programming with a 6yo, all my typos were quickly spotted, and he easily understood the logic of IF/ELSE/THEN statements.&lt;/p>
+&lt;p>The Lynx comes from 1983 and has just 96k of memory. I am very lucky it actually still works, however I have been able to find an emulator so I can write Lynx BASIC from the comfort of my laptop. &lt;a href="https://jynxemulator.wordpress.com/" target="_blank" rel="noopener noreferrer">jynxemulator&lt;/a>
+, it is also on &lt;a href="https://github.com/jonathan-markland/Jynx" target="_blank" rel="noopener noreferrer">github&lt;/a>
+but it doesn&amp;rsquo;t include the ROMs so getting from the website is a better option.&lt;/p>
+&lt;p>The developer experience today is so much nicer than it must have been in the 1980s, however back then distractions must have been much reduced.&lt;/p>
+&lt;ul>
+&lt;li>No internet or google to get answers to your questions&lt;/li>
+&lt;li>No Copy/Paste of text&lt;/li>
+&lt;li>No Load/Save (unless you have a working disk drive or tape player!)&lt;/li>
+&lt;li>No IDE&lt;/li>
+&lt;li>No Build or Release process just type RUN&lt;/li>
+&lt;/ul>
+&lt;p>I then have additional sites, that I use as my playground for learning new tech. I can easily link between them and I can tweak the style so they &amp;ldquo;fit&amp;rdquo; nicely together.&lt;/p>
+&lt;p>I am still considering what to do with dev.to. I like that I am using it as the backend for my blog posts, and its API gives me that flexibility to display that content where I want.&lt;/p></description></item><item><title>Fathers Day</title><link>https://www.funkysi1701.com/posts/2015/fathers-day/</link><pubDate>Sun, 21 Jun 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/fathers-day/</guid><description>&lt;p>In the UK today is Fathers Day. Happy Fathers Day Dad!&lt;/p>
 &lt;p>I thought I might talk about how he encouraged my interest in technology, especially as in about 8 weeks I will become a parent and will have someone to encourage and inspire.&lt;/p>
 &lt;p>I am going to sound really old but when I was born there was no internet, no mobile phones and computers more often appeared in sci-fi than in your home.&lt;/p>
 &lt;p>The first computer I remember us owning was a Lynx. A quick google reveals there were a number of different models, I have no idea what we had but here is what I found.&lt;/p>
