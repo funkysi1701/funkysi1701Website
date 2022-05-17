@@ -1205,7 +1205,39 @@ so you can have unique complex passwords for every services you use and not have
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>When we call GetData we can either pass in XML or SQL as the class is not tied to either implementation. We could even write other classes that implement IData for testing purposes.&lt;/p>
 &lt;p>My full code can be found on &lt;a href="https://github.com/funkysi1701/InterfaceExample" target="_blank" rel="noopener noreferrer">github&lt;/a>
 .&lt;/p>
-&lt;p>The advantages of writing code in this way include code that is easier to extend, easier to test and easier to maintain. This is only the start of my understanding and I am sure this is going to be a topic I come back to in the next few weeks.&lt;/p></description></item><item><title>Test Driven Development or TDD</title><link>https://www.funkysi1701.com/posts/2017/test-driven-development-tdd/</link><pubDate>Mon, 13 Mar 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/test-driven-development-tdd/</guid><description>&lt;p>A few weeks back I attended a talk at &lt;a href="http://www.agileyorkshire.org/event-announcements/tuesfebruary21st-drolivershawtestdrivendevelopmentthemostmisusedterminsoftwaredevelopmentandkeithwilliamsdependenciesinjectionandabstractionforfunandprofit" target="_blank" rel="noopener noreferrer">Agile Yorkshire&lt;/a>
+&lt;p>The advantages of writing code in this way include code that is easier to extend, easier to test and easier to maintain. This is only the start of my understanding and I am sure this is going to be a topic I come back to in the next few weeks.&lt;/p></description></item><item><title>SOLID and other programming terms</title><link>https://www.funkysi1701.com/posts/2017/solid-programming-terms/</link><pubDate>Mon, 20 Mar 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/solid-programming-terms/</guid><description>&lt;p>This week I have been looking at improving my understanding of a few programming terms, like SOLID and I will try and define them so I can look back here when I get confused.&lt;/p>
+&lt;h3 id="mvc">MVC&lt;a class="anchor ms-1" href="#mvc">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>I have previously blogged about &lt;a href="https://www.funkysi1701.com/2016/03/17/model-view-controller-mvc/">MVC&lt;/a>
+, but my understanding was not 100% correct so I will refine this here.
+&lt;strong>Model&lt;/strong> – Now this is where my understanding was not quite correct. I thought the model was the actual source data, eg an XML file, SQL database etc. The model is the business logic so this is a processed version of the source data. MVC does not care where data is stored it can be flat files, SQL, XML or anything really.
+&lt;strong>View&lt;/strong> – This displays data to the user and typically is the HTML/CSS markup. Only display related logic would get included in the view.
+&lt;strong>Controller&lt;/strong> – This is another place I had got a bit confused. I had thought all the logic lived here. This is incorrect controllers are only concerned with getting data between Model and View.&lt;/p>
+&lt;h3 id="solid">SOLID&lt;a class="anchor ms-1" href="#solid">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>SOLID are five principles of object oriented programming and design.&lt;/p>
+&lt;p>&lt;strong>S&lt;/strong> is for Single Responsibility Principle. A class or piece of code should be responsible for doing one thing.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/03/SingleResponsibilityPrinciple2_71060858.jpg?resize=300%2C240&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>&lt;strong>O&lt;/strong> is for Open/Closed Principle. Code should be open for extensions but closed for modifications. Often this refers to the way you can implement an interface and add extra functionality.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/03/ocp.jpg?resize=300%2C240&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>&lt;strong>L&lt;/strong> is for Liskov Substitution Principle. Objects in a program can be replaced with subtypes of that object with out changing functionality.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/03/LiskovSubtitutionPrinciple_52BB5162.jpg?resize=300%2C240&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>&lt;strong>I&lt;/strong> is for Interface Segregation Principle. Large interfaces should be split down into small interfaces so that clients only know about methods that are of interest.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/03/isp.jpg?resize=300%2C240&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>&lt;strong>D&lt;/strong> is for Dependency Inversion Principle. High and Low level modules should depend on abstractions.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/03/dip.jpg?resize=300%2C240&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>I need to look into SOLID some more but here are some &lt;a href="https://www.codeproject.com/Articles/703634/SOLID-architecture-principles-using-simple-Csharp" target="_blank" rel="noopener noreferrer">examples&lt;/a>
+.&lt;/p>
+&lt;h3 id="dry">DRY&lt;a class="anchor ms-1" href="#dry">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>DRY is simply Don’t Repeat Yourself. It is often easy to spot when a function call will help you not have to use the same bit of code in different places. I am often spotting places where I can put this into action.&lt;/p></description></item><item><title>Test Driven Development or TDD</title><link>https://www.funkysi1701.com/posts/2017/test-driven-development-tdd/</link><pubDate>Mon, 13 Mar 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/test-driven-development-tdd/</guid><description>&lt;p>A few weeks back I attended a talk at &lt;a href="http://www.agileyorkshire.org/event-announcements/tuesfebruary21st-drolivershawtestdrivendevelopmentthemostmisusedterminsoftwaredevelopmentandkeithwilliamsdependenciesinjectionandabstractionforfunandprofit" target="_blank" rel="noopener noreferrer">Agile Yorkshire&lt;/a>
 about Test Driven Development or TDD by Dr Oliver Shaw. I was impressed at how easy Oliver made it look, so as I have never tried it I thought I should give it a try.&lt;/p>
 &lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/03/tdd_flow.gif?resize=287%2C300&amp;amp;ssl=1" loading="lazy"
 />
