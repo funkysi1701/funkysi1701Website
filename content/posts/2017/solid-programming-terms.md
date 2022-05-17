@@ -29,8 +29,11 @@ This week I have been looking at improving my understanding of a few programming
 ### MVC
 
 I have previously blogged about [MVC](https://www.funkysi1701.com/2016/03/17/model-view-controller-mvc/), but my understanding was not 100% correct so I will refine this here.
+
 **Model** – Now this is where my understanding was not quite correct. I thought the model was the actual source data, eg an XML file, SQL database etc. The model is the business logic so this is a processed version of the source data. MVC does not care where data is stored it can be flat files, SQL, XML or anything really.
+
 **View** – This displays data to the user and typically is the HTML/CSS markup. Only display related logic would get included in the view.
+
 **Controller** – This is another place I had got a bit confused. I had thought all the logic lived here. This is incorrect controllers are only concerned with getting data between Model and View.
 
 ### SOLID
