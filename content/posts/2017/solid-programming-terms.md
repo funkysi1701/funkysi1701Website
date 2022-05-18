@@ -15,12 +15,12 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
-    "/automation-of-the-promotion-of-my-blog-1ei0",
+    "/solid-and-other-programming-terms-5533",
     "/posts/solid-programming-terms",
-    "/posts/automation-of-the-promotion-of-my-blog-1ei0",
-    "/posts/2017/03/20/automation-of-the-promotion-of-my-blog-1ei0",
+    "/posts/solid-and-other-programming-terms-5533",
+    "/posts/2017/03/20/solid-and-other-programming-terms-5533",
     "/posts/2017/03/20/solid-programming-terms",
-    "/2017/03/20/automation-of-the-promotion-of-my-blog-1ei0",
+    "/2017/03/20/solid-and-other-programming-terms-5533",
     "/2017/03/20/solid-programming-terms"
 ]
 +++

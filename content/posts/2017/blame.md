@@ -15,12 +15,12 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
-    "/automation-of-the-promotion-of-my-blog-1ei0",
+    "/blame-3hap",
     "/posts/blame",
-    "/posts/automation-of-the-promotion-of-my-blog-1ei0",
-    "/posts/2017/04/10/automation-of-the-promotion-of-my-blog-1ei0",
+    "/posts/blame-3hap",
+    "/posts/2017/04/10/blame-3hap",
     "/posts/2017/04/10/blame",
-    "/2017/04/10/automation-of-the-promotion-of-my-blog-1ei0",
+    "/2017/04/10/blame-3hap",
     "/2017/04/10/blame"
 ]
 +++
