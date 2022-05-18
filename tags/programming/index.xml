@@ -1256,7 +1256,49 @@ allow a html report of code coverage to be produced. I created a batch script th
 &lt;pre tabindex="0">&lt;code>[path]\OpenCover.Console.exe -target:&amp;#34;[path]\nunit3-console.exe&amp;#34; -targetargs:&amp;#34;[path]\Test.dll&amp;#34; -output:&amp;#34;[path]\coverage.xml&amp;#34; -register:user
 [path]\ReportGenerator.exe &amp;#34;-reports:[path]\coverage.xml&amp;#34; &amp;#34;-targetdir:[path]&amp;#34;
 &lt;/code>&lt;/pre>&lt;p>The commands are fairly straightforward, the only tricky bit is sorting out all the filepaths to the different programs.&lt;/p>
-&lt;p>Now that I have all this plumbing setup time to give TDD a try and see what I can build.&lt;/p></description></item><item><title>Learning R</title><link>https://www.funkysi1701.com/posts/2017/learning-r/</link><pubDate>Mon, 27 Feb 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/learning-r/</guid><description>&lt;p>&lt;img class="img-fluid" alt="R" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/02/Exchange-Rate-Calculator.jpg?resize=300%2C202&amp;amp;ssl=1" loading="lazy"
+&lt;p>Now that I have all this plumbing setup time to give TDD a try and see what I can build.&lt;/p></description></item><item><title>Github Vs Bitbucket Vs Visual Studio Team Services</title><link>https://www.funkysi1701.com/posts/2017/github-vs-bitbucket-vs-vsts/</link><pubDate>Mon, 06 Mar 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/github-vs-bitbucket-vs-vsts/</guid><description>&lt;p>As a developer using source control and git is bread and butter of what we do. Github is probably the most popular and widely known hosting service for source control but I have also used Bitbucket and Visual Studio Team Services. Lets have a look at each one and what they offer. Note while I have included prices I have only tried out the free versions.&lt;/p>
+&lt;h3 id="github">Github&lt;a class="anchor ms-1" href="#github">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/03/github-octocat.png?resize=300%2C158&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;ul>
+&lt;li>URL: &lt;a href="https://github.com/" target="_blank" rel="noopener noreferrer">https://github.com/&lt;/a>
+&lt;/li>
+&lt;li>Private Repositories: Not Available for free&lt;/li>
+&lt;li>Public Repositories: Unlimited&lt;/li>
+&lt;li>Team Size: Unlimited&lt;/li>
+&lt;li>Prices: $7 per month for unlimited private repositories, $25 per month for 5 users then $9 per month per user&lt;/li>
+&lt;/ul>
+&lt;p>This is probably the most widely used service for hosting code. Over 13 million repositories of code. This is an ideal solution if you want your code to be publicly viewable, but take care not to publish passwords, private keys or your companies trade secrets. Every developer should have a Github account for displaying bits of code they are proud of.&lt;/p>
+&lt;p>There are a number of externally built APIs that link into Github for doing extra features, like building, code coverage etc&lt;/p>
+&lt;h3 id="bitbucket">Bitbucket&lt;a class="anchor ms-1" href="#bitbucket">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/03/d8TRzzL.png?resize=150%2C150&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;ul>
+&lt;li>URL: &lt;a href="https://bitbucket.org/" target="_blank" rel="noopener noreferrer">https://bitbucket.org/&lt;/a>
+&lt;/li>
+&lt;li>Private Repositories: Unlimited&lt;/li>
+&lt;li>Public Repositories: Unlimited&lt;/li>
+&lt;li>Team Size: Less than 5&lt;/li>
+&lt;li>Prices: $10 per month for 10 Users, $100 per month for 100 Users, $200 per month for Unlimited Users&lt;/li>
+&lt;/ul>
+&lt;p>At my last job we used Bitbucket extensively for all our projects. All the code was private so only the team could access it, however before I left we were approaching the 5 user limit (but looking at these prices cost seems very reasonable)&lt;/p>
+&lt;h3 id="visual-studio-team-services">Visual Studio Team Services&lt;a class="anchor ms-1" href="#visual-studio-team-services">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/11/Visual-Studio-Team-Services.png?resize=300%2C136&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;ul>
+&lt;li>URL: &lt;a href="https://www.visualstudio.com/team-services/" target="_blank" rel="noopener noreferrer">https://www.visualstudio.com/team-services/&lt;/a>
+&lt;/li>
+&lt;li>Private Repositories: Unlimited&lt;/li>
+&lt;li>Public Repositories: Not Available&lt;/li>
+&lt;li>Team Size: Less than 5&lt;/li>
+&lt;li>Prices: $30 per month for 10 users, and other features paid for via Azure Invoices&lt;/li>
+&lt;/ul>
+&lt;p>Visual Studio Team Services or VSTS is Microsoft’s version control solution and I have only just started using it, however what I have seen I like. There are lots of options for building your code so VSTS is more than just hosting your code it is verging on a Continuous Integration/Delivery solution. Being a Microsoft product there are numerous links to Azure and it is easy to deploy stuff to that platform.&lt;/p>
+&lt;p>All three have options for tracking issues but VSTS have options to add Stakeholder users which would allow none developers to add and keep track of issues and progress with them.&lt;/p>
+&lt;p>If I want to run tests, look at code coverage VSTS is probably the solution I would go for, if I want something that is public I would go for Github. What do you think which of these is your favourite?&lt;/p></description></item><item><title>Learning R</title><link>https://www.funkysi1701.com/posts/2017/learning-r/</link><pubDate>Mon, 27 Feb 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/learning-r/</guid><description>&lt;p>&lt;img class="img-fluid" alt="R" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/02/Exchange-Rate-Calculator.jpg?resize=300%2C202&amp;amp;ssl=1" loading="lazy"
 />
 Today I spent some time learning the R language.&lt;/p>
 &lt;p>The problem I was trying to solve was to convert local prices of some items into Euros. I had been using a fixed exchange rate for all data, but as exchange rates fluctuate so much this is incorrect.&lt;/p>
