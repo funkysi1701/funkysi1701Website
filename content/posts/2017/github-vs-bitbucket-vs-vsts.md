@@ -15,12 +15,12 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
-    "/blame-3hap",
+    "/github-vs-bitbucket-vs-visual-studio-team-services-ial",
     "/posts/github-vs-bitbucket-vs-vsts",
-    "/posts/blame-3hap",
-    "/posts/2017/03/06/blame-3hap",
+    "/posts/github-vs-bitbucket-vs-visual-studio-team-services-ial",
+    "/posts/2017/03/06/github-vs-bitbucket-vs-visual-studio-team-services-ial",
     "/posts/2017/03/06/github-vs-bitbucket-vs-vsts",
-    "/2017/03/06/blame-3hap",
+    "/2017/03/06/github-vs-bitbucket-vs-visual-studio-team-services-ial",
     "/2017/03/06/github-vs-bitbucket-vs-vsts"
 ]
 +++
