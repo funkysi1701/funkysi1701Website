@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/james5.jpg?resize=300%2C225&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/james5.jpg?resize=300%2C225&ssl=1']
-tags = ["Fatherhood", "Dad", "Baby", "Family"]
+tags = ["Father", "Baby", "Family"]
 category=""
 keywords = ["", ""]
 description =  "Baby Magic and Becoming a Father"
