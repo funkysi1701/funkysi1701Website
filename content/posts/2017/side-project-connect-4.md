@@ -15,12 +15,12 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
-    "/github-vs-bitbucket-vs-visual-studio-team-services-ial",
+    "/side-project-connect-4-22al",
     "/posts/side-project-connect-4",
-    "/posts/github-vs-bitbucket-vs-visual-studio-team-services-ial",
-    "/posts/2017/02/06/github-vs-bitbucket-vs-visual-studio-team-services-ial",
+    "/posts/side-project-connect-4-22al",
+    "/posts/2017/02/06/side-project-connect-4-22al",
     "/posts/2017/02/06/side-project-connect-4",
-    "/2017/02/06/github-vs-bitbucket-vs-visual-studio-team-services-ial",
+    "/2017/02/06/side-project-connect-4-22al",
     "/2017/02/06/side-project-connect-4"
 ]
 +++

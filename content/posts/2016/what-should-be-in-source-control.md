@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/what-should-be-in-source-control",
-    "/posts/amazon-web-services-32h7",
-    "/posts/2016/11/24/amazon-web-services-32h7",
+    "/posts/what-should-be-in-source-control-4f0d",
+    "/posts/2016/11/24/what-should-be-in-source-control-4f0d",
     "/posts/2016/11/24/what-should-be-in-source-control",
-    "/2016/11/24/amazon-web-services-32h7",
+    "/2016/11/24/what-should-be-in-source-control-4f0d",
     "/2016/11/24/what-should-be-in-source-control"
 ]
 +++
