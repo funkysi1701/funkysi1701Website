@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/10/windows_10_fullwidth.jpg?w=800&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2014/10/windows_10_fullwidth.jpg?w=800&ssl=1']
-tags = ["Windows", "Microsoft", "Windows10", "ITAdmin"]
+tags = ["Windows", "Microsoft", "ITAdmin"]
 category="tech"
 keywords = ["", ""]
 description = "Windows 9 or do I mean 10"
