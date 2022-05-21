@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/getting-control-of-a-codebase",
-    "/posts/what-should-be-in-source-control-4f0d",
-    "/posts/2016/11/17/what-should-be-in-source-control-4f0d",
+    "/posts/getting-control-of-a-codebase-1bci",
+    "/posts/2016/11/17/getting-control-of-a-codebase-1bci",
     "/posts/2016/11/17/getting-control-of-a-codebase",
-    "/2016/11/17/what-should-be-in-source-control-4f0d",
+    "/2016/11/17/getting-control-of-a-codebase-1bci",
     "/2016/11/17/getting-control-of-a-codebase"
 ]
 +++
