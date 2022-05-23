@@ -21,7 +21,7 @@ aliases = [
     "/posts/2016/09/15/getting-control-of-a-codebase-1bci",
     "/posts/2016/09/15/imposter-syndrome",
     "/2016/09/15/getting-control-of-a-codebase-1bci",
-    "/2016/09/15/Imposter Syndrome"
+    "/2016/09/15/imposter-syndrome"
 ]
 +++
 This week I handed in my notice at a job I have had for almost ten years. In a few weeks time I will start a brand new job as a web applications developer.
