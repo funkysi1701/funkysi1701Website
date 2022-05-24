@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/imposter-syndrome",
-    "/posts/getting-control-of-a-codebase-1bci",
-    "/posts/2016/09/15/getting-control-of-a-codebase-1bci",
+    "/posts/imposter-syndrome-d2c",
+    "/posts/2016/09/15/imposter-syndrome-d2c",
     "/posts/2016/09/15/imposter-syndrome",
-    "/2016/09/15/getting-control-of-a-codebase-1bci",
+    "/2016/09/15/imposter-syndrome-d2c",
     "/2016/09/15/imposter-syndrome"
 ]
 +++

@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/happy-50th-star-trek",
-    "/posts/getting-control-of-a-codebase-1bci",
-    "/posts/2016/09/08/getting-control-of-a-codebase-1bci",
+    "/posts/happy-50th-star-trek-37g6",
+    "/posts/2016/09/08/happy-50th-star-trek-37g6",
     "/posts/2016/09/08/happy-50th-star-trek",
-    "/2016/09/08/getting-control-of-a-codebase-1bci",
+    "/2016/09/08/happy-50th-star-trek-37g6",
     "/2016/09/08/happy-50th-star-treke"
 ]
 +++

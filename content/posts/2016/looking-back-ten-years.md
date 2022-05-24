@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/looking-back-ten-years",
-    "/posts/getting-control-of-a-codebase-1bci",
-    "/posts/2016/09/29/getting-control-of-a-codebase-1bci",
+    "/posts/looking-back-ten-years-3dgc",
+    "/posts/2016/09/29/looking-back-ten-years-3dgc",
     "/posts/2016/09/29/looking-back-ten-years",
-    "/2016/09/29/getting-control-of-a-codebase-1bci",
+    "/2016/09/29/looking-back-ten-years-3dgc",
     "/2016/09/29/looking-back-ten-years"
 ]
 +++

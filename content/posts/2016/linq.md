@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/linq",
-    "/posts/what-should-be-in-source-control-4f0d",
-    "/posts/2016/10/06/what-should-be-in-source-control-4f0d",
+    "/posts/linq-5g67",
+    "/posts/2016/10/06/linq-5g67",
     "/posts/2016/10/06/linq",
-    "/2016/10/06/what-should-be-in-source-control-4f0d",
+    "/2016/10/06/linq-5g67",
     "/2016/10/06/linq"
 ]
 +++

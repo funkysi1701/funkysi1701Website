@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/10-ways-to-survive-as-an-it-manager",
-    "/posts/getting-control-of-a-codebase-1bci",
-    "/posts/2016/09/22/getting-control-of-a-codebase-1bci",
+    "/posts/10-ways-to-survive-as-an-it-manager-2md4",
+    "/posts/2016/09/22/10-ways-to-survive-as-an-it-manager-2md4",
     "/posts/2016/09/22/10-ways-to-survive-as-an-it-manager",
-    "/2016/09/22/getting-control-of-a-codebase-1bci",
+    "/2016/09/22/10-ways-to-survive-as-an-it-manager-2md4",
     "/2016/09/22/10-ways-to-survive-as-an-it-manager"
 ]
 +++
