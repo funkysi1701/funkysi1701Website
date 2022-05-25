@@ -1,4 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2016-06 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2016/06/</link><description>Recent content in 2016-06 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Thu, 02 Jun 2016 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2016/06/index.xml" rel="self" type="application/rss+xml"/><item><title>I’m 100 blog posts old</title><link>https://www.funkysi1701.com/posts/2016/i-m-100-blog-posts-old/</link><pubDate>Thu, 02 Jun 2016 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2016/i-m-100-blog-posts-old/</guid><description>&lt;p>That’s right this is the one hundredth post that I have written on this blog.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2016-06 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2016/06/</link><description>Recent content in 2016-06 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Thu, 30 Jun 2016 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2016/06/index.xml" rel="self" type="application/rss+xml"/><item><title>Periodic Table of DevOps</title><link>https://www.funkysi1701.com/posts/2016/periodic-table-devops/</link><pubDate>Thu, 30 Jun 2016 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2016/periodic-table-devops/</guid><description>&lt;p>The periodic table lists all the chemical elements and groups them together based on some key properties. Today I found an article about the &lt;a href="https://xebialabs.com/periodic-table-of-devops-tools/" target="_blank" rel="noopener noreferrer">periodic table of DevOps&lt;/a>
+.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/06/https-xebialabs.com-assets-files-infographics-periodic-table-of-devops-v2.png?resize=1024%2C572&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>I am not going to discuss every element but I thought I might go through some that I have heard of or used.&lt;/p>
+&lt;ul>
+&lt;li>Github – The repository of lots of open source software. My Github can be found at &lt;a href="https://github.com/funkysi1701" target="_blank" rel="noopener noreferrer">https://github.com/funkysi1701&lt;/a>
+&lt;/li>
+&lt;li>Amazon Web Services – The second most popular cloud computing provider (not sure why this isn’t number 3?)&lt;/li>
+&lt;li>Git – The distributed source control system that everyone uses these days.&lt;/li>
+&lt;li>Azure – The number one cloud provider, I have used this a lot, mostly with websites but also with some of their other features like Traffic Manager.&lt;/li>
+&lt;li>Bitbucket – like Github but allows private repositories. I have used this extensively for work based projects that I don’t want to be public.&lt;/li>
+&lt;li>Google Cloud Platform – don’t know much about this one, but no surprise that google wants a piece of the cloud computing pie.&lt;/li>
+&lt;li>Selenium – This is a product I want to play about with as allows front end testing with a browser.&lt;/li>
+&lt;li>Rackspace – Before we made the jump to Azure we made use of some Rackspace servers.&lt;/li>
+&lt;li>Subversion – The first source control system that I used, but been using git so long now not sure I can remember how it worked.&lt;/li>
+&lt;li>Visual Studio – The IDE from Microsoft that I use to write code. I am a big fan as it does everything I could want.&lt;/li>
+&lt;li>TeamCity – The continuous integration software that I have been using to automate my deployments.&lt;/li>
+&lt;li>MSBuild – This is used by Visual Studio to build your software and can also be used by your deployment scripts.&lt;/li>
+&lt;li>Trello – A website that allows you to create a board of ideas or things to do.&lt;/li>
+&lt;li>Slack – Brings all your communication together in one place. It’s real-time messaging, archiving and search for modern teams.&lt;/li>
+&lt;li>New Relic – A software analytics tool suite used by developers, ops, and software companies to understand how your applications are performing. Useful but find myself favouring Application Insights (part of Azure) more now.&lt;/li>
+&lt;li>Nagios – Yay nagios is on the list! My favourite server monitoring system.&lt;/li>
+&lt;li>Splunk – This application can be used to search, monitor and analyse all your log files to find out what is happening. Don’t currently use it but I have tried it out in the past.&lt;/li>
+&lt;/ul></description></item><item><title>I’m 100 blog posts old</title><link>https://www.funkysi1701.com/posts/2016/i-m-100-blog-posts-old/</link><pubDate>Thu, 02 Jun 2016 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2016/i-m-100-blog-posts-old/</guid><description>&lt;p>That’s right this is the one hundredth post that I have written on this blog.&lt;/p>
 &lt;p>&lt;img class="img-fluid" alt="100-posts-old-L-fwCF_f" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/06/100-posts-old-L-fwCF_f-300x247.jpeg?resize=300%2C247" loading="lazy"
 />
 &lt;/p>

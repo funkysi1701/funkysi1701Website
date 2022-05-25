@@ -553,7 +553,32 @@ website.&lt;/p>
 &lt;p>Like with the Websites the default name of the VM is much less user-friendly than what you get from Azure. However I suspect there are other options I haven’t spotted that may customise these.&lt;/p>
 &lt;h2 id="azure-portal-vs-aws-console">Azure Portal vs AWS Console&lt;a class="anchor ms-1" href="#azure-portal-vs-aws-console">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
 &lt;p>I really like the Azure Portal. It feels like something that has been designed so you can easily access all the options for a specific Azure feature.&lt;/p>
-&lt;p>The AWS Console probably has all the same options as with Azure however I don’t think it looks half as good, and will take me a while looking through menus to find the equivalent options. Part of this is due to my unfamiliarity with AWS, so will get easier with time.&lt;/p></description></item><item><title>Azure Traffic Manager</title><link>https://www.funkysi1701.com/posts/2015/azure-traffic-manager/</link><pubDate>Thu, 12 Mar 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/azure-traffic-manager/</guid><description>&lt;p>I have spent most of the day tweaking my Azure websites. Lots of fun!&lt;/p>
+&lt;p>The AWS Console probably has all the same options as with Azure however I don’t think it looks half as good, and will take me a while looking through menus to find the equivalent options. Part of this is due to my unfamiliarity with AWS, so will get easier with time.&lt;/p></description></item><item><title>Periodic Table of DevOps</title><link>https://www.funkysi1701.com/posts/2016/periodic-table-devops/</link><pubDate>Thu, 30 Jun 2016 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2016/periodic-table-devops/</guid><description>&lt;p>The periodic table lists all the chemical elements and groups them together based on some key properties. Today I found an article about the &lt;a href="https://xebialabs.com/periodic-table-of-devops-tools/" target="_blank" rel="noopener noreferrer">periodic table of DevOps&lt;/a>
+.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/06/https-xebialabs.com-assets-files-infographics-periodic-table-of-devops-v2.png?resize=1024%2C572&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>I am not going to discuss every element but I thought I might go through some that I have heard of or used.&lt;/p>
+&lt;ul>
+&lt;li>Github – The repository of lots of open source software. My Github can be found at &lt;a href="https://github.com/funkysi1701" target="_blank" rel="noopener noreferrer">https://github.com/funkysi1701&lt;/a>
+&lt;/li>
+&lt;li>Amazon Web Services – The second most popular cloud computing provider (not sure why this isn’t number 3?)&lt;/li>
+&lt;li>Git – The distributed source control system that everyone uses these days.&lt;/li>
+&lt;li>Azure – The number one cloud provider, I have used this a lot, mostly with websites but also with some of their other features like Traffic Manager.&lt;/li>
+&lt;li>Bitbucket – like Github but allows private repositories. I have used this extensively for work based projects that I don’t want to be public.&lt;/li>
+&lt;li>Google Cloud Platform – don’t know much about this one, but no surprise that google wants a piece of the cloud computing pie.&lt;/li>
+&lt;li>Selenium – This is a product I want to play about with as allows front end testing with a browser.&lt;/li>
+&lt;li>Rackspace – Before we made the jump to Azure we made use of some Rackspace servers.&lt;/li>
+&lt;li>Subversion – The first source control system that I used, but been using git so long now not sure I can remember how it worked.&lt;/li>
+&lt;li>Visual Studio – The IDE from Microsoft that I use to write code. I am a big fan as it does everything I could want.&lt;/li>
+&lt;li>TeamCity – The continuous integration software that I have been using to automate my deployments.&lt;/li>
+&lt;li>MSBuild – This is used by Visual Studio to build your software and can also be used by your deployment scripts.&lt;/li>
+&lt;li>Trello – A website that allows you to create a board of ideas or things to do.&lt;/li>
+&lt;li>Slack – Brings all your communication together in one place. It’s real-time messaging, archiving and search for modern teams.&lt;/li>
+&lt;li>New Relic – A software analytics tool suite used by developers, ops, and software companies to understand how your applications are performing. Useful but find myself favouring Application Insights (part of Azure) more now.&lt;/li>
+&lt;li>Nagios – Yay nagios is on the list! My favourite server monitoring system.&lt;/li>
+&lt;li>Splunk – This application can be used to search, monitor and analyse all your log files to find out what is happening. Don’t currently use it but I have tried it out in the past.&lt;/li>
+&lt;/ul></description></item><item><title>Azure Traffic Manager</title><link>https://www.funkysi1701.com/posts/2015/azure-traffic-manager/</link><pubDate>Thu, 12 Mar 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/azure-traffic-manager/</guid><description>&lt;p>I have spent most of the day tweaking my Azure websites. Lots of fun!&lt;/p>
 &lt;p>Last week unfortunately Azure had some problems and many websites that were running in the North Europe data centre were unavailable for several hours. And you guessed it my websites were hosted here.&lt;/p>
 &lt;p>All hosting providers are going to have downtime from time to time and this is just something you have to take on the chin. The important thing to do in times like these is communicate with your customers about what is going on and that you are doing everything you can to restore service.&lt;/p>
 &lt;p>However Azure has some amazing features that you can configure to help manage when downtime occurs.&lt;/p>
