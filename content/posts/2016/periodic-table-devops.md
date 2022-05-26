@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/periodic-table-devops",
-    "/posts/linq-5g67",
-    "/posts/2016/06/30/linq-5g67",
+    "/posts/periodic-table-of-devops-15c7",
+    "/posts/2016/06/30/periodic-table-of-devops-15c7",
     "/posts/2016/06/30/periodic-table-devops",
-    "/2016/06/30/linq-5g67",
+    "/2016/06/30/periodic-table-of-devops-15c7",
     "/2016/06/30/periodic-table-devops"
 ]
 +++
@@ -47,3 +47,5 @@ I am not going to discuss every element but I thought I might go through some th
 - New Relic – A software analytics tool suite used by developers, ops, and software companies to understand how your applications are performing. Useful but find myself favouring Application Insights (part of Azure) more now.
 - Nagios – Yay nagios is on the list! My favourite server monitoring system.
 - Splunk – This application can be used to search, monitor and analyse all your log files to find out what is happening. Don’t currently use it but I have tried it out in the past.
+
+What is your favourite DevOps tool? Why not leave a comment below?
