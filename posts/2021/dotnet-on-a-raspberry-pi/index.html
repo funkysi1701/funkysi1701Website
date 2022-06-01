@@ -28,12 +28,12 @@ This guide and the nuget package <a href=https://www.nuget.org/packages/Unosquar
 was all I needed to get started taking pictures with my Pi.</p><p>My initial goal is to take some wildlife pictures, stick my camera to a window and take pictures of what flies/crawls/jumps past the window.</p><p>The code I have written so far is available on github <a href=https://github.com/funkysi1701/RaspberryPiDotNet target=_blank rel="noopener noreferrer">https://github.com/funkysi1701/RaspberryPiDotNet</a></p><p>So far the code takes a picture, uploads this file to Azure Blob Storage (so as not to fill up the Pi with too many image files) and deletes the image locally.</p><p>Run a dotnet publish -c Release and then cron can run dotnet RaspberryPiDotNet.dll (with full paths to the relevant files)</p><p>I then use crontab to execute the code every 60 seconds.</p><p>My code has an appsetting.json file which has a couple of settings that need completing for my code to work.</p><p>Storage: This is the connection string for Azure Blob Storage
 LocalPath: This is the path to where the camera will save its photos to, something like /home/pi/ is all you need but feel free to specify what you need.</p><p>Once the photos are in blob storage I plan to display them somewhere, add options to delete what I don&rsquo;t want, maybe do something timelapsey.</p><p>I also don&rsquo;t have a proper release pipeline and this grates on me a bit. I have been doing a mixture of writing code in VS and pushing that to github and then doing git pull on the Pi, and also writing code directly on the Pi. (VS Code can connect via SSH which is pretty cool!)</p></div></div><div class=card-footer><div class="post-navs d-flex justify-content-evenly"><div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
 <a href=https://www.funkysi1701.com/posts/2021/charting-my-energy-usage-with-the-octopus-energy-api/>Charting my Energy usage with the Octopus Energy API</a></div><div class="post-nav post-next"><a href=https://www.funkysi1701.com/posts/2021/my-road-to-certification/>My road to Certification</a>
-<i class="fas fa-fw fa-chevron-right"></i></div></div></div></article><section class="related-posts row card component"><div class=card-header><h2 class=card-title>Related Posts</h2></div><div class=card-body><ul class=post-list><li><a href=https://www.funkysi1701.com/posts/2020/weekly-update-001/>Weekly Update #001</a>
+<i class="fas fa-fw fa-chevron-right"></i></div></div></div></article><section class="related-posts row card component"><div class=card-header><h2 class=card-title>Related Posts</h2></div><div class=card-body><ul class=post-list><li><a href=https://www.funkysi1701.com/posts/2016/windows-10-raspberry-pi-3/>Running Windows on Raspberry Pi</a>
+<span class="float-end post-date">May 5, 2016</span></li><li><a href=https://www.funkysi1701.com/posts/2020/weekly-update-001/>Weekly Update #001</a>
 <span class="float-end post-date">Nov 14, 2020</span></li><li><a href=https://www.funkysi1701.com/posts/2020/security-headers/>Security Headers</a>
 <span class="float-end post-date">Sep 26, 2020</span></li><li><a href=https://www.funkysi1701.com/posts/2020/back-to-blogging/>Back to Blogging</a>
 <span class="float-end post-date">Sep 25, 2020</span></li><li><a href=https://www.funkysi1701.com/posts/2019/technology-i-want-to-learn-more-about/>Technology I want to learn more about</a>
-<span class="float-end post-date">Mar 5, 2019</span></li><li><a href=https://www.funkysi1701.com/posts/2019/microsoft-ignite-the-tour-london/>Microsoft Ignite | The Tour – London</a>
-<span class="float-end post-date">Feb 26, 2019</span></li></ul></div></section><div class="card component row post-comments" id=post-comments><div class=card-header><h2 class=card-title>Comments</h2></div><div class=card-body><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var t=document,e=t.createElement('script');e.async=!0,e.src='//funkysi1701.disqus.com/embed.js',e.setAttribute('data-timestamp',+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div></div><aside class="col-lg-4 sidebar d-flex"><div class="container d-flex flex-column"><section class="card row text-center profile component"><div class=card-body><div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="Simon Foster" src=https://www.funkysi1701.com/images/profile.webp loading=lazy width=357 height=357></div><div class="col-12 profile-meta"><div class=profile-name>Simon Foster</div><div class=profile-bio>More than just another developer</div><div class=profile-location><i class="fas fa-fw fa-map-marker-alt"></i>North Yorkshire</div><div class=profile-about><i class="fas fa-fw fa-user"></i><a target=_blank rel="noopener noreferrer" href=/about>About Me</a></div><nav class="social-links nav justify-content-center"><a class="nav-link social-link" href=mailto:simon@funkysi1701.com title=Email><i class="fas fa-fw fa-2x fa-envelope"></i>
+<span class="float-end post-date">Mar 5, 2019</span></li></ul></div></section><div class="card component row post-comments" id=post-comments><div class=card-header><h2 class=card-title>Comments</h2></div><div class=card-body><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var t=document,e=t.createElement('script');e.async=!0,e.src='//funkysi1701.disqus.com/embed.js',e.setAttribute('data-timestamp',+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></div></div></div><aside class="col-lg-4 sidebar d-flex"><div class="container d-flex flex-column"><section class="card row text-center profile component"><div class=card-body><div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="Simon Foster" src=https://www.funkysi1701.com/images/profile.webp loading=lazy width=357 height=357></div><div class="col-12 profile-meta"><div class=profile-name>Simon Foster</div><div class=profile-bio>More than just another developer</div><div class=profile-location><i class="fas fa-fw fa-map-marker-alt"></i>North Yorkshire</div><div class=profile-about><i class="fas fa-fw fa-user"></i><a target=_blank rel="noopener noreferrer" href=/about>About Me</a></div><nav class="social-links nav justify-content-center"><a class="nav-link social-link" href=mailto:simon@funkysi1701.com title=Email><i class="fas fa-fw fa-2x fa-envelope"></i>
 </a><a class="nav-link social-link" target=_blank href=https://facebook.com/funkysi1701 title=Facebook rel="noopener noreferrer"><i class="fa-fw fa-2x fab fa-facebook-f"></i>
 </a><a class="nav-link social-link" target=_blank href=https://github.com/funkysi1701 title=GitHub rel="noopener noreferrer"><i class="fa-fw fa-2x fab fa-github"></i>
 </a><a class="nav-link social-link" target=_blank href=https://linkedin.com/in/funkysi1701/ title=LinkedIn rel="noopener noreferrer"><i class="fa-fw fa-2x fab fa-linkedin-in"></i>
@@ -43,41 +43,41 @@ LocalPath: This is the path to where the camera will save its photos to, somethi
 <a href=/tags/2016 class=tagcloud-item style=font-size:.7rem>2016</a>
 <a href=/tags/access class=tagcloud-item style=font-size:.7rem>Access</a>
 <a href=/tags/act class=tagcloud-item style=font-size:.7rem>Act</a>
-<a href=/tags/amazon class=tagcloud-item style=font-size:.903369124844693rem>Amazon</a>
-<a href=/tags/android class=tagcloud-item style=font-size:1.2257015615280107rem>Android</a>
-<a href=/tags/api class=tagcloud-item style=font-size:1.0223324366833175rem>API</a>
-<a href=/tags/app class=tagcloud-item style=font-size:1.106738249689386rem>App</a>
-<a href=/tags/applicationinsights class=tagcloud-item style=font-size:1.0223324366833175rem>ApplicationInsights</a>
-<a href=/tags/architecture class=tagcloud-item style=font-size:.903369124844693rem>Architecture</a>
+<a href=/tags/amazon class=tagcloud-item style=font-size:.9028273845288924rem>Amazon</a>
+<a href=/tags/android class=tagcloud-item style=font-size:1.2243011831265376rem>Android</a>
+<a href=/tags/api class=tagcloud-item style=font-size:1.021473798597645rem>API</a>
+<a href=/tags/app class=tagcloud-item style=font-size:1.105654769057785rem>App</a>
+<a href=/tags/applicationinsights class=tagcloud-item style=font-size:1.021473798597645rem>ApplicationInsights</a>
+<a href=/tags/architecture class=tagcloud-item style=font-size:.9028273845288924rem>Architecture</a>
 <a href=/tags/arrange class=tagcloud-item style=font-size:.7rem>Arrange</a>
 <a href=/tags/assert class=tagcloud-item style=font-size:.7rem>Assert</a>
 <a href=/tags/async class=tagcloud-item style=font-size:.7rem>Async</a>
 <a href=/tags/automate class=tagcloud-item style=font-size:.7rem>Automate</a>
 <a href=/tags/await class=tagcloud-item style=font-size:.7rem>Await</a>
-<a href=/tags/aws class=tagcloud-item style=font-size:1.106738249689386rem>AWS</a>
-<a href=/tags/azure class=tagcloud-item style=font-size:1.60691070558702rem>Azure</a>
-<a href=/tags/azuredevops class=tagcloud-item style=font-size:.903369124844693rem>AzureDevOps</a>
-<a href=/tags/baby class=tagcloud-item style=font-size:.903369124844693rem>Baby</a>
-<a href=/tags/backups class=tagcloud-item style=font-size:1.106738249689386rem>Backups</a>
+<a href=/tags/aws class=tagcloud-item style=font-size:1.105654769057785rem>AWS</a>
+<a href=/tags/azure class=tagcloud-item style=font-size:1.6044948516936488rem>Azure</a>
+<a href=/tags/azuredevops class=tagcloud-item style=font-size:.9028273845288924rem>AzureDevOps</a>
+<a href=/tags/baby class=tagcloud-item style=font-size:.9028273845288924rem>Baby</a>
+<a href=/tags/backups class=tagcloud-item style=font-size:1.105654769057785rem>Backups</a>
 <a href=/tags/baddesign class=tagcloud-item style=font-size:.7rem>BadDesign</a>
-<a href=/tags/basic class=tagcloud-item style=font-size:.903369124844693rem>BASIC</a>
+<a href=/tags/basic class=tagcloud-item style=font-size:.9028273845288924rem>BASIC</a>
 <a href=/tags/bitbucket class=tagcloud-item style=font-size:.7rem>Bitbucket</a>
 <a href=/tags/blame class=tagcloud-item style=font-size:.7rem>Blame</a>
 <a href=/tags/blazor class=tagcloud-item style=font-size:.7rem>Blazor</a>
-<a href=/tags/blogging class=tagcloud-item style=font-size:1.2257015615280107rem>Blogging</a>
+<a href=/tags/blogging class=tagcloud-item style=font-size:1.2243011831265376rem>Blogging</a>
 <a href=/tags/buffer class=tagcloud-item style=font-size:.7rem>Buffer</a>
 <a href=/tags/build class=tagcloud-item style=font-size:.7rem>Build</a>
 <a href=/tags/businessintelligence class=tagcloud-item style=font-size:.7rem>BusinessIntelligence</a>
-<a href=/tags/c-sharp class=tagcloud-item style=font-size:1.4742984384719895rem>C-Sharp</a>
-<a href=/tags/career class=tagcloud-item style=font-size:1.106738249689386rem>Career</a>
+<a href=/tags/c-sharp class=tagcloud-item style=font-size:1.4924244011478027rem>C-Sharp</a>
+<a href=/tags/career class=tagcloud-item style=font-size:1.105654769057785rem>Career</a>
 <a href=/tags/casting class=tagcloud-item style=font-size:.7rem>Casting</a>
 <a href=/tags/certificates class=tagcloud-item style=font-size:.7rem>Certificates</a>
-<a href=/tags/certification class=tagcloud-item style=font-size:.903369124844693rem>Certification</a>
+<a href=/tags/certification class=tagcloud-item style=font-size:.9028273845288924rem>Certification</a>
 <a href=/tags/chemistry class=tagcloud-item style=font-size:.7rem>Chemistry</a>
 <a href=/tags/christmas class=tagcloud-item style=font-size:.7rem>Christmas</a>
 <a href=/tags/ci class=tagcloud-item style=font-size:.7rem>CI</a>
 <a href=/tags/class class=tagcloud-item style=font-size:.7rem>Class</a>
-<a href=/tags/clouds class=tagcloud-item style=font-size:.903369124844693rem>Clouds</a>
+<a href=/tags/clouds class=tagcloud-item style=font-size:.9028273845288924rem>Clouds</a>
 <a href=/tags/code class=tagcloud-item style=font-size:.7rem>Code</a>
 <a href=/tags/conference class=tagcloud-item style=font-size:.7rem>Conference</a>
 <a href=/tags/connect4 class=tagcloud-item style=font-size:.7rem>Connect4</a>
@@ -88,43 +88,43 @@ LocalPath: This is the path to where the camera will save its photos to, somethi
 <a href=/tags/csp class=tagcloud-item style=font-size:.7rem>CSP</a>
 <a href=/tags/culture class=tagcloud-item style=font-size:.7rem>Culture</a>
 <a href=/tags/data-breach class=tagcloud-item style=font-size:.7rem>Data Breach</a>
-<a href=/tags/database class=tagcloud-item style=font-size:1.2257015615280107rem>Database</a>
+<a href=/tags/database class=tagcloud-item style=font-size:1.2243011831265376rem>Database</a>
 <a href=/tags/deployment class=tagcloud-item style=font-size:.7rem>Deployment</a>
-<a href=/tags/design class=tagcloud-item style=font-size:.903369124844693rem>Design</a>
+<a href=/tags/design class=tagcloud-item style=font-size:.9028273845288924rem>Design</a>
 <a href=/tags/design-patterns class=tagcloud-item style=font-size:.7rem>Design Patterns</a>
 <a href=/tags/desktop class=tagcloud-item style=font-size:.7rem>Desktop</a>
-<a href=/tags/devops class=tagcloud-item style=font-size:1.5932617503106141rem>DevOps</a>
+<a href=/tags/devops class=tagcloud-item style=font-size:1.5908822548829016rem>DevOps</a>
 <a href=/tags/disaster-recovery class=tagcloud-item style=font-size:.7rem>Disaster Recovery</a>
-<a href=/tags/discovery class=tagcloud-item style=font-size:1.0223324366833175rem>Discovery</a>
-<a href=/tags/dns class=tagcloud-item style=font-size:.903369124844693rem>DNS</a>
-<a href=/tags/docker class=tagcloud-item style=font-size:1.0223324366833175rem>Docker</a>
+<a href=/tags/discovery class=tagcloud-item style=font-size:1.021473798597645rem>Discovery</a>
+<a href=/tags/dns class=tagcloud-item style=font-size:.9028273845288924rem>DNS</a>
+<a href=/tags/docker class=tagcloud-item style=font-size:1.021473798597645rem>Docker</a>
 <a href=/tags/dojo class=tagcloud-item style=font-size:.7rem>Dojo</a>
-<a href=/tags/dotnet class=tagcloud-item style=font-size:1.1722084846095482rem>DotNet</a>
+<a href=/tags/dotnet class=tagcloud-item style=font-size:1.1709506025501577rem>DotNet</a>
 <a href=/tags/dry class=tagcloud-item style=font-size:.7rem>DRY</a>
 <a href=/tags/dzone class=tagcloud-item style=font-size:.7rem>DZone</a>
 <a href=/tags/ews class=tagcloud-item style=font-size:.7rem>EWS</a>
 <a href=/tags/exchange class=tagcloud-item style=font-size:.7rem>Exchange</a>
 <a href=/tags/exchangerates class=tagcloud-item style=font-size:.7rem>ExchangeRates</a>
-<a href=/tags/family class=tagcloud-item style=font-size:1.106738249689386rem>Family</a>
-<a href=/tags/father class=tagcloud-item style=font-size:.903369124844693rem>Father</a>
+<a href=/tags/family class=tagcloud-item style=font-size:1.105654769057785rem>Family</a>
+<a href=/tags/father class=tagcloud-item style=font-size:.9028273845288924rem>Father</a>
 <a href=/tags/festivetechcalendar2021 class=tagcloud-item style=font-size:.7rem>FestiveTechCalendar2021</a>
 <a href=/tags/fibre class=tagcloud-item style=font-size:.7rem>Fibre</a>
-<a href=/tags/freecodecamp class=tagcloud-item style=font-size:.903369124844693rem>FreeCodeCamp</a>
-<a href=/tags/git class=tagcloud-item style=font-size:1.2709293136272963rem>Git</a>
-<a href=/tags/github class=tagcloud-item style=font-size:.903369124844693rem>Github</a>
-<a href=/tags/goals class=tagcloud-item style=font-size:1.3755776094542413rem>Goals</a>
+<a href=/tags/freecodecamp class=tagcloud-item style=font-size:.9028273845288924rem>FreeCodeCamp</a>
+<a href=/tags/git class=tagcloud-item style=font-size:1.2694084562852566rem>Git</a>
+<a href=/tags/github class=tagcloud-item style=font-size:.9028273845288924rem>Github</a>
+<a href=/tags/goals class=tagcloud-item style=font-size:1.3737779870790503rem>Goals</a>
 <a href=/tags/graphs class=tagcloud-item style=font-size:.7rem>Graphs</a>
 <a href=/tags/hero class=tagcloud-item style=font-size:.7rem>Hero</a>
 <a href=/tags/highcharts class=tagcloud-item style=font-size:.7rem>HighCharts</a>
 <a href=/tags/history class=tagcloud-item style=font-size:.7rem>History</a>
-<a href=/tags/home class=tagcloud-item style=font-size:.903369124844693rem>Home</a>
+<a href=/tags/home class=tagcloud-item style=font-size:.9028273845288924rem>Home</a>
 <a href=/tags/imposter-syndrome class=tagcloud-item style=font-size:.7rem>Imposter Syndrome</a>
-<a href=/tags/interface class=tagcloud-item style=font-size:1.0223324366833175rem>Interface</a>
+<a href=/tags/interface class=tagcloud-item style=font-size:1.021473798597645rem>Interface</a>
 <a href=/tags/internet class=tagcloud-item style=font-size:.7rem>Internet</a>
 <a href=/tags/interview class=tagcloud-item style=font-size:.7rem>Interview</a>
-<a href=/tags/itadmin class=tagcloud-item style=font-size:1.4742984384719895rem>ITAdmin</a>
-<a href=/tags/java class=tagcloud-item style=font-size:.903369124844693rem>Java</a>
-<a href=/tags/javascript class=tagcloud-item style=font-size:1.106738249689386rem>JavaScript</a>
+<a href=/tags/itadmin class=tagcloud-item style=font-size:1.4722358408141492rem>ITAdmin</a>
+<a href=/tags/java class=tagcloud-item style=font-size:.9028273845288924rem>Java</a>
+<a href=/tags/javascript class=tagcloud-item style=font-size:1.105654769057785rem>JavaScript</a>
 <a href=/tags/job class=tagcloud-item style=font-size:.7rem>Job</a>
 <a href=/tags/jquery class=tagcloud-item style=font-size:.7rem>JQuery</a>
 <a href=/tags/kids class=tagcloud-item style=font-size:.7rem>kids</a>
@@ -135,14 +135,14 @@ LocalPath: This is the path to where the camera will save its photos to, somethi
 <a href=/tags/lifestory class=tagcloud-item style=font-size:.7rem>LifeStory</a>
 <a href=/tags/linq class=tagcloud-item style=font-size:.7rem>LINQ</a>
 <a href=/tags/linux class=tagcloud-item style=font-size:.7rem>Linux</a>
-<a href=/tags/lynx class=tagcloud-item style=font-size:.903369124844693rem>Lynx</a>
+<a href=/tags/lynx class=tagcloud-item style=font-size:.9028273845288924rem>Lynx</a>
 <a href=/tags/manifest class=tagcloud-item style=font-size:.7rem>Manifest</a>
 <a href=/tags/marriage class=tagcloud-item style=font-size:.7rem>Marriage</a>
-<a href=/tags/microsoft class=tagcloud-item style=font-size:.903369124844693rem>Microsoft</a>
+<a href=/tags/microsoft class=tagcloud-item style=font-size:.9028273845288924rem>Microsoft</a>
 <a href=/tags/mobile class=tagcloud-item style=font-size:.7rem>Mobile</a>
 <a href=/tags/monitoring class=tagcloud-item style=font-size:.7rem>Monitoring</a>
-<a href=/tags/mvc class=tagcloud-item style=font-size:.903369124844693rem>MVC</a>
-<a href=/tags/nagios class=tagcloud-item style=font-size:.903369124844693rem>Nagios</a>
+<a href=/tags/mvc class=tagcloud-item style=font-size:.9028273845288924rem>MVC</a>
+<a href=/tags/nagios class=tagcloud-item style=font-size:.9028273845288924rem>Nagios</a>
 <a href=/tags/newjob class=tagcloud-item style=font-size:.7rem>Newjob</a>
 <a href=/tags/nuget class=tagcloud-item style=font-size:.7rem>Nuget</a>
 <a href=/tags/octopusenergy class=tagcloud-item style=font-size:.7rem>OctopusEnergy</a>
@@ -152,35 +152,35 @@ LocalPath: This is the path to where the camera will save its photos to, somethi
 <a href=/tags/pairprogramming class=tagcloud-item style=font-size:.7rem>PairProgramming</a>
 <a href=/tags/patrickstewart class=tagcloud-item style=font-size:.7rem>PatrickStewart</a>
 <a href=/tags/php class=tagcloud-item style=font-size:.7rem>PHP</a>
-<a href=/tags/picard class=tagcloud-item style=font-size:.903369124844693rem>Picard</a>
+<a href=/tags/picard class=tagcloud-item style=font-size:.9028273845288924rem>Picard</a>
 <a href=/tags/pluralsight class=tagcloud-item style=font-size:.7rem>Pluralsight</a>
-<a href=/tags/podcast class=tagcloud-item style=font-size:1.1722084846095482rem>Podcast</a>
+<a href=/tags/podcast class=tagcloud-item style=font-size:1.1709506025501577rem>Podcast</a>
 <a href=/tags/powerbi class=tagcloud-item style=font-size:.7rem>PowerBI</a>
-<a href=/tags/powershell class=tagcloud-item style=font-size:.903369124844693rem>PowerShell</a>
-<a href=/tags/programming class=tagcloud-item style=font-size:1.9964861900034336rem>Programming</a>
+<a href=/tags/powershell class=tagcloud-item style=font-size:.9028273845288924rem>PowerShell</a>
+<a href=/tags/programming class=tagcloud-item style=font-size:1.9965370239406866rem>Programming</a>
 <a href=/tags/pwa class=tagcloud-item style=font-size:.7rem>PWA</a>
 <a href=/tags/pwned class=tagcloud-item style=font-size:.7rem>Pwned</a>
-<a href=/tags/pwnedpass class=tagcloud-item style=font-size:1.0223324366833175rem>PwnedPass</a>
+<a href=/tags/pwnedpass class=tagcloud-item style=font-size:1.021473798597645rem>PwnedPass</a>
 <a href=/tags/quiz class=tagcloud-item style=font-size:.7rem>Quiz</a>
 <a href=/tags/r class=tagcloud-item style=font-size:.7rem>R</a>
-<a href=/tags/raspberrypi class=tagcloud-item style=font-size:.7rem>RaspberryPi</a>
+<a href=/tags/raspberrypi class=tagcloud-item style=font-size:.9028273845288924rem>RaspberryPi</a>
 <a href=/tags/rdp class=tagcloud-item style=font-size:.7rem>RDP</a>
 <a href=/tags/reporturi class=tagcloud-item style=font-size:.7rem>ReportURI</a>
 <a href=/tags/routers class=tagcloud-item style=font-size:.7rem>Routers</a>
 <a href=/tags/rss class=tagcloud-item style=font-size:.7rem>RSS</a>
 <a href=/tags/scratch class=tagcloud-item style=font-size:.7rem>Scratch</a>
-<a href=/tags/security class=tagcloud-item style=font-size:1.3446648733666353rem>Security</a>
-<a href=/tags/servers class=tagcloud-item style=font-size:1.106738249689386rem>Servers</a>
+<a href=/tags/security class=tagcloud-item style=font-size:1.34294759719529rem>Security</a>
+<a href=/tags/servers class=tagcloud-item style=font-size:1.105654769057785rem>Servers</a>
 <a href=/tags/social class=tagcloud-item style=font-size:.7rem>Social</a>
 <a href=/tags/softskills class=tagcloud-item style=font-size:.7rem>SoftSkills</a>
 <a href=/tags/solid class=tagcloud-item style=font-size:.7rem>SOLID</a>
-<a href=/tags/source-control class=tagcloud-item style=font-size:.903369124844693rem>Source Control</a>
-<a href=/tags/sourcecode class=tagcloud-item style=font-size:1.1722084846095482rem>SourceCode</a>
-<a href=/tags/sourcecontrol class=tagcloud-item style=font-size:.903369124844693rem>SourceControl</a>
+<a href=/tags/source-control class=tagcloud-item style=font-size:.9028273845288924rem>Source Control</a>
+<a href=/tags/sourcecode class=tagcloud-item style=font-size:1.1709506025501577rem>SourceCode</a>
+<a href=/tags/sourcecontrol class=tagcloud-item style=font-size:.9028273845288924rem>SourceControl</a>
 <a href=/tags/spending class=tagcloud-item style=font-size:.7rem>Spending</a>
-<a href=/tags/sql class=tagcloud-item style=font-size:1.531263740860284rem>SQL</a>
-<a href=/tags/ssl class=tagcloud-item style=font-size:1.106738249689386rem>SSL</a>
-<a href=/tags/startrek class=tagcloud-item style=font-size:1.4945409212928658rem>StarTrek</a>
+<a href=/tags/sql class=tagcloud-item style=font-size:1.529049397449842rem>SQL</a>
+<a href=/tags/ssl class=tagcloud-item style=font-size:1.105654769057785rem>SSL</a>
+<a href=/tags/startrek class=tagcloud-item style=font-size:1.4924244011478027rem>StarTrek</a>
 <a href=/tags/stephen-hawking class=tagcloud-item style=font-size:.7rem>Stephen Hawking</a>
 <a href=/tags/swagger class=tagcloud-item style=font-size:.7rem>Swagger</a>
 <a href=/tags/table-storage class=tagcloud-item style=font-size:.7rem>Table Storage</a>
@@ -188,24 +188,24 @@ LocalPath: This is the path to where the camera will save its photos to, somethi
 <a href=/tags/technical class=tagcloud-item style=font-size:.7rem>Technical</a>
 <a href=/tags/technology class=tagcloud-item style=font-size:.7rem>Technology</a>
 <a href=/tags/test-driven-development class=tagcloud-item style=font-size:.7rem>Test Driven Development</a>
-<a href=/tags/testing class=tagcloud-item style=font-size:1.106738249689386rem>Testing</a>
+<a href=/tags/testing class=tagcloud-item style=font-size:1.105654769057785rem>Testing</a>
 <a href=/tags/theme class=tagcloud-item style=font-size:.7rem>Theme</a>
 <a href=/tags/tools class=tagcloud-item style=font-size:.7rem>Tools</a>
 <a href=/tags/training class=tagcloud-item style=font-size:.7rem>Training</a>
 <a href=/tags/trekmate class=tagcloud-item style=font-size:.7rem>Trekmate</a>
 <a href=/tags/troy-hunt class=tagcloud-item style=font-size:.7rem>Troy Hunt</a>
-<a href=/tags/twitter class=tagcloud-item style=font-size:.903369124844693rem>Twitter</a>
+<a href=/tags/twitter class=tagcloud-item style=font-size:.9028273845288924rem>Twitter</a>
 <a href=/tags/ui class=tagcloud-item style=font-size:.7rem>UI</a>
 <a href=/tags/update class=tagcloud-item style=font-size:.7rem>Update</a>
-<a href=/tags/visual-studio class=tagcloud-item style=font-size:1.2709293136272963rem>Visual Studio</a>
+<a href=/tags/visual-studio class=tagcloud-item style=font-size:1.3084821535866773rem>Visual Studio</a>
 <a href=/tags/vpn class=tagcloud-item style=font-size:.7rem>VPN</a>
-<a href=/tags/vsts class=tagcloud-item style=font-size:.903369124844693rem>VSTS</a>
-<a href=/tags/website class=tagcloud-item style=font-size:1.106738249689386rem>Website</a>
-<a href=/tags/windows class=tagcloud-item style=font-size:1.0223324366833175rem>Windows</a>
+<a href=/tags/vsts class=tagcloud-item style=font-size:.9028273845288924rem>VSTS</a>
+<a href=/tags/website class=tagcloud-item style=font-size:1.105654769057785rem>Website</a>
+<a href=/tags/windows class=tagcloud-item style=font-size:1.021473798597645rem>Windows</a>
 <a href=/tags/wordpress class=tagcloud-item style=font-size:.7rem>WordPress</a>
-<a href=/tags/xamarin class=tagcloud-item style=font-size:.903369124844693rem>Xamarin</a>
+<a href=/tags/xamarin class=tagcloud-item style=font-size:.9028273845288924rem>Xamarin</a>
 <a href=/tags/xml class=tagcloud-item style=font-size:.7rem>XML</a>
-<a href=/tags/zone class=tagcloud-item style=font-size:.7rem>Zone</a></div></div></div></section><section class="social row card component"><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.6.1/css/all.css integrity=sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP crossorigin=anonymous><div class=card-header><h2 class=card-title>Social Links</h2></div><div class=card-body><ul class=post-list><li><span aria-hidden=true></span>&nbsp;<a href=https://www.buymeacoffee.com/funkysi1701>Buy Me A Coffee</a></li><li><span aria-hidden=true></span>&nbsp;<a href=https://dev.to/funkysi1701>DevTo</a></li><li><span aria-hidden=true></span>&nbsp;<a href=https://funkysi1701.hashnode.dev/>Hashnode</a></li></ul></div></section><section class="year row card component"><div class=card-header><h2 class=card-title><a href=/year>Years</a></h2></div><div class=card-body><ul class=post-list><li><a href=/2022>2022</a> (8)</li><li><a href=/2021>2021</a> (8)</li><li><a href=/2020>2020</a> (10)</li><li><a href=/2019>2019</a> (9)</li><li><a href=/2018>2018</a> (20)</li><li><a href=/2017>2017</a> (35)</li><li><a href=/2016>2016</a> (16)</li><li><a href=/2015>2015</a> (23)</li><li><a href=/2014>2014</a> (12)</li><li>145 Posts so far</li></ul></div></section></div></aside></div></main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav justify-content-center mb-2"><a class="nav-link social-link" target=_blank href=https://facebook.com/funkysi1701 title=Facebook rel="noopener noreferrer"><i class="fa-fw fa-2x fab fa-facebook-f"></i>
+<a href=/tags/zone class=tagcloud-item style=font-size:.7rem>Zone</a></div></div></div></section><section class="social row card component"><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.6.1/css/all.css integrity=sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP crossorigin=anonymous><div class=card-header><h2 class=card-title>Social Links</h2></div><div class=card-body><ul class=post-list><li><span aria-hidden=true></span>&nbsp;<a href=https://www.buymeacoffee.com/funkysi1701>Buy Me A Coffee</a></li><li><span aria-hidden=true></span>&nbsp;<a href=https://dev.to/funkysi1701>DevTo</a></li><li><span aria-hidden=true></span>&nbsp;<a href=https://funkysi1701.hashnode.dev/>Hashnode</a></li></ul></div></section><section class="year row card component"><div class=card-header><h2 class=card-title><a href=/year>Years</a></h2></div><div class=card-body><ul class=post-list><li><a href=/2022>2022</a> (8)</li><li><a href=/2021>2021</a> (8)</li><li><a href=/2020>2020</a> (10)</li><li><a href=/2019>2019</a> (9)</li><li><a href=/2018>2018</a> (20)</li><li><a href=/2017>2017</a> (35)</li><li><a href=/2016>2016</a> (17)</li><li><a href=/2015>2015</a> (23)</li><li><a href=/2014>2014</a> (12)</li><li>146 Posts so far</li></ul></div></section></div></aside></div></main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav justify-content-center mb-2"><a class="nav-link social-link" target=_blank href=https://facebook.com/funkysi1701 title=Facebook rel="noopener noreferrer"><i class="fa-fw fa-2x fab fa-facebook-f"></i>
 </a><a class="nav-link social-link" target=_blank href=https://github.com/funkysi1701 title=GitHub rel="noopener noreferrer"><i class="fa-fw fa-2x fab fa-github"></i>
 </a><a class="nav-link social-link" target=_blank href=https://linkedin.com/in/funkysi1701/ title=LinkedIn rel="noopener noreferrer"><i class="fa-fw fa-2x fab fa-linkedin-in"></i>
 </a><a class="nav-link social-link" target=_blank href=https://twitter.com/funkysi1701 title=Twitter rel="noopener noreferrer"><i class="fa-fw fa-2x fab fa-twitter"></i></a></nav><div class="copyright mb-2"></div></footer><script src=https://www.funkysi1701.com/js/main.b4d13568ea62925adef3e45f80cad4c87607640396981d7e679fff6ab72a3dd4.js integrity="sha256-tNE1aOpiklre8+RfgMrUyHYHZAOWmB1+Z5//arcqPdQ=" crossorigin=anonymous defer></script><script src=https://www.funkysi1701.com/js/icons.min.d22ba37d52cb320db341bc318d63a4550126e04f6155ad145ce931ed36d9fb97.js integrity="sha256-0iujfVLLMg2zQbwxjWOkVQEm4E9hVa0UXOkx7TbZ+5c=" crossorigin=anonymous defer></script>
