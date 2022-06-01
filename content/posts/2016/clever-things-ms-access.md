@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/clever-things-ms-access",
-    "/posts/periodic-table-of-devops-15c7",
-    "/posts/2016/07/07/periodic-table-of-devops-15c7",
+    "/posts/clever-things-with-ms-access-40e",
+    "/posts/2016/07/07/clever-things-with-ms-access-40e",
     "/posts/2016/07/07/clever-things-ms-access",
-    "/2016/07/07/periodic-table-of-devops-15c7",
+    "/2016/07/07/clever-things-with-ms-access-40e",
     "/2016/07/07/clever-things-ms-access"
 ]
 +++

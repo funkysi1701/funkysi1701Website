@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/exchange-web-services",
-    "/posts/periodic-table-of-devops-15c7",
-    "/posts/2016/04/21/periodic-table-of-devops-15c7",
+    "/posts/exchange-web-services-399o",
+    "/posts/2016/04/21/exchange-web-services-399o",
     "/posts/2016/04/21/exchange-web-services",
-    "/2016/04/21/periodic-table-of-devops-15c7",
+    "/2016/04/21/exchange-web-services-399o",
     "/2016/04/21/exchange-web-services"
 ]
 +++
