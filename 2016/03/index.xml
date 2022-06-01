@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2016-03 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2016/03/</link><description>Recent content in 2016-03 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Thu, 24 Mar 2016 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2016/03/index.xml" rel="self" type="application/rss+xml"/><item><title>Revisiting Team City</title><link>https://www.funkysi1701.com/posts/2016/revisiting-teamcity/</link><pubDate>Thu, 24 Mar 2016 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2016/revisiting-teamcity/</guid><description>&lt;p>Last year I blogged about &lt;a href="http://www.funkysi1701.com/2015/04/01/teamcity/">Team City&lt;/a>
+, well I have been looking at it again recently. In that time they have even changed their logo!&lt;/p>
+&lt;p>Lets start with thinking about what I want my Continuous Integration server to do.&lt;/p>
+&lt;ol>
+&lt;li>Check out my code from source control (usually master but all feature branches would be even better)&lt;/li>
+&lt;li>Configure specific setting for build&lt;/li>
+&lt;li>Build my code&lt;/li>
+&lt;li>Build my databases&lt;/li>
+&lt;li>Run any unit tests&lt;/li>
+&lt;li>(Optional) Run deployment to Azure Test/Live site&lt;/li>
+&lt;/ol>
+&lt;p>There are probably other things I want to achieve but I will start with these six.&lt;/p>
+&lt;ol>
+&lt;li>Checking out code from source control is something Team City does out of the box, so I can safely say I have done this now. It even monitors a branch for changes and initiates a new check out.&lt;/li>
+&lt;li>Team City allows you to create specific build steps so in theory you can have multiple builds for every variation of settings that you want for your code. I have not tried this yet apart from building with the default config, but I don’t expect it will be too difficult.&lt;/li>
+&lt;li>I have managed to get my code to build with Team City, it took a bit of tweaking the different build steps but wasn’t too difficult. Team City has a visual studio build agent which takes you solution file and does what it needs to. The one problem I have found with this step is that I get errors with my tests if I select a Debug config instead of Release.&lt;/li>
+&lt;li>Databases are always the problem part of the deployment. So far I have manually deployed my databases but I intend on revisit this step. A &lt;a href="https://stackoverflow.com/questions/21555038/how-can-i-execute-sql-scripts-using-teamcity" target="_blank" rel="noopener noreferrer">stackoverflow&lt;/a>
+post suggests that I can run SQL code via Team City in the following way by creating a command line executable:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Command executable: c:&lt;span style="color:#ae81ff">\P&lt;/span>rogram Files&lt;span style="color:#ae81ff">\M&lt;/span>icrosoft SQL Server&lt;span style="color:#ae81ff">\1&lt;/span>00&lt;span style="color:#ae81ff">\T&lt;/span>ools&lt;span style="color:#ae81ff">\B&lt;/span>inn&lt;span style="color:#ae81ff">\s&lt;/span>qlcmd.exe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Command parameters: -S &lt;span style="color:#f92672">[&lt;/span>ServerName&lt;span style="color:#f92672">]&lt;/span> -i &lt;span style="color:#f92672">[&lt;/span>PathToSQLScript&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>I have yet to try this but I am hopefully that it will just work. Dropping a database and restoring a back and then running different SQL scripts is all possible from TSQL, so I should be OK. Watch this space for more details.&lt;/p>
+&lt;ol start="5">
+&lt;li>Running the unit tests got me stuck for a while. I tried setting it up using VSTest or MSTest neither worked mainly because a config file wasn’t being copied with the test binaries. When I tried using NUnit it just worked. The tests that failed gave me a few config settings to change.&lt;/li>
+&lt;li>I have powershell scripts that deploy to Azure websites, I think that these could form the basis of a deployment to Azure. Again the difficult step here may end up being deploying all the different databases to Azure. This is also the riskiest step as I need to connect to live servers which is why I will leave this to last, at the very least I could generate scripts that do a full deployment.&lt;/li>
+&lt;/ol>
+&lt;p>That’s it for now. Once I have this all working I will revisit again with details of the database steps as I am expecting a few challenges to overcome. What have you used a CI Server for? Are there other things I want to achieve from a project like this? Why not contact me or leave a comment below&lt;/p></description></item></channel></rss>
