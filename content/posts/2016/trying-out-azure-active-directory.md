@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/trying-out-azure-active-directory",
-    "/posts/periodic-table-of-devops-15c7",
-    "/posts/2016/03/03/periodic-table-of-devops-15c7",
+    "/posts/trying-out-azure-active-directory-46pe",
+    "/posts/2016/03/03/trying-out-azure-active-directory-46pe",
     "/posts/2016/03/03/trying-out-azure-active-directory",
-    "/2016/03/03/periodic-table-of-devops-15c7",
+    "/2016/03/03/trying-out-azure-active-directory-46pe",
     "/2016/03/03/trying-out-azure-active-directory"
 ]
 +++
