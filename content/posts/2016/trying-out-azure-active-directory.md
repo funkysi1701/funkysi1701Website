@@ -34,7 +34,7 @@ There is a better way by using Azure Active Directory. You have probably heard o
 
 I have blogged in the past about using Azure but this is the first time I have tried connecting my internal domain to Azure. There is a [Virtual Lab](https://vlabs.holsystems.com/vlabs/technet?eng=VLabs&auth=external&src=vlabs&altadd=true&labid=13535) which helped me try out some of these ideas.
 
-The first thing I did was to create a new Directory in Azure. I did this via the old portal (manage.windowsazure.com) it might be possible via the new portal but I don’t know how yet.
+The first thing I did was to create a new Directory in Azure. I did this via the old portal ([manage.windowsazure.com](https://manage.windowsazure.com/)) it might be possible via the new portal but I don’t know how yet.
 
 Click New, select App Services > Active Directory > Directory and select Custom Create. Select Create new directory, give it a name and a domain name and select a region from the drop down. Then add a Global Admin for this directory.
 
