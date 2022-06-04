@@ -535,7 +535,8 @@ which is not quite as nice as the Azure equivalent &lt;a href="http://test.azure
 &lt;p>There is a better way by using Azure Active Directory. You have probably heard of Active Directory, if you are a SysAdmin you probably use it all the time to manage your corporate users and computers. Azure Active Directory is an extension of this into the Cloud.&lt;/p>
 &lt;p>I have blogged in the past about using Azure but this is the first time I have tried connecting my internal domain to Azure. There is a &lt;a href="https://vlabs.holsystems.com/vlabs/technet?eng=VLabs&amp;amp;auth=external&amp;amp;src=vlabs&amp;amp;altadd=true&amp;amp;labid=13535" target="_blank" rel="noopener noreferrer">Virtual Lab&lt;/a>
 which helped me try out some of these ideas.&lt;/p>
-&lt;p>The first thing I did was to create a new Directory in Azure. I did this via the old portal (manage.windowsazure.com) it might be possible via the new portal but I don’t know how yet.&lt;/p>
+&lt;p>The first thing I did was to create a new Directory in Azure. I did this via the old portal (&lt;a href="https://manage.windowsazure.com/" target="_blank" rel="noopener noreferrer">manage.windowsazure.com&lt;/a>
+) it might be possible via the new portal but I don’t know how yet.&lt;/p>
 &lt;p>Click New, select App Services &amp;gt; Active Directory &amp;gt; Directory and select Custom Create. Select Create new directory, give it a name and a domain name and select a region from the drop down. Then add a Global Admin for this directory.&lt;/p>
 &lt;p>There is a tool called &lt;a href="https://www.microsoft.com/en-us/download/details.aspx?id=47594" target="_blank" rel="noopener noreferrer">Azure Active Directory Connect&lt;/a>
 . Download and Install this with express settings on one of your domain controllers. You need to specify a domain admin account to access your domain and the Azure Global Admin account you just created.&lt;/p>
