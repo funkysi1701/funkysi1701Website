@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/trying-out-azure-active-directory-46pe",
     "/posts/trying-out-azure-active-directory",
     "/posts/trying-out-azure-active-directory-46pe",
     "/posts/2016/03/03/trying-out-azure-active-directory-46pe",
