@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/surface-book-review",
-    "/posts/periodic-table-of-devops-15c7",
-    "/posts/2016/03/10/periodic-table-of-devops-15c7",
+    "/posts/surface-book-review-33lh",
+    "/posts/2016/03/10/surface-book-review-33lh",
     "/posts/2016/03/10/surface-book-review",
-    "/2016/03/10/periodic-table-of-devops-15c7",
+    "/2016/03/10/surface-book-review-33lh",
     "/2016/03/10/surface-book-review"
 ]
 +++

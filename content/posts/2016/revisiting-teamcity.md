@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/revisiting-teamcity",
-    "/posts/periodic-table-of-devops-15c7",
-    "/posts/2016/03/24/periodic-table-of-devops-15c7",
+    "/posts/revisiting-team-city-61o",
+    "/posts/2016/03/24/revisiting-team-city-61o",
     "/posts/2016/03/24/revisiting-teamcity",
-    "/2016/03/24/periodic-table-of-devops-15c7",
+    "/2016/03/24/revisiting-team-city-61o",
     "/2016/03/24/revisiting-teamcity"
 ]
 +++

@@ -17,10 +17,7 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/brothers-tng-s4-e3-review-battle-bridge",
-    "/posts/periodic-table-of-devops-15c7",
-    "/posts/2016/05/26/periodic-table-of-devops-15c7",
     "/posts/2016/05/26/brothers-tng-s4-e3-review-battle-bridge",
-    "/2016/05/26/periodic-table-of-devops-15c7",
     "/2016/05/26/brothers-tng-s4-e3-review-battle-bridge"
 ]
 +++

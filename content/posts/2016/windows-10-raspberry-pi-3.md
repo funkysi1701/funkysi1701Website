@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/windows-10-raspberry-pi-3",
-    "/posts/periodic-table-of-devops-15c7",
-    "/posts/2016/05/05/periodic-table-of-devops-15c7",
+    "/posts/running-windows-on-raspberry-pi-2868",
+    "/posts/2016/05/05/running-windows-on-raspberry-pi-2868",
     "/posts/2016/05/05/windows-10-raspberry-pi-3",
-    "/2016/05/05/periodic-table-of-devops-15c7",
+    "/2016/05/05/running-windows-on-raspberry-pi-2868",
     "/2016/05/05/windows-10-raspberry-pi-3"
 ]
 +++

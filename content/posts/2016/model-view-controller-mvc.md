@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/model-view-controller-mvc",
-    "/posts/periodic-table-of-devops-15c7",
-    "/posts/2016/03/17/periodic-table-of-devops-15c7",
+    "/posts/model-view-controller-mvc-236p",
+    "/posts/2016/03/17/model-view-controller-mvc-236p",
     "/posts/2016/03/17/model-view-controller-mvc",
-    "/2016/03/17/periodic-table-of-devops-15c7",
+    "/2016/03/17/model-view-controller-mvc-236p",
     "/2016/03/17/model-view-controller-mvc"
 ]
 +++

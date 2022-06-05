@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/automatic-git-tagging",
-    "/posts/periodic-table-of-devops-15c7",
-    "/posts/2016/06/16/periodic-table-of-devops-15c7",
+    "/posts/automatic-git-tagging-3cmo",
+    "/posts/2016/06/16/automatic-git-tagging-3cmo",
     "/posts/2016/06/16/automatic-git-tagging",
-    "/2016/06/16/periodic-table-of-devops-15c7",
+    "/2016/06/16/automatic-git-tagging-3cmo",
     "/2016/06/16/automatic-git-tagging"
 ]
 +++

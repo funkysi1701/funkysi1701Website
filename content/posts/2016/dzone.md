@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/dzone",
-    "/posts/linq-5g67",
-    "/posts/2016/08/25/linq-5g67",
+    "/posts/dzone-434m",
+    "/posts/2016/08/25/dzone-434m",
     "/posts/2016/08/25/dzone",
-    "/2016/08/25/linq-5g67",
+    "/2016/08/25/dzone-434m",
     "/2016/08/25/dzone"
 ]
 +++
