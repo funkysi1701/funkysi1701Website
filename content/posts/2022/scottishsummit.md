@@ -60,7 +60,7 @@ Next up was James Cook's talk Monitor Azure DevOps and GitHub with Sentinel. Thi
 
 Mental Health with [Rory Neary](https://twitter.com/AzureRory). This was one of my favourite talks. Rory talked about his mental health problems, his challenges, some of his coping mechnaisms some of which involved the power platform. He encourgaged us all to be more open about talking about Mental Health. Lots of talks have a solution to a problem, this one didn't, but that Ok. We are all on a journey complete with its ups and downs.
 
-Accessibility for Blazor with [Dennie Declercq](https://twitter.com/DennieDeclercq). I wasn't as keen on this talk as some of the others, while I agree Accessibility is very important the solutions presented felt very generic and not really speciific to Blazor. However I do have some ideas to try now and the accessibility browser extension sounds like a great idea.
+Accessibility for Blazor with [Dennie Declercq](https://twitter.com/DennieDeclercq). I wasn't as keen on this talk as some of the others, while I agree Accessibility is very important the solutions presented felt very generic and not really specific to Blazor. However I do have some ideas to try now and the accessibility browser extension sounds like a great idea.
 
 ## After Hours
 
