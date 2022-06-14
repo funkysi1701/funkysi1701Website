@@ -1,6 +1,6 @@
 +++
 title = "Scottish Summit 2022"
-date = "2022-06-13T18:00:45Z"
+date = "2022-06-14T18:00:45Z"
 year = "2022"
 month= "2022-06"
 author = "funkysi1701"
@@ -16,12 +16,12 @@ readingTime = true
 copyright = false
 featured = false
 aliases = [
-    "/scratch-1f7l",
+    "/scottish-summit-2022-1514",
     "/posts/scottishsummit",
-    "/posts/2022/04/26/scottishsummit",
-    "/posts/scratch-1f7l",
-    "/posts/2022/03/18/scratch-1f7l",
-    "/2022/03/18/scratch-1f7l"    
+    "/posts/2022/06/14/scottishsummit",
+    "/posts/scottish-summit-2022-1514",
+    "/posts/2022/06/14/scottish-summit-2022-1514",
+    "/2022/06/14/scottish-summit-2022-1514"    
 ]
 +++
 On the 10th and 11th June 2022 [Scottish Summit 2022](https://scottishsummit.com/) happened and I was there. It was an awesome event and I will attempt to summarise what happened.
