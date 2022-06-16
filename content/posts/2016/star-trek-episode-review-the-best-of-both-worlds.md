@@ -25,7 +25,7 @@ aliases = [
 ]
 +++
 ![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/02/Picard_kidnapped_by_the_Borg.jpg)
-- Episode Title: The Best of Both Worlds
+- Episode Title: **The Best of Both Worlds**
 - Star Trek Type: TNG
 - Original Air Date: 18 June 1990 & 24 September 1990
 - Written By: Michael Piller
