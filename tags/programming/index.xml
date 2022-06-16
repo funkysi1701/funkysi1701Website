@@ -425,19 +425,19 @@ website. There are now over half a billion passwords that have appeared in data 
 &lt;p>Now I have a way to map ids to classes I can write a class to do this.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">MyPage&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IPage &lt;span style="color:#ae81ff">_&lt;/span>repo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IPage _repo;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> MyPage(&lt;span style="color:#66d9ef">int&lt;/span> pageId)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> PageIds p = (PageIds)pageId;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Type t = PageIdToClass[p];
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ConstructorInfo constructor = t.GetConstructor(&lt;span style="color:#66d9ef">new&lt;/span> Type[] { });
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">_&lt;/span>repo = (IPage)constructor.Invoke(&lt;span style="color:#66d9ef">null&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _repo = (IPage)constructor.Invoke(&lt;span style="color:#66d9ef">null&lt;/span>);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">string&lt;/span> Create()
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">_&lt;/span>repo.CreatePageContent();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> _repo.CreatePageContent();
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>So in my constructor I take the pageId and pass it to my dictionary to get which subclass to load. I then get its Constructor and invoke it.&lt;/p>
@@ -513,22 +513,22 @@ from AWS to Azure blob storage. Now that the actual files themselves have been m
 &lt;p>I created three classes that implemented IStorage, &lt;strong>AWSStorage&lt;/strong> , &lt;strong>AzureStorage&lt;/strong> and mostly for testing at the moment &lt;strong>FileStorage&lt;/strong>. I then created a class Storage that would call these three classes. Initially I created it like this&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Storage&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> IStorage &lt;span style="color:#ae81ff">_&lt;/span>repo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> IStorage _repo;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Storage(IStorage repo)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">_&lt;/span>repo = repo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _repo = repo;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>However this would require I call it like Storage(new AzureStorage()) and I would need to know everywhere in my code which implementation I want to use. This isn’t too bad as when we change from AWS to Azure we would need to do a find and replace throughout the code and replace all AWSStorage and make them AzureStorage.&lt;/p>
 &lt;p>However we can do better than that.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Storage&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> IStorage &lt;span style="color:#ae81ff">_&lt;/span>repo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> IStorage _repo;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Storage()
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Type obj = Type.GetType(ConfigurationManager.AppSettings[&lt;span style="color:#e6db74">&amp;#34;DefaultStorageRepository&amp;#34;&lt;/span>]);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ConstructorInfo constructor = obj.GetConstructor(&lt;span style="color:#66d9ef">new&lt;/span> Type[] { });
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">_&lt;/span>repo = (IStorage)constructor.Invoke(&lt;span style="color:#66d9ef">null&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _repo = (IStorage)constructor.Invoke(&lt;span style="color:#66d9ef">null&lt;/span>);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This code will read from the web.config which implementation to use and that will decide which class to call. This means that to change from AWS to Azure we do not need to redeploy any code, all we need to do is change the web.config.&lt;/p>
@@ -1226,15 +1226,15 @@ so you can have unique complex passwords for every services you use and not have
 &lt;p>Now we have some classes that implement an interface what can we do with them. Lets write a class called GetData which gets data but doesn’t care if it comes form the rss feed or a SQL database.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">GetData&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> IData &lt;span style="color:#ae81ff">_&lt;/span>repo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> IData _repo;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> GetData(IData repo)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">_&lt;/span>repo = repo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _repo = repo;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Blog LoadData(&lt;span style="color:#66d9ef">string&lt;/span> Connectionstring)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> original = &lt;span style="color:#ae81ff">_&lt;/span>repo.LoadData(Connectionstring);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> original = _repo.LoadData(Connectionstring);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> original;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
