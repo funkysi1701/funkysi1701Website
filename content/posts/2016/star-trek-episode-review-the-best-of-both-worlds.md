@@ -25,11 +25,11 @@ aliases = [
 ]
 +++
 ![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/02/Picard_kidnapped_by_the_Borg.jpg)
-Episode Title: The Best of Both Worlds
-Star Trek Type: TNG
-Original Air Date: 18 June 1990 & 24 September 1990
-Written By: Michael Piller
-Directed By: Cliff Bole
+- Episode Title: The Best of Both Worlds
+- Star Trek Type: TNG
+- Original Air Date: 18 June 1990 & 24 September 1990
+- Written By: Michael Piller
+- Directed By: Cliff Bole
 
 The Borg threaten the Federation, when they kidnap Captain Picard and destroy a fleet of 39 Starships. Luckily some original thinking from Commander Riker and Lieutenant Commander Shelby saves the Federation from assimilation.
 
@@ -42,7 +42,8 @@ The Borg soundtrack in this episode is great. Ron Jones really captures the spoo
 The episode has a cracking pace. From the moment the Borg first attack the Enterprise to the moment the Borg ship explodes the show doesn’t slow down.
 
 ```
-I am Locutus… of Borg. Resistance… is futile. Your life, as it has been… is over. From this time forward… you will service… us.
+I am Locutus… of Borg. Resistance… is futile. 
+Your life, as it has been… is over. From this time forward… you will service… us.
 ```
 
 Commander Shelby is a great character that enhances the episode and introduces conflict between characters, particularly Riker.
