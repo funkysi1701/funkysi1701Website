@@ -27,7 +27,7 @@ aliases = [
 +++
 So today I sat the AWS Cloud Practitioner Certification Exam and passed! This is my second certification exam I have sat after the Azure Fundamentals one I sat last year.
 
-<a href="https://www.credly.com/badges/3aab54c8-a109-4018-bcad-dbe0d6a1fc0c/public_url"><img src="https://images.credly.com/size/680x680/images/68468004-5a85-4f3b-bc58-590773979486/AWS-CloudPractitioner-2020.png" alt="AWS Cloud Practitioner" width="150" /></a>
+<a href="https://www.credly.com/badges/3aab54c8-a109-4018-bcad-dbe0d6a1fc0c/public_url"><img src="/images/awscp.png" alt="AWS Cloud Practitioner" width="150" /></a>
 
 This time was different than the Azure one. Colleagues at work encouraged me to look into doing this particular exam and my employer is going to cover the cost of the exam itself. Last time I did the exam in my own time and didn't really discuss it with anyone from work.
 
