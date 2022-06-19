@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>mermaid on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/mermaid/</link><description>Recent content in mermaid on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Sun, 19 Jun 2022 18:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/mermaid/index.xml" rel="self" type="application/rss+xml"/><item><title>Diagrams with Mermaid</title><link>https://www.funkysi1701.com/posts/2022/diagrams-with-mermaid/</link><pubDate>Sun, 19 Jun 2022 18:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/diagrams-with-mermaid/</guid><description>&lt;p>I have been wanting to produce a diagram of the architecture of my side project for some time, but I have put it off as never sure what the correct tools is for this job.&lt;/p>
+&lt;p>&lt;a href="http://mermaid-js.github.io/mermaid/#/" target="_blank" rel="noopener noreferrer">Mermaid&lt;/a>
+is a tool that lets you create diagrams from code and text. I first came across this tool about a year ago for use in a project. I had forgotten about this tool until the other day, when I was thinking about this problem again.&lt;/p>
+&lt;p>Is it possible to embed a mermaid diagram in the markdown used in a github repo? Well the answer is yes, so lets look at how that works.&lt;/p>
+&lt;p>A simple mermaid diagram looks like this:&lt;/p>
+&lt;pre tabindex="0">&lt;code>graph TD;
+A[fff]---&amp;gt;B;
+A---&amp;gt;C;
+B---&amp;gt;D;
+C---&amp;gt;D;
+&lt;/code>&lt;/pre>&lt;p>which renders like this:&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://www.funkysi1701.com/images/mermaid.png" loading="lazy"
+width="630" height="912"
+/>
+&lt;/p>
+&lt;p>Lets look at what it is doing.&lt;/p>
+&lt;p>TD means the chart is top down.&lt;/p>
+&lt;p>A is the name of a node in the chart, [fff] is a label being applied to it.&lt;/p>
+&lt;p>Then we just define the relationships between the different nodes, you can have &amp;lt;&amp;mdash;, &amp;mdash;&amp;gt; or &amp;mdash;, or even&lt;br/> &amp;lt;&amp;mdash;&amp;gt;&lt;/p>
+&lt;p>Lets look at my architecture. I have a database (cosmosDB), I have a website running on Azure Static Web Apps, I have some Azure functions for getting data into and out of my database. I also have Application Insights monitoring the whole thing. I also have a console app for doing some data import stuff. This produces a diagram like this:&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://www.funkysi1701.com/images/mermaid2.png" loading="lazy"
+width="409" height="445"
+/>
+&lt;/p>
+&lt;p>The code to produce this and display it on my &lt;a href="https://github.com/funkysi1701/Blogv2/" target="_blank" rel="noopener noreferrer">github repo&lt;/a>
+is simply&lt;/p>
+&lt;pre tabindex="0">&lt;code>```mermaid
+graph TD
+A[Azure Static Web App]---B[Http Fn]
+B---D[Database]
+C[Timer Fn]---D
+D---E[Import Console App]
+F[App Insights]---A
+F---B
+F---C
+&lt;/code>&lt;/pre>&lt;p>Pretty nice for a few lines of code to show what system talks with what.&lt;/p>
+&lt;p>There are improvements that can be made to the diagram, for example changing the shapes of the different services.&lt;/p>
+&lt;p>eg &lt;img class="img-fluid" alt="" src="https://www.funkysi1701.com/images/mermaid3.png" loading="lazy"
+width="1034" height="253"
+/>
+&lt;/p>
+&lt;p>What diagrams are you going to build?&lt;/p></description></item></channel></rss>
