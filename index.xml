@@ -39,6 +39,15 @@ F---C
 width="1034" height="253"
 />
 &lt;/p>
+&lt;p>If you live in the AzureDevOps world you can add a mermaid diagram to your wiki pages (but I don&amp;rsquo;t think to your markdown files). Just use the following syntax&lt;/p>
+&lt;pre tabindex="0">&lt;code>::: mermaid
+sequenceDiagram
+Alice-&amp;gt;&amp;gt;John: Hello John, how are you?
+John--&amp;gt;&amp;gt;Alice: Great!
+Alice-)John: See you later!
+:::
+&lt;/code>&lt;/pre>&lt;p>For more info see the docs &lt;a href="https://docs.microsoft.com/en-us/azure/devops/project/wiki/wiki-markdown-guidance?view=azure-devops" target="_blank" rel="noopener noreferrer">here&lt;/a>
+&lt;/p>
 &lt;p>What diagrams are you going to build?&lt;/p></description></item><item><title>Scottish Summit 2022</title><link>https://www.funkysi1701.com/posts/2022/scottishsummit/</link><pubDate>Tue, 14 Jun 2022 18:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/scottishsummit/</guid><description>&lt;p>On the 10th and 11th June 2022 &lt;a href="https://scottishsummit.com/" target="_blank" rel="noopener noreferrer">Scottish Summit 2022&lt;/a>
 happened and I was there. It was an awesome event and I will attempt to summarise what happened.&lt;/p>
 &lt;h2 id="thursday-9th">Thursday 9th&lt;a class="anchor ms-1" href="#thursday-9th">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>

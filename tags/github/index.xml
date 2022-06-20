@@ -39,6 +39,15 @@ F---C
 width="1034" height="253"
 />
 &lt;/p>
+&lt;p>If you live in the AzureDevOps world you can add a mermaid diagram to your wiki pages (but I don&amp;rsquo;t think to your markdown files). Just use the following syntax&lt;/p>
+&lt;pre tabindex="0">&lt;code>::: mermaid
+sequenceDiagram
+Alice-&amp;gt;&amp;gt;John: Hello John, how are you?
+John--&amp;gt;&amp;gt;Alice: Great!
+Alice-)John: See you later!
+:::
+&lt;/code>&lt;/pre>&lt;p>For more info see the docs &lt;a href="https://docs.microsoft.com/en-us/azure/devops/project/wiki/wiki-markdown-guidance?view=azure-devops" target="_blank" rel="noopener noreferrer">here&lt;/a>
+&lt;/p>
 &lt;p>What diagrams are you going to build?&lt;/p></description></item><item><title>Using GitHub Actions</title><link>https://www.funkysi1701.com/posts/2022/using-github-actions/</link><pubDate>Mon, 10 Jan 2022 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2022/using-github-actions/</guid><description>&lt;p>I&amp;rsquo;ve been running my website on Azure Static Web Apps for a while and it is pretty cool.&lt;/p>
 &lt;p>When you create a Static Web App on Azure you get asked for the github repo of your source code and even the branch to use.
 &lt;img class="img-fluid" alt="GitHub Repo for my Static Web App" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/off7ur2tgsla4smkrhhi.png" loading="lazy"
