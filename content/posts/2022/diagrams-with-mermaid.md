@@ -16,12 +16,12 @@ readingTime = true
 copyright = false
 featured = false
 aliases = [
-    "/scottish-summit-2022-1514",
+    "/diagrams-with-mermaid-1d41",
     "/posts/diagrams",
     "/posts/2022/06/14/diagrams",
-    "/posts/scottish-summit-2022-1514",
-    "/posts/2022/06/14/scottish-summit-2022-1514",
-    "/2022/06/14/scottish-summit-2022-1514"    
+    "/posts/diagrams-with-mermaid-1d41",
+    "/posts/2022/06/14/diagrams-with-mermaid-1d41",
+    "/2022/06/14/diagrams-with-mermaid-1d41"    
 ]
 +++
 I have been wanting to produce a diagram of the architecture of my side project for some time, but I have put it off as never sure what the correct tools is for this job.
