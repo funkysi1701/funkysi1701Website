@@ -76,4 +76,16 @@ There are improvements that can be made to the diagram, for example changing the
 
 eg ![](/images/mermaid3.png)
 
+If you live in the AzureDevOps world you can add a mermaid diagram to your wiki pages (but I don't think to your markdown files). Just use the following syntax
+
+```
+::: mermaid
+sequenceDiagram
+    Alice->>John: Hello John, how are you?
+    John-->>Alice: Great!
+    Alice-)John: See you later!
+:::
+```
+For more info see the docs [here](https://docs.microsoft.com/en-us/azure/devops/project/wiki/wiki-markdown-guidance?view=azure-devops) 
+
 What diagrams are you going to build?
