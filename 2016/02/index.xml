@@ -78,4 +78,25 @@ git gc –aggressive –prune=now
 &lt;/code>&lt;/pre>&lt;p>Now push your changes back to the remote server.&lt;/p>
 &lt;pre tabindex="0">&lt;code>git push origin –force –all
 git push origin –force –tags
-&lt;/code>&lt;/pre>&lt;p>Now if you do a clone it will be much smaller than before and you can get back to coding much quicker, without having to wait.&lt;/p></description></item></channel></rss>
+&lt;/code>&lt;/pre>&lt;p>Now if you do a clone it will be much smaller than before and you can get back to coding much quicker, without having to wait.&lt;/p></description></item><item><title>SQL Transaction Log Backups</title><link>https://www.funkysi1701.com/posts/2016/transaction-log-backups/</link><pubDate>Thu, 04 Feb 2016 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2016/transaction-log-backups/</guid><description>&lt;p>Like many DBAs I spend a lot of time maintaining my SQL Server backups.&lt;/p>
+&lt;p>From SQL Server I maintain both full backups and transaction log backups. I have often restored my full backups but until recently I have never restored a transaction log backup. All backup strategy’s are only as good as the last time you tested the restore process.&lt;/p>
+&lt;h2 id="so-what-is-a-transaction-log-backup">So what is a transaction log backup?&lt;a class="anchor ms-1" href="#so-what-is-a-transaction-log-backup">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>A transaction log backup contains all the transaction log records generated since the last full backup and is used to allow the database to be recovered to a specific point in time (usually the time right before a disaster strikes). Since these are incremental, if you want to restore the database to a particular point in time, you need to have all the transaction log records necessary to replay database changes up to that point in time.&lt;/p>
+&lt;h2 id="how-to-do-the-restore">How to do the restore.&lt;a class="anchor ms-1" href="#how-to-do-the-restore">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>First right click on Databases in SQL Management Studio and select restore database. You should then get a screen similar to this.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/02/restore1.jpg?resize=768%2C640&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>In source click the &amp;hellip; to allow you to select your backup files.&lt;/p>
+&lt;p>Now normally I have only ever selected one file here, the *.bak file. Instead select the *.bak and all the *.trn files as well. After SQL Server has chugged for a few minutes (time will depend on number of transaction files and server/disk speed etc) the restore plan section should fill up with files.&lt;/p>
+&lt;p>In the destination database box, type in the name of the database you want to restore. I recommend using a different name to avoid overwriting the original database, appending Test or a datetime to the name is what I usually do.&lt;/p>
+&lt;p>On my test server I need to untick the take tail-log backups option off the options screen before I can execute the restore.&lt;/p>
+&lt;p>Now you can either check the tick boxes in the restore plan section or (more fun) click the timeline button to select at what point in time you want to restore to.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/02/restore2.jpg?resize=768%2C457&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>You can either select the point in time with your mouse or specify the exact point in the time textbox. Alternatively you can just select the most recent point, probably the most likely option when disaster strikes.&lt;/p>
+&lt;p>Now that I have tried doing this on my test server I feel much more confident that when disaster does strike I can get things restored quickly and painlessly.&lt;/p>
+&lt;h2 id="how-often-should-you-run-transaction-backups">How often should you run transaction backups?&lt;a class="anchor ms-1" href="#how-often-should-you-run-transaction-backups">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>The answer to this question depends on how critical your data is. Until very recently I ran mine ever 15 minutes, I have increased this to every 5 minutes, but I have seen recommendations of running it &lt;a href="https://www.brentozar.com/archive/2014/02/back-transaction-logs-every-minute-yes-really/" target="_blank" rel="noopener noreferrer">every minute&lt;/a>
+. The more critical your data the more often you should run them.&lt;/p></description></item></channel></rss>
