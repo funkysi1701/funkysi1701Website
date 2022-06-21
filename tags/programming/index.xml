@@ -1879,7 +1879,8 @@ git push origin –force –tags
 &lt;p>The answer to this question depends on how critical your data is. Until very recently I ran mine ever 15 minutes, I have increased this to every 5 minutes, but I have seen recommendations of running it &lt;a href="https://www.brentozar.com/archive/2014/02/back-transaction-logs-every-minute-yes-really/" target="_blank" rel="noopener noreferrer">every minute&lt;/a>
 . The more critical your data the more often you should run them.&lt;/p></description></item><item><title>Development Annoyance</title><link>https://www.funkysi1701.com/posts/2016/development-annoyance/</link><pubDate>Fri, 29 Jan 2016 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2016/development-annoyance/</guid><description>&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/01/How-you-can-stop-annoyance-or-frustrations-quickly.jpg?w=425&amp;amp;ssl=1" loading="lazy"
 />
-I spend a lot of my time creating new features that simplify my companies business processes.&lt;/p>
+&lt;/p>
+&lt;p>I spend a lot of my time creating new features that simplify my companies business processes.&lt;/p>
 &lt;p>A good example of this is an invoicing system I created. Instead of users working off different spreadsheets and copying and pasting data between various different programs the user can click a couple of buttons and everything is done and they can move on to the next task.&lt;/p>
 &lt;p>I am currently expanding this system so more of the companies work can be invoiced quickly and simply.&lt;/p>
 &lt;h2 id="i-like-working-on-this-kind-of-problem">I like working on this kind of problem.&lt;a class="anchor ms-1" href="#i-like-working-on-this-kind-of-problem">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
