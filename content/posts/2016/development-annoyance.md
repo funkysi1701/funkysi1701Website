@@ -24,6 +24,7 @@ aliases = [
 ]
 +++
 ![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/01/How-you-can-stop-annoyance-or-frustrations-quickly.jpg?w=425&ssl=1)
+
 I spend a lot of my time creating new features that simplify my companies business processes.
 
 A good example of this is an invoicing system I created. Instead of users working off different spreadsheets and copying and pasting data between various different programs the user can click a couple of buttons and everything is done and they can move on to the next task.
