@@ -5,8 +5,8 @@ year = "2016"
 month= "2016-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
-cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/wp-content/uploads/2016/01/flood.jpg?resize=1024%2C1024&ssl=1"
-images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/wp-content/uploads/2016/01/flood.jpg?resize=1024%2C1024&ssl=1']
+cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/01/flood.jpg?resize=1024%2C1024&ssl=1"
+images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/01/flood.jpg?resize=1024%2C1024&ssl=1']
 tags = ["Disaster Recovery", "BT", "Outage", "Flood", "Phone", "Internet"]
 category="tech"
 keywords = ["", ""]
@@ -24,7 +24,7 @@ aliases = [
     "/2016/01/14/disaster-planning"
 ]
 +++
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/wp-content/uploads/2016/01/flood.jpg?resize=1024%2C1024&ssl=1)
+![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/01/flood.jpg?resize=1024%2C1024&ssl=1)
 
 Over the Christmas break the city of York experienced the worst flooding disaster it has seen in recent years. If you want to help donations are being taken at [York Flood Appeal](https://mydonate.bt.com/events/yorkfloodappeal/272657).
 
