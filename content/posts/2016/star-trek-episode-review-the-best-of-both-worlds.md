@@ -1,5 +1,5 @@
 +++
-title = "Star Trek Episode Review “The Best of Both Worlds”"
+title = "Star Trek Episode Review The Best of Both Worlds"
 date = "2016-02-18T20:00:45Z"
 year = "2016"
 month= "2016-02"
@@ -10,8 +10,8 @@ images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-conten
 tags = ["StarTrek"]
 category="trek"
 keywords = ["", ""]
-description =  "Star Trek Episode Review “The Best of Both Worlds”"
-summary = "Star Trek Episode Review “The Best of Both Worlds”"
+description =  "Star Trek Episode Review The Best of Both Worlds"
+summary = "Star Trek Episode Review The Best of Both Worlds"
 showFullContent = false
 readingTime = true
 copyright = false

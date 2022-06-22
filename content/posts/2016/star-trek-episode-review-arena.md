@@ -48,7 +48,13 @@ An unknown solar system scans the Enterprise as they continue their pursuit of t
 Captain Kirk and the enemy captain appear on a desert planet. The enemy is a reptilian like species called the Gorn. The Gorn has superior strength to humans but Kirk manages to escape his first encounter.
 
 ```
-"This is Captain James Kirk of the Starship Enterprise. Whoever finds this, please get it to Starfleet Command. I’m engaged in personal combat with a creature apparently called a Gorn. He’s immensely strong. Already, he has withstood attacks from me that would have killed a Human being. Fortunately, though strong, he is not agile. The agility and I hope the cleverness, is mine."
+"This is Captain James Kirk of the Starship Enterprise. 
+Whoever finds this, please get it to Starfleet Command. 
+I’m engaged in personal combat with a creature apparently 
+called a Gorn. He’s immensely strong. Already, 
+he has withstood attacks from me that would have 
+killed a Human being. Fortunately, though strong, 
+he is not agile. The agility and I hope the cleverness, is mine."
 ```
 
 The Metrons said that the planet contained materials to allow the building of a weapon, however at first glance Kirk sees nothing that could help him defeat the much strong Gorn captain. He does find some diamonds, too small to be used as a weapon.
