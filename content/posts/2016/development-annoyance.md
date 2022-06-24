@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/development-annoyance",
-    "/posts/linq-5g67",
-    "/posts/2016/01/29/linq-5g67",
+    "/posts/development-annoyance-3bj4",
+    "/posts/2016/01/29/development-annoyance-3bj4",
     "/posts/2016/01/29/development-annoyance",
-    "/2016/01/29/linq-5g67",
+    "/2016/01/29/development-annoyance-3bj4",
     "/2016/01/29/development-annoyance"
 ]
 +++

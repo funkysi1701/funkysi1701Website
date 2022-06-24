@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/transaction-log-backups",
-    "/posts/linq-5g67",
-    "/posts/2016/02/04/linq-5g67",
+    "/posts/sql-transaction-log-backups-14em",
+    "/posts/2016/02/04/sql-transaction-log-backups-14em",
     "/posts/2016/02/04/transaction-log-backups",
-    "/2016/02/04/linq-5g67",
+    "/2016/02/04/sql-transaction-log-backups-14em",
     "/2016/02/04/transaction-log-backups"
 ]
 +++

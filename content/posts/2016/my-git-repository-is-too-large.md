@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/my-git-repository-is-too-large",
-    "/posts/linq-5g67",
-    "/posts/2016/02/11/linq-5g67",
+    "/posts/my-git-repository-is-too-large-5c29",
+    "/posts/2016/02/11/my-git-repository-is-too-large-5c29",
     "/posts/2016/02/11/my-git-repository-is-too-large",
-    "/2016/02/11/linq-5g67",
+    "/2016/02/11/my-git-repository-is-too-large-5c29",
     "/2016/02/11/my-git-repository-is-too-large"
 ]
 +++

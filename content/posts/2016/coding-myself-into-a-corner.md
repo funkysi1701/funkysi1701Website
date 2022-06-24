@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/coding-myself-into-a-corner",
-    "/posts/model-view-controller-mvc-236p",
-    "/posts/2016/02/25/model-view-controller-mvc-236p",
+    "/posts/coding-myself-into-a-corner-1j6j",
+    "/posts/2016/02/25/coding-myself-into-a-corner-1j6j",
     "/posts/2016/02/25/coding-myself-into-a-corner",
-    "/2016/02/25/model-view-controller-mvc-236p",
+    "/2016/02/25/coding-myself-into-a-corner-1j6j",
     "/2016/02/25/coding-myself-into-a-corner"
 ]
 +++

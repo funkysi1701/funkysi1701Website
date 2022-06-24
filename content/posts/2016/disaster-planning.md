@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/disaster-planning",
-    "/posts/linq-5g67",
-    "/posts/2016/01/14/linq-5g67",
+    "/posts/disaster-planning-2oi7",
+    "/posts/2016/01/14/disaster-planning-2oi7",
     "/posts/2016/01/14/disaster-planning",
-    "/2016/01/14/linq-5g67",
+    "/2016/01/14/disaster-planning-2oi7",
     "/2016/01/14/disaster-planning"
 ]
 +++
