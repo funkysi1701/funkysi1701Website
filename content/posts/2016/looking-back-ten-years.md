@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/looking-back-ten-years-3dgc",
     "/posts/looking-back-ten-years",
     "/posts/looking-back-ten-years-3dgc",
     "/posts/2016/09/29/looking-back-ten-years-3dgc",

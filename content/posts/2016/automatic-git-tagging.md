@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/automatic-git-tagging-3cmo",
     "/posts/automatic-git-tagging",
     "/posts/automatic-git-tagging-3cmo",
     "/posts/2016/06/16/automatic-git-tagging-3cmo",

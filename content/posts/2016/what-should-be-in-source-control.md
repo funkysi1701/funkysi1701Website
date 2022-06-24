@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/what-should-be-in-source-control-4f0d",
     "/posts/what-should-be-in-source-control",
     "/posts/what-should-be-in-source-control-4f0d",
     "/posts/2016/11/24/what-should-be-in-source-control-4f0d",

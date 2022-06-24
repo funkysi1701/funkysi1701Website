@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/exchange-web-services-399o",
     "/posts/exchange-web-services",
     "/posts/exchange-web-services-399o",
     "/posts/2016/04/21/exchange-web-services-399o",

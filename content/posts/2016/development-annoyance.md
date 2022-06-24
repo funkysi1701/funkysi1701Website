@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/development-annoyance-3bj4",
     "/posts/development-annoyance",
     "/posts/development-annoyance-3bj4",
     "/posts/2016/01/29/development-annoyance-3bj4",

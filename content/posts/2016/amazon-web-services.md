@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/amazon-web-services-32h7",
     "/posts/amazon-web-services/",
     "/posts/amazon-web-services-32h7",
     "/posts/2016/07/21/amazon-web-services-32h7",

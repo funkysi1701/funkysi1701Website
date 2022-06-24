@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/surface-book-review-33lh",
     "/posts/surface-book-review",
     "/posts/surface-book-review-33lh",
     "/posts/2016/03/10/surface-book-review-33lh",

@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/sql-transaction-log-backups-14em",
     "/posts/transaction-log-backups",
     "/posts/sql-transaction-log-backups-14em",
     "/posts/2016/02/04/sql-transaction-log-backups-14em",

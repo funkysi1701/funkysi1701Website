@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/revisiting-team-city-61o",
     "/posts/revisiting-teamcity",
     "/posts/revisiting-team-city-61o",
     "/posts/2016/03/24/revisiting-team-city-61o",

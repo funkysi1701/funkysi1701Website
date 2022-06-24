@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/periodic-table-of-devops-15c7",
     "/posts/periodic-table-devops",
     "/posts/periodic-table-of-devops-15c7",
     "/posts/2016/06/30/periodic-table-of-devops-15c7",

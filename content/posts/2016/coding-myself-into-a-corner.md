@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/coding-myself-into-a-corner-1j6j",
     "/posts/coding-myself-into-a-corner",
     "/posts/coding-myself-into-a-corner-1j6j",
     "/posts/2016/02/25/coding-myself-into-a-corner-1j6j",

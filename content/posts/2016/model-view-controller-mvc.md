@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/model-view-controller-mvc-236p",
     "/posts/model-view-controller-mvc",
     "/posts/model-view-controller-mvc-236p",
     "/posts/2016/03/17/model-view-controller-mvc-236p",

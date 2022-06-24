@@ -17,10 +17,7 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/star-trek-episode-review-the-best-of-both-worlds",
-    "/posts/happy-50th-star-trek-37g6",
-    "/posts/2016/02/18/happy-50th-star-trek-37g6",
     "/posts/2016/02/18/star-trek-episode-review-the-best-of-both-worlds",
-    "/2016/02/18/happy-50th-star-trek-37g6",
     "/2016/02/18/star-trek-episode-review-the-best-of-both-worlds"
 ]
 +++

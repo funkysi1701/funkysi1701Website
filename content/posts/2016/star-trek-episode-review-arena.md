@@ -17,10 +17,7 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/star-trek-episode-review-arena",
-    "/posts/linq-5g67",
-    "/posts/2016/01/21/linq-5g67",
     "/posts/2016/01/21/star-trek-episode-review-arena",
-    "/2016/01/21/linq-5g67",
     "/2016/01/21/star-trek-episode-review-arena"
 ]
 +++

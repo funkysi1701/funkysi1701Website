@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/my-git-repository-is-too-large-5c29",
     "/posts/my-git-repository-is-too-large",
     "/posts/my-git-repository-is-too-large-5c29",
     "/posts/2016/02/11/my-git-repository-is-too-large-5c29",

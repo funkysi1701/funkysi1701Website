@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/disaster-planning-2oi7",
     "/posts/disaster-planning",
     "/posts/disaster-planning-2oi7",
     "/posts/2016/01/14/disaster-planning-2oi7",

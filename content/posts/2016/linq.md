@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/linq-5g67",
     "/posts/linq",
     "/posts/linq-5g67",
     "/posts/2016/10/06/linq-5g67",

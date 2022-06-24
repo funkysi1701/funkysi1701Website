@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/getting-control-of-a-codebase-1bci",
     "/posts/getting-control-of-a-codebase",
     "/posts/getting-control-of-a-codebase-1bci",
     "/posts/2016/11/17/getting-control-of-a-codebase-1bci",

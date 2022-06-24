@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/10-ways-to-survive-as-an-it-manager-2md4",
     "/posts/10-ways-to-survive-as-an-it-manager",
     "/posts/10-ways-to-survive-as-an-it-manager-2md4",
     "/posts/2016/09/22/10-ways-to-survive-as-an-it-manager-2md4",

@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/clever-things-with-ms-access-40e",
     "/posts/clever-things-ms-access",
     "/posts/clever-things-with-ms-access-40e",
     "/posts/2016/07/07/clever-things-with-ms-access-40e",

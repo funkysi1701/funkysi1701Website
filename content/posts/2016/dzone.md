@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/dzone-434m",
     "/posts/dzone",
     "/posts/dzone-434m",
     "/posts/2016/08/25/dzone-434m",

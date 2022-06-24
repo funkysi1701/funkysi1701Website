@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/i-m-100-blog-posts-old-1cf0",
     "/posts/im-100-blog-posts-old",
     "/posts/i-m-100-blog-posts-old-1cf0",
     "/posts/2016/06/02/i-m-100-blog-posts-old-1cf0",

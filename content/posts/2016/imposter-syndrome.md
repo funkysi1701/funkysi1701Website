@@ -16,6 +16,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/imposter-syndrome-d2c",
     "/posts/imposter-syndrome",
     "/posts/imposter-syndrome-d2c",
     "/posts/2016/09/15/imposter-syndrome-d2c",

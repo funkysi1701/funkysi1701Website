@@ -17,10 +17,7 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/top-50-star-trek-episodes",
-    "/posts/linq-5g67",
-    "/posts/2016/01/07/linq-5g67",
     "/posts/2016/01/07/top-50-star-trek-episodes",
-    "/2016/01/07/linq-5g67",
     "/2016/01/07/top-50-star-trek-episodes"
 ]
 +++

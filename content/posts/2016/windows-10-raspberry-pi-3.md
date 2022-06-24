@@ -15,6 +15,7 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
+    "/running-windows-on-raspberry-pi-2868",
     "/posts/windows-10-raspberry-pi-3",
     "/posts/running-windows-on-raspberry-pi-2868",
     "/posts/2016/05/05/running-windows-on-raspberry-pi-2868",
