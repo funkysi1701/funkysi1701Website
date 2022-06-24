@@ -1,8 +1,8 @@
 +++
 title = "Top 50 Star Trek episodes"
-date = "2016-10-06T20:00:45Z"
+date = "2016-01-07T20:00:45Z"
 year = "2016"
-month= "2016-10"
+month= "2016-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/01/07df3N8m.jpg?w=512&ssl=1"
@@ -18,10 +18,10 @@ copyright = false
 aliases = [
     "/posts/top-50-star-trek-episodes",
     "/posts/linq-5g67",
-    "/posts/2016/10/06/linq-5g67",
-    "/posts/2016/10/06/top-50-star-trek-episodes",
-    "/2016/10/06/linq-5g67",
-    "/2016/10/06/top-50-star-trek-episodes"
+    "/posts/2016/01/07/linq-5g67",
+    "/posts/2016/01/07/top-50-star-trek-episodes",
+    "/2016/01/07/linq-5g67",
+    "/2016/01/07/top-50-star-trek-episodes"
 ]
 +++
 ![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/01/07df3N8m.jpg?w=512&ssl=1)
