@@ -1,4 +1,69 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2015-12 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2015/12/</link><description>Recent content in 2015-12 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Thu, 03 Dec 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2015/12/index.xml" rel="self" type="application/rss+xml"/><item><title>SQL Server Management Studio</title><link>https://www.funkysi1701.com/posts/2015/sql-server-management-studio/</link><pubDate>Thu, 03 Dec 2015 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/sql-server-management-studio/</guid><description>&lt;p>I use SQL Server Management Studio all the time for writing queries, getting data and general SQL development.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2015-12 on Funky Si's Blog</title><link>https://www.funkysi1701.com/2015/12/</link><description>Recent content in 2015-12 on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Thu, 31 Dec 2015 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/2015/12/index.xml" rel="self" type="application/rss+xml"/><item><title>A look back at 2015</title><link>https://www.funkysi1701.com/posts/2015/look-back-2015/</link><pubDate>Thu, 31 Dec 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/look-back-2015/</guid><description>&lt;p>Wow! What an amazing year 2015 has been and with 2015 about to end I thought it would be good to look back at what happened in this amazing year.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/12/151218181153-2015-year-in-review-biggest-stories-wrap-up-orig-00025316-large-169.jpg?w=460&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>&lt;strong>January&lt;/strong>&lt;/p>
+&lt;p>I started the year with a declaration that 2015 would be my year of code. Well I have had a few breaks from programming but I have learnt loads this year. I have flitted a bit concentrating on different areas of programming but I think that has broadened my knowledge. I consider myself to be a &lt;a href="http://www.funkysi1701.com/2015/06/03/im-a-developer-now/">programmer now&lt;/a>
+, which I didn’t at the start of 2015.&lt;/p>
+&lt;p>&lt;strong>February&lt;/strong>&lt;/p>
+&lt;p>A first for 2015 was appearing on a &lt;a href="http://www.funkysi1701.com/2015/01/27/podcasts/">podcast&lt;/a>
+. The Trekmate podcast &lt;a href="http://www.funkysi1701.com/2015/02/13/ten-forward-episode-135-anti-firbob-is-back-or-simons-desert-island-trek/">Ten Forward&lt;/a>
+were the lucky ones that got to experience my first attempt at talking to the world. This continued throughout the year with appearances on &lt;a href="http://www.funkysi1701.com/2015/07/30/upper-pylon-2-1-x-09-the-passenger/">Upper Pylon 2&lt;/a>
+, &lt;a href="http://www.funkysi1701.com/2015/10/08/the-hunted-tng-s3-e11-the-battle-bridge/">The Battle Bridge&lt;/a>
+and even the &lt;a href="http://www.funkysi1701.com/2015/11/12/star-trek-is-back-in-2017/">Sci-Fi Waffle&lt;/a>
+podcast.&lt;/p>
+&lt;p>It was a sad time for Trekkies at the end of February when &lt;a href="http://www.funkysi1701.com/2015/02/28/hes-really-not-dead-as-long-as-we-remember-him/">Leonard Nimoy&lt;/a>
+passed away.&lt;/p>
+&lt;p>&lt;strong>March&lt;/strong>&lt;/p>
+&lt;p>In March I talked about my recent efforts with &lt;a href="http://www.funkysi1701.com/2015/03/12/azure-traffic-manager/">Azure Traffic Manager&lt;/a>
+to help prevent downtime. I also spent a lot of time improving &lt;a href="http://www.funkysi1701.com/2015/03/05/database-deployment/">databases&lt;/a>
+which led me to consider ways to deploy it better.&lt;/p>
+&lt;p>Also in March I attended an IT networking event called &lt;a href="http://www.funkysi1701.com/2015/03/22/networking-event/">ITBoss&lt;/a>
+. Free food and drinks and a discussion with fellow IT Managers.&lt;/p>
+&lt;p>&lt;strong>April&lt;/strong>&lt;/p>
+&lt;p>April was a bit of a mixed bag. I celebrated my second wedding anniversary but I also said goodbye to my car due to financial reasons.&lt;/p>
+&lt;p>I played about with a &lt;a href="http://www.funkysi1701.com/2015/04/11/the-raspberry-pi-adventure-starts/">Raspberry Pi&lt;/a>
+, mostly with the &lt;a href="http://www.funkysi1701.com/2015/04/15/security-camera-with-raspberry-pi-camera/">camera&lt;/a>
+. I really must make some time to play with it more.&lt;/p>
+&lt;p>&lt;strong>May&lt;/strong>&lt;/p>
+&lt;p>In May I went to a C# User Group called Leeds Sharp, was great fun and I really need to make more time and go back in 2016. It did result in one of my &lt;a href="http://www.funkysi1701.com/2015/05/30/user-groups-and-f/">most popular blog posts&lt;/a>
+.&lt;/p>
+&lt;p>Usually developers don’t enjoy finding bugs in their software but I had great fun when I realised I had a &lt;a href="http://www.funkysi1701.com/2015/05/22/overflow/">Stack Overflow&lt;/a>
+in one of my databases, it was easy to fix once I worked out what was going on.&lt;/p>
+&lt;p>In May the UK went to the polls as we had another General Election.&lt;/p>
+&lt;p>&lt;strong>June&lt;/strong>&lt;/p>
+&lt;p>In June I celebrated my &lt;a href="http://www.funkysi1701.com/2015/06/17/50th-blog-post/">50th Blog Post&lt;/a>
+. Amazing to think I had already written 50 Blog posts, even more now!&lt;/p>
+&lt;p>Leeds Sharp had a coding challenge, to solve &lt;a href="http://www.funkysi1701.com/2015/06/26/sudoku-challenge/">Sodoku&lt;/a>
+puzzle programatically. Didn’t get it finished but made a good stab at it.&lt;/p>
+&lt;p>&lt;strong>July&lt;/strong>&lt;/p>
+&lt;p>In July it was SysAdmin Day and I celebrated with my staff the amazing work we do keeping everything working.&lt;/p>
+&lt;p>Microsoft launched &lt;a href="http://www.funkysi1701.com/2015/07/11/how-to-upgrade-to-windows-10/">Windows 10&lt;/a>
+in July, the latest operating system is being offered for free for a year.&lt;/p>
+&lt;p>&lt;strong>August&lt;/strong>&lt;/p>
+&lt;p>In August everything changed as my son &lt;a href="http://www.funkysi1701.com/2015/09/03/baby-magic-and-becoming-a-father/">James&lt;/a>
+was born. I took time out from blogging and work during this time to spend with James.&lt;/p>
+&lt;p>Before James was born I stepped down from my involvement with the &lt;a href="http://www.funkysi1701.com/2015/08/03/volunteering-for-a-technical-team/">technical team&lt;/a>
+at St Michael le Belfrey.&lt;/p>
+&lt;p>&lt;strong>September&lt;/strong>&lt;/p>
+&lt;p>In september it was back to work, where I started planning how to add &lt;a href="http://www.funkysi1701.com/2015/09/24/adding-internet-connection-resiliency/">internet connections&lt;/a>
+to reduce the chance of outages.&lt;/p>
+&lt;p>&lt;strong>October&lt;/strong>&lt;/p>
+&lt;p>In October I took James to a &lt;a href="http://www.funkysi1701.com/2015/10/22/james-goes-on-an-adventure-with-daddy/">dads group&lt;/a>
+. This was the first time Dad spent time with James without Mummy and it was awesome.&lt;/p>
+&lt;p>I also celebrated my first birthday after becoming a father, was great to have a card from James. James also got the chance to spend time with my family in Nottingham.&lt;/p>
+&lt;p>&lt;strong>November&lt;/strong>&lt;/p>
+&lt;p>In November the countdown to Christmas began with James appearing in his first Nativity as Jesus and dressed up as an Elf at a Christingle service.&lt;/p>
+&lt;p>Exciting Star Trek news was announced this month, a new &lt;a href="http://www.funkysi1701.com/2015/11/12/star-trek-is-back-in-2017/">TV series&lt;/a>
+is to be aired in January 2017. No other details yet but very exciting.&lt;/p>
+&lt;p>&lt;strong>December&lt;/strong>&lt;/p>
+&lt;p>December is all about &lt;a href="http://www.funkysi1701.com/2015/12/24/christmas-2015-fosters/">Christmas&lt;/a>
+and we had a great Christmas time as a family.&lt;/p>
+&lt;p>Sadly York was hit by Floods just after Christmas, luckily my family was not affected but many others have been. Hopefully by the time you read this the cleanup will be well underway.&lt;/p>
+&lt;p>Before Christmas I spent my time counting down the days with the &lt;a href="http://www.funkysi1701.com/2015/12/17/christmas-count-code/">Advent of Code&lt;/a>
+&lt;/p>
+&lt;p>&lt;strong>What will 2016 bring?&lt;/strong>&lt;/p>
+&lt;p>I don’t know. There will be lots more time with James as he continues to learn and develop. I will continue to learn and develop my coding skills. Watch this space as I keep blogging about it.&lt;/p></description></item><item><title>SQL Server Management Studio</title><link>https://www.funkysi1701.com/posts/2015/sql-server-management-studio/</link><pubDate>Thu, 03 Dec 2015 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/sql-server-management-studio/</guid><description>&lt;p>I use SQL Server Management Studio all the time for writing queries, getting data and general SQL development.&lt;/p>
 &lt;p>&lt;img class="img-fluid" alt="SQL Server Management Studio" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/12/sql-server-2012-management-studio-splash-screen.png?resize=529%2C360" loading="lazy"
 />
 &lt;/p>
