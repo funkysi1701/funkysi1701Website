@@ -30,7 +30,7 @@ aliases = [
  
 Back when I was a kid, I used to record our weekly gas and electricity meter readings in a little notebook. We then typed these reading into a spreadsheet (this was in the pre-Excel days), which allowed plotting as a line graph.
 
-### How would I go about doing a similar thing today? 
+## How would I go about doing a similar thing today? 
 
 First off, I have a smart meter that submits meter readings every 30 minutes or so. However, I do not know anyway to get access to these readings directly, short of manually recording them like I did 30 years ago!
 
@@ -38,7 +38,7 @@ Octopus Energy have a public API which allows you to pull your consumption readi
 
 Other energy suppliers will hopefully follow this example and allow users access to their consumption data.
 
-### How do I use the API?
+## How do I use the API?
 
 Using the API is straight forward. Octopus supply you with a secret which you use to authenticate against the API with Basic Auth, no password just a username. Then you just need to pass some details of your meters to get an object containing the last few days meter readings. 
 
