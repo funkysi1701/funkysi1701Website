@@ -1,0 +1,22 @@
+name: Broken link check
+on: 
+  schedule:
+  - cron: "0 2 * * 0-6"
+
+jobs:
+  broken_link_checker_job:
+    runs-on: ubuntu-latest
+    name: Check for broken links
+    steps:
+    - name: Check for broken links
+      id: link-report
+      uses: celinekurpershoek/link-checker@v1.0.1
+      with:
+        # Required:
+        url: 'https://www.funkysi1701.com'
+        # optional:
+        honorRobotExclusions: false
+        ignorePatterns: 'github,google,linkedin'
+        recursiveLinks: true # Check all URLs on all reachable pages (could take a while)
+    - name: Get the result
+      run: echo "${{steps.link-report.outputs.result}}"
