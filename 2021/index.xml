@@ -206,11 +206,11 @@ LocalPath: This is the path to where the camera will save its photos to, somethi
 />
 &lt;/p>
 &lt;p>Back when I was a kid, I used to record our weekly gas and electricity meter readings in a little notebook. We then typed these reading into a spreadsheet (this was in the pre-Excel days), which allowed plotting as a line graph.&lt;/p>
-&lt;h3 id="how-would-i-go-about-doing-a-similar-thing-today">How would I go about doing a similar thing today?&lt;a class="anchor ms-1" href="#how-would-i-go-about-doing-a-similar-thing-today">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;h2 id="how-would-i-go-about-doing-a-similar-thing-today">How would I go about doing a similar thing today?&lt;a class="anchor ms-1" href="#how-would-i-go-about-doing-a-similar-thing-today">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
 &lt;p>First off, I have a smart meter that submits meter readings every 30 minutes or so. However, I do not know anyway to get access to these readings directly, short of manually recording them like I did 30 years ago!&lt;/p>
 &lt;p>Octopus Energy have a public API which allows you to pull your consumption readings. The smart meter sends your usage to your energy supplier, in my case Octopus, they then process these readings and allow them to be queried with an API they have created. It is not a direct connection to your data, but it is the next best thing.&lt;/p>
 &lt;p>Other energy suppliers will hopefully follow this example and allow users access to their consumption data.&lt;/p>
-&lt;h3 id="how-do-i-use-the-api">How do I use the API?&lt;a class="anchor ms-1" href="#how-do-i-use-the-api">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;h2 id="how-do-i-use-the-api">How do I use the API?&lt;a class="anchor ms-1" href="#how-do-i-use-the-api">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
 &lt;p>Using the API is straight forward. Octopus supply you with a secret which you use to authenticate against the API with Basic Auth, no password just a username. Then you just need to pass some details of your meters to get an object containing the last few days meter readings.&lt;/p>
 &lt;p>&lt;a href="https://developer.octopus.energy/docs/api/" target="_blank" rel="noopener noreferrer">API Docs&lt;/a>
 &lt;/p>
