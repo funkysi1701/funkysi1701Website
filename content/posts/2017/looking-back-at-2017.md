@@ -51,6 +51,6 @@ In Feb I also experimented with a new programming language [R](https://funkysi17
 
 6) DNS programmatically
 
-One of my most successful blogs was about how you can create [dns](https://dev.to/funkysi1701/creating-dns-records-programmatically-1o3c-temp-slug-3062796)records within your application eg sites that have yourname.domain in the url. It was a great chance to look at how dns works and learn more about what azure can do to manage this. I want to expand on this and build something.
+One of my most successful blogs was about how you can create [dns](https://dev.to/funkysi1701/creating-dns-records-programmatically-26lp)records within your application eg sites that have yourname.domain in the url. It was a great chance to look at how dns works and learn more about what azure can do to manage this. I want to expand on this and build something.
 
 So that was 2017, for some ideas about what 2018 might have in store for me look out for my next blog post.
