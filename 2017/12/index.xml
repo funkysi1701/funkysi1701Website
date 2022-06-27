@@ -31,7 +31,7 @@ which is a simple android frontend for this.&lt;/p>
 &lt;ol start="6">
 &lt;li>DNS programmatically&lt;/li>
 &lt;/ol>
-&lt;p>One of my most successful blogs was about how you can create &lt;a href="https://dev.to/funkysi1701/creating-dns-records-programmatically-1o3c-temp-slug-3062796" target="_blank" rel="noopener noreferrer">dns&lt;/a>
+&lt;p>One of my most successful blogs was about how you can create &lt;a href="https://dev.to/funkysi1701/creating-dns-records-programmatically-26lp" target="_blank" rel="noopener noreferrer">dns&lt;/a>
 records within your application eg sites that have yourname.domain in the url. It was a great chance to look at how dns works and learn more about what azure can do to manage this. I want to expand on this and build something.&lt;/p>
 &lt;p>So that was 2017, for some ideas about what 2018 might have in store for me look out for my next blog post.&lt;/p></description></item><item><title>Getting started with Azure Table Storage</title><link>https://www.funkysi1701.com/posts/2017/azure-table-storage/</link><pubDate>Sun, 17 Dec 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/azure-table-storage/</guid><description>&lt;p>Azure Table storage is cheap way to store data, however it has some drawbacks that you should be aware of.&lt;/p>
 &lt;p>Azure Table storage is a simple way to store NoSQL data with key/attribute pairs. I am very familiar with storing data in SQL databases and would still choose SQL over Table storage, however Table storage is significantly cheaper so could be worth investigating depending on your project.&lt;/p>
