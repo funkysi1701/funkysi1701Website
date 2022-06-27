@@ -2,6 +2,7 @@ name: Broken link check
 on: 
   schedule:
   - cron: "0 * * * *"
+  push:
 
 jobs:
   broken_link_checker_job:
