@@ -12,6 +12,6 @@ jobs:
     - name: Broken Link Checker Action
       uses: technote-space/broken-link-checker-action@v2.3.0
       with:
-        TARGET: 'https://www.funkysi1701.com' 
+        TARGET: 'https://www.funkysi1701.com,https://www.funkysi1701.com/posts/2022/diagrams-with-mermaid/' 
         EXCLUDED_KEYWORDS: linkedin.com,twitter.com,t.co
         RECURSIVE: false
