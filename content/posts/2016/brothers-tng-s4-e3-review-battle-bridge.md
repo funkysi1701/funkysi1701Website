@@ -27,6 +27,6 @@ Data jeopardizes an emergency mission to save an ill child when he gets a signal
 
 Today James and Lou discuss (Brothers) and what we think of it, with tonight’s guest host Simon Foster, Funky Si.
 
-Credit: [Main Title Theme (TV Edit)](http://images.wikia.com/memoryalpha/en/images/1/1a/TNG_maintitle_3-7v2.ogg) was arranged by [Dennis McCarthy](http://en.memory-alpha.org/wiki/Dennis_McCarthy) and composed by [Jerry Goldsmith](http://en.memory-alpha.org/wiki/Jerry_Goldsmith) and [Alexander Courage](http://en.memory-alpha.org/wiki/Alexander_Courage/)
+Credit: Main Title Theme (TV Edit) was arranged by [Dennis McCarthy](http://en.memory-alpha.org/wiki/Dennis_McCarthy) and composed by [Jerry Goldsmith](http://en.memory-alpha.org/wiki/Jerry_Goldsmith) and [Alexander Courage](http://en.memory-alpha.org/wiki/Alexander_Courage/)
 
 You can download the MP3 version of this show by [clicking here. (might have to right click, save as.)](http://media.blubrry.com/trekmate/p/media.blubrry.com/previouslyalpha/p/media.blubrry.com/trekmatesupplemental/p/media.blubrry.com/loutrekshow/p/media.techpodcasts.com/loutrekshow/p/www.trekmate.org.uk/battlebridge/tbb-s4e03-.mp3)
