@@ -13,5 +13,5 @@ jobs:
       uses: technote-space/broken-link-checker-action@v1.1.3
       with:
         TARGET: 'https://www.funkysi1701.com' 
-        EXCLUDED_KEYWORDS: linkedin.com,twitter.com
+        EXCLUDED_KEYWORDS: linkedin.com,twitter.com,t.co
         RECURSIVE: true
