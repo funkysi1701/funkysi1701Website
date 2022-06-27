@@ -13,16 +13,3 @@ jobs:
       uses: technote-space/broken-link-checker-action@v1.1.3
       with:
         TARGET: 'https://www.funkysi1701.com' 
-    - name: Check for broken links
-      id: link-report
-      uses: celinekurpershoek/link-checker@v1.0.1
-      with:
-        # Required:
-        url: 'https://www.funkysi1701.com'
-        # optional:
-        honorRobotExclusions: true
-        ignorePatterns: 'github,google,linkedin.com," "'
-        recursiveLinks: false # Check all URLs on all reachable pages (could take a while)
-    - name: Get the result
-      if: always()
-      run: echo "${{steps.link-report.outputs.result}}"
