@@ -32,7 +32,7 @@ As I write this James only has a few sleeps (as James sleeps multiple times in a
 
 He has lots of Christmas themed clothes which we have been enjoying taking pictures of him wearing. He makes a great looking elf I think.
 
-We took James to his first Christingle service at St Michael le Belfrey at the start of December. A Christingle service is where you stick a candle and cocktail sticks into an orange. James loved it, he already loves looking at lights so loved looking into the light from the candle.
+We took James to his first Christingle service at [St Michael le Belfrey](http://belfrey.org/) at the start of December. A Christingle service is where you stick a candle and cocktail sticks into an orange. James loved it, he already loves looking at lights so loved looking into the light from the candle.
 
 ![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/12/12333053_10153912153609155_79017677_o.jpg?resize=168%2C300&ssl=1)
 
