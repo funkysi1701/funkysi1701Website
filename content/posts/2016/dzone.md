@@ -22,7 +22,8 @@ aliases = [
     "/posts/2016/08/25/dzone-434m",
     "/posts/2016/08/25/dzone",
     "/2016/08/25/dzone-434m",
-    "/2016/08/25/dzone"
+    "/2016/08/25/dzone",
+    "/2016/08/25/dzone/feed/"
 ]
 +++
 For a while now I have been sharing some of my blog posts on the [Dzone](https://dzone.com/) website.
