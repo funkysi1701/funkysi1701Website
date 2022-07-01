@@ -2,7 +2,7 @@ name: Broken link check
 on: 
   schedule:
   - cron: "0 4 * * *"
-  push:
+
 jobs:
   broken_link_checker_job:
     runs-on: ubuntu-latest
