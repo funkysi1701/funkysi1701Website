@@ -42,7 +42,8 @@ These challenges are very good at teaching me things about coding. I have got to
 Before I try and work on the next challenge lets have a look at the first challenge:
 
 ```
-Santa is trying to deliver presents in a large apartment building, but he can’t find the right floor – the directions he got are a little confusing. He starts on the ground floor (floor 0) and then follows the instructions one character at a time.
+Santa is trying to deliver presents in a large apartment building, but he can’t find the right floor – 
+the directions he got are a little confusing. He starts on the ground floor (floor 0) and then follows the instructions one character at a time.
 
 An opening parenthesis, (, means he should go up one floor, and a closing parenthesis, ), means he should go down one floor.
 ```
