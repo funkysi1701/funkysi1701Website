@@ -15,6 +15,8 @@ jobs:
           https://www.funkysi1701.com,
           https://www.funkysi1701.com/posts/,
           https://www.funkysi1701.com/posts/about/,
+          https://www.funkysi1701.com/posts/funky-si-the-next-generation/,
+          https://metrics.funkysi1701.com/,
           https://www.funkysi1701.com/posts/pwned-pass/,
           https://www.funkysi1701.com/posts/2022/diagrams-with-mermaid/,
           https://www.funkysi1701.com/posts/2022/scottishsummit/,
@@ -25,5 +27,15 @@ jobs:
           https://www.funkysi1701.com/posts/2022/dotnet-is-20-years-old/,
           https://www.funkysi1701.com/posts/2022/why-do-i-have-a-website/,
           https://www.funkysi1701.com/posts/2022/using-github-actions/,
-          https://www.funkysi1701.com/posts/2022/2022-goals/
+          https://www.funkysi1701.com/posts/2022/2022-goals/,
+          https://www.funkysi1701.com/posts/2021/lone-developer-to-senior-developer-my-2021-story/,
+          https://www.funkysi1701.com/posts/2022/,
+          https://www.funkysi1701.com/posts/2021/,
+          https://www.funkysi1701.com/posts/2020/,
+          https://www.funkysi1701.com/posts/2019/,
+          https://www.funkysi1701.com/posts/2018/,
+          https://www.funkysi1701.com/posts/2017/,
+          https://www.funkysi1701.com/posts/2016/,
+          https://www.funkysi1701.com/posts/2015/,
+          https://www.funkysi1701.com/posts/2014/
         RECURSIVE: false
