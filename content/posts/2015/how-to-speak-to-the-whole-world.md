@@ -30,97 +30,97 @@ Having a website is an easy way to reach people across the globe. This website h
 
 I have had visitors in each of the following countries.
 
-United States
-United Kingdom
-Canada
-Germany
-Australia
-India
-France
-Vietnam
-Netherlands
-Poland
-China
-Russia
-Sweden
-European Union
-New Zealand
-Hungary
-Norway
-Spain
-Brazil
-Hong Kong SAR China
-Belgium
-Denmark
-Italy
-Switzerland
-Finland
-Turkey
-Romania
-Singapore
-Israel
-Indonesia
-Serbia
-South Africa
-Lithuania
-Mexico
-Ireland
-South Korea
-Taiwan
-Greece
-Bulgaria
-Ukraine
-Japan
-Austria
-Kenya
-Portugal
-Czech Republic
-Colombia
-Philippines
-United Arab Emirates
-Moldova
-Slovenia
-Malaysia
-Ghana
-Argentina
-Venezuela
-Bangladesh
-Iceland
-Croatia
-Panama
-Belarus
-Slovakia
-Albania
-Kazakhstan
-Algeria
-Puerto Rico
-Thailand
-Estonia
-U.S. Virgin Islands
-Pakistan
-Latvia
-Chile
-Sri Lanka
-Malta
-Costa Rica
-Morocco
-Ethiopia
-Réunion
-Uruguay
-Honduras
-Cyprus
-Tunisia
-Nepal
-Cameroon
-Paraguay
-Gambia
-Peru
-Mauritius
-Bermuda
-Cambodia
-Jersey
-Egypt
-Macedonia
+- United States
+- United Kingdom
+- Canada
+- Germany
+- Australia
+- India
+- France
+- Vietnam
+- Netherlands
+- Poland
+- China
+- Russia
+- Sweden
+- European Union
+- New Zealand
+- Hungary
+- Norway
+- Spain
+- Brazil
+- Hong Kong SAR China
+- Belgium
+- Denmark
+- Italy
+- Switzerland
+- Finland
+- Turkey
+- Romania
+- Singapore
+- Israel
+- Indonesia
+- Serbia
+- South Africa
+- Lithuania
+- Mexico
+- Ireland
+- South Korea
+- Taiwan
+- Greece
+- Bulgaria
+- Ukraine
+- Japan
+- Austria
+- Kenya
+- Portugal
+- Czech Republic
+- Colombia
+- Philippines
+- United Arab Emirates
+- Moldova
+- Slovenia
+- Malaysia
+- Ghana
+- Argentina
+- Venezuela
+- Bangladesh
+- Iceland
+- Croatia
+- Panama
+- Belarus
+- Slovakia
+- Albania
+- Kazakhstan
+- Algeria
+- Puerto Rico
+- Thailand
+- Estonia
+- U.S. Virgin Islands
+- Pakistan
+- Latvia
+- Chile
+- Sri Lanka
+- Malta
+- Costa Rica
+- Morocco
+- Ethiopia
+- Réunion
+- Uruguay
+- Honduras
+- Cyprus
+- Tunisia
+- Nepal
+- Cameroon
+- Paraguay
+- Gambia
+- Peru
+- Mauritius
+- Bermuda
+- Cambodia
+- Jersey
+- Egypt
+- Macedonia
 
 How cool is that! If you know anyone from any country not mentioned above, send them a link to this page and lets see if we can get this blog seen in even more countries.
 
