@@ -1,47 +1,31 @@
-{{- $order := default (slice "series" "categories" "tags") $.Site.Params.sidebarTaxonomies -}}
-{{- range $expected := $order -}}
-{{- range $key, $value := $.Site.Taxonomies -}}
-  {{- if eq $key $expected -}}
-  {{- $countPosts := default false $.Site.Params.countTaxonomyPosts -}}
-  {{- $countParams := dict "categories" "categoryCount" "tags" "tagCount" "series" "seriesCount" -}}
-  {{- $param := default "" (index $countParams $key) -}}
-  {{- $taxonomyCount := default 20 ($.Site.Param $param) -}}
-  {{- if $taxonomyCount -}}
-    {{- with $value.ByCount -}}
-    <section class="{{ $key }}-taxonomies row card component">
+    <section class="tags-taxonomies row card component">
       <div class="card-header">
         <h2 class="card-title">
-          <a href="{{ absLangURL (urlize $key) }}">{{ T $key }}</a>
+          <a href="/tags">Tags</a>
         </h2>
       </div>
       <div class="card-body">
         <div class="py-2">
           <div class="container tagcloud">
             {{ if ne (len $.Site.Taxonomies.tags) 0 }}
-              {{ $largestFontSize := 2.0 }}
-              {{ $smallestFontSize := 0.7 }}
-              {{ $fontSpread := sub $largestFontSize $smallestFontSize }}
-              {{ $max := add (len (index $.Site.Taxonomies.tags.ByCount 0).Pages) 1 }}
-              {{ $min := len (index $.Site.Taxonomies.tags.ByCount.Reverse 0).Pages }}
-              {{ $spread := sub $max $min }}
-              {{ $fontStep := div $fontSpread $spread }}
-                {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
-                  {{ $tagCount := len $taxonomy.Pages }}
-                  {{ $currentFontSize := (add $smallestFontSize (mul (sub $tagCount $min) $fontStep) ) }}
-                  {{ $weigth := div (sub (math.Log $tagCount) (math.Log $min)) (sub (math.Log $max) (math.Log $min)) }}
-                  {{ $currentFontSize := (add $smallestFontSize (mul (sub $largestFontSize $smallestFontSize) $weigth)) }}
-                    <a href="{{ "/tags/" }}{{ $name }}" 
-                    class="tagcloud-item" style="font-size: {{ $currentFontSize }}rem;">
-                      {{ $taxonomy.Page.Title }}
-                    </a>
+              {{ range $name, $taxonomy := $.Site.Taxonomies.tags }}
+                {{ $tagCount := len $taxonomy.Pages }}
+                {{ if gt $tagCount 1 }}
+                  <a href="{{ "/tags/" }}{{ $name }}" rel="{{ $tagCount }}"
+                  class="tagcloud-item">
+                    {{ $taxonomy.Page.Title }}
+                  </a>
                 {{ end }}
-            {{ end }}
+              {{ end }}
+            {{ end }}  
         </div>
         </div>
       </div>
     </section>
-    {{- end -}}
-  {{- end -}}
-  {{- end -}}
-{{- end -}}
-{{- end -}}
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://www.jqueryscript.net/demo/Minimalist-Tag-Cloud-Generator-with-jQuery-tagcloud-js/jquery.tagcloud.js"></script>
+    <script>
+      $(".tagcloud a").tagcloud({
+        size: {start: 10, end: 50, unit:"px"}
+      });
+</script>
