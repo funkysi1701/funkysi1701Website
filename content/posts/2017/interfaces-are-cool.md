@@ -21,7 +21,8 @@ aliases = [
     "/posts/2017/10/31/interfaces-are-cool-dde",
     "/posts/2017/10/31/interfaces-are-cool",
     "/2017/10/31/interfaces-are-cool-dde",
-    "/2017/10/31/interfaces-are-cool"
+    "/2017/10/31/interfaces-are-cool",
+    "/posts/2017/interfaces-are-cool"
 ]
 +++
 A while back I [blogged](https://www.funkysi1701.com/posts/interfaces/) about learning about interfaces as I didn’t really understand the value of them. I do now.

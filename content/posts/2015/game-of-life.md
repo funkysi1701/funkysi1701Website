@@ -20,7 +20,8 @@ aliases = [
     "/posts/2015/02/11/game-of-life-4dhp",
     "/posts/2015/02/11/game-of-life",
     "/2015/02/11/game-of-life-4dhp",
-    "/2015/02/11/game-of-life"
+    "/2015/02/11/game-of-life",
+    "/posts/2015/game-of-life"
 ]
 +++
 

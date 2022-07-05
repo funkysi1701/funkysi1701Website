@@ -22,7 +22,8 @@ aliases = [
     "/posts/2019/02/26/microsoft-ignite--the-tour--london-38d0",
     "/posts/2019/02/26/microsoft-ignite-the-tour-london",
     "/2019/02/26/microsoft-ignite--the-tour--london-38d0",
-    "/2019/02/26/microsoft-ignite-the-tour-london"
+    "/2019/02/26/microsoft-ignite-the-tour-london",
+    "/posts/2019/microsoft-ignite-the-tour-london"
 ]
 +++
 

@@ -22,7 +22,8 @@ aliases = [
     "/posts/2014/09/24/i-love-nagios-m6",
     "/posts/2014/09/24/i-love-nagios",
     "/2014/09/24/i-love-nagios-m6",
-    "/2014/09/24/i-love-nagios"
+    "/2014/09/24/i-love-nagios",
+    "/posts/2014/i-love-nagios/"
 ]
 +++
 
