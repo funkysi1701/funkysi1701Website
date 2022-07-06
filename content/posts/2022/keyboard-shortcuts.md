@@ -16,12 +16,12 @@ readingTime = true
 copyright = false
 featured = false
 aliases = [
-    "/scottish-summit-2022-1514",
+    "/visual-studio-keyboard-shortcuts-3pa5",
     "/posts/keyboard-shortcuts",
     "/posts/2022/07/05/keyboard-shortcuts",
-    "/posts/scottish-summit-2022-1514",
-    "/posts/2022/07/05/scottish-summit-2022-1514",
-    "/2022/07/05/scottish-summit-2022-1514"    
+    "/posts/visual-studio-keyboard-shortcuts-3pa5",
+    "/posts/2022/07/05/visual-studio-keyboard-shortcuts-3pa5",
+    "/2022/07/05/visual-studio-keyboard-shortcuts-3pa5"    
 ]
 +++
 I use keyboard shortcuts all the time, mostly without thinking, but they can be quite a time saver especially for frequently used tasks.

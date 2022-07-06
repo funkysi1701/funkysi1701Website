@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/christmas-count-code",
-    "/posts/laziness-17n5",
-    "/posts/2015/12/17/laziness-17n5",
+    "/posts/the-christmas-count-down-with-code-4371",
+    "/posts/2015/12/17/the-christmas-count-down-with-code-4371",
     "/posts/2015/12/17/christmas-count-code",
-    "/2015/12/17/laziness-17n5",
+    "/2015/12/17/the-christmas-count-down-with-code-4371",
     "/2015/12/17/christmas-count-code"
 ]
 +++

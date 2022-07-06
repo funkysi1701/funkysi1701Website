@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/how-to-speak-to-the-whole-world",
-    "/posts/laziness-17n5",
-    "/posts/2015/11/05/laziness-17n5",
+    "/posts/how-to-speak-to-the-whole-world-5e5i",
+    "/posts/2015/11/05/how-to-speak-to-the-whole-world-5e5i",
     "/posts/2015/11/05/how-to-speak-to-the-whole-world",
-    "/2015/11/05/laziness-17n5",
+    "/2015/11/05/how-to-speak-to-the-whole-world-5e5i",
     "/2015/11/05/how-to-speak-to-the-whole-world"
 ]
 +++
