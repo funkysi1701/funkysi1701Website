@@ -26,4 +26,23 @@ which is not quite as nice as the Azure equivalent &lt;a href="http://test.azure
 &lt;p>Azure has a host of command lines available via powershell. AWS has a similar command line interface called AWS CLI, including the option to deploy from git to your website.&lt;/p>
 &lt;p>AWS Toolkit for Visual Studio is an extension that allows for the publishing of websites to AWS. (Just like you can publish to Azure)&lt;/p>
 &lt;p>As I learn more about AWS I will continue to blog about it. &lt;a href="https://www.funkysi1701.com/2016/08/04/amazon-web-services-pt-2/">Amazon Web Services Pt 2&lt;/a>
-&lt;/p></description></item></channel></rss>
+&lt;/p></description></item><item><title>Copying settings to an Azure Website</title><link>https://www.funkysi1701.com/posts/2015/copying-settings-to-an-azure-website/</link><pubDate>Thu, 01 Oct 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/copying-settings-to-an-azure-website/</guid><description>&lt;p>The Software as a Service (SaaS) website that I work on has been sold to lots of clients now. Which is great news.&lt;/p>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/09/2275.app-1.png?w=550&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>However the more Azure websites we have, the more websites we have to administer, especially if like us you take advantage of Traffic Manager which requires multiple website in different regions. Azure has some great options for making this administration easier. One job is adding all the settings onto the Azure portal, so far I have been manually adding these, but a quicker way is to use powershell.&lt;/p>
+&lt;h2 id="powershell">PowerShell&lt;a class="anchor ms-1" href="#powershell">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
+&lt;p>PowerShell is everywhere these days. You can use it to control Servers, Active Directory and Exchange. So it is no surprise that you can use it to control Azure.&lt;/p>
+&lt;p>Open a powershell window and run the following command.&lt;/p>
+&lt;pre tabindex="0">&lt;code>Get-AzurePublishSettingsFile
+&lt;/code>&lt;/pre>&lt;p>This command opens an IE window which you can login to Azure and download a file which contains settings that Azure can use. Save the *.publishsettings file and run the following command.&lt;/p>
+&lt;pre tabindex="0">&lt;code>Import-AzurePublishSettingsFile &amp;#34;C:\MyPublishSettings\mysubscriptions.publishsettings&amp;#34;
+&lt;/code>&lt;/pre>&lt;p>This imports your Azure settings so that PowerShell can do clever things.&lt;/p>
+&lt;pre tabindex="0">&lt;code>Select-AzureSubscription -Default &amp;#34;mysubscription&amp;#34;
+&lt;/code>&lt;/pre>&lt;p>This selects which of your Azure subscriptions to use. Now run the following to import settings into PowerShell.&lt;/p>
+&lt;pre tabindex="0">&lt;code>$s = @{&amp;#34;DebugEmailAccount&amp;#34;=&amp;#34;test@example.com&amp;#34;;&amp;#34;SiteWarningBannerText&amp;#34;=&amp;#34;&amp;#34;}
+&lt;/code>&lt;/pre>&lt;p>And finally run the following to import this settings into the Azure website you specified.&lt;/p>
+&lt;pre tabindex="0">&lt;code>Set-AzureWebsite azure-websitename -AppSettings $s
+&lt;/code>&lt;/pre>&lt;p>Sounds easy doesn’t it. Well it is. The hardest part is getting the settings in the correct format to be imported but this is only string manipulation.&lt;/p>
+&lt;p>For my project I already have a build script which populates a settings.config file with all these settings, so I have just duplicated this to create a settings.config.importtoAzure file. Next time I have a website to create, I can create it on Azure and run the above script, pasting in the settings file that my build has already produced for me.&lt;/p>
+&lt;p>This only scratches the surface of what you can do with Azure and PowerShell, hopefully I will do far more in the future.&lt;/p></description></item></channel></rss>
