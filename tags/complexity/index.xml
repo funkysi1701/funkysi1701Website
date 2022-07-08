@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Complexity on Funky Si's Blog</title><link>https://www.funkysi1701.com/tags/complexity/</link><description>Recent content in Complexity on Funky Si's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Thu, 13 Aug 2015 20:00:45 +0000</lastBuildDate><atom:link href="https://www.funkysi1701.com/tags/complexity/index.xml" rel="self" type="application/rss+xml"/><item><title>How complex are my stored procedures?</title><link>https://www.funkysi1701.com/posts/2015/how-complex-are-my-stored-procedures/</link><pubDate>Thu, 13 Aug 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/how-complex-are-my-stored-procedures/</guid><description>&lt;p>Recently me and my development team have been looking at performance and how to improve it.&lt;/p>
+&lt;p>One area of improvement we have identified is with our stored procedures, which we plan to rewrite. But how do we identify which are the easiest to rewrite and which are the hardest?&lt;/p>
+&lt;p>My first thought was maybe to count the number of times each keyword is used and rank them somehow. eg each JOIN gets 5, OUTER APPLY gets 20, each term in WHERE gets 1, and then combine that with the length of the query and how many parameters.&lt;/p>
+&lt;p>However doing a bit of googling I came across the following &lt;a href="https://aalamrangi.wordpress.com/2012/12/24/calculate-tsql-stored-procedure-complexity" target="_blank" rel="noopener noreferrer">blog&lt;/a>
+and &lt;a href="https://gallery.technet.microsoft.com/Calculate-TSQL-Stored-831b683a" target="_blank" rel="noopener noreferrer">sql script&lt;/a>
+. This script analyses the stored procedures in terms of number of lines of code, number of parameters and number of dependencies.&lt;/p>
+&lt;p>The complexity is divided into SIMPLE, MEDIUM and COMPLEX.&lt;/p>
+&lt;pre tabindex="0">&lt;code>WHEN NumberOfLines * NumberOfDependencies * NumberOfParameters &amp;lt; 5000 THEN ‘Simple’
+WHEN NumberOfLines * NumberOfDependencies * NumberOfParameters &amp;lt; 10000 THEN ‘Medium’
+ELSE ‘Complex’
+&lt;/code>&lt;/pre>&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/08/reportscreenshot1.png?w=674&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>This gives a fairly good estimate of which stored procedures are the most complex and which would probably take the longest time to rewrite.&lt;/p></description></item></channel></rss>
