@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/backing-up-sql-databases-to-azure",
-    "/posts/laziness-17n5",
-    "/posts/2015/10/15/laziness-17n5",
+    "/posts/backing-up-sql-databases-to-azure-noe",
+    "/posts/2015/10/15/backing-up-sql-databases-to-azure-noe",
     "/posts/2015/10/15/backing-up-sql-databases-to-azure",
-    "/2015/10/15/laziness-17n5",
+    "/2015/10/15/backing-up-sql-databases-to-azure-noe",
     "/2015/10/15/backing-up-sql-databases-to-azure"
 ]
 +++

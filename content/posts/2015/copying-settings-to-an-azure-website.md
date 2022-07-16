@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/copying-settings-to-an-azure-website",
-    "/posts/laziness-17n5",
-    "/posts/2015/10/01/laziness-17n5",
+    "/posts/copying-settings-to-an-azure-website-50ec",
+    "/posts/2015/10/01/copying-settings-to-an-azure-website-50ec",
     "/posts/2015/10/01/copying-settings-to-an-azure-website",
-    "/2015/10/01/laziness-17n5",
+    "/2015/10/01/copying-settings-to-an-azure-website-50ec",
     "/2015/10/01/copying-settings-to-an-azure-website"
 ]
 +++

@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/how-complex-are-my-stored-procedures",
-    "/posts/laziness-17n5",
-    "/posts/2015/08/13/laziness-17n5",
+    "/posts/how-complex-are-my-stored-procedures-5b3g",
+    "/posts/2015/08/13/how-complex-are-my-stored-procedures-5b3g",
     "/posts/2015/08/13/how-complex-are-my-stored-procedures",
-    "/2015/08/13/laziness-17n5",
+    "/2015/08/13/how-complex-are-my-stored-procedures-5b3g",
     "/2015/08/13/how-complex-are-my-stored-procedures"
 ]
 +++

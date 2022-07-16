@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/icymi-what-does-it-mean",
-    "/posts/laziness-17n5",
-    "/posts/2015/08/10/laziness-17n5",
+    "/posts/icymi-what-does-it-mean-3akg",
+    "/posts/2015/08/10/icymi-what-does-it-mean-3akg",
     "/posts/2015/08/10/icymi-what-does-it-mean",
-    "/2015/08/10/laziness-17n5",
+    "/2015/08/10/icymi-what-does-it-mean-3akg",
     "/2015/08/10/icymi-what-does-it-mean"
 ]
 +++
