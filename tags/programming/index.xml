@@ -2057,7 +2057,26 @@ ICYMI is often used on social media sites to indicate articles that you might ha
 &lt;p>When reading it is easy to ignore them and try and understand the rest of the article. However there are loads of resources out there that can explain technical terms in a wide variety of different ways.&lt;/p>
 &lt;p>I have tried to explain a few different terms and concepts on this &lt;a href="http://www.funkysi1701.com/">blog&lt;/a>
 . In the process of writing them I often do a bit of research and read a variety of different definitions, some confuse the heck out of me, while others make me go ahh that makes sense now.&lt;/p>
-&lt;p>When reading to learn, don’t be afraid to dig deeper and understand it all, don’t read the same terms again and again not understanding them like I did with ICYMI.&lt;/p></description></item><item><title>Things to know before working on your database</title><link>https://www.funkysi1701.com/posts/2015/things-to-know-before-working-on-your-databasethings-to-know-before-working-on-your-database/</link><pubDate>Mon, 20 Jul 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/things-to-know-before-working-on-your-databasethings-to-know-before-working-on-your-database/</guid><description>&lt;p>I recently saw this blog &lt;a href="http://www.brentozar.com/archive/2015/07/questions-to-ask-before-you-touch-a-database-server/" target="_blank" rel="noopener noreferrer">post&lt;/a>
+&lt;p>When reading to learn, don’t be afraid to dig deeper and understand it all, don’t read the same terms again and again not understanding them like I did with ICYMI.&lt;/p></description></item><item><title>Common git commands</title><link>https://www.funkysi1701.com/posts/2015/common-git-commands/</link><pubDate>Thu, 06 Aug 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/common-git-commands/</guid><description>&lt;p>I use git as my source control system. Here are some of the most common git commands in no particular order.&lt;/p>
+&lt;ul>
+&lt;li>Check Out a git Repository &lt;strong>git clone /path/to/repository&lt;/strong>&lt;/li>
+&lt;li>Add files to commit &lt;strong>git add &lt;filename>&lt;/strong>&lt;/li>
+&lt;li>Commit files to &lt;strong>git git commit -m “Commit message”&lt;/strong>&lt;/li>
+&lt;li>Push changes to server &lt;strong>git push origin master&lt;/strong>&lt;/li>
+&lt;li>Show status &lt;strong>git status&lt;/strong>&lt;/li>
+&lt;li>Create new branch &lt;strong>git checkout -b &lt;branchname>&lt;/strong>&lt;/li>
+&lt;li>Switch to a branch &lt;strong>git checkout &lt;branchname>&lt;/strong>&lt;/li>
+&lt;li>Get remote changes &lt;strong>git pull&lt;/strong>&lt;/li>
+&lt;li>Merge a different branch into the current one &lt;strong>git merge &lt;branchname>&lt;/strong>&lt;/li>
+&lt;li>View merge conflicts &lt;strong>git diff&lt;/strong>&lt;/li>
+&lt;li>Temporarily stash uncommitted changes &lt;strong>git stash&lt;/strong>&lt;/li>
+&lt;li>Undo a commit &lt;strong>git reset –hard &lt;commit>&lt;/strong>&lt;/li>
+&lt;li>Show details about a commit &lt;strong>git show &lt;commit>&lt;/strong>&lt;/li>
+&lt;li>Show version history of current branch &lt;strong>git log&lt;/strong>&lt;/li>
+&lt;li>Gets all remote branches &lt;strong>git fetch origin&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>Most of the time I use the &lt;a href="https://sourceforge.net/projects/gitextensions/" target="_blank" rel="noopener noreferrer">git extensions&lt;/a>
+tools to do my git work, but there are times when only the command line will do.&lt;/p></description></item><item><title>Things to know before working on your database</title><link>https://www.funkysi1701.com/posts/2015/things-to-know-before-working-on-your-databasethings-to-know-before-working-on-your-database/</link><pubDate>Mon, 20 Jul 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/things-to-know-before-working-on-your-databasethings-to-know-before-working-on-your-database/</guid><description>&lt;p>I recently saw this blog &lt;a href="http://www.brentozar.com/archive/2015/07/questions-to-ask-before-you-touch-a-database-server/" target="_blank" rel="noopener noreferrer">post&lt;/a>
 by &lt;a href="http://www.brentozar.com/team/brent-ozar/" target="_blank" rel="noopener noreferrer">Brent Ozar&lt;/a>
 that I thought I might discuss.&lt;/p>
 &lt;p>Brent listed 13 questions to ask about a database before you start working with it. I am going to go through these 13 questions and expand on them based on my experiences.&lt;/p>

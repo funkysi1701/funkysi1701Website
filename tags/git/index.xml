@@ -194,7 +194,26 @@ git gc –aggressive –prune=now
 &lt;/code>&lt;/pre>&lt;p>Now push your changes back to the remote server.&lt;/p>
 &lt;pre tabindex="0">&lt;code>git push origin –force –all
 git push origin –force –tags
-&lt;/code>&lt;/pre>&lt;p>Now if you do a clone it will be much smaller than before and you can get back to coding much quicker, without having to wait.&lt;/p></description></item><item><title>Source Control Fail</title><link>https://www.funkysi1701.com/posts/2015/source-control-fail/</link><pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/source-control-fail/</guid><description>&lt;p>Every developer uses source control, it is a great tool for keeping track of changes to your code, seeing who has done what.&lt;/p>
+&lt;/code>&lt;/pre>&lt;p>Now if you do a clone it will be much smaller than before and you can get back to coding much quicker, without having to wait.&lt;/p></description></item><item><title>Common git commands</title><link>https://www.funkysi1701.com/posts/2015/common-git-commands/</link><pubDate>Thu, 06 Aug 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/common-git-commands/</guid><description>&lt;p>I use git as my source control system. Here are some of the most common git commands in no particular order.&lt;/p>
+&lt;ul>
+&lt;li>Check Out a git Repository &lt;strong>git clone /path/to/repository&lt;/strong>&lt;/li>
+&lt;li>Add files to commit &lt;strong>git add &lt;filename>&lt;/strong>&lt;/li>
+&lt;li>Commit files to &lt;strong>git git commit -m “Commit message”&lt;/strong>&lt;/li>
+&lt;li>Push changes to server &lt;strong>git push origin master&lt;/strong>&lt;/li>
+&lt;li>Show status &lt;strong>git status&lt;/strong>&lt;/li>
+&lt;li>Create new branch &lt;strong>git checkout -b &lt;branchname>&lt;/strong>&lt;/li>
+&lt;li>Switch to a branch &lt;strong>git checkout &lt;branchname>&lt;/strong>&lt;/li>
+&lt;li>Get remote changes &lt;strong>git pull&lt;/strong>&lt;/li>
+&lt;li>Merge a different branch into the current one &lt;strong>git merge &lt;branchname>&lt;/strong>&lt;/li>
+&lt;li>View merge conflicts &lt;strong>git diff&lt;/strong>&lt;/li>
+&lt;li>Temporarily stash uncommitted changes &lt;strong>git stash&lt;/strong>&lt;/li>
+&lt;li>Undo a commit &lt;strong>git reset –hard &lt;commit>&lt;/strong>&lt;/li>
+&lt;li>Show details about a commit &lt;strong>git show &lt;commit>&lt;/strong>&lt;/li>
+&lt;li>Show version history of current branch &lt;strong>git log&lt;/strong>&lt;/li>
+&lt;li>Gets all remote branches &lt;strong>git fetch origin&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>Most of the time I use the &lt;a href="https://sourceforge.net/projects/gitextensions/" target="_blank" rel="noopener noreferrer">git extensions&lt;/a>
+tools to do my git work, but there are times when only the command line will do.&lt;/p></description></item><item><title>Source Control Fail</title><link>https://www.funkysi1701.com/posts/2015/source-control-fail/</link><pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/source-control-fail/</guid><description>&lt;p>Every developer uses source control, it is a great tool for keeping track of changes to your code, seeing who has done what.&lt;/p>
 &lt;p>However I keep messing up, my use of it. I am fairly disciplined when creating new features, all my changes will get committed to source control and when I am happy I will deploy these changes to the live system. But as soon as there is a bug, especially one where the client is chasing for a fix, I will deploy a fix as soon as humanly possible on to the live system.&lt;/p>
 &lt;p>At first glance there is nothing wrong with what I have described but what happens the next time I deploy a new feature. Yes the bug the client was complaining about gets deployed with the new feature as the fix was never committed into source control. The client gets angry as the bug he was screaming about is back again.&lt;/p>
 &lt;p>Every change you make to the system &lt;strong>MUST&lt;/strong> be committed to source control. If it isn’t that change will look like it never existed. I have worked with source control for over 5 years why do I keep making this rookie mistake over and over.&lt;/p>
