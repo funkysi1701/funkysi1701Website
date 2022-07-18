@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/common-git-commands",
-    "/posts/laziness-17n5",
-    "/posts/2015/08/06/laziness-17n5",
+    "/posts/common-git-commands-2b3c",
+    "/posts/2015/08/06/common-git-commands-2b3c",
     "/posts/2015/08/06/common-git-commands",
-    "/2015/08/06/laziness-17n5",
+    "/2015/08/06/common-git-commands-2b3c",
     "/2015/08/06/common-git-commands"
 ]
 +++

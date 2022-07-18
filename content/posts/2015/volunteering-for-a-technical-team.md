@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/volunteering-for-a-technical-team",
-    "/posts/laziness-17n5",
-    "/posts/2015/08/03/laziness-17n5",
+    "/posts/volunteering-for-a-technical-team-le0",
+    "/posts/2015/08/03/volunteering-for-a-technical-team-le0",
     "/posts/2015/08/03/volunteering-for-a-technical-team",
-    "/2015/08/03/laziness-17n5",
+    "/2015/08/03/volunteering-for-a-technical-team-le0",
     "/2015/08/03/volunteering-for-a-technical-team"
 ]
 +++
