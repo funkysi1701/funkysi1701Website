@@ -141,4 +141,36 @@ git push origin –force –tags
 &lt;li>Gets all remote branches &lt;strong>git fetch origin&lt;/strong>&lt;/li>
 &lt;/ul>
 &lt;p>Most of the time I use the &lt;a href="https://sourceforge.net/projects/gitextensions/" target="_blank" rel="noopener noreferrer">git extensions&lt;/a>
-tools to do my git work, but there are times when only the command line will do.&lt;/p></description></item></channel></rss>
+tools to do my git work, but there are times when only the command line will do.&lt;/p></description></item><item><title>Writing better Git commit messages</title><link>https://www.funkysi1701.com/posts/2015/writing-better-git-commit-messages/</link><pubDate>Sat, 25 Jul 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/writing-better-git-commit-messages/</guid><description>&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/git_commit.png?w=439&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>I always use source control for my coding changes, however some of my commit messages leave something to be desired.&lt;/p>
+&lt;p>I always try to write a commit message but I often think that the change themselves should be enough to indicate what I did. I also don’t need to include who made the change or the time and date and that gets included automatically.&lt;/p>
+&lt;p>Here are some tips I have found that may help me in the future.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Ask yourself why you are making this change. The Who, When and What are already being covered so it is only the why that needs including in the commit message.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If your commit breaks something or causes side affects or a new dependency this should be included in the commit message. If your commit breaks functionality, consider if you really need to commit it yet, maybe only commit once fixed?&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If your commit includes a long list of changes consider if the commit needs splitting into several commits. It is easy to only commit one or two files write a specific commit message and then commit the rest of the changes separately.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Consider including a subject for larger commits. The following comes from the git manual.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;pre tabindex="0">&lt;code>Though not required, it’s a good idea to begin the commit message with a single short
+(less than 50 character) line summarizing the change, followed by a blank line and then
+a more thorough description. The text up to the first blank line in a commit message
+is treated as the commit title, and that title is used throughout Git.
+&lt;/code>&lt;/pre>&lt;ol start="5">
+&lt;li>If you use a subject follow the following conventions:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>Limit of 50 characters&lt;/li>
+&lt;li>Start with a capital letter&lt;/li>
+&lt;li>Do not end with a full stop&lt;/li>
+&lt;li>Use the imperative mood i.e. write as if issuing a command&lt;/li>
+&lt;/ul></description></item></channel></rss>
