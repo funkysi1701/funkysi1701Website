@@ -34,7 +34,7 @@ Today Microsoft release Windows 10 so what else can I talk about? I like many te
 Upgrade to Windows 10 within the first year and it is yours free, forever. No subscriptions, no additional costs.
 ```
 
-9 As with any upgrade always backup your computer and any important files before you do anything. Microsoft and any IT expert will tell you this. For a great guide to upgrading see Scott Hansleman’s blog. I have upgraded my laptop without any problems but there will always be exceptions so take extra care.
+9 As with any upgrade always backup your computer and any important files before you do anything. Microsoft and any IT expert will tell you this. For a great guide to upgrading see Scott Hansleman’s [blog](http://www.hanselman.com/blog/GettingStartedWithWindows10.aspx). I have upgraded my laptop without any problems but there will always be exceptions so take extra care.
 
 8 Windows 10 is the **LAST** version of windows. I don’t know what this means but I can take a guess.
 
