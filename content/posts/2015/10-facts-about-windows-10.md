@@ -31,7 +31,8 @@ Today Microsoft release Windows 10 so what else can I talk about? I like many te
 10 You heard that correct Windows 10 is **free**. If you upgrade your device to windows 10 before 29th July 2016 it is free and will continue working on that device forever.
 
 ```
-Upgrade to Windows 10 within the first year and it is yours free, forever. No subscriptions, no additional costs.
+Upgrade to Windows 10 within the first year and it is yours free, forever. 
+No subscriptions, no additional costs.
 ```
 
 9 As with any upgrade always backup your computer and any important files before you do anything. Microsoft and any IT expert will tell you this. For a great guide to upgrading see Scott Hansleman’s [blog](http://www.hanselman.com/blog/GettingStartedWithWindows10.aspx). I have upgraded my laptop without any problems but there will always be exceptions so take extra care.
