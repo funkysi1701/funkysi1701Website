@@ -4302,23 +4302,13 @@ and feedback about it can be left on the trekmate forums &lt;a href="http://foru
 &lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/Windows-10_Product-Family.jpg?resize=1024%2C576&amp;amp;ssl=1" loading="lazy"
 />
 &lt;/p>
-&lt;ol start="10">
-&lt;li>You heard that correct Windows 10 is &lt;strong>free&lt;/strong>. If you upgrade your device to windows 10 before 29th July 2016 it is free and will continue working on that device forever.&lt;/li>
-&lt;/ol>
-&lt;pre tabindex="0">&lt;code>Upgrade to Windows 10 within the first year and it is yours free, forever. No subscriptions, no additional costs.&amp;#39;
-&lt;/code>&lt;/pre>&lt;ol start="9">
-&lt;li>
-&lt;p>As with any upgrade always backup your computer and any important files before you do anything. Microsoft and any IT expert will tell you this. For a great guide to upgrading see Scott Hansleman’s blog. I have upgraded my laptop without any problems but there will always be exceptions so take extra care.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Windows 10 is the &lt;strong>LAST&lt;/strong> version of windows. I don’t know what this means but I can take a guess.&lt;/p>
-&lt;/li>
-&lt;/ol>
+&lt;p>10 You heard that correct Windows 10 is &lt;strong>free&lt;/strong>. If you upgrade your device to windows 10 before 29th July 2016 it is free and will continue working on that device forever.&lt;/p>
+&lt;pre tabindex="0">&lt;code>Upgrade to Windows 10 within the first year and it is yours free, forever. No subscriptions, no additional costs.
+&lt;/code>&lt;/pre>&lt;p>9 As with any upgrade always backup your computer and any important files before you do anything. Microsoft and any IT expert will tell you this. For a great guide to upgrading see Scott Hansleman’s blog. I have upgraded my laptop without any problems but there will always be exceptions so take extra care.&lt;/p>
+&lt;p>8 Windows 10 is the &lt;strong>LAST&lt;/strong> version of windows. I don’t know what this means but I can take a guess.&lt;/p>
 &lt;p>Typically Microsoft has created a new version of windows every few years. With every new version there has come headaches and problems as people try to make software and hardware work with the next version. Microsoft is instead going to try and release updates and patches to the operating system to keep things up to date.&lt;/p>
 &lt;p>However I can see that only working for so long. Eventually Microsoft will make something new but it is unlikely to be called Windows. Maybe it will be something hosted in the Cloud, as they have a really strong presence with Azure which is only going to grow as time goes on.&lt;/p>
-&lt;ol start="7">
-&lt;li>Windows 10 is available in 7 different flavours.&lt;/li>
-&lt;/ol>
+&lt;p>7 Windows 10 is available in 7 different flavours.&lt;/p>
 &lt;ul>
 &lt;li>Windows 10 Home – equivalent to the Home editions we have had since XP. This version is designed for your typical consumer.&lt;/li>
 &lt;li>Windows 10 Mobile – this version is designed to run on phones and tablets. Unlike previous Phone versions, everything you can find on the desktop OS should be available on the phone (but optimised for the smaller screens)&lt;/li>
@@ -4328,31 +4318,15 @@ and feedback about it can be left on the trekmate forums &lt;a href="http://foru
 &lt;li>Windows 10 Mobile Enterprise – this version is for mobile and tablets in the business world. Standard policies can be applied to all your employees mobile devices.&lt;/li>
 &lt;li>Windows 10 IoT Core – this is an interesting version designed to run on hardware and Internet of Things (IoT) devices. I would quite like to play with this version on my Raspberry Pi&lt;/li>
 &lt;/ul>
-&lt;ol start="6">
-&lt;li>
-&lt;p>Windows 10 introduces a brand new web browser called Edge. For years web developers have hated Internet Explorer, for its lack of support for the latest web standards. Internet Explorer 6 caused many users to migrate away to browsers like firefox and later Chrome and despite Microsoft’s best effort with the later versions people have not moved back. Edge is an attempt at a fresh start.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>In 2011 Apple introduced the personal assistant Siri, well now Microsoft are bringing us &lt;strong>Cortana&lt;/strong> the windows equivalent. With Cortana you can ask your computer to do anything, set reminders, search the internet, answer questions, anything. With advanced voice recognition you can speak as well as type your questions. Cortana is now part of Windows 10.&lt;/p>
-&lt;/li>
-&lt;/ol>
+&lt;p>6 Windows 10 introduces a brand new web browser called Edge. For years web developers have hated Internet Explorer, for its lack of support for the latest web standards. Internet Explorer 6 caused many users to migrate away to browsers like firefox and later Chrome and despite Microsoft’s best effort with the later versions people have not moved back. Edge is an attempt at a fresh start.&lt;/p>
+&lt;p>5 In 2011 Apple introduced the personal assistant Siri, well now Microsoft are bringing us &lt;strong>Cortana&lt;/strong> the windows equivalent. With Cortana you can ask your computer to do anything, set reminders, search the internet, answer questions, anything. With advanced voice recognition you can speak as well as type your questions. Cortana is now part of Windows 10.&lt;/p>
 &lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/05/win10.jpg?resize=300%2C181&amp;amp;ssl=1" loading="lazy"
 />
 &lt;/p>
-&lt;ol start="4">
-&lt;li>
-&lt;p>Windows 10 brings back the start menu. The start menu you have always used to access programs works the same but features of the windows 8 start screen have been incorporated into it.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Windows 10 is more &lt;strong>secure&lt;/strong>. Security patches are frequently released for all operating systems, but windows 10 has been designed with security in mind. For businesses there are options to completely lock down your users environment only allowing ‘white listed’ programs to run.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>Continuum&lt;/strong> is one of the most revolutionary things about Windows 10. Continuum is the notion that one computing experience is continued regardless of the device used or the location. Continuum will automatically adjust your screen to make the best use of its size. Tablets and phones have the tiled view and start screen, if you connect a keyboard and monitor it will behave like a full blown PC. This is mind bending, that a phone running windows 10 can do as much as your laptop.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Today I am off to a Windows 10 launch event where I expect many of these features will be discussed and most likely many more.&lt;/p>
-&lt;/li>
-&lt;/ol></description></item><item><title>Things to know before working on your database</title><link>https://www.funkysi1701.com/posts/2015/things-to-know-before-working-on-your-databasethings-to-know-before-working-on-your-database/</link><pubDate>Mon, 20 Jul 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/things-to-know-before-working-on-your-databasethings-to-know-before-working-on-your-database/</guid><description>&lt;p>I recently saw this blog &lt;a href="http://www.brentozar.com/archive/2015/07/questions-to-ask-before-you-touch-a-database-server/" target="_blank" rel="noopener noreferrer">post&lt;/a>
+&lt;p>4 Windows 10 brings back the start menu. The start menu you have always used to access programs works the same but features of the windows 8 start screen have been incorporated into it.&lt;/p>
+&lt;p>3 Windows 10 is more &lt;strong>secure&lt;/strong>. Security patches are frequently released for all operating systems, but windows 10 has been designed with security in mind. For businesses there are options to completely lock down your users environment only allowing ‘white listed’ programs to run.&lt;/p>
+&lt;p>2 &lt;strong>Continuum&lt;/strong> is one of the most revolutionary things about Windows 10. Continuum is the notion that one computing experience is continued regardless of the device used or the location. Continuum will automatically adjust your screen to make the best use of its size. Tablets and phones have the tiled view and start screen, if you connect a keyboard and monitor it will behave like a full blown PC. This is mind bending, that a phone running windows 10 can do as much as your laptop.&lt;/p>
+&lt;p>1 Today I am off to a Windows 10 launch event where I expect many of these features will be discussed and most likely many more.&lt;/p></description></item><item><title>Things to know before working on your database</title><link>https://www.funkysi1701.com/posts/2015/things-to-know-before-working-on-your-databasethings-to-know-before-working-on-your-database/</link><pubDate>Mon, 20 Jul 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/things-to-know-before-working-on-your-databasethings-to-know-before-working-on-your-database/</guid><description>&lt;p>I recently saw this blog &lt;a href="http://www.brentozar.com/archive/2015/07/questions-to-ask-before-you-touch-a-database-server/" target="_blank" rel="noopener noreferrer">post&lt;/a>
 by &lt;a href="http://www.brentozar.com/team/brent-ozar/" target="_blank" rel="noopener noreferrer">Brent Ozar&lt;/a>
 that I thought I might discuss.&lt;/p>
 &lt;p>Brent listed 13 questions to ask about a database before you start working with it. I am going to go through these 13 questions and expand on them based on my experiences.&lt;/p>
