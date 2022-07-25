@@ -16,12 +16,12 @@ readingTime = true
 copyright = false
 featured = false
 aliases = [
-    "/scratch-1f7l",
+    "/a-brief-history-of-source-control-2ggc",
     "/posts/source-control",
     "/posts/2022/07/25/source-control",
-    "/posts/scratch-1f7l",
-    "/posts/2022/07/25/scratch-1f7l",
-    "/2022/07/25/scratch-1f7l"    
+    "/posts/a-brief-history-of-source-control-2ggc",
+    "/posts/2022/07/25/a-brief-history-of-source-control-2ggc",
+    "/2022/07/25/a-brief-history-of-source-control-2ggc"    
 ]
 +++
 I have been thinking back to when I started using source control and some of the different tools I have used over the years.
