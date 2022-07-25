@@ -15,7 +15,67 @@ and this as far as I can tell has only ever supported git. So I am guessing I im
 &lt;p>After bitbucket the git repos where moved to Azure DevOps or Visual Studio Team Services as it was called back then. This move was mainly to take advantage of the builds and releases feature and to decommission some aging build servers.&lt;/p>
 &lt;img src="https://www.funkysi1701.com/images/azuredevops.png" align="left" width="400px" />
 &lt;p>This brings me to today where I have a mix of public repos on github and private repos on Azure DevOps. For building my code I use a mix of github actions and Azure Pipelines. As Microsoft own both services now, there is a fair amount of crossover between the two services, however it is far from certain which service is the future.&lt;/p>
-&lt;p>Wow, my code has moved around a lot over the years. From no source control, to subversion, to git, to Bitbucket to Azure DevOps!&lt;/p></description></item><item><title>Clever things with MS Access</title><link>https://www.funkysi1701.com/posts/2016/clever-things-ms-access/</link><pubDate>Thu, 07 Jul 2016 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2016/clever-things-ms-access/</guid><description>&lt;p>I hate MS Access and especially developing with it as you can’t do any thing clever with it.&lt;/p>
+&lt;p>Wow, my code has moved around a lot over the years. From no source control, to subversion, to git, to Bitbucket to Azure DevOps!&lt;/p></description></item><item><title>Github Vs Bitbucket Vs Visual Studio Team Services</title><link>https://www.funkysi1701.com/posts/2017/github-vs-bitbucket-vs-vsts/</link><pubDate>Mon, 06 Mar 2017 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2017/github-vs-bitbucket-vs-vsts/</guid><description>&lt;p>As a developer using source control and git is bread and butter of what we do. Github is probably the most popular and widely known hosting service for source control but I have also used Bitbucket and Visual Studio Team Services. Lets have a look at each one and what they offer. Note while I have included prices I have only tried out the free versions.&lt;/p>
+&lt;h3 id="github">Github&lt;a class="anchor ms-1" href="#github">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/03/github-octocat.png?resize=300%2C158&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;ul>
+&lt;li>URL: &lt;a href="https://github.com/" target="_blank" rel="noopener noreferrer">https://github.com/&lt;/a>
+&lt;/li>
+&lt;li>Private Repositories: Not Available for free&lt;/li>
+&lt;li>Public Repositories: Unlimited&lt;/li>
+&lt;li>Team Size: Unlimited&lt;/li>
+&lt;li>Prices: $7 per month for unlimited private repositories, $25 per month for 5 users then $9 per month per user&lt;/li>
+&lt;/ul>
+&lt;p>This is probably the most widely used service for hosting code. Over 13 million repositories of code. This is an ideal solution if you want your code to be publicly viewable, but take care not to publish passwords, private keys or your companies trade secrets. Every developer should have a Github account for displaying bits of code they are proud of.&lt;/p>
+&lt;p>There are a number of externally built APIs that link into Github for doing extra features, like building, code coverage etc&lt;/p>
+&lt;h3 id="bitbucket">Bitbucket&lt;a class="anchor ms-1" href="#bitbucket">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/03/d8TRzzL.png?resize=150%2C150&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;ul>
+&lt;li>URL: &lt;a href="https://bitbucket.org/" target="_blank" rel="noopener noreferrer">https://bitbucket.org/&lt;/a>
+&lt;/li>
+&lt;li>Private Repositories: Unlimited&lt;/li>
+&lt;li>Public Repositories: Unlimited&lt;/li>
+&lt;li>Team Size: Less than 5&lt;/li>
+&lt;li>Prices: $10 per month for 10 Users, $100 per month for 100 Users, $200 per month for Unlimited Users&lt;/li>
+&lt;/ul>
+&lt;p>At my last job we used Bitbucket extensively for all our projects. All the code was private so only the team could access it, however before I left we were approaching the 5 user limit (but looking at these prices cost seems very reasonable)&lt;/p>
+&lt;h3 id="visual-studio-team-services">Visual Studio Team Services&lt;a class="anchor ms-1" href="#visual-studio-team-services">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/11/Visual-Studio-Team-Services.png?resize=300%2C136&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;ul>
+&lt;li>URL: &lt;a href="https://www.visualstudio.com/team-services/" target="_blank" rel="noopener noreferrer">https://www.visualstudio.com/team-services/&lt;/a>
+&lt;/li>
+&lt;li>Private Repositories: Unlimited&lt;/li>
+&lt;li>Public Repositories: Not Available&lt;/li>
+&lt;li>Team Size: Less than 5&lt;/li>
+&lt;li>Prices: $30 per month for 10 users, and other features paid for via Azure Invoices&lt;/li>
+&lt;/ul>
+&lt;p>Visual Studio Team Services or VSTS is Microsoft’s version control solution and I have only just started using it, however what I have seen I like. There are lots of options for building your code so VSTS is more than just hosting your code it is verging on a Continuous Integration/Delivery solution. Being a Microsoft product there are numerous links to Azure and it is easy to deploy stuff to that platform.&lt;/p>
+&lt;p>All three have options for tracking issues but VSTS have options to add Stakeholder users which would allow none developers to add and keep track of issues and progress with them.&lt;/p>
+&lt;p>If I want to run tests, look at code coverage VSTS is probably the solution I would go for, if I want something that is public I would go for Github. What do you think which of these is your favourite?&lt;/p></description></item><item><title>What should be in Source Control?</title><link>https://www.funkysi1701.com/posts/2016/what-should-be-in-source-control/</link><pubDate>Thu, 24 Nov 2016 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2016/what-should-be-in-source-control/</guid><description>&lt;p>I am currently working on source code that is over 5Gb in size. This is mostly due to a poorly thought out folder structure, there are code files, images and Excel files all jumbled together. I think a clear distinction should be made between source code and data.&lt;/p>
+&lt;h3 id="source-code">Source Code&lt;a class="anchor ms-1" href="#source-code">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>I will define source code as anything that is written in order to compile and run the project. If it is a webpage it will be all the HTML, CSS and Javascript or any file used to produce these. I would also include any configuration files and files used to build/deploy the website or project. Anything that is compiled from your source files can safely be ignored.&lt;/p>
+&lt;h3 id="data">Data&lt;a class="anchor ms-1" href="#data">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>I would define data as anything that is added to the project during its life. So if you have an upload option, anything that is uploaded I would describe as data. The site should still function without (or very little) data.&lt;/p>
+&lt;h3 id="images">Images&lt;a class="anchor ms-1" href="#images">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>Images can fit into both groups. Any icons or images attached to the functionality of the project I would class as source code. However anything that is uploaded should be classed as Data.&lt;/p>
+&lt;h3 id="databases">Databases&lt;a class="anchor ms-1" href="#databases">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>The database should also be classed as both. The data, anything that is inside a database table should normally be classed as data. Stored Procedures, Functions and Views are all Source Code and would benefit from version control.&lt;/p>
+&lt;h3 id="source-control--backup">Source Control != Backup&lt;a class="anchor ms-1" href="#source-control--backup">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h3>
+&lt;p>Source control is not an excuse not to backup things. Don’t just commit files to source control so you know you can restore them if you need to. Files in general in source control are there so you can see how they changed over time as the code base changed. Files in you backup are a snapshot of what the application was at a point in time and will include ALL the data.&lt;/p>
+&lt;p>One last point before I end. If you are hosting on a Cloud Computing platform like Azure it gives you an easy way to distinguish between Data and Code.&lt;/p>
+&lt;p>Anything in your&lt;/p>
+&lt;ul>
+&lt;li>Web App = Code&lt;/li>
+&lt;li>Blob Storage = Data&lt;/li>
+&lt;li>SQL = Data/Code&lt;/li>
+&lt;/ul>
+&lt;p>Each project is unique and there will always be exceptions to these suggestions but I think this is a good goal to have. What do you think?&lt;/p></description></item><item><title>Clever things with MS Access</title><link>https://www.funkysi1701.com/posts/2016/clever-things-ms-access/</link><pubDate>Thu, 07 Jul 2016 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2016/clever-things-ms-access/</guid><description>&lt;p>I hate MS Access and especially developing with it as you can’t do any thing clever with it.&lt;/p>
 &lt;p>&lt;strong>Wrong, Wrong, Wrong!&lt;/strong>&lt;/p>
 &lt;p>There are a few clever things I have been able to script to make developing with it passable. I still would rather use Visual Studio but this improves the experience a fair bit.&lt;/p>
 &lt;h2 id="source-control">Source Control&lt;a class="anchor ms-1" href="#source-control">&lt;i class="fas fa-link">&lt;/i>&lt;/a>&lt;/h2>
