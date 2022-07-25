@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/11/86910937_t053ll31.jpg?w=660&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/11/86910937_t053ll31.jpg?w=660&ssl=1']
-tags = ["Deals", "Blog", "Blackfriday"]
+tags = ["Deals", "Blogging", "Blackfriday"]
 category="tech"
 keywords = ["", ""]
 description =  "Black Friday Deals"

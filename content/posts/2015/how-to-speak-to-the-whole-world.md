@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/10/world.png?w=648&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/10/world.png?w=648&ssl=1']
-tags = ["Global", "Blog", "World"]
+tags = ["Global", "Blogging", "World"]
 category="tech"
 keywords = ["", ""]
 description =  "How to speak to the whole world"
