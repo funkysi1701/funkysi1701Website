@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/10-facts-about-windows-10",
-    "/posts/laziness-17n5",
-    "/posts/2015/07/29/laziness-17n5",
+    "/posts/10-facts-about-windows-10-40ia",
+    "/posts/2015/07/29/10-facts-about-windows-10-40ia",
     "/posts/2015/07/29/10-facts-about-windows-10",
-    "/2015/07/29/laziness-17n5",
+    "/2015/07/29/10-facts-about-windows-10-40ia",
     "/2015/07/29/10-facts-about-windows-10"
 ]
 +++

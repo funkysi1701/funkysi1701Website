@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/writing-better-git-commit-messages",
-    "/posts/laziness-17n5",
-    "/posts/2015/07/25/laziness-17n5",
+    "/posts/writing-better-git-commit-messages-o5i",
+    "/posts/2015/07/25/writing-better-git-commit-messages-o5i",
     "/posts/2015/07/25/writing-better-git-commit-messages",
-    "/2015/07/25/laziness-17n5",
+    "/2015/07/25/writing-better-git-commit-messages-o5i",
     "/2015/07/25/writing-better-git-commit-messages"
 ]
 +++
