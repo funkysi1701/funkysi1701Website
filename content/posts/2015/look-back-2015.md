@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/12/151218181153-2015-year-in-review-biggest-stories-wrap-up-orig-00025316-large-169.jpg?w=460&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/12/151218181153-2015-year-in-review-biggest-stories-wrap-up-orig-00025316-large-169.jpg?w=460&ssl=1']
-tags = ["Blog", "James", "Goals"]
+tags = ["Blogging", "James", "Goals"]
 category="tech"
 keywords = ["", ""]
 description =  "A look back at 2015"
