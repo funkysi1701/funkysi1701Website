@@ -4387,7 +4387,40 @@ is treated as the commit title, and that title is used throughout Git.
 &lt;p>One work around I have found to this problem is &lt;a href="https://accesssvn.codeplex.com/" target="_blank" rel="noopener noreferrer">AccessSVN&lt;/a>
 . This program takes an ADP and creates text files of every form and report. It also can create an ADP from these files as well, however I have had varying success with this feature so I prefer to just create the text files if possible. What I do after I have made a change to the ADP is to run AccessSVN, create text files and commit these to source control. You can then see what controls have been changed or added. It also helps with bugs as I have found that sometimes while testing access will apply a filter to a form, which will break things if deployed, which is very annoying.&lt;/p>
 &lt;p>Access can only do what access was designed to do. There are some advanced features that we would like to add to our databases. Things like sending emails or uploading reports to a website. This is not Access fault as it was never designed to be able to do such things but I am often asked about what is possible.&lt;/p>
-&lt;p>End of support for Office 2010 is approaching and I have plans to stop using Access but until then I need to keep supporting our existing front ends.&lt;/p></description></item><item><title>Things to know before working on your database</title><link>https://www.funkysi1701.com/posts/2015/things-to-know-before-working-on-your-databasethings-to-know-before-working-on-your-database/</link><pubDate>Mon, 20 Jul 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/things-to-know-before-working-on-your-databasethings-to-know-before-working-on-your-database/</guid><description>&lt;p>I recently saw this blog &lt;a href="http://www.brentozar.com/archive/2015/07/questions-to-ask-before-you-touch-a-database-server/" target="_blank" rel="noopener noreferrer">post&lt;/a>
+&lt;p>End of support for Office 2010 is approaching and I have plans to stop using Access but until then I need to keep supporting our existing front ends.&lt;/p></description></item><item><title>7 Warning Signs that you’re a Bad Programmer</title><link>https://www.funkysi1701.com/posts/2015/7-warning-signs-that-youre-a-bad-programmer/</link><pubDate>Thu, 23 Jul 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/7-warning-signs-that-youre-a-bad-programmer/</guid><description>&lt;p>&lt;img class="img-fluid" alt="" src="https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/you_are_coding_it_wrong.png?w=359&amp;amp;ssl=1" loading="lazy"
+/>
+&lt;/p>
+&lt;p>Am I a good programmer or a bad programmer?&lt;/p>
+&lt;p>Here are 7 signs that might mean you are more towards the bad end of the scale.&lt;/p>
+&lt;ol>
+&lt;li>You fail to plan before you start coding&lt;/li>
+&lt;/ol>
+&lt;p>I am very guilty of this, I love to jump into the code before thinking. But I am slowly starting to see the advantages of sketching a few things out before I write any code.&lt;/p>
+&lt;p>Most of my coding recently has been SQL based and I am starting to like sketching out table designs.&lt;/p>
+&lt;ol start="2">
+&lt;li>You fail to use version control&lt;/li>
+&lt;/ol>
+&lt;p>I have blogged about using version control in the past but it really is a very useful technology. It not only keeps track of every file in your solution and stores its entire history, but you can separate different versions into branches and see who changed what and when (and if the commit message is detailed enough why).&lt;/p>
+&lt;ol start="3">
+&lt;li>You use bad variable names&lt;/li>
+&lt;/ol>
+&lt;p>Whats wrong with variable1 and variable2 as variable names? Variables should be named after what they do or what they contain, but it is very easy to start copy and pasting them and before you know it you have a variable1 and variable2 situation. Remember that Visual Studio has some powerful refactoring tools so relatively easy to get them back in order.&lt;/p>
+&lt;ol start="4">
+&lt;li>You repeat your code&lt;/li>
+&lt;/ol>
+&lt;p>I’ve been reading Pragmatic Programmer and one of their first tips was DRY – Don’t Repeat Yourself. They go to extremes with nothing being repeated anywhere in your code, but I don’t think you need to go too far, you can be reasonable. If you have the same code repeated four times, then creating a function for this code will dramatically improve your code.&lt;/p>
+&lt;ol start="5">
+&lt;li>You struggle to understand your own code&lt;/li>
+&lt;/ol>
+&lt;p>Why did I do it this way? I feel like I am always trying to remember the reasons I chose to code the way I did previously. Part of the reason for this is that I am constantly learning at the moment, but there is more that I can do to help myself understand in the future.&lt;/p>
+&lt;ol start="6">
+&lt;li>You are selfish and don’t share&lt;/li>
+&lt;/ol>
+&lt;p>I am not selfish, if I learn something really cool I have to tell someone. I like writing stuff on here to share with the world. I am thinking of news ways to train my staff.&lt;/p>
+&lt;ol start="7">
+&lt;li>You work on multiple projects&lt;/li>
+&lt;/ol>
+&lt;p>Yes Guilty as charged with this one. I have multiple projects that I am working on at work, I also have a fair few personal projects that I would like to work on. Not sure I completely agree that multiple projects equals bad programmer.&lt;/p></description></item><item><title>Things to know before working on your database</title><link>https://www.funkysi1701.com/posts/2015/things-to-know-before-working-on-your-databasethings-to-know-before-working-on-your-database/</link><pubDate>Mon, 20 Jul 2015 20:00:45 +0000</pubDate><guid>https://www.funkysi1701.com/posts/2015/things-to-know-before-working-on-your-databasethings-to-know-before-working-on-your-database/</guid><description>&lt;p>I recently saw this blog &lt;a href="http://www.brentozar.com/archive/2015/07/questions-to-ask-before-you-touch-a-database-server/" target="_blank" rel="noopener noreferrer">post&lt;/a>
 by &lt;a href="http://www.brentozar.com/team/brent-ozar/" target="_blank" rel="noopener noreferrer">Brent Ozar&lt;/a>
 that I thought I might discuss.&lt;/p>
 &lt;p>Brent listed 13 questions to ask about a database before you start working with it. I am going to go through these 13 questions and expand on them based on my experiences.&lt;/p>
