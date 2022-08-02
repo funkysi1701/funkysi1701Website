@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/7-warning-signs-that-youre-a-bad-programmer",
-    "/posts/laziness-17n5",
-    "/posts/2015/07/23/laziness-17n5",
+    "/posts/7-warning-signs-that-youre-a-bad-programmer-4150",
+    "/posts/2015/07/23/7-warning-signs-that-youre-a-bad-programmer-4150",
     "/posts/2015/07/23/7-warning-signs-that-youre-a-bad-programmer",
-    "/2015/07/23/laziness-17n5",
+    "/2015/07/23/7-warning-signs-that-youre-a-bad-programmer-4150",
     "/2015/07/23/7-warning-signs-that-youre-a-bad-programmer"
 ]
 +++
