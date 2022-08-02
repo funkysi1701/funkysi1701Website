@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/microsoft-access",
-    "/posts/laziness-17n5",
-    "/posts/2015/07/24/laziness-17n5",
+    "/posts/my-lovehate-relationship-with-microsoft-access-1ok8",
+    "/posts/2015/07/24/my-lovehate-relationship-with-microsoft-access-1ok8",
     "/posts/2015/07/24/microsoft-access",
-    "/2015/07/24/laziness-17n5",
+    "/2015/07/24/my-lovehate-relationship-with-microsoft-access-1ok8",
     "/2015/07/24/microsoft-access"
 ]
 +++
