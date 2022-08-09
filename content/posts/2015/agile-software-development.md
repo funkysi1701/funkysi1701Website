@@ -16,12 +16,12 @@ showFullContent = false
 readingTime = true
 copyright = false
 aliases = [
-    "/posts/laziness",
-    "/posts/laziness-17n5",
-    "/posts/2015/07/04/laziness-17n5",
-    "/posts/2015/07/04/laziness",
-    "/2015/07/04/laziness-17n5",
-    "/2015/07/04/laziness"
+    "/posts/agile-software-development",
+    "/posts/agile-software-development-5fkk",
+    "/posts/2015/07/04/agile-software-development-5fkk",
+    "/posts/2015/07/04/agile-software-development",
+    "/2015/07/04/agile-software-development-5fkk",
+    "/2015/07/04/agile-software-development"
 ]
 +++
 I have heard the term **Agile Software Development** quite a bit, but lets see if we can define it and see if I do any of the processes involved with it.

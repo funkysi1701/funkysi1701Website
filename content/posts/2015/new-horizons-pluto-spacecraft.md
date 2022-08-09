@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/new-horizons-pluto-spacecraft",
-    "/posts/laziness-17n5",
-    "/posts/2015/07/14/laziness-17n5",
+    "/posts/new-horizons-pluto-spacecraft-2ohg",
+    "/posts/2015/07/14/new-horizons-pluto-spacecraft-2ohg",
     "/posts/2015/07/14/new-horizons-pluto-spacecraft",
-    "/2015/07/14/laziness-17n5",
+    "/2015/07/14/new-horizons-pluto-spacecraft-2ohg",
     "/2015/07/14/new-horizons-pluto-spacecraft"
 ]
 +++
