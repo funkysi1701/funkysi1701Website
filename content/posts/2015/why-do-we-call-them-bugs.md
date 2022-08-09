@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/why-do-we-call-them-bugs",
-    "/posts/laziness-17n5",
-    "/posts/2015/07/07/laziness-17n5",
+    "/posts/why-do-we-call-them-bugs-3h8",
+    "/posts/2015/07/07/why-do-we-call-them-bugs-3h8",
     "/posts/2015/07/07/why-do-we-call-them-bugs",
-    "/2015/07/07/laziness-17n5",
+    "/2015/07/07/why-do-we-call-them-bugs-3h8",
     "/2015/07/07/why-do-we-call-them-bugs"
 ]
 +++

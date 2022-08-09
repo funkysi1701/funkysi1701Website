@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/how-to-upgrade-to-windows-10",
-    "/posts/laziness-17n5",
-    "/posts/2015/07/11/laziness-17n5",
+    "/posts/how-to-upgrade-to-windows-10-eo6",
+    "/posts/2015/07/11/how-to-upgrade-to-windows-10-eo6",
     "/posts/2015/07/11/how-to-upgrade-to-windows-10",
-    "/2015/07/11/laziness-17n5",
+    "/2015/07/11/how-to-upgrade-to-windows-10-eo6",
     "/2015/07/11/how-to-upgrade-to-windows-10"
 ]
 +++
