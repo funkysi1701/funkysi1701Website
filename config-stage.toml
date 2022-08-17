@@ -1,6 +1,6 @@
 baseURL = 'https://mango-mud-0f2d6ef03.1.azurestaticapps.net/'
 languageCode = 'en-gb'
-title = "Funky Si's Blog"
+title = "Testing Funky Si's Blog"
 theme = 'hugo-theme-bootstrap'
 disqusShortname = "funkysi1701"  
 googleAnalytics = "G-N1YJNQEHR4"
