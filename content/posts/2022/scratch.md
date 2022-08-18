@@ -20,8 +20,8 @@ aliases = [
     "/posts/scratch",
     "/posts/2022/04/26/scratch",
     "/posts/scratch-1f7l",
-    "/posts/2022/03/18/scratch-1f7l",
-    "/2022/03/18/scratch-1f7l"    
+    "/posts/2022/04/26/scratch-1f7l",
+    "/2022/04/26/scratch-1f7l"    
 ]
 +++
 My 6 year old boy has been playing with Scratch, so here is a quick introduction to what we have learnt about it.
