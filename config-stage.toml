@@ -1,4 +1,4 @@
-baseURL = 'https://funkysi1701-github-io.pages.dev/'
+baseURL = 'https://test.funkysi1701.com/'
 languageCode = 'en-gb'
 title = "Testing Funky Si's Blog"
 theme = 'hugo-theme-bootstrap'
