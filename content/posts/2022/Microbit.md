@@ -15,7 +15,6 @@ showFullContent = false
 readingTime = true
 copyright = false
 featured = false
-draft = true
 aliases = [
     "/scratch-1f7l",
     "/posts/microbit",
