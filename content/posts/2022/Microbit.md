@@ -27,7 +27,7 @@ aliases = [
 
 Programming is in my DNA, so when I had children it was obvious that I would attempt to share my passion. It has taken a while, for some reason for loops don't interest toddlers! However my 7 year old son has got a taste for it now. 
 
-<img src="https://images-na.ssl-images-amazon.com/images/I/516RPfVV5QL._SX441_BO1,204,203,200_.jpg"  style="float:left; padding-right: 15px; " />
+<img src="/images/getcoding.jpg"  style="float:left; padding-right: 15px; " />
 
 It was his birthday the other day and he got quite a few tech related things. First off he got some programming books. [Get Coding!](https://www.amazon.co.uk/gp/product/1406366846/ref=ppx_yo_dt_b_asin_title_o02_s01?ie=UTF8&psc=1), [Coding for Kids: Scratch:](https://www.amazon.co.uk/gp/product/1641522453/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1) and [Coding for Kids: Python:](https://www.amazon.co.uk/gp/product/1641521759/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1)
 
