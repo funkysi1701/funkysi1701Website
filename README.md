@@ -11,3 +11,5 @@ hugo server -D
 
 To run on github codespace run
 hugo server -D --baseUrl="https://funkysi1701-funkysi1701-github-io-x5wvxvxfv9q4-1313.githubpreview.dev" --appendPort=false
+
+Test site can be found https://develop.funkysi1701-github-io.pages.dev/
