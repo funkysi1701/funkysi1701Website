@@ -16,12 +16,12 @@ readingTime = true
 copyright = false
 featured = false
 aliases = [
-    "/scratch-1f7l",
+    "/makecode-and-the-bbc-microbit-584",
     "/posts/microbit",
     "/posts/2022/08/21/microbit",
-    "/posts/scratch-1f7l",
-    "/posts/2022/08/21/scratch-1f7l",
-    "/2022/08/21/scratch-1f7l"    
+    "/posts/makecode-and-the-bbc-microbit-584",
+    "/posts/2022/08/21/makecode-and-the-bbc-microbit-584",
+    "/2022/08/21/makecode-and-the-bbc-microbit-584"    
 ]
 +++
 
