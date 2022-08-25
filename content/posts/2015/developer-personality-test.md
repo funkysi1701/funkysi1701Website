@@ -30,15 +30,15 @@ Myers-Briggs tells you if you are **Introvert (I)** or **Extrovert (E)**, **Feel
 
 This test however tells you if you are:
 
-**Independent vs Collaborative
+**Independent vs Collaborative**
 
-Abstract vs Low-Level
+**Abstract vs Low-Level**
 
-Frontier vs Conservative
+**Frontier vs Conservative**
 
-Generalist vs Specialist
+**Generalist vs Specialist**
 
-Idealist vs Pragmatist**
+**Idealist vs Pragmatist**
 
 ![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/19etmksoopu2ojpg.jpg)
 
