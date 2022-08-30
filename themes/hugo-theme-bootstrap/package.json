@@ -9,7 +9,7 @@
     "@fortawesome/free-solid-svg-icons": "6.1.2",
     "@material/elevation": "14.0.0",
     "bootstrap": "5.2.0",
-    "fibers": "5.0.2",
+    "fibers": "5.0.3",
     "fuse.js": "6.6.2",
     "katex": "0.16.1",
     "mark.js": "8.11.1",
