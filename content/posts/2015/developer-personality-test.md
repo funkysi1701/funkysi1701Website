@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/developer-personality-test",
-    "/posts/laziness-17n5",
-    "/posts/2015/07/02/laziness-17n5",
+    "/posts/developer-personality-test-1eji",
+    "/posts/2015/07/02/developer-personality-test-1eji",
     "/posts/2015/07/02/developer-personality-test",
-    "/2015/07/02/laziness-17n5",
+    "/2015/07/02/developer-personality-test-1eji",
     "/2015/07/02/developer-personality-test"
 ]
 +++

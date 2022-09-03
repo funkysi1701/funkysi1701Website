@@ -17,10 +17,7 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/christmas-2015-fosters",
-    "/posts/laziness-17n5",
-    "/posts/2015/12/24/laziness-17n5",
     "/posts/2015/12/24/christmas-2015-fosters",
-    "/2015/12/24/laziness-17n5",
     "/2015/12/24/christmas-2015-fosters"
 ]
 +++

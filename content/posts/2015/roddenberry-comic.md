@@ -17,10 +17,7 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/roddenberry-comic",
-    "/posts/laziness-17n5",
-    "/posts/2015/12/10/laziness-17n5",
     "/posts/2015/12/10/roddenberry-comic",
-    "/2015/12/10/laziness-17n5",
     "/2015/12/10/roddenberry-comic"
 ]
 +++

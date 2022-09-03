@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/user-groups-and-f",
-    "/posts/laziness-17n5",
-    "/posts/2015/05/30/laziness-17n5",
+    "/posts/user-groups-and-f-37mi",
+    "/posts/2015/05/30/user-groups-and-f-37mi",
     "/posts/2015/05/30/user-groups-and-f",
-    "/2015/05/30/laziness-17n5",
+    "/2015/05/30/user-groups-and-f-37mi",
     "/2015/05/30/user-groups-and-f"
 ]
 +++

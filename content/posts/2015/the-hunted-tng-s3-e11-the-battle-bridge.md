@@ -17,10 +17,7 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/the-hunted-tng-s3-e11-the-battle-bridge",
-    "/posts/laziness-17n5",
-    "/posts/2015/10/08/laziness-17n5",
     "/posts/2015/10/08/the-hunted-tng-s3-e11-the-battle-bridge",
-    "/2015/10/08/laziness-17n5",
     "/2015/10/08/the-hunted-tng-s3-e11-the-battle-bridge"
 ]
 +++

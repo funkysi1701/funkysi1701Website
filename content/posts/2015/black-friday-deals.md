@@ -17,10 +17,7 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/black-friday-deals",
-    "/posts/laziness-17n5",
-    "/posts/2015/11/27/laziness-17n5",
     "/posts/2015/11/27/black-friday-deals",
-    "/2015/11/27/laziness-17n5",
     "/2015/11/27/black-friday-deals"
 ]
 +++

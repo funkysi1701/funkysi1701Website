@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/pragmatic-programmer-broken-windows",
-    "/posts/laziness-17n5",
-    "/posts/2015/06/08/laziness-17n5",
+    "/posts/dont-live-with-broken-windows-npg",
+    "/posts/2015/06/08/dont-live-with-broken-windows-npg",
     "/posts/2015/06/08/pragmatic-programmer-broken-windows",
-    "/2015/06/08/laziness-17n5",
+    "/2015/06/08/dont-live-with-broken-windows-npg",
     "/2015/06/08/pragmatic-programmer-broken-windows"
 ]
 +++
