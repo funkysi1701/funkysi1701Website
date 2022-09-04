@@ -17,10 +17,7 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/james-goes-on-an-adventure-with-daddy",
-    "/posts/laziness-17n5",
-    "/posts/2015/10/22/laziness-17n5",
     "/posts/2015/10/22/james-goes-on-an-adventure-with-daddy",
-    "/2015/10/22/laziness-17n5",
     "/2015/10/22/james-goes-on-an-adventure-with-daddy"
 ]
 +++

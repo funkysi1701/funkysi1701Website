@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/requirement-gathering",
-    "/posts/laziness-17n5",
-    "/posts/2015/06/16/laziness-17n5",
+    "/posts/requirement-gathering-1eml",
+    "/posts/2015/06/16/requirement-gathering-1eml",
     "/posts/2015/06/16/requirement-gathering",
-    "/2015/06/16/laziness-17n5",
+    "/2015/06/16/requirement-gathering-1eml",
     "/2015/06/16/requirement-gathering"
 ]
 +++

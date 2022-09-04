@@ -17,10 +17,7 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/top-10-warp-11-songs",
-    "/posts/laziness-17n5",
-    "/posts/2015/10/29/laziness-17n5",
     "/posts/2015/10/29/top-10-warp-11-songs",
-    "/2015/10/29/laziness-17n5",
     "/2015/10/29/top-10-warp-11-songs"
 ]
 +++

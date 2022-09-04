@@ -17,10 +17,7 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/upper-pylon-2-1-x-09-the-passenger",
-    "/posts/laziness-17n5",
-    "/posts/2015/07/30/laziness-17n5",
     "/posts/2015/07/30/upper-pylon-2-1-x-09-the-passenger",
-    "/2015/07/30/laziness-17n5",
     "/2015/07/30/upper-pylon-2-1-x-09-the-passenger"
 ]
 +++
