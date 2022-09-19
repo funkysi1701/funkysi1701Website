@@ -1,8 +1,8 @@
 +++
 title = "As A Service"
-date = "2015-02-04T20:00:45Z"
+date = "2015-05-16T20:00:45Z"
 year = "2015"
-month= "2015-02"
+month= "2015-05"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/05/19656ee.jpg?w=841&ssl=1"
@@ -18,10 +18,10 @@ copyright = false
 aliases = [
     "/posts/as-a-service",
     "/posts/laziness-17n5",
-    "/posts/2015/02/04/laziness-17n5",
-    "/posts/2015/02/04/as-a-service",
-    "/2015/02/04/laziness-17n5",
-    "/2015/02/04/as-a-service"
+    "/posts/2015/05/16/laziness-17n5",
+    "/posts/2015/05/16/as-a-service",
+    "/2015/05/16/laziness-17n5",
+    "/2015/05/16/as-a-service"
 ]
 +++
 In Cloud Computing there are a lot of terms that end aas or As a Service. Most of these I hadn’t heard of until I started writing this list.
