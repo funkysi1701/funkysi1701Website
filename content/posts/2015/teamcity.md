@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/teamcity",
-    "/posts/laziness-17n5",
-    "/posts/2015/04/01/laziness-17n5",
+    "/posts/building-a-ci-server-with-teamcity-57ma",
+    "/posts/2015/04/01/building-a-ci-server-with-teamcity-57ma",
     "/posts/2015/04/01/teamcity",
-    "/2015/04/01/laziness-17n5",
+    "/2015/04/01/building-a-ci-server-with-teamcity-57ma",
     "/2015/04/01/teamcity"
 ]
 +++

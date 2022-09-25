@@ -17,10 +17,7 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/top-25-star-trek-characters",
-    "/posts/laziness-17n5",
-    "/posts/2015/05/10/laziness-17n5",
     "/posts/2015/05/10/top-25-star-trek-characters",
-    "/2015/05/10/laziness-17n5",
     "/2015/05/10/top-25-star-trek-characters"
 ]
 +++

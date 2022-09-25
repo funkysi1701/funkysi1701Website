@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/as-a-service",
-    "/posts/laziness-17n5",
-    "/posts/2015/05/16/laziness-17n5",
+    "/posts/as-a-service-4fa2",
+    "/posts/2015/05/16/as-a-service-4fa2",
     "/posts/2015/05/16/as-a-service",
-    "/2015/05/16/laziness-17n5",
+    "/2015/05/16/as-a-service-4fa2",
     "/2015/05/16/as-a-service"
 ]
 +++

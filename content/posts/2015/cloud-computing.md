@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/cloud-computing",
-    "/posts/laziness-17n5",
-    "/posts/2015/02/19/laziness-17n5",
+    "/posts/cloud-computing-1jpb",
+    "/posts/2015/02/19/cloud-computing-1jpb",
     "/posts/2015/02/19/cloud-computing",
-    "/2015/02/19/laziness-17n5",
+    "/2015/02/19/cloud-computing-1jpb",
     "/2015/02/19/cloud-computing"
 ]
 +++
