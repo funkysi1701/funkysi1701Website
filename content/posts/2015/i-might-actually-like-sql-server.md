@@ -61,20 +61,20 @@ The last step was to rename some columns. I thought after this I can run publish
 Wohoo! Aren’t I clever. A simplified version of my code is below
 
 ```sql
-USE master –can’t drop the database if its open!
-–Step 1
+USE master -–can’t drop the database if its open!
+–-Step 1
 DROP DATABASE DBName
 
-–Step 2
+–-Step 2
 RESTORE DATABASE DBName FROM DISK=’E:\DBName.bak’
 WITH
 MOVE ‘DBName_dat’ TO ‘C:\Program Files (x86)\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\DBName.mdf’,
 MOVE ‘DBName_log’ TO ‘C:\Program Files (x86)\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\DBName.ldf’,
 REPLACE,
 STATS=10
-USE DBName –swap back to the database you just restored
+USE DBName –-swap back to the database you just restored
 
-–Step 3
+–-Step 3
 CREATE TABLE TName2 (
 ID INT NOT NULL,
 Name NVARCHAR(50) NOT NULL,
@@ -82,16 +82,16 @@ Address NVARCHAR(50) NOT NULL,
 City NVARCHAR(50) NOT NULL,
 Postcode NVARCHAR(50) NOT NULL)
 
-–Step 5
+-–Step 5
 DISABLE TRIGGER TR_Trigger ON TName1
 GO
 
-–Step 4
+–-Step 4
 INSERT INTO TName2 (Id,Name)
 SELECT Id, Name FROM TName1
 GO
 
-–Step 6
+–-Step 6
 ALTER TABLE TName1
 DROP CONSTRAINT [DF_Id], [DF_Name]
 GO
@@ -99,14 +99,14 @@ ALTER TABLE TName1
 DROP COLUMN Id, Name
 GO
 
-–Step 7
+–-Step 7
 sp_RENAME ‘TName1.City’, ‘Area’ , ‘COLUMN’
 GO
 
-–drop that last trigger
+–-drop that last trigger
 DROP TRIGGER TR_Trigger2
 GO
 
-–Step 5
+–-Step 5
 ENABLE TRIGGER TR_Trigger ON TName1
 ```
