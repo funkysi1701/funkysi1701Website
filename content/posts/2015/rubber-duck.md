@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/rubber-duck",
-    "/posts/laziness-17n5",
-    "/posts/2015/05/04/laziness-17n5",
+    "/posts/using-your-rubber-duck-3jj2",
+    "/posts/2015/05/04/using-your-rubber-duck-3jj2",
     "/posts/2015/05/04/rubber-duck",
-    "/2015/05/04/laziness-17n5",
+    "/2015/05/04/using-your-rubber-duck-3jj2",
     "/2015/05/04/rubber-duck"
 ]
 +++

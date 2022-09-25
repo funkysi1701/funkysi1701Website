@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/database-deployment",
-    "/posts/laziness-17n5",
-    "/posts/2015/03/05/laziness-17n5",
+    "/posts/database-deployment-5331",
+    "/posts/2015/03/05/database-deployment-5331",
     "/posts/2015/03/05/database-deployment",
-    "/2015/03/05/laziness-17n5",
+    "/2015/03/05/database-deployment-5331",
     "/2015/03/05/database-deployment"
 ]
 +++
