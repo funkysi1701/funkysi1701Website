@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/security-camera-with-raspberry-pi-camera",
-    "/posts/laziness-17n5",
-    "/posts/2015/04/15/laziness-17n5",
+    "/posts/security-camera-with-raspberry-pi-camera-be7",
+    "/posts/2015/04/15/security-camera-with-raspberry-pi-camera-be7",
     "/posts/2015/04/15/security-camera-with-raspberry-pi-camera",
-    "/2015/04/15/laziness-17n5",
+    "/2015/04/15/security-camera-with-raspberry-pi-camera-be7",
     "/2015/04/15/security-camera-with-raspberry-pi-camera"
 ]
 +++
