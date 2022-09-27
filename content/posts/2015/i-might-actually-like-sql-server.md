@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/i-might-actually-like-sql-serveri-might-actually-like-sql-server",
-    "/posts/laziness-17n5",
-    "/posts/2015/04/23/laziness-17n5",
+    "/posts/i-might-actually-like-sql-server-34j0",
+    "/posts/2015/04/23/i-might-actually-like-sql-server-34j0",
     "/posts/2015/04/23/i-might-actually-like-sql-server",
-    "/2015/04/23/laziness-17n5",
+    "/2015/04/23/i-might-actually-like-sql-server-34j0",
     "/2015/04/23/i-might-actually-like-sql-server"
 ]
 +++

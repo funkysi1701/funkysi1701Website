@@ -16,10 +16,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/weakest-database-design",
-    "/posts/laziness-17n5",
-    "/posts/2015/04/21/laziness-17n5",
+    "/posts/weakest-database-design-pbp",
+    "/posts/2015/04/21/weakest-database-design-pbp",
     "/posts/2015/04/21/weakest-database-design",
-    "/2015/04/21/laziness-17n5",
+    "/2015/04/21/weakest-database-design-pbp",
     "/2015/04/21/weakest-database-design"
 ]
 +++

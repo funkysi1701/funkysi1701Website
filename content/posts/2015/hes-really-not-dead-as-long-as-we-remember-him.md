@@ -17,10 +17,7 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/hes-really-not-dead-as-long-as-we-remember-him",
-    "/posts/laziness-17n5",
-    "/posts/2015/02/28/laziness-17n5",
     "/posts/2015/02/28/hes-really-not-dead-as-long-as-we-remember-him",
-    "/2015/02/28/laziness-17n5",
     "/2015/02/28/hes-really-not-dead-as-long-as-we-remember-him"
 ]
 +++

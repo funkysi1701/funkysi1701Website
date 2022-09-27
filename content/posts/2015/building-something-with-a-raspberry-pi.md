@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/building-something-with-a-raspberry-pi",
-    "/posts/laziness-17n5",
-    "/posts/2015/04/05/laziness-17n5",
+    "/posts/building-something-with-a-raspberry-pi-328j",
+    "/posts/2015/04/05/building-something-with-a-raspberry-pi-328j",
     "/posts/2015/04/05/building-something-with-a-raspberry-pi",
-    "/2015/04/05/laziness-17n5",
+    "/2015/04/05/building-something-with-a-raspberry-pi-328j",
     "/2015/04/05/building-something-with-a-raspberry-pi"
 ]
 +++
