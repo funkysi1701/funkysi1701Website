@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/08/928f90bcd221f78a30f18541a5ca2e7f.jpg?w=404&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/08/928f90bcd221f78a30f18541a5ca2e7f.jpg?w=404&ssl=1']
-tags = ["Due Date", "Baby", "Estimate", "Programming"]
+tags = ["Due Date", "Baby", "Estimate"]
 category="tech"
 keywords = ["", ""]
 description =  "Due Dates"

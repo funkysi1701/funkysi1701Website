@@ -8,7 +8,7 @@ authorTwitter = "funkysi1701" #do not include @
 copyright = false
 cover = "https://lh3.googleusercontent.com/qZTLiWRfQwS7pT6gExLMTvU1pl8NtTU-kbeoSzD68p1D-EPY3Pg7cz2AN66QJpTTp1c=h900-rw"
 images = ['https://lh3.googleusercontent.com/qZTLiWRfQwS7pT6gExLMTvU1pl8NtTU-kbeoSzD68p1D-EPY3Pg7cz2AN66QJpTTp1c=h900-rw']
-tags = ["Android", "PwnedPass", "App", "Programming"]
+tags = ["Android", "PwnedPass", "App"]
 category="tech"
 keywords = ["", ""]
 description = "New version of Pwned Pass"

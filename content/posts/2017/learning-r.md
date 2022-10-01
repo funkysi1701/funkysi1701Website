@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/02/Exchange-Rate-Calculator.jpg?resize=300%2C202&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/02/Exchange-Rate-Calculator.jpg?resize=300%2C202&ssl=1']
-tags = ["ExchangeRates", "R", "Programming"]
+tags = ["ExchangeRates", "R"]
 category="tech"
 keywords = ["", ""]
 description =  "Learning R"

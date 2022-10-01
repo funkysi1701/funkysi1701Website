@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/03/arch.png?w=600&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/03/arch.png?w=600&ssl=1']
-tags = ["Active Directory", "Azure", "Authentication", "Azure Active Directory", "DevOps", "Programming"]
+tags = ["Active Directory", "Azure", "Authentication", "Azure Active Directory", "DevOps"]
 category="tech"
 keywords = ["", ""]
 description =  "Trying Out Azure Active Directory"

@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/05/CGHJLlbWEAAbl14.jpg?w=1024&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/05/CGHJLlbWEAAbl14.jpg?w=1024&ssl=1']
-tags = ["F-Sharp", "C-Sharp", "Programming", "Leeds-Sharp", "UserGroups"]
+tags = ["F-Sharp", "C-Sharp",  "Leeds-Sharp", "UserGroups"]
 category="tech"
 keywords = ["", ""]
 description =  "User Groups and F#"

@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/12/adventofcode.jpg?w=691&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/12/adventofcode.jpg?w=691&ssl=1']
-tags = ["Code", "Challenge", "Santa", "Programming", "Happy Christmas"]
+tags = ["Code", "Challenge", "Santa", "Happy Christmas"]
 category="tech"
 keywords = ["", ""]
 description =  "The Christmas count down with code"

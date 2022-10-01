@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/09/1429677066685.rendition-medium.jpg?w=598&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/09/1429677066685.rendition-medium.jpg?w=598&ssl=1']
-tags = ["Newjob","Imposter Syndrome", "Programming"]
+tags = ["Newjob","Imposter Syndrome"]
 category="tech"
 keywords = ["", ""]
 description =  "Imposter Syndrome"

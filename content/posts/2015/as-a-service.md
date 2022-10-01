@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/05/19656ee.jpg?w=841&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/05/19656ee.jpg?w=841&ssl=1']
-tags = ["Azure", "As A Service", "Programming", "Clouds", "PaaS", "IaaS", "SaaS"]
+tags = ["Azure", "As A Service", "Clouds", "PaaS", "IaaS", "SaaS"]
 category="tech"
 keywords = ["", ""]
 description =  "As A Service"

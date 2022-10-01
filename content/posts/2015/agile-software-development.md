@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/Agile-Marketing-Series-What-is-Agile-Marketing.png?w=579&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/Agile-Marketing-Series-What-is-Agile-Marketing.png?w=579&ssl=1']
-tags = ["Programming", "Agile"]
+tags = ["Agile"]
 category="tech"
 keywords = ["", ""]
 description =  "Agile Software Development"
