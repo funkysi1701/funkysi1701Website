@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/05/error.jpg?w=385&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/05/error.jpg?w=385&ssl=1']
-tags = ["Database", "Access", "Integer", "SQL", "Overflow", "Variables", "Programming"]
+tags = ["Database", "Access", "Integer", "SQL", "Overflow", "Variables"]
 category="tech"
 keywords = ["", ""]
 description =  "Overflow"

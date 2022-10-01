@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/08/in-case-you-missed-it-small.jpg?w=400&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/08/in-case-you-missed-it-small.jpg?w=400&ssl=1']
-tags = ["ICYMI", "Learning", "Programming"]
+tags = ["ICYMI", "Learning"]
 category="tech"
 keywords = ["", ""]
 description =  "ICYMI What does it mean?"

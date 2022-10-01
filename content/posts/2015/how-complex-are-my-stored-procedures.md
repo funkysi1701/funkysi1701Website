@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/08/complexity.jpg?resize=278%2C289"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/08/complexity.jpg?resize=278%2C289']
-tags = ["Complexity", "SQL", "Programming"]
+tags = ["Complexity", "SQL"]
 category="tech"
 keywords = ["", ""]
 description =  "How complex are my stored procedures?"

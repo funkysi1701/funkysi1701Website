@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/11666093_10153470803062792_4914668365512645054_n.jpg?w=960&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/11666093_10153470803062792_4914668365512645054_n.jpg?w=960&ssl=1']
-tags = ["Debugging", "Bugs", "Programming"]
+tags = ["Debugging", "Bugs"]
 category="tech"
 keywords = ["", ""]
 description =  "Why do we call them bugs?"

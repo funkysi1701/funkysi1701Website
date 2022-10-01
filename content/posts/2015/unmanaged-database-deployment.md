@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/09/deploy.jpg?resize=263%2C300&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/09/deploy.jpg?resize=263%2C300&ssl=1']
-tags = ["SQL", "Programming", "Backups", "Deployment"]
+tags = ["SQL",  "Backups", "Deployment"]
 category="tech"
 keywords = ["", ""]
 description =  "Unmanaged Database Deployment"
