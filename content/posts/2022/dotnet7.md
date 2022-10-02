@@ -16,12 +16,12 @@ readingTime = true
 copyright = false
 featured = false
 aliases = [
-    "/makecode-and-the-bbc-microbit-584",
+    "/upgrading-to-net-7-1mon",
     "/posts/dotnet7",
     "/posts/2022/10/01/dotnet7",
-    "/posts/makecode-and-the-bbc-microbit-584",
-    "/posts/2022/10/01/makecode-and-the-bbc-microbit-584",
-    "/2022/10/01/makecode-and-the-bbc-microbit-584"    
+    "/posts/upgrading-to-net-7-1mon",
+    "/posts/2022/10/01/upgrading-to-net-7-1mon",
+    "/2022/10/01/upgrading-to-net-7-1mon"    
 ]
 +++
 I have a Blazor application that was built with .Net Core 3, and I have updated it to .Net 5 and later .Net 6 when those versions of were released. In November .Net 7 is released so I have been testing it with the .Net 7 previews.
@@ -138,7 +138,7 @@ Here is the command line step I added
 My build was all working so now time to test the application was working. But an error was being thrown if I tried to save any data to the SQL Server database.
 
 ```
-Could not save changes because the target table has database triggers. Please configure your entity type accordingly, see https://aka.ms/efcore-docs-sqlserver-save-changes-and-triggers for more information. The target table 'Project Diary' of the DML statement cannot have any enabled triggers if the statement contains an OUTPUT clause without INTO clause. 
+Could not save changes because the target table has database triggers. Please configure your entity type accordingly, see https://aka.ms/efcore-docs-sqlserver-save-changes-and-triggers for more information. The target table 'Something' of the DML statement cannot have any enabled triggers if the statement contains an OUTPUT clause without INTO clause. 
 ```
 
 A nice error, as it gives me a link to the change and what to do to fix.
