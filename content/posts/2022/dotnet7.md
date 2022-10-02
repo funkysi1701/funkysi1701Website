@@ -138,7 +138,7 @@ Here is the command line step I added
 My build was all working so now time to test the application was working. But an error was being thrown if I tried to save any data to the SQL Server database.
 
 ```
-Could not save changes because the target table has database triggers. Please configure your entity type accordingly, see https://aka.ms/efcore-docs-sqlserver-save-changes-and-triggers for more information. The target table 'Project Diary' of the DML statement cannot have any enabled triggers if the statement contains an OUTPUT clause without INTO clause. 
+Could not save changes because the target table has database triggers. Please configure your entity type accordingly, see https://aka.ms/efcore-docs-sqlserver-save-changes-and-triggers for more information. The target table 'Something' of the DML statement cannot have any enabled triggers if the statement contains an OUTPUT clause without INTO clause. 
 ```
 
 A nice error, as it gives me a link to the change and what to do to fix.
