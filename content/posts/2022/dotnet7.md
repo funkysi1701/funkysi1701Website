@@ -16,12 +16,12 @@ readingTime = true
 copyright = false
 featured = false
 aliases = [
-    "/makecode-and-the-bbc-microbit-584",
+    "/upgrading-to-net-7-1mon",
     "/posts/dotnet7",
     "/posts/2022/10/01/dotnet7",
-    "/posts/makecode-and-the-bbc-microbit-584",
-    "/posts/2022/10/01/makecode-and-the-bbc-microbit-584",
-    "/2022/10/01/makecode-and-the-bbc-microbit-584"    
+    "/posts/upgrading-to-net-7-1mon",
+    "/posts/2022/10/01/upgrading-to-net-7-1mon",
+    "/2022/10/01/upgrading-to-net-7-1mon"    
 ]
 +++
 I have a Blazor application that was built with .Net Core 3, and I have updated it to .Net 5 and later .Net 6 when those versions of were released. In November .Net 7 is released so I have been testing it with the .Net 7 previews.
