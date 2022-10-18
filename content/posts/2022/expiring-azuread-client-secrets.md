@@ -107,4 +107,4 @@ I am doing a low tech solution for now, and just emailing myself the expiry date
 
 Later on I might add a bit more logic to only email myself when the expiry is less than 30 days, a reminder to create a new secret. When creating a new secret in Azure AD, I also need to add the secret and expiry date into Key Vault.
 
-At the very least this solution will give me an early warning of when my secrets are about to expire. It is possible to get my app to read information from Key Vault directly which I may well investigate.
+At the very least this solution will give me an early warning of when my secrets are about to expire. It is possible to get my website to read information from Key Vault directly which I may well investigate.
