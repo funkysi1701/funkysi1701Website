@@ -16,12 +16,12 @@ readingTime = true
 copyright = false
 featured = false
 aliases = [
-    "/upgrading-to-net-7-1mon",
+    "/expiring-azure-ad-client-secrets-22m2",
     "/posts/expiring-azuread-client-secrets",
     "/posts/2022/10/18/expiring-azuread-client-secrets",
-    "/posts/upgrading-to-net-7-1mon",
-    "/posts/2022/10/18/upgrading-to-net-7-1mon",
-    "/2022/10/18/upgrading-to-net-7-1mon"    
+    "/posts/expiring-azure-ad-client-secrets-22m2",
+    "/posts/2022/10/18/expiring-azure-ad-client-secrets-22m2",
+    "/2022/10/18/expiring-azure-ad-client-secrets-22m2"    
 ]
 +++
 This morning the client complains that the website is not working. I do some checking and I confirm that there is indeed an error.
