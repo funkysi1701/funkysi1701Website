@@ -17,7 +17,7 @@
     "mustache": "4.2.0",
     "node-sass": "7.0.3",
     "popper.js": "1.16.1",
-    "viewerjs": "1.11.0",
+    "viewerjs": "1.11.1",
     "workbox-broadcast-update": "6.5.4",
     "workbox-cacheable-response": "6.5.4",
     "workbox-expiration": "6.5.4",
