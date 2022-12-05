@@ -16,12 +16,12 @@ readingTime = true
 copyright = false
 featured = false
 aliases = [
-    "/expiring-azure-ad-client-secrets-22m2",
+    "/ddd-north-4p48",
     "/posts/ddd-north",
     "/posts/2022/12/05/ddd-north",
-    "/posts/expiring-azure-ad-client-secrets-22m2",
-    "/posts/2022/12/05/expiring-azure-ad-client-secrets-22m2",
-    "/2022/12/05/expiring-azure-ad-client-secrets-22m2"    
+    "/posts/ddd-north-4p48",
+    "/posts/2022/12/05/ddd-north-4p48",
+    "/2022/12/05/ddd-north-4p48"    
 ]
 +++
 On Saturday 3rd December I attended [DDD North](https://www.dddnorth.co.uk/). It is a community run conference for Developers (the D's stand for Developer) and I had a fab time there. Many conferences are going online which is great, however there is nothing quite like chatting over coffee or lunch with fellow Developers about the tech you are learning about, this was probably my favourite thing about the conference. 
