@@ -40,6 +40,6 @@ Lunch was next and the food was excellent. I found myself sitting with Jamie Tay
 
 The fourth talk was 'Why don't people seem to be able to diagnose problems these days?' by [Richard Fennell](https://twitter.com/richardfennell). This was a fascinating walk through computer history and the challenges of finding where the problem is. The slides from this talk are available [here](https://github.com/rfennell/Presentations/blob/main/Why%20don't%20people%20seem%20to%20be%20able%20to%20diagnose%20problems%20these%20days.pptx)
 
-The last talk was 'Emptahy, Sympathy, and Compassion' by [Jamie Taylor](https://twitter.com/podcasterJay) who I had met at lunch. This was a fascinating look at how we place barriers between ourselves as Developers and the users of the software. It expanded into ethics, code of conduct and doing good. The slides from this talk are available [here](https://shorturl.at/mAMUZ)
+The last talk was 'Empathy, Sympathy, and Compassion' by [Jamie Taylor](https://twitter.com/podcasterJay) who I had met at lunch. This was a fascinating look at how we place barriers between ourselves as Developers and the users of the software. It expanded into ethics, code of conduct and doing good. The slides from this talk are available [here](https://shorturl.at/mAMUZ)
 
 It was a great event so thank you [DDD North](https://twitter.com/dddnorth) for all your hard work, I look forward to the next one. I have lots to go away and think about.
