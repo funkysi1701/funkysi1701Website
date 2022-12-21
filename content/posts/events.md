@@ -18,7 +18,7 @@ aliases = [
 
 A list of events I have attended.
 
-| Title | Date |
+| Event/Talk | Date |
 | --- | --- |
 | Microsoft Datacenter Tour: Virtual Experience | 6 December 2022   | 
 | [DDD North](/posts/2022/ddd-north)            | 3rd December 2022 |
