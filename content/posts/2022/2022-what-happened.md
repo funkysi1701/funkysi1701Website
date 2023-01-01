@@ -16,12 +16,12 @@ summary = "As 2022 draws to a close its time to do my annual look back at what h
 showFullContent = false
 readingTime = true
 aliases = [
-    "/2022-goals-24nj",
+    "/2022-what-happened-mm8",
     "/posts/2022-what-happened/",
-    "/posts/2022-goals-24nj",
-    "/posts/2022/12/31/2022-goals-24nj",
+    "/posts/2022-what-happened-mm8",
+    "/posts/2022/12/31/2022-what-happened-mm8",
     "/posts/2022/12/31/2022-what-happened",
-    "/2022/12/31/2022-goals-24nj",
+    "/2022/12/31/2022-what-happened-mm8",
     "/2022/12/31/2022-what-happened"
 ]
 +++
