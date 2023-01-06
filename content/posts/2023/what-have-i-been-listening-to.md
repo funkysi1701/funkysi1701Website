@@ -16,12 +16,12 @@ summary = "I love listening to podcasts so I thought I would share what I have b
 showFullContent = false
 readingTime = true
 aliases = [
-    "/2022-goals-24nj",
+    "/what-podcasts-have-i-been-listening-to-10m1",
     "/posts/what-have-i-been-listening-to/",
-    "/posts/2022-goals-24nj",
-    "/posts/2023/01/05/2022-goals-24nj",
+    "/posts/what-podcasts-have-i-been-listening-to-10m1",
+    "/posts/2023/01/05/what-podcasts-have-i-been-listening-to-10m1",
     "/posts/2023/01/05/what-have-i-been-listening-to",
-    "/2023/01/05/2022-goals-24nj",
+    "/2023/01/05/what-podcasts-have-i-been-listening-to-10m1",
     "/2023/01/05/what-have-i-been-listening-to"
 ]
 +++
