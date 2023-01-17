@@ -52,3 +52,9 @@ This was a great show celebrating 150 shows, and was a lucky dip into all the 14
 [Weekly Update 327](https://www.troyhunt.com/weekly-update-327/)
 
 I like listening to what Troy has been up to in the last week. (I am a bit behind as this show came out at Christmas time) Troy talks about Twitter and Elon Musk, and the LastPass data breach. I am a big fan of 1Password for my password manager but my employer uses LastPass
+
+## Troy Vinson: Learning From the Rackspace Security Breach 
+
+[Azure DevOps Podcast Episode 225](https://www.youtube.com/watch?v=MsK5zaUogJ4)
+
+An interesting look at security.
