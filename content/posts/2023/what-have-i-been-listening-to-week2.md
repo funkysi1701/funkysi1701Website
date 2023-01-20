@@ -58,3 +58,9 @@ I like listening to what Troy has been up to in the last week. (I am a bit behin
 [Azure DevOps Podcast Episode 225](https://www.youtube.com/watch?v=MsK5zaUogJ4)
 
 An interesting look at security.
+
+## Dr. Gregory Kapfhammer wants to stop flaky tests
+
+[Hanselminutes episode 874](https://hanselminutes.com/874/dr-gregory-kapfhammer-wants-to-stop-flaky-tests)
+
+I am currently looking at fixing some flaky tests on a codebase I am not familiar with so this is a great podcast to listen to. The episode goes through common reactions to flaky tests, why tests get flaky and what to do about them.
