@@ -1,14 +1,14 @@
 +++
 title = "What podcasts have I been listening to - Week 2"
-date = "2023-01-18T00:00:00Z"
+date = "2023-01-23T00:00:00Z"
 year = "2023"
 month= "2023-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 copyright = false
-cover = "/images/dotnetrocks.jpg"
-images = ['/images/dotnetrocks.jpg']
-tags = ["Podcast", "Leadership", "Open Source", "StarTrek"]
+cover = "/images/872.jpg"
+images = ['/images/872.jpg']
+tags = ["Podcast", "Leadership", "Open Source", "StarTrek", "Mastodon", "Tests"]
 category="tech"
 keywords = ["", ""]
 description = "I love listening to podcasts so I thought I would share what I have been listening to over the last few days"
@@ -19,15 +19,14 @@ aliases = [
     "/what-podcasts-have-i-been-listening-to-10m1",
     "/posts/what-have-i-been-listening-to-week2/",
     "/posts/what-podcasts-have-i-been-listening-to-10m1",
-    "/posts/2023/01/18/what-podcasts-have-i-been-listening-to-10m1",
-    "/posts/2023/01/18/what-have-i-been-listening-to-week2",
-    "/2023/01/18/what-podcasts-have-i-been-listening-to-10m1",
-    "/2023/01/18/what-have-i-been-listening-to-week2"
+    "/posts/2023/01/23/what-podcasts-have-i-been-listening-to-10m1",
+    "/posts/2023/01/23/what-have-i-been-listening-to-week2",
+    "/2023/01/23/what-podcasts-have-i-been-listening-to-10m1",
+    "/2023/01/23/what-have-i-been-listening-to-week2"
 ]
 +++
 
-I love listening to podcasts so I thought I would share what I have been listening to over the last few days.
-
+Another week has gone by so here is a rundown of my podcasts listenings...
 
 ## Hachyderm's Kris Nova on running a Mastodon Server
 
@@ -57,7 +56,7 @@ I like listening to what Troy has been up to in the last week. (I am a bit behin
 
 [Azure DevOps Podcast Episode 225](https://www.youtube.com/watch?v=MsK5zaUogJ4)
 
-An interesting look at security.
+An interesting look at security and the recent rackspace incident. I used to be a big fan of Rackspace but in recent years I have been more interested in cloud offerings like Azure.
 
 ## Dr. Gregory Kapfhammer wants to stop flaky tests
 
