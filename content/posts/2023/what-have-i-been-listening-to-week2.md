@@ -1,13 +1,13 @@
 +++
 title = "What podcasts have I been listening to - Week 2"
-date = "2023-01-18T00:00:00Z"
+date = "2023-01-23T00:00:00Z"
 year = "2023"
 month= "2023-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 copyright = false
-cover = "/images/dotnetrocks.jpg"
-images = ['/images/dotnetrocks.jpg']
+cover = "/images/872.jpg"
+images = ['/images/872.jpg']
 tags = ["Podcast", "Leadership", "Open Source", "StarTrek"]
 category="tech"
 keywords = ["", ""]
@@ -19,10 +19,10 @@ aliases = [
     "/what-podcasts-have-i-been-listening-to-10m1",
     "/posts/what-have-i-been-listening-to-week2/",
     "/posts/what-podcasts-have-i-been-listening-to-10m1",
-    "/posts/2023/01/18/what-podcasts-have-i-been-listening-to-10m1",
-    "/posts/2023/01/18/what-have-i-been-listening-to-week2",
-    "/2023/01/18/what-podcasts-have-i-been-listening-to-10m1",
-    "/2023/01/18/what-have-i-been-listening-to-week2"
+    "/posts/2023/01/23/what-podcasts-have-i-been-listening-to-10m1",
+    "/posts/2023/01/23/what-have-i-been-listening-to-week2",
+    "/2023/01/23/what-podcasts-have-i-been-listening-to-10m1",
+    "/2023/01/23/what-have-i-been-listening-to-week2"
 ]
 +++
 
