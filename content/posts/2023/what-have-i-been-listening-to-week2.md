@@ -8,7 +8,7 @@ authorTwitter = "funkysi1701" #do not include @
 copyright = false
 cover = "/images/872.jpg"
 images = ['/images/872.jpg']
-tags = ["Podcast", "Leadership", "Open Source", "StarTrek"]
+tags = ["Podcast", "Leadership", "Open Source", "StarTrek", "Mastodon", "Tests"]
 category="tech"
 keywords = ["", ""]
 description = "I love listening to podcasts so I thought I would share what I have been listening to over the last few days"
@@ -26,8 +26,7 @@ aliases = [
 ]
 +++
 
-I love listening to podcasts so I thought I would share what I have been listening to over the last few days.
-
+Another week has gone by so here is a rundown of my podcasts listenings...
 
 ## Hachyderm's Kris Nova on running a Mastodon Server
 
@@ -57,7 +56,7 @@ I like listening to what Troy has been up to in the last week. (I am a bit behin
 
 [Azure DevOps Podcast Episode 225](https://www.youtube.com/watch?v=MsK5zaUogJ4)
 
-An interesting look at security.
+An interesting look at security and the recent rackspace incident. I used to be a big fan of Rackspace but in recent years I have been more interested in cloud offerings like Azure.
 
 ## Dr. Gregory Kapfhammer wants to stop flaky tests
 
