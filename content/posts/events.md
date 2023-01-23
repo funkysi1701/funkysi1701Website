@@ -20,6 +20,7 @@ A list of events I have attended.
 
 | Event/Talk | Date |
 | --- | --- |
+| *Scottish Summit 2023* | *Date to be confirmed* |
 | Microsoft Datacenter Tour: Virtual Experience | 6 December 2022   | 
 | [DDD North](/posts/2022/ddd-north)            | 3rd December 2022 |
 | LeedsSharp Azure Patterns for Fun and Profit | 24th November 2022 |
