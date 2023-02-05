@@ -43,7 +43,7 @@ Look in the bottom right corner of the status bar and you should see you are con
 
 Now if you type sql you will see a long list of SQL code snippets that you could use.
 
-![](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/11/vscode-sql-snippets.png?resize=662%2C348&ssl=1)
+![SQL Code snippets](https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2017/11/vscode-sql-snippets.png?resize=662%2C348&ssl=1)
 
 Choose a snippet to create, and edit it as required. When you are happy press  **CTRL+SHIFT+E ** to execute.
 

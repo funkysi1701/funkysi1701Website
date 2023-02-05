@@ -28,7 +28,7 @@ I have a Blazor application that was built with .Net Core 3, and I have updated 
 
 However for this update I encountered a few more issues than I remember from the other updates.
 
-# Automapper
+## Automapper
 
 The first issue I encountered was with Automapper. My Unit tests failed with the following error
 
@@ -76,7 +76,7 @@ https://github.com/AutoMapper/AutoMapper/pull/3999
 
 This week [version 12](https://github.com/AutoMapper/AutoMapper/releases/tag/v12.0.0) of Automapper was released and it fixed this issue for me.
 
-# Code Coverage
+## Code Coverage
 
 My build includes the calculation of code coverage of my unit tests. For some reason this step was failing.
 
