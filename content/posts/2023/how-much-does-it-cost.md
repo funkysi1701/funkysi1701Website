@@ -38,11 +38,11 @@ This is my monthly charges over the last few months. In Sept/Oct I switched from
 
 ![](/images/monthly-costs.png)
 
-This website you are reading this on (assuming you are not on DevTo or Hashnode) is running Hugo which runs on a Azure Static Web App, the free tier so almost free. I have two of these, a production one and a test one. Source code is on Github (another free service), and auto deploys via Github actions. I have a load of images which I have stuffed in blob storage from when I used to run a wordpress site, the cost for file storage is minimal.
+This website you are reading this on (assuming you are not on DevTo or Hashnode) is running Hugo which runs on an Azure Static Web App, the free tier so almost free. I have two of these, a production one and a test one. Source code is on Github (another free service), and auto deploys via Github actions. I have a load of images which I have stuffed in blob storage from when I used to run a wordpress site, the cost for file storage is minimal.
 
-I also have a service I built using Azure Functions and Static Web Apps which makes use of public APIs like (Twitter/Mastodon/GitHub etc), data for this is stored in the free tier of Mongo DB Atlas. I then use consumption tier Azure Functions and Free Static Web App to do stuff. The definition of what I have deployed is all setup in Pulumi, so I have identical environments for Dev/Test/Prod mostly becuase I can rather than it being business critical or getting a lot of traffic. 
+I also have a service I built using Azure Functions and Static Web Apps which makes use of public APIs like (Twitter/Mastodon/GitHub etc), data for this is stored in the free tier of Mongo DB Atlas. I then use consumption tier Azure Functions and Free Static Web App to do stuff. The definition of what I have deployed is all setup in Pulumi, so I have identical environments for Dev/Test/Prod mostly because I can rather than it being business critical or getting a lot of traffic. 
 
-I currently have 240Mb of data in my free MongoDb database, I have 512 Mb max storage to play with. I have plenty of data to play with at this tier, but I may investigate other options that involve storing less or what costs might be. I previously made use of cosmosDB, which was costing me btween £10-£20 per month, so not breaking the bank, but also cheaper to use MongoDB.
+I currently have 240Mb of data in my free MongoDb database, I have 512 Mb max storage to play with. I have plenty of data to play with at this tier, but I may investigate other options that involve storing less or what costs might be. I previously made use of cosmosDB, which was costing me between £10-£20 per month, so not breaking the bank, but also cheaper to use MongoDB.
 
 Interrogating the Azure Cost Analysis tool reveals that my biggest cost is file storage (67p Prod, 101p Test and 93p Dev), I may investigate this a bit and see what is using this, but its not breaking the bank so I am pretty happy.
 
