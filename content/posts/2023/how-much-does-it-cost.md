@@ -16,12 +16,12 @@ summary = "How much does it cost?"
 showFullContent = false
 readingTime = true
 aliases = [
-    "/what-podcasts-have-i-been-listening-to-week-2-4koi",
+    "/how-much-does-it-cost-2b3d",
     "/posts/how-much-does-it-cost/",
-    "/posts/what-podcasts-have-i-been-listening-to-week-2-4koi",
-    "/posts/2023/02/04/what-podcasts-have-i-been-listening-to-week-2-4koi",
+    "/posts/how-much-does-it-cost-2b3d",
+    "/posts/2023/02/04/how-much-does-it-cost-2b3d",
     "/posts/2023/02/04/how-much-does-it-cost",
-    "/2023/02/04/what-podcasts-have-i-been-listening-to-week-2-4koi",
+    "/2023/02/04/how-much-does-it-cost-2b3d",
     "/2023/02/04/how-much-does-it-cost"
 ]
 +++
