@@ -18,13 +18,14 @@ aliases = [
 
 A list of events I have attended.
 
-| Event/Talk | Date |
-| --- | --- |
-| Scottish Summit 2023 (Manchester) | 5 August 2023 |
-| Microsoft Datacenter Tour: Virtual Experience | 6 December 2022   | 
-| [DDD North](/posts/2022/ddd-north)            | 3rd December 2022 |
-| LeedsSharp Azure Patterns for Fun and Profit | 24th November 2022 |
-| .Net Conf (Keynote only) | 8th November 2022 |
-| [Scottish Summit](/posts/2022/scottishsummit/) | 10th/11th June 2022|
-| The .Network (Networking event) | 28th April 2022 |
+| Event/Talk | Date | Location | 
+| --- | --- | --- |
+| Scottish Summit 2023 | 5 August 2023 | Manchester |
+| SteelCon | 8 July 2023 | Sheffield |
+| Microsoft Datacenter Tour: Virtual Experience | 6 December 2022   | Online |
+| [DDD North](/posts/2022/ddd-north)            | 3rd December 2022 | Hull |
+| LeedsSharp Azure Patterns for Fun and Profit | 24th November 2022 | Leeds |
+| .Net Conf (Keynote only) | 8th November 2022 | Online |
+| [Scottish Summit](/posts/2022/scottishsummit/) | 10th/11th June 2022 | Glasgow |
+| The .Network (Networking event) | 28th April 2022 | Leeds |
 
