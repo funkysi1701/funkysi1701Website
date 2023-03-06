@@ -22,7 +22,8 @@ A list of events I have attended.
 | --- | --- | --- |
 | *Scottish Summit 2023* | *5 August 2023* | *Manchester* |
 | *SteelCon* | *8 July 2023* | *Sheffield* |
-| *dotnet York* | *2 March 2023* | *York* |
+| *DevBoss* | *30 March 2023* | *Leeds* |
+| dotnet York Machine Learning with ML.Net | 2 March 2023 | York |
 | Microsoft Datacenter Tour: Virtual Experience | 6 December 2022   | Online |
 | [DDD North](/posts/2022/ddd-north)            | 3rd December 2022 | Hull |
 | LeedsSharp Azure Patterns for Fun and Profit | 24th November 2022 | Leeds |
