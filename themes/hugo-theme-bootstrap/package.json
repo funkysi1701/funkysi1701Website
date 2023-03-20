@@ -28,8 +28,8 @@
   "devDependencies": {
     "@babel/core": "7.21.3",
     "@popperjs/core": "2.11.6",
-    "@typescript-eslint/eslint-plugin": "5.55.0",
-    "@typescript-eslint/parser": "5.55.0",
+    "@typescript-eslint/eslint-plugin": "5.56.0",
+    "@typescript-eslint/parser": "5.56.0",
     "autoprefixer": "10.4.14",
     "babel-loader": "9.1.2",
     "css-loader": "6.7.3",
