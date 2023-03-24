@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.21.3",
-    "@popperjs/core": "2.11.6",
+    "@popperjs/core": "2.11.7",
     "@typescript-eslint/eslint-plugin": "5.56.0",
     "@typescript-eslint/parser": "5.56.0",
     "autoprefixer": "10.4.14",
