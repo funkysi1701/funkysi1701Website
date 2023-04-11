@@ -53,7 +53,7 @@
     "postcss": "8.4.21",
     "postcss-loader": "7.2.4",
     "purgecss-webpack-plugin": "5.0.0",
-    "sass": "1.61.0",
+    "sass": "1.62.0",
     "sass-loader": "13.2.2",
     "scss": "0.2.4",
     "scss-loader": "0.0.1",
