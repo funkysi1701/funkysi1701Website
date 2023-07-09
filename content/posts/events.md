@@ -21,7 +21,7 @@ A list of events I have attended.
 | Event/Talk | Date | Location | 
 | --- | --- | --- |
 | *Scottish Summit 2023* | *5 August 2023* | *Manchester* |
-| *SteelCon* | *8 July 2023* | *Sheffield* |
+| SteelCon | 8 July 2023 | Sheffield |
 | Yorkshire Azure | 13 June 2023 | Leeds |
 | DevBoss | 20 April 2023 | Leeds |
 | dotnet York Machine Learning with ML.Net | 2 March 2023 | York |
