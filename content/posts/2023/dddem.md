@@ -7,7 +7,6 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 copyright = false
 cover = ""
-images = ['']
 tags = ["DotNet", "Community", "Conference", "DDD East Midlands"]
 category="tech"
 keywords = ["", ""]
