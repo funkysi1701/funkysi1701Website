@@ -9,7 +9,6 @@ googleAnalytics = "G-N1YJNQEHR4"
   main = [
       {Name = "About", URL = "/about"},
       {Name = "Pwned Pass", URL = "/pwned-pass"},
-      {Name = "Metrics", URL = "https://metrics-prod.funkysi1701.com/"},
       {Name = "Funky Si: The Next Generation", URL = "/funky-si-the-next-generation"},
       {Name = "Events", URL = "/events"},
       {Name = "Podcasts", URL = "/podcasts"}
