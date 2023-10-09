@@ -32,14 +32,28 @@ On Saturday 7th October I attended [DDD East Midlands](https://dddeastmidlands.c
 
 [Matt Hunt](https://twitter.com/DoesDotNet) talked about microservice mistakes he had made.
 
-
+1) Long lived small teams
+2) Can't test by **only** interacting with the frontend
+3) Use events as well as API calls
+4) Need to be able to deploy independently of each other
+5) Have a specific reason for using microservices, a problem to solve
 
 ## The Art of the Bad Code Review
 
+A 15 minute lightning talk with [Martyn Kilbryde](https://twitter.com/makitdev)
+
 ## Git Under the covers
+
+Another 15 minute lightning talk with [Dan Clarke](https://twitter.com/dracan)
 
 ## This talk could have been a blog post
 
+Another 15 minute lightning talk with [Jamie Tanna](https://twitter.com/JamieTanna)
+
 ## How to create the conditions where happy people do their best work
 
+[Paul Bailey](https://twitter.com/paul_bailey_) introduced the concept of Communities of Practice.
+
 ## Building Robots for Complete Beginners
+
+Last talk of the day was my favourite (because it was about Robots) [Mark Goodwin](https://www.linkedin.com/in/mark4security/) talked about building Robots using Rasbery Pi Pico (a microcontroller board), most of his examples used python. His demo can be found https://github.com/computerist/robot-demos
