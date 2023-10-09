@@ -15,7 +15,7 @@ description = "DDD East Midlands"
 summary = "DDD East Midlands"
 showFullContent = false
 readingTime = true
-draft = true
+draft = false
 aliases = [
     "/2023/10/09/ddd-east-midlands"
 ]
