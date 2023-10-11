@@ -60,7 +60,7 @@ A 15 minute lightning talk with [Martyn Kilbryde](https://twitter.com/makitdev) 
 
 Another 15 minute lightning talk with [Dan Clarke](https://twitter.com/dracan) This looked at the inner workings of git, this was fascinating as every part points at another part which is obviously part of the reason git is so powerful. It was quite technical and I am sure some of it went over my head.
 
-![]()
+![](/images/ddd_avatar_300.jpg)
 
 ## This talk could have been a blog post
 
@@ -70,7 +70,7 @@ Another 15 minute lightning talk with [Jamie Tanna](https://twitter.com/JamieTan
 
 [Paul Bailey](https://twitter.com/paul_bailey_) introduced the concept of Communities of Practice. Lots of the features of a Community of Practice I have heard of or been in teams that implement. *"Communities of Practice are groups of people who share a concern or passion for something they do and learn how to do it better as they interact regularly"*
 
-![]()
+![](/images/ddd_avatar_300.jpg)
 
 ## Building Robots for Complete Beginners
 
