@@ -17,6 +17,7 @@ showFullContent = false
 readingTime = true
 draft = false
 aliases = [
+    "/ddd-east-midlands-16hh",
     "/2023/10/09/ddd-east-midlands"
 ]
 +++
