@@ -40,20 +40,38 @@ On Saturday 7th October I attended [DDD East Midlands](https://dddeastmidlands.c
 
 ## The Art of the Bad Code Review
 
-A 15 minute lightning talk with [Martyn Kilbryde](https://twitter.com/makitdev)
+A 15 minute lightning talk with [Martyn Kilbryde](https://twitter.com/makitdev) A fun talk showing some examples of bad code reviews, a few takeaways from this:
+
+ - Explain what is being fixed with a link to the ticket
+ - Give specific, actionable feedback
+ - Balance the boy scout rule of leaving the code better than when you found it with do one thing rule
+ - Don't make assumptions -> have a conversation instead
+ - Be helpful and constructive, not dismissive and negative
+ - Use a branch per ticket, don't tie them together
+ - Refer to the requirements
+ - No room for ego, code belongs to the team not an individual
+ - Avoid overly verbose comments
+ - Pragmatism is important
+ - If urgent, raise additional tickets with tech debt issues
+- Challenge if necessary, but do so respectfully
+- Don't do a piecemeal review
 
 ## Git Under the covers
 
-Another 15 minute lightning talk with [Dan Clarke](https://twitter.com/dracan)
+Another 15 minute lightning talk with [Dan Clarke](https://twitter.com/dracan) This looked at the inner workings of git, this was fascinating as every part points at another part which is obviously part of the reason git is so powerful. It was quite technical and I am sure some of it went over my head.
+
+![]()
 
 ## This talk could have been a blog post
 
-Another 15 minute lightning talk with [Jamie Tanna](https://twitter.com/JamieTanna)
+Another 15 minute lightning talk with [Jamie Tanna](https://twitter.com/JamieTanna). This was a good talk about the importance of blogging. He used the phrase **blogumentation**, now I have heard of this before but not its name. It is where you use your blog to document what you have learnt, it can be anything a new command or a new language or technology. This talk inspired me to write this blog post, Thank you Jamie. His blog can be found at https://www.jvt.me/posts/2023/10/07/why-blog/
 
 ## How to create the conditions where happy people do their best work
 
-[Paul Bailey](https://twitter.com/paul_bailey_) introduced the concept of Communities of Practice.
+[Paul Bailey](https://twitter.com/paul_bailey_) introduced the concept of Communities of Practice. Lots of the features of a Community of Practice I have heard of or been in teams that implement. *"Communities of Practice are groups of people who share a concern or passion for something they do and learn how to do it better as they interact regularly"*
+
+![]()
 
 ## Building Robots for Complete Beginners
 
-Last talk of the day was my favourite (because it was about Robots) [Mark Goodwin](https://www.linkedin.com/in/mark4security/) talked about building Robots using Rasbery Pi Pico (a microcontroller board), most of his examples used python. His demo can be found https://github.com/computerist/robot-demos
+Last talk of the day was my favourite (because it was about Robots) [Mark Goodwin](https://www.linkedin.com/in/mark4security/) talked about building Robots using Rasbery Pi Pico (a microcontroller board), most of his examples used python. His demo can be found at https://github.com/computerist/robot-demos This fascinated me as I have already dipped my toe into this area when playing with [microbits](/posts/2022/microbit/)
