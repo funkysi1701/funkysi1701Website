@@ -24,11 +24,11 @@ Recently I have been reading the first few chapters of Patrick Stewart's Memoir,
 
 Yes, there are other things in his life but this is what motivates much of his decisions. At 12 he went on an 8 day residential drama course, where he met like minded people that encourage him. So much that he continued to meet with them years after that course finished to improve his skills as an actor. This led to him being involved in all sorts of amateur dramatic groups. 
 
-<img src="/images/patrick-stewart.jpg" width="400px" align="left" />
+<img src="/images/patrick-stewart.jpg" width="400px" style="float:right" />
 
 After school he couldn't see a future in acting professionally so took a job at a newspaper.  However as soon as this job interfered with his acting, it allowed him to reassess his priorities and he began saving for drama school. Once at drama school he continues to improve his skills. He has a singular vision in these early years to become an actor, and within a few weeks of leaving his training he is working as an actor for a theatre. I have got up to the point where he is about to go on a world tour with a theatre group. His first few jobs he continues to work on his skills. There is no doubt in my mind that this sense of continuous improvement helped mold PS into the actor we know today.
 
-<img src="/images/million-miles.jpg" width="400px" align="right" />
+<img src="/images/million-miles.jpg" width="400px" style="float:left" />
 
 A film I saw recently has a similar tale of a singular vision. [A million miles away](https://www.amazon.co.uk/Million-Miles-Away-Michael-Pe%C3%B1a/dp/B0CC7MQFVD/ref=sr_1_1) tells the story of a man that wanted to be an Astronaut and applied to NASA 12 times (he was rejected 11 times!) He started life as a migrant farm worker, so similar to PS, started out facing poverty. He did everything in his power to achieve his goals, and didn't give up.
 
