@@ -10,7 +10,7 @@ hugo server -D
 To run on github codespace run
 hugo server -D --baseUrl="https://funkysi1701-funkysi1701-github-io-x5wvxvxfv9q4-1313.githubpreview.dev" --appendPort=false
 
-Test site can be found https://develop.funkysi1701-github-io.pages.dev or https://funkysi1701.github.io/
+Test site can be found https://funkysi1701.github.io/
 
 ### Prerequisites
 
@@ -22,7 +22,7 @@ What tests? I usually browse the test site and make sure everything looks good
 
 ## Deployment
 
-* PR into develop deploys to https://develop.funkysi1701-github-io.pages.dev using github actions, use feature branches if you can
+* PR into develop deploys to https://funkysi1701.github.io/ using github actions, use feature branches if you can
 * PR from develop to master deploys to https://funkysi1701.com using github actions
 
 ## Built With
