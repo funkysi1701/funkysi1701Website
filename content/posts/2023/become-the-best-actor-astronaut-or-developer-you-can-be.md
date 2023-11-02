@@ -1,6 +1,6 @@
 +++
 title = "Become the best Actor, Astronaut or Developer you can be!"
-date = "2023-11-01T00:00:00Z"
+date = "2023-11-03T00:00:00Z"
 year = "2023"
 month= "2023-11"
 author = "funkysi1701"
@@ -17,7 +17,7 @@ showFullContent = false
 readingTime = true
 draft = false
 aliases = [
-    "/2023/11/01/become-the-best-actor-astronaut-or-developer-you-can-be"
+    "/2023/11/03/become-the-best-actor-astronaut-or-developer-you-can-be"
 ]
 +++
 <img src="/images/patrick-stewart.jpg" width="400px" style="float:left;padding-right:8px" />
