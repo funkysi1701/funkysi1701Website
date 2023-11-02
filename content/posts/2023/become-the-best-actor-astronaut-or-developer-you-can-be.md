@@ -30,6 +30,9 @@ After school he couldn't see a future in acting professionally so took a job at 
 
 <img src="/images/million-miles.jpg" width="400px" style="float:right;padding-left:8px" />
 
-A film I saw recently has a similar tale of a singular vision. [A Million Miles Away](https://www.amazon.co.uk/Million-Miles-Away-Michael-Pe%C3%B1a/dp/B0CC7MQFVD/ref=sr_1_1) tells the story of a man that wanted to be an Astronaut and applied to NASA 12 times (he was rejected 11 times!) He started life as a migrant farm worker, (so similar to Patrick Stewart who also grew up in poverty). He did everything in his power to achieve his goals, and didn't give up.
+A film I saw recently has a similar tale of a singular vision. [A Million Miles Away](https://www.amazon.co.uk/Million-Miles-Away-Michael-Pe%C3%B1a/dp/B0CC7MQFVD/ref=sr_1_1) tells the story of Jose Hernandez, a man that wanted to be an Astronaut and applied to NASA 12 times (he was rejected 11 times!) He started life as a migrant farm worker, (so similar to Patrick Stewart who also grew up in poverty). He did everything in his power to achieve his goals, and didn't give up.
+
+Jose Hernandez, when facing failure looked at those that had got into NASA. What did they have that he didn't. He then worked on those areas to improve himself. He didn't give up, he kept going. He works on his fitness, he got a pilots license, he learns Russian.
 
 So what's my point. Have a Big Goal. It can be anything but it needs to be **big**. My big goal of becoming a developer was achieved many years ago, and since then I have done a fair amount of drifting through life. What I need to do is be more like Patrick Stewart and continue to improve my skills, everyday make myself a better developer. What problems am I facing, lets break them down into manageable goals and get them solved so I can move on to the next lot.
+
