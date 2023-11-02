@@ -1,5 +1,5 @@
 +++
-title = "Become the best Actor, Astronaut or Developer you can be"
+title = "Become the best Actor, Astronaut or Developer you can be!"
 date = "2023-11-01T00:00:00Z"
 year = "2023"
 month= "2023-11"
@@ -8,7 +8,7 @@ authorTwitter = "funkysi1701" #do not include @
 copyright = false
 cover = "/images/patrick-stewart.jpg"
 images = ['/images/patrick-stewart.jpg']
-tags = ["StarTrek","Patrick Stewart", "Goals" ]
+tags = ["StarTrek","Patrick Stewart", "Goals", "Jose Hernandez", "continuous improvement" ]
 category="tech"
 keywords = ["", ""]
 description = "Become the best Actor, Astronaut or Developer you can be"
@@ -32,7 +32,7 @@ After school he couldn't see a future in acting professionally so took a job at 
 
 A film I saw recently has a similar tale of a singular vision. [A Million Miles Away](https://www.amazon.co.uk/Million-Miles-Away-Michael-Pe%C3%B1a/dp/B0CC7MQFVD/ref=sr_1_1) tells the story of Jose Hernandez, a man that wanted to be an Astronaut and applied to NASA 12 times (he was rejected 11 times!) He started life as a migrant farm worker, (so similar to Patrick Stewart who also grew up in poverty). He did everything in his power to achieve his goals, and didn't give up.
 
-Jose Hernandez, when facing failure looked at those that had got into NASA. What did they have that he didn't. He then worked on those areas to improve himself. He didn't give up, he kept going. He works on his fitness, he got a pilots license, he learns Russian.
+Jose Hernandez, when facing failure looked at those that had got into NASA. What did they have that he didn't? He then worked on those areas to improve himself. He didn't give up, he kept going. He works on his fitness, he got a pilots license, he learns Russian.
 
 So what's my point. Have a Big Goal. It can be anything but it needs to be **big**. My big goal of becoming a developer was achieved many years ago, and since then I have done a fair amount of drifting through life. What I need to do is be more like Patrick Stewart and continue to improve my skills, everyday make myself a better developer. What problems am I facing, lets break them down into manageable goals and get them solved so I can move on to the next lot.
 
