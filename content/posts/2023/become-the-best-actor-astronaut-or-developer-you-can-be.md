@@ -17,6 +17,7 @@ showFullContent = false
 readingTime = true
 draft = false
 aliases = [
+    "become-the-best-actor-astronaut-or-developer-you-can-be-1e15",
     "/2023/11/03/become-the-best-actor-astronaut-or-developer-you-can-be"
 ]
 +++
