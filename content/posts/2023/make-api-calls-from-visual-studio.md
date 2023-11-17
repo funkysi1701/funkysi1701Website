@@ -64,7 +64,7 @@ The response has four tabs, a nicely json formatted response, a raw response, a 
 
 Now you will notice an env box underneath your file tabs, where the method dropdown is in a normal c# class file. It took me a while to figure out how to setup environments, but you can add a file that contain environment specific config, like base URL for test/prod/dev etc.
 
-This blog post tells me about it [](https://devblogs.microsoft.com/visualstudio/safely-use-secrets-in-http-requests-in-visual-studio-2022/) but the name thing is add a json file called **http-client.env.json** and create some json like this:
+This blog post tells me about it [here](https://devblogs.microsoft.com/visualstudio/safely-use-secrets-in-http-requests-in-visual-studio-2022/) but the name thing is add a json file called **http-client.env.json** and create some json like this:
 
 ```
   "local": {
