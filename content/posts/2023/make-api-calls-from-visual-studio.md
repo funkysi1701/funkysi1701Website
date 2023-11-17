@@ -15,7 +15,7 @@ description = "Make API calls from Visual Studio or Visual Studio Code"
 summary = "Make API calls from Visual Studio or Visual Studio Code"
 showFullContent = false
 readingTime = true
-draft = true
+draft = false
 aliases = [
     "/2023/11/17/make-api-calls-from-visual-studio"
 ]
