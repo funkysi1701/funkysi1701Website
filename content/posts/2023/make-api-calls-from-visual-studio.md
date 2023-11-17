@@ -16,7 +16,8 @@ showFullContent = false
 readingTime = true
 draft = false
 aliases = [
-    "/2023/11/17/make-api-calls-from-visual-studio"
+    "/make-api-calls-from-visual-studio",
+    "/2023/11/16/make-api-calls-from-visual-studio"
 ]
 +++
 It is that exciting time of year where Microsoft announce a new version of .Net (Version 8 this time) and Visual Studio. There have been lots of announcements which I am still digesting, but one that caught my eye was a new window in Visual Studio that shows all your API endpoints.
