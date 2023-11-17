@@ -6,8 +6,7 @@ month= "2023-11"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 copyright = false
-cover = "/images/monthly-costs.png"
-images = ['/images/monthly-costs.png']
+cover = ""
 tags = ["Visual Studio", "API" ]
 category="tech"
 keywords = ["", ""]
@@ -27,7 +26,7 @@ The new window is called **Endpoint Explorer** and can be added from the menu **
 
 If you right click on one of the endpoints you can view the code or send a request. It works with minimal APIs or standard MVC APIs. If you select send a request a .http file will be created, this is a feature that has been in Visual Studio for a while but I haven't taken much notice.
 
-The syntax for writng these API calls is fairly simple
+The syntax for writing these API calls is fairly simple
 
 ```
 GET {{Catalog.API_HostAddress}}/api/v1/catalog/items
