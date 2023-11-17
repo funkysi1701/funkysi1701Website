@@ -15,7 +15,7 @@ description = "Title"
 summary = "Title"
 showFullContent = false
 readingTime = true
-draft = false
+draft = true
 aliases = [
     "/2023/01/01/empty"
 ]
