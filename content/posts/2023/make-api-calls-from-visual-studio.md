@@ -1,6 +1,6 @@
 +++
 title = "Make API calls from Visual Studio or Visual Studio Code"
-date = "2023-11-19T21:20:00Z"
+date = "2023-11-19T22:45:00Z"
 year = "2023"
 month= "2023-11"
 author = "funkysi1701"
@@ -88,9 +88,7 @@ Other environment specific variables can be added in the same way. Now you can e
 
 Well it turns out that VS Code has a similar feature, but it is not enabled by default. You need to install the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension. Once installed you can create a .http file and start making API calls. The syntax is very similar to Visual Studio.
 
-VS Code doesn't have the concept of environments, but you can use variables in the same way. You can also use the same .http-client.env.json file as Visual Studio, but you need to update your settings.json file.
-
-Go to Extensions > REST Client > Extension Settings and click on Edit in settings.json. Add the same settings we used with VS to your settings.json file. You can now switch environments from the command palette "Rest Client: Switch Environment" and select the environment you want to use.
+VS Code has a similar concept of environments. Go to Extensions > REST Client > Extension Settings and click on Edit in settings.json. Add the same settings we used with VS to your settings.json file. You can now switch environments from the command palette "Rest Client: Switch Environment" and select the environment you want to use.
 
 You can make use of the response of one API call in the request of another.
 
@@ -110,4 +108,38 @@ GET {{Catalog.API_HostAddress}}/api/v1/catalog/items
 Authorization: Bearer {{login.response.body.token}}
 Content-Type: application/json
 
+```
+
+The last feature of VS Code is that it can make GQL calls.
+
+```
+POST {{Catalog.API_HostAddress}}/graphql
+X-REQUEST-TYPE: GraphQL
+Content-Type: application/json
+Authorization: Bearer {{login.response.body.token}}
+
+query ($name: String!, $owner: String!) {
+  repository(name: $name, owner: $owner) {
+    name
+    fullName: nameWithOwner
+    description
+    diskUsage
+    forkCount
+    stargazers(first: 5) {
+        totalCount
+        nodes {
+            login
+            name
+        }
+    }
+    watchers {
+        totalCount
+    }
+  }
+}
+
+{
+    "name": "vscode-restclient",
+    "owner": "Huachao"
+}
 ```
