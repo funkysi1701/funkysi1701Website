@@ -59,13 +59,13 @@ eg @variable = value
 
 Full docs of how you use .http files can be found [here](https://learn.microsoft.com/en-us/aspnet/core/test/http-files?view=aspnetcore-8.0) 
 
-A hyperlink above each API call labelled Send request initiates the API call and your window splits in half with the right hand side displaying the response.
+A hyperlink above each API call in your .http file is labelled Send request. This initiates the API call and your window splits in half with the right hand side displaying the response.
 
 The response has four tabs, a nicely json formatted response, a raw response, a headers tab and a request tab.
 
 Now you will notice an env box underneath your file tabs, where the method dropdown is in a normal c# class file. It took me a while to figure out how to setup environments, but you can add a file that contain environment specific config, like base URL for test/prod/dev etc.
 
-This blog post tells me about it [here](https://devblogs.microsoft.com/visualstudio/safely-use-secrets-in-http-requests-in-visual-studio-2022/) but the name thing is add a json file called **http-client.env.json** and create some json like this:
+This blog post tells me about it [here](https://devblogs.microsoft.com/visualstudio/safely-use-secrets-in-http-requests-in-visual-studio-2022/) but the main thing is you need to add a json file called **http-client.env.json** and create some json like this:
 
 ```
   "local": {
@@ -82,4 +82,4 @@ This blog post tells me about it [here](https://devblogs.microsoft.com/visualstu
   }
 ```
 
-Other environment specific variables can be added in the same way.
+Other environment specific variables can be added in the same way. 
