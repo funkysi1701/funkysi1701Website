@@ -82,4 +82,32 @@ This blog post tells me about it [here](https://devblogs.microsoft.com/visualstu
   }
 ```
 
-Other environment specific variables can be added in the same way. 
+Other environment specific variables can be added in the same way. Now you can easily call your API in different environments without having to change the URL each time.
+
+## But what about VS Code? 
+
+Well it turns out that VS Code has a similar feature, but it is not enabled by default. You need to install the [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension. Once installed you can create a .http file and start making API calls. The syntax is very similar to Visual Studio.
+
+VS Code doesn't have the concept of environments, but you can use variables in the same way. You can also use the same .http-client.env.json file as Visual Studio, but you need to update your settings.json file.
+
+Go to Extensions > REST Client > Extension Settings and click on Edit in settings.json. Add the same settings we used with VS to your settings.json file. You can now switch environments from the command palette "Rest Client: Switch Environment" and select the environment you want to use.
+
+You can make use of the response of one API call in the request of another.
+
+```
+### 1st API Call
+# @name login
+POST {{Catalog.API_HostAddress}}/api/v1/identity/login
+Content-Type: application/json
+
+{
+    "user": "username",
+    "password": "password"
+}
+
+### 2nd API Call
+GET {{Catalog.API_HostAddress}}/api/v1/catalog/items
+Authorization: Bearer {{login.response.body.token}}
+Content-Type: application/json
+
+```
