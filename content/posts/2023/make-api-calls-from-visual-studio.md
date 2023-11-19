@@ -1,6 +1,6 @@
 +++
 title = "Make API calls from Visual Studio or Visual Studio Code"
-date = "2023-11-19T22:45:00Z"
+date = "2023-11-19T22:50:00Z"
 year = "2023"
 month= "2023-11"
 author = "funkysi1701"
@@ -110,7 +110,7 @@ Content-Type: application/json
 
 ```
 
-The last feature of VS Code is that it can make GQL calls.
+The last feature of VS Code I want to mention is that it can make GQL calls.
 
 ```
 POST {{Catalog.API_HostAddress}}/graphql
@@ -143,3 +143,5 @@ query ($name: String!, $owner: String!) {
     "owner": "Huachao"
 }
 ```
+
+Sorry postman but I think I have a new favourite tool for making API calls.
