@@ -69,16 +69,16 @@ This blog post tells me about it [here](https://devblogs.microsoft.com/visualstu
 
 ```
   "local": {
-    "ProjectPyramidApi_HostAddress": "http://localhost:44338"
+    "Api_HostAddress": "http://localhost:44338"
   },
   "dev": {
-    "ProjectPyramidApi_HostAddress": "https://dev.example.com"
+    "Api_HostAddress": "https://dev.example.com"
   },
   "test": {
-    "ProjectPyramidApi_HostAddress": "https://test.example.com"
+    "Api_HostAddress": "https://test.example.com"
   },
   "prod": {
-    "ProjectPyramidApi_HostAddress": "https://prod.example.com"
+    "Api_HostAddress": "https://prod.example.com"
   }
 ```
 
