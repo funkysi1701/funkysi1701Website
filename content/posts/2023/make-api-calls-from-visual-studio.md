@@ -17,8 +17,8 @@ showFullContent = false
 readingTime = true
 draft = false
 aliases = [
-    "/make-api-calls-from-visual-studio",
     "/make-api-calls-from-visual-studio-or-visual-studio-code-89n",
+    "/make-api-calls-from-visual-studio",
     "/2023/11/16/make-api-calls-from-visual-studio"
 ]
 +++
