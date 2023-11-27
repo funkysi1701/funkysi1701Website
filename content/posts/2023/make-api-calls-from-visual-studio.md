@@ -18,6 +18,7 @@ readingTime = true
 draft = false
 aliases = [
     "/make-api-calls-from-visual-studio",
+    "/make-api-calls-from-visual-studio-or-visual-studio-code-89n",
     "/2023/11/16/make-api-calls-from-visual-studio"
 ]
 +++
