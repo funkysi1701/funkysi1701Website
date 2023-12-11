@@ -26,7 +26,7 @@
     "workbox-strategies": "7.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.23.5",
+    "@babel/core": "7.23.6",
     "@popperjs/core": "2.11.8",
     "@typescript-eslint/eslint-plugin": "6.13.2",
     "@typescript-eslint/parser": "6.13.2",
