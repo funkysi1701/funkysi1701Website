@@ -26,7 +26,7 @@
     "workbox-strategies": "7.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.23.6",
+    "@babel/core": "7.23.7",
     "@popperjs/core": "2.11.8",
     "@typescript-eslint/eslint-plugin": "6.16.0",
     "@typescript-eslint/parser": "6.16.0",
@@ -53,7 +53,7 @@
     "postcss": "8.4.32",
     "postcss-loader": "7.3.4",
     "purgecss-webpack-plugin": "5.0.0",
-    "sass": "1.69.5",
+    "sass": "1.69.6",
     "sass-loader": "13.3.3",
     "scss": "0.2.4",
     "scss-loader": "0.0.1",
@@ -61,7 +61,7 @@
     "stylelint": "15.11.0",
     "stylelint-config-standard": "34.0.0",
     "stylelint-scss": "5.3.2",
-    "terser-webpack-plugin": "5.3.9",
+    "terser-webpack-plugin": "5.3.10",
     "ts-loader": "9.5.1",
     "typescript": "5.3.3",
     "url-loader": "4.1.1",

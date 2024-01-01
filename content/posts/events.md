@@ -20,6 +20,10 @@ A list of events I have attended.
 
 | Event/Talk | Date | Location | 
 | --- | --- | --- |
+|     | 2024 |    |
+| *Scottish Summit* | *17/19 October 2024* | *Aberdeen* |
+| *SteelCon* | *TBA* | *Sheffield* |
+| *DDD North* | *2 March 2024* | *Hull* |
 |     | 2023 |    |
 | DevBoss | 16 November 2023 | Leeds |
 | [DDD East Midlands](/posts/2023/ddd-east-midlands) | 7th October | Nottingham |
