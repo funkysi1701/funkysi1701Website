@@ -1,8 +1,8 @@
 +++
 title = "Title"
-date = "2023-01-01T00:00:00Z"
-year = "2023"
-month= "2023-01"
+date = "2024-01-01T00:00:00Z"
+year = "2024"
+month= "2024-01"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 copyright = false
@@ -17,6 +17,6 @@ showFullContent = false
 readingTime = true
 draft = true
 aliases = [
-    "/2023/01/01/empty"
+    "/2024/01/01/empty"
 ]
 +++
