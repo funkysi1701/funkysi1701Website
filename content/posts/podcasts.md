@@ -18,7 +18,7 @@ aliases = [
 
 A list of podcast I have recorded. 
 
-[TrekRanks]()
+[TrekRanks #174](/posts/2024/trekranks/)
 
 [Picard Season 3](/posts/2023/picard-season-three/)
 
