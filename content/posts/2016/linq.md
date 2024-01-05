@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/10/step30.jpg?w=515&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/10/step30.jpg?w=515&ssl=1']
-tags = ["LINQ", "SQL", "Programming", "C-Sharp"]
+tags = ["LINQ", "SQL",  "C-Sharp"]
 category="tech"
 keywords = ["", ""]
 description =  "LINQ"

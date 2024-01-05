@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/06/tpp.jpg?w=1324&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/06/tpp.jpg?w=1324&ssl=1']
-tags = ["Programming", "Windows", "Books", "Tips"]
+tags = [ "Windows", "Books", "Tips"]
 category="tech"
 keywords = ["", ""]
 description =  "Don’t Live with Broken Windows"

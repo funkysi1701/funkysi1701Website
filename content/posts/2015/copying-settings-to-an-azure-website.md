@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/09/2275.app-1.png?w=550&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/09/2275.app-1.png?w=550&ssl=1']
-tags = ["Clouds", "Azure", "DevOps", "Powershell", "Programming"]
+tags = ["Clouds", "Azure", "DevOps", "Powershell"]
 category="tech"
 keywords = ["", ""]
 description =  "Copying settings to an Azure Website"

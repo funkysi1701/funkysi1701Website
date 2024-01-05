@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/04/Raspberry_Pi_-_Model_A.jpg"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/04/Raspberry_Pi_-_Model_A.jpg']
-tags = ["#MarchIsForMakers", "C-Sharp", "Arduino", "Hardware", "Electronics", "Programming", "Raspberry Pi", "Project", "Mono"]
+tags = ["#MarchIsForMakers", "C-Sharp", "Arduino", "Hardware", "Electronics", "Raspberry Pi", "Project", "Mono"]
 category="tech"
 keywords = ["", ""]
 description =  "Building something with a Raspberry Pi"
@@ -17,10 +17,10 @@ readingTime = true
 copyright = false
 aliases = [
     "/posts/building-something-with-a-raspberry-pi",
-    "/posts/laziness-17n5",
-    "/posts/2015/04/05/laziness-17n5",
+    "/posts/building-something-with-a-raspberry-pi-328j",
+    "/posts/2015/04/05/building-something-with-a-raspberry-pi-328j",
     "/posts/2015/04/05/building-something-with-a-raspberry-pi",
-    "/2015/04/05/laziness-17n5",
+    "/2015/04/05/building-something-with-a-raspberry-pi-328j",
     "/2015/04/05/building-something-with-a-raspberry-pi"
 ]
 +++

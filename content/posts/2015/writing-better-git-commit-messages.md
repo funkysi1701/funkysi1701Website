@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/git_commit.png?w=439&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2015/07/git_commit.png?w=439&ssl=1']
-tags = ["Git", "Programming", "Source Control"]
+tags = ["Git",  "Source Control"]
 category="tech"
 keywords = ["", ""]
 description =  "Writing better Git commit messages"

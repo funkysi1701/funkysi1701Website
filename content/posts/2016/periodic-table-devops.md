@@ -7,7 +7,7 @@ author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 cover = "https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/06/https-xebialabs.com-assets-files-infographics-periodic-table-of-devops-v2.png?resize=1024%2C572&ssl=1"
 images = ['https://storageaccountblog9f5d.blob.core.windows.net/blazor/wp-content/uploads/2016/06/https-xebialabs.com-assets-files-infographics-periodic-table-of-devops-v2.png?resize=1024%2C572&ssl=1']
-tags = ["Chemistry", "DevOps", "Programming", "Tools"]
+tags = ["Chemistry", "DevOps",  "Tools"]
 category="tech"
 keywords = ["", ""]
 description =  "Periodic Table of DevOps"
