@@ -5,8 +5,8 @@
       "automerge": true
     },
     {
-      "extends": "packages:postcss",
-      "groupName": "postcss packages"
+      "extends": "packages:stylelint",
+      "groupName": "stylelint packages"
     }
   ],
   "extends": [
