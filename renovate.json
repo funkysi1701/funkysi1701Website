@@ -3,6 +3,10 @@
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true
+    },
+    {
+      "extends": "packages:stylelint",
+      "groupName": "stylelint packages"
     }
   ],
   "extends": [
