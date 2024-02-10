@@ -20,18 +20,18 @@ A list of events I have attended.
 
 | Event/Talk | Date | Location | 
 | --- | --- | --- |
-<td colspan=3>    **2024**    
+| <td colspan=2>    **2024**    
 | *Scottish Summit* | *17/19 October 2024* | *Aberdeen* |
 | *SteelCon* | *20 July 2024* | *Sheffield* |
 | *DDD North* | *2 March 2024* | *Hull* |
-<td colspan=3>     **2023**    
+| <td colspan=2>     **2023**    
 | DevBoss | 16 November 2023 | Leeds |
 | [DDD East Midlands](/posts/2023/ddd-east-midlands) | 7th October | Nottingham |
 | SteelCon | 8 July 2023 | Sheffield |
 | Yorkshire Azure | 13 June 2023 | Leeds |
 | DevBoss | 20 April 2023 | Leeds |
 | dotnet York Machine Learning with ML.Net | 2 March 2023 | York |
-<td colspan=3>    **2022**        
+| <td colspan=2>    **2022**        
 | Microsoft Datacenter Tour: Virtual Experience | 6 December 2022   | Online |
 | [DDD North](/posts/2022/ddd-north)            | 3 December 2022 | Hull |
 | LeedsSharp Azure Patterns for Fun and Profit | 24 November 2022 | Leeds |
