@@ -1,5 +1,5 @@
 +++
-title = "Funky Si does a half Marathon"
+title = "Funky Si walks a half marathon"
 date = "2024-02-18T11:00:00Z"
 year = "2024"
 month= "2024-02"
@@ -11,8 +11,8 @@ images =['/images/fsi-hike.jpg']
 tags = [ ]
 category=""
 keywords = ["", ""]
-description = "Funky Si does a half Marathon"
-summary = "Funky Si does a half Marathon"
+description = "Funky Si walks a half marathon"
+summary = "Funky Si walks a half marathon"
 showFullContent = false
 readingTime = true
 aliases = [
