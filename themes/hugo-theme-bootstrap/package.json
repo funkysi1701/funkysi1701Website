@@ -58,7 +58,7 @@
     "scss": "0.2.4",
     "scss-loader": "0.0.1",
     "style-loader": "3.3.4",
-    "stylelint": "16.2.1",
+    "stylelint": "16.3.0",
     "stylelint-config-standard": "36.0.0",
     "stylelint-scss": "6.2.1",
     "terser-webpack-plugin": "5.3.10",
