@@ -1,4 +1,4 @@
-# funkysi1701.github.io - My Blog (using Hugo)
+# funkysi1701.com - My Blog (using Hugo)
 
 Repo for my website www.funkysi1701.com actually hosted on Azure Static Websites not github pages.
 
