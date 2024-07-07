@@ -1,2 +1,4 @@
 ﻿.dccache
 public
+node_modules
+.env

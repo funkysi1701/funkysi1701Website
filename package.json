@@ -1,0 +1,15 @@
+{
+  "name": "funkysi1701.com",
+  "version": "1.0.0",
+  "description": "Repo for my website www.funkysi1701.com actually hosted on Azure Static Websites not github pages.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tinacms": "^1.6.4"
+  }
+}
