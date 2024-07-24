@@ -6,8 +6,8 @@ month= "2024-07"
 author = "funkysi1701"
 authorTwitter = "funkysi1701" #do not include @
 copyright = false
-cover = ""
-images = ['']
+cover = "/images/fsi-hike.jpg"
+images =['/images/fsi-hike.jpg']
 tags = ["Side Project" ]
 category="tech"
 keywords = ["", ""]
@@ -24,4 +24,4 @@ Kubernettes or k8s is all the rage at the moment for running all sorts of distri
 
 All the cloud computing providers have managed k8s services, so I could create a k8s cluster on one of those. But the cost of these quickly adds up.
 
-Raspberry Pi's are cheap small computers that I have played about with in the past
+Raspberry Pi's are cheap small computers that I have played about with in the [past](/tags/raspberry-pi/)
